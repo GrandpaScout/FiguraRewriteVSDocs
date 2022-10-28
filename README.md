@@ -3,4 +3,4 @@
 
 Documentation for Figura in Visual Studio Code.
 
-Requires [Sumneko's Lua Server](vscode:extension/sumneko.lua) to work.
+Requires [Sumneko's Lua Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to work.
