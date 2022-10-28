@@ -1,0 +1,3 @@
+# Syntax:
+# modid:item_id | **Mod Name:** Item Name
+

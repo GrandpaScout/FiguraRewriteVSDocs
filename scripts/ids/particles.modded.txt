@@ -1,0 +1,3 @@
+# Syntax:
+# modid:particle_id | **Mod Name:** Particle Name
+

@@ -1,0 +1,3 @@
+# Syntax:
+# modid:effect_id | **Mod Name:** Effect Name
+

@@ -1,0 +1,129 @@
+# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Entities
+# Select *all* tables and their titles to clone info.
+
+Mobs
+Entity	Resource location
+ Axolotl	axolotl
+ Bat	bat
+ Bee	bee
+ Blaze	blaze
+ Cat	cat
+ Cave Spider	cave_spider
+ Chicken	chicken
+ Cod	cod
+ Cow	cow
+ Creeper	creeper
+ Dolphin	dolphin
+ Donkey	donkey
+ Drowned	drowned
+ Elder Guardian	elder_guardian
+ Ender Dragon	ender_dragon
+ Enderman	enderman
+ Endermite	endermite
+ Evoker	evoker
+ Fox	fox
+ Ghast	ghast
+ Giant	giant
+ Glow Squid	glow_squid
+ Goat	goat
+ Guardian	guardian
+ Hoglin	hoglin
+ Horse	horse
+ Husk	husk
+ Illusioner	illusioner
+ Iron Golem	iron_golem
+ Llama	llama
+ Magma Cube	magma_cube
+ Mooshroom	mooshroom
+ Mule	mule
+ Ocelot	ocelot
+ Panda	panda
+ Parrot	parrot
+ Phantom	phantom
+ Pig	pig
+ Piglin	piglin
+ Piglin Brute	piglin_brute
+ Pillager	pillager
+ Polar Bear	polar_bear
+ Pufferfish	pufferfish
+ Rabbit	rabbit
+ Ravager	ravager
+ Salmon	salmon
+ Sheep	sheep
+ Shulker	shulker
+ Silverfish	silverfish
+ Skeleton	skeleton
+ Skeleton Horse	skeleton_horse
+ Slime	slime
+ Snow Golem	snow_golem
+ Spider	spider
+ Squid	squid
+ Stray	stray
+ Strider	strider
+ Trader Llama	trader_llama
+ Tropical Fish	tropical_fish
+ Turtle	turtle
+ Vex	vex
+ Villager	villager
+ Vindicator	vindicator
+ Wandering Trader	wandering_trader
+ Witch	witch
+ Wither	wither
+ Wither Skeleton	wither_skeleton
+ Wolf	wolf
+ Zoglin	zoglin
+ Zombie	zombie
+ Zombie Horse	zombie_horse
+ Zombie Villager	zombie_villager
+ Zombified Piglin	zombified_piglin
+Miscellaneous
+Entity	Resource location
+ Area Effect Cloud	area_effect_cloud
+ Armor Stand	armor_stand
+ End Crystal	end_crystal
+ Evoker Fangs	evoker_fangs
+ Fishing Bobber	fishing_bobber
+ Item Frame	item_frame
+ Leash Knot	leash_knot
+ Lightning Bolt	lightning_bolt
+ Marker	marker
+ Painting	painting
+Projectiles
+Entity	Resource location
+ Arrow and Tipped Arrow	arrow
+ Dragon Fireball	dragon_fireball
+ Egg	egg
+ Ender Pearl	ender_pearl
+ Bottle o' Enchanting	experience_bottle
+ Eye of Ender	eye_of_ender
+ Fireball	fireball
+ Firework Rocket	firework_rocket
+ Llama Spit	llama_spit
+ Potion	potion
+ Shulker Bullet	shulker_bullet
+ Small Fireball	small_fireball
+ Snowball	snowball
+ Spectral Arrow	spectral_arrow
+ Trident	trident
+ Wither Skull	wither_skull
+Vehicles
+Entity	Resource location
+ Boat	boat
+ Minecart with Chest	chest_minecart
+ Minecart with Command Block	command_block_minecart
+ Minecart with Furnace	furnace_minecart
+ Minecart with Hopper	hopper_minecart
+ Minecart	minecart
+ Minecart with Spawner	spawner_minecart
+ Minecart with TNT	tnt_minecart
+Blocks
+Entity	Resource location
+    
+Falling Block
+
+falling_block
+ Primed TNT	tnt
+Items
+Entity	Resource location
+ Experience Orb	experience_orb
+ Item	item

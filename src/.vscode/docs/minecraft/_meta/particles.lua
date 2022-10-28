@@ -1,0 +1,88 @@
+---A valid Minecraft particle id.
+---@alias Minecraft.particleID string
+---| "minecraft:ambient_entity_effect"    # Ambient Entity Effect
+---| "minecraft:angry_villager"           # Angry Villager
+---| "minecraft:ash"                      # Ash
+---| "minecraft:barrier"                  # Barrier
+---| "minecraft:block"                    # Block
+---| "minecraft:bubble"                   # Bubble
+---| "minecraft:bubble_column_up"         # Bubble Column Up
+---| "minecraft:bubble_pop"               # Bubble Pop
+---| "minecraft:campfire_cosy_smoke"      # Campfire Cosy Smoke
+---| "minecraft:campfire_signal_smoke"    # Campfire Signal Smoke
+---| "minecraft:cloud"                    # Cloud
+---| "minecraft:composter"                # Composter
+---| "minecraft:crimson_spore"            # Crimson Spore
+---| "minecraft:crit"                     # Crit
+---| "minecraft:current_down"             # Current Down
+---| "minecraft:damage_indicator"         # Damage Indicator
+---| "minecraft:dolphin"                  # Dolphin
+---| "minecraft:dragon_breath"            # Dragon Breath
+---| "minecraft:dripping_dripstone_lava"  # Dripping Dripstone Lava
+---| "minecraft:dripping_dripstone_water" # Dripping Dripstone Water
+---| "minecraft:dripping_honey"           # Dripping Honey
+---| "minecraft:dripping_lava"            # Dripping Lava
+---| "minecraft:dripping_obsidian_tear"   # Dripping Obsidian Tear
+---| "minecraft:dripping_water"           # Dripping Water
+---| "minecraft:dust"                     # Dust
+---| "minecraft:dust_color_transition"    # Dust Color Transition
+---| "minecraft:effect"                   # Effect
+---| "minecraft:elder_guardian"           # Elder Guardian
+---| "minecraft:electric_spark"           # Electric Spark
+---| "minecraft:enchant"                  # Enchant
+---| "minecraft:enchanted_hit"            # Enchanted Hit
+---| "minecraft:end_rod"                  # End Rod
+---| "minecraft:entity_effect"            # Entity Effect
+---| "minecraft:explosion"                # Explosion
+---| "minecraft:explosion_emitter"        # Explosion Emitter
+---| "minecraft:falling_dripstone_lava"   # Falling Dripstone Lava
+---| "minecraft:falling_dripstone_water"  # Falling Dripstone Water
+---| "minecraft:falling_dust"             # Falling Dust
+---| "minecraft:falling_honey"            # Falling Honey
+---| "minecraft:falling_lava"             # Falling Lava
+---| "minecraft:falling_nectar"           # Falling Nectar
+---| "minecraft:falling_obsidian_tear"    # Falling Obsidian Tear
+---| "minecraft:falling_spore_blossom"    # Falling Spore Blossom
+---| "minecraft:falling_water"            # Falling Water
+---| "minecraft:firework"                 # Firework
+---| "minecraft:fishing"                  # Fishing
+---| "minecraft:flame"                    # Flame
+---| "minecraft:flash"                    # Flash
+---| "minecraft:glow"                     # Glow
+---| "minecraft:glow_squid_ink"           # Glow Squid Ink
+---| "minecraft:happy_villager"           # Happy Villager
+---| "minecraft:heart"                    # Heart
+---| "minecraft:instant_effect"           # Instant Effect
+---| "minecraft:item"                     # Item
+---| "minecraft:item_slime"               # Item Slime
+---| "minecraft:item_snowball"            # Item Snowball
+---| "minecraft:landing_honey"            # Landing Honey
+---| "minecraft:landing_lava"             # Landing Lava
+---| "minecraft:landing_obsidian_tear"    # Landing Obsidian Tear
+---| "minecraft:large_smoke"              # Large Smoke
+---| "minecraft:lava"                     # Lava
+---| "minecraft:mycelium"                 # Mycelium
+---| "minecraft:nautilus"                 # Nautilus
+---| "minecraft:note"                     # Note
+---| "minecraft:poof"                     # Poof
+---| "minecraft:portal"                   # Portal
+---| "minecraft:rain"                     # Rain
+---| "minecraft:scrape"                   # Scrape
+---| "minecraft:smoke"                    # Smoke
+---| "minecraft:sneeze"                   # Sneeze
+---| "minecraft:snowflake"                # Snowflake
+---| "minecraft:soul"                     # Soul
+---| "minecraft:sould_fire_flame"         # Sould Fire Flame
+---| "minecraft:spit"                     # Spit
+---| "minecraft:splash"                   # Splash
+---| "minecraft:spore_blossom_air"        # Spore Blossom Air
+---| "minecraft:squid_ink"                # Squid Ink
+---| "minecraft:sweep_attack"             # Sweep Attack
+---| "minecraft:totem_of_undying"         # Totem Of Undying
+---| "minecraft:underwater"               # Underwater
+---| "minecraft:vibration"                # Vibration
+---| "minecraft:warped_spore"             # Warped Spore
+---| "minecraft:wax_off"                  # Wax Off
+---| "minecraft:wax_on"                   # Wax On
+---| "minecraft:white_ash"                # White Ash
+---| "minecraft:witch"                    # Witch

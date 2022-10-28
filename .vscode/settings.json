@@ -1,0 +1,36 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["**/avatar.json"],
+      "url": ".vscode/avatar.schema.json"
+    }
+  ],
+  "material-icon-theme.files.associations": {
+    "figura/_deprecated.lua": "serverless",
+    "_global.lua": "gemini",
+    "alias.lua": "razor",
+    "api.lua": "favicon"
+  },
+  "material-icon-theme.folders.associations": {
+    "figura/_assets": "examples",
+    "figura/_meta": "meta",
+    "figura/action_wheel": "target",
+    "figura/animations": "animation",
+    "figura/avatar": "content",
+    "figura/client": "mobile",
+    "figura/events": "archive",
+    "figura/host": "vm",
+    "figura/keybind": "keys",
+    "figura/matrices": "components",
+    "figura/models": "container",
+    "figura/nameplate": "font",
+    "figura/particles": "cluster",
+    "figura/pings": "event",
+    "figura/player": "admin",
+    "figura/renderer": "review",
+    "figura/sounds": "audio",
+    "figura/vanilla_model": "node",
+    "figura/vectors": "less",
+    "figura/world": "global"
+  }
+}

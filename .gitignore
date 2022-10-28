@@ -1,0 +1,11 @@
+# Script outputs
+/scripts/**/out
+
+# Private folders
+/__**
+
+# Private files
+/_*
+
+# This isn't done yet.
+/doc

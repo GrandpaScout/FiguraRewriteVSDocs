@@ -1,0 +1,901 @@
+# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Blocks
+# Select *all* table data cells to clone info.
+
+Acacia Button.png	acacia_button	Acacia Button	Identical
+Acacia Door.png	acacia_door	Acacia Door	Identical
+Acacia Fence.png	acacia_fence	Acacia Fence	Identical
+Acacia Fence Gate.png	acacia_fence_gate	Acacia Fence Gate	Identical
+Acacia Leaves.png	acacia_leaves	Acacia Leaves	Identical
+Acacia Log.png	acacia_log	Acacia Log	Identical
+Acacia Planks.png	acacia_planks	Acacia Planks	Identical
+Acacia Pressure Plate.png	acacia_pressure_plate	Acacia Pressure Plate	Identical
+Acacia Sapling.png	acacia_sapling	Acacia Sapling	Identical
+Acacia Sign.png	acacia_sign	Acacia Sign	Identical
+Acacia Slab.png	acacia_slab	Acacia Slab	Identical
+Acacia Stairs.png	acacia_stairs	Acacia Stairs	Identical
+Acacia Trapdoor.png	acacia_trapdoor	Acacia Trapdoor	Identical
+Acacia Wall Sign.png	acacia_wall_sign	Acacia Wall Sign	acacia_sign
+Acacia Wood.png	acacia_wood	Acacia Wood	Identical
+Activator Rail.png	activator_rail	Activator Rail	Identical
+Air.png	air	Air	Identical
+Allium.png	allium	Allium	Identical
+Block of Amethyst.png	amethyst_block	Block of Amethyst	Identical
+Amethyst Cluster.png	amethyst_cluster	Amethyst Cluster	Identical
+Ancient Debris.png	ancient_debris	Ancient Debris	Identical
+Andesite.png	andesite	Andesite	Identical
+Andesite Slab.png	andesite_slab	Andesite Slab	Identical
+Andesite Stairs.png	andesite_stairs	Andesite Stairs	Identical
+Andesite Wall.png	andesite_wall	Andesite Wall	Identical
+Anvil.png	anvil	Anvil	Identical
+Attached Melon Stem.png	attached_melon_stem	Attached Melon Stem	pumpkin_seeds
+Attached Pumpkin Stem.png	attached_pumpkin_stem	Attached Pumpkin Stem	pumpkin_seeds
+Azalea.png	azalea	Azalea	Identical
+Azalea Leaves.png	azalea_leaves	Azalea Leaves	Identical
+Azure Bluet.png	azure_bluet	Azure Bluet	Identical
+Bamboo.png	bamboo	Bamboo	Identical
+Bamboo Shoot.png	bamboo_sapling	Bamboo Shoot	bamboo
+Barrel.png	barrel	Barrel	Identical
+Barrier.png	barrier	Barrier	Identical
+Basalt.png	basalt	Basalt	Identical
+Beacon.png	beacon	Beacon	Identical
+Bedrock.png	bedrock	Bedrock	Identical
+Bee Nest.png	bee_nest	Bee Nest	Identical
+Beehive.png	beehive	Beehive	Identical
+Beetroots.png	beetroots	Beetroots	beetroot_seeds
+Bell.png	bell	Bell	Identical
+Big Dripleaf.png	big_dripleaf	Big Dripleaf	Identical
+Big Dripleaf Stem.png	big_dripleaf_stem	Big Dripleaf Stem	big_dripleaf
+Birch Button.png	birch_button	Birch Button	Identical
+Birch Door.png	birch_door	Birch Door	Identical
+Birch Fence.png	birch_fence	Birch Fence	Identical
+Birch Fence Gate.png	birch_fence_gate	Birch Fence Gate	Identical
+Birch Leaves.png	birch_leaves	Birch Leaves	Identical
+Birch Log.png	birch_log	Birch Log	Identical
+Birch Planks.png	birch_planks	Birch Planks	Identical
+Birch Pressure Plate.png	birch_pressure_plate	Birch Pressure Plate	Identical
+Birch Sapling.png	birch_sapling	Birch Sapling	Identical
+Birch Sign.png	birch_sign	Birch Sign	Identical
+Birch Slab.png	birch_slab	Birch Slab	Identical
+Birch Stairs.png	birch_stairs	Birch Stairs	Identical
+Birch Trapdoor.png	birch_trapdoor	Birch Trapdoor	Identical
+Birch Wall Sign.png	birch_wall_sign	Birch Wall Sign	birch_sign
+Birch Wood.png	birch_wood	Birch Wood	Identical
+Black Banner.png	black_banner	Black Banner	Identical
+Black Bed.png	black_bed	Black Bed	Identical
+Black Candle.png	black_candle	Black Candle	Identical
+Cake with Black Candle.png	black_candle_cake	Cake with Black Candle	cake
+Black Carpet.png	black_carpet	Black Carpet	Identical
+Black Concrete.png	black_concrete	Black Concrete	Identical
+Black Concrete Powder.png	black_concrete_powder	Black Concrete Powder	Identical
+Black Glazed Terracotta.png	black_glazed_terracotta	Black Glazed Terracotta	Identical
+Black Shulker Box.png	black_shulker_box	Black Shulker Box	Identical
+Black Stained Glass.png	black_stained_glass	Black Stained Glass	Identical
+Black Stained Glass Pane.png	black_stained_glass_pane	Black Stained Glass Pane	Identical
+Black Terracotta.png	black_terracotta	Black Terracotta	Identical
+Black Wall Banner.png	black_wall_banner	Black Wall Banner	black_banner
+Black Wool.png	black_wool	Black Wool	Identical
+Blackstone.png	blackstone	Blackstone	Identical
+Blackstone Slab.png	blackstone_slab	Blackstone Slab	Identical
+Blackstone Stairs.png	blackstone_stairs	Blackstone Stairs	Identical
+Blackstone Wall.png	blackstone_wall	Blackstone Wall	Identical
+Blast Furnace.png	blast_furnace	Blast Furnace	Identical
+Blue Banner.png	blue_banner	Blue Banner	Identical
+Blue Bed.png	blue_bed	Blue Bed	Identical
+Blue Candle.png	blue_candle	Blue Candle	Identical
+Cake with Blue Candle.png	blue_candle_cake	Cake with Blue Candle	cake
+Blue Carpet.png	blue_carpet	Blue Carpet	Identical
+Blue Concrete.png	blue_concrete	Blue Concrete	Identical
+Blue Concrete Powder.png	blue_concrete_powder	Blue Concrete Powder	Identical
+Blue Glazed Terracotta.png	blue_glazed_terracotta	Blue Glazed Terracotta	Identical
+Blue Ice.png	blue_ice	Blue Ice	Identical
+Blue Orchid.png	blue_orchid	Blue Orchid	Identical
+Blue Shulker Box.png	blue_shulker_box	Blue Shulker Box	Identical
+Blue Stained Glass.png	blue_stained_glass	Blue Stained Glass	Identical
+Blue Stained Glass Pane.png	blue_stained_glass_pane	Blue Stained Glass Pane	Identical
+Blue Terracotta.png	blue_terracotta	Blue Terracotta	Identical
+Blue Wall Banner.png	blue_wall_banner	Blue Wall Banner	blue_banner
+Blue Wool.png	blue_wool	Blue Wool	Identical
+Bone Block.png	bone_block	Bone Block	Identical
+Bookshelf.png	bookshelf	Bookshelf	Identical
+Brain Coral.png	brain_coral	Brain Coral	Identical
+Brain Coral Block.png	brain_coral_block	Brain Coral Block	Identical
+Brain Coral Fan.png	brain_coral_fan	Brain Coral Fan	Identical
+Brain Coral Wall Fan.png	brain_coral_wall_fan	Brain Coral Wall Fan	brain_coral_fan
+Brewing Stand.png	brewing_stand	Brewing Stand	Identical
+Brick Slab.png	brick_slab	Brick Slab	Identical
+Brick Stairs.png	brick_stairs	Brick Stairs	Identical
+Brick Wall.png	brick_wall	Brick Wall	Identical
+Bricks.png	bricks	Bricks	Identical
+Brown Banner.png	brown_banner	Brown Banner	Identical
+Brown Bed.png	brown_bed	Brown Bed	Identical
+Brown Candle.png	brown_candle	Brown Candle	Identical
+Cake with Brown Candle.png	brown_candle_cake	Cake with Brown Candle	cake
+Brown Carpet.png	brown_carpet	Brown Carpet	Identical
+Brown Concrete.png	brown_concrete	Brown Concrete	Identical
+Brown Concrete Powder.png	brown_concrete_powder	Brown Concrete Powder	Identical
+Brown Glazed Terracotta.png	brown_glazed_terracotta	Brown Glazed Terracotta	Identical
+Brown Mushroom.png	brown_mushroom	Brown Mushroom	Identical
+Brown Mushroom Block.png	brown_mushroom_block	Brown Mushroom Block	Identical
+Brown Shulker Box.png	brown_shulker_box	Brown Shulker Box	Identical
+Brown Stained Glass.png	brown_stained_glass	Brown Stained Glass	Identical
+Brown Stained Glass Pane.png	brown_stained_glass_pane	Brown Stained Glass Pane	Identical
+Brown Terracotta.png	brown_terracotta	Brown Terracotta	Identical
+Brown Wall Banner.png	brown_wall_banner	Brown Wall Banner	brown_banner
+Brown Wool.png	brown_wool	Brown Wool	Identical
+Bubble Column.png	bubble_column	Bubble Column	None
+Bubble Coral.png	bubble_coral	Bubble Coral	Identical
+Bubble Coral Block.png	bubble_coral_block	Bubble Coral Block	Identical
+Bubble Coral Fan.png	bubble_coral_fan	Bubble Coral Fan	Identical
+Bubble Coral Wall Fan.png	bubble_coral_wall_fan	Bubble Coral Wall Fan	bubble_coral_fan
+Budding Amethyst.png	budding_amethyst	Budding Amethyst	Identical
+Cactus.png	cactus	Cactus	Identical
+Cake.png	cake	Cake	Identical
+Calcite.png	calcite	Calcite	Identical
+Campfire.png	campfire	Campfire	Identical
+Candle.png	candle	Candle	Identical
+Cake with Candle.png	candle_cake	Cake with Candle	cake
+Carrots.png	carrots	Carrots	carrot
+Cartography Table.png	cartography_table	Cartography Table	Identical
+Carved Pumpkin.png	carved_pumpkin	Carved Pumpkin	Identical
+Cauldron.png	cauldron	Cauldron	Identical
+Cave Air.png	cave_air	Cave Air	None
+Cave Vines.png	cave_vines	Cave Vines	glow_berries
+Cave Vines Plant.png	cave_vines_plant	Cave Vines Plant	glow_berries
+Chain.png	chain	Chain	Identical
+Chain Command Block.png	chain_command_block	Chain Command Block	Identical
+Chest.png	chest	Chest	Identical
+Chipped Anvil.png	chipped_anvil	Chipped Anvil	Identical
+Chiseled Deepslate.png	chiseled_deepslate	Chiseled Deepslate	Identical
+Chiseled Nether Bricks.png	chiseled_nether_bricks	Chiseled Nether Bricks	Identical
+Chiseled Polished Blackstone.png	chiseled_polished_blackstone	Chiseled Polished Blackstone	Identical
+Chiseled Quartz Block.png	chiseled_quartz_block	Chiseled Quartz Block	Identical
+Chiseled Red Sandstone.png	chiseled_red_sandstone	Chiseled Red Sandstone	Identical
+Chiseled Sandstone.png	chiseled_sandstone	Chiseled Sandstone	Identical
+Chiseled Stone Bricks.png	chiseled_stone_bricks	Chiseled Stone Bricks	Identical
+Chorus Flower.png	chorus_flower	Chorus Flower	Identical
+Chorus Plant.png	chorus_plant	Chorus Plant	Identical
+Clay.png	clay	Clay	Identical
+Block of Coal.png	coal_block	Block of Coal	Identical
+Coal Ore.png	coal_ore	Coal Ore	Identical
+Coarse Dirt.png	coarse_dirt	Coarse Dirt	Identical
+Cobbled Deepslate.png	cobbled_deepslate	Cobbled Deepslate	Identical
+Cobbled Deepslate Slab.png	cobbled_deepslate_slab	Cobbled Deepslate Slab	Identical
+Cobbled Deepslate Stairs.png	cobbled_deepslate_stairs	Cobbled Deepslate Stairs	Identical
+Cobbled Deepslate Wall.png	cobbled_deepslate_wall	Cobbled Deepslate Wall	Identical
+Cobblestone.png	cobblestone	Cobblestone	Identical
+Cobblestone Slab.png	cobblestone_slab	Cobblestone Slab	Identical
+Cobblestone Stairs.png	cobblestone_stairs	Cobblestone Stairs	Identical
+Cobblestone Wall.png	cobblestone_wall	Cobblestone Wall	Identical
+Cobweb.png	cobweb	Cobweb	Identical
+Cocoa.png	cocoa	Cocoa	cocoa_beans
+Command Block.png	command_block	Command Block	Identical
+Redstone Comparator.png	comparator	Redstone Comparator	Identical
+Composter.png	composter	Composter	Identical
+Conduit.png	conduit	Conduit	Identical
+Block of Copper.png	copper_block	Block of Copper	Identical
+Copper Ore.png	copper_ore	Copper Ore	Identical
+Cornflower.png	cornflower	Cornflower	Identical
+Cracked Deepslate Bricks.png	cracked_deepslate_bricks	Cracked Deepslate Bricks	Identical
+Cracked Deepslate Tiles.png	cracked_deepslate_tiles	Cracked Deepslate Tiles	Identical
+Cracked Nether Bricks.png	cracked_nether_bricks	Cracked Nether Bricks	Identical
+Cracked Polished Blackstone Bricks.png	cracked_polished_blackstone_bricks	Cracked Polished Blackstone Bricks	Identical
+Cracked Stone Bricks.png	cracked_stone_bricks	Cracked Stone Bricks	Identical
+Crafting Table.png	crafting_table	Crafting Table	Identical
+Creeper Head.png	creeper_head	Creeper Head	Identical
+Creeper Wall Head.png	creeper_wall_head	Creeper Wall Head	creeper_head
+Crimson Button.png	crimson_button	Crimson Button	Identical
+Crimson Door.png	crimson_door	Crimson Door	Identical
+Crimson Fence.png	crimson_fence	Crimson Fence	Identical
+Crimson Fence Gate.png	crimson_fence_gate	Crimson Fence Gate	Identical
+Crimson Fungus.png	crimson_fungus	Crimson Fungus	Identical
+Crimson Hyphae.png	crimson_hyphae	Crimson Hyphae	Identical
+Crimson Nylium.png	crimson_nylium	Crimson Nylium	Identical
+Crimson Planks.png	crimson_planks	Crimson Planks	Identical
+Crimson Pressure Plate.png	crimson_pressure_plate	Crimson Pressure Plate	Identical
+Crimson Roots.png	crimson_roots	Crimson Roots	Identical
+Crimson Sign.png	crimson_sign	Crimson Sign	Identical
+Crimson Slab.png	crimson_slab	Crimson Slab	Identical
+Crimson Stairs.png	crimson_stairs	Crimson Stairs	Identical
+Crimson Stem.png	crimson_stem	Crimson Stem	Identical
+Crimson Trapdoor.png	crimson_trapdoor	Crimson Trapdoor	Identical
+Crimson Wall Sign.png	crimson_wall_sign	Crimson Wall Sign	crimson_sign
+Crying Obsidian.png	crying_obsidian	Crying Obsidian	Identical
+Cut Copper.png	cut_copper	Cut Copper	Identical
+Cut Copper Slab.png	cut_copper_slab	Cut Copper Slab	Identical
+Cut Copper Stairs.png	cut_copper_stairs	Cut Copper Stairs	Identical
+Cut Red Sandstone.png	cut_red_sandstone	Cut Red Sandstone	Identical
+Cut Red Sandstone Slab.png	cut_red_sandstone_slab	Cut Red Sandstone Slab	Identical
+Cut Sandstone.png	cut_sandstone	Cut Sandstone	Identical
+Cut Sandstone Slab.png	cut_sandstone_slab	Cut Sandstone Slab	Identical
+Cyan Banner.png	cyan_banner	Cyan Banner	Identical
+Cyan Bed.png	cyan_bed	Cyan Bed	Identical
+Cyan Candle.png	cyan_candle	Cyan Candle	Identical
+Cake with Cyan Candle.png	cyan_candle_cake	Cake with Cyan Candle	cake
+Cyan Carpet.png	cyan_carpet	Cyan Carpet	Identical
+Cyan Concrete.png	cyan_concrete	Cyan Concrete	Identical
+Cyan Concrete Powder.png	cyan_concrete_powder	Cyan Concrete Powder	Identical
+Cyan Glazed Terracotta.png	cyan_glazed_terracotta	Cyan Glazed Terracotta	Identical
+Cyan Shulker Box.png	cyan_shulker_box	Cyan Shulker Box	Identical
+Cyan Stained Glass.png	cyan_stained_glass	Cyan Stained Glass	Identical
+Cyan Stained Glass Pane.png	cyan_stained_glass_pane	Cyan Stained Glass Pane	Identical
+Cyan Terracotta.png	cyan_terracotta	Cyan Terracotta	Identical
+Cyan Wall Banner.png	cyan_wall_banner	Cyan Wall Banner	cyan_banner
+Cyan Wool.png	cyan_wool	Cyan Wool	Identical
+Damaged Anvil.png	damaged_anvil	Damaged Anvil	Identical
+Dandelion.png	dandelion	Dandelion	Identical
+Dark Oak Button.png	dark_oak_button	Dark Oak Button	Identical
+Dark Oak Door.png	dark_oak_door	Dark Oak Door	Identical
+Dark Oak Fence.png	dark_oak_fence	Dark Oak Fence	Identical
+Dark Oak Fence Gate.png	dark_oak_fence_gate	Dark Oak Fence Gate	Identical
+Dark Oak Leaves.png	dark_oak_leaves	Dark Oak Leaves	Identical
+Dark Oak Log.png	dark_oak_log	Dark Oak Log	Identical
+Dark Oak Planks.png	dark_oak_planks	Dark Oak Planks	Identical
+Dark Oak Pressure Plate.png	dark_oak_pressure_plate	Dark Oak Pressure Plate	Identical
+Dark Oak Sapling.png	dark_oak_sapling	Dark Oak Sapling	Identical
+Dark Oak Sign.png	dark_oak_sign	Dark Oak Sign	Identical
+Dark Oak Slab.png	dark_oak_slab	Dark Oak Slab	Identical
+Dark Oak Stairs.png	dark_oak_stairs	Dark Oak Stairs	Identical
+Dark Oak Trapdoor.png	dark_oak_trapdoor	Dark Oak Trapdoor	Identical
+Dark Oak Wall Sign.png	dark_oak_wall_sign	Dark Oak Wall Sign	dark_oak_sign
+Dark Oak Wood.png	dark_oak_wood	Dark Oak Wood	Identical
+Dark Prismarine.png	dark_prismarine	Dark Prismarine	Identical
+Dark Prismarine Slab.png	dark_prismarine_slab	Dark Prismarine Slab	Identical
+Dark Prismarine Stairs.png	dark_prismarine_stairs	Dark Prismarine Stairs	Identical
+Daylight Detector.png	daylight_detector	Daylight Detector	Identical
+Dead Brain Coral.png	dead_brain_coral	Dead Brain Coral	Identical
+Dead Brain Coral Block.png	dead_brain_coral_block	Dead Brain Coral Block	Identical
+Dead Brain Coral Fan.png	dead_brain_coral_fan	Dead Brain Coral Fan	Identical
+Dead Brain Coral Wall Fan.png	dead_brain_coral_wall_fan	Dead Brain Coral Wall Fan	dead_brain_coral_fan
+Dead Bubble Coral.png	dead_bubble_coral	Dead Bubble Coral	Identical
+Dead Bubble Coral Block.png	dead_bubble_coral_block	Dead Bubble Coral Block	Identical
+Dead Bubble Coral Fan.png	dead_bubble_coral_fan	Dead Bubble Coral Fan	Identical
+Dead Bubble Coral Wall Fan.png	dead_bubble_coral_wall_fan	Dead Bubble Coral Wall Fan	dead_bubble_coral_fan
+Dead Bush.png	dead_bush	Dead Bush	Identical
+Dead Fire Coral.png	dead_fire_coral	Dead Fire Coral	Identical
+Dead Fire Coral Block.png	dead_fire_coral_block	Dead Fire Coral Block	Identical
+Dead Fire Coral Fan.png	dead_fire_coral_fan	Dead Fire Coral Fan	Identical
+Dead Fire Coral Wall Fan.png	dead_fire_coral_wall_fan	Dead Fire Coral Wall Fan	dead_fire_coral_fan
+Dead Horn Coral.png	dead_horn_coral	Dead Horn Coral	Identical
+Dead Horn Coral Block.png	dead_horn_coral_block	Dead Horn Coral Block	Identical
+Dead Horn Coral Fan.png	dead_horn_coral_fan	Dead Horn Coral Fan	Identical
+Dead Horn Coral Wall Fan.png	dead_horn_coral_wall_fan	Dead Horn Coral Wall Fan	dead_horn_coral_fan
+Dead Tube Coral.png	dead_tube_coral	Dead Tube Coral	Identical
+Dead Tube Coral Block.png	dead_tube_coral_block	Dead Tube Coral Block	Identical
+Dead Tube Coral Fan.png	dead_tube_coral_fan	Dead Tube Coral Fan	Identical
+Dead Tube Coral Wall Fan.png	dead_tube_coral_wall_fan	Dead Tube Coral Wall Fan	dead_tube_coral_fan
+Deepslate.png	deepslate	Deepslate	Identical
+Deepslate Brick Slab.png	deepslate_brick_slab	Deepslate Brick Slab	Identical
+Deepslate Brick Stairs.png	deepslate_brick_stairs	Deepslate Brick Stairs	Identical
+Deepslate Brick Wall.png	deepslate_brick_wall	Deepslate Brick Wall	Identical
+Deepslate Bricks.png	deepslate_bricks	Deepslate Bricks	Identical
+Deepslate Coal Ore.png	deepslate_coal_ore	Deepslate Coal Ore	Identical
+Deepslate Copper Ore.png	deepslate_copper_ore	Deepslate Copper Ore	Identical
+Deepslate Diamond Ore.png	deepslate_diamond_ore	Deepslate Diamond Ore	Identical
+Deepslate Emerald Ore.png	deepslate_emerald_ore	Deepslate Emerald Ore	Identical
+Deepslate Gold Ore.png	deepslate_gold_ore	Deepslate Gold Ore	Identical
+Deepslate Iron Ore.png	deepslate_iron_ore	Deepslate Iron Ore	Identical
+Deepslate Lapis Lazuli Ore.png	deepslate_lapis_ore	Deepslate Lapis Lazuli Ore	Identical
+Deepslate Redstone Ore.png	deepslate_redstone_ore	Deepslate Redstone Ore	Identical
+Deepslate Tile Slab.png	deepslate_tile_slab	Deepslate Tile Slab	Identical
+Deepslate Tile Stairs.png	deepslate_tile_stairs	Deepslate Tile Stairs	Identical
+Deepslate Tile Wall.png	deepslate_tile_wall	Deepslate Tile Wall	Identical
+Deepslate Tiles.png	deepslate_tiles	Deepslate Tiles	Identical
+Detector Rail.png	detector_rail	Detector Rail	Identical
+Block of Diamond.png	diamond_block	Block of Diamond	Identical
+Diamond Ore.png	diamond_ore	Diamond Ore	Identical
+Diorite.png	diorite	Diorite	Identical
+Diorite Slab.png	diorite_slab	Diorite Slab	Identical
+Diorite Stairs.png	diorite_stairs	Diorite Stairs	Identical
+Diorite Wall.png	diorite_wall	Diorite Wall	Identical
+Dirt.png	dirt	Dirt	Identical
+Dirt Path.png	dirt_path	Dirt Path	Identical
+Dispenser.png	dispenser	Dispenser	Identical
+Dragon Egg.png	dragon_egg	Dragon Egg	Identical
+Dragon Head.png	dragon_head	Dragon Head	Identical
+Dragon Wall Head.png	dragon_wall_head	Dragon Wall Head	dragon_head
+Dried Kelp Block.png	dried_kelp_block	Dried Kelp Block	Identical
+Dripstone Block.png	dripstone_block	Dripstone Block	Identical
+Dropper.png	dropper	Dropper	Identical
+Block of Emerald.png	emerald_block	Block of Emerald	Identical
+Emerald Ore.png	emerald_ore	Emerald Ore	Identical
+Enchanting Table.png	enchanting_table	Enchanting Table	Identical
+End Gateway.png	end_gateway	End Gateway	None
+End Portal.png	end_portal	End Portal	None
+End Portal Frame.png	end_portal_frame	End Portal Frame	Identical
+End Rod.png	end_rod	End Rod	Identical
+End Stone.png	end_stone	End Stone	Identical
+End Stone Brick Slab.png	end_stone_brick_slab	End Stone Brick Slab	Identical
+End Stone Brick Stairs.png	end_stone_brick_stairs	End Stone Brick Stairs	Identical
+End Stone Brick Wall.png	end_stone_brick_wall	End Stone Brick Wall	Identical
+End Stone Bricks.png	end_stone_bricks	End Stone Bricks	Identical
+Ender Chest.png	ender_chest	Ender Chest	Identical
+Exposed Copper.png	exposed_copper	Exposed Copper	Identical
+Exposed Cut Copper.png	exposed_cut_copper	Exposed Cut Copper	Identical
+Exposed Cut Copper Slab.png	exposed_cut_copper_slab	Exposed Cut Copper Slab	Identical
+Exposed Cut Copper Stairs.png	exposed_cut_copper_stairs	Exposed Cut Copper Stairs	Identical
+Farmland.png	farmland	Farmland	Identical
+Fern.png	fern	Fern	Identical
+Fire.png	fire	Fire	None
+Fire Coral.png	fire_coral	Fire Coral	Identical
+Fire Coral Block.png	fire_coral_block	Fire Coral Block	Identical
+Fire Coral Fan.png	fire_coral_fan	Fire Coral Fan	Identical
+Fire Coral Wall Fan.png	fire_coral_wall_fan	Fire Coral Wall Fan	fire_coral_fan
+Fletching Table.png	fletching_table	Fletching Table	Identical
+Flower Pot.png	flower_pot	Flower Pot	Identical
+Flowering Azalea.png	flowering_azalea	Flowering Azalea	Identical
+Flowering Azalea Leaves.png	flowering_azalea_leaves	Flowering Azalea Leaves	Identical
+Frosted Ice.png	frosted_ice	Frosted Ice	None
+Furnace.png	furnace	Furnace	Identical
+Gilded Blackstone.png	gilded_blackstone	Gilded Blackstone	Identical
+Glass.png	glass	Glass	Identical
+Glass Pane.png	glass_pane	Glass Pane	Identical
+Glow Lichen.png	glow_lichen	Glow Lichen	Identical
+Glowstone.png	glowstone	Glowstone	Identical
+Block of Gold.png	gold_block	Block of Gold	Identical
+Gold Ore.png	gold_ore	Gold Ore	Identical
+Granite.png	granite	Granite	Identical
+Granite Slab.png	granite_slab	Granite Slab	Identical
+Granite Stairs.png	granite_stairs	Granite Stairs	Identical
+Granite Wall.png	granite_wall	Granite Wall	Identical
+Grass.png	grass	Grass	Identical
+Grass Block.png	grass_block	Grass Block	Identical
+Gravel.png	gravel	Gravel	Identical
+Gray Banner.png	gray_banner	Gray Banner	Identical
+Gray Bed.png	gray_bed	Gray Bed	Identical
+Gray Candle.png	gray_candle	Gray Candle	Identical
+Cake with Gray Candle.png	gray_candle_cake	Cake with Gray Candle	cake
+Gray Carpet.png	gray_carpet	Gray Carpet	Identical
+Gray Concrete.png	gray_concrete	Gray Concrete	Identical
+Gray Concrete Powder.png	gray_concrete_powder	Gray Concrete Powder	Identical
+Gray Glazed Terracotta.png	gray_glazed_terracotta	Gray Glazed Terracotta	Identical
+Gray Shulker Box.png	gray_shulker_box	Gray Shulker Box	Identical
+Gray Stained Glass.png	gray_stained_glass	Gray Stained Glass	Identical
+Gray Stained Glass Pane.png	gray_stained_glass_pane	Gray Stained Glass Pane	Identical
+Gray Terracotta.png	gray_terracotta	Gray Terracotta	Identical
+Gray Wall Banner.png	gray_wall_banner	Gray Wall Banner	gray_banner
+Gray Wool.png	gray_wool	Gray Wool	Identical
+Green Banner.png	green_banner	Green Banner	Identical
+Green Bed.png	green_bed	Green Bed	Identical
+Green Candle.png	green_candle	Green Candle	Identical
+Cake with Green Candle.png	green_candle_cake	Cake with Green Candle	cake
+Green Carpet.png	green_carpet	Green Carpet	Identical
+Green Concrete.png	green_concrete	Green Concrete	Identical
+Green Concrete Powder.png	green_concrete_powder	Green Concrete Powder	Identical
+Green Glazed Terracotta.png	green_glazed_terracotta	Green Glazed Terracotta	Identical
+Green Shulker Box.png	green_shulker_box	Green Shulker Box	Identical
+Green Stained Glass.png	green_stained_glass	Green Stained Glass	Identical
+Green Stained Glass Pane.png	green_stained_glass_pane	Green Stained Glass Pane	Identical
+Green Terracotta.png	green_terracotta	Green Terracotta	Identical
+Green Wall Banner.png	green_wall_banner	Green Wall Banner	green_banner
+Green Wool.png	green_wool	Green Wool	Identical
+Grindstone.png	grindstone	Grindstone	Identical
+Hanging Roots.png	hanging_roots	Hanging Roots	Identical
+Hay Bale.png	hay_block	Hay Bale	Identical
+Heavy Weighted Pressure Plate.png	heavy_weighted_pressure_plate	Heavy Weighted Pressure Plate	Identical
+Honey Block.png	honey_block	Honey Block	Identical
+Honeycomb Block.png	honeycomb_block	Honeycomb Block	Identical
+Hopper.png	hopper	Hopper	Identical
+Horn Coral.png	horn_coral	Horn Coral	Identical
+Horn Coral Block.png	horn_coral_block	Horn Coral Block	Identical
+Horn Coral Fan.png	horn_coral_fan	Horn Coral Fan	Identical
+Horn Coral Wall Fan.png	horn_coral_wall_fan	Horn Coral Wall Fan	horn_coral_fan
+Ice.png	ice	Ice	Identical
+Infested Chiseled Stone Bricks.png	infested_chiseled_stone_bricks	Infested Chiseled Stone Bricks	Identical
+Infested Cobblestone.png	infested_cobblestone	Infested Cobblestone	Identical
+Infested Cracked Stone Bricks.png	infested_cracked_stone_bricks	Infested Cracked Stone Bricks	Identical
+Infested Deepslate.png	infested_deepslate	Infested Deepslate	Identical
+Infested Mossy Stone Bricks.png	infested_mossy_stone_bricks	Infested Mossy Stone Bricks	Identical
+Infested Stone.png	infested_stone	Infested Stone	Identical
+Infested Stone Bricks.png	infested_stone_bricks	Infested Stone Bricks	Identical
+Iron Bars.png	iron_bars	Iron Bars	Identical
+Block of Iron.png	iron_block	Block of Iron	Identical
+Iron Door.png	iron_door	Iron Door	Identical
+Iron Ore.png	iron_ore	Iron Ore	Identical
+Iron Trapdoor.png	iron_trapdoor	Iron Trapdoor	Identical
+Jack o'Lantern.png	jack_o_lantern	Jack o'Lantern	Identical
+Jigsaw Block.png	jigsaw	Jigsaw Block	Identical
+Jukebox.png	jukebox	Jukebox	Identical
+Jungle Button.png	jungle_button	Jungle Button	Identical
+Jungle Door.png	jungle_door	Jungle Door	Identical
+Jungle Fence.png	jungle_fence	Jungle Fence	Identical
+Jungle Fence Gate.png	jungle_fence_gate	Jungle Fence Gate	Identical
+Jungle Leaves.png	jungle_leaves	Jungle Leaves	Identical
+Jungle Log.png	jungle_log	Jungle Log	Identical
+Jungle Planks.png	jungle_planks	Jungle Planks	Identical
+Jungle Pressure Plate.png	jungle_pressure_plate	Jungle Pressure Plate	Identical
+Jungle Sapling.png	jungle_sapling	Jungle Sapling	Identical
+Jungle Sign.png	jungle_sign	Jungle Sign	Identical
+Jungle Slab.png	jungle_slab	Jungle Slab	Identical
+Jungle Stairs.png	jungle_stairs	Jungle Stairs	Identical
+Jungle Trapdoor.png	jungle_trapdoor	Jungle Trapdoor	Identical
+Jungle Wall Sign.png	jungle_wall_sign	Jungle Wall Sign	jungle_sign
+Jungle Wood.png	jungle_wood	Jungle Wood	Identical
+Kelp.png	kelp	Kelp	Identical
+Kelp Plant.png	kelp_plant	Kelp Plant	kelp
+Ladder.png	ladder	Ladder	Identical
+Lantern.png	lantern	Lantern	Identical
+Block of Lapis Lazuli.png	lapis_block	Block of Lapis Lazuli	Identical
+Lapis Lazuli Ore.png	lapis_ore	Lapis Lazuli Ore	Identical
+Large Amethyst Bud.png	large_amethyst_bud	Large Amethyst Bud	Identical
+Large Fern.png	large_fern	Large Fern	Identical
+Lava.png	lava	Lava	None
+Lava Cauldron.png	lava_cauldron	Lava Cauldron	cauldron
+Lectern.png	lectern	Lectern	Identical
+Lever.png	lever	Lever	Identical
+Light.png	light	Light	Identical
+Light Blue Banner.png	light_blue_banner	Light Blue Banner	Identical
+Light Blue Bed.png	light_blue_bed	Light Blue Bed	Identical
+Light Blue Candle.png	light_blue_candle	Light Blue Candle	Identical
+Cake with Light Blue Candle.png	light_blue_candle_cake	Cake with Light Blue Candle	cake
+Light Blue Carpet.png	light_blue_carpet	Light Blue Carpet	Identical
+Light Blue Concrete.png	light_blue_concrete	Light Blue Concrete	Identical
+Light Blue Concrete Powder.png	light_blue_concrete_powder	Light Blue Concrete Powder	Identical
+Light Blue Glazed Terracotta.png	light_blue_glazed_terracotta	Light Blue Glazed Terracotta	Identical
+Light Blue Shulker Box.png	light_blue_shulker_box	Light Blue Shulker Box	Identical
+Light Blue Stained Glass.png	light_blue_stained_glass	Light Blue Stained Glass	Identical
+Light Blue Stained Glass Pane.png	light_blue_stained_glass_pane	Light Blue Stained Glass Pane	Identical
+Light Blue Terracotta.png	light_blue_terracotta	Light Blue Terracotta	Identical
+Light Blue Wall Banner.png	light_blue_wall_banner	Light Blue Wall Banner	light_blue_banner
+Light Blue Wool.png	light_blue_wool	Light Blue Wool	Identical
+Light Gray Banner.png	light_gray_banner	Light Gray Banner	Identical
+Light Gray Bed.png	light_gray_bed	Light Gray Bed	Identical
+Light Gray Candle.png	light_gray_candle	Light Gray Candle	Identical
+Cake with Light Gray Candle.png	light_gray_candle_cake	Cake with Light Gray Candle	cake
+Light Gray Carpet.png	light_gray_carpet	Light Gray Carpet	Identical
+Light Gray Concrete.png	light_gray_concrete	Light Gray Concrete	Identical
+Light Gray Concrete Powder.png	light_gray_concrete_powder	Light Gray Concrete Powder	Identical
+Light Gray Glazed Terracotta.png	light_gray_glazed_terracotta	Light Gray Glazed Terracotta	Identical
+Light Gray Shulker Box.png	light_gray_shulker_box	Light Gray Shulker Box	Identical
+Light Gray Stained Glass.png	light_gray_stained_glass	Light Gray Stained Glass	Identical
+Light Gray Stained Glass Pane.png	light_gray_stained_glass_pane	Light Gray Stained Glass Pane	Identical
+Light Gray Terracotta.png	light_gray_terracotta	Light Gray Terracotta	Identical
+Light Gray Wall Banner.png	light_gray_wall_banner	Light Gray Wall Banner	light_gray_banner
+Light Gray Wool.png	light_gray_wool	Light Gray Wool	Identical
+Light Weighted Pressure Plate.png	light_weighted_pressure_plate	Light Weighted Pressure Plate	Identical
+Lightning Rod.png	lightning_rod	Lightning Rod	Identical
+Lilac.png	lilac	Lilac	Identical
+Lily of the Valley.png	lily_of_the_valley	Lily of the Valley	Identical
+Lily Pad.png	lily_pad	Lily Pad	Identical
+Lime Banner.png	lime_banner	Lime Banner	Identical
+Lime Bed.png	lime_bed	Lime Bed	Identical
+Lime Candle.png	lime_candle	Lime Candle	Identical
+Cake with Lime Candle.png	lime_candle_cake	Cake with Lime Candle	cake
+Lime Carpet.png	lime_carpet	Lime Carpet	Identical
+Lime Concrete.png	lime_concrete	Lime Concrete	Identical
+Lime Concrete Powder.png	lime_concrete_powder	Lime Concrete Powder	Identical
+Lime Glazed Terracotta.png	lime_glazed_terracotta	Lime Glazed Terracotta	Identical
+Lime Shulker Box.png	lime_shulker_box	Lime Shulker Box	Identical
+Lime Stained Glass.png	lime_stained_glass	Lime Stained Glass	Identical
+Lime Stained Glass Pane.png	lime_stained_glass_pane	Lime Stained Glass Pane	Identical
+Lime Terracotta.png	lime_terracotta	Lime Terracotta	Identical
+Lime Wall Banner.png	lime_wall_banner	Lime Wall Banner	lime_banner
+Lime Wool.png	lime_wool	Lime Wool	Identical
+Lodestone.png	lodestone	Lodestone	Identical
+Loom.png	loom	Loom	Identical
+Magenta Banner.png	magenta_banner	Magenta Banner	Identical
+Magenta Bed.png	magenta_bed	Magenta Bed	Identical
+Magenta Candle.png	magenta_candle	Magenta Candle	Identical
+Cake with Magenta Candle.png	magenta_candle_cake	Cake with Magenta Candle	cake
+Magenta Carpet.png	magenta_carpet	Magenta Carpet	Identical
+Magenta Concrete.png	magenta_concrete	Magenta Concrete	Identical
+Magenta Concrete Powder.png	magenta_concrete_powder	Magenta Concrete Powder	Identical
+Magenta Glazed Terracotta.png	magenta_glazed_terracotta	Magenta Glazed Terracotta	Identical
+Magenta Shulker Box.png	magenta_shulker_box	Magenta Shulker Box	Identical
+Magenta Stained Glass.png	magenta_stained_glass	Magenta Stained Glass	Identical
+Magenta Stained Glass Pane.png	magenta_stained_glass_pane	Magenta Stained Glass Pane	Identical
+Magenta Terracotta.png	magenta_terracotta	Magenta Terracotta	Identical
+Magenta Wall Banner.png	magenta_wall_banner	Magenta Wall Banner	magenta_banner
+Magenta Wool.png	magenta_wool	Magenta Wool	Identical
+Magma Block.png	magma_block	Magma Block	Identical
+Medium Amethyst Bud.png	medium_amethyst_bud	Medium Amethyst Bud	Identical
+Melon.png	melon	Melon	Identical
+Melon Stem.png	melon_stem	Melon Stem	melon_seeds
+Moss Block.png	moss_block	Moss Block	Identical
+Moss Carpet.png	moss_carpet	Moss Carpet	Identical
+Mossy Cobblestone.png	mossy_cobblestone	Mossy Cobblestone	Identical
+Mossy Cobblestone Slab.png	mossy_cobblestone_slab	Mossy Cobblestone Slab	Identical
+Mossy Cobblestone Stairs.png	mossy_cobblestone_stairs	Mossy Cobblestone Stairs	Identical
+Mossy Cobblestone Wall.png	mossy_cobblestone_wall	Mossy Cobblestone Wall	Identical
+Mossy Stone Brick Slab.png	mossy_stone_brick_slab	Mossy Stone Brick Slab	Identical
+Mossy Stone Brick Stairs.png	mossy_stone_brick_stairs	Mossy Stone Brick Stairs	Identical
+Mossy Stone Brick Wall.png	mossy_stone_brick_wall	Mossy Stone Brick Wall	Identical
+Mossy Stone Bricks.png	mossy_stone_bricks	Mossy Stone Bricks	Identical
+Moving Piston.png	moving_piston	Moving Piston	None
+Mushroom Stem.png	mushroom_stem	Mushroom Stem	Identical
+Mycelium.png	mycelium	Mycelium	Identical
+Nether Brick Fence.png	nether_brick_fence	Nether Brick Fence	Identical
+Nether Brick Slab.png	nether_brick_slab	Nether Brick Slab	Identical
+Nether Brick Stairs.png	nether_brick_stairs	Nether Brick Stairs	Identical
+Nether Brick Wall.png	nether_brick_wall	Nether Brick Wall	Identical
+Nether Bricks.png	nether_bricks	Nether Bricks	Identical
+Nether Gold Ore.png	nether_gold_ore	Nether Gold Ore	Identical
+Nether Portal.png	nether_portal	Nether Portal	None
+Nether Quartz Ore.png	nether_quartz_ore	Nether Quartz Ore	Identical
+Nether Sprouts.png	nether_sprouts	Nether Sprouts	Identical
+Nether Wart.png	nether_wart	Nether Wart	Identical
+Nether Wart Block.png	nether_wart_block	Nether Wart Block	Identical
+Block of Netherite.png	netherite_block	Block of Netherite	Identical
+Netherrack.png	netherrack	Netherrack	Identical
+Note Block.png	note_block	Note Block	Identical
+Oak Button.png	oak_button	Oak Button	Identical
+Oak Door.png	oak_door	Oak Door	Identical
+Oak Fence.png	oak_fence	Oak Fence	Identical
+Oak Fence Gate.png	oak_fence_gate	Oak Fence Gate	Identical
+Oak Leaves.png	oak_leaves	Oak Leaves	Identical
+Oak Log.png	oak_log	Oak Log	Identical
+Oak Planks.png	oak_planks	Oak Planks	Identical
+Oak Pressure Plate.png	oak_pressure_plate	Oak Pressure Plate	Identical
+Oak Sapling.png	oak_sapling	Oak Sapling	Identical
+Oak Sign.png	oak_sign	Oak Sign	Identical
+Oak Slab.png	oak_slab	Oak Slab	Identical
+Oak Stairs.png	oak_stairs	Oak Stairs	Identical
+Oak Trapdoor.png	oak_trapdoor	Oak Trapdoor	Identical
+Oak Wall Sign.png	oak_wall_sign	Oak Wall Sign	oak_sign
+Oak Wood.png	oak_wood	Oak Wood	Identical
+Observer.png	observer	Observer	Identical
+Obsidian.png	obsidian	Obsidian	Identical
+Orange Banner.png	orange_banner	Orange Banner	Identical
+Orange Bed.png	orange_bed	Orange Bed	Identical
+Orange Candle.png	orange_candle	Orange Candle	Identical
+Cake with Orange Candle.png	orange_candle_cake	Cake with Orange Candle	cake
+Orange Carpet.png	orange_carpet	Orange Carpet	Identical
+Orange Concrete.png	orange_concrete	Orange Concrete	Identical
+Orange Concrete Powder.png	orange_concrete_powder	Orange Concrete Powder	Identical
+Orange Glazed Terracotta.png	orange_glazed_terracotta	Orange Glazed Terracotta	Identical
+Orange Shulker Box.png	orange_shulker_box	Orange Shulker Box	Identical
+Orange Stained Glass.png	orange_stained_glass	Orange Stained Glass	Identical
+Orange Stained Glass Pane.png	orange_stained_glass_pane	Orange Stained Glass Pane	Identical
+Orange Terracotta.png	orange_terracotta	Orange Terracotta	Identical
+Orange Tulip.png	orange_tulip	Orange Tulip	Identical
+Orange Wall Banner.png	orange_wall_banner	Orange Wall Banner	orange_banner
+Orange Wool.png	orange_wool	Orange Wool	Identical
+Oxeye Daisy.png	oxeye_daisy	Oxeye Daisy	Identical
+Oxidized Copper.png	oxidized_copper	Oxidized Copper	Identical
+Oxidized Cut Copper.png	oxidized_cut_copper	Oxidized Cut Copper	Identical
+Oxidized Cut Copper Slab.png	oxidized_cut_copper_slab	Oxidized Cut Copper Slab	Identical
+Oxidized Cut Copper Stairs.png	oxidized_cut_copper_stairs	Oxidized Cut Copper Stairs	Identical
+Packed Ice.png	packed_ice	Packed Ice	Identical
+Peony.png	peony	Peony	Identical
+Petrified Oak Slab.png	petrified_oak_slab	Petrified Oak Slab	Identical
+Pink Banner.png	pink_banner	Pink Banner	Identical
+Pink Bed.png	pink_bed	Pink Bed	Identical
+Pink Candle.png	pink_candle	Pink Candle	Identical
+Cake with Pink Candle.png	pink_candle_cake	Cake with Pink Candle	cake
+Pink Carpet.png	pink_carpet	Pink Carpet	Identical
+Pink Concrete.png	pink_concrete	Pink Concrete	Identical
+Pink Concrete Powder.png	pink_concrete_powder	Pink Concrete Powder	Identical
+Pink Glazed Terracotta.png	pink_glazed_terracotta	Pink Glazed Terracotta	Identical
+Pink Shulker Box.png	pink_shulker_box	Pink Shulker Box	Identical
+Pink Stained Glass.png	pink_stained_glass	Pink Stained Glass	Identical
+Pink Stained Glass Pane.png	pink_stained_glass_pane	Pink Stained Glass Pane	Identical
+Pink Terracotta.png	pink_terracotta	Pink Terracotta	Identical
+Pink Tulip.png	pink_tulip	Pink Tulip	Identical
+Pink Wall Banner.png	pink_wall_banner	Pink Wall Banner	pink_banner
+Pink Wool.png	pink_wool	Pink Wool	Identical
+Piston.png	piston	Piston	Identical
+Piston Head.png	piston_head	Piston Head	None
+Player Head.png	player_head	Player Head	Identical
+Player Wall Head.png	player_wall_head	Player Wall Head	player_head
+Podzol.png	podzol	Podzol	Identical
+Pointed Dripstone.png	pointed_dripstone	Pointed Dripstone	Identical
+Polished Andesite.png	polished_andesite	Polished Andesite	Identical
+Polished Andesite Slab.png	polished_andesite_slab	Polished Andesite Slab	Identical
+Polished Andesite Stairs.png	polished_andesite_stairs	Polished Andesite Stairs	Identical
+Polished Basalt.png	polished_basalt	Polished Basalt	Identical
+Polished Blackstone.png	polished_blackstone	Polished Blackstone	Identical
+Polished Blackstone Brick Slab.png	polished_blackstone_brick_slab	Polished Blackstone Brick Slab	Identical
+Polished Blackstone Brick Stairs.png	polished_blackstone_brick_stairs	Polished Blackstone Brick Stairs	Identical
+Polished Blackstone Brick Wall.png	polished_blackstone_brick_wall	Polished Blackstone Brick Wall	Identical
+Polished Blackstone Bricks.png	polished_blackstone_bricks	Polished Blackstone Bricks	Identical
+Polished Blackstone Button.png	polished_blackstone_button	Polished Blackstone Button	Identical
+Polished Blackstone Pressure Plate.png	polished_blackstone_pressure_plate	Polished Blackstone Pressure Plate	Identical
+Polished Blackstone Slab.png	polished_blackstone_slab	Polished Blackstone Slab	Identical
+Polished Blackstone Stairs.png	polished_blackstone_stairs	Polished Blackstone Stairs	Identical
+Polished Blackstone Wall.png	polished_blackstone_wall	Polished Blackstone Wall	Identical
+Polished Deepslate.png	polished_deepslate	Polished Deepslate	Identical
+Polished Deepslate Slab.png	polished_deepslate_slab	Polished Deepslate Slab	Identical
+Polished Deepslate Stairs.png	polished_deepslate_stairs	Polished Deepslate Stairs	Identical
+Polished Deepslate Wall.png	polished_deepslate_wall	Polished Deepslate Wall	Identical
+Polished Diorite.png	polished_diorite	Polished Diorite	Identical
+Polished Diorite Slab.png	polished_diorite_slab	Polished Diorite Slab	Identical
+Polished Diorite Stairs.png	polished_diorite_stairs	Polished Diorite Stairs	Identical
+Polished Granite.png	polished_granite	Polished Granite	Identical
+Polished Granite Slab.png	polished_granite_slab	Polished Granite Slab	Identical
+Polished Granite Stairs.png	polished_granite_stairs	Polished Granite Stairs	Identical
+Poppy.png	poppy	Poppy	Identical
+Potatoes.png	potatoes	Potatoes	potato
+Potted Acacia Sapling.png	potted_acacia_sapling	Potted Acacia Sapling	acacia_sapling
+Potted Allium.png	potted_allium	Potted Allium	allium
+Potted Azalea.png	potted_azalea_bush	Potted Azalea	azalea_bush
+Potted Azure Bluet.png	potted_azure_bluet	Potted Azure Bluet	azure_bluet
+Potted Bamboo.png	potted_bamboo	Potted Bamboo	bamboo
+Potted Birch Sapling.png	potted_birch_sapling	Potted Birch Sapling	birch_sapling
+Potted Blue Orchid.png	potted_blue_orchid	Potted Blue Orchid	blue_orchid
+Potted Brown Mushroom.png	potted_brown_mushroom	Potted Brown Mushroom	brown_mushroom
+Potted Cactus.png	potted_cactus	Potted Cactus	cactus
+Potted Cornflower.png	potted_cornflower	Potted Cornflower	cornflower
+Potted Crimson Fungus.png	potted_crimson_fungus	Potted Crimson Fungus	crimson_fungus
+Potted Crimson Roots.png	potted_crimson_roots	Potted Crimson Roots	crimson_roots
+Potted Dandelion.png	potted_dandelion	Potted Dandelion	dandelion
+Potted Dark Oak Sapling.png	potted_dark_oak_sapling	Potted Dark Oak Sapling	dark_oak_sapling
+Potted Dead Bush.png	potted_dead_bush	Potted Dead Bush	dead_bush
+Potted Fern.png	potted_fern	Potted Fern	fern
+Potted Flowering Azalea.png	potted_flowering_azalea_bush	Potted Flowering Azalea	flowering_azalea
+Potted Jungle Sapling.png	potted_jungle_sapling	Potted Jungle Sapling	jungle_sapling
+Potted Lily of the Valley.png	potted_lily_of_the_valley	Potted Lily of the Valley	lily_of_the_valley
+Potted Oak Sapling.png	potted_oak_sapling	Potted Oak Sapling	oak_sapling
+Potted Orange Tulip.png	potted_orange_tulip	Potted Orange Tulip	orange_tulip
+Potted Oxeye Daisy.png	potted_oxeye_daisy	Potted Oxeye Daisy	oxeye_daisy
+Potted Pink Tulip.png	potted_pink_tulip	Potted Pink Tulip	pink_tulip
+Potted Poppy.png	potted_poppy	Potted Poppy	poppy
+Potted Red Mushroom.png	potted_red_mushroom	Potted Red Mushroom	red_mushroom
+Potted Red Tulip.png	potted_red_tulip	Potted Red Tulip	red_tulip
+Potted Spruce Sapling.png	potted_spruce_sapling	Potted Spruce Sapling	spruce_sapling
+Potted Warped Fungus.png	potted_warped_fungus	Potted Warped Fungus	warped_fungus
+Potted Warped Roots.png	potted_warped_roots	Potted Warped Roots	warped_roots
+Potted White Tulip.png	potted_white_tulip	Potted White Tulip	white_tulip
+Potted Wither Rose.png	potted_wither_rose	Potted Wither Rose	wither_rose
+Powder Snow.png	powder_snow	Powder Snow	powder_snow_bucket
+Powder Snow Cauldron.png	powder_snow_cauldron	Powder Snow Cauldron	cauldron
+Powered Rail.png	powered_rail	Powered Rail	Identical
+Prismarine.png	prismarine	Prismarine	Identical
+Prismarine Brick Slab.png	prismarine_brick_slab	Prismarine Brick Slab	Identical
+Prismarine Brick Stairs.png	prismarine_brick_stairs	Prismarine Brick Stairs	Identical
+Prismarine Bricks.png	prismarine_bricks	Prismarine Bricks	Identical
+Prismarine Slab.png	prismarine_slab	Prismarine Slab	Identical
+Prismarine Stairs.png	prismarine_stairs	Prismarine Stairs	Identical
+Prismarine Wall.png	prismarine_wall	Prismarine Wall	Identical
+Pumpkin.png	pumpkin	Pumpkin	Identical
+Pumpkin Stem.png	pumpkin_stem	Pumpkin Stem	pumpkin_seeds
+Purple Banner.png	purple_banner	Purple Banner	Identical
+Purple Bed.png	purple_bed	Purple Bed	Identical
+Purple Candle.png	purple_candle	Purple Candle	Identical
+Cake with Purple Candle.png	purple_candle_cake	Cake with Purple Candle	cake
+Purple Carpet.png	purple_carpet	Purple Carpet	Identical
+Purple Concrete.png	purple_concrete	Purple Concrete	Identical
+Purple Concrete Powder.png	purple_concrete_powder	Purple Concrete Powder	Identical
+Purple Glazed Terracotta.png	purple_glazed_terracotta	Purple Glazed Terracotta	Identical
+Purple Shulker Box.png	purple_shulker_box	Purple Shulker Box	Identical
+Purple Stained Glass.png	purple_stained_glass	Purple Stained Glass	Identical
+Purple Stained Glass Pane.png	purple_stained_glass_pane	Purple Stained Glass Pane	Identical
+Purple Terracotta.png	purple_terracotta	Purple Terracotta	Identical
+Purple Wall Banner.png	purple_wall_banner	Purple Wall Banner	purple_banner
+Purple Wool.png	purple_wool	Purple Wool	Identical
+Purpur Block.png	purpur_block	Purpur Block	Identical
+Purpur Pillar.png	purpur_pillar	Purpur Pillar	Identical
+Purpur Slab.png	purpur_slab	Purpur Slab	Identical
+Purpur Stairs.png	purpur_stairs	Purpur Stairs	Identical
+Block of Quartz.png	quartz_block	Block of Quartz	Identical
+Quartz Bricks.png	quartz_bricks	Quartz Bricks	Identical
+Quartz Pillar.png	quartz_pillar	Quartz Pillar	Identical
+Quartz Slab.png	quartz_slab	Quartz Slab	Identical
+Quartz Stairs.png	quartz_stairs	Quartz Stairs	Identical
+Rail.png	rail	Rail	Identical
+Block of Raw Copper.png	raw_copper_block	Block of Raw Copper	Identical
+Block of Raw Gold.png	raw_gold_block	Block of Raw Gold	Identical
+Block of Raw Iron.png	raw_iron_block	Block of Raw Iron	Identical
+Red Banner.png	red_banner	Red Banner	Identical
+Red Bed.png	red_bed	Red Bed	Identical
+Red Candle.png	red_candle	Red Candle	Identical
+Cake with Red Candle.png	red_candle_cake	Cake with Red Candle	cake
+Red Carpet.png	red_carpet	Red Carpet	Identical
+Red Concrete.png	red_concrete	Red Concrete	Identical
+Red Concrete Powder.png	red_concrete_powder	Red Concrete Powder	Identical
+Red Glazed Terracotta.png	red_glazed_terracotta	Red Glazed Terracotta	Identical
+Red Mushroom.png	red_mushroom	Red Mushroom	Identical
+Red Mushroom Block.png	red_mushroom_block	Red Mushroom Block	Identical
+Red Nether Brick Slab.png	red_nether_brick_slab	Red Nether Brick Slab	Identical
+Red Nether Brick Stairs.png	red_nether_brick_stairs	Red Nether Brick Stairs	Identical
+Red Nether Brick Wall.png	red_nether_brick_wall	Red Nether Brick Wall	Identical
+Red Nether Bricks.png	red_nether_bricks	Red Nether Bricks	Identical
+Red Sand.png	red_sand	Red Sand	Identical
+Red Sandstone.png	red_sandstone	Red Sandstone	Identical
+Red Sandstone Slab.png	red_sandstone_slab	Red Sandstone Slab	Identical
+Red Sandstone Stairs.png	red_sandstone_stairs	Red Sandstone Stairs	Identical
+Red Sandstone Wall.png	red_sandstone_wall	Red Sandstone Wall	Identical
+Red Shulker Box.png	red_shulker_box	Red Shulker Box	Identical
+Red Stained Glass.png	red_stained_glass	Red Stained Glass	Identical
+Red Stained Glass Pane.png	red_stained_glass_pane	Red Stained Glass Pane	Identical
+Red Terracotta.png	red_terracotta	Red Terracotta	Identical
+Red Tulip.png	red_tulip	Red Tulip	Identical
+Red Wall Banner.png	red_wall_banner	Red Wall Banner	red_banner
+Red Wool.png	red_wool	Red Wool	Identical
+Block of Redstone.png	redstone_block	Block of Redstone	Identical
+Redstone Lamp.png	redstone_lamp	Redstone Lamp	Identical
+Redstone Ore.png	redstone_ore	Redstone Ore	Identical
+Redstone Torch.png	redstone_torch	Redstone Torch	Identical
+Redstone Wall Torch.png	redstone_wall_torch	Redstone Wall Torch	redstone_torch
+Redstone Wire.png	redstone_wire	Redstone Wire	redstone
+Redstone Repeater.png	repeater	Redstone Repeater	Identical
+Repeating Command Block.png	repeating_command_block	Repeating Command Block	Identical
+Respawn Anchor.png	respawn_anchor	Respawn Anchor	Identical
+Rooted Dirt.png	rooted_dirt	Rooted Dirt	Identical
+Rose Bush.png	rose_bush	Rose Bush	Identical
+Sand.png	sand	Sand	Identical
+Sandstone.png	sandstone	Sandstone	Identical
+Sandstone Slab.png	sandstone_slab	Sandstone Slab	Identical
+Sandstone Stairs.png	sandstone_stairs	Sandstone Stairs	Identical
+Sandstone Wall.png	sandstone_wall	Sandstone Wall	Identical
+Scaffolding.png	scaffolding	Scaffolding	Identical
+Sculk Sensor.png	sculk_sensor	Sculk Sensor	Identical
+Sea Lantern.png	sea_lantern	Sea Lantern	Identical
+Sea Pickle.png	sea_pickle	Sea Pickle	Identical
+Seagrass.png	seagrass	Seagrass	Identical
+Shroomlight.png	shroomlight	Shroomlight	Identical
+Shulker Box.png	shulker_box	Shulker Box	Identical
+Skeleton Skull.png	skeleton_skull	Skeleton Skull	Identical
+File:Skeleton Wall Skull.png	skeleton_wall_skull	Skeleton Wall Skull	skeleton_skull
+Slime Block.png	slime_block	Slime Block	Identical
+Small Amethyst Bud.png	small_amethyst_bud	Small Amethyst Bud	Identical
+Small Dripleaf.png	small_dripleaf	Small Dripleaf	Identical
+Smithing Table.png	smithing_table	Smithing Table	Identical
+Smoker.png	smoker	Smoker	Identical
+Smooth Basalt.png	smooth_basalt	Smooth Basalt	Identical
+Smooth Quartz Block.png	smooth_quartz	Smooth Quartz Block	Identical
+Smooth Quartz Slab.png	smooth_quartz_slab	Smooth Quartz Slab	Identical
+Smooth Quartz Stairs.png	smooth_quartz_stairs	Smooth Quartz Stairs	Identical
+Smooth Red Sandstone.png	smooth_red_sandstone	Smooth Red Sandstone	Identical
+Smooth Red Sandstone Slab.png	smooth_red_sandstone_slab	Smooth Red Sandstone Slab	Identical
+Smooth Red Sandstone Stairs.png	smooth_red_sandstone_stairs	Smooth Red Sandstone Stairs	Identical
+Smooth Sandstone.png	smooth_sandstone	Smooth Sandstone	Identical
+Smooth Sandstone Slab.png	smooth_sandstone_slab	Smooth Sandstone Slab	Identical
+Smooth Sandstone Stairs.png	smooth_sandstone_stairs	Smooth Sandstone Stairs	Identical
+Smooth Stone.png	smooth_stone	Smooth Stone	Identical
+Smooth Stone Slab.png	smooth_stone_slab	Smooth Stone Slab	Identical
+Snow.png	snow	Snow	Identical
+Snow Block.png	snow_block	Snow Block	Identical
+Soul Campfire.png	soul_campfire	Soul Campfire	Identical
+Soul Fire.png	soul_fire	Soul Fire	None
+Soul Lantern.png	soul_lantern	Soul Lantern	Identical
+Soul Sand.png	soul_sand	Soul Sand	Identical
+Soul Soil.png	soul_soil	Soul Soil	Identical
+Soul Torch.png	soul_torch	Soul Torch	Identical
+Soul Wall Torch.png	soul_wall_torch	Soul Wall Torch	soul_torch
+Spawner.png	spawner	Spawner	Identical
+Sponge.png	sponge	Sponge	Identical
+Spore Blossom.png	spore_blossom	Spore Blossom	Identical
+Spruce Button.png	spruce_button	Spruce Button	Identical
+Spruce Door.png	spruce_door	Spruce Door	Identical
+Spruce Fence.png	spruce_fence	Spruce Fence	Identical
+Spruce Fence Gate.png	spruce_fence_gate	Spruce Fence Gate	Identical
+Spruce Leaves.png	spruce_leaves	Spruce Leaves	Identical
+Spruce Log.png	spruce_log	Spruce Log	Identical
+Spruce Planks.png	spruce_planks	Spruce Planks	Identical
+Spruce Pressure Plate.png	spruce_pressure_plate	Spruce Pressure Plate	Identical
+Spruce Sapling.png	spruce_sapling	Spruce Sapling	Identical
+Spruce Sign.png	spruce_sign	Spruce Sign	Identical
+Spruce Slab.png	spruce_slab	Spruce Slab	Identical
+Spruce Stairs.png	spruce_stairs	Spruce Stairs	Identical
+Spruce Trapdoor.png	spruce_trapdoor	Spruce Trapdoor	Identical
+Spruce Wall Sign.png	spruce_wall_sign	Spruce Wall Sign	spruce_sign
+Spruce Wood.png	spruce_wood	Spruce Wood	Identical
+Sticky Piston.png	sticky_piston	Sticky Piston	Identical
+Stone.png	stone	Stone	Identical
+Stone Brick Slab.png	stone_brick_slab	Stone Brick Slab	Identical
+Stone Brick Stairs.png	stone_brick_stairs	Stone Brick Stairs	Identical
+Stone Brick Wall.png	stone_brick_wall	Stone Brick Wall	Identical
+Stone Bricks.png	stone_bricks	Stone Bricks	Identical
+Stone Button.png	stone_button	Stone Button	Identical
+Stone Pressure Plate.png	stone_pressure_plate	Stone Pressure Plate	Identical
+Stone Slab.png	stone_slab	Stone Slab	Identical
+Stone Stairs.png	stone_stairs	Stone Stairs	Identical
+Stonecutter.png	stonecutter	Stonecutter	Identical
+Stripped Acacia Log.png	stripped_acacia_log	Stripped Acacia Log	Identical
+Stripped Acacia Wood.png	stripped_acacia_wood	Stripped Acacia Wood	Identical
+Stripped Birch Log.png	stripped_birch_log	Stripped Birch Log	Identical
+Stripped Birch Wood.png	stripped_birch_wood	Stripped Birch Wood	Identical
+Stripped Crimson Hyphae.png	stripped_crimson_hyphae	Stripped Crimson Hyphae	Identical
+Stripped Crimson Stem.png	stripped_crimson_stem	Stripped Crimson Stem	Identical
+Stripped Dark Oak Log.png	stripped_dark_oak_log	Stripped Dark Oak Log	Identical
+Stripped Dark Oak Wood.png	stripped_dark_oak_wood	Stripped Dark Oak Wood	Identical
+Stripped Jungle Log.png	stripped_jungle_log	Stripped Jungle Log	Identical
+Stripped Jungle Wood.png	stripped_jungle_wood	Stripped Jungle Wood	Identical
+Stripped Oak Log.png	stripped_oak_log	Stripped Oak Log	Identical
+Stripped Oak Wood.png	stripped_oak_wood	Stripped Oak Wood	Identical
+Stripped Spruce Log.png	stripped_spruce_log	Stripped Spruce Log	Identical
+Stripped Spruce Wood.png	stripped_spruce_wood	Stripped Spruce Wood	Identical
+Stripped Warped Hyphae.png	stripped_warped_hyphae	Stripped Warped Hyphae	Identical
+Stripped Warped Stem.png	stripped_warped_stem	Stripped Warped Stem	Identical
+Structure Block.png	structure_block	Structure Block	Identical
+Structure Void.png	structure_void	Structure Void	Identical
+Sugar Cane.png	sugar_cane	Sugar Cane	Identical
+Sunflower.png	sunflower	Sunflower	Identical
+Sweet Berry Bush.png	sweet_berry_bush	Sweet Berry Bush	sweet_berries
+Tall Grass.png	tall_grass	Tall Grass	Identical
+Tall Seagrass.png	tall_seagrass	Tall Seagrass	seagrass
+Target.png	target	Target	Identical
+Terracotta.png	terracotta	Terracotta	Identical
+Tinted Glass.png	tinted_glass	Tinted Glass	Identical
+TNT.png	tnt	TNT	Identical
+Torch.png	torch	Torch	Identical
+Trapped Chest.png	trapped_chest	Trapped Chest	Identical
+Tripwire.png	tripwire	Tripwire	string
+Tripwire Hook.png	tripwire_hook	Tripwire Hook	Identical
+Tube Coral.png	tube_coral	Tube Coral	Identical
+Tube Coral Block.png	tube_coral_block	Tube Coral Block	Identical
+Tube Coral Fan.png	tube_coral_fan	Tube Coral Fan	Identical
+Tube Coral Wall Fan.png	tube_coral_wall_fan	Tube Coral Wall Fan	tube_coral_fan
+Tuff.png	tuff	Tuff	Identical
+Turtle Egg.png	turtle_egg	Turtle Egg	Identical
+Twisting Vines.png	twisting_vines	Twisting Vines	Identical
+Twisting Vines Plant.png	twisting_vines_plant	Twisting Vines Plant	twisting_vines
+Vines.png	vine	Vines	Identical
+Void Air.png	void_air	Void Air	None
+Wall Torch.png	wall_torch	Wall Torch	torch
+Warped Button.png	warped_button	Warped Button	Identical
+Warped Door.png	warped_door	Warped Door	Identical
+Warped Fence.png	warped_fence	Warped Fence	Identical
+Warped Fence Gate.png	warped_fence_gate	Warped Fence Gate	Identical
+Warped Fungus.png	warped_fungus	Warped Fungus	Identical
+Warped Hyphae.png	warped_hyphae	Warped Hyphae	Identical
+Warped Nylium.png	warped_nylium	Warped Nylium	Identical
+Warped Planks.png	warped_planks	Warped Planks	Identical
+Warped Pressure Plate.png	warped_pressure_plate	Warped Pressure Plate	Identical
+Warped Roots.png	warped_roots	Warped Roots	Identical
+Warped Sign.png	warped_sign	Warped Sign	Identical
+Warped Slab.png	warped_slab	Warped Slab	Identical
+Warped Stairs.png	warped_stairs	Warped Stairs	Identical
+Warped Stem.png	warped_stem	Warped Stem	Identical
+Warped Trapdoor.png	warped_trapdoor	Warped Trapdoor	Identical
+Warped Wall Sign.png	warped_wall_sign	Warped Wall Sign	warped_sign
+Warped Wart Block.png	warped_wart_block	Warped Wart Block	Identical
+Water.png	water	Water	None
+Water Cauldron.png	water_cauldron	Water Cauldron	cauldron
+Waxed Block of Copper.png	waxed_copper_block	Waxed Block of Copper	Identical
+Waxed Cut Copper.png	waxed_cut_copper	Waxed Cut Copper	Identical
+Waxed Cut Copper Slab.png	waxed_cut_copper_slab	Waxed Cut Copper Slab	Identical
+Waxed Cut Copper Stairs.png	waxed_cut_copper_stairs	Waxed Cut Copper Stairs	Identical
+Waxed Exposed Copper.png	waxed_exposed_copper	Waxed Exposed Copper	Identical
+Waxed Exposed Cut Copper.png	waxed_exposed_cut_copper	Waxed Exposed Cut Copper	Identical
+Waxed Exposed Cut Copper Slab.png	waxed_exposed_cut_copper_slab	Waxed Exposed Cut Copper Slab	Identical
+Waxed Exposed Cut Copper Stairs.png	waxed_exposed_cut_copper_stairs	Waxed Exposed Cut Copper Stairs	Identical
+Waxed Oxidized Copper.png	waxed_oxidized_copper	Waxed Oxidized Copper	Identical
+Waxed Oxidized Cut Copper.png	waxed_oxidized_cut_copper	Waxed Oxidized Cut Copper	Identical
+Waxed Oxidized Cut Copper Slab.png	waxed_oxidized_cut_copper_slab	Waxed Oxidized Cut Copper Slab	Identical
+Waxed Oxidized Cut Copper Stairs.png	waxed_oxidized_cut_copper_stairs	Waxed Oxidized Cut Copper Stairs	Identical
+Waxed Weathered Copper.png	waxed_weathered_copper	Waxed Weathered Copper	Identical
+Waxed Weathered Cut Copper.png	waxed_weathered_cut_copper	Waxed Weathered Cut Copper	Identical
+Waxed Weathered Cut Copper Slab.png	waxed_weathered_cut_copper_slab	Waxed Weathered Cut Copper Slab	Identical
+Waxed Weathered Cut Copper Stairs.png	waxed_weathered_cut_copper_stairs	Waxed Weathered Cut Copper Stairs	Identical
+Weathered Copper.png	weathered_copper	Weathered Copper	Identical
+Weathered Cut Copper.png	weathered_cut_copper	Weathered Cut Copper	Identical
+Weathered Cut Copper Slab.png	weathered_cut_copper_slab	Weathered Cut Copper Slab	Identical
+Weathered Cut Copper Stairs.png	weathered_cut_copper_stairs	Weathered Cut Copper Stairs	Identical
+Weeping Vines.png	weeping_vines	Weeping Vines	Identical
+Weeping Vines Plant.png	weeping_vines_plant	Weeping Vines Plant	weeping_vines
+Wet Sponge.png	wet_sponge	Wet Sponge	Identical
+Wheat Crops.png	wheat	Wheat Crops	wheat_seeds
+White Banner.png	white_banner	White Banner	Identical
+White Bed.png	white_bed	White Bed	Identical
+White Candle.png	white_candle	White Candle	Identical
+Cake with White Candle.png	white_candle_cake	Cake with White Candle	cake
+White Carpet.png	white_carpet	White Carpet	Identical
+White Concrete.png	white_concrete	White Concrete	Identical
+White Concrete Powder.png	white_concrete_powder	White Concrete Powder	Identical
+White Glazed Terracotta.png	white_glazed_terracotta	White Glazed Terracotta	Identical
+White Shulker Box.png	white_shulker_box	White Shulker Box	Identical
+White Stained Glass.png	white_stained_glass	White Stained Glass	Identical
+White Stained Glass Pane.png	white_stained_glass_pane	White Stained Glass Pane	Identical
+White Terracotta.png	white_terracotta	White Terracotta	Identical
+White Tulip.png	white_tulip	White Tulip	Identical
+White Wall Banner.png	white_wall_banner	White Wall Banner	white_banner
+White Wool.png	white_wool	White Wool	Identical
+Wither Rose.png	wither_rose	Wither Rose	Identical
+Wither Skeleton Skull.png	wither_skeleton_skull	Wither Skeleton Skull	Identical
+File:Wither Skeleton Wall Skull.png	wither_skeleton_wall_skull	Wither Skeleton Wall Skull	wither_skeleton_skull
+Yellow Banner.png	yellow_banner	Yellow Banner	Identical
+Yellow Bed.png	yellow_bed	Yellow Bed	Identical
+Yellow Candle.png	yellow_candle	Yellow Candle	Identical
+Cake with Yellow Candle.png	yellow_candle_cake	Cake with Yellow Candle	cake
+Yellow Carpet.png	yellow_carpet	Yellow Carpet	Identical
+Yellow Concrete.png	yellow_concrete	Yellow Concrete	Identical
+Yellow Concrete Powder.png	yellow_concrete_powder	Yellow Concrete Powder	Identical
+Yellow Glazed Terracotta.png	yellow_glazed_terracotta	Yellow Glazed Terracotta	Identical
+Yellow Shulker Box.png	yellow_shulker_box	Yellow Shulker Box	Identical
+Yellow Stained Glass.png	yellow_stained_glass	Yellow Stained Glass	Identical
+Yellow Stained Glass Pane.png	yellow_stained_glass_pane	Yellow Stained Glass Pane	Identical
+Yellow Terracotta.png	yellow_terracotta	Yellow Terracotta	Identical
+Yellow Wall Banner.png	yellow_wall_banner	Yellow Wall Banner	yellow_banner
+Yellow Wool.png	yellow_wool	Yellow Wool	Identical
+Zombie Head.png	zombie_head	Zombie Head	Identical
+Zombie Wall Head.png	zombie_wall_head	Zombie Wall Head	zombie_head

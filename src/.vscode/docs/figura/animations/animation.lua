@@ -1,0 +1,192 @@
+---@meta
+
+---@diagnostic disable: duplicate-set-field
+
+--TODO: Review all descriptions to see if they fit the style guide.
+
+---==============================================================================================---
+---  ANIMATION                                                                                   ---
+---==============================================================================================---
+
+---A Blockbench animation.
+---@class Animation
+---This animation's name.
+---@field name string
+local Animation
+
+---===== METHODS =====---
+
+---Runs a string of code at the given time in this animation.  
+---If code already exists at the given time, it is overwritten.
+---@generic self
+---@param self self
+---@param time number
+---@param code string
+---@return self
+function Animation:addCode(time, code) end
+
+---Pauses this animation. Resume with `:play()`.
+function Animation:pause() end
+
+---Starts or resumes this animation. Does nothing if the animation is already playing.
+function Animation:play() end
+
+---Starts this animation from the beginning, even if it is currently paused or playing.
+function Animation:restart() end
+
+---Stops this animation.
+function Animation:stop() end
+
+
+---===== GETTERS =====---
+
+---Gets how much this animation affects the model.
+---
+---A blend weight of `0.5` will cause the animation to move and rotate the model 50% as much.
+---@return number
+function Animation:getBlend() end
+
+---Gets this animation's end point in seconds.
+---@return number
+function Animation:getLength() end
+
+---Gets what this animation does when it reaches its end.
+---@return Animation.loopMode
+function Animation:getLoop() end
+
+---Gets the amount of time this animation waits before starting another loop in seconds.
+---@return number
+function Animation:getLoopDelay() end
+
+---Gets this animation's starting point in seconds.
+---@return number
+function Animation:getOffset() end
+
+---Gets if this animation overrides vanilla position and rotation changes for parts with keyframes.
+---@return boolean
+function Animation:getOverride() end
+
+---Gets this animation's current play state.
+---@return Animation.playStates
+function Animation:getPlayState() end
+
+---Gets this animation's priority.
+---
+---Priority determines what animations will play over each other.
+---* Lower priority animations will be overridden by higher priority animations.
+---* Same priority animations will merge together.
+---
+---Default priority is `0`.
+---@return integer
+function Animation:getPriority() end
+
+---Gets this animation's speed multiplier.
+---@return number
+function Animation:getSpeed() end
+
+---Gets how long the animation will wait in seconds before starting to play.
+---@return number
+function Animation:getStartDelay() end
+
+---Gets this animation's current play time in seconds.
+---@return number
+function Animation:getTime() end
+
+
+---===== SETTERS =====---
+
+---Sets how much this animation affects the model.
+---
+---A blend weight of `0.5` will cause the animation to move and rotate the model 50% as much.
+---
+---If `weight` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param weight? number
+---@return self
+function Animation:blend(weight) end
+
+---Sets this animation's end point in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param time? number
+---@return self
+function Animation:length(time) end
+
+---Sets what this animation does when it reaches its end.
+---@generic self
+---@param self self
+---@param mode Animation.loopMode
+---@return self
+function Animation:loop(mode) end
+
+---Sets the amount of time this animation waits before starting another loop in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param time? number
+---@return self
+function Animation:loopDelay(time) end
+
+---Sets this animation's starting point in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param time? number
+---@return self
+function Animation:offset(time) end
+
+---Sets if this animation overrides vanilla position and rotation changes for parts with keyframes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function Animation:override(state) end
+
+---Sets this animation's priority.
+---
+---Priority determines what animations will play over each other.
+---* Lower priority animations will be overridden by higher priority animations.
+---* Same priority animations will merge together.
+---
+---If `priority` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param priority? integer
+---@return self
+function Animation:priority(priority) end
+
+---Sets this animation's current play time in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param time? number
+---@return self
+function Animation:setTime(time) end
+
+---Sets this animation's speed multiplier.
+---
+---Negative numbers cause the animation to play in reverse.
+---
+---If `speed` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
+---@param speed? number
+---@return self
+function Animation:speed(speed) end
+
+---Sets how long the animation will wait in seconds before starting to play.
+---
+---If `time` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param time? number
+---@return self
+function Animation:startDelay(time) end

@@ -1,0 +1,3 @@
+# Syntax:
+# modid:entity_id | **Mod Name:** Entity Name
+

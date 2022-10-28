@@ -1,0 +1,35 @@
+# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Effects
+# Select *all* table data cells to clone info.
+
+Absorption	absorption	22	
+Bad Omen	bad_omen	31	
+Blindness	blindness	15	
+Conduit Power	conduit_power	29	
+Dolphin's Grace	dolphins_grace	30	
+Fire Resistance	fire_resistance	12	
+Glowing	glowing	24	
+Haste	haste	3	
+Health Boost	health_boost	21	
+Hero of the Village	hero_of_the_village	32	
+Hunger	hunger	17	
+Instant Health	instant_health	6	
+Instant Damage	instant_damage	7	
+Invisibility	invisibility	14	
+Jump Boost	jump_boost	8	
+Levitation	levitation	25	
+Luck	luck	26	
+Mining Fatigue	mining_fatigue	4	
+Nausea	nausea	9	
+Night Vision	night_vision	16	
+Poison	poison	19	
+Regeneration	regeneration	10	
+Resistance	resistance	11	
+Saturation	saturation	23	
+Slow Falling	slow_falling	28	
+Slowness	slowness	2	
+Speed	speed	1	
+Strength	strength	5	
+Bad Luck	unluck	27	
+Water Breathing	water_breathing	13	
+Weakness	weakness	18	
+Wither	wither	20	

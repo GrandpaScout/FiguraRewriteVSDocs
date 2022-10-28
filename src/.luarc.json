@@ -1,0 +1,517 @@
+{
+  /*==============================================================================================*\
+  |*  WORKSPACE: Controls workspace behavior.                                                     *|
+  \*==============================================================================================*/
+  "workspace": {
+    "library": [
+      "../avatars/.vscode/docs",
+      "../../avatars/.vscode/docs",
+      "../../../avatars/.vscode/docs",
+      "../../../../avatars/.vscode/docs",
+      "../../../../../avatars/.vscode/docs"
+    ],
+
+    // Figura does not use third-party libraries.
+    "checkThirdParty": false,
+    "userThirdParty": [],
+
+    // Modify ignored files
+    "ignoreDir": [".**"],     // Directories starting with `.` are ignored.
+    "useGitIgnore": true,     // Ignore the same files as Git.
+    "ignoreSubmodules": true, // Git submodules are ignored.
+
+    // Include all file schemes
+    "supportScheme": ["file", "untitled", "git"],
+
+    // Avoid excessive memory usage.
+    "maxPreload": 5000,
+    "preloadFileSize": 500
+  },
+
+  /*==============================================================================================*\
+  |*  RUNTIME: Controls the emulated Lua runtime.                                                 *|
+  \*==============================================================================================*/
+  "runtime": {
+    // Figura uses Lua 5.2
+    "version": "Lua 5.2",
+
+    // Change built-in features of Lua to fit Figura's implementation.
+    "builtin": {
+      "basic": "disable",       // Figura reworks and removes many of the functions in this library.
+      "bit": "disable",         // `bit` is LuaJIT only.
+      "bit32": "enable",        //
+      "builtin": "enable",      // TODO: Turn this off if the Lua server ever supports ops on types.
+      "coroutine": "disable",   // `coroutine` does not exist in Figura.
+      "debug": "disable",       // `debug` does not exist in Figura.
+      "ffi": "disable",         // `ffi` is LuaJIT only.
+      "io": "disable",          // `io` does not exist in Figura.
+      "jit": "disable",         // `jit` is, you guessed it, LuaJIT only.
+      "math": "enable",         //
+      "os": "disable",          // `os` does not exist in Figura.
+      "package": "disable",     // `package` does not exist in Figura. `require` is reworked.
+      "string": "enable",       //
+      "table": "enable",        //
+      "table.clear": "disable", // `table.clear` is LuaJIT only.
+      "table.new": "disable",   // `table.new` is LuaJIT only.
+      "utf8": "disable"         // `utf8` is Lua 5.3+ only.
+    },
+
+    // Figura's require only allows direct paths.
+    "path": ["?.lua"],
+    "pathStrict": false,
+
+    // Internal crap.
+    "fileEncoding": "utf8",
+    "meta": "${version} ${language} ${encoding}",
+
+    // Figura does not use non-standard features.
+    "nonstandardSymbol": [],
+    "plugin": "",
+    "pluginArgs": [],
+    "special": {},
+    "unicodeName": false
+  },
+
+  /*==============================================================================================*\
+  |*  COMPLETION: Controls auto-completion and suggestion behavior.                               *|
+  \*==============================================================================================*/
+  "completion": {
+    // Enable completion changes.
+    "enable": true,
+
+    // Modify visible snippets.
+    "keywordSnippet": "Both", // Show snippets for both keywords and control blocks.
+    "callSnippet": "Disable", // Disable seperate call snippets as they clutter suggestions.
+
+    // Show parameter names on function suggestions.
+    "showParams": true,
+
+    // Automatically try to `require` words that look like file names.
+    "autoRequire": true,
+
+    // Shows context for hovered function calls by showing the first few lines of the function.
+    // You can disable this by setting this to 0. Enable by setting to the amount of visbile lines.
+    "displayContext": 0,
+
+    // The character used as the postfix operator for suggestions.
+    "postfix": "@",
+
+    // The character used as the path seperator of requires.
+    "requireSeparator": "/",
+
+    // Disable word suggestions as they are mostly useless.
+    "showWord": "Disable",
+    "workspaceWord": false
+  },
+
+  /*==============================================================================================*\
+  |*  DIAGNOSTICS: Controls active diagnostics and the behavior of those diagnostics.             *|
+  \*==============================================================================================*/
+  "diagnostics": {
+    // Enable diagnostics.
+    "enable": true,
+
+    // Slow down diagnostics on files that are not currently active to save resources.
+    "workspaceDelay": 5000,
+    "workspaceRate": 25,
+
+    // Sets the severity of diagnostics to better fit Figura's environment.
+    // Removing diagnostics from this list does not disable them, use the "disable" list below if
+    // you wish to do that instead.
+    "severity": {
+      // Ambiguity
+      "ambiguity-1": "Warning",      // Requires ambiguous operators to be ordered with `(...)`.
+      "count-down-loop": "Error",    // Don't allow for loops that could be infinite.
+      "different-requires": "Error", // Requires in Figura are very specific.
+      "newfield-call": "Warning",    // If parentheses are found at the start of a line, it will...
+      "newline-call": "Warning",     // ...be treated as a function call for the variable before it.
+
+      // Await
+      "await-in-sync": "Error", // Async functions can only be called in async contexts.
+      "not-yieldable": "Error", // `coroutine.yield` can only be used in coroutines.
+
+      // Code Style
+      "codestyle-check": "Information", // Checks code style for consistency.
+      "spell-check": "Hint",            // Check spelling.
+
+      // Duplicate
+      "duplicate-index": "Warning",     // Duplicate table indexes will conflict.
+      "duplicate-set-field": "Warning", // Duplicate class indexes will conflict.
+
+      // Global
+      "global-in-nil-env": "Error",      // Attempting to make a global with a missing _ENV fails.
+      "lowercase-global": "Information", // This is likely caused by not making a variable local.
+      "undefined-env-child": "Warning",  // Basically `undefined-global`, but for new _ENVs.
+      "undefined-global": "Warning",     // Detects attempt to use undefined global variables.
+
+      // Luadoc
+      "circle-doc-class": "Error",        // Circular references cause a class to be useless.
+      "doc-field-no-class": "Error",      // `@field`s need a `@class` to work.
+      "duplicate-doc-alias": "Warning",   // Duplicate `@alias` names may conflict.
+      "duplicate-doc-field": "Warning",   // Duplicate `@field` names in a class may conflict.
+      "duplicate-doc-param": "Warning",   // Duplicate `@param` names in a function may conflict.
+      "undefined-doc-class": "Warning",   // Duplicate `@class` names may conflict.
+      "undefined-doc-name": "Error",      // Undefined type annotations act like the `table` type.
+      "undefined-doc-param": "Warning",   // `@param`s need a matching parameter to annotate.
+      "unknown-cast-variable": "Error",   // Undefined variables cannot be typecasted.
+      "unknown-diag-code": "Information", // `@diagnostic` only accepts valid diagnostic codes.
+      "unknown-operator": "Error",        // Lua cannot have new `@operator`s added to it.
+
+      // Redefined
+      "redefined-local": "Warning", // It is pointless to redefine a local variable.
+
+      // Strict
+      "close-non-object": "Error",  // Non-object values cannot be closed.
+      "deprecated": "Warning",      // Deprecated features are not meant to be used in code.
+      "discard-returns": "Warning", // Some functions cannot discard their return values.
+
+      // Strong
+      "no-unknown": "Warning", // If a varaible's type cannot be inferred, it cannot safely be used.
+
+      // Type Check
+      "assign-type-mismatch": "Warning", // Types of both values in an assignment must match.
+      "cast-local-type": "Warning",      // Casts can only be to matching types.
+      "cast-type-mismatch": "Warning",   // Casts can only be to matching types.
+      "need-check-nil": "Warning",       // Require a check if a value is *possibly* nil.
+      "param-type-mismatch": "Warning",  // Require call arguments to match function parameters.
+      "return-type-mismatch": "Warning", // Require functions to return the correct type of value.
+      "undefined-field": "Warning",      // Undefined fields have no known type and are not safe.
+
+      // Unbalanced
+      "missing-parameter": "Error",        // Functions must receive at least the minimum arguments.
+      "missing-return": "Warning",         // Functions with a `@return` require a return statement.
+      "missing-return-value": "Warning",   // Functions with a `@return` require a return value.
+      "redundant-parameter": "Warning",    // Functions must receive at most the maximum arguments.
+      "redundant-return-value": "Warning", // Functions must return at most the maximum returns.
+      "redundant-value": "Warning",        // Unbalanced assignments can cause useless values.
+      "unbalanced-assignments": "Warning", // Unbalanced assignments can cause undefined variables.
+
+      // Unused
+      "code-after-break": "Information", // Code after a break statement will never run.
+      "empty-block": "Hint",             // Empty blocks create clutter.
+      "redundant-return": "Warning",     // Empty returns at the end of a function are redundant.
+      "trailing-space": "Hint",          // Disallows trailing spaces in code.
+      "unreachable-code": "Information", // If code is unreachable, it is useless.
+      "unused-function": "Hint",         // Unused functions cause clutter.
+      "unused-label": "Hint",            // Unused labels cause clutter.
+      "unused-local": "Hint",            // Unused variables cause clutter.
+      "unused-vararg": "Hint"            // Unused varargs cause clutter.
+    },
+    "neededFileStatus": {
+      "codestyle-check": "Any"
+    },
+
+    // Diagnostics that are deemed useless in Figura's environment.
+    // Remove the `/ /;` before an option to disable it. Re-add it to enable it.
+    "disable": [
+      // Ambiguity
+      //;"ambiguity-1",
+      //;"count-down-loop",
+      //;"different-requires",
+      //;"newfield-call",
+      //;"newline-call",
+
+      // Await
+      "await-in-sync", // Nothing in Figura is true async.
+      "not-yieldable", // `coroutine.yield` does not exist in Figura.
+
+      // Code Style
+      //;"codestyle-check",
+      "spell-check",     // Who needs spell check? Lmao.
+
+      // Duplicate
+      //;"duplicate-index",
+      //;"duplicate-set-field",
+
+      // Global
+      //;"global-in-nil-env",
+      //;"lowercase-global",
+      //;"undefined-env-child",
+      //;"undefined-global",
+
+      // Luadoc
+      //;"circle-doc-class",
+      //;"doc-field-no-class",
+      //;"duplicate-doc-alias",
+      //;"duplicate-doc-field",
+      //;"duplicate-doc-param",
+      //;"undefined-doc-class",
+      //;"undefined-doc-name",
+      //;"undefined-doc-param",
+      //;"unknown-cast-variable",
+      //;"unknown-diag-code",
+      //;"unknown-operator",
+
+      // Redefined
+      //;"redefined-local",
+
+      // Strict
+      "close-non-object", // <close> is Lua 5.4+ only.
+      //;"deprecated",
+      //;"discard-returns",
+
+      // Strong
+      "no-unknown", // Too strict for Figura scripters.
+
+      // Type Check
+      //;"assign-type-mismatch",
+      "cast-local-type",      // Allow casting as a way of forcibly changing a variable's type.
+      "cast-type-mismatch",   // Allow casting as a way of forcibly changing a variable's type.
+      "need-check-nil",       // Too strict for Figura scripters.
+      //;"param-type-mismatch",
+      //;"return-type-mismatch",
+      //;"undefined-field",
+
+      // Unbalanced
+      //;"missing-parameter",
+      //;"missing-return",
+      //;"missing-return-value",
+      //;"redundant-parameter",
+      //;"redundant-return-value",
+      //;"redundant-value",
+      //;"unbalanced-assignments",
+
+      // Unused
+      //;"code-after-break",
+      //;"empty-block",
+      //;"redundant-return",
+      "trailing-space"    // Personal preference.
+      //;"unreachable-code",
+      //;"unused-function",
+      //;"unused-label",
+      //;"unused-local",
+      //;"unused-vararg"
+    ],
+
+    // Group severity is not used by the docs.
+    "groupSeverity": {
+      "ambiguity": "Fallback",
+      "await": "Fallback",
+      "codestyle": "Fallback",
+      "duplicate": "Fallback",
+      "global": "Fallback",
+      "luadoc": "Fallback",
+      "redefined": "Fallback",
+      "strict": "Fallback",
+      "strong": "Fallback",
+      "type-check": "Fallback",
+      "unbalanced": "Fallback",
+      "unused": "Fallback"
+    },
+    "groupFileStatus": {
+      "ambiguity": "Fallback",
+      "await": "Fallback",
+      "codestyle": "Fallback",
+      "duplicate": "Fallback",
+      "global": "Fallback",
+      "luadoc": "Fallback",
+      "redefined": "Fallback",
+      "strict": "Fallback",
+      "strong": "Fallback",
+      "type-check": "Fallback",
+      "unbalanced": "Fallback",
+      "unused": "Fallback"
+    },
+
+    // Allow all schemes.
+    "disableScheme": [],
+
+    // Don't run diagnostics on library files and ignored files.
+    "ignoredFiles": "Opened",
+    "libraryFiles": "Opened",
+
+    // The docs handle global variables themselves.
+    "globals": [],
+
+    // All local variables must be checked (except for the empty variable "_")
+    "unusedLocalExclude": []
+  },
+
+  /*==============================================================================================*\
+  |*  FORMAT: Controls the formatter and code checking options.                                   *|
+  \*==============================================================================================*/
+  "format": {
+    // Only use the formatter for code checking.
+    "enable": false,
+
+    // Formatter settings.
+    "defaultConfig": {
+      "align_call_args": "false",
+      "align_chained_expression_statement": "false",
+      "align_function_define_params": "false",
+      "align_table_field_to_first_field": "false",
+      "call_arg_parentheses": "keep",
+      "class_name_define_style": "pascal_case",
+      "continuation_indent_size": "2",
+      "continuous_assign_statement_align_to_equal_sign": "true",
+      "continuous_assign_table_field_align_to_equal_sign": "true",
+      "detect_end_of_line": "true",
+      "do_statement_no_indent": "false",
+      "enable_check_codestyle": "true",
+      "enable_name_style_check": "true",
+      "end_of_line": "lf",
+      "function_name_define_style": "camel_case",
+      "function_param_name_style": "snake_case",
+      "global_variable_name_define_style": "upper_case",
+      "if_branch_comments_after_block_no_indent": "false",
+      "if_condition_no_continuation_indent": "false",
+      "indent_size": "2",
+      "indent_style": "space",
+      "insert_final_newline": "true",
+      "keep_line_after_do_statement": "keepLine",
+      "keep_line_after_expression_statement": "keepLine",
+      "keep_line_after_for_statement": "keepLine",
+      "keep_line_after_function_define_statement": "keepLine",
+      "keep_line_after_if_statement": "keepLine",
+      "keep_line_after_local_or_assign_statement": "keepLine",
+      "keep_line_after_repeat_statement": "keepLine",
+      "keep_line_after_while_statement": "keepLine",
+      "keep_one_space_between_namedef_and_attribute": "true",
+      "keep_one_space_between_table_and_bracket": "false",
+      "label_no_indent": "false",
+      "local_assign_continuation_align_to_first_expression": "false",
+      "local_function_name_define_style": "camel_case",
+      "local_name_define_style": "snake_case",
+      "long_chain_expression_allow_one_space_after_colon": "false",
+      "max_continuous_line_distance": "0",
+      "max_line_length": "100",
+      "module_name_define_style": "same('this')|same(filename, snake_case|pascal_case|camel_case)",
+      "quote_style": "double",
+      "remove_empty_header_and_footer_lines_in_function": "true",
+      "remove_expression_list_finish_comma": "true",
+      "require_module_name_style": "off",
+      "space_before_function_open_parenthesis": "false",
+      "space_before_open_square_bracket": "false",
+      "space_inside_function_call_parentheses": "false",
+      "space_inside_function_param_list_parentheses": "false",
+      "space_inside_square_brackets": "false",
+      "statement_inline_comment_space": "1",
+      "table_append_expression_no_space": "true",
+      "table_field_name_define_style": "snake_case",
+      "table_seperator_style": "comma",
+      "trailing_table_separator": "smart"
+    }
+  },
+
+  /*==============================================================================================*\
+  |*  HINT: Controls the behavior of inline hints.                                                *|
+  \*==============================================================================================*/
+  "hint": {
+    // Enable inline hints.
+    "enable": true,
+
+    // Show an inline hint at assignment.
+    "setType": true,
+
+    // Parameter settings.
+    "paramName": "All", // Show the name of parameters in function calls.
+    "paramType": true,  // Show the type of parameters in function definitions.
+
+    // Show a virtual "await" next to called async functions.
+    "await": true,
+
+    // Show virtual number indexes if it may be hard to count them.
+    "arrayIndex": "Auto",
+
+    // Show a virtual semicolon to seperate statements on the same line.
+    "semicolon": "Disable"
+  },
+
+  /*==============================================================================================*\
+  |*  HOVER: Controls the behavior of hover hints.                                                *|
+  \*==============================================================================================*/
+  "hover": {
+    // Enable hover hints.
+    "enable": true,
+
+    // Allows large enum lists to be visible.
+    "enumsLimit": 100,
+
+    // Stops enum lists from making huge inline hints.
+    "expandAlias": false,
+
+    // Allows large tables to be visible.
+    "previewFields": 100,
+
+    // Allow viewing the raw form of a value.
+    "viewNumber": true,
+    "viewString": true,
+    "viewStringMax": 1024
+  },
+
+  /*==============================================================================================*\
+  |*  TYPE: Controls type casting behavior.                                                       *|
+  \*==============================================================================================*/
+  "type": {
+    // Allows casting between `number` and `integer` (since they are the same thing in Lua.)
+    "castNumberToInteger": true,
+
+    // Allow "casting out" nil. (i.e: You can assign `number` to `number|nil`.)
+    "weakNilCheck": true,
+
+    // Disallow forced narrowing of union types. You must explicitly narrow with code.
+    "weakUnionCheck": false
+  },
+
+  /*==============================================================================================*\
+  |*  SEMANTIC: Controls semantic coloring.                                                       *|
+  \*==============================================================================================*/
+  "semantic": {
+    // Enable semantic coloring.
+    "enable": true,
+
+    // Enable coloring for type annotations.
+    "annotation": true,
+
+    // VSCode already handles keyword coloring.
+    "keyword": false,
+
+    // Enable coloring for variables.
+    "variable": true
+  },
+
+  /*==============================================================================================*\
+  |*  SIGNATURE HELP: No clue lol.                                                                *|
+  \*==============================================================================================*/
+  "signatureHelp": {
+    // Enables this, whatever it is.
+    "enable": true
+  },
+
+  /*==============================================================================================*\
+  |*  SPELL: Controls the spell-check dictionary.                                                 *|
+  \*==============================================================================================*/
+  "spell": {
+    // Custom words for spell-check.
+    "dict": [
+      "figura"
+    ]
+  },
+
+  /*==============================================================================================*\
+  |*  TELEMETRY: Big brother is watching.                                                         *|
+  \*==============================================================================================*/
+  "telemetry": {
+    // If you wish to send telemetry data, you can enable this.
+    "enable": false
+  },
+
+  /*==============================================================================================*\
+  |*  WINDOW: Controls the VSCode window's behavior.                                              *|
+  \*==============================================================================================*/
+  "window": {
+    // Show workspace loading progress in the taskbar.
+    "progressBar": true,
+
+    // Show a funny little "😺Lua" indicator in the status bar while the Lua server is running.
+    "statusBar": true
+  },
+
+  /*==============================================================================================*\
+  |*  MISC: Controls other features and behaviors.                                                *|
+  \*==============================================================================================*/
+  "misc": {
+    // Startup parameters for the Lua language server.
+    "parameters": []
+  }
+}

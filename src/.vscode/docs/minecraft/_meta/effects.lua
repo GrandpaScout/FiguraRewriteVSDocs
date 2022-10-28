@@ -1,0 +1,35 @@
+---A valid Minecraft status effect id.
+---@alias Minecraft.effectID string
+---| "effect.minecraft.absorption"          # Absorption
+---| "effect.minecraft.bad_omen"            # Bad Omen
+---| "effect.minecraft.blindness"           # Blindness
+---| "effect.minecraft.conduit_power"       # Conduit Power
+---| "effect.minecraft.dolphins_grace"      # Dolphin's Grace
+---| "effect.minecraft.fire_resistance"     # Fire Resistance
+---| "effect.minecraft.glowing"             # Glowing
+---| "effect.minecraft.haste"               # Haste
+---| "effect.minecraft.health_boost"        # Health Boost
+---| "effect.minecraft.hero_of_the_village" # Hero of the Village
+---| "effect.minecraft.hunger"              # Hunger
+---| "effect.minecraft.instant_damage"      # Instant Damage
+---| "effect.minecraft.instant_health"      # Instant Health
+---| "effect.minecraft.invisibility"        # Invisibility
+---| "effect.minecraft.jump_boost"          # Jump Boost
+---| "effect.minecraft.levitation"          # Levitation
+---| "effect.minecraft.luck"                # Luck
+---| "effect.minecraft.mining_fatigue"      # Mining Fatigue
+---| "effect.minecraft.nausea"              # Nausea
+---| "effect.minecraft.night_vision"        # Night Vision
+---| "effect.minecraft.poison"              # Poison
+---| "effect.minecraft.regeneration"        # Regeneration
+---| "effect.minecraft.resistance"          # Resistance
+---| "effect.minecraft.saturation"          # Saturation
+---| "effect.minecraft.slow_falling"        # Slow Falling
+---| "effect.minecraft.slowness"            # Slowness
+---| "effect.minecraft.speed"               # Speed
+---| "effect.minecraft.strength"            # Strength
+---| "effect.minecraft.unluck"              # Bad Luck
+---| "effect.minecraft.water_breathing"     # Water Breathing
+---| "effect.minecraft.weakness"            # Weakness
+---| "effect.minecraft.wither"              # Wither
+

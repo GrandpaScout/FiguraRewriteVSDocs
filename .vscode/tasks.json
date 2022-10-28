@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Read avatar shape",
+      "command": "echo ${workspaceFolder}",
+      "type": "shell",
+      "args": [],
+      "presentation": {
+        "reveal": "silent"
+      },
+      "group": "none",
+      "problemMatcher": []
+    }
+  ]
+}

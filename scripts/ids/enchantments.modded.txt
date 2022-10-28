@@ -1,0 +1,3 @@
+# Syntax:
+# modid:enchantment_id | **Mod Name:** Enchantment Name
+

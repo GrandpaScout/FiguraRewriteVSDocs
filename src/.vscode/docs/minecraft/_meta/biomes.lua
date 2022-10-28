@@ -1,0 +1,65 @@
+---A valid Minecraft biome id.
+---@alias Minecraft.biomeID string
+---| "minecraft:badlands"                 # Badlands
+---| "minecraft:bamboo_jungle"            # Bamboo Jungle
+---| "minecraft:basalt_deltas"            # Basalt Deltas
+---| "minecraft:beach"                    # Beach
+---| "minecraft:birch_forest"             # Birch Forest
+---| "minecraft:cold_ocean"               # Cold Ocean
+---| "minecraft:crimson_forest"           # Crimson Forest
+---| "minecraft:dark_forest"              # Dark Forest
+---| "minecraft:deep_cold_ocean"          # Deep Cold Ocean
+---| "minecraft:deep_dark"                # Deep Dark
+---| "minecraft:deep_frozen_ocean"        # Deep Frozen Ocean
+---| "minecraft:deep_lukewarm_ocean"      # Deep Lukewarm Ocean
+---| "minecraft:deep_ocean"               # Deep Ocean
+---| "minecraft:desert"                   # Desert
+---| "minecraft:dripstone_caves"          # Dripstone Caves
+---| "minecraft:end_barrens"              # End Barrens
+---| "minecraft:end_highlands"            # End Highlands
+---| "minecraft:end_midlands"             # End Midlands
+---| "minecraft:eroded_badlands"          # Eroded Badlands
+---| "minecraft:flower_forest"            # Flower Forest
+---| "minecraft:forest"                   # Forest
+---| "minecraft:frozen_ocean"             # Frozen Ocean
+---| "minecraft:frozen_peaks"             # Frozen Peaks
+---| "minecraft:frozen_river"             # Frozen River
+---| "minecraft:grove"                    # Grove
+---| "minecraft:ice_spikes"               # Ice Spikes
+---| "minecraft:jagged_peaks"             # Jagged Peaks
+---| "minecraft:jungle"                   # Jungle
+---| "minecraft:lukewarm_ocean"           # Lukewarm Ocean
+---| "minecraft:lush_caves"               # Lush Caves
+---| "minecraft:mangrove_swamp"           # Mangrove Swamp
+---| "minecraft:meadow"                   # Meadow
+---| "minecraft:mushroom_fields"          # Mushroom Fields
+---| "minecraft:nether_wastes"            # Nether Wastes
+---| "minecraft:ocean"                    # Ocean
+---| "minecraft:old_growth_birch_forest"  # Old Growth Birch Forest
+---| "minecraft:old_growth_pine_taiga"    # Old Growth Pine Taiga
+---| "minecraft:old_growth_spruce_taiga"  # Old Growth Spruce Taiga
+---| "minecraft:plains"                   # Plains
+---| "minecraft:river"                    # River
+---| "minecraft:savanna"                  # Savanna
+---| "minecraft:savanna_plateau"          # Savanna Plateau
+---| "minecraft:small_end_islands"        # Small End Islands
+---| "minecraft:snowy_beach"              # Snowy Beach
+---| "minecraft:snowy_plains"             # Snowy Plains
+---| "minecraft:snowy_slopes"             # Snowy Slopes
+---| "minecraft:snowy_taiga"              # Snowy Taiga
+---| "minecraft:soul_sand_valley"         # Soul Sand Valley
+---| "minecraft:sparse_jungle"            # Sparse Jungle
+---| "minecraft:stony_peaks"              # Stony Peaks
+---| "minecraft:stony_shore"              # Stony Shore
+---| "minecraft:sunflower_plains"         # Sunflower Plains
+---| "minecraft:swamp"                    # Swamp
+---| "minecraft:taiga"                    # Taiga
+---| "minecraft:the_end"                  # The End
+---| "minecraft:the_void"                 # The Void
+---| "minecraft:warm_ocean"               # Warm Ocean
+---| "minecraft:warped_forest"            # Warped Forest
+---| "minecraft:windswept_forest"         # Windswept Forest
+---| "minecraft:windswept_gravelly_hills" # Windswept Gravelly Hills
+---| "minecraft:windswept_hills"          # Windswept Hills
+---| "minecraft:windswept_savanna"        # Windswept Savanna
+---| "minecraft:wooded_badlands"          # Wooded Badlands

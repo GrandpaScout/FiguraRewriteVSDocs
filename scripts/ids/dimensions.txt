@@ -1,0 +1,6 @@
+# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Dimensions
+# Select *all* table data cells to clone info.
+
+ Overworld	overworld	0
+ The Nether	the_nether	-1
+ The End	the_end	1

@@ -1,0 +1,110 @@
+// ${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}
+
+{
+  "LuaDoc: Function": {
+    "scope": "lua",
+    "prefix": "---!ldfunc",
+    "description": "Insert a Function documentation block",
+    "body": [
+      "---${1:Description goes here.}",
+      "---> ***",
+      "---",
+      "---```lua",
+      "---${2:func}(${3:paramOne, paramTwo})",
+      "---```",
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/parameters.png)",
+      "---* ```lua",
+      "---  paramOne: Type",
+      "---  ```",
+      "---  Description for param one.",
+      "---+ ```lua",
+      "---  paramTwo: Type",
+      "---  ```",
+      "---  Description for param two.",
+      "---> ***",
+      "---",
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/returns.png)",
+      "---* ```lua",
+      "---  Type, Type, Type ...",
+      "---  ```",
+      "---  Description for returns.",
+      "---$0"
+    ]
+  },
+  "LuaDoc: Static": {
+    "scope": "lua",
+    "prefix": "---!ldstatic",
+    "description": "Insert a Function documentation block",
+    "body": [
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/static.png)  ",
+      "---${1:Description goes here.}",
+      "---> ***",
+      "---",
+      "---```lua",
+      "---${2:tbl.func}(${3:paramOne, paramTwo})",
+      "---```",
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/parameters.png)",
+      "---* ```lua",
+      "---  paramOne: Type",
+      "---  ```",
+      "---  Description for param one.",
+      "---+ ```lua",
+      "---  paramTwo: Type",
+      "---  ```",
+      "---  Description for param two.",
+      "---> ***",
+      "---",
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/returns.png)",
+      "---* ```lua",
+      "---  Type, Type, Type ...",
+      "---  ```",
+      "---  Description for returns.",
+      "---$0"
+    ]
+  },
+  "LuaDoc: Method": {
+    "scope": "lua",
+    "prefix": "---!ldmethod",
+    "description": "Insert a Function documentation block",
+    "body": [
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/method.png)  ",
+      "---${1:Description goes here.}",
+      "---> ***",
+      "---",
+      "---```lua",
+      "---${2:tbl:func}(${3:paramOne, paramTwo})",
+      "---```",
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/parameters.png)",
+      "---* ```lua",
+      "---  paramOne: Type",
+      "---  ```",
+      "---  Description for param one.",
+      "---+ ```lua",
+      "---  paramTwo: Type",
+      "---  ```",
+      "---  Description for param two.",
+      "---> ***",
+      "---",
+      "---![**Parameters**](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/label/returns.png)",
+      "---* ```lua",
+      "---  Type, Type, Type ...",
+      "---  ```",
+      "---  Description for returns.",
+      "---$0"
+    ]
+  },
+
+  "LuaDoc: Image": {
+    "scope": "lua",
+    "prefix": "---!ldimage",
+    "description": "Insert a resizable image.",
+    "body": [
+      "---[![](${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/image/${1/(?:(?:-small|-full)?\\.png)?$/-small.png/})](",
+      "---  ${TM_DIRECTORY/.*?[\\/\\\\].vscode[\\/\\\\]docs[\\/\\\\][^\\/\\\\]*[\\/\\\\]?|[^\\/\\\\]+[\\/\\\\]?/..\\//g}_assets/image/${1/(?:(?:-small|-full)?\\.png)?$/-full.png/}",
+      "---  \"Click to enlarge. (Opens in a new tab.)\"",
+      "---)"
+    ]
+  }
+}
+
+

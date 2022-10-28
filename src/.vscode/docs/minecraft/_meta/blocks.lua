@@ -1,0 +1,900 @@
+---A valid Minecraft block id.
+---@alias Minecraft.blockID string
+---| "minecraft:acacia_button"                      # Acacia Button
+---| "minecraft:acacia_door"                        # Acacia Door
+---| "minecraft:acacia_fence"                       # Acacia Fence
+---| "minecraft:acacia_fence_gate"                  # Acacia Fence Gate
+---| "minecraft:acacia_leaves"                      # Acacia Leaves
+---| "minecraft:acacia_log"                         # Acacia Log
+---| "minecraft:acacia_planks"                      # Acacia Planks
+---| "minecraft:acacia_pressure_plate"              # Acacia Pressure Plate
+---| "minecraft:acacia_sapling"                     # Acacia Sapling
+---| "minecraft:acacia_sign"                        # Acacia Sign
+---| "minecraft:acacia_slab"                        # Acacia Slab
+---| "minecraft:acacia_stairs"                      # Acacia Stairs
+---| "minecraft:acacia_trapdoor"                    # Acacia Trapdoor
+---| "minecraft:acacia_wall_sign"                   # Acacia Wall Sign
+---| "minecraft:acacia_wood"                        # Acacia Wood
+---| "minecraft:activator_rail"                     # Activator Rail
+---| "minecraft:air"                                # Air
+---| "minecraft:allium"                             # Allium
+---| "minecraft:amethyst_block"                     # Block of Amethyst
+---| "minecraft:amethyst_cluster"                   # Amethyst Cluster
+---| "minecraft:ancient_debris"                     # Ancient Debris
+---| "minecraft:andesite"                           # Andesite
+---| "minecraft:andesite_slab"                      # Andesite Slab
+---| "minecraft:andesite_stairs"                    # Andesite Stairs
+---| "minecraft:andesite_wall"                      # Andesite Wall
+---| "minecraft:anvil"                              # Anvil
+---| "minecraft:attached_melon_stem"                # Attached Melon Stem
+---| "minecraft:attached_pumpkin_stem"              # Attached Pumpkin Stem
+---| "minecraft:azalea"                             # Azalea
+---| "minecraft:azalea_leaves"                      # Azalea Leaves
+---| "minecraft:azure_bluet"                        # Azure Bluet
+---| "minecraft:bamboo"                             # Bamboo
+---| "minecraft:bamboo_sapling"                     # Bamboo Shoot
+---| "minecraft:barrel"                             # Barrel
+---| "minecraft:barrier"                            # Barrier
+---| "minecraft:basalt"                             # Basalt
+---| "minecraft:beacon"                             # Beacon
+---| "minecraft:bedrock"                            # Bedrock
+---| "minecraft:bee_nest"                           # Bee Nest
+---| "minecraft:beehive"                            # Beehive
+---| "minecraft:beetroots"                          # Beetroots
+---| "minecraft:bell"                               # Bell
+---| "minecraft:big_dripleaf"                       # Big Dripleaf
+---| "minecraft:big_dripleaf_stem"                  # Big Dripleaf Stem
+---| "minecraft:birch_button"                       # Birch Button
+---| "minecraft:birch_door"                         # Birch Door
+---| "minecraft:birch_fence"                        # Birch Fence
+---| "minecraft:birch_fence_gate"                   # Birch Fence Gate
+---| "minecraft:birch_leaves"                       # Birch Leaves
+---| "minecraft:birch_log"                          # Birch Log
+---| "minecraft:birch_planks"                       # Birch Planks
+---| "minecraft:birch_pressure_plate"               # Birch Pressure Plate
+---| "minecraft:birch_sapling"                      # Birch Sapling
+---| "minecraft:birch_sign"                         # Birch Sign
+---| "minecraft:birch_slab"                         # Birch Slab
+---| "minecraft:birch_stairs"                       # Birch Stairs
+---| "minecraft:birch_trapdoor"                     # Birch Trapdoor
+---| "minecraft:birch_wall_sign"                    # Birch Wall Sign
+---| "minecraft:birch_wood"                         # Birch Wood
+---| "minecraft:black_banner"                       # Black Banner
+---| "minecraft:black_bed"                          # Black Bed
+---| "minecraft:black_candle"                       # Black Candle
+---| "minecraft:black_candle_cake"                  # Cake with Black Candle
+---| "minecraft:black_carpet"                       # Black Carpet
+---| "minecraft:black_concrete"                     # Black Concrete
+---| "minecraft:black_concrete_powder"              # Black Concrete Powder
+---| "minecraft:black_glazed_terracotta"            # Black Glazed Terracotta
+---| "minecraft:black_shulker_box"                  # Black Shulker Box
+---| "minecraft:black_stained_glass"                # Black Stained Glass
+---| "minecraft:black_stained_glass_pane"           # Black Stained Glass Pane
+---| "minecraft:black_terracotta"                   # Black Terracotta
+---| "minecraft:black_wall_banner"                  # Black Wall Banner
+---| "minecraft:black_wool"                         # Black Wool
+---| "minecraft:blackstone"                         # Blackstone
+---| "minecraft:blackstone_slab"                    # Blackstone Slab
+---| "minecraft:blackstone_stairs"                  # Blackstone Stairs
+---| "minecraft:blackstone_wall"                    # Blackstone Wall
+---| "minecraft:blast_furnace"                      # Blast Furnace
+---| "minecraft:blue_banner"                        # Blue Banner
+---| "minecraft:blue_bed"                           # Blue Bed
+---| "minecraft:blue_candle"                        # Blue Candle
+---| "minecraft:blue_candle_cake"                   # Cake with Blue Candle
+---| "minecraft:blue_carpet"                        # Blue Carpet
+---| "minecraft:blue_concrete"                      # Blue Concrete
+---| "minecraft:blue_concrete_powder"               # Blue Concrete Powder
+---| "minecraft:blue_glazed_terracotta"             # Blue Glazed Terracotta
+---| "minecraft:blue_ice"                           # Blue Ice
+---| "minecraft:blue_orchid"                        # Blue Orchid
+---| "minecraft:blue_shulker_box"                   # Blue Shulker Box
+---| "minecraft:blue_stained_glass"                 # Blue Stained Glass
+---| "minecraft:blue_stained_glass_pane"            # Blue Stained Glass Pane
+---| "minecraft:blue_terracotta"                    # Blue Terracotta
+---| "minecraft:blue_wall_banner"                   # Blue Wall Banner
+---| "minecraft:blue_wool"                          # Blue Wool
+---| "minecraft:bone_block"                         # Bone Block
+---| "minecraft:bookshelf"                          # Bookshelf
+---| "minecraft:brain_coral"                        # Brain Coral
+---| "minecraft:brain_coral_block"                  # Brain Coral Block
+---| "minecraft:brain_coral_fan"                    # Brain Coral Fan
+---| "minecraft:brain_coral_wall_fan"               # Brain Coral Wall Fan
+---| "minecraft:brewing_stand"                      # Brewing Stand
+---| "minecraft:brick_slab"                         # Brick Slab
+---| "minecraft:brick_stairs"                       # Brick Stairs
+---| "minecraft:brick_wall"                         # Brick Wall
+---| "minecraft:bricks"                             # Bricks
+---| "minecraft:brown_banner"                       # Brown Banner
+---| "minecraft:brown_bed"                          # Brown Bed
+---| "minecraft:brown_candle"                       # Brown Candle
+---| "minecraft:brown_candle_cake"                  # Cake with Brown Candle
+---| "minecraft:brown_carpet"                       # Brown Carpet
+---| "minecraft:brown_concrete"                     # Brown Concrete
+---| "minecraft:brown_concrete_powder"              # Brown Concrete Powder
+---| "minecraft:brown_glazed_terracotta"            # Brown Glazed Terracotta
+---| "minecraft:brown_mushroom"                     # Brown Mushroom
+---| "minecraft:brown_mushroom_block"               # Brown Mushroom Block
+---| "minecraft:brown_shulker_box"                  # Brown Shulker Box
+---| "minecraft:brown_stained_glass"                # Brown Stained Glass
+---| "minecraft:brown_stained_glass_pane"           # Brown Stained Glass Pane
+---| "minecraft:brown_terracotta"                   # Brown Terracotta
+---| "minecraft:brown_wall_banner"                  # Brown Wall Banner
+---| "minecraft:brown_wool"                         # Brown Wool
+---| "minecraft:bubble_column"                      # Bubble Column
+---| "minecraft:bubble_coral"                       # Bubble Coral
+---| "minecraft:bubble_coral_block"                 # Bubble Coral Block
+---| "minecraft:bubble_coral_fan"                   # Bubble Coral Fan
+---| "minecraft:bubble_coral_wall_fan"              # Bubble Coral Wall Fan
+---| "minecraft:budding_amethyst"                   # Budding Amethyst
+---| "minecraft:cactus"                             # Cactus
+---| "minecraft:cake"                               # Cake
+---| "minecraft:calcite"                            # Calcite
+---| "minecraft:campfire"                           # Campfire
+---| "minecraft:candle"                             # Candle
+---| "minecraft:candle_cake"                        # Cake with Candle
+---| "minecraft:carrots"                            # Carrots
+---| "minecraft:cartography_table"                  # Cartography Table
+---| "minecraft:carved_pumpkin"                     # Carved Pumpkin
+---| "minecraft:cauldron"                           # Cauldron
+---| "minecraft:cave_air"                           # Cave Air
+---| "minecraft:cave_vines"                         # Cave Vines
+---| "minecraft:cave_vines_plant"                   # Cave Vines Plant
+---| "minecraft:chain"                              # Chain
+---| "minecraft:chain_command_block"                # Chain Command Block
+---| "minecraft:chest"                              # Chest
+---| "minecraft:chipped_anvil"                      # Chipped Anvil
+---| "minecraft:chiseled_deepslate"                 # Chiseled Deepslate
+---| "minecraft:chiseled_nether_bricks"             # Chiseled Nether Bricks
+---| "minecraft:chiseled_polished_blackstone"       # Chiseled Polished Blackstone
+---| "minecraft:chiseled_quartz_block"              # Chiseled Quartz Block
+---| "minecraft:chiseled_red_sandstone"             # Chiseled Red Sandstone
+---| "minecraft:chiseled_sandstone"                 # Chiseled Sandstone
+---| "minecraft:chiseled_stone_bricks"              # Chiseled Stone Bricks
+---| "minecraft:chorus_flower"                      # Chorus Flower
+---| "minecraft:chorus_plant"                       # Chorus Plant
+---| "minecraft:clay"                               # Clay
+---| "minecraft:coal_block"                         # Block of Coal
+---| "minecraft:coal_ore"                           # Coal Ore
+---| "minecraft:coarse_dirt"                        # Coarse Dirt
+---| "minecraft:cobbled_deepslate"                  # Cobbled Deepslate
+---| "minecraft:cobbled_deepslate_slab"             # Cobbled Deepslate Slab
+---| "minecraft:cobbled_deepslate_stairs"           # Cobbled Deepslate Stairs
+---| "minecraft:cobbled_deepslate_wall"             # Cobbled Deepslate Wall
+---| "minecraft:cobblestone"                        # Cobblestone
+---| "minecraft:cobblestone_slab"                   # Cobblestone Slab
+---| "minecraft:cobblestone_stairs"                 # Cobblestone Stairs
+---| "minecraft:cobblestone_wall"                   # Cobblestone Wall
+---| "minecraft:cobweb"                             # Cobweb
+---| "minecraft:cocoa"                              # Cocoa
+---| "minecraft:command_block"                      # Command Block
+---| "minecraft:comparator"                         # Redstone Comparator
+---| "minecraft:composter"                          # Composter
+---| "minecraft:conduit"                            # Conduit
+---| "minecraft:copper_block"                       # Block of Copper
+---| "minecraft:copper_ore"                         # Copper Ore
+---| "minecraft:cornflower"                         # Cornflower
+---| "minecraft:cracked_deepslate_bricks"           # Cracked Deepslate Bricks
+---| "minecraft:cracked_deepslate_tiles"            # Cracked Deepslate Tiles
+---| "minecraft:cracked_nether_bricks"              # Cracked Nether Bricks
+---| "minecraft:cracked_polished_blackstone_bricks" # Cracked Polished Blackstone Bricks
+---| "minecraft:cracked_stone_bricks"               # Cracked Stone Bricks
+---| "minecraft:crafting_table"                     # Crafting Table
+---| "minecraft:creeper_head"                       # Creeper Head
+---| "minecraft:creeper_wall_head"                  # Creeper Wall Head
+---| "minecraft:crimson_button"                     # Crimson Button
+---| "minecraft:crimson_door"                       # Crimson Door
+---| "minecraft:crimson_fence"                      # Crimson Fence
+---| "minecraft:crimson_fence_gate"                 # Crimson Fence Gate
+---| "minecraft:crimson_fungus"                     # Crimson Fungus
+---| "minecraft:crimson_hyphae"                     # Crimson Hyphae
+---| "minecraft:crimson_nylium"                     # Crimson Nylium
+---| "minecraft:crimson_planks"                     # Crimson Planks
+---| "minecraft:crimson_pressure_plate"             # Crimson Pressure Plate
+---| "minecraft:crimson_roots"                      # Crimson Roots
+---| "minecraft:crimson_sign"                       # Crimson Sign
+---| "minecraft:crimson_slab"                       # Crimson Slab
+---| "minecraft:crimson_stairs"                     # Crimson Stairs
+---| "minecraft:crimson_stem"                       # Crimson Stem
+---| "minecraft:crimson_trapdoor"                   # Crimson Trapdoor
+---| "minecraft:crimson_wall_sign"                  # Crimson Wall Sign
+---| "minecraft:crying_obsidian"                    # Crying Obsidian
+---| "minecraft:cut_copper"                         # Cut Copper
+---| "minecraft:cut_copper_slab"                    # Cut Copper Slab
+---| "minecraft:cut_copper_stairs"                  # Cut Copper Stairs
+---| "minecraft:cut_red_sandstone"                  # Cut Red Sandstone
+---| "minecraft:cut_red_sandstone_slab"             # Cut Red Sandstone Slab
+---| "minecraft:cut_sandstone"                      # Cut Sandstone
+---| "minecraft:cut_sandstone_slab"                 # Cut Sandstone Slab
+---| "minecraft:cyan_banner"                        # Cyan Banner
+---| "minecraft:cyan_bed"                           # Cyan Bed
+---| "minecraft:cyan_candle"                        # Cyan Candle
+---| "minecraft:cyan_candle_cake"                   # Cake with Cyan Candle
+---| "minecraft:cyan_carpet"                        # Cyan Carpet
+---| "minecraft:cyan_concrete"                      # Cyan Concrete
+---| "minecraft:cyan_concrete_powder"               # Cyan Concrete Powder
+---| "minecraft:cyan_glazed_terracotta"             # Cyan Glazed Terracotta
+---| "minecraft:cyan_shulker_box"                   # Cyan Shulker Box
+---| "minecraft:cyan_stained_glass"                 # Cyan Stained Glass
+---| "minecraft:cyan_stained_glass_pane"            # Cyan Stained Glass Pane
+---| "minecraft:cyan_terracotta"                    # Cyan Terracotta
+---| "minecraft:cyan_wall_banner"                   # Cyan Wall Banner
+---| "minecraft:cyan_wool"                          # Cyan Wool
+---| "minecraft:damaged_anvil"                      # Damaged Anvil
+---| "minecraft:dandelion"                          # Dandelion
+---| "minecraft:dark_oak_button"                    # Dark Oak Button
+---| "minecraft:dark_oak_door"                      # Dark Oak Door
+---| "minecraft:dark_oak_fence"                     # Dark Oak Fence
+---| "minecraft:dark_oak_fence_gate"                # Dark Oak Fence Gate
+---| "minecraft:dark_oak_leaves"                    # Dark Oak Leaves
+---| "minecraft:dark_oak_log"                       # Dark Oak Log
+---| "minecraft:dark_oak_planks"                    # Dark Oak Planks
+---| "minecraft:dark_oak_pressure_plate"            # Dark Oak Pressure Plate
+---| "minecraft:dark_oak_sapling"                   # Dark Oak Sapling
+---| "minecraft:dark_oak_sign"                      # Dark Oak Sign
+---| "minecraft:dark_oak_slab"                      # Dark Oak Slab
+---| "minecraft:dark_oak_stairs"                    # Dark Oak Stairs
+---| "minecraft:dark_oak_trapdoor"                  # Dark Oak Trapdoor
+---| "minecraft:dark_oak_wall_sign"                 # Dark Oak Wall Sign
+---| "minecraft:dark_oak_wood"                      # Dark Oak Wood
+---| "minecraft:dark_prismarine"                    # Dark Prismarine
+---| "minecraft:dark_prismarine_slab"               # Dark Prismarine Slab
+---| "minecraft:dark_prismarine_stairs"             # Dark Prismarine Stairs
+---| "minecraft:daylight_detector"                  # Daylight Detector
+---| "minecraft:dead_brain_coral"                   # Dead Brain Coral
+---| "minecraft:dead_brain_coral_block"             # Dead Brain Coral Block
+---| "minecraft:dead_brain_coral_fan"               # Dead Brain Coral Fan
+---| "minecraft:dead_brain_coral_wall_fan"          # Dead Brain Coral Wall Fan
+---| "minecraft:dead_bubble_coral"                  # Dead Bubble Coral
+---| "minecraft:dead_bubble_coral_block"            # Dead Bubble Coral Block
+---| "minecraft:dead_bubble_coral_fan"              # Dead Bubble Coral Fan
+---| "minecraft:dead_bubble_coral_wall_fan"         # Dead Bubble Coral Wall Fan
+---| "minecraft:dead_bush"                          # Dead Bush
+---| "minecraft:dead_fire_coral"                    # Dead Fire Coral
+---| "minecraft:dead_fire_coral_block"              # Dead Fire Coral Block
+---| "minecraft:dead_fire_coral_fan"                # Dead Fire Coral Fan
+---| "minecraft:dead_fire_coral_wall_fan"           # Dead Fire Coral Wall Fan
+---| "minecraft:dead_horn_coral"                    # Dead Horn Coral
+---| "minecraft:dead_horn_coral_block"              # Dead Horn Coral Block
+---| "minecraft:dead_horn_coral_fan"                # Dead Horn Coral Fan
+---| "minecraft:dead_horn_coral_wall_fan"           # Dead Horn Coral Wall Fan
+---| "minecraft:dead_tube_coral"                    # Dead Tube Coral
+---| "minecraft:dead_tube_coral_block"              # Dead Tube Coral Block
+---| "minecraft:dead_tube_coral_fan"                # Dead Tube Coral Fan
+---| "minecraft:dead_tube_coral_wall_fan"           # Dead Tube Coral Wall Fan
+---| "minecraft:deepslate"                          # Deepslate
+---| "minecraft:deepslate_brick_slab"               # Deepslate Brick Slab
+---| "minecraft:deepslate_brick_stairs"             # Deepslate Brick Stairs
+---| "minecraft:deepslate_brick_wall"               # Deepslate Brick Wall
+---| "minecraft:deepslate_bricks"                   # Deepslate Bricks
+---| "minecraft:deepslate_coal_ore"                 # Deepslate Coal Ore
+---| "minecraft:deepslate_copper_ore"               # Deepslate Copper Ore
+---| "minecraft:deepslate_diamond_ore"              # Deepslate Diamond Ore
+---| "minecraft:deepslate_emerald_ore"              # Deepslate Emerald Ore
+---| "minecraft:deepslate_gold_ore"                 # Deepslate Gold Ore
+---| "minecraft:deepslate_iron_ore"                 # Deepslate Iron Ore
+---| "minecraft:deepslate_lapis_ore"                # Deepslate Lapis Lazuli Ore
+---| "minecraft:deepslate_redstone_ore"             # Deepslate Redstone Ore
+---| "minecraft:deepslate_tile_slab"                # Deepslate Tile Slab
+---| "minecraft:deepslate_tile_stairs"              # Deepslate Tile Stairs
+---| "minecraft:deepslate_tile_wall"                # Deepslate Tile Wall
+---| "minecraft:deepslate_tiles"                    # Deepslate Tiles
+---| "minecraft:detector_rail"                      # Detector Rail
+---| "minecraft:diamond_block"                      # Block of Diamond
+---| "minecraft:diamond_ore"                        # Diamond Ore
+---| "minecraft:diorite"                            # Diorite
+---| "minecraft:diorite_slab"                       # Diorite Slab
+---| "minecraft:diorite_stairs"                     # Diorite Stairs
+---| "minecraft:diorite_wall"                       # Diorite Wall
+---| "minecraft:dirt"                               # Dirt
+---| "minecraft:dirt_path"                          # Dirt Path
+---| "minecraft:dispenser"                          # Dispenser
+---| "minecraft:dragon_egg"                         # Dragon Egg
+---| "minecraft:dragon_head"                        # Dragon Head
+---| "minecraft:dragon_wall_head"                   # Dragon Wall Head
+---| "minecraft:dried_kelp_block"                   # Dried Kelp Block
+---| "minecraft:dripstone_block"                    # Dripstone Block
+---| "minecraft:dropper"                            # Dropper
+---| "minecraft:emerald_block"                      # Block of Emerald
+---| "minecraft:emerald_ore"                        # Emerald Ore
+---| "minecraft:enchanting_table"                   # Enchanting Table
+---| "minecraft:end_gateway"                        # End Gateway
+---| "minecraft:end_portal"                         # End Portal
+---| "minecraft:end_portal_frame"                   # End Portal Frame
+---| "minecraft:end_rod"                            # End Rod
+---| "minecraft:end_stone"                          # End Stone
+---| "minecraft:end_stone_brick_slab"               # End Stone Brick Slab
+---| "minecraft:end_stone_brick_stairs"             # End Stone Brick Stairs
+---| "minecraft:end_stone_brick_wall"               # End Stone Brick Wall
+---| "minecraft:end_stone_bricks"                   # End Stone Bricks
+---| "minecraft:ender_chest"                        # Ender Chest
+---| "minecraft:exposed_copper"                     # Exposed Copper
+---| "minecraft:exposed_cut_copper"                 # Exposed Cut Copper
+---| "minecraft:exposed_cut_copper_slab"            # Exposed Cut Copper Slab
+---| "minecraft:exposed_cut_copper_stairs"          # Exposed Cut Copper Stairs
+---| "minecraft:farmland"                           # Farmland
+---| "minecraft:fern"                               # Fern
+---| "minecraft:fire"                               # Fire
+---| "minecraft:fire_coral"                         # Fire Coral
+---| "minecraft:fire_coral_block"                   # Fire Coral Block
+---| "minecraft:fire_coral_fan"                     # Fire Coral Fan
+---| "minecraft:fire_coral_wall_fan"                # Fire Coral Wall Fan
+---| "minecraft:fletching_table"                    # Fletching Table
+---| "minecraft:flower_pot"                         # Flower Pot
+---| "minecraft:flowering_azalea"                   # Flowering Azalea
+---| "minecraft:flowering_azalea_leaves"            # Flowering Azalea Leaves
+---| "minecraft:frosted_ice"                        # Frosted Ice
+---| "minecraft:furnace"                            # Furnace
+---| "minecraft:gilded_blackstone"                  # Gilded Blackstone
+---| "minecraft:glass"                              # Glass
+---| "minecraft:glass_pane"                         # Glass Pane
+---| "minecraft:glow_lichen"                        # Glow Lichen
+---| "minecraft:glowstone"                          # Glowstone
+---| "minecraft:gold_block"                         # Block of Gold
+---| "minecraft:gold_ore"                           # Gold Ore
+---| "minecraft:granite"                            # Granite
+---| "minecraft:granite_slab"                       # Granite Slab
+---| "minecraft:granite_stairs"                     # Granite Stairs
+---| "minecraft:granite_wall"                       # Granite Wall
+---| "minecraft:grass"                              # Grass
+---| "minecraft:grass_block"                        # Grass Block
+---| "minecraft:gravel"                             # Gravel
+---| "minecraft:gray_banner"                        # Gray Banner
+---| "minecraft:gray_bed"                           # Gray Bed
+---| "minecraft:gray_candle"                        # Gray Candle
+---| "minecraft:gray_candle_cake"                   # Cake with Gray Candle
+---| "minecraft:gray_carpet"                        # Gray Carpet
+---| "minecraft:gray_concrete"                      # Gray Concrete
+---| "minecraft:gray_concrete_powder"               # Gray Concrete Powder
+---| "minecraft:gray_glazed_terracotta"             # Gray Glazed Terracotta
+---| "minecraft:gray_shulker_box"                   # Gray Shulker Box
+---| "minecraft:gray_stained_glass"                 # Gray Stained Glass
+---| "minecraft:gray_stained_glass_pane"            # Gray Stained Glass Pane
+---| "minecraft:gray_terracotta"                    # Gray Terracotta
+---| "minecraft:gray_wall_banner"                   # Gray Wall Banner
+---| "minecraft:gray_wool"                          # Gray Wool
+---| "minecraft:green_banner"                       # Green Banner
+---| "minecraft:green_bed"                          # Green Bed
+---| "minecraft:green_candle"                       # Green Candle
+---| "minecraft:green_candle_cake"                  # Cake with Green Candle
+---| "minecraft:green_carpet"                       # Green Carpet
+---| "minecraft:green_concrete"                     # Green Concrete
+---| "minecraft:green_concrete_powder"              # Green Concrete Powder
+---| "minecraft:green_glazed_terracotta"            # Green Glazed Terracotta
+---| "minecraft:green_shulker_box"                  # Green Shulker Box
+---| "minecraft:green_stained_glass"                # Green Stained Glass
+---| "minecraft:green_stained_glass_pane"           # Green Stained Glass Pane
+---| "minecraft:green_terracotta"                   # Green Terracotta
+---| "minecraft:green_wall_banner"                  # Green Wall Banner
+---| "minecraft:green_wool"                         # Green Wool
+---| "minecraft:grindstone"                         # Grindstone
+---| "minecraft:hanging_roots"                      # Hanging Roots
+---| "minecraft:hay_block"                          # Hay Bale
+---| "minecraft:heavy_weighted_pressure_plate"      # Heavy Weighted Pressure Plate
+---| "minecraft:honey_block"                        # Honey Block
+---| "minecraft:honeycomb_block"                    # Honeycomb Block
+---| "minecraft:hopper"                             # Hopper
+---| "minecraft:horn_coral"                         # Horn Coral
+---| "minecraft:horn_coral_block"                   # Horn Coral Block
+---| "minecraft:horn_coral_fan"                     # Horn Coral Fan
+---| "minecraft:horn_coral_wall_fan"                # Horn Coral Wall Fan
+---| "minecraft:ice"                                # Ice
+---| "minecraft:infested_chiseled_stone_bricks"     # Infested Chiseled Stone Bricks
+---| "minecraft:infested_cobblestone"               # Infested Cobblestone
+---| "minecraft:infested_cracked_stone_bricks"      # Infested Cracked Stone Bricks
+---| "minecraft:infested_deepslate"                 # Infested Deepslate
+---| "minecraft:infested_mossy_stone_bricks"        # Infested Mossy Stone Bricks
+---| "minecraft:infested_stone"                     # Infested Stone
+---| "minecraft:infested_stone_bricks"              # Infested Stone Bricks
+---| "minecraft:iron_bars"                          # Iron Bars
+---| "minecraft:iron_block"                         # Block of Iron
+---| "minecraft:iron_door"                          # Iron Door
+---| "minecraft:iron_ore"                           # Iron Ore
+---| "minecraft:iron_trapdoor"                      # Iron Trapdoor
+---| "minecraft:jack_o_lantern"                     # Jack o'Lantern
+---| "minecraft:jigsaw"                             # Jigsaw Block
+---| "minecraft:jukebox"                            # Jukebox
+---| "minecraft:jungle_button"                      # Jungle Button
+---| "minecraft:jungle_door"                        # Jungle Door
+---| "minecraft:jungle_fence"                       # Jungle Fence
+---| "minecraft:jungle_fence_gate"                  # Jungle Fence Gate
+---| "minecraft:jungle_leaves"                      # Jungle Leaves
+---| "minecraft:jungle_log"                         # Jungle Log
+---| "minecraft:jungle_planks"                      # Jungle Planks
+---| "minecraft:jungle_pressure_plate"              # Jungle Pressure Plate
+---| "minecraft:jungle_sapling"                     # Jungle Sapling
+---| "minecraft:jungle_sign"                        # Jungle Sign
+---| "minecraft:jungle_slab"                        # Jungle Slab
+---| "minecraft:jungle_stairs"                      # Jungle Stairs
+---| "minecraft:jungle_trapdoor"                    # Jungle Trapdoor
+---| "minecraft:jungle_wall_sign"                   # Jungle Wall Sign
+---| "minecraft:jungle_wood"                        # Jungle Wood
+---| "minecraft:kelp"                               # Kelp
+---| "minecraft:kelp_plant"                         # Kelp Plant
+---| "minecraft:ladder"                             # Ladder
+---| "minecraft:lantern"                            # Lantern
+---| "minecraft:lapis_block"                        # Block of Lapis Lazuli
+---| "minecraft:lapis_ore"                          # Lapis Lazuli Ore
+---| "minecraft:large_amethyst_bud"                 # Large Amethyst Bud
+---| "minecraft:large_fern"                         # Large Fern
+---| "minecraft:lava"                               # Lava
+---| "minecraft:lava_cauldron"                      # Lava Cauldron
+---| "minecraft:lectern"                            # Lectern
+---| "minecraft:lever"                              # Lever
+---| "minecraft:light"                              # Light
+---| "minecraft:light_blue_banner"                  # Light Blue Banner
+---| "minecraft:light_blue_bed"                     # Light Blue Bed
+---| "minecraft:light_blue_candle"                  # Light Blue Candle
+---| "minecraft:light_blue_candle_cake"             # Cake with Light Blue Candle
+---| "minecraft:light_blue_carpet"                  # Light Blue Carpet
+---| "minecraft:light_blue_concrete"                # Light Blue Concrete
+---| "minecraft:light_blue_concrete_powder"         # Light Blue Concrete Powder
+---| "minecraft:light_blue_glazed_terracotta"       # Light Blue Glazed Terracotta
+---| "minecraft:light_blue_shulker_box"             # Light Blue Shulker Box
+---| "minecraft:light_blue_stained_glass"           # Light Blue Stained Glass
+---| "minecraft:light_blue_stained_glass_pane"      # Light Blue Stained Glass Pane
+---| "minecraft:light_blue_terracotta"              # Light Blue Terracotta
+---| "minecraft:light_blue_wall_banner"             # Light Blue Wall Banner
+---| "minecraft:light_blue_wool"                    # Light Blue Wool
+---| "minecraft:light_gray_banner"                  # Light Gray Banner
+---| "minecraft:light_gray_bed"                     # Light Gray Bed
+---| "minecraft:light_gray_candle"                  # Light Gray Candle
+---| "minecraft:light_gray_candle_cake"             # Cake with Light Gray Candle
+---| "minecraft:light_gray_carpet"                  # Light Gray Carpet
+---| "minecraft:light_gray_concrete"                # Light Gray Concrete
+---| "minecraft:light_gray_concrete_powder"         # Light Gray Concrete Powder
+---| "minecraft:light_gray_glazed_terracotta"       # Light Gray Glazed Terracotta
+---| "minecraft:light_gray_shulker_box"             # Light Gray Shulker Box
+---| "minecraft:light_gray_stained_glass"           # Light Gray Stained Glass
+---| "minecraft:light_gray_stained_glass_pane"      # Light Gray Stained Glass Pane
+---| "minecraft:light_gray_terracotta"              # Light Gray Terracotta
+---| "minecraft:light_gray_wall_banner"             # Light Gray Wall Banner
+---| "minecraft:light_gray_wool"                    # Light Gray Wool
+---| "minecraft:light_weighted_pressure_plate"      # Light Weighted Pressure Plate
+---| "minecraft:lightning_rod"                      # Lightning Rod
+---| "minecraft:lilac"                              # Lilac
+---| "minecraft:lily_of_the_valley"                 # Lily of the Valley
+---| "minecraft:lily_pad"                           # Lily Pad
+---| "minecraft:lime_banner"                        # Lime Banner
+---| "minecraft:lime_bed"                           # Lime Bed
+---| "minecraft:lime_candle"                        # Lime Candle
+---| "minecraft:lime_candle_cake"                   # Cake with Lime Candle
+---| "minecraft:lime_carpet"                        # Lime Carpet
+---| "minecraft:lime_concrete"                      # Lime Concrete
+---| "minecraft:lime_concrete_powder"               # Lime Concrete Powder
+---| "minecraft:lime_glazed_terracotta"             # Lime Glazed Terracotta
+---| "minecraft:lime_shulker_box"                   # Lime Shulker Box
+---| "minecraft:lime_stained_glass"                 # Lime Stained Glass
+---| "minecraft:lime_stained_glass_pane"            # Lime Stained Glass Pane
+---| "minecraft:lime_terracotta"                    # Lime Terracotta
+---| "minecraft:lime_wall_banner"                   # Lime Wall Banner
+---| "minecraft:lime_wool"                          # Lime Wool
+---| "minecraft:lodestone"                          # Lodestone
+---| "minecraft:loom"                               # Loom
+---| "minecraft:magenta_banner"                     # Magenta Banner
+---| "minecraft:magenta_bed"                        # Magenta Bed
+---| "minecraft:magenta_candle"                     # Magenta Candle
+---| "minecraft:magenta_candle_cake"                # Cake with Magenta Candle
+---| "minecraft:magenta_carpet"                     # Magenta Carpet
+---| "minecraft:magenta_concrete"                   # Magenta Concrete
+---| "minecraft:magenta_concrete_powder"            # Magenta Concrete Powder
+---| "minecraft:magenta_glazed_terracotta"          # Magenta Glazed Terracotta
+---| "minecraft:magenta_shulker_box"                # Magenta Shulker Box
+---| "minecraft:magenta_stained_glass"              # Magenta Stained Glass
+---| "minecraft:magenta_stained_glass_pane"         # Magenta Stained Glass Pane
+---| "minecraft:magenta_terracotta"                 # Magenta Terracotta
+---| "minecraft:magenta_wall_banner"                # Magenta Wall Banner
+---| "minecraft:magenta_wool"                       # Magenta Wool
+---| "minecraft:magma_block"                        # Magma Block
+---| "minecraft:medium_amethyst_bud"                # Medium Amethyst Bud
+---| "minecraft:melon"                              # Melon
+---| "minecraft:melon_stem"                         # Melon Stem
+---| "minecraft:moss_block"                         # Moss Block
+---| "minecraft:moss_carpet"                        # Moss Carpet
+---| "minecraft:mossy_cobblestone"                  # Mossy Cobblestone
+---| "minecraft:mossy_cobblestone_slab"             # Mossy Cobblestone Slab
+---| "minecraft:mossy_cobblestone_stairs"           # Mossy Cobblestone Stairs
+---| "minecraft:mossy_cobblestone_wall"             # Mossy Cobblestone Wall
+---| "minecraft:mossy_stone_brick_slab"             # Mossy Stone Brick Slab
+---| "minecraft:mossy_stone_brick_stairs"           # Mossy Stone Brick Stairs
+---| "minecraft:mossy_stone_brick_wall"             # Mossy Stone Brick Wall
+---| "minecraft:mossy_stone_bricks"                 # Mossy Stone Bricks
+---| "minecraft:moving_piston"                      # Moving Piston
+---| "minecraft:mushroom_stem"                      # Mushroom Stem
+---| "minecraft:mycelium"                           # Mycelium
+---| "minecraft:nether_brick_fence"                 # Nether Brick Fence
+---| "minecraft:nether_brick_slab"                  # Nether Brick Slab
+---| "minecraft:nether_brick_stairs"                # Nether Brick Stairs
+---| "minecraft:nether_brick_wall"                  # Nether Brick Wall
+---| "minecraft:nether_bricks"                      # Nether Bricks
+---| "minecraft:nether_gold_ore"                    # Nether Gold Ore
+---| "minecraft:nether_portal"                      # Nether Portal
+---| "minecraft:nether_quartz_ore"                  # Nether Quartz Ore
+---| "minecraft:nether_sprouts"                     # Nether Sprouts
+---| "minecraft:nether_wart"                        # Nether Wart
+---| "minecraft:nether_wart_block"                  # Nether Wart Block
+---| "minecraft:netherite_block"                    # Block of Netherite
+---| "minecraft:netherrack"                         # Netherrack
+---| "minecraft:note_block"                         # Note Block
+---| "minecraft:oak_button"                         # Oak Button
+---| "minecraft:oak_door"                           # Oak Door
+---| "minecraft:oak_fence"                          # Oak Fence
+---| "minecraft:oak_fence_gate"                     # Oak Fence Gate
+---| "minecraft:oak_leaves"                         # Oak Leaves
+---| "minecraft:oak_log"                            # Oak Log
+---| "minecraft:oak_planks"                         # Oak Planks
+---| "minecraft:oak_pressure_plate"                 # Oak Pressure Plate
+---| "minecraft:oak_sapling"                        # Oak Sapling
+---| "minecraft:oak_sign"                           # Oak Sign
+---| "minecraft:oak_slab"                           # Oak Slab
+---| "minecraft:oak_stairs"                         # Oak Stairs
+---| "minecraft:oak_trapdoor"                       # Oak Trapdoor
+---| "minecraft:oak_wall_sign"                      # Oak Wall Sign
+---| "minecraft:oak_wood"                           # Oak Wood
+---| "minecraft:observer"                           # Observer
+---| "minecraft:obsidian"                           # Obsidian
+---| "minecraft:orange_banner"                      # Orange Banner
+---| "minecraft:orange_bed"                         # Orange Bed
+---| "minecraft:orange_candle"                      # Orange Candle
+---| "minecraft:orange_candle_cake"                 # Cake with Orange Candle
+---| "minecraft:orange_carpet"                      # Orange Carpet
+---| "minecraft:orange_concrete"                    # Orange Concrete
+---| "minecraft:orange_concrete_powder"             # Orange Concrete Powder
+---| "minecraft:orange_glazed_terracotta"           # Orange Glazed Terracotta
+---| "minecraft:orange_shulker_box"                 # Orange Shulker Box
+---| "minecraft:orange_stained_glass"               # Orange Stained Glass
+---| "minecraft:orange_stained_glass_pane"          # Orange Stained Glass Pane
+---| "minecraft:orange_terracotta"                  # Orange Terracotta
+---| "minecraft:orange_tulip"                       # Orange Tulip
+---| "minecraft:orange_wall_banner"                 # Orange Wall Banner
+---| "minecraft:orange_wool"                        # Orange Wool
+---| "minecraft:oxeye_daisy"                        # Oxeye Daisy
+---| "minecraft:oxidized_copper"                    # Oxidized Copper
+---| "minecraft:oxidized_cut_copper"                # Oxidized Cut Copper
+---| "minecraft:oxidized_cut_copper_slab"           # Oxidized Cut Copper Slab
+---| "minecraft:oxidized_cut_copper_stairs"         # Oxidized Cut Copper Stairs
+---| "minecraft:packed_ice"                         # Packed Ice
+---| "minecraft:peony"                              # Peony
+---| "minecraft:petrified_oak_slab"                 # Petrified Oak Slab
+---| "minecraft:pink_banner"                        # Pink Banner
+---| "minecraft:pink_bed"                           # Pink Bed
+---| "minecraft:pink_candle"                        # Pink Candle
+---| "minecraft:pink_candle_cake"                   # Cake with Pink Candle
+---| "minecraft:pink_carpet"                        # Pink Carpet
+---| "minecraft:pink_concrete"                      # Pink Concrete
+---| "minecraft:pink_concrete_powder"               # Pink Concrete Powder
+---| "minecraft:pink_glazed_terracotta"             # Pink Glazed Terracotta
+---| "minecraft:pink_shulker_box"                   # Pink Shulker Box
+---| "minecraft:pink_stained_glass"                 # Pink Stained Glass
+---| "minecraft:pink_stained_glass_pane"            # Pink Stained Glass Pane
+---| "minecraft:pink_terracotta"                    # Pink Terracotta
+---| "minecraft:pink_tulip"                         # Pink Tulip
+---| "minecraft:pink_wall_banner"                   # Pink Wall Banner
+---| "minecraft:pink_wool"                          # Pink Wool
+---| "minecraft:piston"                             # Piston
+---| "minecraft:piston_head"                        # Piston Head
+---| "minecraft:player_head"                        # Player Head
+---| "minecraft:player_wall_head"                   # Player Wall Head
+---| "minecraft:podzol"                             # Podzol
+---| "minecraft:pointed_dripstone"                  # Pointed Dripstone
+---| "minecraft:polished_andesite"                  # Polished Andesite
+---| "minecraft:polished_andesite_slab"             # Polished Andesite Slab
+---| "minecraft:polished_andesite_stairs"           # Polished Andesite Stairs
+---| "minecraft:polished_basalt"                    # Polished Basalt
+---| "minecraft:polished_blackstone"                # Polished Blackstone
+---| "minecraft:polished_blackstone_brick_slab"     # Polished Blackstone Brick Slab
+---| "minecraft:polished_blackstone_brick_stairs"   # Polished Blackstone Brick Stairs
+---| "minecraft:polished_blackstone_brick_wall"     # Polished Blackstone Brick Wall
+---| "minecraft:polished_blackstone_bricks"         # Polished Blackstone Bricks
+---| "minecraft:polished_blackstone_button"         # Polished Blackstone Button
+---| "minecraft:polished_blackstone_pressure_plate" # Polished Blackstone Pressure Plate
+---| "minecraft:polished_blackstone_slab"           # Polished Blackstone Slab
+---| "minecraft:polished_blackstone_stairs"         # Polished Blackstone Stairs
+---| "minecraft:polished_blackstone_wall"           # Polished Blackstone Wall
+---| "minecraft:polished_deepslate"                 # Polished Deepslate
+---| "minecraft:polished_deepslate_slab"            # Polished Deepslate Slab
+---| "minecraft:polished_deepslate_stairs"          # Polished Deepslate Stairs
+---| "minecraft:polished_deepslate_wall"            # Polished Deepslate Wall
+---| "minecraft:polished_diorite"                   # Polished Diorite
+---| "minecraft:polished_diorite_slab"              # Polished Diorite Slab
+---| "minecraft:polished_diorite_stairs"            # Polished Diorite Stairs
+---| "minecraft:polished_granite"                   # Polished Granite
+---| "minecraft:polished_granite_slab"              # Polished Granite Slab
+---| "minecraft:polished_granite_stairs"            # Polished Granite Stairs
+---| "minecraft:poppy"                              # Poppy
+---| "minecraft:potatoes"                           # Potatoes
+---| "minecraft:potted_acacia_sapling"              # Potted Acacia Sapling
+---| "minecraft:potted_allium"                      # Potted Allium
+---| "minecraft:potted_azalea_bush"                 # Potted Azalea
+---| "minecraft:potted_azure_bluet"                 # Potted Azure Bluet
+---| "minecraft:potted_bamboo"                      # Potted Bamboo
+---| "minecraft:potted_birch_sapling"               # Potted Birch Sapling
+---| "minecraft:potted_blue_orchid"                 # Potted Blue Orchid
+---| "minecraft:potted_brown_mushroom"              # Potted Brown Mushroom
+---| "minecraft:potted_cactus"                      # Potted Cactus
+---| "minecraft:potted_cornflower"                  # Potted Cornflower
+---| "minecraft:potted_crimson_fungus"              # Potted Crimson Fungus
+---| "minecraft:potted_crimson_roots"               # Potted Crimson Roots
+---| "minecraft:potted_dandelion"                   # Potted Dandelion
+---| "minecraft:potted_dark_oak_sapling"            # Potted Dark Oak Sapling
+---| "minecraft:potted_dead_bush"                   # Potted Dead Bush
+---| "minecraft:potted_fern"                        # Potted Fern
+---| "minecraft:potted_flowering_azalea_bush"       # Potted Flowering Azalea
+---| "minecraft:potted_jungle_sapling"              # Potted Jungle Sapling
+---| "minecraft:potted_lily_of_the_valley"          # Potted Lily of the Valley
+---| "minecraft:potted_oak_sapling"                 # Potted Oak Sapling
+---| "minecraft:potted_orange_tulip"                # Potted Orange Tulip
+---| "minecraft:potted_oxeye_daisy"                 # Potted Oxeye Daisy
+---| "minecraft:potted_pink_tulip"                  # Potted Pink Tulip
+---| "minecraft:potted_poppy"                       # Potted Poppy
+---| "minecraft:potted_red_mushroom"                # Potted Red Mushroom
+---| "minecraft:potted_red_tulip"                   # Potted Red Tulip
+---| "minecraft:potted_spruce_sapling"              # Potted Spruce Sapling
+---| "minecraft:potted_warped_fungus"               # Potted Warped Fungus
+---| "minecraft:potted_warped_roots"                # Potted Warped Roots
+---| "minecraft:potted_white_tulip"                 # Potted White Tulip
+---| "minecraft:potted_wither_rose"                 # Potted Wither Rose
+---| "minecraft:powder_snow"                        # Powder Snow
+---| "minecraft:powder_snow_cauldron"               # Powder Snow Cauldron
+---| "minecraft:powered_rail"                       # Powered Rail
+---| "minecraft:prismarine"                         # Prismarine
+---| "minecraft:prismarine_brick_slab"              # Prismarine Brick Slab
+---| "minecraft:prismarine_brick_stairs"            # Prismarine Brick Stairs
+---| "minecraft:prismarine_bricks"                  # Prismarine Bricks
+---| "minecraft:prismarine_slab"                    # Prismarine Slab
+---| "minecraft:prismarine_stairs"                  # Prismarine Stairs
+---| "minecraft:prismarine_wall"                    # Prismarine Wall
+---| "minecraft:pumpkin"                            # Pumpkin
+---| "minecraft:pumpkin_stem"                       # Pumpkin Stem
+---| "minecraft:purple_banner"                      # Purple Banner
+---| "minecraft:purple_bed"                         # Purple Bed
+---| "minecraft:purple_candle"                      # Purple Candle
+---| "minecraft:purple_candle_cake"                 # Cake with Purple Candle
+---| "minecraft:purple_carpet"                      # Purple Carpet
+---| "minecraft:purple_concrete"                    # Purple Concrete
+---| "minecraft:purple_concrete_powder"             # Purple Concrete Powder
+---| "minecraft:purple_glazed_terracotta"           # Purple Glazed Terracotta
+---| "minecraft:purple_shulker_box"                 # Purple Shulker Box
+---| "minecraft:purple_stained_glass"               # Purple Stained Glass
+---| "minecraft:purple_stained_glass_pane"          # Purple Stained Glass Pane
+---| "minecraft:purple_terracotta"                  # Purple Terracotta
+---| "minecraft:purple_wall_banner"                 # Purple Wall Banner
+---| "minecraft:purple_wool"                        # Purple Wool
+---| "minecraft:purpur_block"                       # Purpur Block
+---| "minecraft:purpur_pillar"                      # Purpur Pillar
+---| "minecraft:purpur_slab"                        # Purpur Slab
+---| "minecraft:purpur_stairs"                      # Purpur Stairs
+---| "minecraft:quartz_block"                       # Block of Quartz
+---| "minecraft:quartz_bricks"                      # Quartz Bricks
+---| "minecraft:quartz_pillar"                      # Quartz Pillar
+---| "minecraft:quartz_slab"                        # Quartz Slab
+---| "minecraft:quartz_stairs"                      # Quartz Stairs
+---| "minecraft:rail"                               # Rail
+---| "minecraft:raw_copper_block"                   # Block of Raw Copper
+---| "minecraft:raw_gold_block"                     # Block of Raw Gold
+---| "minecraft:raw_iron_block"                     # Block of Raw Iron
+---| "minecraft:red_banner"                         # Red Banner
+---| "minecraft:red_bed"                            # Red Bed
+---| "minecraft:red_candle"                         # Red Candle
+---| "minecraft:red_candle_cake"                    # Cake with Red Candle
+---| "minecraft:red_carpet"                         # Red Carpet
+---| "minecraft:red_concrete"                       # Red Concrete
+---| "minecraft:red_concrete_powder"                # Red Concrete Powder
+---| "minecraft:red_glazed_terracotta"              # Red Glazed Terracotta
+---| "minecraft:red_mushroom"                       # Red Mushroom
+---| "minecraft:red_mushroom_block"                 # Red Mushroom Block
+---| "minecraft:red_nether_brick_slab"              # Red Nether Brick Slab
+---| "minecraft:red_nether_brick_stairs"            # Red Nether Brick Stairs
+---| "minecraft:red_nether_brick_wall"              # Red Nether Brick Wall
+---| "minecraft:red_nether_bricks"                  # Red Nether Bricks
+---| "minecraft:red_sand"                           # Red Sand
+---| "minecraft:red_sandstone"                      # Red Sandstone
+---| "minecraft:red_sandstone_slab"                 # Red Sandstone Slab
+---| "minecraft:red_sandstone_stairs"               # Red Sandstone Stairs
+---| "minecraft:red_sandstone_wall"                 # Red Sandstone Wall
+---| "minecraft:red_shulker_box"                    # Red Shulker Box
+---| "minecraft:red_stained_glass"                  # Red Stained Glass
+---| "minecraft:red_stained_glass_pane"             # Red Stained Glass Pane
+---| "minecraft:red_terracotta"                     # Red Terracotta
+---| "minecraft:red_tulip"                          # Red Tulip
+---| "minecraft:red_wall_banner"                    # Red Wall Banner
+---| "minecraft:red_wool"                           # Red Wool
+---| "minecraft:redstone_block"                     # Block of Redstone
+---| "minecraft:redstone_lamp"                      # Redstone Lamp
+---| "minecraft:redstone_ore"                       # Redstone Ore
+---| "minecraft:redstone_torch"                     # Redstone Torch
+---| "minecraft:redstone_wall_torch"                # Redstone Wall Torch
+---| "minecraft:redstone_wire"                      # Redstone Wire
+---| "minecraft:repeater"                           # Redstone Repeater
+---| "minecraft:repeating_command_block"            # Repeating Command Block
+---| "minecraft:respawn_anchor"                     # Respawn Anchor
+---| "minecraft:rooted_dirt"                        # Rooted Dirt
+---| "minecraft:rose_bush"                          # Rose Bush
+---| "minecraft:sand"                               # Sand
+---| "minecraft:sandstone"                          # Sandstone
+---| "minecraft:sandstone_slab"                     # Sandstone Slab
+---| "minecraft:sandstone_stairs"                   # Sandstone Stairs
+---| "minecraft:sandstone_wall"                     # Sandstone Wall
+---| "minecraft:scaffolding"                        # Scaffolding
+---| "minecraft:sculk_sensor"                       # Sculk Sensor
+---| "minecraft:sea_lantern"                        # Sea Lantern
+---| "minecraft:sea_pickle"                         # Sea Pickle
+---| "minecraft:seagrass"                           # Seagrass
+---| "minecraft:shroomlight"                        # Shroomlight
+---| "minecraft:shulker_box"                        # Shulker Box
+---| "minecraft:skeleton_skull"                     # Skeleton Skull
+---| "minecraft:skeleton_wall_skull"                # Skeleton Wall Skull
+---| "minecraft:slime_block"                        # Slime Block
+---| "minecraft:small_amethyst_bud"                 # Small Amethyst Bud
+---| "minecraft:small_dripleaf"                     # Small Dripleaf
+---| "minecraft:smithing_table"                     # Smithing Table
+---| "minecraft:smoker"                             # Smoker
+---| "minecraft:smooth_basalt"                      # Smooth Basalt
+---| "minecraft:smooth_quartz"                      # Smooth Quartz Block
+---| "minecraft:smooth_quartz_slab"                 # Smooth Quartz Slab
+---| "minecraft:smooth_quartz_stairs"               # Smooth Quartz Stairs
+---| "minecraft:smooth_red_sandstone"               # Smooth Red Sandstone
+---| "minecraft:smooth_red_sandstone_slab"          # Smooth Red Sandstone Slab
+---| "minecraft:smooth_red_sandstone_stairs"        # Smooth Red Sandstone Stairs
+---| "minecraft:smooth_sandstone"                   # Smooth Sandstone
+---| "minecraft:smooth_sandstone_slab"              # Smooth Sandstone Slab
+---| "minecraft:smooth_sandstone_stairs"            # Smooth Sandstone Stairs
+---| "minecraft:smooth_stone"                       # Smooth Stone
+---| "minecraft:smooth_stone_slab"                  # Smooth Stone Slab
+---| "minecraft:snow"                               # Snow
+---| "minecraft:snow_block"                         # Snow Block
+---| "minecraft:soul_campfire"                      # Soul Campfire
+---| "minecraft:soul_fire"                          # Soul Fire
+---| "minecraft:soul_lantern"                       # Soul Lantern
+---| "minecraft:soul_sand"                          # Soul Sand
+---| "minecraft:soul_soil"                          # Soul Soil
+---| "minecraft:soul_torch"                         # Soul Torch
+---| "minecraft:soul_wall_torch"                    # Soul Wall Torch
+---| "minecraft:spawner"                            # Spawner
+---| "minecraft:sponge"                             # Sponge
+---| "minecraft:spore_blossom"                      # Spore Blossom
+---| "minecraft:spruce_button"                      # Spruce Button
+---| "minecraft:spruce_door"                        # Spruce Door
+---| "minecraft:spruce_fence"                       # Spruce Fence
+---| "minecraft:spruce_fence_gate"                  # Spruce Fence Gate
+---| "minecraft:spruce_leaves"                      # Spruce Leaves
+---| "minecraft:spruce_log"                         # Spruce Log
+---| "minecraft:spruce_planks"                      # Spruce Planks
+---| "minecraft:spruce_pressure_plate"              # Spruce Pressure Plate
+---| "minecraft:spruce_sapling"                     # Spruce Sapling
+---| "minecraft:spruce_sign"                        # Spruce Sign
+---| "minecraft:spruce_slab"                        # Spruce Slab
+---| "minecraft:spruce_stairs"                      # Spruce Stairs
+---| "minecraft:spruce_trapdoor"                    # Spruce Trapdoor
+---| "minecraft:spruce_wall_sign"                   # Spruce Wall Sign
+---| "minecraft:spruce_wood"                        # Spruce Wood
+---| "minecraft:sticky_piston"                      # Sticky Piston
+---| "minecraft:stone"                              # Stone
+---| "minecraft:stone_brick_slab"                   # Stone Brick Slab
+---| "minecraft:stone_brick_stairs"                 # Stone Brick Stairs
+---| "minecraft:stone_brick_wall"                   # Stone Brick Wall
+---| "minecraft:stone_bricks"                       # Stone Bricks
+---| "minecraft:stone_button"                       # Stone Button
+---| "minecraft:stone_pressure_plate"               # Stone Pressure Plate
+---| "minecraft:stone_slab"                         # Stone Slab
+---| "minecraft:stone_stairs"                       # Stone Stairs
+---| "minecraft:stonecutter"                        # Stonecutter
+---| "minecraft:stripped_acacia_log"                # Stripped Acacia Log
+---| "minecraft:stripped_acacia_wood"               # Stripped Acacia Wood
+---| "minecraft:stripped_birch_log"                 # Stripped Birch Log
+---| "minecraft:stripped_birch_wood"                # Stripped Birch Wood
+---| "minecraft:stripped_crimson_hyphae"            # Stripped Crimson Hyphae
+---| "minecraft:stripped_crimson_stem"              # Stripped Crimson Stem
+---| "minecraft:stripped_dark_oak_log"              # Stripped Dark Oak Log
+---| "minecraft:stripped_dark_oak_wood"             # Stripped Dark Oak Wood
+---| "minecraft:stripped_jungle_log"                # Stripped Jungle Log
+---| "minecraft:stripped_jungle_wood"               # Stripped Jungle Wood
+---| "minecraft:stripped_oak_log"                   # Stripped Oak Log
+---| "minecraft:stripped_oak_wood"                  # Stripped Oak Wood
+---| "minecraft:stripped_spruce_log"                # Stripped Spruce Log
+---| "minecraft:stripped_spruce_wood"               # Stripped Spruce Wood
+---| "minecraft:stripped_warped_hyphae"             # Stripped Warped Hyphae
+---| "minecraft:stripped_warped_stem"               # Stripped Warped Stem
+---| "minecraft:structure_block"                    # Structure Block
+---| "minecraft:structure_void"                     # Structure Void
+---| "minecraft:sugar_cane"                         # Sugar Cane
+---| "minecraft:sunflower"                          # Sunflower
+---| "minecraft:sweet_berry_bush"                   # Sweet Berry Bush
+---| "minecraft:tall_grass"                         # Tall Grass
+---| "minecraft:tall_seagrass"                      # Tall Seagrass
+---| "minecraft:target"                             # Target
+---| "minecraft:terracotta"                         # Terracotta
+---| "minecraft:tinted_glass"                       # Tinted Glass
+---| "minecraft:tnt"                                # TNT
+---| "minecraft:torch"                              # Torch
+---| "minecraft:trapped_chest"                      # Trapped Chest
+---| "minecraft:tripwire"                           # Tripwire
+---| "minecraft:tripwire_hook"                      # Tripwire Hook
+---| "minecraft:tube_coral"                         # Tube Coral
+---| "minecraft:tube_coral_block"                   # Tube Coral Block
+---| "minecraft:tube_coral_fan"                     # Tube Coral Fan
+---| "minecraft:tube_coral_wall_fan"                # Tube Coral Wall Fan
+---| "minecraft:tuff"                               # Tuff
+---| "minecraft:turtle_egg"                         # Turtle Egg
+---| "minecraft:twisting_vines"                     # Twisting Vines
+---| "minecraft:twisting_vines_plant"               # Twisting Vines Plant
+---| "minecraft:vine"                               # Vines
+---| "minecraft:void_air"                           # Void Air
+---| "minecraft:wall_torch"                         # Wall Torch
+---| "minecraft:warped_button"                      # Warped Button
+---| "minecraft:warped_door"                        # Warped Door
+---| "minecraft:warped_fence"                       # Warped Fence
+---| "minecraft:warped_fence_gate"                  # Warped Fence Gate
+---| "minecraft:warped_fungus"                      # Warped Fungus
+---| "minecraft:warped_hyphae"                      # Warped Hyphae
+---| "minecraft:warped_nylium"                      # Warped Nylium
+---| "minecraft:warped_planks"                      # Warped Planks
+---| "minecraft:warped_pressure_plate"              # Warped Pressure Plate
+---| "minecraft:warped_roots"                       # Warped Roots
+---| "minecraft:warped_sign"                        # Warped Sign
+---| "minecraft:warped_slab"                        # Warped Slab
+---| "minecraft:warped_stairs"                      # Warped Stairs
+---| "minecraft:warped_stem"                        # Warped Stem
+---| "minecraft:warped_trapdoor"                    # Warped Trapdoor
+---| "minecraft:warped_wall_sign"                   # Warped Wall Sign
+---| "minecraft:warped_wart_block"                  # Warped Wart Block
+---| "minecraft:water"                              # Water
+---| "minecraft:water_cauldron"                     # Water Cauldron
+---| "minecraft:waxed_copper_block"                 # Waxed Block of Copper
+---| "minecraft:waxed_cut_copper"                   # Waxed Cut Copper
+---| "minecraft:waxed_cut_copper_slab"              # Waxed Cut Copper Slab
+---| "minecraft:waxed_cut_copper_stairs"            # Waxed Cut Copper Stairs
+---| "minecraft:waxed_exposed_copper"               # Waxed Exposed Copper
+---| "minecraft:waxed_exposed_cut_copper"           # Waxed Exposed Cut Copper
+---| "minecraft:waxed_exposed_cut_copper_slab"      # Waxed Exposed Cut Copper Slab
+---| "minecraft:waxed_exposed_cut_copper_stairs"    # Waxed Exposed Cut Copper Stairs
+---| "minecraft:waxed_oxidized_copper"              # Waxed Oxidized Copper
+---| "minecraft:waxed_oxidized_cut_copper"          # Waxed Oxidized Cut Copper
+---| "minecraft:waxed_oxidized_cut_copper_slab"     # Waxed Oxidized Cut Copper Slab
+---| "minecraft:waxed_oxidized_cut_copper_stairs"   # Waxed Oxidized Cut Copper Stairs
+---| "minecraft:waxed_weathered_copper"             # Waxed Weathered Copper
+---| "minecraft:waxed_weathered_cut_copper"         # Waxed Weathered Cut Copper
+---| "minecraft:waxed_weathered_cut_copper_slab"    # Waxed Weathered Cut Copper Slab
+---| "minecraft:waxed_weathered_cut_copper_stairs"  # Waxed Weathered Cut Copper Stairs
+---| "minecraft:weathered_copper"                   # Weathered Copper
+---| "minecraft:weathered_cut_copper"               # Weathered Cut Copper
+---| "minecraft:weathered_cut_copper_slab"          # Weathered Cut Copper Slab
+---| "minecraft:weathered_cut_copper_stairs"        # Weathered Cut Copper Stairs
+---| "minecraft:weeping_vines"                      # Weeping Vines
+---| "minecraft:weeping_vines_plant"                # Weeping Vines Plant
+---| "minecraft:wet_sponge"                         # Wet Sponge
+---| "minecraft:wheat"                              # Wheat Crops
+---| "minecraft:white_banner"                       # White Banner
+---| "minecraft:white_bed"                          # White Bed
+---| "minecraft:white_candle"                       # White Candle
+---| "minecraft:white_candle_cake"                  # Cake with White Candle
+---| "minecraft:white_carpet"                       # White Carpet
+---| "minecraft:white_concrete"                     # White Concrete
+---| "minecraft:white_concrete_powder"              # White Concrete Powder
+---| "minecraft:white_glazed_terracotta"            # White Glazed Terracotta
+---| "minecraft:white_shulker_box"                  # White Shulker Box
+---| "minecraft:white_stained_glass"                # White Stained Glass
+---| "minecraft:white_stained_glass_pane"           # White Stained Glass Pane
+---| "minecraft:white_terracotta"                   # White Terracotta
+---| "minecraft:white_tulip"                        # White Tulip
+---| "minecraft:white_wall_banner"                  # White Wall Banner
+---| "minecraft:white_wool"                         # White Wool
+---| "minecraft:wither_rose"                        # Wither Rose
+---| "minecraft:wither_skeleton_skull"              # Wither Skeleton Skull
+---| "minecraft:wither_skeleton_wall_skull"         # Wither Skeleton Wall Skull
+---| "minecraft:yellow_banner"                      # Yellow Banner
+---| "minecraft:yellow_bed"                         # Yellow Bed
+---| "minecraft:yellow_candle"                      # Yellow Candle
+---| "minecraft:yellow_candle_cake"                 # Cake with Yellow Candle
+---| "minecraft:yellow_carpet"                      # Yellow Carpet
+---| "minecraft:yellow_concrete"                    # Yellow Concrete
+---| "minecraft:yellow_concrete_powder"             # Yellow Concrete Powder
+---| "minecraft:yellow_glazed_terracotta"           # Yellow Glazed Terracotta
+---| "minecraft:yellow_shulker_box"                 # Yellow Shulker Box
+---| "minecraft:yellow_stained_glass"               # Yellow Stained Glass
+---| "minecraft:yellow_stained_glass_pane"          # Yellow Stained Glass Pane
+---| "minecraft:yellow_terracotta"                  # Yellow Terracotta
+---| "minecraft:yellow_wall_banner"                 # Yellow Wall Banner
+---| "minecraft:yellow_wool"                        # Yellow Wool
+---| "minecraft:zombie_head"                        # Zombie Head
+---| "minecraft:zombie_wall_head"                   # Zombie Wall Head

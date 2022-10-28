@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {"path": "."}
+  ],
+  "settings": {
+    "json.schemas": [
+      {
+        "fileMatch": ["**/avatar.json"],
+        "url": ".vscode/avatar.schema.json"
+      }
+    ]
+  }
+}

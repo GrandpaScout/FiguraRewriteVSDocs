@@ -1,0 +1,342 @@
+---@meta
+
+---@diagnostic disable: duplicate-set-field
+
+--TODO: Review all descriptions to see if they fit the style guide.
+
+---==============================================================================================---
+---  MINECRAFT                                                                                   ---
+---==============================================================================================---
+
+-- This enum should follow the same order as the keys appear in the Key Binds menu.
+
+---A Minecraft keybind.
+---@alias Minecraft.keybind string
+---| "key.jump"                          # **Minecraft:** [Movement] Jump
+---| "key.sneak"                         # **Minecraft:** [Movement] Sneak
+---| "key.sprint"                        # **Minecraft:** [Movement] Sprint
+---| "key.left"                          # **Minecraft:** [Movement] Strafe Left
+---| "key.right"                         # **Minecraft:** [Movement] Strafe Right
+---| "key.back"                          # **Minecraft:** [Movement] Walk Backwards
+---| "key.forward"                       # **Minecraft:** [Movement] Walk Forwards
+---| "key.attack"                        # **Minecraft:** [Gameplay] Attack/Destroy
+---| "key.pickItem"                      # **Minecraft:** [Gameplay] Pick Block
+---| "key.use"                           # **Minecraft:** [Gameplay] Use item/Place Block
+---| "key.drop"                          # **Minecraft:** [Inventory] Drop Selected Item
+---| "key.hotbar.1"                      # **Minecraft:** [Inventory] Hotbar Slot 1
+---| "key.hotbar.2"                      # **Minecraft:** [Inventory] Hotbar Slot 2
+---| "key.hotbar.3"                      # **Minecraft:** [Inventory] Hotbar Slot 3
+---| "key.hotbar.4"                      # **Minecraft:** [Inventory] Hotbar Slot 4
+---| "key.hotbar.5"                      # **Minecraft:** [Inventory] Hotbar Slot 5
+---| "key.hotbar.6"                      # **Minecraft:** [Inventory] Hotbar Slot 6
+---| "key.hotbar.7"                      # **Minecraft:** [Inventory] Hotbar Slot 7
+---| "key.hotbar.8"                      # **Minecraft:** [Inventory] Hotbar Slot 8
+---| "key.hotbar.9"                      # **Minecraft:** [Inventory] Hotbar Slot 9
+---| "key.inventory"                     # **Minecraft:** [Inventory] Open/Close Inventory
+---| "key.swapOffhand"                   # **Minecraft:** [Inventory] Swap Item With Offhand
+---| "key.loadToolbarActivator"          # **Minecraft:** [Creative Mode] Load Hotbar Activator
+---| "key.saveToolbarActivator"          # **Minecraft:** [Creative Mode] Save Hotbar Activator
+---| "key.playerlist"                    # **Minecraft:** [Multiplayer] List Players
+---| "key.chat"                          # **Minecraft:** [Multiplayer] Open Chat
+---| "key.command"                       # **Minecraft:** [Multiplayer] Open Command
+---| "key.socialInteractions"            # **Minecraft:** [Multiplayer] Social Interactions Screen
+---| "key.advancements"                  # **Minecraft:** [Miscellaneous] Advancements
+---| "key.spectatorOutlines"             # **Minecraft:** [Miscellaneous] Highlight Players (Spectators)
+---| "key.screenshot"                    # **Minecraft:** [Miscellaneous] Take Screenshot
+---| "key.smoothCamera"                  # **Minecraft:** [Miscellaneous] Toggle Cinematic Camera
+---| "key.fullscreen"                    # **Minecraft:** [Miscellaneous] Toggle Fullscreen
+---| "key.togglePerspective"             # **Minecraft:** [Miscellaneous] Toggle Perspective
+---| "figura.config.action_wheel_button" # **Figura:** [Figura] Action Wheel Button
+---| "figura.config.panic_button"        # **Figura:** [Figura] Panic Button
+---| "figura.config.popup_button"        # **Figura:** [Figura] Popup Menu
+---| "figura.config.reload_button"       # **Figura:** [Figura] Reload Avatar
+---| "key.modmenu.open_menu"             # **Mod Menu:** [Mod Menu] Open Mod Menu
+---| "key.origins.primary_active"        # **Origins:** [Origins] Active Power (Primary)
+---| "key.origins.secondary_active"      # **Origins:** [Origins] Active Power (Secondary)
+---| "key.origins.view_origin"           # **Origins:** [Origins] View Origin
+---| "iris.keybind.reload"               # **Iris:** [Iris] Reload Shaders
+---| "iris.keybind.toggleShaders"        # **Iris:** [Iris] Shaderpack Selection Screen
+---| "iris.keybind.shaderPackSelection"  # **Iris:** [Iris] Toggle Shaders
+
+
+--unknown: 🚫
+--ctrl: ✲ ⎈ ⌃
+--windows: ⊞ ❖
+--command: ⌘
+--alt: ⎇
+--option: ⌥
+--meta/super: ◆
+--shift: ⇧
+--caps: 🅰 ⇪
+--return: ↵
+--enter: ⌤
+--menu: ☰
+--tab: ↹ ⇥
+--escape: ⎋
+--backspace: ⟵ ⌫
+--arrows: ↑ ↓ ← →
+--home: ⤒
+--end: ⤓
+--pgup: ⇞
+--pgdn: ⇟
+--delete: ⌦
+--clear: ⌧
+--world: 🌐
+
+---A valid key code for use in keybinds.
+---
+---Also accepts other formats such as
+---* `key.keyboard.###`
+---* `key.mouse.###`
+---* `scancode.###`
+---@alias Minecraft.keyCode string
+---| "key.keyboard.unknown"         # 🚫 *Unset*
+---| "key.keyboard.escape"          # `⎋ Esc`
+---| "key.keyboard.f1"              # `F1`
+---| "key.keyboard.f2"              # `F2`
+---| "key.keyboard.f3"              # `F3`
+---| "key.keyboard.f4"              # `F4`
+---| "key.keyboard.f5"              # `F5`
+---| "key.keyboard.f6"              # `F6`
+---| "key.keyboard.f7"              # `F7`
+---| "key.keyboard.f8"              # `F8`
+---| "key.keyboard.f9"              # `F9`
+---| "key.keyboard.f10"             # `F10`
+---| "key.keyboard.f11"             # `F11`
+---| "key.keyboard.f12"             # `F12`
+---| "key.keyboard.print.screen"    # `PrtSc|SysRq`
+---| "key.keyboard.scroll.lock"     # `Scroll Lock`
+---| "key.keyboard.pause"           # `Pause|Break`
+---| "key.keyboard.f13"             # `F13`
+---| "key.keyboard.f14"             # `F14`
+---| "key.keyboard.f15"             # `F15`
+---| "key.keyboard.f16"             # `F16`
+---| "key.keyboard.f17"             # `F17`
+---| "key.keyboard.f18"             # `F18`
+---| "key.keyboard.f19"             # `F19`
+---| "key.keyboard.f20"             # `F20`
+---| "key.keyboard.f21"             # `F21`
+---| "key.keyboard.f22"             # `F22`
+---| "key.keyboard.f23"             # `F23`
+---| "key.keyboard.f24"             # `F24`
+---| "key.keyboard.f25"             # `F25`
+---| "key.keyboard.0"               # `0`
+---| "key.keyboard.1"               # `1`
+---| "key.keyboard.2"               # `2`
+---| "key.keyboard.3"               # `3`
+---| "key.keyboard.4"               # `4`
+---| "key.keyboard.5"               # `5`
+---| "key.keyboard.6"               # `6`
+---| "key.keyboard.7"               # `7`
+---| "key.keyboard.8"               # `8`
+---| "key.keyboard.9"               # `9`
+---| "key.keyboard.a"               # `A`
+---| "key.keyboard.b"               # `B`
+---| "key.keyboard.c"               # `C`
+---| "key.keyboard.d"               # `D`
+---| "key.keyboard.e"               # `E`
+---| "key.keyboard.f"               # `F`
+---| "key.keyboard.g"               # `G`
+---| "key.keyboard.h"               # `H`
+---| "key.keyboard.i"               # `I`
+---| "key.keyboard.j"               # `J`
+---| "key.keyboard.k"               # `K`
+---| "key.keyboard.l"               # `L`
+---| "key.keyboard.m"               # `M`
+---| "key.keyboard.n"               # `N`
+---| "key.keyboard.o"               # `O`
+---| "key.keyboard.p"               # `P`
+---| "key.keyboard.q"               # `Q`
+---| "key.keyboard.r"               # `R`
+---| "key.keyboard.s"               # `S`
+---| "key.keyboard.t"               # `T`
+---| "key.keyboard.u"               # `U`
+---| "key.keyboard.v"               # `V`
+---| "key.keyboard.w"               # `W`
+---| "key.keyboard.x"               # `X`
+---| "key.keyboard.y"               # `Y`
+---| "key.keyboard.z"               # `Z`
+---| "key.keyboard.grave.accent"    # ``‌`‌``
+---| "key.keyboard.comma"           # `,`
+---| "key.keyboard.period"          # `.`
+---| "key.keyboard.semicolon"       # `;`
+---| "key.keyboard.apostrophe"      # `'`
+---| "key.keyboard.minus"           # `-`
+---| "key.keyboard.equal"           # `=`
+---| "key.keyboard.slash"           # `/`
+---| "key.keyboard.backslash"       # `\`
+---| "key.keyboard.left.bracket"    # `[`
+---| "key.keyboard.right.bracket"   # `]`
+---| "key.keyboard.space"           # `␣`
+---| "key.keyboard.tab"             # `↹ Tab` **/** `⇥`
+---| "key.keyboard.backspace"       # `⟵ Backspace` **/** `⌫`
+---| "key.keyboard.caps.lock"       # `🅰 Caps Lock` **/** `⇪`
+---| "key.keyboard.enter"           # `↵ Enter` **/** `↵ Return`
+---| "key.keyboard.left.control"    # `✲ Ctrl` **/** `⎈` **/** `⌃`
+---| "key.keyboard.right.control"   # `✲ RCtrl` **/** `⎈` **/** `⌃`
+---| "key.keyboard.left.shift"      # `⇧ Shift`
+---| "key.keyboard.right.shift"     # `⇧ RShift`
+---| "key.keyboard.left.win"        # `⊞ Win` **/** `❖` **/** `⌘ Command` **/** `◆ Meta`
+---| "key.keyboard.right.win"       # `⊞ RWin` **/** `❖` **/** `⌘ RCommand` **/** `◆ RMeta`
+---| "key.keyboard.left.alt"        # `Alt` **/** `⌥ Option`
+---| "key.keyboard.right.alt"       # `RAlt` **/** `Alt Gr` **/** `⌥ ROption`
+---| "key.keyboard.menu"            # `☰ Menu`
+---| "key.keyboard.insert"          # `Ins`
+---| "key.keyboard.delete"          # `⌦ Del`
+---| "key.keyboard.home"            # `⤒ Home`
+---| "key.keyboard.end"             # `⤓ End`
+---| "key.keyboard.page.up"         # `⇞ PgUp`
+---| "key.keyboard.page.down"       # `⇟ PgDn`
+---| "key.keyboard.up"              # `↑ Up`
+---| "key.keyboard.down"            # `↓ Down`
+---| "key.keyboard.left"            # `← Left`
+---| "key.keyboard.right"           # `→ Right`
+---| "key.keyboard.num.lock"        # `Num Lock` **/** `⌧ Clear`
+---| "key.keyboard.keypad.equal"    # `KP =`
+---| "key.keyboard.keypad.divide"   # `KP /`
+---| "key.keyboard.keypad.multiply" # `KP *`
+---| "key.keyboard.keypad.subtract" # `KP -`
+---| "key.keyboard.keypad.add"      # `KP +`
+---| "key.keyboard.keypad.0"        # `KP 0`
+---| "key.keyboard.keypad.1"        # `KP 1`
+---| "key.keyboard.keypad.2"        # `KP 2`
+---| "key.keyboard.keypad.3"        # `KP 3`
+---| "key.keyboard.keypad.4"        # `KP 4`
+---| "key.keyboard.keypad.5"        # `KP 5`
+---| "key.keyboard.keypad.6"        # `KP 6`
+---| "key.keyboard.keypad.7"        # `KP 7`
+---| "key.keyboard.keypad.8"        # `KP 8`
+---| "key.keyboard.keypad.9"        # `KP 9`
+---| "key.keyboard.keypad.decimal"  # `KP .`
+---| "key.keyboard.keypad.enter"    # `↵ KP Enter` **/** `⌤`
+---| "key.keyboard.world.1"         # `🌐¹`
+---| "key.keyboard.world.2"         # `🌐²`
+---| "key.mouse.left"               # `Mouse Left`
+---| "key.mouse.right"              # `Mouse Right`
+---| "key.mouse.middle"             # `Mouse Middle`
+---| "key.mouse.4"                  # `Mouse Back`
+---| "key.mouse.5"                  # `Mouse Forward`
+---| "key.mouse.6"                  # `Mouse 6`
+---| "key.mouse.7"                  # `Mouse 7`
+---| "key.mouse.8"                  # `Mouse 8`
+
+---A key's name.
+---
+---This *should not* be taken as a list of definite values as a language change will change the
+---names of the keys.
+---@alias Minecraft.keyName string
+---| "Not bound"     # `key.keyboard.unknown`
+---| "Escape"        # `key.keyboard.escape`
+---| "F1"            # `key.keyboard.f1`
+---| "F2"            # `key.keyboard.f2`
+---| "F3"            # `key.keyboard.f3`
+---| "F4"            # `key.keyboard.f4`
+---| "F5"            # `key.keyboard.f5`
+---| "F6"            # `key.keyboard.f6`
+---| "F7"            # `key.keyboard.f7`
+---| "F8"            # `key.keyboard.f8`
+---| "F9"            # `key.keyboard.f9`
+---| "F10"           # `key.keyboard.f10`
+---| "F11"           # `key.keyboard.f11`
+---| "F12"           # `key.keyboard.f12`
+---| "Print Screen"  # `key.keyboard.print.screen`
+---| "Scroll Lock"   # `key.keyboard.scroll.lock`
+---| "Pause"         # `key.keyboard.pause`
+---| "F13"           # `key.keyboard.f13`
+---| "F14"           # `key.keyboard.f14`
+---| "F15"           # `key.keyboard.f15`
+---| "F16"           # `key.keyboard.f16`
+---| "F17"           # `key.keyboard.f17`
+---| "F18"           # `key.keyboard.f18`
+---| "F19"           # `key.keyboard.f19`
+---| "F20"           # `key.keyboard.f20`
+---| "F21"           # `key.keyboard.f21`
+---| "F22"           # `key.keyboard.f22`
+---| "F23"           # `key.keyboard.f23`
+---| "F24"           # `key.keyboard.f24`
+---| "F25"           # `key.keyboard.f25`
+---| "0"             # `key.keyboard.0` **/** `key.keyboard.keypad.0`
+---| "1"             # `key.keyboard.1` **/** `key.keyboard.keypad.1`
+---| "2"             # `key.keyboard.2` **/** `key.keyboard.keypad.2`
+---| "3"             # `key.keyboard.3` **/** `key.keyboard.keypad.3`
+---| "4"             # `key.keyboard.4` **/** `key.keyboard.keypad.4`
+---| "5"             # `key.keyboard.5` **/** `key.keyboard.keypad.5`
+---| "6"             # `key.keyboard.6` **/** `key.keyboard.keypad.6`
+---| "7"             # `key.keyboard.7` **/** `key.keyboard.keypad.7`
+---| "8"             # `key.keyboard.8` **/** `key.keyboard.keypad.8`
+---| "9"             # `key.keyboard.9` **/** `key.keyboard.keypad.9`
+---| "a"             # `key.keyboard.a`
+---| "b"             # `key.keyboard.b`
+---| "c"             # `key.keyboard.c`
+---| "d"             # `key.keyboard.d`
+---| "e"             # `key.keyboard.e`
+---| "f"             # `key.keyboard.f`
+---| "g"             # `key.keyboard.g`
+---| "h"             # `key.keyboard.h`
+---| "i"             # `key.keyboard.i`
+---| "j"             # `key.keyboard.j`
+---| "k"             # `key.keyboard.k`
+---| "l"             # `key.keyboard.l`
+---| "m"             # `key.keyboard.m`
+---| "n"             # `key.keyboard.n`
+---| "o"             # `key.keyboard.o`
+---| "p"             # `key.keyboard.p`
+---| "q"             # `key.keyboard.q`
+---| "r"             # `key.keyboard.r`
+---| "s"             # `key.keyboard.s`
+---| "t"             # `key.keyboard.t`
+---| "u"             # `key.keyboard.u`
+---| "v"             # `key.keyboard.v`
+---| "w"             # `key.keyboard.w`
+---| "x"             # `key.keyboard.x`
+---| "y"             # `key.keyboard.y`
+---| "z"             # `key.keyboard.z`
+---| "`"             # `key.keyboard.grave.accent`
+---| ","             # `key.keyboard.comma`
+---| "."             # `key.keyboard.period` **/** `key.keyboard.keypad.decimal`
+---| ";"             # `key.keyboard.semicolon`
+---| "'"             # `key.keyboard.apostrophe`
+---| "-"             # `key.keyboard.minus` **/** `key.keyboard.keypad.subtract`
+---| "="             # `key.keyboard.equal`
+---| "/"             # `key.keyboard.slash` **/** `key.keyboard.keypad.divide`
+---| "\\"            # `key.keyboard.backslash` **/** `key.keyboard.world.2`
+---| "["             # `key.keyboard.left.bracket`
+---| "]"             # `key.keyboard.right.bracket`
+---| "Space"         # `key.keyboard.space`
+---| "Tab"           # `key.keyboard.tab`
+---| "Backspace"     # `key.keyboard.backspace`
+---| "Caps Lock"     # `key.keyboard.caps.lock`
+---| "Enter"         # `key.keyboard.enter`
+---| "Left Control"  # `key.keyboard.left.control`
+---| "Right Control" # `key.keyboard.right.control`
+---| "Left Shift"    # `key.keyboard.left.shift`
+---| "Right Shift"   # `key.keyboard.right.shift`
+---| "Left Win"      # `key.keyboard.left.win`
+---| "Right Win"     # `key.keyboard.right.win`
+---| "Left Alt"      # `key.keyboard.left.alt`
+---| "Right Alt"     # `key.keyboard.right.alt`
+---| "Menu"          # `key.keyboard.menu`
+---| "Insert"        # `key.keyboard.insert`
+---| "Delete"        # `key.keyboard.delete`
+---| "Home"          # `key.keyboard.home`
+---| "End"           # `key.keyboard.end`
+---| "Page Up"       # `key.keyboard.page.up`
+---| "Page Down"     # `key.keyboard.page.down`
+---| "Up Arrow"      # `key.keyboard.up`
+---| "Down Arrow"    # `key.keyboard.down`
+---| "Left Arrow"    # `key.keyboard.left`
+---| "Right Arrow"   # `key.keyboard.right`
+---| "Num Lock"      # `key.keyboard.num.lock`
+---| ""              # `key.keyboard.keypad.equal`
+---| "*"             # `key.keyboard.keypad.multiply`
+---| "+"             # `key.keyboard.keypad.add`
+---| "Keypad Enter"  # `key.keyboard.keypad.enter`
+---| "World 1"       # `key.keyboard.world.1`
+---| "Left Button"   # `key.mouse.left`
+---| "Right Button"  # `key.mouse.right`
+---| "Middle Button" # `key.mouse.middle`
+---| "Button 4"      # `key.mouse.4`
+---| "Button 5"      # `key.mouse.5`
+---| "Button 6"      # `key.mouse.6`
+---| "Button 7"      # `key.mouse.7`
+---| "Button 8"      # `key.mouse.8`

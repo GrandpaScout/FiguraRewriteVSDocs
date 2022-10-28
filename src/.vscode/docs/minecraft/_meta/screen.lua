@@ -1,0 +1,159 @@
+---@meta
+
+---@diagnostic disable: duplicate-set-field
+
+--TODO: Review all descriptions to see if they fit the style guide.
+
+---==============================================================================================---
+---  MINECRAFT                                                                                   ---
+---==============================================================================================---
+
+-- This enum follows a *very* specific order.
+-- * The order that Minecraft sub-screens are listed at the fabric maven page,
+-- * All Figura screens sorted by screen name alphabetically,
+-- * All other modded screens, sorted by mod name then screen name alphabetically.
+--
+-- If this enum is ever out of this order, *please* fix it.
+
+---A class name for a screen in Minecraft.  
+---Only screens that can be visible while an avatar is loaded are listed here.
+---
+---These screens use intermediary names.
+---@see net.minecraft.client.gui.screen.Screen @ https://maven.fabricmc.net/docs/yarn-1.19.2+build.1/net/minecraft/client/gui/screen/Screen.html
+---@alias Minecraft.screenID string
+---**Minecraft:** Command Block
+---| "class_477"  @ Screen -> AbstractCommandBlockScreen -> CommandBlockScreen
+---**Minecraft:** Minecart Command Block
+---| "class_496"  @ Screen -> AbstractCommandBlockScreen -> MinecartCommandBlockScreen
+---**Minecraft:** *Some chat report screen.*  
+---TODO: Figure out what the hell this is.
+---| "class_7551" @ Screen -> AbuseReportReasonScreen
+---**Minecraft:** Advancements
+---| "class_457"  @ Screen -> AdvancementsScreen
+---**Minecraft:** Book and Quill
+---| "class_473"  @ Screen -> BookEditScreen
+---**Minecraft:** Written Book
+---| "class_3872" @ Screen -> BookScreen
+---**Minecraft:** *Some chat report screen.*  
+---TODO: Figure out what the hell this is.
+---| "class_7538" @ Screen -> ChatReportScreen
+---**Minecraft:** Chat Screen
+---| "class_408"  @ Screen -> ChatScreen
+---**Minecraft:** Sleeping Chat Screen
+---| "class_423"  @ Screen -> ChatScreen -> SleepingChatScreen
+---**Minecraft:** *Some chat report screen.*  
+---TODO: Figure out what the hell this is.
+---| "class_7543" @ Screen -> ChatSelectionScreen
+---**Minecraft:** Confirm Screen
+---| "class_410"  @ Screen -> ConfirmScreen
+---**Minecraft:** Confirm Link Screen
+---| "class_407"  @ Screen -> ConfirmScreen -> ConfirmLinkScreen
+---**Minecraft:** Credits
+---| "class_445"  @ Screen -> CreditsScreen
+---**Minecraft:** Dead
+---| "class_418"  @ Screen -> DeathScreen
+---**Minecraft:** Game Menu
+---| "class_433"  @ Screen -> GameMenuScreen
+---**Minecraft:** Gamemode Selector
+---| "class_5289" @ Screen -> GameModeSelectionScreen
+---**Minecraft:** Controls
+---| "class_458"  @ Screen -> GameOptionsScreen -> ControlsOptionsScreen
+---**Minecraft:** Keybinds
+---| "class_6599" @ Screen -> GameOptionsScreen -> KeybindsScreen
+---**Minecraft:** Language Selection
+---| "class_426"  @ Screen -> GameOptionsScreen -> LanguageOptionsScreen
+---**Minecraft:** Mouse Settings
+---| "class_4288" @ Screen -> GameOptionsScreen -> MouseOptionsScreen
+---**Minecraft:** Accessibility Settings
+---| "class_4189" @ Screen -> GameOptionsScreen -> SimpleOptionsScreen -> AccessibilityOptionsScreen
+---**Minecraft:** Chat Settings
+---| "class_404"  @ Screen -> GameOptionsScreen -> SimpleOptionsScreen -> ChatOptionsScreen
+---**Minecraft:** Online Settings
+---| "class_6777" @ Screen -> GameOptionsScreen -> SimpleOptionsScreen -> OnlineOptionsScreen
+---**Minecraft:** Skin Customization
+---| "class_440"  @ Screen -> GameOptionsScreen -> SkinOptionsScreen
+---**Minecraft:** Music & Sounds
+---| "class_443"  @ Screen -> SoundOptionsScreen
+---**Minecraft:** Video Settings
+---| "class_446"  @ Screen -> VideoOptionsScreen
+---**Minecraft:** Blast Furnace
+---| "class_3871" @ Screen -> HandledScreen -> AbstractFurnaceScreen -> BlastFurnaceScreen
+---**Minecraft:** Furnace
+---| "class_3873" @ Screen -> HandledScreen -> AbstractFurnaceScreen -> FurnaceScreen
+---**Minecraft:** Smoker
+---| "class_3874" @ Screen -> HandledScreen -> AbstractFurnaceScreen -> SmokerScreen
+---**Minecraft:** Creative Inventory
+---| "class_481"  @ Screen -> HandledScreen -> AbstractInventoryScreen -> CreativeInventoryScreen
+---**Minecraft:** Survival Inventory
+---| "class_490"  @ Screen -> HandledScreen -> AbstractInventoryScreen -> InventoryScreen
+---**Minecraft:** Beacon
+---| "class_466"  @ Screen -> HandledScreen -> BeaconScreen
+---**Minecraft:** Brewing Stand
+---| "class_472"  @ Screen -> HandledScreen -> BrewingStandScreen
+---**Minecraft:** Cartography Table
+---| "class_3934" @ Screen -> HandledScreen -> CartographyTableScreen
+---**Minecraft:** Crafting Table
+---| "class_479"  @ Screen -> HandledScreen -> CraftingScreen
+---**Minecraft:** Echanting Table
+---| "class_486"  @ Screen -> HandledScreen -> EnchantmentScreen
+---**Minecraft:** Anvil
+---| "class_471"  @ Screen -> HandledScreen -> ForgingScreen -> AnvilScreen
+---**Minecraft:** Smithing Table
+---| "class_4895" @ Screen -> HandledScreen -> ForgingScreen -> SmithingScreen
+---**Minecraft:** Dispenser, Dropper
+---| "class_480"  @ Screen -> HandledScreen -> Generic3x3ContainerScreen
+---**Minecraft:** Chest, Ender Chest, Barrel
+---| "class_476"  @ Screen -> HandledScreen -> GenericContainerScreen
+---**Minecraft:** Grindstone
+---| "class_3802" @ Screen -> HandledScreen -> GrindstoneScreen
+---**Minecraft:** Hopper
+---| "class_488"  @ Screen -> HandledScreen -> HopperScreen
+---**Minecraft:** Horse, Donkey, Mule, Llama
+---| "class_491"  @ Screen -> HandledScreen -> HorseScreen
+---**Minecraft:** Loom
+---| "class_494"  @ Screen -> HandledScreen -> LoomScreen
+---**Minecraft:** Villager, Wandering Trader
+---| "class_492"  @ Screen -> HandledScreen -> MerchantScreen
+---**Minecraft:** Shulker Box
+---| "class_495"  @ Screen -> HandledScreen -> ShulkerBoxScreen
+---**Minecraft:** Stonecutter
+---| "class_3979" @ Screen -> HandledScreen -> StonecutterScreen
+---**Minecraft:** Jigsaw Block
+---| "class_3742" @ Screen -> JigsawBlockScreen
+---**Minecraft:** Open to LAN
+---| "class_436"  @ Screen -> OpenToLanScreen
+---**Minecraft:** Options
+---| "class_429"  @ Screen -> OptionsScreen
+---**Minecraft:** Resource Packs
+---| "class_5375" @ Screen -> PackScreen
+---**Minecraft:** Edit Sign Message
+---| "class_498"  @ Screen -> SignEditScreen
+---**Minecraft:** Social Interactions
+---| "class_5522" @ Screen -> SocialInteractionsScreen
+---**Minecraft:** Statistics
+---| "class_447"  @ Screen -> StatsScreen
+---**Minecraft:** Structure Block
+---| "class_497"  @ Screen -> StructureBlockScreen
+---**Figura:** Avatar Fullscreen View
+---| "AvatarScreen"
+---**Figura:** Settings
+---| "ConfigScreen"
+---**Figura:** Avatar Keybinds
+---| "KeybindScreen"
+---**Figura:** Avatar Sounds
+---| "SoundScreen"
+---**Figura:** Trust
+---| "TrustScreen"
+---**Figura:** Wardrobe
+---| "WardrobeScreen"
+---**LambDynamicLights:** Settings
+---| "SettingsScreen"
+---**Mod Menu:** Mod Menu Options
+---| "ModMenuOptionsScreen"
+---**Mod Menu:** Mods
+---| "ModsScreen"
+---**Iris:** Shader Packs
+---| "ShaderPackScreen"
+---**Sodium:** Video Settings
+---| "SodiumVideoOptionsScreen"
+

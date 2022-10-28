@@ -1,0 +1,41 @@
+---A valid Minecraft enchantment id.
+---@alias Minecraft.enchantmentID string
+---| "minecraft:aqua_affinity"         # Aqua Affinity
+---| "minecraft:bane_of_arthropods"    # Bane of Arthropods
+---| "minecraft:binding_curse"         # Curse of Binding
+---| "minecraft:blast_protection"      # Blast Protection
+---| "minecraft:channeling"            # Channeling
+---| "minecraft:depth_strider"         # Depth Strider
+---| "minecraft:efficiency"            # Efficiency
+---| "minecraft:feather_falling"       # Feather Falling
+---| "minecraft:fire_aspect"           # Fire Aspect
+---| "minecraft:fire_protection"       # Fire Protection
+---| "minecraft:flame"                 # Flame
+---| "minecraft:fortune"               # Fortune
+---| "minecraft:frost_walker"          # Frost Walker
+---| "minecraft:impaling"              # Impaling
+---| "minecraft:infinity"              # Infinity
+---| "minecraft:knockback"             # Knockback
+---| "minecraft:looting"               # Looting
+---| "minecraft:loyalty"               # Loyalty
+---| "minecraft:luck_of_the_sea"       # Luck of the Sea
+---| "minecraft:lure"                  # Lure
+---| "minecraft:mending"               # Mending
+---| "minecraft:multishot"             # Multishot
+---| "minecraft:piercing"              # Piercing
+---| "minecraft:power"                 # Power
+---| "minecraft:projectile_protection" # Projectile Protection
+---| "minecraft:protection"            # Protection
+---| "minecraft:punch"                 # Punch
+---| "minecraft:quick_charge"          # Quick Charge
+---| "minecraft:respiration"           # Respiration
+---| "minecraft:riptide"               # Riptide
+---| "minecraft:sharpness"             # Sharpness
+---| "minecraft:silk_touch"            # Silk Touch
+---| "minecraft:smite"                 # Smite
+---| "minecraft:soul_speed"            # Soul Speed
+---| "minecraft:sweeping"              # Sweeping Edge
+---| "minecraft:swift_sneak"           # Swift Sneak
+---| "minecraft:thorns"                # Thorns
+---| "minecraft:unbreaking"            # Unbreaking
+---| "minecraft:vanishing_curse"       # Curse of Vanishing

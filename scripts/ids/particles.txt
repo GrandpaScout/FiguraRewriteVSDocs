@@ -1,0 +1,89 @@
+# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Particles
+# Select *all* table data cells to clone info.
+
+ambient_entity_effect	Particle ambient entity effect.png
+angry_villager	Particle angry villager.png
+ash	Particles ash.png
+barrier	Particle barrier.png
+block	Particle block.png
+bubble	Particle bubble.png
+bubble_column_up	Particle bubble column up.png
+bubble_pop	Particle bubble pop.png
+campfire_cosy_smoke	Particle campfire cosy smoke.png
+campfire_signal_smoke	Particle campfire signal smoke.png
+cloud	Particle cloud.png
+composter	Particle composter.png
+crimson_spore	Particle crimson spore.png
+crit	Particle crit.png
+current_down	Particle current down.png
+damage_indicator	Particle damage indicator.png
+dolphin	Particle dolphin.png
+dragon_breath	Particle dragon breath.png
+dripping_dripstone_lava	Particle dripping dripstone lava.png
+dripping_dripstone_water	Particle dripping dripstone water.png
+dripping_honey	Particle dripping honey.png
+dripping_lava	Particle dripping lava.png
+dripping_obsidian_tear	Particle dripping obsidian tear.png
+dripping_water	Particle dripping water.png
+dust	Particle dust.png
+dust_color_transition	Particle dust color transition.png
+effect	Particle effect.png
+elder_guardian	Particle elder guardian.png
+electric_spark	Particle electric spark.png
+enchant	Particle enchant.png
+enchanted_hit	Particle enchanted hit.png
+end_rod	Particle end rod.png
+entity_effect	Particle entity effect.png
+explosion	Particle explosion.png
+explosion_emitter	Particle explosion emitter.png
+falling_dripstone_lava	Particle falling dripstone lava.png
+falling_dripstone_water	Particle falling dripstone water.png
+falling_dust	Particle falling dust.png
+falling_honey	Particle falling honey.png
+falling_lava	Particle falling lava.png
+falling_nectar	Particle falling nectar.png
+falling_obsidian_tear	Particle falling obsidian tear.png
+falling_spore_blossom	Particle falling spore blossom.png
+falling_water	Particle falling water.png
+firework	Particle firework.png
+fishing	Particle fishing.png
+flame	Particle flame.png
+flash	Particle flash.png
+glow	Particle glow.png
+glow_squid_ink	Particle glow squid ink.png
+happy_villager	Particle happy villager.png
+heart	Particle heart.png
+instant_effect	Particle instant effect.png
+item	Particle item.png
+item_slime	Particle item slime.png
+item_snowball	Particle item snowball.png
+landing_honey	Particle landing honey.png
+landing_lava	Particle landing lava.png
+landing_obsidian_tear	Particle landing obsidian tear.png
+large_smoke	Particle large smoke.png
+lava	Particle lava.png
+mycelium	Particle mycelium.png
+nautilus	Particle nautilus.png
+note	Particle note.png
+poof	Particle poof.png
+portal	Particle portal.png
+rain	Particle rain.png
+scrape	Particle scrape.png
+smoke	Particle smoke.png
+sneeze	Particle sneeze.png
+snowflake	Particle snowflake.png
+soul	Particle soul.png
+sould_fire_flame	Particle soul fire flame.png
+spit	Particle spit.png
+spore_blossom_air	Particle spore blossom air.png
+splash	Particle splash.png
+squid_ink	Particle squid ink.png
+sweep_attack	Particle sweep attack.png
+totem_of_undying	Particle totem of undying.png
+underwater	Particle underwater.png
+vibration	Particle vibration.png
+warped_spore	Particle warped spore.png
+wax_off	Particle wax off.png
+wax_on	Particle wax on.png
+white_ash	Particle white ash.png
+witch	Particle witch.png

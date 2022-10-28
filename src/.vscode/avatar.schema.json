@@ -1,0 +1,266 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "description": "An avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
+  "markdownDescription": "```ts\n{\n  name: string,\n  author: string <OR> authors: string[],\n  version: string,\n  color: Color,\n  background: unknown,\n  autoScripts: string[],\n  customizations: {\n    [partPath]: {\n      parentType: string,\n      primaryRenderType: RenderType,\n      secondaryRenderType: RenderType\n    }\n  }\n}\n```\n***\nAn avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
+
+  "type": "object",
+
+  "defaultSnippets": [
+    {"label": "\u200B\u200B\u200B{}", "body": "^{$1}", "markdownDescription": "```ts\n{}\n```\n***\nStart from scratch."},
+    {"label": "No metadata", "body": "^", "markdownDescription": "This file can be completely blank, it will treat it as if you don't want any data set."},
+    {"label": "\u200BMinimum metadata, One author", "body": {
+      "name": "${1:My Avatar}",
+      "author": "${2:Username}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string\n}\n```\n***\nIncludes the absolute minimum for data."},
+    {"label": "\u200BMinimum metadata, Several authors", "body": {
+      "name": "${1:My Avatar}",
+      "authors": ["${2:Username}"]
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[]\n}\n```\n***\nIncludes the absolute minimum for data."},
+    {"label": "\u200B\u200BBasic metadata, One author", "body": {
+      "name": "${1:My Avatar}",
+      "author": "${2:Username}",
+      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "color": "${4:#RRGGBB}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, author, Figura version, and theme color."},
+    {"label": "\u200B\u200BBasic metadata, Several authors", "body": {
+      "name": "${1:My Avatar}",
+      "authors": ["${2:Username}"],
+      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "color": "${4:#RRGGBB}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, authors, Figura version, and theme color."},
+    {"label": "\u200B\u200BFull metadata, One author", "body": {
+      "name": "${1:My Avatar}",
+      "author": "${2:Username}",
+      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "color": "${4:#RRGGBB}",
+      "autoScripts": ["^$5"],
+      "customizations": "^{$6}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."},
+    {"label": "\u200B\u200BFull metadata, Several authors", "body": {
+      "name": "${1:My Avatar}",
+      "authors": ["${2:Username}"],
+      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "color": "${4:#RRGGBB}",
+      "autoScripts": ["^$5"],
+      "customizations": "^{$6}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."}
+  ],
+
+  "definitions": {
+    "customization": {
+      "description": "A customized part.",
+      "markdownDescription": "```ts\n[partPath]: {\n  parentType: string,\n  primaryRenderType: RenderType,\n  secondaryRenderType: RenderType\n}\n```\n***\nA customized part.",
+
+      "type": "object",
+
+      "properties": {
+        "parentType": {
+          "description": "The \"parent\" of this model part.\nThis is usually set by keywords, but can also be set here if you wish.",
+          "markdownDescription": "```ts\nparentType: string\n```\n***\nThe \"parent\" of this model part.\n\nThis is usually set by keywords, but can also be set here if you wish.",
+
+          "type": "string",
+
+          "anyOf": [
+            {"enum": [
+              "None",
+              "Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg",
+              "Cape", "LeftElytra", "RightElytra",
+              "LeftItemPivot", "RightItemPivot", "HelmetItemPivot",
+              "LeftSpyglassPivot", "RightSpyglassPivot",
+              "LeftParrotPivot", "RightParrotPivot",
+              "World", "Hud", "Camera", "Skull"
+            ]},
+            {"pattern": "^(None|NONE|Head|HEAD|Body|BODY|LeftArm|LEFT_ARM|RightArm|RIGHT_ARM|LeftLeg|LEFT_LEG|RightLeg|RIGHT_LEG|Cape|CAPE|LeftElytra|LEFT_ELYTRA|LeftElytron|LEFT_ELYTRON|RightElytra|RIGHT_ELYTRA|RightElytron|RIGHT_ELYTRON|LeftItemPivot|LEFT_ITEM_PIVOT|RightItemPivot|RIGHT_ITEM_PIVOT|HelmetItemPivot|HELMET_ITEM_PIVOT|LeftSpyglassPivot|LEFT_SPYGLASS_PIVOT|RightSpyglassPivot|RIGHT_SPYGLASS_PIVOT|LeftParrotPivot|LEFT_PARROT_PIVOT|RightParrotPivot|RIGHT_PARROT_PIVOT|World|WORLD|Hud|HUD|Gui|GUI|Camera|CAMERA|Skull|SKULL|💀)$"}
+          ]
+        },
+
+        "primaryRenderType": {
+          "description": "The render type of the base texture on this part.",
+          "markdownDescription": "```ts\nprimaryRenderType: RenderType\n```\n***\nThe render type of the base texture on this part.",
+
+          "type": "string",
+
+          "enum": [
+            "NONE",
+            "CUTOUT", "CUTOUT_CULL", "TRANSPARENT", "TRANSPARENT_CULL",
+            "EMISSIVE", "EMISSIVE_SOLID",
+            "END_PORTAL", "END_GATEWAY",
+            "GLINT", "GLINT2",
+            "LINES", "LINES_STRIP"
+          ]
+        },
+
+        "secondaryRenderType": {
+          "description": "The render type of the secondary texture (usually the emissive) on this part.",
+          "markdownDescription": "```ts\nsecondaryRenderType: RenderType\n```\n***\nThe render type of the secondary texture (usually the emissive) on this part.",
+
+          "type": "string",
+
+          "enum": [
+            "NONE",
+            "CUTOUT", "CUTOUT_CULL", "TRANSPARENT", "TRANSPARENT_CULL",
+            "EMISSIVE", "EMISSIVE_SOLID",
+            "END_PORTAL", "END_GATEWAY",
+            "GLINT", "GLINT2",
+            "LINES", "LINES_STRIP"
+          ]
+        }
+      }
+    }
+  },
+
+  "properties": {
+    "name": {
+      "description": "The name of this avatar.\nIf this does not exist, the folder's name is used as the avatar name.",
+      "markdownDescription": "```ts\nname: string\n```\n***\nThe name of this avatar.  \nIf this does not exist, the folder's name is used as the avatar name.",
+
+      "type": "string",
+
+      "defaultSnippets": [{"body": "$1"}],
+
+      "minLength": 1,
+      "pattern": "[^ \\f\\n\\r\\t]"
+    },
+
+    "author": {
+      "description": "The sole author of this avatar.\nIf you wish to add multiple authors, see \"authors\" instead.",
+      "markdownDescription": "```ts\nauthor: string\n```\n***\nThe sole author of this avatar.\n\nIf you wish to add multiple authors, see `authors` instead.",
+
+      "type": "string",
+
+      "defaultSnippets": [{"body": "$1"}],
+
+      "minLength": 1,
+      "pattern": "[^ \\f\\n\\r\\t]"
+    },
+
+    "version": {
+      "description": "The version of Figura this avatar is made for.\nIf this does not exist, no version checking will be done.\n\nThe version must be a valid semantic version.",
+      "markdownDescription": "```ts\nversion: string\n```\n***\nThe version of Figura this avatar is made for.  \nIf this does not exist, no version checking will be done.\n\nThe version must be a valid semantic version.",
+
+      "type": "string",
+
+      "defaultSnippets": [
+        {"body": "$1"},
+        {"label": "Figura 0.1.0                      (0.1.0)",       "body": "0.1.0"      },
+        {"label": "Figura 0.1.0, Release Candidate 7 (0.1.0-rc.7)",  "body": "0.1.0-rc.7" },
+        {"label": "Figura 0.1.0, Release Candidate 6 (0.1.0-rc.6)",  "body": "0.1.0-rc.6" },
+        {"label": "Figura 0.1.0, Release Candidate 5 (0.1.0-rc.5)",  "body": "0.1.0-rc.5" },
+        {"label": "Figura 0.1.0, Release Candidate 4 (0.1.0-rc.4)",  "body": "0.1.0-rc.4" },
+        {"label": "Figura 0.1.0, Release Candidate 3 (0.1.0-rc.3)",  "body": "0.1.0-rc.3" },
+        {"label": "Figura 0.1.0, Release Candidate 2 (0.1.0-rc.2)",  "body": "0.1.0-rc.2" },
+        {"label": "Figura 0.1.0, Release Candidate 1 (0.1.0-rc.1)",  "body": "0.1.0-rc.1" },
+        {"label": "Figura 0.1.0, Prerelease 6        (0.1.0-pre.6)", "body": "0.1.0-pre.6"},
+        {"label": "Figura 0.1.0, Prerelease 5        (0.1.0-pre.5)", "body": "0.1.0-pre.5"},
+        {"label": "Figura 0.1.0, Prerelease 4        (0.1.0-pre.4)", "body": "0.1.0-pre.4"},
+        {"label": "Figura 0.1.0, Prerelease 3        (0.1.0-pre.3)", "body": "0.1.0-pre.3"},
+        {"label": "Figura 0.1.0, Prerelease 2        (0.1.0-pre.2)", "body": "0.1.0-pre.2"},
+        {"label": "Figura 0.1.0, Prerelease 1        (0.1.0-pre.1)", "body": "0.1.0-pre.1"}
+      ],
+
+      "pattern": "^(0|[1-9]\\d*)(\\.(0|[1-9]\\d*)){0,2}(-(pre|rc)\\.[1-9]\\d*)?(\\+.+)?$"
+    },
+
+    "color": {
+      "description": "The primary color of this avatar.\nControls the color of the nameplate mark and the avatar info text color.\n\nColor can either be a special named color or a hex value. (The \"#\" is optional.)",
+      "markdownDescription": "```ts\ncolor: Color\n```\n***\nThe primary color of this avatar.  \nControls the color of the nameplate mark and the avatar info text color.\n\nColor can either be a special named color or a hex value. (The `#` is optional.)",
+
+      "type": "string",
+
+      "defaultSnippets": [
+        {"label": "\"#...\"",                   "body": "#${1:RRGGBB}"},
+        {"label": "\"FRAN_PINK\"    (#FF72AD)", "body": "FRAN_PINK"   },
+        {"label": "\"CHLOE_PURPLE\" (#A672EF)", "body": "CHLOE_PURPLE"},
+        {"label": "\"MAYA_BLUE\"    (#00F0FF)", "body": "MAYA_BLUE"   },
+        {"label": "\"SKYE_BLUE\"    (#99BBEE)", "body": "SKYE_BLUE"   },
+        {"label": "\"LILY_RED\"     (#FF2400)", "body": "LILY_RED"    },
+        {"label": "\"CHEESE\"       (#F8C53A)", "body": "CHEESE"      },
+        {"label": "\"LUA_LOG\"      (#5555FF)", "body": "LUA_LOG"     },
+        {"label": "\"LUA_ERROR\"    (#FF5555)", "body": "LUA_ERROR"   },
+        {"label": "\"LUA_PING\"     (#A155DA)", "body": "LUA_PING"    },
+        {"label": "\"DEFAULT\"      (#5AAAFF)", "body": "DEFAULT"     },
+        {"label": "\"DISCORD\"      (#5865F2)", "body": "DISCORD"     }
+      ],
+
+      "anyOf":[
+        {"pattern": "^#?[0-9A-Fa-f]{1,6}$"},
+        {"pattern": "^([Ff][Rr][Aa][Nn]_[Pp][Ii][Nn][Kk]|[Ff][Rr][Aa][Nn]|[Ff][Rr][Aa][Nn][Cc][Ii][Ee][Ll]{2}[Yy]|[Bb][Uu][Nn]{2}[Yy]|[Cc][Hh][Ll][Oo][Ee]_[Pp][Uu][Rr][Pp][Ll][Ee]|[Cc][Hh][Ll][Oo][Ee]|[Ss][Pp][Aa][Cc][Ee]|[Mm][Aa][Yy][Aa]_[Bb][Ll][Uu][Ee]|[Mm][Aa][Yy][Aa]|[Dd][Ee][Vv][Nn][Uu][Ll]{2}|[Ss][Kk][Yy][Ee]_[Bb][Ll][Uu][Ee]|[Ss][Kk][Yy]|[Ss][Kk][Yy][Ee]|[Ss][Kk][Yy][Ll][Aa][Rr]|[Ll][Ii][Ll][Yy]_[Rr][Ee][Dd]|[Ll][Ii][Ll][Yy]|[Ff][Oo][Xx][Ee][Ss]|[Ff][Oo][Xx]|[Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Aa][Rr][Gg][Ee][Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Aa][Rr][Gg][Ee] [Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Uu][Aa]_[Ll][Oo][Gg]|[Ll][Uu][Aa]_[Ee][Rr]{2}[Oo][Rr]|[Ll][Uu][Aa]_[Pp][Ii][Nn][Gg]|[Ll][Uu][Nn][Aa]|[Mm][Oo][Ff]{2}|[Mm][Oo][Tt][Hh]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Dd][Ii][Ss][Cc][Oo][Rr][Dd])$"}
+      ]
+    },
+
+    "background": {
+      "description": "Does something... Probably.",
+      "markdownDescription": "```ts\nbackground: unknown\n```\n***\nDoes *something*... Probably.",
+
+      "type": "string",
+
+      "anyOf": [
+        {"enum": ["DEFAULT", "CHEESE", "CLOUDS", "COOKIE", "RAINBOW", "INSCRYPTION", "SPACE", "FADE"]},
+        {"pattern": "^([Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Cc][Hh][Ee][Ee][Ss][Ee]|[Cc][Ll][Oo][Uu][Dd][Ss]|[Cc][Oo][Oo][Kk][Ii][Ee]|[Rr][Aa][Ii][Nn][Bb][Oo][Ww]|[Ii][Nn][Ss][Cc][Rr][Yy][Pp][Tt][Ii][Oo][Nn]|[Ss][Pp][Aa][Cc][Ee]|[Ff][Aa][Dd][Ee])$"}
+      ]
+    },
+
+    "authors": {
+      "description": "A list of this avatar's authors.\nIf this avatar only has one author, you can also use \"author\" instead.",
+      "markdownDescription": "```ts\nauthors: string[]\n```\n***\nA list of this avatar's authors.\n\nIf this avatar only has one author, you can also use `author` instead.",
+
+      "type": "array",
+
+      "items": {
+        "type": "string",
+
+        "defaultSnippets": [{"body": "$1"}],
+
+        "minLength": 1,
+        "pattern": "[^ \\f\\n\\r\\t]"
+      },
+
+      "minItems": 1
+    },
+
+    "autoScripts": {
+      "description": "A list of relative paths to scripts the avatar should automatically execute.\nThe scripts are executed in the order given.\n\nIf empty, no scripts are automatically executed.\nIf this does not exist, all scripts are automatically executed in alphanumeric order.",
+      "markdownDescription": "```ts\nautoScripts: string[]\n```\n***\nA list of relative paths to scripts the avatar should automatically execute.  \nThe scripts are executed in the order given.\n\nIf empty, no scripts are automatically executed.  \nIf this does not exist, all scripts are automatically executed in alphanumeric order.",
+
+      "type": "array",
+
+      "items": {
+        "type": "string",
+
+        "defaultSnippets": [{"body": "$1"}],
+
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+
+    "customizations": {
+      "description": "Contains a list of key-value pairs where the keys are paths to model parts (minus the starting \"models.\") and the values are the starting customizations for that part.",
+      "markdownDescription": "```ts\ncustomizations: {\n  [partPath]: {\n    parentType: string,\n    primaryRenderType: RenderType,\n    secondaryRenderType: RenderType\n  }\n}\n```\n***\nContains a list of key-value pairs where the keys are paths to model parts (minus the starting `models.`) and the values are the starting customizations for that part.",
+
+      "type": "object",
+
+      "defaultSnippets": [
+        {"label": "{}", "body": "^{$1}"},
+        {"label": "{...}", "body": {
+          "${1:bbmodel_name.path.to.part}": "^$2"
+        }}
+      ],
+
+      "properties": {
+        "bbmodel_name.path.to.part": {"$ref": "#/definitions/customization"}
+      },
+
+      "additionalProperties": {"$ref": "#/definitions/customization"}
+    }
+  },
+
+  "anyOf": [
+    {"not": {"required": ["author", "authors"]}},
+    {"oneOf": [
+      {"required": ["author"], "not": {"required": ["authors"]}},
+      {"required": ["authors"], "not": {"required": ["author"]}}
+    ]}
+  ]
+}

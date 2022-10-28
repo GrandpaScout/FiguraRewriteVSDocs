@@ -1,0 +1,333 @@
+# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Items
+# Select *all* table data cells to clone info.
+
+ Acacia Boat	acacia_boat
+ Amethyst Shard	amethyst_shard
+ Apple	apple
+ Armor Stand	armor_stand
+ Arrow	arrow
+ Bucket of Axolotl	axolotl_bucket
+ Axolotl Spawn Egg	axolotl_spawn_egg
+ Baked Potato	baked_potato
+ Bat Spawn Egg	bat_spawn_egg
+ Bee Spawn Egg	bee_spawn_egg
+ Raw Beef	beef
+ Beetroot	beetroot
+ Beetroot Seeds	beetroot_seeds
+ Beetroot Soup	beetroot_soup
+ Birch Boat	birch_boat
+ Black Dye	black_dye
+ Blaze Powder	blaze_powder
+ Blaze Rod	blaze_rod
+ Blaze Spawn Egg	blaze_spawn_egg
+ Blue Dye	blue_dye
+ Bone	bone
+ Bone Meal	bone_meal
+ Book	book
+ Bow	bow
+ Bowl	bowl
+ Bread	bread
+ Brick	brick
+ Brown Dye	brown_dye
+ Bucket	bucket
+ Bundle	bundle
+ Carrot	carrot
+ Carrot on a Stick	carrot_on_a_stick
+ Cat Spawn Egg	cat_spawn_egg
+ Cave Spider Spawn Egg	cave_spider_spawn_egg
+ Chainmail Boots	chainmail_boots
+ Chainmail Chestplate	chainmail_chestplate
+ Chainmail Helmet	chainmail_helmet
+ Chainmail Leggings	chainmail_leggings
+ Charcoal	charcoal
+ Minecart with Chest	chest_minecart
+ Raw Chicken	chicken
+ Chicken Spawn Egg	chicken_spawn_egg
+ Chorus Fruit	chorus_fruit
+ Clay Ball	clay_ball
+ Clock	clock
+ Coal	coal
+ Cocoa Beans	cocoa_beans
+ Raw Cod	cod
+ Bucket of Cod	cod_bucket
+ Cod Spawn Egg	cod_spawn_egg
+ Minecart with Command Block	command_block_minecart
+ Compass	compass
+ Steak	cooked_beef
+ Cooked Chicken	cooked_chicken
+ Cooked Cod	cooked_cod
+ Cooked Mutton	cooked_mutton
+ Cooked Porkchop	cooked_porkchop
+ Cooked Rabbit	cooked_rabbit
+ Cooked Salmon	cooked_salmon
+ Cookie	cookie
+ Copper Ingot	copper_ingot
+ Cow Spawn Egg	cow_spawn_egg
+ Banner Pattern (Creeper Charge)	creeper_banner_pattern
+ Creeper Spawn Egg	creeper_spawn_egg
+ Crossbow	crossbow
+ Cyan Dye	cyan_dye
+ Dark Oak Boat	dark_oak_boat
+ Debug Stick	debug_stick
+ Diamond	diamond
+ Diamond Axe	diamond_axe
+ Diamond Boots	diamond_boots
+ Diamond Chestplate	diamond_chestplate
+ Diamond Helmet	diamond_helmet
+ Diamond Hoe	diamond_hoe
+ Diamond Horse Armor	diamond_horse_armor
+ Diamond Leggings	diamond_leggings
+ Diamond Pickaxe	diamond_pickaxe
+ Diamond Shovel	diamond_shovel
+ Diamond Sword	diamond_sword
+ Dolphin Spawn Egg	dolphin_spawn_egg
+ Donkey Spawn Egg	donkey_spawn_egg
+ Dragon's Breath	dragon_breath
+ Dried Kelp	dried_kelp
+ Drowned Spawn Egg	drowned_spawn_egg
+ Egg	egg
+ Elder Guardian Spawn Egg	elder_guardian_spawn_egg
+ Elytra	elytra
+ Emerald	emerald
+ Enchanted Book	enchanted_book
+ Enchanted Golden Apple	enchanted_golden_apple
+ End Crystal	end_crystal
+ Eye of Ender	ender_eye
+ Ender Pearl	ender_pearl
+ Enderman Spawn Egg	enderman_spawn_egg
+ Endermite Spawn Egg	endermite_spawn_egg
+ Evoker Spawn Egg	evoker_spawn_egg
+ Bottle o' Enchanting	experience_bottle
+ Feather	feather
+ Fermented Spider Eye	fermented_spider_eye
+ Map	filled_map
+ Fire Charge	fire_charge
+ Firework Rocket	firework_rocket
+ Firework Star	firework_star
+ Fishing Rod	fishing_rod
+ Flint	flint
+ Flint and Steel	flint_and_steel
+ Banner Pattern (Flower Charge)	flower_banner_pattern
+ Fox Spawn Egg	fox_spawn_egg
+ Minecart with Furnace	furnace_minecart
+ Ghast Spawn Egg	ghast_spawn_egg
+ Ghast Tear	ghast_tear
+ Glass Bottle	glass_bottle
+ Glistering Melon Slice	glistering_melon_slice
+ Banner Pattern (Globe)	globe_banner_pattern
+ Glow Berries	glow_berries
+ Glow Ink Sac	glow_ink_sac
+ Glow Item Frame	glow_item_frame
+ Glow Squid Spawn Egg	glow_squid_spawn_egg
+ Glowstone Dust	glowstone_dust
+ Goat Spawn Egg	goat_spawn_egg
+ Gold Ingot	gold_ingot
+ Gold Nugget	gold_nugget
+ Golden Apple	golden_apple
+ Golden Axe	golden_axe
+ Golden Boots	golden_boots
+ Golden Carrot	golden_carrot
+ Golden Chestplate	golden_chestplate
+ Golden Helmet	golden_helmet
+ Golden Hoe	golden_hoe
+ Golden Horse Armor	golden_horse_armor
+ Golden Leggings	golden_leggings
+ Golden Pickaxe	golden_pickaxe
+ Golden Shovel	golden_shovel
+ Golden Sword	golden_sword
+ Gray Dye	gray_dye
+ Green Dye	green_dye
+ Guardian Spawn Egg	guardian_spawn_egg
+ Gunpowder	gunpowder
+ Heart of the Sea	heart_of_the_sea
+ Hoglin Spawn Egg	hoglin_spawn_egg
+ Honey Bottle	honey_bottle
+ Honeycomb	honeycomb
+ Minecart with Hopper	hopper_minecart
+ Horse Spawn Egg	horse_spawn_egg
+ Husk Spawn Egg	husk_spawn_egg
+ Ink Sac	ink_sac
+ Iron Axe	iron_axe
+ Iron Boots	iron_boots
+ Iron Chestplate	iron_chestplate
+ Iron Helmet	iron_helmet
+ Iron Hoe	iron_hoe
+ Iron Horse Armor	iron_horse_armor
+ Iron Ingot	iron_ingot
+ Iron Leggings	iron_leggings
+ Iron Nugget	iron_nugget
+ Iron Pickaxe	iron_pickaxe
+ Iron Shovel	iron_shovel
+ Iron Sword	iron_sword
+ Item Frame	item_frame
+ Jungle Boat	jungle_boat
+ Knowledge Book	knowledge_book
+ Lapis Lazuli	lapis_lazuli
+ Lava Bucket	lava_bucket
+ Lead	lead
+ Leather	leather
+ Leather Boots	leather_boots
+ Leather Tunic	leather_chestplate
+ Leather Cap	leather_helmet
+ Leather Horse Armor	leather_horse_armor
+ Leather Pants	leather_leggings
+ Light Blue Dye	light_blue_dye
+ Light Gray Dye	light_gray_dye
+ Lime Dye	lime_dye
+ Lingering Potion	lingering_potion
+ Llama Spawn Egg	llama_spawn_egg
+ Magenta Dye	magenta_dye
+ Magma Cream	magma_cream
+ Magma Cube Spawn Egg	magma_cube_spawn_egg
+ Empty Map	map
+ Melon Seeds	melon_seeds
+ Melon Slice	melon_slice
+ Milk Bucket	milk_bucket
+ Minecart	minecart
+ Banner Pattern (Thing)	mojang_banner_pattern
+ Mooshroom Spawn Egg	mooshroom_spawn_egg
+ Mule Spawn Egg	mule_spawn_egg
+ Mushroom Stew	mushroom_stew
+ Music Disc (11)	music_disc_11
+ Music Disc (13)	music_disc_13
+ Music Disc (blocks)	music_disc_blocks
+ Music Disc (cat)	music_disc_cat
+ Music Disc (chirp)	music_disc_chirp
+ Music Disc (far)	music_disc_far
+ Music Disc (mall)	music_disc_mall
+ Music Disc (mellohi)	music_disc_mellohi
+ Music Disc (otherside)	music_disc_otherside
+ Music Disc (Pigstep)	music_disc_pigstep
+ Music Disc (stal)	music_disc_stal
+ Music Disc (strad)	music_disc_strad
+ Music Disc (wait)	music_disc_wait
+ Music Disc (ward)	music_disc_ward
+ Raw Mutton	mutton
+ Name Tag	name_tag
+ Nautilus Shell	nautilus_shell
+ Nether Brick	nether_brick
+ Nether Star	nether_star
+ Netherite Axe	netherite_axe
+ Netherite Boots	netherite_boots
+ Netherite Chestplate	netherite_chestplate
+ Netherite Helmet	netherite_helmet
+ Netherite Hoe	netherite_hoe
+ Netherite Ingot	netherite_ingot
+ Netherite Leggings	netherite_leggings
+ Netherite Pickaxe	netherite_pickaxe
+ Netherite Scrap	netherite_scrap
+ Netherite Shovel	netherite_shovel
+ Netherite Sword	netherite_sword
+ Oak Boat	oak_boat
+ Ocelot Spawn Egg	ocelot_spawn_egg
+ Orange Dye	orange_dye
+ Painting	painting
+ Panda Spawn Egg	panda_spawn_egg
+ Paper	paper
+ Parrot Spawn Egg	parrot_spawn_egg
+ Phantom Membrane	phantom_membrane
+ Phantom Spawn Egg	phantom_spawn_egg
+ Pig Spawn Egg	pig_spawn_egg
+ Piglin Brute Spawn Egg	piglin_brute_spawn_egg
+ Piglin Spawn Egg	piglin_spawn_egg
+ Pillager Spawn Egg	pillager_spawn_egg
+ Pink Dye	pink_dye
+ Poisonous Potato	poisonous_potato
+ Polar Bear Spawn Egg	polar_bear_spawn_egg
+ Popped Chorus Fruit	popped_chorus_fruit
+ Raw Porkchop	porkchop
+ Potato	potato
+ Potion	potion
+ Powder Snow Bucket	powder_snow_bucket
+ Prismarine Crystals	prismarine_crystals
+ Prismarine Shard	prismarine_shard
+ Pufferfish	pufferfish
+ Bucket of Pufferfish	pufferfish_bucket
+ Pufferfish Spawn Egg	pufferfish_spawn_egg
+ Pumpkin Pie	pumpkin_pie
+ Pumpkin Seeds	pumpkin_seeds
+ Purple Dye	purple_dye
+ Nether Quartz	quartz
+ Raw Rabbit	rabbit
+ Rabbit's Foot	rabbit_foot
+ Rabbit Hide	rabbit_hide
+ Rabbit Spawn Egg	rabbit_spawn_egg
+ Rabbit Stew	rabbit_stew
+ Ravager Spawn Egg	ravager_spawn_egg
+ Raw Copper	raw_copper
+ Raw Gold	raw_gold
+ Raw Iron	raw_iron
+ Red Dye	red_dye
+ Redstone Dust	redstone
+ Rotten Flesh	rotten_flesh
+ Saddle	saddle
+ Raw Salmon	salmon
+ Bucket of Salmon	salmon_bucket
+ Salmon Spawn Egg	salmon_spawn_egg
+ Scute	scute
+ Shears	shears
+ Sheep Spawn Egg	sheep_spawn_egg
+ Shield	shield
+ Shulker Shell	shulker_shell
+ Shulker Spawn Egg	shulker_spawn_egg
+ Silverfish Spawn Egg	silverfish_spawn_egg
+ Skeleton Horse Spawn Egg	skeleton_horse_spawn_egg
+ Skeleton Spawn Egg	skeleton_spawn_egg
+ Banner Pattern (Skull Charge)	skull_banner_pattern
+ Slimeball	slime_ball
+ Slime Spawn Egg	slime_spawn_egg
+ Snowball	snowball
+ Spectral Arrow	spectral_arrow
+ Spider Eye	spider_eye
+ Spider Spawn Egg	spider_spawn_egg
+ Splash Potion	splash_potion
+ Spruce Boat	spruce_boat
+ Spyglass	spyglass
+ Squid Spawn Egg	squid_spawn_egg
+ Stick	stick
+ Stone Axe	stone_axe
+ Stone Hoe	stone_hoe
+ Stone Pickaxe	stone_pickaxe
+ Stone Shovel	stone_shovel
+ Stone Sword	stone_sword
+ Stray Spawn Egg	stray_spawn_egg
+ Strider Spawn Egg	strider_spawn_egg
+ String	string
+ Sugar	sugar
+ Suspicious Stew	suspicious_stew
+ Sweet Berries	sweet_berries
+ Tipped Arrow	tipped_arrow
+ Minecart with TNT	tnt_minecart
+ Totem of Undying	totem_of_undying
+ Trader Llama Spawn Egg	trader_llama_spawn_egg
+ Trident	trident
+ Tropical Fish	tropical_fish
+ Bucket of Tropical Fish	tropical_fish_bucket
+ Tropical Fish Spawn Egg	tropical_fish_spawn_egg
+ Turtle Shell	turtle_helmet
+ Turtle Spawn Egg	turtle_spawn_egg
+ Vex Spawn Egg	vex_spawn_egg
+ Villager Spawn Egg	villager_spawn_egg
+ Vindicator Spawn Egg	vindicator_spawn_egg
+ Wandering Trader Spawn Egg	wandering_trader_spawn_egg
+ Warped Fungus on a Stick	warped_fungus_on_a_stick
+ Water Bucket	water_bucket
+ Wheat	wheat
+ Wheat Seeds	wheat_seeds
+ White Dye	white_dye
+ Witch Spawn Egg	witch_spawn_egg
+ Wither Skeleton Spawn Egg	wither_skeleton_spawn_egg
+ Wolf Spawn Egg	wolf_spawn_egg
+ Wooden Axe	wooden_axe
+ Wooden Hoe	wooden_hoe
+ Wooden Pickaxe	wooden_pickaxe
+ Wooden Shovel	wooden_shovel
+ Wooden Sword	wooden_sword
+ Book and Quill	writable_book
+ Written Book	written_book
+ Yellow Dye	yellow_dye
+ Zoglin Spawn Egg	zoglin_spawn_egg
+ Zombie Horse Spawn Egg	zombie_horse_spawn_egg
+ Zombie Spawn Egg	zombie_spawn_egg
+ Zombie Villager Spawn Egg	zombie_villager_spawn_egg
+ Zombified Piglin Spawn Egg	zombified_piglin_spawn_egg

@@ -1,0 +1,152 @@
+---@meta
+
+---@diagnostic disable: duplicate-set-field
+
+--TODO: Review all descriptions to see if they fit the style guide.
+
+---==============================================================================================---
+---  EVENTSAPI                                                                                   ---
+---==============================================================================================---
+
+---An API that contains all of the in-game events that Figura handles.
+---
+---Events can have callback functions registered to them which will run when the event does.
+---
+---There is no *set* order that events will run in, however the following groups of events will
+---always run in the same order relative to each other if run at the same time:
+---* * `ENTITY_INIT`
+---  * `WORLD_TICK`
+---  * `TICK`
+---  * `CHAT_RECEIVE_MESSAGE`
+---  * `RENDER`  
+---    &nbsp;
+---* * `WORLD_RENDER`
+---  * `SKULL_RENDER`
+---  * `POST_WORLD_RENDER`
+---  * `POST_RENDER`
+---  * `PREVIEW_RENDER`
+---  * `POST_PREVIEW_RENDER`
+---
+---The following events have an untested or undetermined order:
+---* `CHAT_SEND_MESSAGE`
+---* `MOUSE_SCROLL`
+---@class EventsAPI
+---This event runs every time a message is received in chat.  
+---Avoid sending anything to the chat during this event as it will create an infinite loop.
+---
+---This event uses the following callback:
+---```lua
+---function(message: string)
+---```
+---**`message`** The message this event received.
+---@field CHAT_RECEIVE_MESSAGE Event.ReceiveMessage
+---This event runs every time the host attempts to send a message to chat.  
+---This message can be modified by the functions in this event.
+---
+---Return `nil` to force the message to not be sent.  
+---Return the `message` the event grabbed to leave the message alone.
+---
+---If the `Chat Messages` permission is enabled in Figura's settings, the sent message can also be
+---modified by returning a different value.  
+---The value will be turned into a string before it is sent if it is not a string already.
+---
+---When the return value is changed, it is changed for every function after it. This means that, for
+---example, returning `nil` will cause all functions after it to have a `nil` `message`.
+---
+---This event uses the following callback:
+---```lua
+---function(message?: string): string?
+---```
+---**`message?`** The message that was going to be sent.  
+---**`return #1`** The message that should be sent. If this is `nil`, send nothing.
+---@field CHAT_SEND_MESSAGE Event.SendMessage
+---This event runs as soon as the avatar's owner loads in.
+---
+---This event uses the following callback:
+---```lua
+---function()
+---```
+---@field ENTITY_INIT Event.Generic
+---This event runs when the mouse wheel is scrolled.
+---
+---This event uses the following callback:
+---```lua
+---function(dir: integer)
+---```
+---**`dir`** The amount the mouse has scrolled since the last time this event triggered. This may be
+---`0` if the mouse is scrolled left or right.
+---@field MOUSE_SCROLL Event.MouseScroll
+---This event runs after an avatar preview has rendered.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---@field POST_PREVIEW_RENDER Event.Render
+---This event runs after the avatar has rendered.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---@field POST_RENDER Event.Render
+---This event runs after the world has rendered.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---@field POST_WORLD_RENDER Event.Render
+---This event runs before an avatar preview is rendered.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---@field PREVIEW_RENDER Event.Render
+---This event runs before the avatar is rendered.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---@field RENDER Event.Render
+---This event runs before a skull block is rendered.  
+---This event runs for each visible skull block.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number, pos: Vector3)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`pos`** The position of the skull block being rendered.
+---@field SKULL_RENDER Event.SkullRender
+---This event runs every tick while the player entity is loaded.
+---
+---This event uses the following callback:
+---```lua
+---function()
+---```
+---@field TICK Event.Generic
+---This event runs before the world is rendered.
+---
+---This event uses the following callback:
+---```lua
+---function(delta: number)
+---```
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---@field WORLD_RENDER Event.Render
+---This event runs every tick.
+---
+---This event uses the following callback:
+---```lua
+---function()
+---```
+---@field WORLD_TICK Event.Generic
+local EventsAPI
+
