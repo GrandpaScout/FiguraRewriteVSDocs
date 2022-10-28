@@ -1,0 +1,604 @@
+---@class Minecraft.blockProperties
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."1"` | `minecraft:bamboo` |
+---> | `"0".."2"` | `minecraft:cocoa` |
+---> | `"0".."3"` | `minecraft:beetroots` `minecraft:frosted_ice` `minecraft:nether_wart` `minecraft:sweet_berry_bush` |
+---> | `"0".."4"` | `minecraft:mangrove_propagule` |
+---> | `"0".."5"` | `minecraft:chorus_flower` |
+---> | `"0".."7"` | `minecraft:carrots` `minecraft:melon_stem` `minecraft:potatoes` `minecraft:pumpkin_stem` `minecraft:wheat` |
+---> | `"0".."15"` | `minecraft:cactus` `minecraft:fire` `minecraft:sugar_cane` |
+---> | `"0".."25"` | `minecraft:cave_vines` `minecraft:kelp` `minecraft:twisting_vines` `minecraft:weeping_vines` |
+---@field age? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|"16"|"17"|"18"|"19"|"20"|"21"|"22"|"23"|"24"|"25"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:tripwire` `minecraft:tripwire_hook` |
+---@field attached? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"ceiling"` `"double_wall"` `"floor"` `"single_wall"` | `minecraft:bell` |
+---@field attachment? "ceiling"|"double_wall"|"floor"|"single_wall"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"x"` `"z"` | `minecraft:nether_portal` |
+---> | `"x"` `"y"` `"z"` | `minecraft:acacia_log` `minecraft:acacia_wood` `minecraft:basalt` `minecraft:birch_log` `minecraft:birch_wood` `minecraft:bone_block` `minecraft:chain` `minecraft:crimson_hyphae` `minecraft:crimson_stem` `minecraft:dark_oak_log` `minecraft:dark_oak_wood` `minecraft:deepslate` `minecraft:hay_block` `minecraft:infested_deepslate` `minecraft:jungle_log` `minecraft:jungle_wood` `minecraft:mangrove_log` `minecraft:mangrove_wood` `minecraft:muddy_mangrove_roots` `minecraft:oak_log` `minecraft:oak_wood` `minecraft:ochre_froglight` `minecraft:pearlescent_froglight` `minecraft:polished_basalt` `minecraft:purpur_pillar` `minecraft:quartz_pillar` `minecraft:spruce_log` `minecraft:spruce_wood` `minecraft:stripped_acacia_log` `minecraft:stripped_acacia_wood` `minecraft:stripped_birch_log` `minecraft:stripped_birch_wood` `minecraft:stripped_crimson_hyphae` `minecraft:stripped_crimson_stem` `minecraft:stripped_dark_oak_log` `minecraft:stripped_dark_oak_wood` `minecraft:stripped_jungle_log` `minecraft:stripped_jungle_wood` `minecraft:stripped_mangrove_log` `minecraft:stripped_mangrove_wood` `minecraft:stripped_oak_log` `minecraft:stripped_oak_wood` `minecraft:stripped_spruce_log` `minecraft:stripped_spruce_wood` `minecraft:stripped_warped_hyphae` `minecraft:stripped_warped_stem` `minecraft:verdant_froglight` `minecraft:warped_hyphae` `minecraft:warped_stem` |
+---@field axis? "x"|"z"|"y"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:cave_vines` `minecraft:cave_vines_plant` |
+---@field berries? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."6"` | `minecraft:cake` |
+---@field bites? "0"|"1"|"2"|"3"|"4"|"5"|"6"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:sculk_catalyst` |
+---@field bloom? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:scaffolding` |
+---@field bottom? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:sculk_shrieker` |
+---@field can_summon? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"1".."4"` | `minecraft:black_candle` `minecraft:blue_candle` `minecraft:brown_candle` `minecraft:candle` `minecraft:cyan_candle` `minecraft:gray_candle` `minecraft:green_candle` `minecraft:light_blue_candle` `minecraft:light_gray_candle` `minecraft:lime_candle` `minecraft:magenta_candle` `minecraft:orange_candle` `minecraft:pink_candle` `minecraft:purple_candle` `minecraft:red_candle` `minecraft:white_candle` `minecraft:yellow_candle` |
+---@field candles? "1"|"2"|"3"|"4"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."4"` | `minecraft:respawn_anchor` |
+---@field charges? "0"|"1"|"2"|"3"|"4"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:chain_command_block` `minecraft:command_block` `minecraft:repeating_command_block` |
+---@field conditional? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"1".."4"` | `minecraft:repeater` |
+---@field delay? "1"|"2"|"3"|"4"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:tripwire` |
+---@field disarmed? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."7"` | `minecraft:scaffolding` |
+---> | `"1".."7"` | `minecraft:acacia_leaves` `minecraft:azalea_leaves` `minecraft:birch_leaves` `minecraft:dark_oak_leaves` `minecraft:flowering_azalea_leaves` `minecraft:jungle_leaves` `minecraft:mangrove_leaves` `minecraft:oak_leaves` `minecraft:spruce_leaves` |
+---@field distance? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:brown_mushroom_block` `minecraft:chorus_plant` `minecraft:glow_lichen` `minecraft:mushroom_stem` `minecraft:red_mushroom_block` `minecraft:sculk_vein` |
+---@field down? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:bubble_column` |
+---@field drag? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_fence` `minecraft:birch_fence` `minecraft:black_stained_glass_pane` `minecraft:blue_stained_glass_pane` `minecraft:brown_mushroom_block` `minecraft:brown_stained_glass_pane` `minecraft:chorus_plant` `minecraft:crimson_fence` `minecraft:cyan_stained_glass_pane` `minecraft:dark_oak_fence` `minecraft:fire` `minecraft:glass_pane` `minecraft:glow_lichen` `minecraft:gray_stained_glass_pane` `minecraft:green_stained_glass_pane` `minecraft:iron_bars` `minecraft:jungle_fence` `minecraft:light_blue_stained_glass_pane` `minecraft:light_gray_stained_glass_pane` `minecraft:lime_stained_glass_pane` `minecraft:magenta_stained_glass_pane` `minecraft:mangrove_fence` `minecraft:mushroom_stem` `minecraft:nether_brick_fence` `minecraft:oak_fence` `minecraft:orange_stained_glass_pane` `minecraft:pink_stained_glass_pane` `minecraft:purple_stained_glass_pane` `minecraft:red_mushroom_block` `minecraft:red_stained_glass_pane` `minecraft:sculk_vein` `minecraft:spruce_fence` `minecraft:tripwire` `minecraft:vine` `minecraft:warped_fence` `minecraft:white_stained_glass_pane` `minecraft:yellow_stained_glass_pane` |
+---> | `"none"` `"low"` `"tall"` | `minecraft:andesite_wall` `minecraft:blackstone_wall` `minecraft:brick_wall` `minecraft:cobbled_deepslate_wall` `minecraft:cobblestone_wall` `minecraft:deepslate_brick_wall` `minecraft:deepslate_tile_wall` `minecraft:diorite_wall` `minecraft:end_stone_brick_wall` `minecraft:granite_wall` `minecraft:mossy_cobblestone_wall` `minecraft:mossy_stone_brick_wall` `minecraft:mud_brick_wall` `minecraft:nether_brick_wall` `minecraft:polished_blackstone_brick_wall` `minecraft:polished_blackstone_wall` `minecraft:polished_deepslate_wall` `minecraft:prismarine_wall` `minecraft:red_nether_brick_wall` `minecraft:red_sandstone_wall` `minecraft:sandstone_wall` `minecraft:stone_brick_wall` |
+---> | `"none"` `"side"` `"up"` | `minecraft:redstone_wire` |
+---@field east? "true"|"false"|"none"|"low"|"tall"|"side"|"up"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"1".."4"` | `minecraft:turtle_egg` |
+---@field eggs? "1"|"2"|"3"|"4"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:hopper` |
+---@field enabled? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:piston` `minecraft:sticky_piston` |
+---@field extended? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:end_portal_frame` |
+---@field eye? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"ceiling"` `"floor"` `"wall"` | `minecraft:acacia_button` `minecraft:birch_button` `minecraft:crimson_button` `minecraft:dark_oak_button` `minecraft:grindstone` `minecraft:jungle_button` `minecraft:lever` `minecraft:mangrove_button` `minecraft:oak_button` `minecraft:polished_blackstone_button` `minecraft:spruce_button` `minecraft:stone_button` `minecraft:warped_button` |
+---@field face? "ceiling"|"floor"|"wall"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"east"` `"north"` `"south"` `"west"` | `minecraft:acacia_button` `minecraft:acacia_door` `minecraft:acacia_fence_gate` `minecraft:acacia_stairs` `minecraft:acacia_trapdoor` `minecraft:acacia_wall_sign` `minecraft:andesite_stairs` `minecraft:anvil` `minecraft:attached_melon_stem` `minecraft:attached_pumpkin_stem` `minecraft:bee_nest` `minecraft:beehive` `minecraft:bell` `minecraft:big_dripleaf` `minecraft:big_dripleaf_stem` `minecraft:birch_button` `minecraft:birch_door` `minecraft:birch_fence_gate` `minecraft:birch_stairs` `minecraft:birch_trapdoor` `minecraft:birch_wall_sign` `minecraft:black_bed` `minecraft:black_glazed_terracotta` `minecraft:black_wall_banner` `minecraft:blackstone_stairs` `minecraft:blast_furnace` `minecraft:blue_bed` `minecraft:blue_glazed_terracotta` `minecraft:blue_wall_banner` `minecraft:brain_coral_wall_fan` `minecraft:brick_stairs` `minecraft:brown_bed` `minecraft:brown_glazed_terracotta` `minecraft:brown_wall_banner` `minecraft:bubble_coral_wall_fan` `minecraft:campfire` `minecraft:carved_pumpkin` `minecraft:chest` `minecraft:chipped_anvil` `minecraft:cobbled_deepslate_stairs` `minecraft:cobblestone_stairs` `minecraft:cocoa` `minecraft:comparator` `minecraft:creeper_wall_head` `minecraft:crimson_button` `minecraft:crimson_door` `minecraft:crimson_fence_gate` `minecraft:crimson_stairs` `minecraft:crimson_trapdoor` `minecraft:crimson_wall_sign` `minecraft:cut_copper_stairs` `minecraft:cyan_bed` `minecraft:cyan_glazed_terracotta` `minecraft:cyan_wall_banner` `minecraft:damaged_anvil` `minecraft:dark_oak_button` `minecraft:dark_oak_door` `minecraft:dark_oak_fence_gate` `minecraft:dark_oak_stairs` `minecraft:dark_oak_trapdoor` `minecraft:dark_oak_wall_sign` `minecraft:dark_prismarine_stairs` `minecraft:dead_brain_coral_wall_fan` `minecraft:dead_bubble_coral_wall_fan` `minecraft:dead_fire_coral_wall_fan` `minecraft:dead_horn_coral_wall_fan` `minecraft:dead_tube_coral_wall_fan` `minecraft:deepslate_brick_stairs` `minecraft:deepslate_tile_stairs` `minecraft:diorite_stairs` `minecraft:dragon_wall_head` `minecraft:end_portal_frame` `minecraft:end_stone_brick_stairs` `minecraft:ender_chest` `minecraft:exposed_cut_copper_stairs` `minecraft:fire_coral_wall_fan` `minecraft:furnace` `minecraft:granite_stairs` `minecraft:gray_bed` `minecraft:gray_glazed_terracotta` `minecraft:gray_wall_banner` `minecraft:green_bed` `minecraft:green_glazed_terracotta` `minecraft:green_wall_banner` `minecraft:grindstone` `minecraft:horn_coral_wall_fan` `minecraft:iron_door` `minecraft:iron_trapdoor` `minecraft:jack_o_lantern` `minecraft:jungle_button` `minecraft:jungle_door` `minecraft:jungle_fence_gate` `minecraft:jungle_stairs` `minecraft:jungle_trapdoor` `minecraft:jungle_wall_sign` `minecraft:ladder` `minecraft:lectern` `minecraft:lever` `minecraft:light_blue_bed` `minecraft:light_blue_glazed_terracotta` `minecraft:light_blue_wall_banner` `minecraft:light_gray_bed` `minecraft:light_gray_glazed_terracotta` `minecraft:light_gray_wall_banner` `minecraft:lime_bed` `minecraft:lime_glazed_terracotta` `minecraft:lime_wall_banner` `minecraft:loom` `minecraft:magenta_bed` `minecraft:magenta_glazed_terracotta` `minecraft:magenta_wall_banner` `minecraft:mangrove_button` `minecraft:mangrove_door` `minecraft:mangrove_fence_gate` `minecraft:mangrove_stairs` `minecraft:mangrove_trapdoor` `minecraft:mangrove_wall_sign` `minecraft:mossy_cobblestone_stairs` `minecraft:mossy_stone_brick_stairs` `minecraft:mud_brick_stairs` `minecraft:nether_brick_stairs` `minecraft:oak_button` `minecraft:oak_door` `minecraft:oak_fence_gate` `minecraft:oak_stairs` `minecraft:oak_trapdoor` `minecraft:oak_wall_sign` `minecraft:orange_bed` `minecraft:orange_glazed_terracotta` `minecraft:orange_wall_banner` `minecraft:oxidized_cut_copper_stairs` `minecraft:pink_bed` `minecraft:pink_glazed_terracotta` `minecraft:pink_wall_banner` `minecraft:player_wall_head` `minecraft:polished_andesite_stairs` `minecraft:polished_blackstone_brick_stairs` `minecraft:polished_blackstone_button` `minecraft:polished_blackstone_stairs` `minecraft:polished_deepslate_stairs` `minecraft:polished_diorite_stairs` `minecraft:polished_granite_stairs` `minecraft:prismarine_brick_stairs` `minecraft:prismarine_stairs` `minecraft:purple_bed` `minecraft:purple_glazed_terracotta` `minecraft:purple_wall_banner` `minecraft:purpur_stairs` `minecraft:quartz_stairs` `minecraft:red_bed` `minecraft:red_glazed_terracotta` `minecraft:red_nether_brick_stairs` `minecraft:red_sandstone_stairs` `minecraft:red_wall_banner` `minecraft:redstone_wall_torch` `minecraft:repeater` `minecraft:sandstone_stairs` `minecraft:skeleton_wall_skull` `minecraft:small_dripleaf` `minecraft:smoker` `minecraft:smooth_quartz_stairs` `minecraft:smooth_red_sandstone_stairs` `minecraft:smooth_sandstone_stairs` `minecraft:soul_campfire` `minecraft:soul_wall_torch` `minecraft:spruce_button` `minecraft:spruce_door` `minecraft:spruce_fence_gate` `minecraft:spruce_stairs` `minecraft:spruce_trapdoor` `minecraft:spruce_wall_sign` `minecraft:stone_brick_stairs` `minecraft:stone_button` `minecraft:stone_stairs` `minecraft:stonecutter` `minecraft:trapped_chest` `minecraft:tripwire_hook` `minecraft:tube_coral_wall_fan` `minecraft:wall_torch` `minecraft:warped_button` `minecraft:warped_door` `minecraft:warped_fence_gate` `minecraft:warped_stairs` `minecraft:warped_trapdoor` `minecraft:warped_wall_sign` `minecraft:waxed_cut_copper_stairs` `minecraft:waxed_exposed_cut_copper_stairs` `minecraft:waxed_oxidized_cut_copper_stairs` `minecraft:waxed_weathered_cut_copper_stairs` `minecraft:weathered_cut_copper_stairs` `minecraft:white_bed` `minecraft:white_glazed_terracotta` `minecraft:white_wall_banner` `minecraft:wither_skeleton_wall_skull` `minecraft:yellow_bed` `minecraft:yellow_glazed_terracotta` `minecraft:yellow_wall_banner` `minecraft:zombie_wall_head` |
+---> | `"down"` `"east"` `"north"` `"south"` `"west"` | `minecraft:hopper` |
+---> | `"down"` `"east"` `"north"` `"south"` `"up"` `"west"` | `minecraft:amethyst_cluster` `minecraft:barrel` `minecraft:black_shulker_box` `minecraft:blue_shulker_box` `minecraft:brown_shulker_box` `minecraft:chain_command_block` `minecraft:command_block` `minecraft:cyan_shulker_box` `minecraft:dispenser` `minecraft:dropper` `minecraft:end_rod` `minecraft:gray_shulker_box` `minecraft:green_shulker_box` `minecraft:large_amethyst_bud` `minecraft:light_blue_shulker_box` `minecraft:light_gray_shulker_box` `minecraft:lightning_rod` `minecraft:lime_shulker_box` `minecraft:magenta_shulker_box` `minecraft:medium_amethyst_bud` `minecraft:moving_piston` `minecraft:observer` `minecraft:orange_shulker_box` `minecraft:pink_shulker_box` `minecraft:piston` `minecraft:piston_head` `minecraft:purple_shulker_box` `minecraft:red_shulker_box` `minecraft:repeating_command_block` `minecraft:shulker_box` `minecraft:small_amethyst_bud` `minecraft:sticky_piston` `minecraft:white_shulker_box` `minecraft:yellow_shulker_box` |
+---@field facing? "east"|"north"|"south"|"west"|"down"|"up"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"bottom"` `"top"` | `minecraft:acacia_stairs` `minecraft:acacia_trapdoor` `minecraft:andesite_stairs` `minecraft:birch_stairs` `minecraft:birch_trapdoor` `minecraft:blackstone_stairs` `minecraft:brick_stairs` `minecraft:cobbled_deepslate_stairs` `minecraft:cobblestone_stairs` `minecraft:crimson_stairs` `minecraft:crimson_trapdoor` `minecraft:cut_copper_stairs` `minecraft:dark_oak_stairs` `minecraft:dark_oak_trapdoor` `minecraft:dark_prismarine_stairs` `minecraft:deepslate_brick_stairs` `minecraft:deepslate_tile_stairs` `minecraft:diorite_stairs` `minecraft:end_stone_brick_stairs` `minecraft:exposed_cut_copper_stairs` `minecraft:granite_stairs` `minecraft:iron_trapdoor` `minecraft:jungle_stairs` `minecraft:jungle_trapdoor` `minecraft:mangrove_stairs` `minecraft:mangrove_trapdoor` `minecraft:mossy_cobblestone_stairs` `minecraft:mossy_stone_brick_stairs` `minecraft:mud_brick_stairs` `minecraft:nether_brick_stairs` `minecraft:oak_stairs` `minecraft:oak_trapdoor` `minecraft:oxidized_cut_copper_stairs` `minecraft:polished_andesite_stairs` `minecraft:polished_blackstone_brick_stairs` `minecraft:polished_blackstone_stairs` `minecraft:polished_deepslate_stairs` `minecraft:polished_diorite_stairs` `minecraft:polished_granite_stairs` `minecraft:prismarine_brick_stairs` `minecraft:prismarine_stairs` `minecraft:purpur_stairs` `minecraft:quartz_stairs` `minecraft:red_nether_brick_stairs` `minecraft:red_sandstone_stairs` `minecraft:sandstone_stairs` `minecraft:smooth_quartz_stairs` `minecraft:smooth_red_sandstone_stairs` `minecraft:smooth_sandstone_stairs` `minecraft:spruce_stairs` `minecraft:spruce_trapdoor` `minecraft:stone_brick_stairs` `minecraft:stone_stairs` `minecraft:warped_stairs` `minecraft:warped_trapdoor` `minecraft:waxed_cut_copper_stairs` `minecraft:waxed_exposed_cut_copper_stairs` `minecraft:waxed_oxidized_cut_copper_stairs` `minecraft:waxed_weathered_cut_copper_stairs` `minecraft:weathered_cut_copper_stairs` |
+---> | `"lower"` `"upper"` | `minecraft:acacia_door` `minecraft:birch_door` `minecraft:crimson_door` `minecraft:dark_oak_door` `minecraft:iron_door` `minecraft:jungle_door` `minecraft:large_fern` `minecraft:lilac` `minecraft:mangrove_door` `minecraft:oak_door` `minecraft:peony` `minecraft:rose_bush` `minecraft:small_dripleaf` `minecraft:spruce_door` `minecraft:sunflower` `minecraft:tall_grass` `minecraft:tall_seagrass` `minecraft:warped_door` |
+---@field half? "bottom"|"top"|"lower"|"upper"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:lantern` `minecraft:mangrove_propagule` `minecraft:soul_lantern` |
+---@field hanging? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:lectern` |
+---@field has_book? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:brewing_stand` |
+---@field has_bottle_0? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:brewing_stand` |
+---@field has_bottle_1? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:brewing_stand` |
+---@field has_bottle_2? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:jukebox` |
+---@field has_record? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."2"` | `minecraft:turtle_egg` |
+---@field hatch? "0"|"1"|"2"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"left"` `"right"` | `minecraft:acacia_door` `minecraft:birch_door` `minecraft:crimson_door` `minecraft:dark_oak_door` `minecraft:iron_door` `minecraft:jungle_door` `minecraft:mangrove_door` `minecraft:oak_door` `minecraft:spruce_door` `minecraft:warped_door` |
+---@field hinge? "left"|"right"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."5"` | `minecraft:bee_nest` `minecraft:beehive` |
+---@field honey_level? "0"|"1"|"2"|"3"|"4"|"5"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_fence_gate` `minecraft:birch_fence_gate` `minecraft:crimson_fence_gate` `minecraft:dark_oak_fence_gate` `minecraft:jungle_fence_gate` `minecraft:mangrove_fence_gate` `minecraft:oak_fence_gate` `minecraft:spruce_fence_gate` `minecraft:warped_fence_gate` |
+---@field in_wall? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"banjo"` `"basedrum"` `"bass"` `"bell"` `"bit"` `"chime"` `"cow_bell"` `"didgeridoo"` `"flute"` `"guitar"` `"harp"` `"hat"` `"iron_xylophone"` `"pling"` `"snare"` `"xylophone"` | `minecraft:note_block` |
+---@field instrument? "banjo"|"basedrum"|"bass"|"bell"|"bit"|"chime"|"cow_bell"|"didgeridoo"|"flute"|"guitar"|"harp"|"hat"|"iron_xylophone"|"pling"|"snare"|"xylophone"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:daylight_detector` |
+---@field inverted? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"1".."8"` | `minecraft:snow` |
+---@field layers? "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"large"` `"none"` `"small"` | `minecraft:bamboo` |
+---@field leaves? "large"|"none"|"small"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."8"` | `minecraft:composter` |
+---> | `"0".."15"` | `minecraft:lava` `minecraft:light` `minecraft:water` |
+---> | `"1".."3"` | `minecraft:powder_snow_cauldron` `minecraft:water_cauldron` |
+---@field level? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:black_candle` `minecraft:black_candle_cake` `minecraft:blast_furnace` `minecraft:blue_candle` `minecraft:blue_candle_cake` `minecraft:brown_candle` `minecraft:brown_candle_cake` `minecraft:campfire` `minecraft:candle` `minecraft:candle_cake` `minecraft:cyan_candle` `minecraft:cyan_candle_cake` `minecraft:deepslate_redstone_ore` `minecraft:furnace` `minecraft:gray_candle` `minecraft:gray_candle_cake` `minecraft:green_candle` `minecraft:green_candle_cake` `minecraft:light_blue_candle` `minecraft:light_blue_candle_cake` `minecraft:light_gray_candle` `minecraft:light_gray_candle_cake` `minecraft:lime_candle` `minecraft:lime_candle_cake` `minecraft:magenta_candle` `minecraft:magenta_candle_cake` `minecraft:orange_candle` `minecraft:orange_candle_cake` `minecraft:pink_candle` `minecraft:pink_candle_cake` `minecraft:purple_candle` `minecraft:purple_candle_cake` `minecraft:red_candle` `minecraft:red_candle_cake` `minecraft:redstone_lamp` `minecraft:redstone_ore` `minecraft:redstone_torch` `minecraft:redstone_wall_torch` `minecraft:smoker` `minecraft:soul_campfire` `minecraft:white_candle` `minecraft:white_candle_cake` `minecraft:yellow_candle` `minecraft:yellow_candle_cake` |
+---@field lit? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:repeater` |
+---@field locked? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"compare"` `"subtract"` | `minecraft:comparator` |
+---> | `"corner"` `"data"` `"load"` `"save"` | `minecraft:structure_block` |
+---@field mode? "compare"|"subtract"|"corner"|"data"|"load"|"save"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."7"` | `minecraft:farmland` |
+---@field moisture? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_fence` `minecraft:birch_fence` `minecraft:black_stained_glass_pane` `minecraft:blue_stained_glass_pane` `minecraft:brown_mushroom_block` `minecraft:brown_stained_glass_pane` `minecraft:chorus_plant` `minecraft:crimson_fence` `minecraft:cyan_stained_glass_pane` `minecraft:dark_oak_fence` `minecraft:fire` `minecraft:glass_pane` `minecraft:glow_lichen` `minecraft:gray_stained_glass_pane` `minecraft:green_stained_glass_pane` `minecraft:iron_bars` `minecraft:jungle_fence` `minecraft:light_blue_stained_glass_pane` `minecraft:light_gray_stained_glass_pane` `minecraft:lime_stained_glass_pane` `minecraft:magenta_stained_glass_pane` `minecraft:mangrove_fence` `minecraft:mushroom_stem` `minecraft:nether_brick_fence` `minecraft:oak_fence` `minecraft:orange_stained_glass_pane` `minecraft:pink_stained_glass_pane` `minecraft:purple_stained_glass_pane` `minecraft:red_mushroom_block` `minecraft:red_stained_glass_pane` `minecraft:sculk_vein` `minecraft:spruce_fence` `minecraft:tripwire` `minecraft:vine` `minecraft:warped_fence` `minecraft:white_stained_glass_pane` `minecraft:yellow_stained_glass_pane` |
+---> | `"none"` `"low"` `"tall"` | `minecraft:andesite_wall` `minecraft:blackstone_wall` `minecraft:brick_wall` `minecraft:cobbled_deepslate_wall` `minecraft:cobblestone_wall` `minecraft:deepslate_brick_wall` `minecraft:deepslate_tile_wall` `minecraft:diorite_wall` `minecraft:end_stone_brick_wall` `minecraft:granite_wall` `minecraft:mossy_cobblestone_wall` `minecraft:mossy_stone_brick_wall` `minecraft:mud_brick_wall` `minecraft:nether_brick_wall` `minecraft:polished_blackstone_brick_wall` `minecraft:polished_blackstone_wall` `minecraft:polished_deepslate_wall` `minecraft:prismarine_wall` `minecraft:red_nether_brick_wall` `minecraft:red_sandstone_wall` `minecraft:sandstone_wall` `minecraft:stone_brick_wall` |
+---> | `"none"` `"side"` `"up"` | `minecraft:redstone_wire` |
+---@field north? "true"|"false"|"none"|"low"|"tall"|"side"|"up"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."24"` | `minecraft:note_block` |
+---@field note? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|"16"|"17"|"18"|"19"|"20"|"21"|"22"|"23"|"24"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:black_bed` `minecraft:blue_bed` `minecraft:brown_bed` `minecraft:cyan_bed` `minecraft:gray_bed` `minecraft:green_bed` `minecraft:light_blue_bed` `minecraft:light_gray_bed` `minecraft:lime_bed` `minecraft:magenta_bed` `minecraft:orange_bed` `minecraft:pink_bed` `minecraft:purple_bed` `minecraft:red_bed` `minecraft:white_bed` `minecraft:yellow_bed` |
+---@field occupied? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_door` `minecraft:acacia_fence_gate` `minecraft:acacia_trapdoor` `minecraft:barrel` `minecraft:birch_door` `minecraft:birch_fence_gate` `minecraft:birch_trapdoor` `minecraft:crimson_door` `minecraft:crimson_fence_gate` `minecraft:crimson_trapdoor` `minecraft:dark_oak_door` `minecraft:dark_oak_fence_gate` `minecraft:dark_oak_trapdoor` `minecraft:iron_door` `minecraft:iron_trapdoor` `minecraft:jungle_door` `minecraft:jungle_fence_gate` `minecraft:jungle_trapdoor` `minecraft:mangrove_door` `minecraft:mangrove_fence_gate` `minecraft:mangrove_trapdoor` `minecraft:oak_door` `minecraft:oak_fence_gate` `minecraft:oak_trapdoor` `minecraft:spruce_door` `minecraft:spruce_fence_gate` `minecraft:spruce_trapdoor` `minecraft:warped_door` `minecraft:warped_fence_gate` `minecraft:warped_trapdoor` |
+---@field open? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"down_east"` `"down_north"` `"down_south"` `"down_west"` `"east_up"` `"north_up"` `"south_up"` `"up_east"` `"up_north"` `"up_south"` `"up_west"` `"west_up"` | `minecraft:jigsaw` |
+---@field orientation? "down_east"|"down_north"|"down_south"|"down_west"|"east_up"|"north_up"|"south_up"|"up_east"|"up_north"|"up_south"|"up_west"|"west_up"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"foot"` `"head"` | `minecraft:black_bed` `minecraft:blue_bed` `minecraft:brown_bed` `minecraft:cyan_bed` `minecraft:gray_bed` `minecraft:green_bed` `minecraft:light_blue_bed` `minecraft:light_gray_bed` `minecraft:lime_bed` `minecraft:magenta_bed` `minecraft:orange_bed` `minecraft:pink_bed` `minecraft:purple_bed` `minecraft:red_bed` `minecraft:white_bed` `minecraft:yellow_bed` |
+---@field part? "foot"|"head"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_leaves` `minecraft:azalea_leaves` `minecraft:birch_leaves` `minecraft:dark_oak_leaves` `minecraft:flowering_azalea_leaves` `minecraft:jungle_leaves` `minecraft:mangrove_leaves` `minecraft:oak_leaves` `minecraft:spruce_leaves` |
+---@field persistent? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"1".."4"` | `minecraft:sea_pickle` |
+---@field pickles? "1"|"2"|"3"|"4"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."15"` | `minecraft:daylight_detector` `minecraft:heavy_weighted_pressure_plate` `minecraft:light_weighted_pressure_plate` `minecraft:redstone_wire` `minecraft:sculk_sensor` `minecraft:target` |
+---@field power? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_button` `minecraft:acacia_door` `minecraft:acacia_fence_gate` `minecraft:acacia_pressure_plate` `minecraft:acacia_trapdoor` `minecraft:activator_rail` `minecraft:bell` `minecraft:birch_button` `minecraft:birch_door` `minecraft:birch_fence_gate` `minecraft:birch_pressure_plate` `minecraft:birch_trapdoor` `minecraft:comparator` `minecraft:crimson_button` `minecraft:crimson_door` `minecraft:crimson_fence_gate` `minecraft:crimson_pressure_plate` `minecraft:crimson_trapdoor` `minecraft:dark_oak_button` `minecraft:dark_oak_door` `minecraft:dark_oak_fence_gate` `minecraft:dark_oak_pressure_plate` `minecraft:dark_oak_trapdoor` `minecraft:detector_rail` `minecraft:iron_door` `minecraft:iron_trapdoor` `minecraft:jungle_button` `minecraft:jungle_door` `minecraft:jungle_fence_gate` `minecraft:jungle_pressure_plate` `minecraft:jungle_trapdoor` `minecraft:lectern` `minecraft:lever` `minecraft:lightning_rod` `minecraft:mangrove_button` `minecraft:mangrove_door` `minecraft:mangrove_fence_gate` `minecraft:mangrove_pressure_plate` `minecraft:mangrove_trapdoor` `minecraft:note_block` `minecraft:oak_button` `minecraft:oak_door` `minecraft:oak_fence_gate` `minecraft:oak_pressure_plate` `minecraft:oak_trapdoor` `minecraft:observer` `minecraft:polished_blackstone_button` `minecraft:polished_blackstone_pressure_plate` `minecraft:powered_rail` `minecraft:repeater` `minecraft:spruce_button` `minecraft:spruce_door` `minecraft:spruce_fence_gate` `minecraft:spruce_pressure_plate` `minecraft:spruce_trapdoor` `minecraft:stone_button` `minecraft:stone_pressure_plate` `minecraft:tripwire` `minecraft:tripwire_hook` `minecraft:warped_button` `minecraft:warped_door` `minecraft:warped_fence_gate` `minecraft:warped_pressure_plate` `minecraft:warped_trapdoor` |
+---@field powered? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."15"` | `minecraft:acacia_sign` `minecraft:birch_sign` `minecraft:black_banner` `minecraft:blue_banner` `minecraft:brown_banner` `minecraft:creeper_head` `minecraft:crimson_sign` `minecraft:cyan_banner` `minecraft:dark_oak_sign` `minecraft:dragon_head` `minecraft:gray_banner` `minecraft:green_banner` `minecraft:jungle_sign` `minecraft:light_blue_banner` `minecraft:light_gray_banner` `minecraft:lime_banner` `minecraft:magenta_banner` `minecraft:mangrove_sign` `minecraft:oak_sign` `minecraft:orange_banner` `minecraft:pink_banner` `minecraft:player_head` `minecraft:purple_banner` `minecraft:red_banner` `minecraft:skeleton_skull` `minecraft:spruce_sign` `minecraft:warped_sign` `minecraft:white_banner` `minecraft:wither_skeleton_skull` `minecraft:yellow_banner` `minecraft:zombie_head` |
+---@field rotation? "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"active"` `"cooldown"` `"inactive"` | `minecraft:sculk_sensor` |
+---@field sculk_sensor_phase? "active"|"cooldown"|"inactive"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"inner_left"` `"inner_right"` `"outer_left"` `"outer_right"` `"straight"` | `minecraft:acacia_stairs` `minecraft:andesite_stairs` `minecraft:birch_stairs` `minecraft:blackstone_stairs` `minecraft:brick_stairs` `minecraft:cobbled_deepslate_stairs` `minecraft:cobblestone_stairs` `minecraft:crimson_stairs` `minecraft:cut_copper_stairs` `minecraft:dark_oak_stairs` `minecraft:dark_prismarine_stairs` `minecraft:deepslate_brick_stairs` `minecraft:deepslate_tile_stairs` `minecraft:diorite_stairs` `minecraft:end_stone_brick_stairs` `minecraft:exposed_cut_copper_stairs` `minecraft:granite_stairs` `minecraft:jungle_stairs` `minecraft:mangrove_stairs` `minecraft:mossy_cobblestone_stairs` `minecraft:mossy_stone_brick_stairs` `minecraft:mud_brick_stairs` `minecraft:nether_brick_stairs` `minecraft:oak_stairs` `minecraft:oxidized_cut_copper_stairs` `minecraft:polished_andesite_stairs` `minecraft:polished_blackstone_brick_stairs` `minecraft:polished_blackstone_stairs` `minecraft:polished_deepslate_stairs` `minecraft:polished_diorite_stairs` `minecraft:polished_granite_stairs` `minecraft:prismarine_brick_stairs` `minecraft:prismarine_stairs` `minecraft:purpur_stairs` `minecraft:quartz_stairs` `minecraft:red_nether_brick_stairs` `minecraft:red_sandstone_stairs` `minecraft:sandstone_stairs` `minecraft:smooth_quartz_stairs` `minecraft:smooth_red_sandstone_stairs` `minecraft:smooth_sandstone_stairs` `minecraft:spruce_stairs` `minecraft:stone_brick_stairs` `minecraft:stone_stairs` `minecraft:warped_stairs` `minecraft:waxed_cut_copper_stairs` `minecraft:waxed_exposed_cut_copper_stairs` `minecraft:waxed_oxidized_cut_copper_stairs` `minecraft:waxed_weathered_cut_copper_stairs` `minecraft:weathered_cut_copper_stairs` |
+---> | `"ascending_east"` `"ascending_north"` `"ascending_south"` `"ascending_west"` `"east_west"` `"north_south"` | `minecraft:activator_rail` `minecraft:detector_rail` `minecraft:powered_rail` |
+---> | `"ascending_east"` `"ascending_north"` `"ascending_south"` `"ascending_west"` `"east_west"` `"north_east"` `"north_south"` `"north_west"` `"south_east"` `"south_west"` | `minecraft:rail` |
+---@field shape? "inner_left"|"inner_right"|"outer_left"|"outer_right"|"straight"|"ascending_east"|"ascending_north"|"ascending_south"|"ascending_west"|"east_west"|"north_south"|"north_east"|"north_west"|"south_east"|"south_west"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:piston_head` |
+---@field short? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:sculk_shrieker` |
+---@field shrieking? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:campfire` `minecraft:soul_campfire` |
+---@field signal_fire? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:grass_block` `minecraft:mycelium` `minecraft:podzol` |
+---@field snowy? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_fence` `minecraft:birch_fence` `minecraft:black_stained_glass_pane` `minecraft:blue_stained_glass_pane` `minecraft:brown_mushroom_block` `minecraft:brown_stained_glass_pane` `minecraft:chorus_plant` `minecraft:crimson_fence` `minecraft:cyan_stained_glass_pane` `minecraft:dark_oak_fence` `minecraft:fire` `minecraft:glass_pane` `minecraft:glow_lichen` `minecraft:gray_stained_glass_pane` `minecraft:green_stained_glass_pane` `minecraft:iron_bars` `minecraft:jungle_fence` `minecraft:light_blue_stained_glass_pane` `minecraft:light_gray_stained_glass_pane` `minecraft:lime_stained_glass_pane` `minecraft:magenta_stained_glass_pane` `minecraft:mangrove_fence` `minecraft:mushroom_stem` `minecraft:nether_brick_fence` `minecraft:oak_fence` `minecraft:orange_stained_glass_pane` `minecraft:pink_stained_glass_pane` `minecraft:purple_stained_glass_pane` `minecraft:red_mushroom_block` `minecraft:red_stained_glass_pane` `minecraft:sculk_vein` `minecraft:spruce_fence` `minecraft:tripwire` `minecraft:vine` `minecraft:warped_fence` `minecraft:white_stained_glass_pane` `minecraft:yellow_stained_glass_pane` |
+---> | `"none"` `"low"` `"tall"` | `minecraft:andesite_wall` `minecraft:blackstone_wall` `minecraft:brick_wall` `minecraft:cobbled_deepslate_wall` `minecraft:cobblestone_wall` `minecraft:deepslate_brick_wall` `minecraft:deepslate_tile_wall` `minecraft:diorite_wall` `minecraft:end_stone_brick_wall` `minecraft:granite_wall` `minecraft:mossy_cobblestone_wall` `minecraft:mossy_stone_brick_wall` `minecraft:mud_brick_wall` `minecraft:nether_brick_wall` `minecraft:polished_blackstone_brick_wall` `minecraft:polished_blackstone_wall` `minecraft:polished_deepslate_wall` `minecraft:prismarine_wall` `minecraft:red_nether_brick_wall` `minecraft:red_sandstone_wall` `minecraft:sandstone_wall` `minecraft:stone_brick_wall` |
+---> | `"none"` `"side"` `"up"` | `minecraft:redstone_wire` |
+---@field south? "true"|"false"|"none"|"low"|"tall"|"side"|"up"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"0".."1"` | `minecraft:acacia_sapling` `minecraft:bamboo` `minecraft:birch_sapling` `minecraft:dark_oak_sapling` `minecraft:jungle_sapling` `minecraft:mangrove_propagule` `minecraft:oak_sapling` `minecraft:spruce_sapling` |
+---@field stage? "0"|"1"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"base"` `"frustum"` `"middle"` `"tip"` `"tip_merge"` | `minecraft:pointed_dripstone` |
+---@field thickness? "base"|"frustum"|"middle"|"tip"|"tip_merge"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"full"` `"none"` `"partial"` `"unstable"` | `minecraft:big_dripleaf` |
+---@field tilt? "full"|"none"|"partial"|"unstable"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:dispenser` `minecraft:dropper` |
+---@field triggered? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"normal"` `"sticky"` | `minecraft:moving_piston` `minecraft:piston_head` |
+---> | `"bottom"` `"double"` `"top"` | `minecraft:acacia_slab` `minecraft:andesite_slab` `minecraft:birch_slab` `minecraft:blackstone_slab` `minecraft:brick_slab` `minecraft:cobbled_deepslate_slab` `minecraft:cobblestone_slab` `minecraft:crimson_slab` `minecraft:cut_copper_slab` `minecraft:cut_red_sandstone_slab` `minecraft:cut_sandstone_slab` `minecraft:dark_oak_slab` `minecraft:dark_prismarine_slab` `minecraft:deepslate_brick_slab` `minecraft:deepslate_tile_slab` `minecraft:diorite_slab` `minecraft:end_stone_brick_slab` `minecraft:exposed_cut_copper_slab` `minecraft:granite_slab` `minecraft:jungle_slab` `minecraft:mangrove_slab` `minecraft:mossy_cobblestone_slab` `minecraft:mossy_stone_brick_slab` `minecraft:mud_brick_slab` `minecraft:nether_brick_slab` `minecraft:oak_slab` `minecraft:oxidized_cut_copper_slab` `minecraft:petrified_oak_slab` `minecraft:polished_andesite_slab` `minecraft:polished_blackstone_brick_slab` `minecraft:polished_blackstone_slab` `minecraft:polished_deepslate_slab` `minecraft:polished_diorite_slab` `minecraft:polished_granite_slab` `minecraft:prismarine_brick_slab` `minecraft:prismarine_slab` `minecraft:purpur_slab` `minecraft:quartz_slab` `minecraft:red_nether_brick_slab` `minecraft:red_sandstone_slab` `minecraft:sandstone_slab` `minecraft:smooth_quartz_slab` `minecraft:smooth_red_sandstone_slab` `minecraft:smooth_sandstone_slab` `minecraft:smooth_stone_slab` `minecraft:spruce_slab` `minecraft:stone_brick_slab` `minecraft:stone_slab` `minecraft:warped_slab` `minecraft:waxed_cut_copper_slab` `minecraft:waxed_exposed_cut_copper_slab` `minecraft:waxed_oxidized_cut_copper_slab` `minecraft:waxed_weathered_cut_copper_slab` `minecraft:weathered_cut_copper_slab` |
+---> | `"left"` `"right"` `"single"` | `minecraft:chest` `minecraft:trapped_chest` |
+---@field type? "normal"|"sticky"|"bottom"|"double"|"top"|"left"|"right"|"single"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:tnt` |
+---@field unstable? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:andesite_wall` `minecraft:blackstone_wall` `minecraft:brick_wall` `minecraft:brown_mushroom_block` `minecraft:chorus_plant` `minecraft:cobbled_deepslate_wall` `minecraft:cobblestone_wall` `minecraft:deepslate_brick_wall` `minecraft:deepslate_tile_wall` `minecraft:diorite_wall` `minecraft:end_stone_brick_wall` `minecraft:fire` `minecraft:glow_lichen` `minecraft:granite_wall` `minecraft:mossy_cobblestone_wall` `minecraft:mossy_stone_brick_wall` `minecraft:mud_brick_wall` `minecraft:mushroom_stem` `minecraft:nether_brick_wall` `minecraft:polished_blackstone_brick_wall` `minecraft:polished_blackstone_wall` `minecraft:polished_deepslate_wall` `minecraft:prismarine_wall` `minecraft:red_mushroom_block` `minecraft:red_nether_brick_wall` `minecraft:red_sandstone_wall` `minecraft:sandstone_wall` `minecraft:sculk_vein` `minecraft:stone_brick_wall` `minecraft:vine` |
+---@field up? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"down"` `"up"` | `minecraft:pointed_dripstone` |
+---@field vertical_direction? "down"|"up"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_fence` `minecraft:acacia_leaves` `minecraft:acacia_sign` `minecraft:acacia_slab` `minecraft:acacia_stairs` `minecraft:acacia_trapdoor` `minecraft:acacia_wall_sign` `minecraft:activator_rail` `minecraft:amethyst_cluster` `minecraft:andesite_slab` `minecraft:andesite_stairs` `minecraft:andesite_wall` `minecraft:azalea_leaves` `minecraft:big_dripleaf` `minecraft:big_dripleaf_stem` `minecraft:birch_fence` `minecraft:birch_leaves` `minecraft:birch_sign` `minecraft:birch_slab` `minecraft:birch_stairs` `minecraft:birch_trapdoor` `minecraft:birch_wall_sign` `minecraft:black_candle` `minecraft:black_stained_glass_pane` `minecraft:blackstone_slab` `minecraft:blackstone_stairs` `minecraft:blackstone_wall` `minecraft:blue_candle` `minecraft:blue_stained_glass_pane` `minecraft:brain_coral` `minecraft:brain_coral_fan` `minecraft:brain_coral_wall_fan` `minecraft:brick_slab` `minecraft:brick_stairs` `minecraft:brick_wall` `minecraft:brown_candle` `minecraft:brown_stained_glass_pane` `minecraft:bubble_coral` `minecraft:bubble_coral_fan` `minecraft:bubble_coral_wall_fan` `minecraft:campfire` `minecraft:candle` `minecraft:chain` `minecraft:chest` `minecraft:cobbled_deepslate_slab` `minecraft:cobbled_deepslate_stairs` `minecraft:cobbled_deepslate_wall` `minecraft:cobblestone_slab` `minecraft:cobblestone_stairs` `minecraft:cobblestone_wall` `minecraft:conduit` `minecraft:crimson_fence` `minecraft:crimson_sign` `minecraft:crimson_slab` `minecraft:crimson_stairs` `minecraft:crimson_trapdoor` `minecraft:crimson_wall_sign` `minecraft:cut_copper_slab` `minecraft:cut_copper_stairs` `minecraft:cut_red_sandstone_slab` `minecraft:cut_sandstone_slab` `minecraft:cyan_candle` `minecraft:cyan_stained_glass_pane` `minecraft:dark_oak_fence` `minecraft:dark_oak_leaves` `minecraft:dark_oak_sign` `minecraft:dark_oak_slab` `minecraft:dark_oak_stairs` `minecraft:dark_oak_trapdoor` `minecraft:dark_oak_wall_sign` `minecraft:dark_prismarine_slab` `minecraft:dark_prismarine_stairs` `minecraft:dead_brain_coral` `minecraft:dead_brain_coral_fan` `minecraft:dead_brain_coral_wall_fan` `minecraft:dead_bubble_coral` `minecraft:dead_bubble_coral_fan` `minecraft:dead_bubble_coral_wall_fan` `minecraft:dead_fire_coral` `minecraft:dead_fire_coral_fan` `minecraft:dead_fire_coral_wall_fan` `minecraft:dead_horn_coral` `minecraft:dead_horn_coral_fan` `minecraft:dead_horn_coral_wall_fan` `minecraft:dead_tube_coral` `minecraft:dead_tube_coral_fan` `minecraft:dead_tube_coral_wall_fan` `minecraft:deepslate_brick_slab` `minecraft:deepslate_brick_stairs` `minecraft:deepslate_brick_wall` `minecraft:deepslate_tile_slab` `minecraft:deepslate_tile_stairs` `minecraft:deepslate_tile_wall` `minecraft:detector_rail` `minecraft:diorite_slab` `minecraft:diorite_stairs` `minecraft:diorite_wall` `minecraft:end_stone_brick_slab` `minecraft:end_stone_brick_stairs` `minecraft:end_stone_brick_wall` `minecraft:ender_chest` `minecraft:exposed_cut_copper_slab` `minecraft:exposed_cut_copper_stairs` `minecraft:fire_coral` `minecraft:fire_coral_fan` `minecraft:fire_coral_wall_fan` `minecraft:flowering_azalea_leaves` `minecraft:glass_pane` `minecraft:glow_lichen` `minecraft:granite_slab` `minecraft:granite_stairs` `minecraft:granite_wall` `minecraft:gray_candle` `minecraft:gray_stained_glass_pane` `minecraft:green_candle` `minecraft:green_stained_glass_pane` `minecraft:hanging_roots` `minecraft:horn_coral` `minecraft:horn_coral_fan` `minecraft:horn_coral_wall_fan` `minecraft:iron_bars` `minecraft:iron_trapdoor` `minecraft:jungle_fence` `minecraft:jungle_leaves` `minecraft:jungle_sign` `minecraft:jungle_slab` `minecraft:jungle_stairs` `minecraft:jungle_trapdoor` `minecraft:jungle_wall_sign` `minecraft:ladder` `minecraft:lantern` `minecraft:large_amethyst_bud` `minecraft:light` `minecraft:light_blue_candle` `minecraft:light_blue_stained_glass_pane` `minecraft:light_gray_candle` `minecraft:light_gray_stained_glass_pane` `minecraft:lightning_rod` `minecraft:lime_candle` `minecraft:lime_stained_glass_pane` `minecraft:magenta_candle` `minecraft:magenta_stained_glass_pane` `minecraft:mangrove_fence` `minecraft:mangrove_leaves` `minecraft:mangrove_propagule` `minecraft:mangrove_roots` `minecraft:mangrove_sign` `minecraft:mangrove_slab` `minecraft:mangrove_stairs` `minecraft:mangrove_trapdoor` `minecraft:mangrove_wall_sign` `minecraft:medium_amethyst_bud` `minecraft:mossy_cobblestone_slab` `minecraft:mossy_cobblestone_stairs` `minecraft:mossy_cobblestone_wall` `minecraft:mossy_stone_brick_slab` `minecraft:mossy_stone_brick_stairs` `minecraft:mossy_stone_brick_wall` `minecraft:mud_brick_slab` `minecraft:mud_brick_stairs` `minecraft:mud_brick_wall` `minecraft:nether_brick_fence` `minecraft:nether_brick_slab` `minecraft:nether_brick_stairs` `minecraft:nether_brick_wall` `minecraft:oak_fence` `minecraft:oak_leaves` `minecraft:oak_sign` `minecraft:oak_slab` `minecraft:oak_stairs` `minecraft:oak_trapdoor` `minecraft:oak_wall_sign` `minecraft:orange_candle` `minecraft:orange_stained_glass_pane` `minecraft:oxidized_cut_copper_slab` `minecraft:oxidized_cut_copper_stairs` `minecraft:petrified_oak_slab` `minecraft:pink_candle` `minecraft:pink_stained_glass_pane` `minecraft:pointed_dripstone` `minecraft:polished_andesite_slab` `minecraft:polished_andesite_stairs` `minecraft:polished_blackstone_brick_slab` `minecraft:polished_blackstone_brick_stairs` `minecraft:polished_blackstone_brick_wall` `minecraft:polished_blackstone_slab` `minecraft:polished_blackstone_stairs` `minecraft:polished_blackstone_wall` `minecraft:polished_deepslate_slab` `minecraft:polished_deepslate_stairs` `minecraft:polished_deepslate_wall` `minecraft:polished_diorite_slab` `minecraft:polished_diorite_stairs` `minecraft:polished_granite_slab` `minecraft:polished_granite_stairs` `minecraft:powered_rail` `minecraft:prismarine_brick_slab` `minecraft:prismarine_brick_stairs` `minecraft:prismarine_slab` `minecraft:prismarine_stairs` `minecraft:prismarine_wall` `minecraft:purple_candle` `minecraft:purple_stained_glass_pane` `minecraft:purpur_slab` `minecraft:purpur_stairs` `minecraft:quartz_slab` `minecraft:quartz_stairs` `minecraft:rail` `minecraft:red_candle` `minecraft:red_nether_brick_slab` `minecraft:red_nether_brick_stairs` `minecraft:red_nether_brick_wall` `minecraft:red_sandstone_slab` `minecraft:red_sandstone_stairs` `minecraft:red_sandstone_wall` `minecraft:red_stained_glass_pane` `minecraft:sandstone_slab` `minecraft:sandstone_stairs` `minecraft:sandstone_wall` `minecraft:scaffolding` `minecraft:sculk_sensor` `minecraft:sculk_shrieker` `minecraft:sculk_vein` `minecraft:sea_pickle` `minecraft:small_amethyst_bud` `minecraft:small_dripleaf` `minecraft:smooth_quartz_slab` `minecraft:smooth_quartz_stairs` `minecraft:smooth_red_sandstone_slab` `minecraft:smooth_red_sandstone_stairs` `minecraft:smooth_sandstone_slab` `minecraft:smooth_sandstone_stairs` `minecraft:smooth_stone_slab` `minecraft:soul_campfire` `minecraft:soul_lantern` `minecraft:spruce_fence` `minecraft:spruce_leaves` `minecraft:spruce_sign` `minecraft:spruce_slab` `minecraft:spruce_stairs` `minecraft:spruce_trapdoor` `minecraft:spruce_wall_sign` `minecraft:stone_brick_slab` `minecraft:stone_brick_stairs` `minecraft:stone_brick_wall` `minecraft:stone_slab` `minecraft:stone_stairs` `minecraft:trapped_chest` `minecraft:tube_coral` `minecraft:tube_coral_fan` `minecraft:tube_coral_wall_fan` `minecraft:warped_fence` `minecraft:warped_sign` `minecraft:warped_slab` `minecraft:warped_stairs` `minecraft:warped_trapdoor` `minecraft:warped_wall_sign` `minecraft:waxed_cut_copper_slab` `minecraft:waxed_cut_copper_stairs` `minecraft:waxed_exposed_cut_copper_slab` `minecraft:waxed_exposed_cut_copper_stairs` `minecraft:waxed_oxidized_cut_copper_slab` `minecraft:waxed_oxidized_cut_copper_stairs` `minecraft:waxed_weathered_cut_copper_slab` `minecraft:waxed_weathered_cut_copper_stairs` `minecraft:weathered_cut_copper_slab` `minecraft:weathered_cut_copper_stairs` `minecraft:white_candle` `minecraft:white_stained_glass_pane` `minecraft:yellow_candle` `minecraft:yellow_stained_glass_pane` |
+---@field waterlogged? "true"|"false"|string
+---```yaml
+---
+---Error: NO DESCRIPTION
+---```
+---> | State | Valid Blocks |
+---> | :---- | :----------- |
+---> | `"true"` `"false"` | `minecraft:acacia_fence` `minecraft:birch_fence` `minecraft:black_stained_glass_pane` `minecraft:blue_stained_glass_pane` `minecraft:brown_mushroom_block` `minecraft:brown_stained_glass_pane` `minecraft:chorus_plant` `minecraft:crimson_fence` `minecraft:cyan_stained_glass_pane` `minecraft:dark_oak_fence` `minecraft:fire` `minecraft:glass_pane` `minecraft:glow_lichen` `minecraft:gray_stained_glass_pane` `minecraft:green_stained_glass_pane` `minecraft:iron_bars` `minecraft:jungle_fence` `minecraft:light_blue_stained_glass_pane` `minecraft:light_gray_stained_glass_pane` `minecraft:lime_stained_glass_pane` `minecraft:magenta_stained_glass_pane` `minecraft:mangrove_fence` `minecraft:mushroom_stem` `minecraft:nether_brick_fence` `minecraft:oak_fence` `minecraft:orange_stained_glass_pane` `minecraft:pink_stained_glass_pane` `minecraft:purple_stained_glass_pane` `minecraft:red_mushroom_block` `minecraft:red_stained_glass_pane` `minecraft:sculk_vein` `minecraft:spruce_fence` `minecraft:tripwire` `minecraft:vine` `minecraft:warped_fence` `minecraft:white_stained_glass_pane` `minecraft:yellow_stained_glass_pane` |
+---> | `"none"` `"low"` `"tall"` | `minecraft:andesite_wall` `minecraft:blackstone_wall` `minecraft:brick_wall` `minecraft:cobbled_deepslate_wall` `minecraft:cobblestone_wall` `minecraft:deepslate_brick_wall` `minecraft:deepslate_tile_wall` `minecraft:diorite_wall` `minecraft:end_stone_brick_wall` `minecraft:granite_wall` `minecraft:mossy_cobblestone_wall` `minecraft:mossy_stone_brick_wall` `minecraft:mud_brick_wall` `minecraft:nether_brick_wall` `minecraft:polished_blackstone_brick_wall` `minecraft:polished_blackstone_wall` `minecraft:polished_deepslate_wall` `minecraft:prismarine_wall` `minecraft:red_nether_brick_wall` `minecraft:red_sandstone_wall` `minecraft:sandstone_wall` `minecraft:stone_brick_wall` |
+---> | `"none"` `"side"` `"up"` | `minecraft:redstone_wire` |
+---@field west? "true"|"false"|"none"|"low"|"tall"|"side"|"up"|string
