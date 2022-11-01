@@ -1,8 +1,6 @@
 ---@meta
-
 ---@diagnostic disable: duplicate-set-field
 
---TODO: Review all descriptions to see if they fit the style guide.
 
 ---==============================================================================================---
 ---  EVENT.GENERIC extends EVENT                                                                 ---

@@ -1,6 +1,5 @@
 ---@meta
 
---TODO: Review all descriptions to see if they fit the style guide.
 
 ---==============================================================================================---
 ---  APIS                                                                                        ---

@@ -1,9 +1,5 @@
 ---@meta
-
 ---@diagnostic disable: duplicate-set-field, codestyle-check
-
---TODO: Review all descriptions to see if they fit the style guide.
---      There is a very specific rule that deprecation comments must follow.
 
 
 -- THIS FILE IS FOR DEPRECATIONS COMING FROM PREWRITE. THIS IS NOT FOR DEPRECATIONS IN ANY OF THE
