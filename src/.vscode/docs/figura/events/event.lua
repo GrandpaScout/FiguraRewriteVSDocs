@@ -78,6 +78,27 @@ function EventRender:register(func, name) end
 
 
 ---==============================================================================================---
+---  EVENT.PREVIEWRENDER extends EVENT                                                           ---
+---==============================================================================================---
+
+---A render event with a `delta` parameter and a `ctx` parameter.
+---@class Event.PreviewRender: Event
+local EventPreviewRender
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@param func Event.PreviewRender.func
+---@param name? string
+function EventPreviewRender:register(func, name) end
+
+
+---==============================================================================================---
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 

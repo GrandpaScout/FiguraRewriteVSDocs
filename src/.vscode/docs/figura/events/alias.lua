@@ -19,6 +19,20 @@
 
 
 ---==============================================================================================---
+---  EVENT.PREVIEWRENDER extends EVENT                                                           ---
+---==============================================================================================---
+
+---A valid preview context.
+---@alias Event.PreviewRender.context
+---| "FIGURA_GUI" # A Figura GUI is rendering this preview.
+---| "MINECRAFT_GUI" # A Minecraft GUI is rendering this preview.
+---| "PAPERDOLL" # The Figura paper doll is rendering this preview.
+
+---A function used by `RENDER` events.
+---@alias Event.PreviewRender.func fun(delta: number, ctx: Event.PreviewRender.context)
+
+
+---==============================================================================================---
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 

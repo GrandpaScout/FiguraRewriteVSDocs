@@ -78,10 +78,11 @@
 ---
 ---This event uses the following callback:
 ---```lua
----function(delta: number)
+---function(delta: number, ctx: string)
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.
----@field POST_PREVIEW_RENDER Event.Render
+---**`ctx`** The context of this preview.
+---@field POST_PREVIEW_RENDER Event.PreviewRender
 ---This event runs after the avatar has rendered.
 ---
 ---This event uses the following callback:
@@ -102,9 +103,10 @@
 ---
 ---This event uses the following callback:
 ---```lua
----function(delta: number)
+---function(delta: number, ctx: string)
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`ctx`** The context of this preview.
 ---@field PREVIEW_RENDER Event.Render
 ---This event runs before the avatar is rendered.
 ---
