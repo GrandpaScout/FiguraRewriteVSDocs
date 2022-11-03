@@ -25,28 +25,28 @@ local VectorAPI
 ---@*error Short hex strings don't actually work.
 ---@param hex string
 ---@return Vector3
-function VectorAPI:hexToRGB(hex) end
+function VectorAPI.hexToRGB(hex) end
 
 ---Converts the given HSV values to a color vector.
 ---
 ---If `hsv` is `nil`, it will default to `{0, 0, 0}`.
 ---@param hsv? Vector3
 ---@return Vector3
-function VectorAPI:hsvToRGB(hsv) end
+function VectorAPI.hsvToRGB(hsv) end
 
 ---If `h`, `s`, or `v` are `nil`, they will default to `0`.
 ---@param h? number
 ---@param s? number
 ---@param v? number
 ---@return Vector3
-function VectorAPI:hsvToRGB(h, s, v) end
+function VectorAPI.hsvToRGB(h, s, v) end
 
 ---Converts the given integer into a color vector.
 ---
 ---If `int` is `nil`, it will default to `0`.
 ---@param int? integer
 ---@return Vector3
-function VectorAPI:intToRGB(int) end
+function VectorAPI.intToRGB(int) end
 
 ---Creates a color vector that has its hue shifted based on the current game time and the given
 ---values.
