@@ -24,8 +24,6 @@ local WorldAPI
 ---@return BlockState
 function WorldAPI.newBlock(block, pos) end
 
-WorldAPI.newBlock({}, vec(1, 2, 3))
-
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@*error Nonsense error if `x` != `nil` && `x` != `<number>`
 ---@param block Minecraft.blockID

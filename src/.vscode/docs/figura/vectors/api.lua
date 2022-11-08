@@ -22,7 +22,6 @@ local VectorAPI
 ---Returns `{0, 0, 0}` if the hex string is invalid.
 ---
 ---Some special strings are also accepted in place of a hex string.
----@*error Short hex strings don't actually work.
 ---@param hex string
 ---@return Vector3
 function VectorAPI.hexToRGB(hex) end

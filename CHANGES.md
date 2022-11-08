@@ -31,4 +31,10 @@ V1
   * Removed `@*error` of all <kbd>**Matrix**</kbd> `mul(number): Matrix#` operators.  
     Also combines `mul(Matrix#): Matrix#` and `mul(number): Matrix#` into
     `mul(number | Matrix#): Matrix#`.
-  * Removed `@*vmerror` `` `x` == `<integer>` `` of `Sound:play()`.
+  * Removed `@*vmerror` of `Sound:play()`.
+
+V2
+--------------------------------------------------
+* Fixed a few doc formatting issues.
+* Removed `@*vmerror` of `SoundAPI:playSound()`.
+* Removed `@*error` of `VectorsAPI.hexToRGB()`.

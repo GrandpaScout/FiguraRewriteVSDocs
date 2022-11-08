@@ -29,7 +29,7 @@ local SoundAPI
 ---Registers a new sound with the given name and data.  
 ---`data` may either be a byte array or a base64 string.
 ---@param name string
----@param data string|integer[]
+---@param data string | integer[]
 function SoundAPI:addSound(name, data) end
 
 ---Plays a sound at the given position.
@@ -50,7 +50,6 @@ function SoundAPI:playSound(sound, pos, volume, pitch, loop) end
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.  
 ---If `volume` or `pitch` are `nil`, they will default to `1`.  
 ---If `loop` is `nil`, it will default to `false`
----@*vmerror `x` == `<integer>`
 ---@param sound Minecraft.soundID
 ---@param x? number
 ---@param y? number

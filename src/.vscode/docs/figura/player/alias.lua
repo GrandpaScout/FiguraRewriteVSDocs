@@ -7,7 +7,8 @@
 ---==============================================================================================---
 
 ---A union of all Entity sub-types.
----@alias EntityAPI.any EntityAPI|LivingEntityAPI|PlayerAPI
+---<!--
+---@alias EntityAPI.any EntityAPI | LivingEntityAPI | PlayerAPI
 
 ---A valid equipment slot on an entity.
 ---@alias EntityAPI.slot
