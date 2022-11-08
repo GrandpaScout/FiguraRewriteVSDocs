@@ -7,6 +7,7 @@
 ---==============================================================================================---
 
 ---A union of all Action sub-types.
+---<!--
 ---@alias Action.any ClickAction | ToggleAction | ScrollAction
 
 
@@ -23,9 +24,9 @@
 ---==============================================================================================---
 
 ---A function used by a ToggleAction when it is toggled on.
----@alias ToggleAction.toggleFunc fun(state: boolean)
+---@alias ToggleAction.toggleFunc fun(state?: boolean)
 ---A function used by a ToggleAction when it is toggled off.
----@alias ToggleAction.untoggleFunc fun(state: false)
+---@alias ToggleAction.untoggleFunc fun(state?: false)
 
 
 ---==============================================================================================---
@@ -33,7 +34,7 @@
 ---==============================================================================================---
 
 ---A function used by a ScrollAction when it is scrolled.
----@alias ScrollAction.scrollFunc fun(dir: integer)
+---@alias ScrollAction.scrollFunc fun(dir?: integer)
 
 
 ---==============================================================================================---

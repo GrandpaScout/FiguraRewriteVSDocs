@@ -59,18 +59,34 @@ function Matrix:transpose() end
 ---@operator mul(number): Matrix2
 ---@operator mul(Matrix2): Matrix2
 ---@operator mul(Vector2): Vector2
----@field [1] Vector2   # Column 1 of the matrix.
----@field ["1"] Vector2 # Column 1 of the matrix.
----@field c1 Vector2    # Column 1 of the matrix.
----@field [2] Vector2   # Column 2 of the matrix.
----@field ["2"] Vector2 # Column 2 of the matrix.
----@field c2 Vector2    # Column 2 of the matrix.
----@field r1 Vector2    # Row 1 of the matrix.
----@field r2 Vector2    # Row 2 of the matrix.
----@field v11 Vector2   # The value at row 1, column 1 in the matrix.
----@field v12 Vector2   # The value at row 1, column 2 in the matrix.
----@field v21 Vector2   # The value at row 2, column 1 in the matrix.
----@field v22 Vector2   # The value at row 2, column 2 in the matrix.
+---Column 1 of the matrix.
+---<!--
+---@field [1] Vector2
+---Column 1 of the matrix.
+---<!--
+---@field ["1"] Vector2
+---Column 1 of the matrix.
+---<!--
+---@field c1 Vector2
+---Column 2 of the matrix.
+---<!--
+---@field [2] Vector2
+---Column 2 of the matrix.
+---<!--
+---@field ["2"] Vector2
+---Column 2 of the matrix.
+---<!--
+---@field c2 Vector2
+---Row 1 of the matrix.
+---<!--
+---@field r1 Vector2
+---Row 2 of the matrix.
+---<!--
+---@field r2 Vector2
+---@field v11 number # The value at row 1, column 1 in the matrix.
+---@field v12 number # The value at row 1, column 2 in the matrix.
+---@field v21 number # The value at row 2, column 1 in the matrix.
+---@field v22 number # The value at row 2, column 2 in the matrix.
 local Matrix2
 
 
@@ -200,27 +216,51 @@ function Matrix2:getRow(index) end
 ---@operator mul(number): Matrix3
 ---@operator mul(Matrix3): Matrix3
 ---@operator mul(Vector3): Vector3
----@field [1] Vector3   # Column 1 of the matrix.
----@field ["1"] Vector3 # Column 1 of the matrix.
----@field c1 Vector3    # Column 1 of the matrix.
----@field [2] Vector3   # Column 2 of the matrix.
----@field ["2"] Vector3 # Column 2 of the matrix.
----@field c2 Vector3    # Column 2 of the matrix.
----@field [3] Vector3   # Column 3 of the matrix.
----@field ["3"] Vector3 # Column 3 of the matrix.
----@field c3 Vector3    # Column 3 of the matrix.
----@field r1 Vector3    # Row 1 of the matrix.
----@field r2 Vector3    # Row 2 of the matrix.
----@field r3 Vector3    # Row 3 of the matrix.
----@field v11 number    # The value at row 1, column 1 in the matrix.
----@field v12 number    # The value at row 1, column 2 in the matrix.
----@field v13 number    # The value at row 1, column 3 in the matrix.
----@field v21 number    # The value at row 2, column 1 in the matrix.
----@field v22 number    # The value at row 2, column 2 in the matrix.
----@field v23 number    # The value at row 2, column 3 in the matrix.
----@field v31 number    # The value at row 3, column 1 in the matrix.
----@field v32 number    # The value at row 3, column 2 in the matrix.
----@field v33 number    # The value at row 3, column 3 in the matrix.
+---Column 1 of the matrix.
+---<!--
+---@field [1] Vector3
+---Column 1 of the matrix.
+---<!--
+---@field ["1"] Vector3
+---Column 1 of the matrix.
+---<!--
+---@field c1 Vector3
+---Column 2 of the matrix.
+---<!--
+---@field [2] Vector3
+---Column 2 of the matrix.
+---<!--
+---@field ["2"] Vector3
+---Column 2 of the matrix.
+---<!--
+---@field c2 Vector3
+---Column 3 of the matrix.
+---<!--
+---@field [3] Vector3
+---Column 3 of the matrix.
+---<!--
+---@field ["3"] Vector3
+---Column 3 of the matrix.
+---<!--
+---@field c3 Vector3
+---Row 1 of the matrix.
+---<!--
+---@field r1 Vector3
+---Row 2 of the matrix.
+---<!--
+---@field r2 Vector3
+---Row 3 of the matrix.
+---<!--
+---@field r3 Vector3
+---@field v11 number # The value at row 1, column 1 in the matrix.
+---@field v12 number # The value at row 1, column 2 in the matrix.
+---@field v13 number # The value at row 1, column 3 in the matrix.
+---@field v21 number # The value at row 2, column 1 in the matrix.
+---@field v22 number # The value at row 2, column 2 in the matrix.
+---@field v23 number # The value at row 2, column 3 in the matrix.
+---@field v31 number # The value at row 3, column 1 in the matrix.
+---@field v32 number # The value at row 3, column 2 in the matrix.
+---@field v33 number # The value at row 3, column 3 in the matrix.
 local Matrix3
 
 
@@ -402,38 +442,70 @@ function Matrix3:getRow(index) end
 ---@operator mul(number): Matrix4
 ---@operator mul(Matrix4): Matrix4
 ---@operator mul(Vector4): Vector4
----@field [1] Vector4   # Column 1 of the matrix.
----@field ["1"] Vector4 # Column 1 of the matrix.
----@field c1 Vector4    # Column 1 of the matrix.
----@field [2] Vector4   # Column 2 of the matrix.
----@field ["2"] Vector4 # Column 2 of the matrix.
----@field c2 Vector4    # Column 2 of the matrix.
----@field [3] Vector4   # Column 3 of the matrix.
----@field ["3"] Vector4 # Column 3 of the matrix.
----@field c3 Vector4    # Column 3 of the matrix.
----@field [4] Vector4   # Column 4 of the matrix.
----@field ["4"] Vector4 # Column 4 of the matrix.
----@field c4 Vector4    # Column 4 of the matrix.
----@field r1 Vector4    # Row 1 of the matrix.
----@field r2 Vector4    # Row 2 of the matrix.
----@field r3 Vector4    # Row 3 of the matrix.
----@field r4 Vector4    # Row 4 of the matrix.
----@field v11 number    # The value at row 1, column 1 in the matrix.
----@field v12 number    # The value at row 1, column 2 in the matrix.
----@field v13 number    # The value at row 1, column 3 in the matrix.
----@field v14 number    # The value at row 1, column 4 in the matrix.
----@field v21 number    # The value at row 2, column 1 in the matrix.
----@field v22 number    # The value at row 2, column 2 in the matrix.
----@field v23 number    # The value at row 2, column 3 in the matrix.
----@field v24 number    # The value at row 2, column 4 in the matrix.
----@field v31 number    # The value at row 3, column 1 in the matrix.
----@field v32 number    # The value at row 3, column 2 in the matrix.
----@field v33 number    # The value at row 3, column 3 in the matrix.
----@field v34 number    # The value at row 3, column 4 in the matrix.
----@field v41 number    # The value at row 4, column 1 in the matrix.
----@field v42 number    # The value at row 4, column 2 in the matrix.
----@field v43 number    # The value at row 4, column 3 in the matrix.
----@field v44 number    # The value at row 4, column 4 in the matrix.
+---Column 1 of the matrix.
+---<!--
+---@field [1] Vector4
+---Column 1 of the matrix.
+---<!--
+---@field ["1"] Vector4
+---Column 1 of the matrix.
+---<!--
+---@field c1 Vector4
+---Column 2 of the matrix.
+---<!--
+---@field [2] Vector4
+---Column 2 of the matrix.
+---<!--
+---@field ["2"] Vector4
+---Column 2 of the matrix.
+---<!--
+---@field c2 Vector4
+---Column 3 of the matrix.
+---<!--
+---@field [3] Vector4
+---Column 3 of the matrix.
+---<!--
+---@field ["3"] Vector4
+---Column 3 of the matrix.
+---<!--
+---@field c3 Vector4
+---Column 4 of the matrix.
+---<!--
+---@field [4] Vector4
+---Column 4 of the matrix.
+---<!--
+---@field ["4"] Vector4
+---Column 4 of the matrix.
+---<!--
+---@field c4 Vector4
+---Row 1 of the matrix.
+---<!--
+---@field r1 Vector4
+---Row 2 of the matrix.
+---<!--
+---@field r2 Vector4
+---Row 3 of the matrix.
+---<!--
+---@field r3 Vector4
+---Row 4 of the matrix.
+---<!--
+---@field r4 Vector4
+---@field v11 number # The value at row 1, column 1 in the matrix.
+---@field v12 number # The value at row 1, column 2 in the matrix.
+---@field v13 number # The value at row 1, column 3 in the matrix.
+---@field v14 number # The value at row 1, column 4 in the matrix.
+---@field v21 number # The value at row 2, column 1 in the matrix.
+---@field v22 number # The value at row 2, column 2 in the matrix.
+---@field v23 number # The value at row 2, column 3 in the matrix.
+---@field v24 number # The value at row 2, column 4 in the matrix.
+---@field v31 number # The value at row 3, column 1 in the matrix.
+---@field v32 number # The value at row 3, column 2 in the matrix.
+---@field v33 number # The value at row 3, column 3 in the matrix.
+---@field v34 number # The value at row 3, column 4 in the matrix.
+---@field v41 number # The value at row 4, column 1 in the matrix.
+---@field v42 number # The value at row 4, column 2 in the matrix.
+---@field v43 number # The value at row 4, column 3 in the matrix.
+---@field v44 number # The value at row 4, column 4 in the matrix.
 local Matrix4
 
 

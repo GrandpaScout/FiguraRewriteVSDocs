@@ -22,6 +22,7 @@
 ---      │}                  │
 ---      └───────────────────┘
 ---```
+---<!--
 ---@field [string]? Vector
 
 
@@ -43,12 +44,22 @@
 ---@operator mul(Matrix): Vector
 ---@operator div(number | Vector): Vector
 ---@operator mod(number | Vector): Vector
----@field _ 0            # A zero.
----@field __ Vector2     # An empty Vector2.
----@field ___ Vector3    # An empty Vector3.
----@field ____ Vector4   # An empty Vector4.
----@field _____ Vector5  # An empty Vector5.
----@field ______ Vector6 # An empty Vector6.
+---@field _ 0 # A zero.
+---An empty Vector2.
+---<!--
+---@field __ Vector2
+---An empty Vector3.
+---<!--
+---@field ___ Vector3
+---An empty Vector4.
+---<!--
+---@field ____ Vector4
+---An empty Vector5.
+---<!--
+---@field _____ Vector5
+---An empty Vector6.
+---<!--
+---@field ______ Vector6
 local Vector
 
 
@@ -171,19 +182,29 @@ function Vector:lengthSquared() end
 ---@operator mul(Matrix2): Vector2
 ---@operator div(number | Vector2): Vector2
 ---@operator mod(number | Vector2): Vector2
----@field x number       # The first element.
----@field r number       # The first element.
----@field ["1"] number   # The first element.
----@field [1] number     # The first element.
----@field y number       # The second element.
----@field g number       # The second element.
----@field ["2"] number   # The second element.
----@field [2] number     # The second element.
----@field xy Vector2     # A copy of this vector.
----@field xy_ Vector3    # Convert to Vector3.
----@field xy__ Vector4   # Convert to Vector4.
----@field xy___ Vector5  # Convert to Vector5.
----@field xy____ Vector6 # Convert to Vector6.
+---@field x number     # The first element.
+---@field r number     # The first element.
+---@field ["1"] number # The first element.
+---@field [1] number   # The first element.
+---@field y number     # The second element.
+---@field g number     # The second element.
+---@field ["2"] number # The second element.
+---@field [2] number   # The second element.
+---A copy of this vector.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xy_ Vector3
+---Convert to Vector4.
+---<!--
+---@field xy__ Vector4
+---Convert to Vector5.
+---<!--
+---@field xy___ Vector5
+---Convert to Vector6.
+---<!--
+---@field xy____ Vector6
 local Vector2
 
 
@@ -353,23 +374,33 @@ function Vector2:transform(mat) end
 ---@operator mul(Matrix3): Vector3
 ---@operator div(number | Vector3): Vector3
 ---@operator mod(number | Vector3): Vector3
----@field x number       # The first element.
----@field r number       # The first element.
----@field ["1"] number   # The first element.
----@field [1] number     # The first element.
----@field y number       # The second element.
----@field g number       # The second element.
----@field ["2"] number   # The second element.
----@field [2] number     # The second element.
----@field z number       # The third element.
----@field b number       # The third element.
----@field ["3"] number   # The third element.
----@field [3] number     # The third element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # A copy of this vector.
----@field xyz_ Vector4   # Convert to Vector4.
----@field xyz__ Vector5  # Convert to Vector5.
----@field xyz___ Vector6 # Convert to Vector6.
+---@field x number     # The first element.
+---@field r number     # The first element.
+---@field ["1"] number # The first element.
+---@field [1] number   # The first element.
+---@field y number     # The second element.
+---@field g number     # The second element.
+---@field ["2"] number # The second element.
+---@field [2] number   # The second element.
+---@field z number     # The third element.
+---@field b number     # The third element.
+---@field ["3"] number # The third element.
+---@field [3] number   # The third element.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---A copy of this vector.
+---<!--
+---@field xyz Vector3
+---Convert to Vector4.
+---<!--
+---@field xyz_ Vector4
+---Convert to Vector5.
+---<!--
+---@field xyz__ Vector5
+---Convert to Vector6.
+---<!--
+---@field xyz___ Vector6
 local Vector3
 
 
@@ -561,27 +592,37 @@ function Vector3:transform(mat) end
 ---@operator mul(Matrix4): Vector4
 ---@operator div(number | Vector4): Vector4
 ---@operator mod(number | Vector4): Vector4
----@field x number       # The first element.
----@field r number       # The first element.
----@field ["1"] number   # The first element.
----@field [1] number     # The first element.
----@field y number       # The second element.
----@field g number       # The second element.
----@field ["2"] number   # The second element.
----@field [2] number     # The second element.
----@field z number       # The third element.
----@field b number       # The third element.
----@field ["3"] number   # The third element.
----@field [3] number     # The third element.
----@field w number       # The fourth element.
----@field a number       # The fourth element.
----@field ["4"] number   # The fourth element.
----@field [4] number     # The fourth element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # Convert to Vector3.
----@field xyzw Vector4   # A copy of this vector.
----@field xyzw_ Vector5  # Convert to Vector5.
----@field xyzw__ Vector6 # Convert to Vector6.
+---@field x number     # The first element.
+---@field r number     # The first element.
+---@field ["1"] number # The first element.
+---@field [1] number   # The first element.
+---@field y number     # The second element.
+---@field g number     # The second element.
+---@field ["2"] number # The second element.
+---@field [2] number   # The second element.
+---@field z number     # The third element.
+---@field b number     # The third element.
+---@field ["3"] number # The third element.
+---@field [3] number   # The third element.
+---@field w number     # The fourth element.
+---@field a number     # The fourth element.
+---@field ["4"] number # The fourth element.
+---@field [4] number   # The fourth element.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xyz Vector3
+---A copy of this vector.
+---<!--
+---@field xyzw Vector4
+---Convert to Vector5.
+---<!--
+---@field xyzw_ Vector5
+---Convert to Vector6.
+---<!--
+---@field xyzw__ Vector6
 local Vector4
 
 
@@ -761,30 +802,40 @@ function Vector4:transform(mat) end
 ---@operator mul(number | Vector5): Vector5
 ---@operator div(number | Vector5): Vector5
 ---@operator mod(number | Vector5): Vector5
----@field x number       # The first element.
----@field r number       # The first element.
----@field ["1"] number   # The first element.
----@field [1] number     # The first element.
----@field y number       # The second element.
----@field g number       # The second element.
----@field ["2"] number   # The second element.
----@field [2] number     # The second element.
----@field z number       # The third element.
----@field b number       # The third element.
----@field ["3"] number   # The third element.
----@field [3] number     # The third element.
----@field w number       # The fourth element.
----@field a number       # The fourth element.
----@field ["4"] number   # The fourth element.
----@field [4] number     # The fourth element.
----@field t number       # The fifth element.
----@field ["5"] number   # The fifth element.
----@field [5] number     # The fifth element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # Convert to Vector3.
----@field xyzw Vector4   # Convert to Vector4.
----@field xyzwt Vector5  # A copy of this vector.
----@field xyzwt_ Vector6 # Convert to Vector6.
+---@field x number     # The first element.
+---@field r number     # The first element.
+---@field ["1"] number # The first element.
+---@field [1] number   # The first element.
+---@field y number     # The second element.
+---@field g number     # The second element.
+---@field ["2"] number # The second element.
+---@field [2] number   # The second element.
+---@field z number     # The third element.
+---@field b number     # The third element.
+---@field ["3"] number # The third element.
+---@field [3] number   # The third element.
+---@field w number     # The fourth element.
+---@field a number     # The fourth element.
+---@field ["4"] number # The fourth element.
+---@field [4] number   # The fourth element.
+---@field t number     # The fifth element.
+---@field ["5"] number # The fifth element.
+---@field [5] number   # The fifth element.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xyz Vector3
+---Convert to Vector4.
+---<!--
+---@field xyzw Vector4
+---A copy of this vector.
+---<!--
+---@field xyzwt Vector5
+---Convert to Vector6.
+---<!--
+---@field xyzwt_ Vector6
 local Vector5
 
 
@@ -962,33 +1013,43 @@ function Vector5:toRad() end
 ---@operator mul(number | Vector6): Vector6
 ---@operator div(number | Vector6): Vector6
 ---@operator mod(number | Vector6): Vector6
----@field x number       # The first element.
----@field r number       # The first element.
----@field ["1"] number   # The first element.
----@field [1] number     # The first element.
----@field y number       # The second element.
----@field g number       # The second element.
----@field ["2"] number   # The second element.
----@field [2] number     # The second element.
----@field z number       # The third element.
----@field b number       # The third element.
----@field ["3"] number   # The third element.
----@field [3] number     # The third element.
----@field w number       # The fourth element.
----@field a number       # The fourth element.
----@field ["4"] number   # The fourth element.
----@field [4] number     # The fourth element.
----@field t number       # The fifth element.
----@field ["5"] number   # The fifth element.
----@field [5] number     # The fifth element.
----@field h number       # The sixth element.
----@field ["6"] number   # The sixth element.
----@field [6] number     # The sixth element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # Convert to Vector3.
----@field xyzw Vector4   # Convert to Vector4.
----@field xyzwt Vector5  # Convert to Vector5.
----@field xyzwth Vector6 # A copy of this vector.
+---@field x number     # The first element.
+---@field r number     # The first element.
+---@field ["1"] number # The first element.
+---@field [1] number   # The first element.
+---@field y number     # The second element.
+---@field g number     # The second element.
+---@field ["2"] number # The second element.
+---@field [2] number   # The second element.
+---@field z number     # The third element.
+---@field b number     # The third element.
+---@field ["3"] number # The third element.
+---@field [3] number   # The third element.
+---@field w number     # The fourth element.
+---@field a number     # The fourth element.
+---@field ["4"] number # The fourth element.
+---@field [4] number   # The fourth element.
+---@field t number     # The fifth element.
+---@field ["5"] number # The fifth element.
+---@field [5] number   # The fifth element.
+---@field h number     # The sixth element.
+---@field ["6"] number # The sixth element.
+---@field [6] number   # The sixth element.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xyz Vector3
+---Convert to Vector4.
+---<!--
+---@field xyzw Vector4
+---Convert to Vector5.
+---<!--
+---@field xyzwt Vector5
+---A copy of this vector.
+---<!--
+---@field xyzwth Vector6
 local Vector6
 
 

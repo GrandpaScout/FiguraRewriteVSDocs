@@ -7,7 +7,8 @@
 ---==============================================================================================---
 
 ---A union of all Entity sub-types.
----@alias EntityAPI.any EntityAPI|LivingEntityAPI|PlayerAPI
+---<!--
+---@alias EntityAPI.any EntityAPI | LivingEntityAPI | PlayerAPI
 
 ---A valid equipment slot on an entity.
 ---@alias EntityAPI.slot
@@ -47,6 +48,7 @@
 ---A status effect for an entity.
 ---@class LivingEntityAPI.StatusEffect
 ---The name of this status effect.
+---<!--
 ---@field name Minecraft.effectID
 ---The time left for this status effect in ticks.
 ---@field duration integer

@@ -17,7 +17,7 @@
 ---Only screens that can be visible while an avatar is loaded are listed here.
 ---
 ---These screens use intermediary names.
----@see net.minecraft.client.gui.screen.Screen @ https://maven.fabricmc.net/docs/yarn-1.19.2+build.1/net/minecraft/client/gui/screen/Screen.html
+---@source net.minecraft.client.gui.screen.Screen @ https://maven.fabricmc.net/docs/yarn-1.19.2+build.1/net/minecraft/client/gui/screen/Screen.html
 ---@alias Minecraft.screenID string
 ---**Minecraft:** Command Block
 ---| "class_477"  @ Screen -> AbstractCommandBlockScreen -> CommandBlockScreen

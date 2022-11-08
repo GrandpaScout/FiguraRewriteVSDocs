@@ -80,7 +80,7 @@
 ---```lua
 ---function(delta: number, ctx: string)
 ---```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
 ---**`ctx`** The context of this preview.
 ---@field POST_PREVIEW_RENDER Event.PreviewRender
 ---This event runs after the avatar has rendered.
@@ -105,7 +105,7 @@
 ---```lua
 ---function(delta: number, ctx: string)
 ---```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
 ---**`ctx`** The context of this preview.
 ---@field PREVIEW_RENDER Event.Render
 ---This event runs before the avatar is rendered.
@@ -123,7 +123,7 @@
 ---```lua
 ---function(delta: number, pos: Vector3)
 ---```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
 ---**`pos`** The position of the skull block being rendered.
 ---@field SKULL_RENDER Event.SkullRender
 ---This event runs every tick while the player entity is loaded.

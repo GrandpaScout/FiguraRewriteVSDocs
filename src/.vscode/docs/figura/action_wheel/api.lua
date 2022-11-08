@@ -45,11 +45,14 @@
 ---```
 ---@class ActionWheelAPI
 ---The function that is executed when the screen is left-clicked while the action wheel is open.
----@field leftClick ClickAction.clickFunc?
+---<!--
+---@field leftClick? ClickAction.clickFunc
 ---The function that is executed when the screen is right-clicked while the action wheel is open.
----@field rightClick ClickAction.clickFunc?
+---<!--
+---@field rightClick? ClickAction.clickFunc
 ---The function that is executed when the screen is scrolled while the action wheel is open.
----@field scroll ScrollAction.scrollFunc?
+---<!--
+---@field scroll? ScrollAction.scrollFunc
 local ActionWheelAPI
 
 
