@@ -9,7 +9,8 @@
     "figura/_deprecated.lua": "serverless",
     "_global.lua": "gemini",
     "alias.lua": "razor",
-    "api.lua": "favicon"
+    "api.lua": "favicon",
+    ".version": "changelog"
   },
   "material-icon-theme.folders.associations": {
     "figura/_assets": "examples",
