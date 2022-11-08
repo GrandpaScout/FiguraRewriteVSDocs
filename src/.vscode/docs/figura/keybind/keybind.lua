@@ -12,8 +12,10 @@
 ---Determines if this keybind should be processed while a GUI is open.
 ---@field gui boolean
 ---The function this keybind should execute when the key is pressed.
+---<!--
 ---@field onPress Keybind.func
 ---The function this keybind should execute when the key is released.
+---<!--
 ---@field onRelease Keybind.func
 ---Determines vanilla keybinds bound to the same key should not be processed.
 ---@field override boolean

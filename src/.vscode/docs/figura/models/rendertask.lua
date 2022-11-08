@@ -198,9 +198,8 @@ function TextTask:hasOutline() end
 function TextTask:hasShadow() end
 
 ---Gets if this task's text is centered on its pivot.
----@*error This does not use the correct spelling. `centred` -> `centered`
 ---@return boolean
-function TextTask:isCentred() end
+function TextTask:isCentered() end
 
 
 ---===== SETTERS =====---

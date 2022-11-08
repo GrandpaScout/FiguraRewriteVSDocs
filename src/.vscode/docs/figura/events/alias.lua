@@ -15,7 +15,7 @@
 ---==============================================================================================---
 
 ---A function used by `RENDER` events.
----@alias Event.Render.func fun(delta: number)
+---@alias Event.Render.func fun(delta?: number)
 
 
 ---==============================================================================================---
@@ -29,7 +29,7 @@
 ---| "PAPERDOLL" # The Figura paper doll is rendering this preview.
 
 ---A function used by `RENDER` events.
----@alias Event.PreviewRender.func fun(delta: number, ctx: Event.PreviewRender.context)
+---@alias Event.PreviewRender.func fun(delta?: number, ctx?: Event.PreviewRender.context)
 
 
 ---==============================================================================================---
@@ -37,7 +37,7 @@
 ---==============================================================================================---
 
 ---A function used by the `SKULL_RENDER` event.
----@alias Event.SkullRender.func fun(delta: number, pos: Vector3)
+---@alias Event.SkullRender.func fun(delta?: number, pos?: Vector3)
 
 
 ---==============================================================================================---
@@ -45,7 +45,7 @@
 ---==============================================================================================---
 
 ---A function used by the `MOUSE_SCROLL` event.
----@alias Event.MouseScroll.func fun(dir: integer)
+---@alias Event.MouseScroll.func fun(dir?: integer)
 
 
 ---==============================================================================================---
@@ -61,4 +61,4 @@
 ---==============================================================================================---
 
 ---A function used by the `CHAT_RECEIVE_MESSAGE` event.
----@alias Event.ReceiveMessage.func fun(message: string)
+---@alias Event.ReceiveMessage.func fun(message?: string)

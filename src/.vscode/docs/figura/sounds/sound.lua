@@ -32,7 +32,6 @@ function Sound:play(pos, volume, pitch, loop) end
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.  
 ---If `volume` or `pitch` are `nil`, they will default to `1`.  
 ---If `loop` is `nil`, it will default to `false`
----@*vmerror `x` == `<integer>`
 ---@param x? number
 ---@param y? number
 ---@param z? number

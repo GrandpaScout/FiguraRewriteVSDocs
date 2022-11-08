@@ -88,8 +88,8 @@ matrices = {}
 ---models.MyModel.Head.Hat.Brim
 ---```
 ---&emsp;  
----Be careful when naming model parts, a part name that is not a valid identifier or matches a Lua
----keyword requires an alternate way of accessing the part.
+---When naming model parts, a part name that is not a valid identifier or matches a Lua keyword
+---requires an alternate way of accessing the part.
 ---
 ---If a part is named `and`, it will conflict with the Lua keyword `and`.
 ---```lua
@@ -101,6 +101,7 @@ matrices = {}
 ---models.MyModel.42bottles    -- Causes an error, Lua did not expect a number here.
 ---models.MyModel["42bottles"] -- Does not error, the number is contained in a string.
 ---```
+---<!--
 ---@type ModelPart
 models = {}
 
@@ -114,6 +115,7 @@ particles = {}
 pings = {}
 
 ---The Minecraft player the current avatar is attached to.
+---<!--
 ---@type PlayerAPI
 player = {}
 
@@ -124,6 +126,7 @@ renderer = {}
 sounds = {}
 
 ---The Minecraft entity the current avatar is attached to.
+---<!--
 ---@type EntityAPI
 user = {}
 

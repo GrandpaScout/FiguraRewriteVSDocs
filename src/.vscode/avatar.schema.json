@@ -20,19 +20,19 @@
     {"label": "\u200B\u200BBasic metadata, One author", "body": {
       "name": "${1:My Avatar}",
       "author": "${2:Username}",
-      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}"
     }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, author, Figura version, and theme color."},
     {"label": "\u200B\u200BBasic metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
       "authors": ["${2:Username}"],
-      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}"
     }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, authors, Figura version, and theme color."},
     {"label": "\u200B\u200BFull metadata, One author", "body": {
       "name": "${1:My Avatar}",
       "author": "${2:Username}",
-      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}",
       "autoScripts": ["^$5"],
       "customizations": "^{$6}"
@@ -40,7 +40,7 @@
     {"label": "\u200B\u200BFull metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
       "authors": ["${2:Username}"],
-      "version": "${3|0.1.0,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}",
       "autoScripts": ["^$5"],
       "customizations": "^{$6}"
@@ -144,6 +144,7 @@
       "defaultSnippets": [
         {"body": "$1"},
         {"label": "Figura 0.1.0                      (0.1.0)",       "body": "0.1.0"      },
+        {"label": "Figura 0.1.0, Release Candidate 8 (0.1.0-rc.8)",  "body": "0.1.0-rc.8" },
         {"label": "Figura 0.1.0, Release Candidate 7 (0.1.0-rc.7)",  "body": "0.1.0-rc.7" },
         {"label": "Figura 0.1.0, Release Candidate 6 (0.1.0-rc.6)",  "body": "0.1.0-rc.6" },
         {"label": "Figura 0.1.0, Release Candidate 5 (0.1.0-rc.5)",  "body": "0.1.0-rc.5" },

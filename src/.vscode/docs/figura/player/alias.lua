@@ -47,6 +47,7 @@
 ---A status effect for an entity.
 ---@class LivingEntityAPI.StatusEffect
 ---The name of this status effect.
+---<!--
 ---@field name Minecraft.effectID
 ---The time left for this status effect in ticks.
 ---@field duration integer
@@ -79,4 +80,6 @@
 ---| "LEFT_SLEEVE"     # Left arm layer.
 ---| "RIGHT_SLEEVE"    # Right arm layer.
 ---| "LEFT_PANTS_LEG"  # Left leg layer.
+---| "LEFT_PANTS"      # Alias for `"LEFT_PANTS_LEG"`.
 ---| "RIGHT_PANTS_LEG" # Right leg layer.
+---| "RIGHT_PANTS"     # Alias for `"RIGHT_PANTS_LEG"`.

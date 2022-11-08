@@ -9,10 +9,12 @@
 ---A Minecraft block.
 ---@class BlockState
 ---The id of this block.
+---<!--
 ---@field id Minecraft.blockID
 ---The state properties of this block.
 ---
 ---This is `nil` if this block has no properties.
+---<!--
 ---@field properties? Minecraft.blockProperties
 local BlockState
 

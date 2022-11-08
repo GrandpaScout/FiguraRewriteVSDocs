@@ -681,7 +681,7 @@ function EntityAPI:isGlowing() end
 ---"$100 hamburger" ("hundred-dollar hamburger") is aviation slang for a general aviation pilot
 ---needing an excuse to fly. A $100 hamburger trip typically involves flying a short distance (less
 ---than two hours), eating at an airport restaurant, and flying home.
----@see Hamburger - Wikipedia @ https://en.wikipedia.org/wiki/Hamburger
+---@source Hamburger - Wikipedia @ https://en.wikipedia.org/wiki/Hamburger
 ---@*hidden Checks if the user's UUID matches `66a6c5c4-963b-4b73-a0d9-162faedd8b7f`.
 ---@return boolean
 function EntityAPI:isHamburger() end

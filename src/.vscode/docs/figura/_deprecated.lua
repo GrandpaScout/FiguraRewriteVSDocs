@@ -727,8 +727,9 @@ ModelPart.clearAllRenderTasks = nil
 ModelPart.getCullEnabled = nil
 
 ---@type nil
----`.getExtraTexEnabled` is deprecated. It has no replacement.
----@deprecated '".getExtraTexEnabled" is deprecated'
+---`.getExtraTexEnabled` is deprecated. To get if the secondary texture is disabled, use
+---`:getSecondaryRenderType() == "NONE"`.
+---@deprecated '".getExtraTexEnabled" is deprecated, replace with ":getSecondaryRenderType() = "NONE""'
 ModelPart.getExtraTexEnabled = nil
 
 ---@type nil
@@ -757,11 +758,6 @@ ModelPart.getShader = nil
 ModelPart.getTexture = nil
 
 ---@type nil
----`.getUV` is deprecated. It has no replacement.
----@deprecated '".getUV" is deprecated'
-ModelPart.getUV = nil
-
----@type nil
 ---`.getUVData` is deprecated. It has no replacement.
 ---@deprecated '".getUVData" is deprecated'
 ModelPart.getUVData = nil
@@ -785,8 +781,9 @@ ModelPart.partToWorldPos = nil
 ModelPart.setCullEnabled = nil
 
 ---@type nil
----`.setExtraTexEnabled` is deprecated. It has no replacement.
----@deprecated '".setExtraTexEnabled" is deprecated'
+---`.setExtraTexEnabled` is deprecated. To disable the secondary texture, use
+---`:setSecondaryRenderType("NONE")`.
+---@deprecated '".setExtraTexEnabled" is deprecated, replace with ":setSecondaryRenderType("NONE")"'
 ModelPart.setExtraTexEnabled = nil
 
 ---@type nil

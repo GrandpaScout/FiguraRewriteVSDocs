@@ -65,7 +65,7 @@ function HostAPI:getScreen() end
 ---
 ---Returns an `ItemStack` of air if no item exists in that slot.
 ---@param slot Minecraft.slotID
----@return ItemStack
+---@return ItemStack | integer
 function HostAPI:getSlot(slot) end
 
 ---Gets the first entity under the crosshair up to 6 blocks away.

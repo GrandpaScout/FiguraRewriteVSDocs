@@ -7,6 +7,7 @@
 ---==============================================================================================---
 
 ---@alias Figura.version string
+---| "0.1.0-rc.8"  # Figura 0.1.0, Release Candidate 8
 ---| "0.1.0-rc.7"  # Figura 0.1.0, Release Candidate 7
 ---| "0.1.0-rc.6"  # Figura 0.1.0, Release Candidate 6
 ---| "0.1.0-rc.5"  # Figura 0.1.0, Release Candidate 5
@@ -22,6 +23,8 @@
 ---| "0.1.0-pre.1" # Figura 0.1.0, Prerelease 1
 
 ---@alias Figura.versionWithMC string
+---| "0.1.0-rc.8+1.19.2"  # Figura 0.1.0, Release Candidate 8 (1.19.2)
+---| "0.1.0-rc.8+1.19.2"  # Figura 0.1.0, Release Candidate 8 (1.19.2)
 ---| "0.1.0-rc.7+1.19.2"  # Figura 0.1.0, Release Candidate 7 (1.19.2)
 ---| "0.1.0-rc.7+1.18.2"  # Figura 0.1.0, Release Candidate 7 (1.18.2)
 ---| "0.1.0-rc.6+1.19.2"  # Figura 0.1.0, Release Candidate 6 (1.19.2)

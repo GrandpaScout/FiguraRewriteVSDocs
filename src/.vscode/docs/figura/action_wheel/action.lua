@@ -110,8 +110,10 @@ function Action:hoverItem(item) end
 ---This action can be configured to respond to being left and right clicked separately.
 ---@class ClickAction : Action
 ---The function that is executed when this action is left-clicked.
+---<!--
 ---@field leftClick? ClickAction.clickFunc
 ---The function that is executed when this action is right-clicked.
+---<!--
 ---@field rightClick? ClickAction.clickFunc
 local ClickAction
 
@@ -146,8 +148,10 @@ function ClickAction:onRightClick(func) end
 ---@class ToggleAction : Action
 ---The function that is executed when this action is toggled on.  
 ---If `.untoggle` is `nil`, this is also executed when this action is toggled off.
+---<!--
 ---@field toggle? ToggleAction.toggleFunc
 ---The function that is executed when this action is toggled off.
+---<!--
 ---@field untoggle? ToggleAction.untoggleFunc
 local ToggleAction
 
@@ -241,6 +245,7 @@ function ToggleAction:onUntoggle(func) end
 ---An action that responds to scrolling the scroll wheel up or down.
 ---@class ScrollAction : Action
 ---The function that is executed when this action is scrolled.
+---<!--
 ---@field scroll ScrollAction.scrollFunc?
 local ScrollAction
 

@@ -22,6 +22,7 @@
 ---      │}                  │
 ---      └───────────────────┘
 ---```
+---<!--
 ---@field [string]? Vector
 
 
@@ -44,11 +45,21 @@
 ---@operator div(number | Vector): Vector
 ---@operator mod(number | Vector): Vector
 ---@field _ 0            # A zero.
----@field __ Vector2     # An empty Vector2.
----@field ___ Vector3    # An empty Vector3.
----@field ____ Vector4   # An empty Vector4.
----@field _____ Vector5  # An empty Vector5.
----@field ______ Vector6 # An empty Vector6.
+---An empty Vector2.
+---<!--
+---@field __ Vector2
+---An empty Vector3.
+---<!--
+---@field ___ Vector3
+---An empty Vector4.
+---<!--
+---@field ____ Vector4
+---An empty Vector5.
+---<!--
+---@field _____ Vector5
+---An empty Vector6.
+---<!--
+---@field ______ Vector6
 local Vector
 
 
@@ -179,11 +190,21 @@ function Vector:lengthSquared() end
 ---@field g number       # The second element.
 ---@field ["2"] number   # The second element.
 ---@field [2] number     # The second element.
----@field xy Vector2     # A copy of this vector.
----@field xy_ Vector3    # Convert to Vector3.
----@field xy__ Vector4   # Convert to Vector4.
----@field xy___ Vector5  # Convert to Vector5.
----@field xy____ Vector6 # Convert to Vector6.
+---A copy of this vector.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xy_ Vector3
+---Convert to Vector4.
+---<!--
+---@field xy__ Vector4
+---Convert to Vector5.
+---<!--
+---@field xy___ Vector5
+---Convert to Vector6.
+---<!--
+---@field xy____ Vector6
 local Vector2
 
 
@@ -365,11 +386,21 @@ function Vector2:transform(mat) end
 ---@field b number       # The third element.
 ---@field ["3"] number   # The third element.
 ---@field [3] number     # The third element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # A copy of this vector.
----@field xyz_ Vector4   # Convert to Vector4.
----@field xyz__ Vector5  # Convert to Vector5.
----@field xyz___ Vector6 # Convert to Vector6.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---A copy of this vector.
+---<!--
+---@field xyz Vector3
+---Convert to Vector4.
+---<!--
+---@field xyz_ Vector4
+---Convert to Vector5.
+---<!--
+---@field xyz__ Vector5
+---Convert to Vector6.
+---<!--
+---@field xyz___ Vector6
 local Vector3
 
 
@@ -577,11 +608,21 @@ function Vector3:transform(mat) end
 ---@field a number       # The fourth element.
 ---@field ["4"] number   # The fourth element.
 ---@field [4] number     # The fourth element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # Convert to Vector3.
----@field xyzw Vector4   # A copy of this vector.
----@field xyzw_ Vector5  # Convert to Vector5.
----@field xyzw__ Vector6 # Convert to Vector6.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xyz Vector3
+---A copy of this vector.
+---<!--
+---@field xyzw Vector4
+---Convert to Vector5.
+---<!--
+---@field xyzw_ Vector5
+---Convert to Vector6.
+---<!--
+---@field xyzw__ Vector6
 local Vector4
 
 
@@ -780,11 +821,21 @@ function Vector4:transform(mat) end
 ---@field t number       # The fifth element.
 ---@field ["5"] number   # The fifth element.
 ---@field [5] number     # The fifth element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # Convert to Vector3.
----@field xyzw Vector4   # Convert to Vector4.
----@field xyzwt Vector5  # A copy of this vector.
----@field xyzwt_ Vector6 # Convert to Vector6.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xyz Vector3
+---Convert to Vector4.
+---<!--
+---@field xyzw Vector4
+---A copy of this vector.
+---<!--
+---@field xyzwt Vector5
+---Convert to Vector6.
+---<!--
+---@field xyzwt_ Vector6
 local Vector5
 
 
@@ -984,11 +1035,21 @@ function Vector5:toRad() end
 ---@field h number       # The sixth element.
 ---@field ["6"] number   # The sixth element.
 ---@field [6] number     # The sixth element.
----@field xy Vector2     # Convert to Vector2.
----@field xyz Vector3    # Convert to Vector3.
----@field xyzw Vector4   # Convert to Vector4.
----@field xyzwt Vector5  # Convert to Vector5.
----@field xyzwth Vector6 # A copy of this vector.
+---Convert to Vector2.
+---<!--
+---@field xy Vector2
+---Convert to Vector3.
+---<!--
+---@field xyz Vector3
+---Convert to Vector4.
+---<!--
+---@field xyzw Vector4
+---Convert to Vector5.
+---<!--
+---@field xyzwt Vector5
+---A copy of this vector.
+---<!--
+---@field xyzwth Vector6
 local Vector6
 
 

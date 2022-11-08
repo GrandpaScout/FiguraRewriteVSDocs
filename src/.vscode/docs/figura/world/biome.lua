@@ -45,6 +45,10 @@ function Biome:getPrecipitation() end
 ---@return Vector3
 function Biome:getSkyColor() end
 
+---Gets the tags of this biome.
+---@return string[]
+function Biome:getTags() end
+
 ---Gets the temperature of this biome.
 ---@return Vector3
 function Biome:getTemperature() end

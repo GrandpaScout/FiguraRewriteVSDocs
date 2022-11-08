@@ -90,19 +90,24 @@
 ---A block sound table.
 ---@class BlockState.Sounds
 ---The sound that plays when this block is broken.
+---<!--
 ---@field break Minecraft.soundID
 ---The sound that plays when something falls on this block.
+---<!--
 ---@field fall Minecraft.soundID
 ---The sound that plays when this block is hit.
+---<!--
 ---@field hit Minecraft.soundID
 ---The pitch these sounds will play at.
 ---@field pitch number
 ---The sound that plays when this block is placed.
 ---
 ---*No, that is not a typo. This is the actual key used in Figura.*
+---<!--
 ---@*error This is probably meant to be "place"
 ---@field plate Minecraft.soundID
 ---The sound that plays when this block is stepped on.
+---<!--
 ---@field step Minecraft.soundID
 ---The volume these sounds will play at.
 ---@field volume number

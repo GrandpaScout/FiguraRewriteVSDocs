@@ -61,6 +61,7 @@
 
 ---A valid render type for a model part.
 ---@alias ModelPart.renderType
+---| "NONE"             # Disable rendering.
 ---| "CUTOUT"           # Default render mode. Used for simple opaque and transparent parts.
 ---| "CUTOUT_CULL"      # Similar to `"CUTOUT"`, but inside faces do not render.
 ---| "TRANSLUCENT"      # Used to allow translucency.
@@ -95,6 +96,7 @@
 ---==============================================================================================---
 
 ---A union of all RenderTask sub-types.
+---<!--
 ---@alias RenderTask.any BlockTask|ItemTask|TextTask
 
 

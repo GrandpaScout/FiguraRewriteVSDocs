@@ -9,6 +9,7 @@
 ---A Minecraft item stack.
 ---@class ItemStack
 ---The id of this item.
+---<!--
 ---@field id Minecraft.itemID
 ---The NBT tag of this item.
 ---

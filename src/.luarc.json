@@ -97,7 +97,7 @@
     "postfix": "@",
 
     // The character used as the path seperator of requires.
-    "requireSeparator": "/",
+    "requireSeparator": ".",
 
     // Disable word suggestions as they are mostly useless.
     "showWord": "Disable",

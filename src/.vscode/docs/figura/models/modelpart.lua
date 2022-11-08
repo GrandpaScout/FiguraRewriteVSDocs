@@ -173,6 +173,20 @@ function ModelPart:getTextureSize() end
 ---@return ModelPart.type
 function ModelPart:getType() end
 
+---Gets the UV offset of this part.
+---@return Vector2
+function ModelPart:getUV() end
+
+---Gets the UV matrix of this part.
+---@return Matrix3
+function ModelPart:getUVMatrix() end
+
+---Gets the UV offset of this part in pixels.
+---
+---Returns `nil` if no UV offset is set.
+---@return Vector2
+function ModelPart:getUVPixels() end
+
 ---Gets if this part is visible.
 ---
 ---Returns `nil` if it is inheriting from its parent.

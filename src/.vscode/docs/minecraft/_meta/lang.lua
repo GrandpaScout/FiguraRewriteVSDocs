@@ -7,9 +7,9 @@
 ---==============================================================================================---
 
 ---A valid language code.
----@see Minecraft Wiki @ https://minecraft.fandom.com/wiki/Language
----@see LocalePlanet @ https://www.localeplanet.com/compare/all.html
----@see ISO639-3, SIL International @ https://iso639-3.sil.org/code_tables/639/data
+---@source Minecraft Wiki @ https://minecraft.fandom.com/wiki/Language
+---@source LocalePlanet @ https://www.localeplanet.com/compare/all.html
+---@source ISO639-3, SIL International @ https://iso639-3.sil.org/code_tables/639/data
 ---@alias Minecraft.langCode string
 ---| "af_za"    # Afrikaans (South Africa)
 ---| "ar_sa"    # Arabic (Saudi Arabia)
