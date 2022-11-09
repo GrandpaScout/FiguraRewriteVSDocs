@@ -87,12 +87,12 @@ function EntityNameplate:getScale() end
 
 ---Sets the color of this nameplate's background.
 ---
----If `color` is `nil`, it will default to `{0, 0, 0, x}` where `x` is the value of the Text
+---If `color` is `nil`, it will default to `⟨0, 0, 0, x⟩` where `x` is the value of the Text
 ---Background Opacity setting in Minecraft's accessibility menu.
 ---@param color? Vector4
 function EntityNameplate:setBackgroundColor(color) end
 
----If `color` is `nil`, it will default to `{0, 0, 0}`.  
+---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.  
 ---If `a` is `nil`, it will default to the Text Background Opacity setting in Minecraft's
 ---accessibility menu.
 ---@param color? Vector3
@@ -110,7 +110,7 @@ function EntityNameplate:setBackgroundColor(r, g, b, a) end
 
 ---Sets the position offset of this nameplate in blocks.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 function EntityNameplate:setPos(pos) end
 
@@ -122,7 +122,7 @@ function EntityNameplate:setPos(x, y, z) end
 
 ---Sets the scale multiplier of this nameplate.
 ---
----If `scale` is `nil`, it will default to `{0, 0, 0}`.
+---If `scale` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param scale? Vector3
 function EntityNameplate:setScale(scale) end
 

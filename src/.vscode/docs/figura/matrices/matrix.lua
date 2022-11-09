@@ -95,7 +95,7 @@ local Matrix2
 ---@return self
 function Matrix2:add(other) end
 
----Augments the given value to a vector `{x, 1}`, multiplies that vector against this matrix, then
+---Augments the given value to a vector `⟨x, 1⟩`, multiplies that vector against this matrix, then
 ---deaugments the vector to return `x`.
 ---
 ---If `x` is `nil`, it will default to `0`.
@@ -103,7 +103,7 @@ function Matrix2:add(other) end
 ---@return number
 function Matrix2:apply(x) end
 
----Augments the given value to a vector `{x, 0}`, multiplies that vector against this matrix, then
+---Augments the given value to a vector `⟨x, 0⟩`, multiplies that vector against this matrix, then
 ---deaugments the vector to return `x`.
 ---
 ---If `x` is `nil`, it will default to `0`.
@@ -152,7 +152,7 @@ function Matrix2:rotate(angle) end
 
 ---Scales this matrix by the given factors.
 ---
----If `scales` is `nil`, it will default to `{0, 0}`.
+---If `scales` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param scales? Vector2
@@ -267,10 +267,10 @@ local Matrix3
 ---@return self
 function Matrix3:add(other) end
 
----Augments the given value to a vector `{x, y, 1}`, multiplies that vector against this matrix,
----then deaugments the vector to return `{x, y}`.
+---Augments the given value to a vector `⟨x, y, 1⟩`, multiplies that vector against this matrix,
+---then deaugments the vector to return `⟨x, y⟩`.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param vec? Vector2
 ---@return Vector2
 function Matrix3:apply(vec) end
@@ -281,10 +281,10 @@ function Matrix3:apply(vec) end
 ---@return Vector2
 function Matrix3:apply(x, y) end
 
----Augments the given value to a vector `{x, y, 0}`, multiplies that vector against this matrix,
----then deaugments the vector to return `{x, y}`.
+---Augments the given value to a vector `⟨x, y, 0⟩`, multiplies that vector against this matrix,
+---then deaugments the vector to return `⟨x, y⟩`.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param vec? Vector2
 ---@return Vector2
 function Matrix3:applyDir(vec) end
@@ -330,7 +330,7 @@ function Matrix3:rightMultiply(other) end
 
 ---Rotates this matrix by the given angles in degrees.
 ---
----If `angles` is `nil`, it will default to `{0, 0, 0}`.
+---If `angles` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param angles? Vector3
@@ -375,7 +375,7 @@ function Matrix3:rotateZ(angle) end
 
 ---Scales this matrix by the given factors.
 ---
----If `scales` is `nil`, it will default to `{0, 0, 0}`.
+---If `scales` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param scales? Vector3
@@ -510,10 +510,10 @@ local Matrix4
 ---@return self
 function Matrix4:add(other) end
 
----Augments the given value to a vector `{x, y, z, 1}`, multiplies that vector against this matrix,
----then deaugments the vector to return `{x, y, z}`.
+---Augments the given value to a vector `⟨x, y, z, 1⟩`, multiplies that vector against this matrix,
+---then deaugments the vector to return `⟨x, y, z⟩`.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param vec? Vector3
 ---@return Vector3
 function Matrix4:apply(vec) end
@@ -525,10 +525,10 @@ function Matrix4:apply(vec) end
 ---@return Vector3
 function Matrix4:apply(x, y, z) end
 
----Augments the given value to a vector `{x, y, z, 0}`, multiplies that vector against this matrix,
----then deaugments the vector to return `{x, y, z}`.
+---Augments the given value to a vector `⟨x, y, z, 0⟩`, multiplies that vector against this matrix,
+---then deaugments the vector to return `⟨x, y, z⟩`.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param vec? Vector3
 ---@return Vector3
 function Matrix4:applyDir(vec) end
@@ -570,7 +570,7 @@ function Matrix4:rightMultiply(other) end
 
 ---Rotates this matrix by the given angles in degrees.
 ---
----If `angles` is `nil`, it will default to `{0, 0, 0}`.
+---If `angles` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param angles? Vector3
@@ -615,7 +615,7 @@ function Matrix4:rotateZ(angle) end
 
 ---Scales this matrix by the given factors.
 ---
----If `scales` is `nil`, it will default to `{0, 0, 0}`.
+---If `scales` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param scales? Vector3

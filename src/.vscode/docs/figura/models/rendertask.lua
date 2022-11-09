@@ -59,7 +59,7 @@ function RenderTask:enabled(state) end
 
 ---Sets this task's position.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param pos? Vector3
@@ -77,7 +77,7 @@ function RenderTask:pos(x, y, z) end
 
 ---Sets this task's rotation.
 ---
----If `rot` is `nil`, it will default to `{0, 0, 0}`.
+---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param rot? Vector3
@@ -95,7 +95,7 @@ function RenderTask:rot(x, y, z) end
 
 ---Sets this task's scale multiplier.
 ---
----If `scale` is `nil`, it will default to `{1, 1, 1}`.
+---If `scale` is `nil`, it will default to `⟨1, 1, 1⟩`.
 ---@generic self
 ---@param self self
 ---@param scale? Vector3
@@ -226,7 +226,7 @@ function TextTask:outline(state) end
 
 ---Sets the color of this task's outline (if enabled.)
 ---
----If `col` is `nil`, it will default to `{0, 0, 0}`.
+---If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param col? Vector3
