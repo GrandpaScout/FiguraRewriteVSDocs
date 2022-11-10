@@ -38,3 +38,7 @@ V2
 * Fixed a few doc formatting issues.
 * Removed `@*vmerror` of `SoundAPI:playSound()`.
 * Removed `@*error` of `VectorsAPI.hexToRGB()`.
+
+V3 <kbd>ᴡɪᴘ</kbd>
+--------------------------------------------------
+* Replaced `{ }` in vector examples with `⟨ ⟩`.
