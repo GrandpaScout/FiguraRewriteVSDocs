@@ -143,6 +143,7 @@
 ---function()
 ---```
 ---<!--
+---@*error This event is not safe due to not actually running every proper tick.
 ---@field TICK Event.Generic | Event.Generic.func
 ---This event runs before the world is rendered.
 ---
@@ -160,6 +161,7 @@
 ---function()
 ---```
 ---<!--
+---@*error This event is not safe due to not actually running every proper tick.
 ---@field WORLD_TICK Event.Generic | Event.Generic.func
 local EventsAPI
 

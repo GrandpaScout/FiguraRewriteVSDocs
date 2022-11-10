@@ -42,3 +42,5 @@ V2
 V3 <kbd>ᴡɪᴘ</kbd>
 --------------------------------------------------
 * Replaced `{ }` in vector examples with `⟨ ⟩`.
+* Added `@*error` to `EventsAPI.TICK` and `EventsAPI.WORLD_TICK`.  
+  This is due to events not running at predicatable times, causing many functions to fail.
