@@ -39,7 +39,7 @@ V2
 * Removed `@*vmerror` of `SoundAPI:playSound()`.
 * Removed `@*error` of `VectorsAPI.hexToRGB()`.
 
-V3 <kbd>ᴡɪᴘ</kbd>
+V3
 --------------------------------------------------
 * Replaced `{ }` in vector examples with `⟨ ⟩`.
 * Added `@*error` to `EventsAPI.TICK` and `EventsAPI.WORLD_TICK`.  
