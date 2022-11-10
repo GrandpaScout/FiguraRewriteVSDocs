@@ -96,7 +96,7 @@ function MatricesAPI.rotation2(angle) end
 ---
 ---The rotation is done in `ZYX` order.
 ---
----If `angles` is `nil`, it will default to `{0, 0, 0}`.
+---If `angles` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param rot? Vector3
 ---@return Matrix3
 function MatricesAPI.rotation3(rot) end
@@ -112,7 +112,7 @@ function MatricesAPI.rotation3(x, y, z) end
 ---
 ---The rotation is done in `ZYX` order.
 ---
----If `angles` is `nil`, it will default to `{0, 0, 0}`.
+---If `angles` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param rot? Vector3
 ---@return Matrix4
 function MatricesAPI.rotation4(rot) end
@@ -126,7 +126,7 @@ function MatricesAPI.rotation4(x, y, z) end
 
 ---Creates a 2x2 matrix that scales by the given factors.
 ---
----If `scales` is `nil`, it will default to `{0, 0}`.
+---If `scales` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param scales? Vector2
 ---@return Matrix2
 function MatricesAPI.scale2(scales) end
@@ -139,7 +139,7 @@ function MatricesAPI.scale2(x, y) end
 
 ---Creates a 3x3 matrix that scales by the given factors.
 ---
----If `scales` is `nil`, it will default to `{0, 0, 0}`.
+---If `scales` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param scales? Vector3
 ---@return Matrix3
 function MatricesAPI.scale3(scales) end
@@ -153,7 +153,7 @@ function MatricesAPI.scale3(x, y, z) end
 
 ---Creates a 4x4 matrix that scales by the given factors.
 ---
----If `scales` is `nil`, it will default to `{0, 0, 0}`.
+---If `scales` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param scales? Vector3
 ---@return Matrix4
 function MatricesAPI.scale4(scales) end
@@ -167,7 +167,7 @@ function MatricesAPI.scale4(x, y, z) end
 
 ---Creates a 3x3 matrix that translates by the given offset.
 ---
----If `offset` is `nil`, it will default to `{0, 0}`.
+---If `offset` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param offset? Vector2
 ---@return Matrix3
 function MatricesAPI.translate3(offset) end
@@ -180,7 +180,7 @@ function MatricesAPI.translate3(x, y) end
 
 ---Creates a 4x4 matrix that translates by the given offset.
 ---
----If `offset` is `nil`, it will default to `{0, 0, 0}`.
+---If `offset` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param offset? Vector3
 ---@return Matrix4
 function MatricesAPI.translate4(offset) end

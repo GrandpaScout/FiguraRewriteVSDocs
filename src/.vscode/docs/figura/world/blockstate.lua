@@ -43,7 +43,7 @@ function BlockState:emitsRedstonePower() end
 function BlockState:getBlastResistance() end
 
 ---Gets the shape of this block's collision as a list of 6-element vectors.  
----Each vector contains both corners of a box in the shape `{minX, minY, minZ, maxX, maxY, maxZ}`.
+---Each vector contains both corners of a box in the shape `⟨minX, minY, minZ, maxX, maxY, maxZ⟩`.
 ---
 ---The coordinates used are relative to the starting corner of this block's position.
 ---@return Vector6[]
@@ -97,7 +97,7 @@ function BlockState:getMaterial() end
 function BlockState:getOpacity() end
 
 ---Gets the shape of this block's outline as a list of 6-element vectors.  
----Each vector contains both corners of a box in the shape. `{minX, minY, minZ, maxX, maxY, maxZ}`
+---Each vector contains both corners of a box in the shape `⟨minX, minY, minZ, maxX, maxY, maxZ⟩`.
 ---
 ---The coordinates used are relative to the starting corner of this block's position.
 ---@return Vector6[]
@@ -152,7 +152,7 @@ function BlockState:isTranslucent() end
 
 ---Sets the position that this BlockState object uses for calculations.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 function BlockState:setPos(pos) end
 

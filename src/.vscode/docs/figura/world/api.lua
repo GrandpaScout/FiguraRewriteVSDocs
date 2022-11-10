@@ -17,7 +17,7 @@ local WorldAPI
 ---
 ---Block properties can be defined by adding `[prop1=state1,prop2=state2,...]` after the block id.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@*error Nonsense error if `pos` != `nil` && `pos` != `<Vector3>`
 ---@param block Minecraft.blockID
 ---@param pos? Vector3
@@ -59,7 +59,7 @@ function WorldAPI.exists() end
 ---
 ---Returns a Biome of `minecraft:plains` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return Biome
 function WorldAPI.getBiome(pos) end
@@ -75,7 +75,7 @@ function WorldAPI.getBiome(x, y, z) end
 ---
 ---Returns `0` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
 function WorldAPI.getBlockLightLevel(pos) end
@@ -91,7 +91,7 @@ function WorldAPI.getBlockLightLevel(x, y, z) end
 ---
 ---Returns a BlockState of `minecraft:void_air` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return BlockState
 function WorldAPI.getBlockState(pos) end
@@ -114,7 +114,7 @@ function WorldAPI.getEntity(uuid) end
 ---
 ---Returns `15` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
 function WorldAPI.getLightLevel(pos) end
@@ -153,7 +153,7 @@ function WorldAPI.getRainGradient(delta) end
 ---
 ---Returns `0` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
 function WorldAPI.getRedstonePower(pos) end
@@ -169,7 +169,7 @@ function WorldAPI.getRedstonePower(x, y, z) end
 ---
 ---Returns `15` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
 function WorldAPI.getSkyLightLevel(pos) end
@@ -186,7 +186,7 @@ function WorldAPI.getSkyLightLevel(x, y, z) end
 ---
 ---Returns `0` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
 function WorldAPI.getStrongRedstonePower(pos) end
@@ -219,7 +219,7 @@ function WorldAPI.getTimeOfDay(delta) end
 ---
 ---Returns `true` if the world position is not loaded.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return boolean
 function WorldAPI.isOpenSky(pos) end

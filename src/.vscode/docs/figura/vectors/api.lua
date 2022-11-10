@@ -19,7 +19,7 @@ local VectorAPI
 ---read. If the hex string is 3 digits long, it is treated as a short hex string. (`#ABC` ==
 ---`#AABBCC`)
 ---
----Returns `{0, 0, 0}` if the hex string is invalid.
+---Returns `⟨0, 0, 0⟩` if the hex string is invalid.
 ---
 ---Some special strings are also accepted in place of a hex string.
 ---@*error Short hex strings don't actually work.
@@ -29,7 +29,7 @@ function VectorAPI.hexToRGB(hex) end
 
 ---Converts the given HSV values to a color vector.
 ---
----If `hsv` is `nil`, it will default to `{0, 0, 0}`.
+---If `hsv` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param hsv? Vector3
 ---@return Vector3
 function VectorAPI.hsvToRGB(hsv) end
@@ -63,7 +63,7 @@ function VectorAPI.rainbow(speed, offset, saturation, value) end
 ---Converts the given rgb values to a 6-length hex string.  
 ---The `#` is not included.
 ---
----If `col` is `nil`, it will default to `{0, 0, 0}`.
+---If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param col? Vector3
 ---@return string
 function VectorAPI.rgbToHex(col) end
@@ -77,7 +77,7 @@ function VectorAPI.rgbToHex(r, g, b) end
 
 ---Converts the given rgb values to HSV.
 ---
----If `col` is `nil`, it will default to `{0, 0, 0}`.
+---If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param col? Vector3
 ---@return Vector3
 function VectorAPI.rgbToHSV(col) end
@@ -91,7 +91,7 @@ function VectorAPI.rgbToHSV(r, g, b) end
 
 ---Converts the given rgb values to an integer.
 ---
----If `col` is `nil`, it will default to `{0, 0, 0}`.
+---If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param col? Vector3
 ---@return integer
 function VectorAPI.rgbToInt(col) end
@@ -106,7 +106,7 @@ function VectorAPI.rgbToInt(r, g, b) end
 ---Rotates a vector an amount of degrees around an axis.
 ---
 ---If `angle` is `nil`, it will default to `0`.  
----If `vec` or `axis` are `nil`, they will default to `{0, 0, 0}`.
+---If `vec` or `axis` are `nil`, they will default to `⟨0, 0, 0⟩`.
 ---@*vmerror `vec` == `nil` && `axis` == `<Vector3>`
 ---@param angle? number
 ---@param vec? Vector3
@@ -115,7 +115,7 @@ function VectorAPI.rgbToInt(r, g, b) end
 function VectorAPI.rotateAroundAxis(angle, vec, axis) end
 
 ---If `angle`, `x`, `y`, or `z` are `nil`, they will default to `0`.  
----If `axis` is `nil`, it will default to `{0, 0, 0}`.
+---If `axis` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param angle? number
 ---@param x? number
 ---@param y? number
@@ -125,7 +125,7 @@ function VectorAPI.rotateAroundAxis(angle, vec, axis) end
 function VectorAPI.rotateAroundAxis(angle, x, y, z, axis) end
 
 ---If `angle`, `axisX`, `axisY`, or `axisZ` are `nil`, they will default to `0`.  
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param angle? number
 ---@param vec? Vector3
 ---@param axisX? number
@@ -147,7 +147,7 @@ function VectorAPI.rotateAroundAxis(angle, x, y, z, axisX, axisY, axisZ) end
 
 ---Converts the given world position to a position relative to the viewing client's camera.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return Vector3
 function VectorAPI.toCameraSpace(pos) end
@@ -258,7 +258,7 @@ function VectorAPI.vec6(x, y, z, w, t, h) end
 ---looking away.  
 ---The fourth element is the distance of the screen from the world position.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return Vector4
 function VectorAPI.worldToScreenSpace(pos) end

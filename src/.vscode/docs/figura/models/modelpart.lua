@@ -65,7 +65,7 @@ function ModelPart:getChildren() end
 
 ---Gets the color multiplier of this part.
 ---
----This is a multiplier, that means that `{1, 1, 1}` will result in no change and `{0, 0, 0}` will
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will
 ---result in black.
 ---@return Vector3
 function ModelPart:getColor() end
@@ -194,7 +194,7 @@ function ModelPart:partToWorldMatrix() end
 
 ---Sets the pivot offset of this part.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 function ModelPart:offsetPivot(pos) end
 
@@ -206,7 +206,7 @@ function ModelPart:offsetPivot(x, y, z) end
 
 ---Sets the rotation offset of this part.
 ---
----If `rot` is `nil`, it will default to `{0, 0, 0}`.
+---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param rot? Vector3
 function ModelPart:offsetRot(rot) end
 
@@ -218,10 +218,10 @@ function ModelPart:offsetRot(x, y, z) end
 
 ---Sets the color multiplier of this part.
 ---
----This is a multiplier, that means that `{1, 1, 1}` will result in no change and `{0, 0, 0}` will
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will
 ---result in black.
 ---
----If `col` is `nil`, it will default to `{1, 1, 1}`.
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
 ---@param col? Vector3
 function ModelPart:setColor(col) end
 
@@ -264,7 +264,7 @@ function ModelPart:setParentType(parent) end
 
 ---Sets the pivot position of this part.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 function ModelPart:setPivot(pos) end
 
@@ -276,7 +276,7 @@ function ModelPart:setPivot(x, y, z) end
 
 ---Sets the position offset of this part.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 function ModelPart:setPos(pos) end
 
@@ -303,7 +303,7 @@ function ModelPart:setPrimaryTexture(texture, resource) end
 
 ---Sets the rotation of this part.
 ---
----If `rot` is `nil`, it will default to `{0, 0, 0}`.
+---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param rot? Vector3
 function ModelPart:setRot(rot) end
 
@@ -315,7 +315,7 @@ function ModelPart:setRot(x, y, z) end
 
 ---Sets the scale multiplier of this part.
 ---
----If `scale` is `nil`, it will default to `{0, 0, 0}`.
+---If `scale` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param scale? Vector3
 function ModelPart:setScale(scale) end
 
@@ -342,7 +342,7 @@ function ModelPart:setSecondaryTexture(texture, resource) end
 
 ---Sets the UV offset of this part as a percentage of the texture's size.
 ---
----If `uv` is `nil`, it will default to `{0, 0}`.
+---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param uv? Vector2
 function ModelPart:setUV(uv) end
 
@@ -358,7 +358,7 @@ function ModelPart:setUVMatrix(mat) end
 ---Sets the UV offset of this part in pixels.  
 ---Throws if the part has multiple different sized textures on its faces.
 ---
----If `uv` is `nil`, it will default to `{0, 0}`.
+---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param uv? Vector2
 function ModelPart:setUVPixels(uv) end
 

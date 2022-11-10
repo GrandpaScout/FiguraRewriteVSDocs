@@ -141,7 +141,7 @@ function HostAPI:setTitle(text) end
 
 ---Sets the fade-in time, duration, and fade-out times of the HUD title and subtitle in seconds.
 ---
----If `times` is `nil`, it will default to `{0, 0, 0}`.
+---If `times` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param times? Vector3
 function HostAPI:setTitleTimes(times) end
 

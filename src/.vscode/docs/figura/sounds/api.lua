@@ -37,7 +37,7 @@ function SoundAPI:addSound(name, data) end
 ---If `volume` is below `1`, it will change the actual volume of the sound. If it is above `1`, it
 ---will only multiply the distance the sound can be heard from.
 ---
----If `pos` is `nil`, it will default to `{0, 0, 0}`.  
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.  
 ---If `volume` or `pitch` are `nil`, they will default to `1`.  
 ---If `loop` is `nil`, it will default to `false`
 ---@param sound Minecraft.soundID

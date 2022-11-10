@@ -212,7 +212,7 @@ local Vector2
 
 ---Adds the given vector or values to this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector2
@@ -245,7 +245,7 @@ function Vector2:copy() end
 
 ---Divides this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector2
@@ -271,7 +271,7 @@ function Vector2:floor() end
 
 ---Multiplies this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector2
@@ -293,7 +293,7 @@ function Vector2:normalized() end
 
 ---Reduces this vector modulo the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector2
@@ -310,7 +310,7 @@ function Vector2:reduce(x, y) end
 
 ---Sets the elements of this vector to the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector2
@@ -327,7 +327,7 @@ function Vector2:set(x, y) end
 
 ---Subtracts the given vector or values from this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector2
@@ -408,7 +408,7 @@ local Vector3
 
 ---Adds the given vector or values to this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector3
@@ -424,7 +424,7 @@ function Vector3:add(vec) end
 ---@return self
 function Vector3:add(x, y, z) end
 
----Creates and returns a vector `{x, y, z, 1}` using the values of this vector.
+---Creates and returns a vector `⟨x, y, z, 1⟩` using the values of this vector.
 ---@return Vector4
 function Vector3:augmented() end
 
@@ -458,7 +458,7 @@ function Vector3:crossed(vec) end
 
 ---Divides this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector3
@@ -485,7 +485,7 @@ function Vector3:floor() end
 
 ---Multiplies this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector3
@@ -508,7 +508,7 @@ function Vector3:normalized() end
 
 ---Reduces this vector modulo the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector3
@@ -526,7 +526,7 @@ function Vector3:reduce(x, y, z) end
 
 ---Sets the elements of this vector to the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector3
@@ -544,7 +544,7 @@ function Vector3:set(x, y, z) end
 
 ---Subtracts the given vector or values from this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector3
@@ -630,7 +630,7 @@ local Vector4
 
 ---Adds the given vector or values to this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector4
@@ -665,7 +665,7 @@ function Vector4:copy() end
 
 ---Divides this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector4
@@ -693,7 +693,7 @@ function Vector4:floor() end
 
 ---Multiplies this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector4
@@ -717,7 +717,7 @@ function Vector4:normalized() end
 
 ---Reduces this vector modulo the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector4
@@ -736,7 +736,7 @@ function Vector4:reduce(x, y, z, w) end
 
 ---Sets the elements of this vector to the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector4
@@ -755,7 +755,7 @@ function Vector4:set(x, y, z, w) end
 
 ---Subtracts the given vector or values from this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector4
@@ -843,7 +843,7 @@ local Vector5
 
 ---Adds the given vector or values to this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector5
@@ -879,7 +879,7 @@ function Vector5:copy() end
 
 ---Divides this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector5
@@ -908,7 +908,7 @@ function Vector5:floor() end
 
 ---Multiplies this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector5
@@ -933,7 +933,7 @@ function Vector5:normalized() end
 
 ---Reduces this vector modulo the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector5
@@ -953,7 +953,7 @@ function Vector5:reduce(x, y, z, w, t) end
 
 ---Sets the elements of this vector to the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector5
@@ -973,7 +973,7 @@ function Vector5:set(x, y, z, w, t) end
 
 ---Subtracts the given vector or values from this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector5
@@ -1057,7 +1057,7 @@ local Vector6
 
 ---Adds the given vector or values to this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector6
@@ -1094,7 +1094,7 @@ function Vector6:copy() end
 
 ---Divides this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector6
@@ -1124,7 +1124,7 @@ function Vector6:floor() end
 
 ---Multiplies this vector by the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector6
@@ -1150,7 +1150,7 @@ function Vector6:normalized() end
 
 ---Reduces this vector modulo the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector6
@@ -1171,7 +1171,7 @@ function Vector6:reduce(x, y, z, w, t, h) end
 
 ---Sets the elements of this vector to the given vector or values.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector6
@@ -1192,7 +1192,7 @@ function Vector6:set(x, y, z, w, t, h) end
 
 ---Subtracts the given vector or values from this vector.
 ---
----If `vec` is `nil`, it will default to `{0, 0, 0, 0, 0, 0}`.
+---If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
 ---@generic self
 ---@param self self
 ---@param vec? Vector6
