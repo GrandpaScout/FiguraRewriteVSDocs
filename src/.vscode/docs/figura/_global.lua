@@ -51,6 +51,9 @@ avatar = {}
 ---@type ClientAPI
 client = {}
 
+---@type ConfigAPI
+config = {}
+
 ---@type EventsAPI
 events = {}
 
@@ -124,6 +127,9 @@ renderer = {}
 
 ---@type SoundAPI
 sounds = {}
+
+---@type TextureAPI
+textures = {}
 
 ---The Minecraft entity the current avatar is attached to.
 ---<!--
