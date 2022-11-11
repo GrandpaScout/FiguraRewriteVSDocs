@@ -1,7 +1,7 @@
 ---
 name: Documentation Issue
 about: Create an issue about the documentation.
-title: "[ISSUE | 0.1.0-rc.?] "
+title: "[ISSUE | 0.1.0-rc.???] "
 labels: ''
 assignees: ''
 
@@ -9,7 +9,7 @@ assignees: ''
 
 <!--
   Everything between the "<!-​-" and "-​->" is a comment.
-  This will not show up in the issue report and are just here to help you write the report.
+  This will not show up in the issue report and is just here to help you write the report.
 -->
 
 ## **Checklist:** <!-- Making sure you payed attention. Fill this out first. -->
