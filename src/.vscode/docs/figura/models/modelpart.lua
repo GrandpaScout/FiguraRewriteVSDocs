@@ -40,7 +40,10 @@ function ModelPart:addItem(name) end
 ---@return TextTask
 function ModelPart:addText(name) end
 
----Removes a previously added render task.
+---Removes a previously added render task by name.
+---If no name is given, all render tasks are removed from this part.
+function ModelPart:removeTask() end
+
 ---@param name string
 function ModelPart:removeTask(name) end
 
@@ -147,7 +150,8 @@ function ModelPart:getScale() end
 ---@return ModelPart.renderType?
 function ModelPart:getSecondaryRenderType() end
 
----Gets the render task with the given name from this part.
+---Gets the render task with the given name from this part.  
+---If no name is given, a list of all render tasks on this part is returnd.
 ---
 ---If the task is confirmed to be of a certain type, add `--[[@as ???Task]]` after the function call
 ---to allow the Lua Server to know which task type it should expect.
@@ -159,9 +163,18 @@ function ModelPart:getSecondaryRenderType() end
 ---      │}                      │
 ---      └───────────────────────┘
 ---```
+---@return {[string]?: RenderTask.any}
+function ModelPart:getTask() end
+
 ---@param name string
 ---@return RenderTask.any
 function ModelPart:getTask(name) end
+
+---Gets a list of all the textures this part uses.
+---
+---This does not do anything if used on a group part.
+---@return Texture[]
+function ModelPart:getTextures() end
 
 ---Gets the width and height of this part's texture in pixels.
 ---
@@ -192,6 +205,18 @@ function ModelPart:getUVPixels() end
 ---Returns `nil` if it is inheriting from its parent.
 ---@return boolean?
 function ModelPart:getVisible() end
+
+---Gets if an animation is overriding the vanilla position of this part.
+---@return boolean
+function ModelPart:overrideVanillaPos() end
+
+---Gets if an animation is overriding the vanilla rotation of this part.
+---@return boolean
+function ModelPart:overrideVanillaRot() end
+
+---Gets if an animation is overriding the vanilla scale of this part.
+---@return boolean
+function ModelPart:overrideVanillaScale() end
 
 ---Gets a matrix which transforms a point from this part's position to a world position.
 ---
@@ -308,12 +333,14 @@ function ModelPart:setPrimaryRenderType(renderType) end
 
 ---Sets the primary texture of this part.  
 ---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.
+---texture for this part.  
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura texture to use as the texture
+---for this part.
 ---
 ---If `texture` is `nil`, it will default to `"PRIMARY"`.
 ---@param texture ModelPart.textureType
----@param resource? string
-function ModelPart:setPrimaryTexture(texture, resource) end
+---@param extra? string | Texture
+function ModelPart:setPrimaryTexture(texture, extra) end
 
 ---Sets the rotation of this part.
 ---
@@ -347,12 +374,14 @@ function ModelPart:setSecondaryRenderType(renderType) end
 
 ---Sets the secondary texture of this part.  
 ---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.
+---texture for the part.  
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura texture to use as the texture
+---for this part.
 ---
 ---If `texture` is `nil`, it will default to `"SECONDARY"`.
 ---@param texture ModelPart.textureType
----@param resource? string
-function ModelPart:setSecondaryTexture(texture, resource) end
+---@param extra? string | Texture
+function ModelPart:setSecondaryTexture(texture, extra) end
 
 ---Sets the UV offset of this part as a percentage of the texture's size.
 ---

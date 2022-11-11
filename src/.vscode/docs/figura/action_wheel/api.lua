@@ -46,17 +46,21 @@
 ---@class ActionWheelAPI
 ---The function that is executed when the screen is left-clicked while the action wheel is open.
 ---<!--
----@field leftClick? ClickAction.clickFunc
+---@field leftClick? Action.clickFunc
 ---The function that is executed when the screen is right-clicked while the action wheel is open.
 ---<!--
----@field rightClick? ClickAction.clickFunc
+---@field rightClick? Action.clickFunc
 ---The function that is executed when the screen is scrolled while the action wheel is open.
 ---<!--
----@field scroll? ScrollAction.scrollFunc
+---@field scroll? Action.scrollFunc
 local ActionWheelAPI
 
 
 ---===== METHODS =====---
+
+---Creates a new action that is not tied to a page.
+---@return Action
+function ActionWheelAPI:createAction() end
 
 ---Creates a new page for use in the action wheel.
 ---

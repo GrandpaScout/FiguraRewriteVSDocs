@@ -201,6 +201,10 @@ function TextTask:hasShadow() end
 ---@return boolean
 function TextTask:isCentered() end
 
+---Gets if this task's text is anchored right.
+---@return boolean
+function TextTask:isRight() end
+
 
 ---===== SETTERS =====---
 
@@ -242,6 +246,16 @@ function TextTask:outlineColor(col) end
 ---@return self
 function TextTask:outlineColor(r, g, b) end
 
+---Sets if this task should be anchored right.  
+---Does nothing if this task is centered.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function TextTask:right(state) end
+
 ---Sets if this task's text should have a shadow.
 ---
 ---This has no immediate effect if this task also has an outline.
@@ -257,4 +271,8 @@ function TextTask:shadow(state) end
 ---Sets this task's text.
 ---
 ---If `text` is `nil`, it will default to `""`.
+---@generic self
+---@param self self
+---@param text? string
+---@return self
 function TextTask:text(text) end

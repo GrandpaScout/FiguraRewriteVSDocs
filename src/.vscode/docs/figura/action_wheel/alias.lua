@@ -6,35 +6,17 @@
 ---  ACTION                                                                                      ---
 ---==============================================================================================---
 
----A union of all Action sub-types.
----<!--
----@alias Action.any ClickAction | ToggleAction | ScrollAction
-
-
----==============================================================================================---
----  CLICK ACTION extends ACTION                                                                 ---
----==============================================================================================---
-
 ---A function used by a ClickAction when it is clicked.
----@alias ClickAction.clickFunc fun(self?: ClickAction)
-
-
----==============================================================================================---
----  TOGGLE ACTION extends ACTION                                                                ---
----==============================================================================================---
+---@alias Action.clickFunc fun(self?: Action)
 
 ---A function used by a ToggleAction when it is toggled on.
----@alias ToggleAction.toggleFunc fun(state?: boolean, self?: ToggleAction)
+---@alias Action.toggleFunc fun(state?: boolean, self?: Action)
+
 ---A function used by a ToggleAction when it is toggled off.
----@alias ToggleAction.untoggleFunc fun(state?: false, self?: ToggleAction)
-
-
----==============================================================================================---
----  SCROLL ACTION extends ACTION                                                                ---
----==============================================================================================---
+---@alias Action.untoggleFunc fun(state?: false, self?: Action)
 
 ---A function used by a ScrollAction when it is scrolled.
----@alias ScrollAction.scrollFunc fun(dir?: integer, self?: ScrollAction)
+---@alias Action.scrollFunc fun(dir?: integer, self?: Action)
 
 
 ---==============================================================================================---

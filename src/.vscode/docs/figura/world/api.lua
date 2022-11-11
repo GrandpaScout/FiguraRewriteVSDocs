@@ -18,14 +18,12 @@ local WorldAPI
 ---Block properties can be defined by adding `[prop1=state1,prop2=state2,...]` after the block id.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@*error Nonsense error if `pos` != `nil` && `pos` != `<Vector3>`
 ---@param block Minecraft.blockID
 ---@param pos? Vector3
 ---@return BlockState
 function WorldAPI.newBlock(block, pos) end
 
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
----@*error Nonsense error if `x` != `nil` && `x` != `<number>`
 ---@param block Minecraft.blockID
 ---@param x? number
 ---@param y? number

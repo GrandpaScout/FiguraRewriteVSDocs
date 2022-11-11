@@ -57,10 +57,10 @@ function EventGeneric:register(func, name) end
 
 
 ---==============================================================================================---
----  EVENT.RENDER extends EVENT                                                                 ---
+---  EVENT.RENDER extends EVENT                                                                  ---
 ---==============================================================================================---
 
----A generic render event with a single `delta` parameter.
+---A generic render event with a `delta` and a `ctx` parameter.
 ---@class Event.Render: Event
 local EventRender
 
@@ -78,12 +78,12 @@ function EventRender:register(func, name) end
 
 
 ---==============================================================================================---
----  EVENT.PREVIEWRENDER extends EVENT                                                           ---
+---  EVENT.WORLDRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 
----A render event with a `delta` parameter and a `ctx` parameter.
----@class Event.PreviewRender: Event
-local EventPreviewRender
+---A render event with a single `delta` parameter.
+---@class Event.WorldRender: Event
+local EventWorldRender
 
 
 ---===== METHODS =====---
@@ -93,9 +93,9 @@ local EventPreviewRender
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
----@param func Event.PreviewRender.func
+---@param func Event.WorldRender.func
 ---@param name? string
-function EventPreviewRender:register(func, name) end
+function EventWorldRender:register(func, name) end
 
 
 ---==============================================================================================---
@@ -178,5 +178,26 @@ local EventReceiveMessage
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
 ---@param func Event.ReceiveMessage.func
+---@param name? string
+function EventReceiveMessage:register(func, name) end
+
+
+---==============================================================================================---
+---  EVENT.USEITEM extends EVENT                                                                 ---
+---==============================================================================================---
+
+---An event with an `item`, an `anim`, and a `particle_count` parameter.
+---@class Event.UseItem: Event
+local EventUseItem
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@param func Event.UseItem.func
 ---@param name? string
 function EventReceiveMessage:register(func, name) end

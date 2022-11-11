@@ -3,8 +3,9 @@
 
 
 ---==============================================================================================---
----  KEYBIND                                                                                     ---
+---  CONFIGAPI                                                                                   ---
 ---==============================================================================================---
 
----A function used by the `onPress` and `onRelease` fields of keybinds.
----@alias Keybind.func fun(self?: Keybind): boolean?
+---A valid type for the config API.
+---<!--
+---@alias ConfigAPI.validType nil | boolean | number | string | table | Vector.any | Matrix.any

@@ -12,13 +12,15 @@
 ---Determines if this keybind should be processed while a GUI is open.
 ---@field gui boolean
 ---The function this keybind should execute when the key is pressed.
+---
+---If `true` is returned. Block any Minecraft keybind bound to the same key as this keybind.
 ---<!--
 ---@field onPress Keybind.func
 ---The function this keybind should execute when the key is released.
+---
+---If `true` is returned. Block any Minecraft keybind bound to the same key as this keybind.
 ---<!--
 ---@field onRelease Keybind.func
----Determines vanilla keybinds bound to the same key should not be processed.
----@field override boolean
 local Keybind
 
 

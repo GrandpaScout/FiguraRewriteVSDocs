@@ -759,6 +759,10 @@ function LivingEntityAPI:getActiveHand() end
 ---@return ItemStack
 function LivingEntityAPI:getActiveItem() end
 
+---Gets the amount of time this entity has been using its current active item in ticks.
+---@return integer
+function LivingEntityAPI:getActiveItemTime() end
+
 ---Gets the amount of armor this entity has.
 ---@return number
 function LivingEntityAPI:getArmor() end
@@ -806,6 +810,20 @@ function LivingEntityAPI:getStatusEffects() end
 ---@return integer
 function LivingEntityAPI:getStingerCount() end
 
+---Gets the arm this entity is currently swinging.
+---
+---Returns `nil` if no arm is swinging.
+---@return LivingEntityAPI.hand?
+function LivingEntityAPI:getSwingArm() end
+
+---Gets how long it will take this entity to swing its arm in ticks.
+---@return integer
+function LivingEntityAPI:getSwingDuration() end
+
+---Gets how long this entity has been swinging its arm in ticks.
+---@return integer
+function LivingEntityAPI:getSwingTime() end
+
 ---Gets if this entity is using a climbable block.
 ---@return boolean
 function LivingEntityAPI:isClimbing() end
@@ -813,6 +831,10 @@ function LivingEntityAPI:isClimbing() end
 ---Gets if this entity is left-handed.
 ---@return boolean
 function LivingEntityAPI:isLeftHanded() end
+
+---Gets if this entity is currently swinging its arm.
+---@return boolean
+function LivingEntityAPI:isSwingingArm() end
 
 ---Gets if this entity is currently using an item.
 ---@return boolean

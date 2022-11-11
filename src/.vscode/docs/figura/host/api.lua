@@ -24,6 +24,16 @@ function HostAPI:appendChatHistory(message) end
 ---Clears the currently active title and subtitle text.
 function HostAPI:clearTitle() end
 
+---Saves the given texture to cache as a PNG file.
+---
+---This is meant for debugging purposes.
+---@param tex Texture
+function HostAPI:saveTexture(tex) end
+
+---Saves a snapshot of the screen as a texture.
+---@return Texture
+function HostAPI:screenshot() end
+
 ---Sends a command as the player. The `/` is optional.
 ---
 ---Minecraft will automatically block commands that require signed arguments (such as `/say`.)

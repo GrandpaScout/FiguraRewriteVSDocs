@@ -22,8 +22,6 @@
 ---  * `SKULL_RENDER`
 ---  * `POST_WORLD_RENDER`
 ---  * `POST_RENDER`
----  * `PREVIEW_RENDER`
----  * `POST_PREVIEW_RENDER`
 ---
 ---The following events have an untested or undetermined order:
 ---* `CHAT_SEND_MESSAGE`
@@ -78,23 +76,14 @@
 ---`0` if the mouse is scrolled left or right.
 ---<!--
 ---@field MOUSE_SCROLL Event.MouseScroll | Event.MouseScroll.func
----This event runs after an avatar preview has rendered.
----
----This event uses the following callback:
----```lua
----function(delta: number, ctx: string)
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`ctx`** The context of this preview.
----<!--
----@field POST_PREVIEW_RENDER Event.PreviewRender | Event.PreviewRender.func
 ---This event runs after the avatar has rendered.
 ---
 ---This event uses the following callback:
 ---```lua
 ---function(delta: number)
 ---```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
+---**`ctx`** The context of this render event.
 ---<!--
 ---@field POST_RENDER Event.Render | Event.Render.func
 ---This event runs after the world has rendered.
@@ -106,23 +95,14 @@
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.
 ---<!--
 ---@field POST_WORLD_RENDER Event.Render | Event.Render.func
----This event runs before an avatar preview is rendered.
+---This event runs before the avatar is rendered.
 ---
 ---This event uses the following callback:
 ---```lua
 ---function(delta: number, ctx: string)
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`ctx`** The context of this preview.
----<!--
----@field PREVIEW_RENDER Event.Render | Event.Render.func
----This event runs before the avatar is rendered.
----
----This event uses the following callback:
----```lua
----function(delta: number)
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---**`ctx`** The context of this render event.
 ---<!--
 ---@field RENDER Event.Render | Event.Render.func
 ---This event runs before a skull block is rendered.  
@@ -130,10 +110,11 @@
 ---
 ---This event uses the following callback:
 ---```lua
----function(delta: number, pos: Vector3)
+---function(delta: number, pos: Vector3): boolean?
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
 ---**`pos`** The position of the skull block being rendered.
+---**`return #1`** Whether the currently rendering skull should be hidden instead.
 ---<!--
 ---@field SKULL_RENDER Event.SkullRender | Event.SkullRender.func
 ---This event runs every tick while the player entity is loaded.
@@ -161,5 +142,16 @@
 ---```
 ---<!--
 ---@field WORLD_TICK Event.Generic | Event.Generic.func
+---This event runs twice every 4 ticks while an item is being used.
+---
+---This event uses the following callback:
+---```lua
+---function(item: ItemStack, anim: string, ptc_count: integer)
+---```
+---**`item`** The item being used.  
+---**`anim`** The animation of the item being used.  
+---**`ptc_count`** The amount of particles this item will create.
+---<!--
+---@field USE_ITEM Event.UseItem | Event.UseItem.func
 local EventsAPI
 

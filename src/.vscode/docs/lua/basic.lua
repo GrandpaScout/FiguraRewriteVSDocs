@@ -319,6 +319,7 @@ function tostring(v) end
 ---~~[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-print"])~~  
 ---This function has been modified by Figura and does not work how it does in normal Lua 5.2.
 ---@param ... any
+---@return string
 function print(...) end
 
 ---If `index` is a number, returns all arguments after argument number `index`; a negative number

@@ -48,6 +48,8 @@ function math.lerp(a, b, t) end
 ---The shortest path to the destination angle will always be taken, even if it ends up with the
 ---result being out of the 0 to 360 (or -180 to 180) bounds.
 ---
+---The final number will be reduced modulo 360.
+---
 ---Numbers and vectors can go in *any* of the three parameters, but only *one* type of vector may be
 ---used maximum.  
 ---If any vector type is used, the return will be the type of that vector.
@@ -59,8 +61,8 @@ function math.lerp(a, b, t) end
 ---|        /      |  ╪ <t> 0.5 = 7.5°
 ---|        `.     |  ┼
 --- \         `.  /   ┼
----  `.         `.    ╧     1 = -45°
----    `-_____-'  `- <b>(315° -> -45°)
+---  `.         `.    ╧     1 = 315°
+---    `-_____-'  `- <b>(315°)
 ---
 ---
 ---```

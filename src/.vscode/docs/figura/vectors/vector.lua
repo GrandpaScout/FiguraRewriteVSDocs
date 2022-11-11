@@ -154,6 +154,10 @@ function Vector:toRad() end
 ---@return string
 function Vector:toString() end
 
+---Converts this vector into separate numbers and returns them.
+---@return number ...
+function Vector:unpack() end
+
 
 ---===== GETTERS =====---
 

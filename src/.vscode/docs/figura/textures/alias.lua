@@ -3,8 +3,8 @@
 
 
 ---==============================================================================================---
----  KEYBIND                                                                                     ---
+---  TEXTURE                                                                                     ---
 ---==============================================================================================---
 
----A function used by the `onPress` and `onRelease` fields of keybinds.
----@alias Keybind.func fun(self?: Keybind): boolean?
+---A function that can be applied to a texture.
+---@alias Texture.applyFunc fun(col?: Vector4, x?: integer, y?: integer): Vector4?

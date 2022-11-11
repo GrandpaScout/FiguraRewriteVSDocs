@@ -144,6 +144,14 @@ world = {}
 ---  FUNCTIONS                                                                                   ---
 ---==============================================================================================---
 
+---Gets a list of all script files in the given directory.  
+---Searches the avatar root if no dir is given.
+---
+---If `recursive` is set, files in subdirectories will be listed.
+---@param dir? string
+---@param recursive? boolean
+---@return string[]
+function listFiles(dir, recursive) end
 
 ---Alias of `print`.
 ---> ***
@@ -161,6 +169,7 @@ world = {}
 ---> * `userdata`: Yellow.
 ---> ***
 ---@param ... any
+---@return string
 function log(...) end
 
 ---Alias of `printJson`.
@@ -168,6 +177,7 @@ function log(...) end
 ---> Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
 ---> ***
 ---@param json string
+---@return string
 function logJson(json) end
 
 ---Alias of `printTable`.
@@ -177,15 +187,22 @@ function logJson(json) end
 --->
 ---> If a non-table value is given, it is printed similar to `print`. (Except for strings, which get
 ---> double quotes around them.)
+--->
+---> If `silent` is set, the table will not be printed to chat, but will still be returned as a
+---> string.
 ---> ***
 ---
----If `depth` is `nil`, it will default to `1`.
+---If `depth` is `nil`, it will default to `1`.  
+---If `silent` is `nil`, it will default to `false`.
 ---@param t any
----@param depth integer
-function logTable(t, depth) end
+---@param depth? integer
+---@param silent? boolean
+---@return string
+function logTable(t, depth, silent) end
 
 ---Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
 ---@param json string
+---@return string
 function printJson(json) end
 
 ---Prints the contents of the given table or userdata object to chat down to the specified depth.  
@@ -194,10 +211,13 @@ function printJson(json) end
 ---If a non-table value is given, it is printed similar to `print`. (Except for strings, which get
 ---double quotes around them.)
 ---
----If `depth` is `nil`, it will default to `1`.
+---If `depth` is `nil`, it will default to `1`.  
+---If `silent` is `nil`, it will default to `false`.
 ---@param t any
----@param depth integer
-function printTable(t, depth) end
+---@param depth? integer
+---@param silent? boolean
+---@return string
+function printTable(t, depth, silent) end
 
 ---Alias of `<VectorsAPI>.vec`.
 ---> ***

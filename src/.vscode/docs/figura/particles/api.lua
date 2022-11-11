@@ -3,11 +3,22 @@
 
 
 ---==============================================================================================---
+---  SOUNDAPI-INTERNAL                                                                           ---
+---==============================================================================================---
+
+---**INTERNAL CLASS**&emsp;*Do not use this!*
+---
+---Contains generic string field for indexing.
+---@class ParticleAPI.*INTERNAL*
+---@field [string] Particle
+
+
+---==============================================================================================---
 ---  PARTICLEAPI                                                                                 ---
 ---==============================================================================================---
 
 ---An API for handling particle effects.
----@class ParticleAPI
+---@class ParticleAPI: ParticleAPI.*INTERNAL*
 local ParticleAPI
 
 
@@ -18,12 +29,14 @@ local ParticleAPI
 ---If `posVel` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
 ---@param name Minecraft.particleID
 ---@param posVel? Vector6
+---@return Particle
 function ParticleAPI:addParticle(name, posVel) end
 
 ---If `pos` or `vel` are `nil`, they will default to `⟨0, 0, 0⟩`.
 ---@param name Minecraft.particleID
 ---@param pos? Vector3
 ---@param vel? Vector3
+---@return Particle
 function ParticleAPI:addParticle(name, pos, vel) end
 
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.  
@@ -33,6 +46,7 @@ function ParticleAPI:addParticle(name, pos, vel) end
 ---@param velX? number
 ---@param velY? number
 ---@param velZ? number
+---@return Particle
 function ParticleAPI:addParticle(name, pos, velX, velY, velZ) end
 
 ---If `posX`, `posY`, or `posZ` are `nil`, they will default to `0`.  
@@ -42,6 +56,7 @@ function ParticleAPI:addParticle(name, pos, velX, velY, velZ) end
 ---@param posY? number
 ---@param posZ? number
 ---@param vel? Vector3
+---@return Particle
 function ParticleAPI:addParticle(name, posX, posY, posZ, vel) end
 
 ---If `posX`, `posY`, `posZ`, `velX`, `velY`, or `velZ` are `nil`, they will default to `0`.
@@ -52,4 +67,8 @@ function ParticleAPI:addParticle(name, posX, posY, posZ, vel) end
 ---@param velX? number
 ---@param velY? number
 ---@param velZ? number
+---@return Particle
 function ParticleAPI:addParticle(name, posX, posY, posZ, velX, velY, velZ) end
+
+---Removes all particles spawned by this avatar.
+function ParticleAPI:removeParticles() end

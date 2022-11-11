@@ -14,30 +14,32 @@
 ---  EVENT.RENDER extends EVENT                                                                 ---
 ---==============================================================================================---
 
----A function used by `RENDER` events.
----@alias Event.Render.func fun(delta?: number)
+---A valid render context.
+---@alias Event.Render.context
+---| "FIGURA_GUI"    # A Figura GUI is rendering the avatar.
+---| "MINECRAFT_GUI" # A Minecraft GUI is rendering the avatar.
+---| "PAPERDOLL"     # The Figura paper doll is rendering the avatar.
+---| "FIRST_PERSON"  # The first-person view is rendering the avatar.
+---| "RENDER"        # The third-person view is rendering the avatar.
+---| "OTHER"         # Some other view is rendering the avatar.
+
+---A function used by the `RENDER` event.
+---@alias Event.Render.func fun(delta?: number, ctx?: Event.Render.context)
 
 
 ---==============================================================================================---
----  EVENT.PREVIEWRENDER extends EVENT                                                           ---
+---  EVENT.WORLDRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 
----A valid preview context.
----@alias Event.PreviewRender.context
----| "FIGURA_GUI" # A Figura GUI is rendering this preview.
----| "MINECRAFT_GUI" # A Minecraft GUI is rendering this preview.
----| "PAPERDOLL" # The Figura paper doll is rendering this preview.
-
 ---A function used by `RENDER` events.
----@alias Event.PreviewRender.func fun(delta?: number, ctx?: Event.PreviewRender.context)
-
+---@alias Event.WorldRender.func fun(delta?: number)
 
 ---==============================================================================================---
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 
 ---A function used by the `SKULL_RENDER` event.
----@alias Event.SkullRender.func fun(delta?: number, pos?: Vector3)
+---@alias Event.SkullRender.func fun(delta?: number, pos?: Vector3 | nil): boolean?
 
 
 ---==============================================================================================---
@@ -62,3 +64,11 @@
 
 ---A function used by the `CHAT_RECEIVE_MESSAGE` event.
 ---@alias Event.ReceiveMessage.func fun(message?: string)
+
+
+---==============================================================================================---
+---  EVENT.USEITEM extends EVENT                                                                 ---
+---==============================================================================================---
+
+---A function used by the `CHAT_RECEIVE_MESSAGE` event.
+---@alias Event.UseItem.func fun(item?: ItemStack, anim?: ItemStack.useAction, ptc_count?: integer)

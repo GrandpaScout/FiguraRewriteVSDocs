@@ -8,6 +8,9 @@
 
 ---A Minecraft biome.
 ---@class Biome
+---The namespaced id of this biome.
+---<!--
+---@field name Minecraft.biomeID
 local Biome
 
 
@@ -28,10 +31,6 @@ function Biome:getFoliageColor() end
 ---Gets the grass color of this biome.
 ---@return Vector3
 function Biome:getGrassColor() end
-
----Gets the namespaced id of this biome.
----@return Minecraft.biomeID
-function Biome:getName() end
 
 ---Gets the position that this Biome object uses for calculations.
 ---@return Vector3

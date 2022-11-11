@@ -89,6 +89,7 @@
 ---| "CAPE"      # The player's cape.
 ---| "ELYTRA"    # The base elytra texture. To use the player's elytra, use `"CAPE"`.
 ---| "RESOURCE"  # A Minecraft resource.
+---| "CUSTOM"    # A custom Figura texture.
 
 
 ---==============================================================================================---

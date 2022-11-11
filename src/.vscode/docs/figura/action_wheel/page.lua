@@ -13,33 +13,19 @@ local Page
 
 ---===== METHODS =====---
 
----Creates a new `ClickAction` inside of this page.
+---Creates a new `Action` inside of this page.
 ---
 ---If `index` is `nil`, the action will be placed in the first available spot.
 ---@param index? Page.index
----@return ClickAction
+---@return Action
 function Page:newAction(index) end
-
----Creates a new `ToggleAction` inside of this page.
----
----If `index` is `nil`, the action will be placed in the first available spot.
----@param index? Page.index
----@return ClickAction
-function Page:newToggle(index) end
-
----Creates a new `ScrollAction` inside of this page.
----
----If `index` is `nil`, the action will be placed in the first available spot.
----@param index? Page.index
----@return ClickAction
-function Page:newScroll(index) end
 
 
 ---===== GETTERS =====---
 
 ---Gets the action at the given index in this page.
 ---@param index Page.index
----@return Action.any?
+---@return Action?
 function Page:getAction(index) end
 
 

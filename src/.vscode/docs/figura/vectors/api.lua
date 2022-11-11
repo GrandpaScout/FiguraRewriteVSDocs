@@ -47,18 +47,6 @@ function VectorAPI.hsvToRGB(h, s, v) end
 ---@return Vector3
 function VectorAPI.intToRGB(int) end
 
----Creates a color vector that has its hue shifted based on the current game time and the given
----values.
----
----If `speed`, `saturation`, or `value` are `nil`, they will default to `1`.  
----If `offset` is `nil`, it will default to `0`.
----@param speed? number
----@param offset? number
----@param saturation? number
----@param value? number
----@return Vector3
-function VectorAPI.rainbow(speed, offset, saturation, value) end
-
 ---Converts the given rgb values to a 6-length hex string.  
 ---The `#` is not included.
 ---

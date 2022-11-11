@@ -21,12 +21,24 @@ local ClientAPI
 ---@return ClientAPI.comparison
 function ClientAPI.compareVersions(compare, to) end
 
+---Converts a 4-int UUID to a string UUID.
+---@param i1 integer
+---@param i2 integer
+---@param i3 integer
+---@param i4 integer
+---@return string
+function ClientAPI.intUUIDToString(i1, i2, i3, i4) end
+
 
 ---===== GETTERS =====---
 
 ---Gets the code for the viewing client's selected language.
 ---@return Minecraft.langCode
 function ClientAPI.getActiveLang() end
+
+---Gets a list of the viewing client's active resource packs' names.
+---@return string[]
+function ClientAPI.getActiveResourcePacks() end
 
 ---Gets the viewing client's allocated memory in bytes.
 ---@return integer
@@ -197,6 +209,10 @@ function ClientAPI.getVersion() end
 ---@return string | "Fabric"
 function ClientAPI.getVersionType() end
 
+---Gets the viewing client as a player.
+---@return PlayerAPI
+function ClientAPI.getViewer() end
+
 ---Gets the size of the viewing client's Minecraft window in pixels.
 ---@return Vector2
 function ClientAPI.getWindowSize() end
@@ -208,6 +224,11 @@ function ClientAPI.hasIris() end
 ---Gets if the viewing client has an Iris Shader enabled.
 ---@return boolean
 function ClientAPI.hasIrisShader() end
+
+---Gets if the viewing client has the given resource loaded.
+---@param path string
+---@return boolean
+function ClientAPI.hasResource(path) end
 
 ---Gets if the viewing client has the debug screen enabled.
 ---@return boolean

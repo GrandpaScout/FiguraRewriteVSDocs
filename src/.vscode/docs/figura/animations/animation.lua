@@ -60,9 +60,17 @@ function Animation:getLoopDelay() end
 ---@return number
 function Animation:getOffset() end
 
----Gets if this animation overrides vanilla position and rotation changes for parts with keyframes.
+---Gets if this animation overrides vanilla position changes.
 ---@return boolean
-function Animation:getOverride() end
+function Animation:getOverridePos() end
+
+---Gets if this animation overrides vanilla rotation changes.
+---@return boolean
+function Animation:getOverrideRot() end
+
+---Gets if this animation overrides vanilla scale changes.
+---@return boolean
+function Animation:getOverrideScale() end
 
 ---Gets this animation's current play state.
 ---@return Animation.playStates
@@ -138,7 +146,7 @@ function Animation:loopDelay(time) end
 ---@return self
 function Animation:offset(time) end
 
----Sets if this animation overrides vanilla position and rotation changes for parts with keyframes.
+---Sets if this animation overrides vanilla position, rotation, and scale changes.
 ---
 ---If `state` is `nil`, it will default to `false`.
 ---@generic self
@@ -146,6 +154,33 @@ function Animation:offset(time) end
 ---@param state? boolean
 ---@return self
 function Animation:override(state) end
+
+---Sets if this animation overrides vanilla position changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function Animation:overridePos(state) end
+
+---Sets if this animation overrides vanilla rotation changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function Animation:overrideRot(state) end
+
+---Sets if this animation overrides vanilla scale changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function Animation:overrideScale(state) end
 
 ---Sets this animation's priority.
 ---

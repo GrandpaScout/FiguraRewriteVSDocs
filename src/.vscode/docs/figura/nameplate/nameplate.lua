@@ -25,7 +25,9 @@ function Nameplate:getText() end
 ---===== SETTERS =====---
 
 ---Sets the text of this nameplate.
----@param text string
+---
+---Control the position of the Figura badge by placing `${badges}` in the text.
+---@param text? string
 function Nameplate:setText(text) end
 
 
@@ -43,7 +45,9 @@ local NameplateGroup
 ---===== SETTERS =====---
 
 ---Sets the text of all nameplates in this group.
----@param text string
+---
+---Control the position of the Figura badge by placing `${badges}` in the text.
+---@param text? string
 function NameplateGroup:setText(text) end
 
 

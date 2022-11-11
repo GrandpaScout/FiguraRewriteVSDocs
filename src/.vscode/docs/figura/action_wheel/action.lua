@@ -11,16 +11,26 @@
 ---This should never be used directly unless the type of action does not need to be known.  
 ---If the type of subaction will be inferred later in your function, use `Action.any` instead.
 ---@class Action
+---The function that is executed when this action is left-clicked.
+---<!--
+---@field leftClick? Action.clickFunc
+---The function that is executed when this action is right-clicked.
+---<!--
+---@field rightClick? Action.clickFunc
+---The function that is executed when this action is scrolled.
+---<!--
+---@field scroll Action.scrollFunc?
+---The function that is executed when this action is toggled on.  
+---If `.untoggle` is `nil`, this is also executed when this action is toggled off.
+---<!--
+---@field toggle? Action.toggleFunc
+---The function that is executed when this action is toggled off.
+---<!--
+---@field untoggle? Action.untoggleFunc
 local Action
 
 
 ---===== GETTERS =====----
-
----Gets the title that appears when this action is hovered over.
----
----Returns `nil` if the title has not been set or has been reset.
----@return string?
-function Action:getTitle() end
 
 ---Gets the background color of this action.
 ---
@@ -34,17 +44,30 @@ function Action:getColor() end
 ---@return Vector3?
 function Action:getHoverColor() end
 
+---Gets the title that appears when this action is hovered over.
+---
+---Returns `nil` if the title has not been set or has been reset.
+---@return string?
+function Action:getTitle() end
+
+---Gets the title that appears when this action is hovered over while toggled on.
+---
+---Returns `nil` if the title has not been set or has been reset.
+---@return string?
+function Action:getToggleTitle() end
+
+---Gets the background color of this action while it is toggled on.
+---
+---Returns `nil` if the color has not been set or has been reset.
+---@return Vector3?
+function Action:getToggleColor() end
+
+---Gets if this action is toggled on.
+---@return boolean
+function Action:isToggled() end
+
 
 ---===== SETTERS =====----
-
----Sets the title that appears when this action is hovered over.
----
----If `title` is `nil`, it will default to `""`.
----@generic self
----@param self self
----@param title? string
----@return self
-function Action:title(title) end
 
 ---Sets the background color of this action.
 ---
@@ -82,15 +105,6 @@ function Action:hoverColor(color) end
 ---@return self
 function Action:hoverColor(r, g, b) end
 
----Sets the item to be used as the icon of this action.
----
----If `item` is `nil`, it will be removed.
----@generic self
----@param self self
----@param item? ItemStack | Minecraft.itemID
----@return self
-function Action:item(item) end
-
 ---Sets the item to be used as the icon of this action when it is hovered over.
 ---
 ---If `item` is `nil`, it will be removed.
@@ -100,128 +114,43 @@ function Action:item(item) end
 ---@return self
 function Action:hoverItem(item) end
 
-
----==============================================================================================---
----  CLICK ACTION extends ACTION                                                                 ---
----==============================================================================================---
-
----An action on the action wheel that responds to being clicked.
+---Sets the item to be used as the icon of this action.
 ---
----This action can be configured to respond to being left and right clicked separately.
----@class ClickAction : Action
----The function that is executed when this action is left-clicked.
----<!--
----@field leftClick? ClickAction.clickFunc
----The function that is executed when this action is right-clicked.
----<!--
----@field rightClick? ClickAction.clickFunc
-local ClickAction
-
-
----===== SETTERS =====---
-
----Sets the function that executed when this action is left-clicked.
----@generic self
----@param self self
----@param func? ClickAction.clickFunc
----@return self
-function ClickAction:onLeftClick(func) end
-
----Sets the function that executed when this action is right-clicked.
----@generic self
----@param self self
----@param func? ClickAction.clickFunc
----@return self
-function ClickAction:onRightClick(func) end
-
-
----==============================================================================================---
----  TOGGLE ACTION extends ACTION                                                                ---
----==============================================================================================---
-
----An action that can be toggled on and off.
----
----This action can be configured to have a single function for both toggling on and off, or a
----separate function for toggling on and another for toggling off.
----
----This action can also be configured to have separate displays for on and off states.
----@class ToggleAction : Action
----The function that is executed when this action is toggled on.  
----If `.untoggle` is `nil`, this is also executed when this action is toggled off.
----<!--
----@field toggle? ToggleAction.toggleFunc
----The function that is executed when this action is toggled off.
----<!--
----@field untoggle? ToggleAction.untoggleFunc
-local ToggleAction
-
-
----===== GETTERS =====---
-
----Gets the title that appears when this action is hovered over while toggled on.
----
----Returns `nil` if the title has not been set or has been reset.
----@return string?
-function ToggleAction:getToggleTitle() end
-
----Gets the background color of this action while it is toggled on.
----
----Returns `nil` if the color has not been set or has been reset.
----@return Vector3?
-function ToggleAction:getToggleColor() end
-
----Gets the background color of this action when it is hovered over while toggled on.
----
----Returns `nil` if the color has not been set or has been reset.
----@return boolean
-function ToggleAction:isToggled() end
-
-
----===== SETTERS =====---
-
----Sets the title that appears when this action is hovered over while toggled on.
----
----If `title` is `nil`, it will default to using the normal title.
----@generic self
----@param self self
----@param title? string
----@return self
-function ToggleAction:toggleTitle(title) end
-
----Sets the background color of this action while it is toggled on.
----
----If `color` is `nil`, it will default to green.
----@generic self
----@param self self
----@param color? Vector3
----@return self
-function ToggleAction:toggleColor(color) end
-
----If `r`, `g`, or `b` are `nil`, they will default to `0`, `1`, and `0` respectively.
----@generic self
----@param self self
----@param r? number
----@param g? number
----@param b? number
----@return self
-function ToggleAction:toggleColor(r, g, b) end
-
----Sets the item to be used as the icon of this action while it is toggled on..
----
----If `item` is `nil`, it will default to using the normal item.
+---If `item` is `nil`, it will be removed.
 ---@generic self
 ---@param self self
 ---@param item? ItemStack | Minecraft.itemID
 ---@return self
-function ToggleAction:toggleItem(item) end
+function Action:item(item) end
+
+---Sets the function that executed when this action is left-clicked.
+---@generic self
+---@param self self
+---@param func? Action.clickFunc
+---@return self
+function Action:onLeftClick(func) end
+
+---Sets the function that executed when this action is right-clicked.
+---@generic self
+---@param self self
+---@param func? Action.clickFunc
+---@return self
+function Action:onRightClick(func) end
+
+---Sets the function that is executed when this action is scrolled.
+---@generic self
+---@param self self
+---@param func? Action.scrollFunc
+---@return self
+function Action:onScroll(func) end
 
 ---Sets the function that is executed when this action is toggled on.  
 ---If `.untoggle` is `nil`, the function is also executed when this action is toggled off.
 ---@generic self
 ---@param self self
----@param func? ToggleAction.toggleFunc
+---@param func? Action.toggleFunc
 ---@return self
-function ToggleAction:onToggle(func) end
+function Action:onToggle(func) end
 
 ---Sets the function that is executed when this action is toggled off.
 ---
@@ -233,28 +162,51 @@ function ToggleAction:onToggle(func) end
 ---statement instead.
 ---@generic self
 ---@param self self
----@param func? ToggleAction.untoggleFunc
+---@param func? Action.untoggleFunc
 ---@return self
-function ToggleAction:onUntoggle(func) end
+function Action:onUntoggle(func) end
 
-
----==============================================================================================---
----  SCROLL ACTION extends ACTION                                                                ---
----==============================================================================================---
-
----An action that responds to scrolling the scroll wheel up or down.
----@class ScrollAction : Action
----The function that is executed when this action is scrolled.
----<!--
----@field scroll ScrollAction.scrollFunc?
-local ScrollAction
-
-
----===== SETTERS =====---
-
----Sets the function that is executed when this action is scrolled.
+---Sets the title that appears when this action is hovered over.
+---
+---If `title` is `nil`, it will default to `""`.
 ---@generic self
 ---@param self self
----@param func? ScrollAction.scrollFunc
+---@param title? string
 ---@return self
-function ScrollAction:onScroll(func) end
+function Action:title(title) end
+
+---Sets the background color of this action while it is toggled on.
+---
+---If `color` is `nil`, it will default to green.
+---@generic self
+---@param self self
+---@param color? Vector3
+---@return self
+function Action:toggleColor(color) end
+
+---If `r`, `g`, or `b` are `nil`, they will default to `0`, `1`, and `0` respectively.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function Action:toggleColor(r, g, b) end
+
+---Sets the item to be used as the icon of this action while it is toggled on..
+---
+---If `item` is `nil`, it will default to using the normal item.
+---@generic self
+---@param self self
+---@param item? ItemStack | Minecraft.itemID
+---@return self
+function Action:toggleItem(item) end
+
+---Sets the title that appears when this action is hovered over while toggled on.
+---
+---If `title` is `nil`, it will default to using the normal title.
+---@generic self
+---@param self self
+---@param title? string
+---@return self
+function Action:toggleTitle(title) end

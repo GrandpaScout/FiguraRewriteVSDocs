@@ -19,6 +19,7 @@
     "figura/animations": "animation",
     "figura/avatar": "content",
     "figura/client": "mobile",
+    "figura/config": "database",
     "figura/events": "archive",
     "figura/host": "vm",
     "figura/keybind": "keys",
@@ -30,6 +31,7 @@
     "figura/player": "admin",
     "figura/renderer": "review",
     "figura/sounds": "audio",
+    "figura/textures": "images",
     "figura/vanilla_model": "node",
     "figura/vectors": "less",
     "figura/world": "global"
