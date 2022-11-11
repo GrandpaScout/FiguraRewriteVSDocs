@@ -4,6 +4,7 @@
   \*==============================================================================================*/
   "workspace": {
     "library": [
+      ".vscode/docs",
       "../avatars/.vscode/docs",
       "../../avatars/.vscode/docs",
       "../../../avatars/.vscode/docs",
