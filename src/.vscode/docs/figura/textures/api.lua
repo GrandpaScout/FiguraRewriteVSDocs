@@ -26,10 +26,10 @@ local TextureAPI
 
 ---===== METHODS =====---
 
----Creates a texture from a base64 string.
+---Creates a texture from a base64 string or byte array.
 ---@param name string
----@param data string
----@return Texture?
+---@param data string | integer[]
+---@return Texture
 function TextureAPI:read(name, data) end
 
 ---Create a new blank texture filled with `#FF72AD`.

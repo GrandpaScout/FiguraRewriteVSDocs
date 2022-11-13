@@ -46,6 +46,12 @@ function WorldAPI.newItem(item, count, damage) end
 
 ---===== GETTERS =====---
 
+---Gets a table of all loaded avatars' stored values.
+---
+---Avatars are indexed by owner's name.
+---@return {[string]: {[string]: any}}
+function WorldAPI.avatarVars() end
+
 ---Gets if there is a world currently.  
 ---This will only be false in specific situations, such as while moving between dimensions.
 ---
@@ -232,9 +238,3 @@ function WorldAPI.isOpenSky(x, y, z) end
 ---Gets if there is currently a thunderstorm in the world.
 ---@return boolean
 function WorldAPI.isThundering() end
-
----Gets a table of all loaded players' stored values.
----
----Players are indexed by name.
----@return {[string]: {[string]: any}}
-function WorldAPI.playerVars() end
