@@ -1,5 +1,5 @@
 # VSCode Documentation for Figura Rewrite.
-### Branch version: <kbd>**0.1.0-RC10**</kbd> <kbd>**V1**</kbd>
+### Branch version: <kbd>**UPCOMING**</kbd> <kbd>**2022-11-14**</kbd>
 
 Documentation for Figura in Visual Studio Code.
 

@@ -334,7 +334,7 @@ function ModelPart:setPrimaryRenderType(renderType) end
 ---Sets the primary texture of this part.  
 ---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
 ---texture for this part.  
----Setting the texture type to `"CUSTOM"` allows selecting a Figura texture to use as the texture
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture
 ---for this part.
 ---
 ---If `texture` is `nil`, it will default to `"PRIMARY"`.
