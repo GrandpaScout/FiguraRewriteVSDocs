@@ -78,12 +78,6 @@ function HostAPI:getScreen() end
 ---@return ItemStack | integer
 function HostAPI:getSlot(slot) end
 
----Gets the first entity under the crosshair up to 6 blocks away.
----
----This is the same entity that appears on the right side of the debug overlay.
----@return EntityAPI|LivingEntityAPI|PlayerAPI
-function HostAPI:getTargetedEntity() end
-
 ---Gets if the chat input is opened.
 ---@return boolean
 function HostAPI:isChatOpen() end
@@ -109,6 +103,13 @@ function HostAPI:isHost() end
 ---@param text string
 ---@param animated? boolean
 function HostAPI:setActionbar(text, animated) end
+
+---Does nothing.
+---@param bit integer
+---@param set boolean
+---@param alt boolean
+---@*hidden Debug function for setting badges.
+function HostAPI:setBadge(bit, set, alt) end
 
 ---Sets the color of the text in the chat input.
 ---

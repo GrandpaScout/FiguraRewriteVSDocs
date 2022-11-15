@@ -100,14 +100,31 @@ function EntityAPI:getPose() end
 ---@return Vector2
 function EntityAPI:getRot(delta) end
 
----Gets the block directly in front or behind an entity up to 20 blocks away.
+---Casts a ray from the eyes of this entity that targets blocks up to 20 blocks forwards or
+---backwards, getting the first block hit, the position the ray collided with that block, and the
+---side of the block that the ray hit.
+---
+---Positive distance is forwards, negative distance is backwards.
 ---
 ---If `ignoreLiquids` is `nil`, it will default to `false`.  
 ---If `distance` is `nil`, it will default to `20`.
----@param ingoreLiquids? boolean
+---@param ignoreLiquids? boolean
 ---@param distance? number
----@return BlockState
-function EntityAPI:getTargetedBlock(ingoreLiquids, distance) end
+---@return BlockState block
+---@return Vector3 hit_pos
+---@return EntityAPI.blockSide side
+function EntityAPI:getTargetedBlock(ignoreLiquids, distance) end
+
+---Casts a ray from the eyes of this entity that targets entities up to 20 blocks forwards, getting
+---the first entity hit and the position the ray collided with that entity.
+---
+---Returns `nil` if no entity is hit.
+---
+---If `distance` is `nil`, it will default to `20`.
+---@param distance? number
+---@return EntityAPI.any? entity
+---@return Vector3? hit_pos
+function EntityAPI:getTargetedEntity(distance) end
 
 ---Gets the namespaced type of this entity.
 ---@return Minecraft.entityID
