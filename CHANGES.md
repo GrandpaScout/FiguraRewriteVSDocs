@@ -29,3 +29,16 @@ Upcoming
   * Added <kbd>**EntityAPI.blockSide**</kbd>.
   * Added `WorldAPI:raycastBlock()` and `WorldAPI:raycastEntity()`.  
     (No, that is not a typo. These methods are not static.)
+
+2022-11-15
+--------------------------------------------------
+* Fixed description of `Matrix3:scale()` and `Matrix4:scale()` to mention default value of param
+  `z`.
+* Added missing functions `Matrix3:translate()` and `Matrix4:translate()`.
+* Fixed small typo in description of `ModelPart:getTask()`.
+* Fixed required `json` parameter in global `logJson` and `printJson`.
+* [`ac0483e`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/ac0483e)
+  * Added `Action:texture()`, `Action:hoverTexture()`, and `Action:toggleTexture()`  
+    (It currently seems impossible to "unset" a texture.)
+  * Modified descriptions of `Action:hoverItem()`, `Action:item()`, and `Action:toggleItem()` to
+    hint at possibility of combining an item and a texture in action icons.

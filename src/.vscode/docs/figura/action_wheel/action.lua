@@ -105,7 +105,7 @@ function Action:hoverColor(color) end
 ---@return self
 function Action:hoverColor(r, g, b) end
 
----Sets the item to be used as the icon of this action when it is hovered over.
+---Sets the item to be used in the icon of this action when it is hovered over.
 ---
 ---If `item` is `nil`, it will be removed.
 ---@generic self
@@ -114,7 +114,25 @@ function Action:hoverColor(r, g, b) end
 ---@return self
 function Action:hoverItem(item) end
 
----Sets the item to be used as the icon of this action.
+---Sets the texture to be used in the icon of this action when it is hovered over.
+---
+---UV and size are measured in pixels.
+---
+---If `u` or `v` are `nil`, they will default to `0`.  
+---If `width` or `height` are `nil`, they will default to the texture's width and height.  
+---If `scale` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
+---@param texture Texture
+---@param u? number
+---@param v? number
+---@param width? integer
+---@param height? integer
+---@param scale? number
+---@return self
+function Action:hoverTexture(texture, u, v, width, height, scale) end
+
+---Sets the item to be used in the icon of this action.
 ---
 ---If `item` is `nil`, it will be removed.
 ---@generic self
@@ -166,6 +184,24 @@ function Action:onToggle(func) end
 ---@return self
 function Action:onUntoggle(func) end
 
+---Sets the texture to be used in the icon of this action.
+---
+---UV and size are measured in pixels.
+---
+---If `u` or `v` are `nil`, they will default to `0`.  
+---If `width` or `height` are `nil`, they will default to the texture's width and height.  
+---If `scale` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
+---@param texture Texture
+---@param u? number
+---@param v? number
+---@param width? integer
+---@param height? integer
+---@param scale? number
+---@return self
+function Action:texture(texture, u, v, width, height, scale) end
+
 ---Sets the title that appears when this action is hovered over.
 ---
 ---If `title` is `nil`, it will default to `""`.
@@ -193,7 +229,7 @@ function Action:toggleColor(color) end
 ---@return self
 function Action:toggleColor(r, g, b) end
 
----Sets the item to be used as the icon of this action while it is toggled on..
+---Sets the item to be used in the icon of this action while it is toggled on.
 ---
 ---If `item` is `nil`, it will default to using the normal item.
 ---@generic self
@@ -201,6 +237,24 @@ function Action:toggleColor(r, g, b) end
 ---@param item? ItemStack | Minecraft.itemID
 ---@return self
 function Action:toggleItem(item) end
+
+---Sets the texture to be used in the icon of this action while it is toggled on.
+---
+---UV and size are measured in pixels.
+---
+---If `u` or `v` are `nil`, they will default to `0`.  
+---If `width` or `height` are `nil`, they will default to the texture's width and height.  
+---If `scale` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
+---@param texture Texture
+---@param u? number
+---@param v? number
+---@param width? integer
+---@param height? integer
+---@param scale? number
+---@return self
+function Action:toggleTexture(texture, u, v, width, height, scale) end
 
 ---Sets the title that appears when this action is hovered over while toggled on.
 ---
