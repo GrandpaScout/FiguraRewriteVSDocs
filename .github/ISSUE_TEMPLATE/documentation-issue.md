@@ -17,7 +17,7 @@ assignees: ''
 
 - [ ] My text editor supports Sumneko's Lua Server and I have it installed.
 - [ ] I have the documentation installed in my Figura `avatars` folder.
-- [ ] I understand that being out-of-date with Figura is not an issue.
+- [ ] I understand that the docs being out-of-date with a just-released Figura version is not an issue.
 - [ ] I am using the correct version of the documentation for the version of Figura I am using.
 - [ ] I have added the relevant labels to this issue.
 
