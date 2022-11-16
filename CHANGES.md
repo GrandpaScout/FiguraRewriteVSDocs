@@ -35,3 +35,6 @@ V3
 * Added missing references to RC11 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
 * Added no replacement section to deprecation message of `data`.
 
+V4
+--------------------------------------------------
+* Modified description of `EventsAPI.SKULL_RENDER` to mention `nil` pos for entity-worn skulls.

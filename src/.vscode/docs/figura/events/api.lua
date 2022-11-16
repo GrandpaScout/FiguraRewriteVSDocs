@@ -110,10 +110,11 @@
 ---
 ---This event uses the following callback:
 ---```lua
----function(delta: number, pos: Vector3): boolean?
+---function(delta: number, pos: Vector3|nil): boolean?
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`pos`** The position of the skull block being rendered.
+---**`pos`** The position of the skull block being rendered. If this is `nil`, the skull is being
+---worn by an entity.  
 ---**`return #1`** Whether the currently rendering skull should be hidden instead.
 ---<!--
 ---@field SKULL_RENDER Event.SkullRender | Event.SkullRender.func
