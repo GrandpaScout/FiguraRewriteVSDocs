@@ -24,7 +24,7 @@
 
 ---@alias Figura.versionWithMC string
 ---| "0.1.0-rc.8+1.19.2"  # Figura 0.1.0, Release Candidate 8 (1.19.2)
----| "0.1.0-rc.8+1.19.2"  # Figura 0.1.0, Release Candidate 8 (1.19.2)
+---| "0.1.0-rc.8+1.18.2"  # Figura 0.1.0, Release Candidate 8 (1.18.2)
 ---| "0.1.0-rc.7+1.19.2"  # Figura 0.1.0, Release Candidate 7 (1.19.2)
 ---| "0.1.0-rc.7+1.18.2"  # Figura 0.1.0, Release Candidate 7 (1.18.2)
 ---| "0.1.0-rc.6+1.19.2"  # Figura 0.1.0, Release Candidate 6 (1.19.2)
