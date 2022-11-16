@@ -1,7 +1,7 @@
 ---
 name: Documentation Issue
 about: Create an issue about the documentation.
-title: "[ISSUE | 0.1.0-rc.???] "
+title: "[ISSUE | 0.1.0-rc.### V#] Issue Name Here"
 labels: ''
 assignees: ''
 
@@ -12,14 +12,16 @@ assignees: ''
   This will not show up in the issue report and is just here to help you write the report.
 -->
 
-## **Checklist:** <!-- Making sure you payed attention. Fill this out first. -->
-<!-- Replace the "[ ]" with "[x]" to check these boxes. -->
+<!--
+  Make sure you understand the following:
+  • Your text editor supports Sumneko's Lua Server and you have it installed.
+  • You have the documentation installed *correctly* in your Figura `avatars` folder.
+  • You understand that the docs being out-of-date with a just-released version of Figura is not an issue.
+  • You are using the *correct* version of the documentation for the version of Figura you are using.
+  • You have added the relevant labels to this issue.
 
-- [ ] My text editor supports Sumneko's Lua Server and I have it installed.
-- [ ] I have the documentation installed in my Figura `avatars` folder.
-- [ ] I understand that the docs being out-of-date with a just-released Figura version is not an issue.
-- [ ] I am using the correct version of the documentation for the version of Figura I am using.
-- [ ] I have added the relevant labels to this issue.
+  Showing no attempt to understand these will invalidate your issue.
+-->
 
 ## **Issue:** <!-- Explain your issue -->
 This one thing isn't documented properly.
@@ -34,13 +36,15 @@ This is an issue because it says "this and that" but I expected it to say "that 
 
 ## **Environment:** <!-- What are you using? -->
 **Editor:** [Editor Name Here]
-**Platform:** [Your OS or Whatever Here]
+**Platform:** [Your OS Here]
+**Figura Version:** #.#.#-rc.#
+**Docs Version:** #.#.#-rc.# V# <!-- You can find this in `.vscode/docs/figura/.version` -->
 <!-- If you have no modified settings, show an empty list of settings however you like. -->
 **Modified Settings:**
 ```json
 {
-  "Lua.a.modified.setting": "new value",
-  "Lua.another.modified.setting": "new value"
+  "Lua.category.setting": "new value",
+  "Lua.category.setting": "new value"
 }
 ```
 
@@ -50,6 +54,7 @@ This is an issue because it says "this and that" but I expected it to say "that 
 
 - [ ] I can replicate this issue on other environments.
   <!-- What environments have you done so far? -->
+  <!-- If the above box is unchecked, remove all of the "* Env #" bullets below
   * Env 1
   * Env 2
   * Env N
@@ -58,4 +63,5 @@ This is an issue because it says "this and that" but I expected it to say "that 
 - [ ] I know how to make a pull request.
 
 ## **Additional Info:** <!-- Any other information that might be useful. -->
+<!-- Simply put "Nothing" if there is no additional information. -->
 Blah blah blah...
