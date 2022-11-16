@@ -28,4 +28,10 @@ V1
 V2
 --------------------------------------------------
 * Fixed description of `WorldAPI.avatarVars` to specify owner *UUID* instead of owner *name*.
-* Fixed deprecation message to mention <kbd>**ConfigAPI**</kbd>.
+* Fixed deprecation message of `data` to mention <kbd>**ConfigAPI**</kbd>.
+
+V3
+--------------------------------------------------
+* Added missing references to RC11 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
+* Added no replacement section to deprecation message of `data`.
+
