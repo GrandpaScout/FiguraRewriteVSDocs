@@ -11,7 +11,7 @@
 
 
 ---==============================================================================================---
----  EVENT.RENDER extends EVENT                                                                 ---
+---  EVENT.RENDER extends EVENT                                                                  ---
 ---==============================================================================================---
 
 ---A function used by `RENDER` events.
@@ -28,7 +28,7 @@
 ---| "MINECRAFT_GUI" # A Minecraft GUI is rendering this preview.
 ---| "PAPERDOLL" # The Figura paper doll is rendering this preview.
 
----A function used by `RENDER` events.
+---A function used by `PREVIEW_RENDER` event.
 ---@alias Event.PreviewRender.func fun(delta?: number, ctx?: Event.PreviewRender.context)
 
 

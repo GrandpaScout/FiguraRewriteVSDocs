@@ -115,7 +115,7 @@
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
 ---**`ctx`** The context of this preview.
 ---<!--
----@field PREVIEW_RENDER Event.Render | Event.Render.func
+---@field PREVIEW_RENDER Event.PreviewRender | Event.PreviewRender.func
 ---This event runs before the avatar is rendered.
 ---
 ---This event uses the following callback:

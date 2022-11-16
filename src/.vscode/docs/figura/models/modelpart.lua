@@ -147,7 +147,8 @@ function ModelPart:getScale() end
 ---@return ModelPart.renderType?
 function ModelPart:getSecondaryRenderType() end
 
----Gets the render task with the given name from this part.
+---Gets the render task with the given name from this part.  
+---If no name is given, a list of all render tasks on this part is returned.
 ---
 ---If the task is confirmed to be of a certain type, add `--[[@as ???Task]]` after the function call
 ---to allow the Lua Server to know which task type it should expect.
@@ -159,6 +160,9 @@ function ModelPart:getSecondaryRenderType() end
 ---      │}                      │
 ---      └───────────────────────┘
 ---```
+---@return {[string]?: RenderTask.any}
+function ModelPart:getTask() end
+
 ---@param name string
 ---@return RenderTask.any
 function ModelPart:getTask(name) end
@@ -308,7 +312,7 @@ function ModelPart:setPrimaryRenderType(renderType) end
 
 ---Sets the primary texture of this part.  
 ---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.
+---texture for this part.
 ---
 ---If `texture` is `nil`, it will default to `"PRIMARY"`.
 ---@param texture ModelPart.textureType
@@ -347,7 +351,7 @@ function ModelPart:setSecondaryRenderType(renderType) end
 
 ---Sets the secondary texture of this part.  
 ---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.
+---texture for this part.
 ---
 ---If `texture` is `nil`, it will default to `"SECONDARY"`.
 ---@param texture ModelPart.textureType

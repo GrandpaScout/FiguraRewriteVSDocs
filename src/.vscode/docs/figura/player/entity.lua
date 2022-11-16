@@ -102,12 +102,14 @@ function EntityAPI:getRot(delta) end
 
 ---Gets the block directly in front or behind an entity up to 20 blocks away.
 ---
+---Positive distance is forwards, negative distance is backwards.
+---
 ---If `ignoreLiquids` is `nil`, it will default to `false`.  
 ---If `distance` is `nil`, it will default to `20`.
----@param ingoreLiquids? boolean
+---@param ignoreLiquids? boolean
 ---@param distance? number
 ---@return BlockState
-function EntityAPI:getTargetedBlock(ingoreLiquids, distance) end
+function EntityAPI:getTargetedBlock(ignoreLiquids, distance) end
 
 ---Gets the namespaced type of this entity.
 ---@return Minecraft.entityID
