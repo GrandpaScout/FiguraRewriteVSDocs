@@ -258,4 +258,8 @@ function TextTask:shadow(state) end
 ---Sets this task's text.
 ---
 ---If `text` is `nil`, it will default to `""`.
+---@generic self
+---@param self self
+---@param text? string
+---@return self
 function TextTask:text(text) end

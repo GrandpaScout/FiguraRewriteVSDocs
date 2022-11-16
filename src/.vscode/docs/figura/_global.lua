@@ -167,7 +167,7 @@ function log(...) end
 ---> ***
 ---> Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
 ---> ***
----@param json string
+---@param json? string
 function logJson(json) end
 
 ---Alias of `printTable`.
@@ -181,11 +181,11 @@ function logJson(json) end
 ---
 ---If `depth` is `nil`, it will default to `1`.
 ---@param t any
----@param depth integer
+---@param depth? integer
 function logTable(t, depth) end
 
 ---Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
----@param json string
+---@param json? string
 function printJson(json) end
 
 ---Prints the contents of the given table or userdata object to chat down to the specified depth.  
@@ -196,7 +196,7 @@ function printJson(json) end
 ---
 ---If `depth` is `nil`, it will default to `1`.
 ---@param t any
----@param depth integer
+---@param depth? integer
 function printTable(t, depth) end
 
 ---Alias of `<VectorsAPI>.vec`.

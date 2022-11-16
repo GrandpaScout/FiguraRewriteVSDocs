@@ -57,7 +57,7 @@ function EventGeneric:register(func, name) end
 
 
 ---==============================================================================================---
----  EVENT.RENDER extends EVENT                                                                 ---
+---  EVENT.RENDER extends EVENT                                                                  ---
 ---==============================================================================================---
 
 ---A generic render event with a single `delta` parameter.

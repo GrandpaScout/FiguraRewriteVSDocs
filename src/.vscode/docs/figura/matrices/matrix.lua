@@ -388,7 +388,7 @@ function Matrix3:rotateZ(angle) end
 ---@return self
 function Matrix3:scale(scales) end
 
----If `x` or `y` are `nil`, they will default to `0`.
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
 ---@param x? number
@@ -410,6 +410,23 @@ function Matrix3:set(other) end
 ---@param other Matrix3
 ---@return self
 function Matrix3:sub(other) end
+
+---Translates this matrix by the given amounts.
+---
+---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param vec? Vector2
+---@return self
+function Matrix3:translate(vec) end
+
+---If `x` or `y` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@return self
+function Matrix3:translate(x, y) end
 
 ---Creates and returns a transposed copy of this matrix.
 ---@return Matrix3
@@ -630,7 +647,7 @@ function Matrix4:rotateZ(angle) end
 ---@return self
 function Matrix4:scale(scales) end
 
----If `x` or `y` are `nil`, they will default to `0`.
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
 ---@param x? number
@@ -652,6 +669,24 @@ function Matrix4:set(other) end
 ---@param other Matrix4
 ---@return self
 function Matrix4:sub(other) end
+
+---Translates this matrix by the given amounts.
+---
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
+---@param vec? Vector3
+---@return self
+function Matrix4:translate(vec) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@param z? number
+---@return self
+function Matrix4:translate(x, y, z) end
 
 ---Creates and returns a transposed copy of this matrix.
 ---@return Matrix4
