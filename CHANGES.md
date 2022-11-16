@@ -24,3 +24,8 @@ V1
   (It currently seems impossible to "unset" a texture.)
 * Modified descriptions of `Action:hoverItem()`, `Action:item()`, and `Action:toggleItem()` to
   hint at possibility of combining an item and a texture in action icons.
+
+V2
+--------------------------------------------------
+* Fixed description of `WorldAPI.avatarVars` to specify owner *UUID* instead of owner *name*.
+* Fixed deprecation message to mention <kbd>**ConfigAPI**</kbd>.

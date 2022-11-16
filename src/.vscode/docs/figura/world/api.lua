@@ -128,7 +128,7 @@ function WorldAPI:raycastEntity(fromX, fromY, fromZ, toX, toY, toZ) end
 
 ---Gets a table of all loaded avatars' stored values.
 ---
----Avatars are indexed by owner's name.
+---Avatars are indexed by owner's UUID.
 ---@return {[string]: {[string]: any}}
 function WorldAPI.avatarVars() end
 

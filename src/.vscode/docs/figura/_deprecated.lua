@@ -459,8 +459,11 @@ ClientAPI.setTitleTimes = nil
 ---==============================================================================================---
 
 ---@type nil
----`data` is deprecated. It has no replacement.
----@deprecated '"data" is deprecated'
+---`data` is deprecated. Replace the following:
+---* `.setName` with `config:name()`
+---* `.load` and `.loadALl` with `config:load()`
+---* `.save` and `.remove` with `config:save()`
+---@deprecated '"data" is deprecated, hover for more information'
 data = nil
 
 
