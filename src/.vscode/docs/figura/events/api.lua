@@ -113,7 +113,7 @@
 ---function(delta: number, pos: Vector3): boolean?
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`pos`** The position of the skull block being rendered.
+---**`pos`** The position of the skull block being rendered.  
 ---**`return #1`** Whether the currently rendering skull should be hidden instead.
 ---<!--
 ---@field SKULL_RENDER Event.SkullRender | Event.SkullRender.func

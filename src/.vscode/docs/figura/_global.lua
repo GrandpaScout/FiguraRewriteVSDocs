@@ -182,7 +182,7 @@ function log(...) end
 ---> ***
 ---> Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
 ---> ***
----@param json string
+---@param json? string
 ---@return string
 function logJson(json) end
 
@@ -207,7 +207,7 @@ function logJson(json) end
 function logTable(t, depth, silent) end
 
 ---Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
----@param json string
+---@param json? string
 ---@return string
 function printJson(json) end
 

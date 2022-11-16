@@ -78,3 +78,17 @@ V1
 * Fixed missing parameters and returns of `TextTask:text()`.
 * Removed modded (except Figura's) screen IDs from <kbd>**Minecraft.screenID**</kbd>.  
   This may return later as something different.
+
+V2
+--------------------------------------------------
+* Fixed small typo in description of `ModelPart:getTask()`.
+* Fixed required `json` parameter in global `logJson` and `printJson`.
+* Fixed small description error in `EventsAPI.SKULL_RENDER`.
+* Added missing functions `Matrix3:translate()` and `Matrix4:translate()`.
+* Fixed description of `Matrix3:scale()` and `Matrix4:scale()` to mention default value of param
+  `z`.
+* Fixed parameter name in `EntityAPI:getTargetedBlock()`.
+* Modified description of `EntityAPI:getTargetedBlock()` to specify that negative distance searches
+  backwards.
+* Fixed deprecation message of `data` to mention <kbd>**ConfigAPI**</kbd>.
+* Many very minor description fixes.

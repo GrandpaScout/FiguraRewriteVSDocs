@@ -151,7 +151,7 @@ function ModelPart:getScale() end
 function ModelPart:getSecondaryRenderType() end
 
 ---Gets the render task with the given name from this part.  
----If no name is given, a list of all render tasks on this part is returnd.
+---If no name is given, a list of all render tasks on this part is returned.
 ---
 ---If the task is confirmed to be of a certain type, add `--[[@as ???Task]]` after the function call
 ---to allow the Lua Server to know which task type it should expect.
@@ -374,7 +374,7 @@ function ModelPart:setSecondaryRenderType(renderType) end
 
 ---Sets the secondary texture of this part.  
 ---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.  
+---texture for this part.  
 ---Setting the texture type to `"CUSTOM"` allows selecting a Figura texture to use as the texture
 ---for this part.
 ---

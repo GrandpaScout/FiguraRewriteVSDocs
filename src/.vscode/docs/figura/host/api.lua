@@ -81,7 +81,7 @@ function HostAPI:getSlot(slot) end
 ---Gets the first entity under the crosshair up to 6 blocks away.
 ---
 ---This is the same entity that appears on the right side of the debug overlay.
----@return EntityAPI|LivingEntityAPI|PlayerAPI
+---@return EntityAPI.any
 function HostAPI:getTargetedEntity() end
 
 ---Gets if the chat input is opened.

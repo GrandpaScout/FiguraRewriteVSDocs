@@ -193,7 +193,7 @@ function Action:toggleColor(color) end
 ---@return self
 function Action:toggleColor(r, g, b) end
 
----Sets the item to be used as the icon of this action while it is toggled on..
+---Sets the item to be used as the icon of this action while it is toggled on.
 ---
 ---If `item` is `nil`, it will default to using the normal item.
 ---@generic self
