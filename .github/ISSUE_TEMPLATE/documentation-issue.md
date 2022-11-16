@@ -39,8 +39,7 @@ This is an issue because it says "this and that" but I expected it to say "that 
 **Platform:** [Your OS Here]
 **Figura Version:** #.#.#-rc.#
 **Docs Version:** #.#.#-rc.# V# <!-- You can find this in `.vscode/docs/figura/.version` -->
-<!-- If you have no modified settings, show an empty list of settings however you like. -->
-**Modified Settings:**
+**Modified Settings:** <!-- If you have no modified settings, just show an empty list. -->
 ```json
 {
   "Lua.category.setting": "new value",
@@ -54,7 +53,7 @@ This is an issue because it says "this and that" but I expected it to say "that 
 
 - [ ] I can replicate this issue on other environments.
   <!-- What environments have you done so far? -->
-  <!-- If the above box is unchecked, remove all of the "* Env #" bullets below
+  <!-- If the above box is unchecked, remove all of the "* Env #" bullets below -->
   * Env 1
   * Env 2
   * Env N
