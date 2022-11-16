@@ -1,5 +1,5 @@
 ---
-name: Documentation Issue (I know what I am doing)
+name: Documentation Issue (I know what I am doing)
 about: Most instructional comments are removed to reduce clutter.
 title: "[ISSUE | 0.1.0-rc.### V#] Issue Name Here"
 labels: ''
