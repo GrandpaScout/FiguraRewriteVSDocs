@@ -26,4 +26,3 @@ V2
 * Fixed parameter name in `EntityAPI:getTargetedBlock()`.
 * Modified description of `EntityAPI:getTargetedBlock()` to specify that negative distance searches
   backwards.
-* Fixed deprecation message of `data` to mention <kbd>**ConfigAPI**</kbd>.
