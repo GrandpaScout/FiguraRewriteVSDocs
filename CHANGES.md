@@ -44,3 +44,21 @@ V3
 * Replaced `{ }` in vector examples with `⟨ ⟩`.
 * Added `@*error` to `EventsAPI.TICK` and `EventsAPI.WORLD_TICK`.  
   This is due to events not running at predicatable times, causing many functions to fail.
+
+V4
+--------------------------------------------------
+* Fixed missing signature for `ModelPart:getTask()` with no parameters.
+* Fixed required `depth` parameter in global `logTable` and `printTable`.
+* Fixed required `json` parameter in global `logJson` and `printJson`.
+* Fixed type of `EventsAPI.PREVIEW_RENDER`.
+* Removed modded (except Figura's) screen IDs from <kbd>**Minecraft.screenID**</kbd>.
+* Fixed missing parameters and returns of `TextTask:text()`.
+* Fixed description of `ToggleAction:isToggled()`.
+* Fixed return type of `HostAPI:getTargetedEntity` to <kbd>**EntityAPI.any**</kbd>.
+* Added missing functions `Matrix3:translate()` and `Matrix4:translate()`.
+* Fixed description of `Matrix3:scale()` and `Matrix4:scale()` to mention default value of param
+  `z`.
+* Fixed parameter name in `EntityAPI:getTargetedBlock()`.
+* Modified description of `EntityAPI:getTargetedBlock()` to specify that negative distance searches
+  backwards.
+

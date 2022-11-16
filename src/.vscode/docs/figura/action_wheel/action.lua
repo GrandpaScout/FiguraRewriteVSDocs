@@ -16,12 +16,6 @@ local Action
 
 ---===== GETTERS =====----
 
----Gets the title that appears when this action is hovered over.
----
----Returns `nil` if the title has not been set or has been reset.
----@return string?
-function Action:getTitle() end
-
 ---Gets the background color of this action.
 ---
 ---Returns `nil` if the color has not been set or has been reset.
@@ -34,17 +28,14 @@ function Action:getColor() end
 ---@return Vector3?
 function Action:getHoverColor() end
 
+---Gets the title that appears when this action is hovered over.
+---
+---Returns `nil` if the title has not been set or has been reset.
+---@return string?
+function Action:getTitle() end
+
 
 ---===== SETTERS =====----
-
----Sets the title that appears when this action is hovered over.
----
----If `title` is `nil`, it will default to `""`.
----@generic self
----@param self self
----@param title? string
----@return self
-function Action:title(title) end
 
 ---Sets the background color of this action.
 ---
@@ -82,6 +73,15 @@ function Action:hoverColor(color) end
 ---@return self
 function Action:hoverColor(r, g, b) end
 
+---Sets the item to be used as the icon of this action when it is hovered over.
+---
+---If `item` is `nil`, it will be removed.
+---@generic self
+---@param self self
+---@param item? ItemStack | Minecraft.itemID
+---@return self
+function Action:hoverItem(item) end
+
 ---Sets the item to be used as the icon of this action.
 ---
 ---If `item` is `nil`, it will be removed.
@@ -91,14 +91,14 @@ function Action:hoverColor(r, g, b) end
 ---@return self
 function Action:item(item) end
 
----Sets the item to be used as the icon of this action when it is hovered over.
+---Sets the title that appears when this action is hovered over.
 ---
----If `item` is `nil`, it will be removed.
+---If `title` is `nil`, it will default to `""`.
 ---@generic self
 ---@param self self
----@param item? ItemStack | Minecraft.itemID
+---@param title? string
 ---@return self
-function Action:hoverItem(item) end
+function Action:title(title) end
 
 
 ---==============================================================================================---
@@ -158,62 +158,24 @@ local ToggleAction
 
 ---===== GETTERS =====---
 
----Gets the title that appears when this action is hovered over while toggled on.
----
----Returns `nil` if the title has not been set or has been reset.
----@return string?
-function ToggleAction:getToggleTitle() end
-
 ---Gets the background color of this action while it is toggled on.
 ---
 ---Returns `nil` if the color has not been set or has been reset.
 ---@return Vector3?
 function ToggleAction:getToggleColor() end
 
----Gets the background color of this action when it is hovered over while toggled on.
+---Gets the title that appears when this action is hovered over while toggled on.
 ---
----Returns `nil` if the color has not been set or has been reset.
+---Returns `nil` if the title has not been set or has been reset.
+---@return string?
+function ToggleAction:getToggleTitle() end
+
+---Gets if this action is toggled on.
 ---@return boolean
 function ToggleAction:isToggled() end
 
 
 ---===== SETTERS =====---
-
----Sets the title that appears when this action is hovered over while toggled on.
----
----If `title` is `nil`, it will default to using the normal title.
----@generic self
----@param self self
----@param title? string
----@return self
-function ToggleAction:toggleTitle(title) end
-
----Sets the background color of this action while it is toggled on.
----
----If `color` is `nil`, it will default to green.
----@generic self
----@param self self
----@param color? Vector3
----@return self
-function ToggleAction:toggleColor(color) end
-
----If `r`, `g`, or `b` are `nil`, they will default to `0`, `1`, and `0` respectively.
----@generic self
----@param self self
----@param r? number
----@param g? number
----@param b? number
----@return self
-function ToggleAction:toggleColor(r, g, b) end
-
----Sets the item to be used as the icon of this action while it is toggled on..
----
----If `item` is `nil`, it will default to using the normal item.
----@generic self
----@param self self
----@param item? ItemStack | Minecraft.itemID
----@return self
-function ToggleAction:toggleItem(item) end
 
 ---Sets the function that is executed when this action is toggled on.  
 ---If `.untoggle` is `nil`, the function is also executed when this action is toggled off.
@@ -236,6 +198,42 @@ function ToggleAction:onToggle(func) end
 ---@param func? ToggleAction.untoggleFunc
 ---@return self
 function ToggleAction:onUntoggle(func) end
+
+---Sets the background color of this action while it is toggled on.
+---
+---If `color` is `nil`, it will default to green.
+---@generic self
+---@param self self
+---@param color? Vector3
+---@return self
+function ToggleAction:toggleColor(color) end
+
+---If `r`, `g`, or `b` are `nil`, they will default to `0`, `1`, and `0` respectively.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function ToggleAction:toggleColor(r, g, b) end
+
+---Sets the item to be used as the icon of this action while it is toggled on.
+---
+---If `item` is `nil`, it will default to using the normal item.
+---@generic self
+---@param self self
+---@param item? ItemStack | Minecraft.itemID
+---@return self
+function ToggleAction:toggleItem(item) end
+
+---Sets the title that appears when this action is hovered over while toggled on.
+---
+---If `title` is `nil`, it will default to using the normal title.
+---@generic self
+---@param self self
+---@param title? string
+---@return self
+function ToggleAction:toggleTitle(title) end
 
 
 ---==============================================================================================---
