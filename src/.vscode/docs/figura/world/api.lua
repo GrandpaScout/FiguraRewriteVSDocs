@@ -43,8 +43,94 @@ function WorldAPI.newBlock(block, x, y, z) end
 ---@return ItemStack
 function WorldAPI.newItem(item, count, damage) end
 
+---Does nothing.
+---
+---If `ignoreLiquids` is `nil`, it will default to `false`.  
+---If `from` or `to` are `nil`, they will default to `⟨0, 0, 0⟩`.
+---@param ignoreLiquids? boolean
+---@param from? Vector3
+---@param to? Vector3
+---@*return WorldAPI.raycastBlockResult
+function WorldAPI:raycastBlock(ignoreLiquids, from, to) end
+
+---If `ignoreLiquids` is `nil`, it will default to `false`.  
+---If `fromX`, `fromY`, or `fromZ` are `nil`, they will default to `0`.  
+---If `to` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param ignoreLiquids? boolean
+---@param fromX? number
+---@param fromY? number
+---@param fromZ? number
+---@param to? Vector3
+---@*return WorldAPI.raycastBlockResult
+function WorldAPI:raycastBlock(ignoreLiquids, fromX, fromY, fromZ, to) end
+
+---If `ignoreLiquids` is `nil`, it will default to `false`.  
+---If `from` is `nil`, it will default to `⟨0, 0, 0⟩`.  
+---If `toX`, `toY`, or `toZ` are `nil`, they will default to `0`.
+---@param ignoreLiquids? boolean
+---@param from? Vector3
+---@param toX? number
+---@param toY? number
+---@param toZ? number
+---@*return WorldAPI.raycastBlockResult
+function WorldAPI:raycastBlock(ignoreLiquids, from, toX, toY, toZ) end
+
+---If `ignoreLiquids` is `nil`, it will default to `false`.  
+---If `fromX`, `fromY`, `fromZ`, `toX`, `toY`, or `toZ` are `nil`, they will default to `0`.
+---@param ignoreLiquids? boolean
+---@param fromX? number
+---@param fromY? number
+---@param fromZ? number
+---@param toX? number
+---@param toY? number
+---@param toZ? number
+---@*return WorldAPI.raycastBlockResult
+function WorldAPI:raycastBlock(ignoreLiquids, fromX, fromY, fromZ, toX, toY, toZ) end
+
+---Does nothing.
+---
+---If `from` or `to` are `nil`, they will default to `⟨0, 0, 0⟩`.
+---@param from? Vector3
+---@param to? Vector3
+---@*return WorldAPI.raycastEntityResult
+function WorldAPI:raycastEntity(from, to) end
+
+---If `fromX`, `fromY`, or `fromZ` are `nil`, they will default to `0`.  
+---If `to` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param fromX? number
+---@param fromY? number
+---@param fromZ? number
+---@param to? Vector3
+---@*return WorldAPI.raycastEntityResult
+function WorldAPI:raycastEntity(fromX, fromY, fromZ, to) end
+
+---If `from` is `nil`, it will default to `⟨0, 0, 0⟩`.  
+---If `toX`, `toY`, or `toZ` are `nil`, they will default to `0`.
+---@param from? Vector3
+---@param toX? number
+---@param toY? number
+---@param toZ? number
+---@*return WorldAPI.raycastEntityResult
+function WorldAPI:raycastEntity(from, toX, toY, toZ) end
+
+---If `fromX`, `fromY`, `fromZ`, `toX`, `toY`, or `toZ` are `nil`, they will default to `0`.
+---@param fromX? number
+---@param fromY? number
+---@param fromZ? number
+---@param toX? number
+---@param toY? number
+---@param toZ? number
+---@*return WorldAPI.raycastEntityResult
+function WorldAPI:raycastEntity(fromX, fromY, fromZ, toX, toY, toZ) end
+
 
 ---===== GETTERS =====---
+
+---Gets a table of all loaded avatars' stored values.
+---
+---Avatars are indexed by owner's name.
+---@return {[string]: {[string]: any}}
+function WorldAPI.avatarVars() end
 
 ---Gets if there is a world currently.  
 ---This will only be false in specific situations, such as while moving between dimensions.
@@ -232,9 +318,3 @@ function WorldAPI.isOpenSky(x, y, z) end
 ---Gets if there is currently a thunderstorm in the world.
 ---@return boolean
 function WorldAPI.isThundering() end
-
----Gets a table of all loaded players' stored values.
----
----Players are indexed by name.
----@return {[string]: {[string]: any}}
-function WorldAPI.playerVars() end

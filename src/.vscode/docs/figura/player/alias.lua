@@ -36,6 +36,16 @@
 ---| "EMERGING"     # Warden emerging.
 ---| "DIGGING"      # Warden leaving.
 
+---A valid block side.
+---@alias EntityAPI.blockSide
+---| "north"
+---| "east"
+---| "south"
+---| "west"
+---| "up"
+---| "down"
+
+
 ---==============================================================================================---
 ---  LIVIINGENTITYAPI extends ENTITYAPI                                                          ---
 ---==============================================================================================---
