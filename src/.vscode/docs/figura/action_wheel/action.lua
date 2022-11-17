@@ -230,6 +230,8 @@ function Action:toggleColor(color) end
 function Action:toggleColor(r, g, b) end
 
 ---Sets the toggle state of this action.
+---
+---If `state` is `nil`, it will default to `false`.
 ---@generic self
 ---@param self self
 ---@param state? boolean
