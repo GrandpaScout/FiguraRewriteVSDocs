@@ -213,6 +213,15 @@ function ToggleAction:toggleColor(color) end
 ---@return self
 function ToggleAction:toggleColor(r, g, b) end
 
+---Sets the toggle state of this action.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function ToggleAction:toggled(state) end
+
 ---Sets the item to be used as the icon of this action while it is toggled on.
 ---
 ---If `item` is `nil`, it will default to using the normal item.

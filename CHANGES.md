@@ -34,3 +34,7 @@ V3
 * Modified description of `EntityAPI:getTargetedBlock()` to specify that negative distance searches
   backwards.
 * Many very minor description fixes.
+
+V4
+--------------------------------------------------
+* Fixed missing function `ToggleAction:toggled()`.
