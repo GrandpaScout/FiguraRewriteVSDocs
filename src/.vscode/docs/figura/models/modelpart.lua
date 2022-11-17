@@ -206,6 +206,11 @@ function ModelPart:getUVPixels() end
 ---@return boolean?
 function ModelPart:getVisible() end
 
+---Gets if this part is a child of another part.
+---@param part ModelPart
+---@return boolean
+function ModelPart:isChildOf(part) end
+
 ---Gets if an animation is overriding the vanilla position of this part.
 ---@return boolean
 function ModelPart:overrideVanillaPos() end

@@ -38,3 +38,8 @@ V3
 V4
 --------------------------------------------------
 * Modified description of `EventsAPI.SKULL_RENDER` to mention `nil` pos for entity-worn skulls.
+
+V5
+--------------------------------------------------
+* Fixed missing function `Action:toggled()`.
+* Fixed missing function `ModelPart:isChildOf()`.
