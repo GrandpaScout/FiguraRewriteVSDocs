@@ -1,7 +1,7 @@
 ---
 name: Documentation Issue
 about: Create an issue about the documentation.
-title: "[ISSUE | 0.1.0-rc.### V#] Issue Name Here"
+title: "[ISSUE] Issue Name Here"
 labels: ''
 assignees: ''
 
@@ -29,17 +29,12 @@ This one thing isn't documented properly.
 ## **Why:** <!-- Why is this an issue? -->
 This is an issue because it says "this and that" but I expected it to say "that and this".
 
-## **Images:** <!-- Add any relevant images to this issue -->
-<!-- If images are not useful, you can delete this entire section. -->
-<!-- You can add images by dragging them on to the edit box. -->
-*I forgot to add images or delete this section.*
-
 ## **Environment:** <!-- What are you using? -->
 **Editor:** [Editor Name Here]
 **Platform:** [Your OS Here]
 **Figura Version:** #.#.#-rc.#
-**Docs Version:** #.#.#-rc.# V# <!-- You can find this in `.vscode/docs/figura/.version` -->
-**Modified Settings:** <!-- If you have no modified settings, just show an empty list. -->
+**Docs Version:** #.#.#-rc.# V#
+**Modified Settings:**
 ```json
 {
   "Lua.category.setting": "new value",
@@ -47,20 +42,5 @@ This is an issue because it says "this and that" but I expected it to say "that 
 }
 ```
 
-## **Helping Out:** <!-- Are you able to help out with this issue? -->
-<!-- Replace the "[ ]" with "[x]" to check these boxes. -->
-<!-- Do not check a box if it does not make sense to do so. -->
-
-- [ ] I can replicate this issue on other environments.
-  <!-- What environments have you done so far? -->
-  <!-- If the above box is unchecked, remove all of the "* Env #" bullets below -->
-  * Env 1
-  * Env 2
-  * Env N
-- [ ] I know how to read Java code.
-- [ ] I know how to read and write LuaCats documentation and annotations.
-- [ ] I know how to make a pull request.
-
 ## **Additional Info:** <!-- Any other information that might be useful. -->
-<!-- Simply put "Nothing" if there is no additional information. -->
-Blah blah blah...
+Any extra info here.
