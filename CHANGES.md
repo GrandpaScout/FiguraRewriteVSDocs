@@ -92,3 +92,7 @@ V2
   backwards.
 * Fixed deprecation message of `data` to mention <kbd>**ConfigAPI**</kbd>.
 * Many very minor description fixes.
+
+V3
+--------------------------------------------------
+* Fixed missing function `Action:toggled()`.
