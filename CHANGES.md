@@ -43,3 +43,7 @@ V5
 --------------------------------------------------
 * Fixed missing function `Action:toggled()`.
 * Fixed missing function `ModelPart:isChildOf()`.
+
+V6
+--------------------------------------------------
+* Fixed missing `"CAPE"` in <kbd>PlayerAPI.skinLayer</kbd>.

@@ -94,3 +94,4 @@
 ---| "LEFT_PANTS"      # Alias for `"LEFT_PANTS_LEG"`.
 ---| "RIGHT_PANTS_LEG" # Right leg layer.
 ---| "RIGHT_PANTS"     # Alias for `"RIGHT_PANTS_LEG"`.
+---| "CAPE"            # Cape.
