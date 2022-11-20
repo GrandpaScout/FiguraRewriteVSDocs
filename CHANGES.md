@@ -47,3 +47,7 @@ V5
 V6
 --------------------------------------------------
 * Fixed missing `"CAPE"` in <kbd>PlayerAPI.skinLayer</kbd>.
+
+V7
+--------------------------------------------------
+* Fixed `pings` not collecting functions properly.

@@ -114,7 +114,128 @@ nameplate = {}
 ---@type ParticleAPI
 particles = {}
 
----@type PingAPI
+---A table containing an avatar's ping functions.
+---
+---> ***
+---
+---Ping functions allow sending information that other clients may not have access to.  
+---Things such as:
+---* Worn equipment
+---* Player health
+---* Changing model UV
+---* Playing a sound
+---
+---do not need to be pinged as all clients can understand these functions or objects.
+---
+---Things such as:
+---* Clicking or scrolling the action wheel
+---* Pressing a keybind
+---* Player inventory contents
+---* Host checks
+---
+---*do* need to be pinged as other clients do not understand these functions or objects.
+---
+---Consider the following code:
+---```lua
+---if myKey:isPressed() then
+---  print("Hello world!")
+---else
+---  print("Goodbye world!")
+---end
+---```
+---Since other clients don't know when a keybind is pressed, they will never run the `if` block.
+---```lua
+---<HOST>                       <CLIENT>
+---├•if myKey:isPressed() then  │ if myKey:isPressed() then
+---├•  print("Hello world!")    │   print("Hello world!")
+---│ else                       ├•else
+---│   print("Goodbye world!")  ├•  print("Goodbye world!")
+---└•end                        └•end
+---```
+---&emsp;  
+---Pings allow other clients to run code that would normally be unreachable for them.
+---```lua
+---function pings.coolPing(x)
+---  if x then
+---    print("Hello world!")
+---  else
+---    print("Goodbye world!")
+---  end
+---end
+---
+---if host:isHost() then
+---  if myKey:isPressed() then
+---    pings.coolPing(true)
+---  else
+---    pings.coolPing(false)
+---  end
+---end
+---```
+---The ping will resync the host and client when it is reached. Allowing other clients to know when
+---a keybind is pressed, for example.
+---```lua
+---<HOST>                         <CLIENT>
+---├•if host:isHost() then        │ if host:isHost() then
+---├•  if myKey:isPressed() then  │   if myKey:isPressed() then
+---├¶    pings.coolPing(true)     │     pings.coolPing(true)
+---│   else                       │   else
+---│     pings.coolPing(false)    │     pings.coolPing(false)
+---├•  end                        │   end
+---└•end                          ╵ end
+---
+---¶                              ¶
+---├•function pings.coolPing(x)   ├•function pings.coolPing(x)
+---├•  if x then                  ├•  if x then
+---├•    print("Hello world!")    ├•    print("Hello world!")
+---│   else                       │   else
+---│     print("Goodbye world!")  │     print("Goodbye world!")
+---├•  end                        ├•  end
+---└•end                          └•end
+---```
+---&emsp;  
+---Custom-made functions are not an exception. If a ping contains one, it will run its entire
+---contents like normal.
+---```lua
+---<HOST>                                     <CLIENT>
+---├• function pings.coolPing()               ├•function pings.coolPing()
+---├•   print("Hello World!")                 ├•  print("Hello World!")
+---├¹   myFunction()                          ├²  myFunction()
+---└• end                                     └•end
+---
+---1                                          2
+---├• function myFunction()                   ├•function myFunction()
+---├•   models.MyModel.Head:setVisible(false) ├•  models.MyModel.Head:setVisible(false)
+---└• end                                     └•end
+---```
+---&emsp;  
+---Pings do have limits. They do not cause clients to magically think they are the host. They are
+---still limited by what they know.
+---```lua
+---function pings.coolPing()
+---  print("Hello World!")
+---  models.MyModel.Head:setVisible(false)
+---  myCoolFunction()
+---
+---  if host:isHost() then
+---    print("Top Secret!")
+---  end
+---end
+---```
+---In the above example, the client will still not run the `if host:isHost() then` block because the
+---client does not pass the host check even though it is in a ping.
+---```lua
+---<HOST>                                    <CLIENT>
+---├•function pings.coolPing()               ├•function pings.coolPing()
+---├•  print("Hello World!")                 ├•  print("Hello World!")
+---├•  models.MyModel.Head:setVisible(false) ├•  models.MyModel.Head:setVisible(false)
+---├•  myCoolFunction()                      ├•  myCoolFunction()
+---│                                         │
+---├•  if host:isHost() then                 │   if host:isHost() then
+---├•    print("Top Secret!")                │     print("Top Secret!")
+---├•  end                                   │   end
+---└•end                                     └•end
+---```
+---@type {[string]?: function}
 pings = {}
 
 ---The Minecraft player the current avatar is attached to.
