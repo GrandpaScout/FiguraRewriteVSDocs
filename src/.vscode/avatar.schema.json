@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
 
   "description": "An avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
-  "markdownDescription": "```ts\n{\n  name: string,\n  author: string <OR> authors: string[],\n  version: string,\n  color: Color,\n  background: unknown,\n  autoScripts: string[],\n  autoAnims: string[],\n  customizations: {\n    [partPath]: {\n      visible: string,\n      parentType: string,\n      moveTo: string,\n      primaryRenderType: RenderType,\n      secondaryRenderType: RenderType\n    }\n  }\n}\n```\n***\nAn avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
+  "markdownDescription": "```ts\n{\n  name: string,\n  author: string <OR> authors: string[],\n  version: string,\n  color: Color,\n  background: unknown,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {\n    [partPath]: {\n      visible: string,\n      parentType: string,\n      moveTo: string,\n      primaryRenderType: RenderType,\n      secondaryRenderType: RenderType\n    }\n  }\n}\n```\n***\nAn avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
 
   "type": "object",
 
@@ -20,33 +20,35 @@
     {"label": "\u200B\u200BBasic metadata, One author", "body": {
       "name": "${1:My Avatar}",
       "author": "${2:Username}",
-      "version": "${3|0.1.0,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}"
     }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, author, Figura version, and theme color."},
     {"label": "\u200B\u200BBasic metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
       "authors": ["${2:Username}"],
-      "version": "${3|0.1.0,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}"
     }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, authors, Figura version, and theme color."},
     {"label": "\u200B\u200BFull metadata, One author", "body": {
       "name": "${1:My Avatar}",
       "author": "${2:Username}",
-      "version": "${3|0.1.0,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}",
       "autoScripts": ["^$5"],
       "autoAnims": ["^$6"],
-      "customizations": "^{$7}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  autoAnims: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."},
+      "ignoredTextures": ["^$7"],
+      "customizations": "^{$8}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."},
     {"label": "\u200B\u200BFull metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
       "authors": ["${2:Username}"],
-      "version": "${3|0.1.0,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
+      "version": "${3|0.1.0,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
       "color": "${4:#RRGGBB}",
       "autoScripts": ["^$5"],
       "autoAnims": ["^$6"],
-      "customizations": "^{$7}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  autoAnims: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."}
+      "ignoredTextures": ["^$7"],
+      "customizations": "^{$8}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."}
   ],
 
   "definitions": {
@@ -160,6 +162,7 @@
       "defaultSnippets": [
         {"body": "$1"},
         {"label": "Figura 0.1.0                       (0.1.0)",       "body": "0.1.0"      },
+        {"label": "Figura 0.1.0, Release Candidate 12 (0.1.0-rc.12)", "body": "0.1.0-rc.12"},
         {"label": "Figura 0.1.0, Release Candidate 11 (0.1.0-rc.11)", "body": "0.1.0-rc.11"},
         {"label": "Figura 0.1.0, Release Candidate 10 (0.1.0-rc.10)", "body": "0.1.0-rc.10"},
         {"label": "Figura 0.1.0, Release Candidate 9  (0.1.0-rc.9)",  "body": "0.1.0-rc.9" },
@@ -274,6 +277,22 @@
     "autoAnims": {
       "description": "A list of animations the avatar should automatically play.\n\nIf this is empty or does not exist, no animations are automatically played.",
       "markdownDescription": "```ts\nautoAnims: string[]\n```\n***\nA list of animations the avatar should automatically play.\n\nIf this is empty or does not exist, no animations are automatically played.",
+
+      "type": "array",
+
+      "items": {
+        "type": "string",
+
+        "defaultSnippets": [{"body": "$1"}],
+
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+
+    "ignoredTextures": {
+      "description": "A list of textures that should not be loaded by Figura.\n\nMainly used for special textures such as templates or guides.",
+      "markdownDescription": "```ts\nignoredTextures: string[]\n```\n***\nA list of textures that should not be loaded by Figura.\n\nMainly used for special textures such as templates or guides.",
 
       "type": "array",
 

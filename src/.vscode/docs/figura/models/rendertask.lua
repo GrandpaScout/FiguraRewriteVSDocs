@@ -28,25 +28,12 @@ function RenderTask:getRot() end
 ---@return Vector3
 function RenderTask:getScale() end
 
----Gets if this task is rendering at full brightness.
----@return boolean
-function RenderTask:isEmissive() end
-
 ---Gets if this task is rendering.
 ---@return boolean
 function RenderTask:isEnabled() end
 
 
 ---===== SETTERS =====---
-
----Sets if this task should render at full brightness at all times.
----
----If `state` is `nil`, it will default to `false`.
----@generic self
----@param self self
----@param state? boolean
----@return self
-function RenderTask:emissive(state) end
 
 ---Sets if this task should render at all.
 ---

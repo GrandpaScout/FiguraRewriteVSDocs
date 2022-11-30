@@ -161,6 +161,10 @@ function ClientAPI.getScaledWindowSize() end
 ---@return Minecraft.serverBrand
 function ClientAPI.getServerBrand() end
 
+---Gets the IP, name, and MotD of the server this client is connected on.
+---@return ClientAPI.serverData
+function ClientAPI.getServerData() end
+
 ---Gets the sound info line from the debug screen.
 ---
 ---> ***

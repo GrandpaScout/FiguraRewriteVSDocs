@@ -21,7 +21,7 @@ local Animation
 ---@param time number
 ---@param code string
 ---@return self
-function Animation:addCode(time, code) end
+function Animation:newCode(time, code) end
 
 ---Pauses this animation. Resume with `:play()`.
 function Animation:pause() end
@@ -194,6 +194,15 @@ function Animation:overrideScale(state) end
 ---@param priority? integer
 ---@return self
 function Animation:priority(priority) end
+
+---Sets if this animation is currently playing.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function Animation:setPlaying(state) end
 
 ---Sets this animation's current play time in seconds.
 ---

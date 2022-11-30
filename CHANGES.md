@@ -1,53 +1,51 @@
-# 0.1.0 RC11 #
+# 0.1.0 RC12 #
 
 V1
 --------------------------------------------------
-* Updated from 0.1.0 RC10 V1
-* Added `HostAPI:setBadge()`.  
-  (No fun allowed, though. It doesn't do anything.)
-* Updated `TextureAPI:load()` to support byte arrays (integer tables).
-* Rename `WorldAPI.playerVars` to `WorldAPI.avatarVars`.
-* Modified description of `ModelPart:setPrimaryTexture()` and `ModelPart:setSecondaryTexture()` to
-    specifically mention that texture type `"CUSTOM"` only takes <kbd>**Texture**</kbd> objects.
-* Removed `HostAPI:getTargetedEntity()`.
-* Added `EntityAPI:getTargetedEntity()`.
-* Modified `EntityAPI:getTargetedBlock()` to return a vararg instead.
-* Added <kbd>**EntityAPI.blockSide**</kbd>.
-* Added `WorldAPI:raycastBlock()` and `WorldAPI:raycastEntity()`.  
-  (No, that is not a typo. These methods are not static.)
-* Fixed description of `Matrix3:scale()` and `Matrix4:scale()` to mention default value of param
-  `z`.
-* Added missing functions `Matrix3:translate()` and `Matrix4:translate()`.
-* Fixed small typo in description of `ModelPart:getTask()`.
-* Fixed required `json` parameter in global `logJson` and `printJson`.
-* Added `Action:texture()`, `Action:hoverTexture()`, and `Action:toggleTexture()`  
-  (It currently seems impossible to "unset" a texture.)
-* Modified descriptions of `Action:hoverItem()`, `Action:item()`, and `Action:toggleItem()` to
-  hint at possibility of combining an item and a texture in action icons.
-
-V2
---------------------------------------------------
-* Fixed description of `WorldAPI.avatarVars` to specify owner *UUID* instead of owner *name*.
-* Fixed deprecation message of `data` to mention <kbd>**ConfigAPI**</kbd>.
-
-V3
---------------------------------------------------
-* Added missing references to RC11 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
-* Added no replacement section to deprecation message of `data`.
-
-V4
---------------------------------------------------
-* Modified description of `EventsAPI.SKULL_RENDER` to mention `nil` pos for entity-worn skulls.
-
-V5
---------------------------------------------------
-* Fixed missing function `Action:toggled()`.
-* Fixed missing function `ModelPart:isChildOf()`.
-
-V6
---------------------------------------------------
-* Fixed missing `"CAPE"` in <kbd>PlayerAPI.skinLayer</kbd>.
-
-V7
---------------------------------------------------
-* Fixed `pings` not collecting functions properly.
+* Updated from 0.1.0 RC11 V7
+* Added references to RC12 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
+* [Changes made directly from RC12 changelog](
+    https://discord.com/channels/805969743466332191/959863825581101116/1047267509658714193
+  )
+  * Added `/ignoredTextures` to *`avatar.schema.json`*.
+  * Modified description of `ModelPart:partToWorldMatrix()` to mention that it updates in
+    first-person.
+  * Modified `require()` to include the backup function parameter.
+  * Added <kbd>**Event.MouseMove**</kbd>, <kbd>Event.MouseMove.func</kbd>, and `Event.MOUSE_MOVE`.
+  * Modified <kbd>**Event.MouseScroll.func**</kbd> to have a return value.
+  * Modified <kbd>**Event.SkullRender.func**</kbd> to have a third item parameter.
+  * Modified second parameter of <kbd>**Event.SkullRender.func**</kbd> to be a
+    <kbd>**BlockState**</kbd>.
+  * Renamed `Animation:addCode()` to `Animation:newCode()`.
+  * Added `Animation:setPlaying()`.
+    * Modified deprecation of `Animation.setPlayState()` to mention this.
+  * Renamed `TextureAPI:register()` to `TextureAPI:newTexture()`.
+  * Renamed `ActionWheelAPI:createPage()` and `ActionWheelAPI:createAction()` to
+    `ActionWheelAPI:newPage()` and `ActionWheelAPI:newAction()`.
+    * Modified deprecations of `ActionWheelAPI.SLOT_#` to mention this.
+  * Modified parameter `index` of `Page:setAction()` to include `-1`.
+  * Renamed global `keybind` to `keybinds`.
+    * Added deprecation of global `keybind` as the prewrite had this global name.
+  * Renamed `KeybindAPI:create()` to `KeybindAPI:newKeybind()`.
+    * Modified deprecation of `KeybindAPI.newKey()` to mention this.
+  * Renamed `ParticleAPI:addParticle()` to `ParticleAPI:newParticle()`.
+    * Modified deprecation of global `particle` to mention this.
+  * Renamed `SoundAPI:addSound()` to `SoundAPI:newSound()`.
+    * Modified deprecation of global `sound` to mention this.
+  * Renamed `ModelPart:addBlock()`, `ModelPart:addItem()`, and `ModelPart:addText()` to
+    `ModelPart:newBlock()`, `ModelPart:newItem()`, and `ModelPart:newItem()`.
+    * Modified deprecation of `ModelPart.addRenderTask()` to mention this.
+  * Added `ModelPart:setOverlay()` and `ModelPart:getOverlay()`.
+    * Removed deprecation of `ModelPart.setOverlay()` and `ModelPart.getOverlay()`.
+  * Removed `RenderTask:isEmissive()` and `RenderTask:emissive()`.
+    * Modified deprecation of `RenderTask.getEmissive()` and `RenderTask.setEmissive()` to mention
+      this.
+  * Added `RenderTask:getLight()`, `RenderTask:light()`, `RenderTask:getOverlay()`, and
+    `RenderTask:overlay()`.
+  * Added `PlayerAPI:hasCape()` and `PlayerAPI:hasSkin()`.
+  * Added <kbd>**ClientAPI.serverData**</kbd> and `ClientAPI.getServerData()`.
+  * Added `RendererAPI:getFOV()` and `RendererAPI:setFOV()`.
+* Fixed missing deprecation for `Animation.getOverride()`.
+* Fixed deprecation of `ModelPart.clearAllRenderTasks()` claiming no replacement.
+* Fixed deprecation of `ModelPart.getExtraTexEnabled()` having invalid code.
+* Fixed `ModelPart:removeTask()` having two signatures. (Was there a reason for both of these?)

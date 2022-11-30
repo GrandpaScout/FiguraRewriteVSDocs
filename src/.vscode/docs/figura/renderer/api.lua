@@ -60,6 +60,12 @@ function RendererAPI:getCameraPos() end
 ---@return Vector3?
 function RendererAPI:getCameraRot() end
 
+---Gets the current FOV multiplier.
+---
+---Returns `nil` if no multiplier has been set.
+---@return number?
+function RendererAPI:getFOV() end
+
 ---Gets the radius of the host's shadow in blocks.
 ---
 ---Returns `nil` if no shadow radius is applied.
@@ -149,6 +155,11 @@ function RendererAPI:setCameraRot(rot) end
 ---@param y? number
 ---@param z? number
 function RendererAPI:setCameraRot(x, y, z) end
+
+---Sets the FOV multiplier.
+---
+---If `fov` is `nil`, it will default to `1`.
+function RendererAPI:setFOV(fov) end
 
 ---Sets the current vanilla post-processing shader.
 ---

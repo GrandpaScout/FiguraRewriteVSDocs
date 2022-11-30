@@ -895,6 +895,14 @@ function PlayerAPI:getModelType() end
 ---@return number
 function PlayerAPI:getSaturation() end
 
+---Gets if this player has a cape.
+---@return boolean
+function PlayerAPI:hasCape() end
+
+---Gets if this player has a skin.
+---@return boolean
+function PlayerAPI:hasSkin() end
+
 ---Gets if this player is currently flying.
 ---@return boolean
 function PlayerAPI:isFlying() end

@@ -28,23 +28,21 @@ local ModelPart
 ---Adds a Block Render Task to this part.
 ---@param name string
 ---@return BlockTask
-function ModelPart:addBlock(name) end
+function ModelPart:newBlock(name) end
 
 ---Adds an Item Render Task to this part.
 ---@param name string
 ---@return ItemTask
-function ModelPart:addItem(name) end
+function ModelPart:newItem(name) end
 
 ---Adds a Text Render Task to this part.
 ---@param name string
 ---@return TextTask
-function ModelPart:addText(name) end
+function ModelPart:newText(name) end
 
----Removes a previously added render task by name.
+---Removes a previously added render task by name.  
 ---If no name is given, all render tasks are removed from this part.
-function ModelPart:removeTask() end
-
----@param name string
+---@param name? string
 function ModelPart:removeTask(name) end
 
 
@@ -105,6 +103,10 @@ function ModelPart:getOffsetRot() end
 ---Gets the opacity multiplier of this part.
 ---@return number
 function ModelPart:getOpacity() end
+
+---Gets the overlay values of this part.
+---@return Vector2?
+function ModelPart:getOverlay() end
 
 ---Gets the parent of this part, if it has any.
 ---@return ModelPart?
@@ -228,7 +230,7 @@ function ModelPart:overrideVanillaScale() end
 ---This matrix only updates in `POST_RENDER`, if you attempt to use it in `RENDER`, it will be one
 ---frame behind.
 ---
----This matrix will not update if the part is not visible.
+---This matrix will not update if the part is not visible. (Unless you are in first-person.)
 ---@*error The matrix is incorrect if the camera is rolled.
 ---@return Matrix4
 function ModelPart:partToWorldMatrix() end
@@ -301,6 +303,18 @@ function ModelPart:setMatrix(mat) end
 ---(`TRANSLUCENT`/`TRANSLUCENT_CULL`)
 ---@param opacity number
 function ModelPart:setOpacity(opacity) end
+
+---Sets the white flash and hurt overlays on this part.
+---
+---If `overlays` is `nil`, all overlays are removed.
+---@param overlays? Vector2
+function ModelPart:setOverlay(overlays) end
+
+---If `white` is `nil`, all overlays are removed.  
+---If `hurt` is `nil`, it will default to `0`.
+---@param white? integer
+---@param hurt? integer
+function ModelPart:setOverlay(white, hurt) end
 
 ---Sets the keyword this part follows.
 ---@param parent ModelPart.parentType

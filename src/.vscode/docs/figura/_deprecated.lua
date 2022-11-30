@@ -14,43 +14,43 @@
 local ActionWheelAPI
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_1 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_2 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_3 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_4 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_5 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_6 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_7 = nil
 
 ---@type nil
----The action wheel no longer uses slots. It now uses pages. See `:createPage()` for more info.
----@deprecated 'slots are deprecated, use pages instead ("action_wheel:createPage()")'
+---The action wheel no longer uses slots. It now uses pages. See `:newPage()` for more info.
+---@deprecated 'slots are deprecated, use pages instead ("action_wheel:newPage()")'
 ActionWheelAPI.SLOT_8 = nil
 
 ---@type nil
@@ -140,6 +140,14 @@ Animation.getLoopMode = nil
 Animation.getName = nil
 
 ---@type nil
+---`.getOverride` is deprecated. It now has three forms.
+---* `:getOverridePos()` for getting the override of the position channel,
+---* `:getOverrideRot()` for getting the override of the rotation channel,
+---* `:getOverrideScale()` for getting the override of the scale channel.
+---@deprecated '".getOverride" is deprecated, hover for more information'
+Animation.getOverride = nil
+
+---@type nil
 ---`.getReplace` is deprecated. To get vanilla override, use `:getOverride()`.
 ---@deprecated '".getReplace" is deprecated, replace with ":getOverride()"'
 Animation.getReplace = nil
@@ -185,8 +193,8 @@ Animation.setLoopMode = nil
 Animation.setReplace = nil
 
 ---@type nil
----`.setPlayState` is deprecated. It has no replacement.
----@deprecated '".setPlayState" is deprecated'
+---`.setPlayState` is deprecated. To set if an animation is playing, use `:setPlaying()`.
+---@deprecated '".setPlayState" is deprecated, replace with ":setPlaying()"'
 Animation.setPlayState = nil
 
 ---@type nil
@@ -662,9 +670,14 @@ KeybindAPI.getRegisteredKeyList = nil
 KeybindAPI.getRegisteredKeybind = nil
 
 ---@type nil
----`.newKey` is deprecated. To create a new keybind, use `:create()`.
----@deprecated '".newKey" is deprecated, replace with ":create()"'
+---`.newKey` is deprecated. To create a new keybind, use `:newKeybind()`.
+---@deprecated '".newKey" is deprecated, replace with ":newKeybind()"'
 KeybindAPI.newKey = nil
+
+---@type nil
+---`keybind` is deprecated. To get the keybind API, use `keybinds`.
+---@deprecated '"keybind" is deprecated, replace with "keybinds"'
+keybind = nil
 
 
 ---==============================================================================================---
@@ -719,14 +732,15 @@ ModelPart.getEnabled = nil
 ModelPart.setEnabled = nil
 
 ---@type nil
----`.addRenderTask` is deprecated. To create a render task, use `:addBlock()`, `:addItem()`, or
----`:addText()`.
----@deprecated '".addRenderTask" is deprecated, replace with ":addBlock()"/":addItem()"/":addText()"'
+---`.addRenderTask` is deprecated. To create a render task, use `:newBlock()`, `:newItem()`, or
+---`:newText()`.
+---@deprecated '".addRenderTask" is deprecated, replace with ":newBlock()"/":newItem()"/":newText()"'
 ModelPart.addRenderTask = nil
 
 ---@type nil
----`.clearAllRenderTasks` is deprecated. It has no replacement.
----@deprecated '".clearAllRenderTasks" is deprecated'
+---`.clearAllRenderTasks` is deprecated. To remove all render tasks, use `:removeTask()` with no
+---`name` parameter.
+---@deprecated '".clearAllRenderTasks" is deprecated, replace with ":removeTask()"'
 ModelPart.clearAllRenderTasks = nil
 
 ---@type nil
@@ -738,18 +752,13 @@ ModelPart.getCullEnabled = nil
 ---@type nil
 ---`.getExtraTexEnabled` is deprecated. To get if the secondary texture is disabled, use
 ---`:getSecondaryRenderType() == "NONE"`.
----@deprecated '".getExtraTexEnabled" is deprecated, replace with ":getSecondaryRenderType() = "NONE""'
+---@deprecated '".getExtraTexEnabled" is deprecated, replace with ":getSecondaryRenderType() == "NONE""'
 ModelPart.getExtraTexEnabled = nil
 
 ---@type nil
 ---`.getMimicMode` is deprecated. It has no replacement.
 ---@deprecated '".getMimicMode" is deprecated'
 ModelPart.getMimicMode = nil
-
----@type nil
----`.getOverlay` is deprecated. It has no replacement.
----@deprecated '".getOverlay" is deprecated'
-ModelPart.getOverlay = nil
 
 ---@type nil
 ---`.getRenderTask` is deprecated. To get a render task attached to this part, use `:getTask()`.
@@ -799,11 +808,6 @@ ModelPart.setExtraTexEnabled = nil
 ---`.setMimicMode` is deprecated. It has no replacement.
 ---@deprecated '".setMimicMode" is deprecated'
 ModelPart.setMimicMode = nil
-
----@type nil
----`.setOverlay` is deprecated. It has no replacement.
----@deprecated '".setOverlay" is deprecated'
-ModelPart.setOverlay = nil
 
 ---@type nil
 ---`.setRenderLayer` is deprecated. It has no replacement.
@@ -1123,7 +1127,7 @@ ping = nil
 
 ---@type nil
 ---`particle` is deprecated. Replace the following:
----* `.addParticle` with `particles:addParticle()`
+---* `.addParticle` with `particles:newParticle()`
 ---@deprecated '"particle" is deprecated, hover for more information'
 particle = nil
 
@@ -1231,8 +1235,8 @@ renderlayers = nil
 local RenderTask
 
 ---@type nil
----`.getEmissive` is deprecated. To get if this task is emissive, use `:isEmissive()`.
----@deprecated '".getEmissive" is deprecated, replace with ":isEmissive()"'
+---`.getEmissive` is deprecated. It has no replacement.
+---@deprecated '".getEmissive" is deprecated'
 RenderTask.getEmissive = nil
 
 ---@type nil
@@ -1241,8 +1245,8 @@ RenderTask.getEmissive = nil
 RenderTask.getEnabled = nil
 
 ---@type nil
----`.setEmissive` is deprecated. To set if this task is emissive, use `:emissive()`.
----@deprecated '".setEmissive" is deprecated, replace with ":emissive()"'
+---`.setEmissive` is deprecated. It has no replacement.
+---@deprecated '".setEmissive" is deprecated'
 RenderTask.setEmissive = nil
 
 ---@type nil
@@ -1322,7 +1326,7 @@ TextTask.setText = nil
 ---`sound` is deprecated. Replace the following:
 ---* `.playCustomSound` with `sounds:playSound()`
 ---* `.playSound` with `sounds:playSound()`
----* `.registerCustomSound` with `sounds:addSound()`
+---* `.registerCustomSound` with `sounds:newSound()`
 ---* `.stopCustomSound` with `sounds:stopSound()`
 ---
 ---The following do not have a replacement:

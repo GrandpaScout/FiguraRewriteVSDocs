@@ -66,14 +66,26 @@
 ---```
 ---<!--
 ---@field ENTITY_INIT Event.Generic | Event.Generic.func
+---This event runs when the mouse is moved.
+---
+---This event uses the following callback:
+---```lua
+---function(x: integer, y: integer): boolean?
+---```
+---**`x`** The horizontal position of the mouse.
+---**`y`** The vertical position of the mouse.
+---**`return #1`** Whether to stop this move event from happening.
+---<!--
+---@field MOUSE_MOVE Event.MouseMove | Event.MouseMove.func
 ---This event runs when the mouse wheel is scrolled.
 ---
 ---This event uses the following callback:
 ---```lua
----function(dir: integer)
+---function(dir: integer): boolean?
 ---```
 ---**`dir`** The amount the mouse has scrolled since the last time this event triggered. This may be
 ---`0` if the mouse is scrolled left or right.
+---**`return #1`** Whether to stop this move event from happening.
 ---<!--
 ---@field MOUSE_SCROLL Event.MouseScroll | Event.MouseScroll.func
 ---This event runs after the avatar has rendered.

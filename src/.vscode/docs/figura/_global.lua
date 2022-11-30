@@ -64,7 +64,7 @@ figuraMetatables = {}
 host = {}
 
 ---@type KeybindAPI
-keybind = {}
+keybinds = {}
 
 ---@type MatricesAPI
 matrices = {}

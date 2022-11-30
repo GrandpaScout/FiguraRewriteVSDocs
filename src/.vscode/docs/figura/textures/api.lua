@@ -37,7 +37,7 @@ function TextureAPI:read(name, data) end
 ---@param width integer
 ---@param height integer
 ---@return Texture
-function TextureAPI:register(name, width, height) end
+function TextureAPI:newTexture(name, width, height) end
 
 
 ---===== GETTERS =====---

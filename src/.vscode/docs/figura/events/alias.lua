@@ -39,7 +39,15 @@
 ---==============================================================================================---
 
 ---A function used by the `SKULL_RENDER` event.
----@alias Event.SkullRender.func fun(delta?: number, pos?: Vector3 | nil): boolean?
+---@alias Event.SkullRender.func
+---| fun(delta?: number, block?: BlockState | nil, item?: ItemStack): boolean?
+
+---==============================================================================================---
+---  EVENT.MOUSEMOVE extends EVENT                                                               ---
+---==============================================================================================---
+
+---A function used by the `MOUSE_MOVE` event.
+---@alias Event.MouseMove.func fun(x?: integer, y?: integer)
 
 
 ---==============================================================================================---

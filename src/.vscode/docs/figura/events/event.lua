@@ -60,7 +60,7 @@ function EventGeneric:register(func, name) end
 ---  EVENT.RENDER extends EVENT                                                                  ---
 ---==============================================================================================---
 
----A generic render event with a `delta` and a `ctx` parameter.
+---A generic render event with a `delta` parameter and a `ctx` parameter.
 ---@class Event.Render: Event
 local EventRender
 
@@ -102,7 +102,7 @@ function EventWorldRender:register(func, name) end
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 
----An event with a `delta` parameter and a `pos` parameter.
+---An event with a `delta` parameter, a `block` parameter, an `item` parameter, and a single return.
 ---@class Event.SkullRender: Event
 local EventSkullRender
 
@@ -120,10 +120,30 @@ function EventSkullRender:register(func, name) end
 
 
 ---==============================================================================================---
+---  EVENT.MOUSEMOVE extends EVENT                                                               ---
+---==============================================================================================---
+
+---An event with a `x` parameter, a `y` parameter, and a single return.
+---@class Event.MouseMove: Event
+local EventMouseMove
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@param func Event.MouseMove.func
+---@param name? string
+function EventMouseMove:register(func, name) end
+
+
+---==============================================================================================---
 ---  EVENT.MOUSESCROLL extends EVENT                                                             ---
 ---==============================================================================================---
 
----An event with a `dir` parameter.
+---An event with a `dir` parameter and a single return.
 ---@class Event.MouseScroll: Event
 local EventMouseScroll
 

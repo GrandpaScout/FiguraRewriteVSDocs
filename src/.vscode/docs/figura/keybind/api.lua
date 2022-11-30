@@ -41,7 +41,7 @@ local KeybindAPI
 ---@param gui? boolean
 ---@param override? boolean
 ---@return Keybind
-function KeybindAPI:create(name, key, gui, override) end
+function KeybindAPI:newKeybind(name, key, gui, override) end
 
 
 ---===== GETTERS =====---
