@@ -47,7 +47,7 @@
 ---==============================================================================================---
 
 ---A function used by the `MOUSE_MOVE` event.
----@alias Event.MouseMove.func fun(x?: integer, y?: integer)
+---@alias Event.MouseMove.func fun(x?: integer, y?: integer): boolean?
 
 
 ---==============================================================================================---
@@ -55,7 +55,7 @@
 ---==============================================================================================---
 
 ---A function used by the `MOUSE_SCROLL` event.
----@alias Event.MouseScroll.func fun(dir?: integer)
+---@alias Event.MouseScroll.func fun(dir?: integer): boolean?
 
 
 ---==============================================================================================---
@@ -78,5 +78,5 @@
 ---  EVENT.USEITEM extends EVENT                                                                 ---
 ---==============================================================================================---
 
----A function used by the `CHAT_RECEIVE_MESSAGE` event.
+---A function used by the `USE_ITEM` event.
 ---@alias Event.UseItem.func fun(item?: ItemStack, anim?: ItemStack.useAction, ptc_count?: integer)

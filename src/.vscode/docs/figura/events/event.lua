@@ -220,4 +220,4 @@ local EventUseItem
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
 ---@param func Event.UseItem.func
 ---@param name? string
-function EventReceiveMessage:register(func, name) end
+function EventUseItem:register(func, name) end

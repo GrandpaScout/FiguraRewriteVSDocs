@@ -6,10 +6,10 @@
 ---  ACTION                                                                                      ---
 ---==============================================================================================---
 
----The base class of all action wheel actions.
+---An action wheel action.
 ---
----This should never be used directly unless the type of action does not need to be known.  
----If the type of subaction will be inferred later in your function, use `Action.any` instead.
+---This can act like a clickable button, a toggleable button, a scrollable area, or a combination of
+---them.
 ---@class Action
 ---The function that is executed when this action is left-clicked.
 ---<!--

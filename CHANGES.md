@@ -49,3 +49,10 @@ V1
 * Fixed deprecation of `ModelPart.clearAllRenderTasks()` claiming no replacement.
 * Fixed deprecation of `ModelPart.getExtraTexEnabled()` having invalid code.
 * Fixed `ModelPart:removeTask()` having two signatures. (Was there a reason for both of these?)
+
+V2
+--------------------------------------------------
+* Fixed wrong description of <kbd>Event.UseItem.func</kbd>.
+* Fixed missing boolean return of <kbd>Event.MouseMove.func</kbd> and
+  <kbd>Event.MouseScroll.func</kbd>.
+* Fixed wrong description of <kbd>Action</kbd>.
