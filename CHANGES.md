@@ -56,3 +56,7 @@ V2
 * Fixed missing boolean return of <kbd>Event.MouseMove.func</kbd> and
   <kbd>Event.MouseScroll.func</kbd>.
 * Fixed wrong description of <kbd>Action</kbd>.
+
+V3
+--------------------------------------------------
+* Removed deprecation of `PlayerAPI.getTargetedEntity`.

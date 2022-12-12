@@ -567,12 +567,6 @@ local PlayerAPI
 PlayerAPI.getStoredValue = nil
 
 ---@type nil
----`.getTargetedEntity` is deprecated. To get the entity the avatar host is looking at, use
----`host:getTargetedEntity()`.
----@deprecated '".getTargetedEntity" is deprecated, replace with "host:getTargetedEntity()"'
-PlayerAPI.getTargetedEntity = nil
-
----@type nil
 ---`.lastDamageSource` is deprecated. It has no replacement.
 ---@deprecated '".lastDamageSource" is deprecated'
 PlayerAPI.lastDamageSource = nil
