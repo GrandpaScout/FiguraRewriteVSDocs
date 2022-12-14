@@ -60,3 +60,10 @@ V2
 V3
 --------------------------------------------------
 * Removed deprecation of `PlayerAPI.getTargetedEntity`.
+
+V4
+--------------------------------------------------
+* Fixed missing character in deprecation message of `LivingEntityAPI.getHealthPercentage`.
+* Slightly increased range of library checking in parent folders.
+  (This does not affect the docs themselves, only how they are gathered. Everything should still be
+  the same.)

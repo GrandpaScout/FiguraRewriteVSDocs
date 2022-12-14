@@ -537,7 +537,7 @@ local LivingEntityAPI
 ---@type nil
 ---`.getHealthPercentage` is deprecated. To get this entity's health as a percentage, use
 ---`:getHealth() / :getMaxHealth()`.
----@deprecated '".getHealthPercentage" is deprecated, replace with ":getHealth() / :getMaxHealth()'
+---@deprecated '".getHealthPercentage" is deprecated, replace with ":getHealth() / :getMaxHealth()"'
 LivingEntityAPI.getHealthPercentage = nil
 
 ---@type nil

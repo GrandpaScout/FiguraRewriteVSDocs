@@ -5,11 +5,11 @@
   "workspace": {
     "library": [
       ".vscode/docs",
-      "../avatars/.vscode/docs",
       "../../avatars/.vscode/docs",
       "../../../avatars/.vscode/docs",
       "../../../../avatars/.vscode/docs",
-      "../../../../../avatars/.vscode/docs"
+      "../../../../../avatars/.vscode/docs",
+      "../../../../../../avatars/.vscode/docs"
     ],
 
     // Figura does not use third-party libraries.
