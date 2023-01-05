@@ -173,16 +173,6 @@ Animation.setBlendTime = nil
 Animation.setBlendWeight = nil
 
 ---@type nil
----`.setLength` is deprecated. To set length, use `:length()`.
----@deprecated '".setLength" is deprecated, replace with ":length()"'
-Animation.setLength = nil
-
----@type nil
----`.setLoopDelay` is deprecated. To set loop delay, use `:loopDelay()`.
----@deprecated '".setLoopDelay" is deprecated, replace with ":loopDelay()"'
-Animation.setLoopDelay = nil
-
----@type nil
 ---`.setLoopMode` is deprecated. To set loop mode, use `:loop()`.
 ---@deprecated '".setLoopMode" is deprecated, replace with ":loop()"'
 Animation.setLoopMode = nil
@@ -198,34 +188,9 @@ Animation.setReplace = nil
 Animation.setPlayState = nil
 
 ---@type nil
----`.setOverride` is deprecated. To set vanilla override, use `:override()`.
----@deprecated '".setOverride" is deprecated, replace with ":override()"'
-Animation.setOverride = nil
-
----@type nil
----`.setPriority` is deprecated. To set priority, use `:priority()`.
----@deprecated '".setPriority" is deprecated, replace with ":priority()"'
-Animation.setPriority = nil
-
----@type nil
----`.setSpeed` is deprecated. To set speed, use `:speed()`.
----@deprecated '".setSpeed" is deprecated, replace with ":speed()"'
-Animation.setSpeed = nil
-
----@type nil
----`.setStartDelay` is deprecated. To set start delay, use `:startDelay()`.
----@deprecated '".setStartDelay" is deprecated, replace with ":startDelay()"'
-Animation.setStartDelay = nil
-
----@type nil
 ---`.setStartOffset` is deprecated. To set start offset, use `:offset()`.
 ---@deprecated '".setStartOffset" is deprecated, replace with ":offset()"'
 Animation.setStartOffset = nil
-
----@type nil
----`.start` is deprecated. To play an animation, use `:play()`.
----@deprecated '".start" is deprecated, replace with ":play()"'
-Animation.start = nil
 
 ---@type nil
 ---`.start` is deprecated. To play an animation, use `:play()`.
@@ -377,8 +342,9 @@ ClientAPI.getChunksCount = nil
 ClientAPI.getCrosshairEnabled = nil
 
 ---@type nil
----`.getCrosshairPos` is deprecated. It has no replacement.
----@deprecated '".getCrosshairPos" is deprecated'
+---`.getCrosshairPos` is deprecated. To get the crosshair offset, use
+---`renderer:getCrosshairOffset()`.
+---@deprecated '".getCrosshairPos" is deprecated, replace with "renderer:getCrosshairOffset()"'
 ClientAPI.getCrosshairPos = nil
 
 ---@type nil
@@ -437,8 +403,8 @@ ClientAPI.setActionbar = nil
 ClientAPI.setCrosshairEnabled = nil
 
 ---@type nil
----`.setCrosshairPos` is deprecated. It has no replacement.
----@deprecated '".setCrosshairPos" is deprecated'
+---`.setCrosshairPos` is deprecated. To move the crosshair, use `renderer:setCrosshairOffset()`.
+---@deprecated '".setCrosshairPos" is deprecated, replace with "renderer:setCrosshairOffset()"'
 ClientAPI.setCrosshairPos = nil
 
 ---@type nil
@@ -541,14 +507,15 @@ local LivingEntityAPI
 LivingEntityAPI.getHealthPercentage = nil
 
 ---@type nil
----`.getStatusEffect` is deprecated. To get this entity's status effects, use `:getStatusEffects()`.
----@deprecated '".getStatusEffect" is deprecated, replace with ":getStatusEffects()"'
+---`.getStatusEffect` is deprecated. To get the host's status effects, use
+---`host:getStatusEffects()`.
+---@deprecated '".getStatusEffect" is deprecated, replace with "host:getStatusEffects()"'
 LivingEntityAPI.getStatusEffect = nil
 
 ---@type nil
----`.getStatusEffectTypes` is deprecated. To get this entity's status effects, use
----`:getStatusEffects()`.
----@deprecated '".getStatusEffectTypes" is deprecated, replace with ":getStatusEffects()"'
+---`.getStatusEffectTypes` is deprecated. To get the host's status effects, use
+---`host:getStatusEffects()`.
+---@deprecated '".getStatusEffectTypes" is deprecated, replace with "host:getStatusEffects()"'
 LivingEntityAPI.getStatusEffectTypes = nil
 
 ---@type nil
@@ -795,7 +762,7 @@ ModelPart.setCullEnabled = nil
 ---@type nil
 ---`.setExtraTexEnabled` is deprecated. To disable the secondary texture, use
 ---`:setSecondaryRenderType("NONE")`.
----@deprecated '".setExtraTexEnabled" is deprecated, replace with ":setSecondaryRenderType("NONE")"'
+---@deprecated '".setExtraTexEnabled" is deprecated, replace with ":setSecondaryRenderType()"'
 ModelPart.setExtraTexEnabled = nil
 
 ---@type nil
@@ -1078,13 +1045,13 @@ Nameplate.setScale = nil
 local EntityNameplate
 
 ---@type nil
----`.getEnabled()` is deprecated. To get if this nameplate is visible, read `.visible`.
----@deprecated '".getEnabled" is deprecated, replace with ".visible"'
+---`.getEnabled()` is deprecated. To get if this nameplate is visible, use `:isVisible()`.
+---@deprecated '".getEnabled" is deprecated, replace with ":isVisible()"'
 EntityNameplate.getEnabled = nil
 
 ---@type nil
----`.setEnabled()` is deprecated. To set if this nameplate is visible, set `.visible`.
----@deprecated '".setEnabled" is deprecated, replace with ".visible"'
+---`.setEnabled()` is deprecated. To set if this nameplate is visible, use `:visible()`.
+---@deprecated '".setEnabled" is deprecated, replace with ":visible()"'
 EntityNameplate.setEnabled = nil
 
 
@@ -1243,26 +1210,6 @@ RenderTask.getEnabled = nil
 ---@deprecated '".setEmissive" is deprecated'
 RenderTask.setEmissive = nil
 
----@type nil
----`.setEnabled` is deprecated. To set if this task is visible, use `:enabled()`.
----@deprecated '".setEnabled" is deprecated, replace with ":enabled()"'
-RenderTask.setEnabled = nil
-
----@type nil
----`.setPos` is deprecated. To set the position of this task, use `:pos()`.
----@deprecated '".setPos" is deprecated, replace with ":pos()"'
-RenderTask.setPos = nil
-
----@type nil
----`.setRot` is deprecated. To set the rotation of this task, use `:rot()`.
----@deprecated '".setRot" is deprecated, replace with ":rot()"'
-RenderTask.setRot = nil
-
----@type nil
----`.setScale` is deprecated. To set the scale of this task, use `:scale()`.
----@deprecated '".setScale" is deprecated, replace with ":scale()"'
-RenderTask.setScale = nil
-
 
 ---@class BlockTask
 local BlockTask
@@ -1272,11 +1219,6 @@ local BlockTask
 ---@deprecated '".setRenderLayer" is deprecated'
 BlockTask.setRenderLayer = nil
 
----@type nil
----`.setBlock` is deprecated. To set the block this task renders, use `:block()`.
----@deprecated '".setBlock" is deprecated, replace with ":block()"'
-BlockTask.setBlock = nil
-
 
 ---@class ItemTask
 local ItemTask
@@ -1285,11 +1227,6 @@ local ItemTask
 ---`.setRenderLayer` is deprecated. It has no replacement.
 ---@deprecated '".setRenderLayer" is deprecated'
 ItemTask.setRenderLayer = nil
-
----@type nil
----`.setItem` is deprecated. To set the item this task renders, use `:item()`.
----@deprecated '".setItem" is deprecated, replace with ":item()"'
-ItemTask.setItem = nil
 
 ---@type nil
 ---`.setItemMode` is deprecated. To set the rendering mode for the item this task renders, use
@@ -1305,11 +1242,6 @@ local TextTask
 ---`.setLineSpacing` is deprecated. It has no replacement.
 ---@deprecated '".setLineSpacing" is deprecated'
 TextTask.setLineSpacing = nil
-
----@type nil
----`.setText` is deprecated. To set the text this task renders, use `:text()`.
----@deprecated '".setText" is deprecated, replace with ":text()"'
-TextTask.setText = nil
 
 
 ---==============================================================================================---

@@ -81,3 +81,19 @@ V1
   ).
 * Updated description of `PlayerAPI:isFlying` to better explain which method of flight it checks.
 * `codestyle-check` is now a disabled diagnostic. It must be explicitly enabled.
+
+V2
+--------------------------------------------------
+* Removed deprecations of `Animation.setLength`, `Animation.setLoopDelay`, `Animation.setOverride`,
+  `Animation.setPriority`, `Animation.setSpeed`, `Animation.setStartDelay`,
+* Removed extra deprecation of `Animation.start`.
+* Modified deprecations of `ClientAPI.getCrosshairPos` and `ClientAPI.setCrosshairPos` to suggest
+  `renderer:getCrosshairOffset` and `renderer:setCrosshairOffset` respectively.
+* Modified deprecations of `LivingEntityAPI.getStatusEffect` and
+  `LivingEntityAPI.getStatusEffectTypes` to suggest `host:getStatusEffects`.
+* Changed deprecation of `ModelPart.setExtraTexEnabled` to not explicitly show `"NONE"` in the quick
+  message.
+* Modified deprecations of `EntityNameplate.getEnabled` and `EntityNameplate.setEnabled` to suggest
+  `EntityNameplate:isVisible` and `EntityNameplate:visible` respectively.
+* Removed deprecations of `RenderTask.setEnabled`, `RenderTask.setPos`, `RenderTask.setRot`,
+  `RenderTask.setScale`, `BlockTask.setBlock`, `ItemTask.setItem`, and `TextTask.setText`.
