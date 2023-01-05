@@ -19,6 +19,14 @@
 ---| 5 # Chestplate
 ---| 6 # Helmet
 
+---A valid server permission level.
+---@alias EntityAPI.permissionLevel
+---| 0 # No permissions
+---| 1 # Bypass spawn protection
+---| 2 # Use cheat commands
+---| 3 # Use player management commands
+---| 4 # Use server management commands
+
 ---A valid pose for an entity.
 ---@alias EntityAPI.pose
 ---| "STANDING"     # No special pose.
@@ -50,22 +58,18 @@
 ---  LIVIINGENTITYAPI extends ENTITYAPI                                                          ---
 ---==============================================================================================---
 
+---A valid entity category.
+---@alias LivingEntityAPI.category string
+---| "UNDEFINED" # Default.
+---| "UNDEAD"    # Undead, takes more damage from Smite.
+---| "ARTHROPOD" # Spider-like, takes more damage from Bane of Arthropods.
+---| "WATER"     # Aquatic, takes more damage from Impaling.
+---| "ILLAGER"   # Illager faction, takes part in village raids.
+
 ---A valid hand for an entity.
 ---@alias LivingEntityAPI.hand
 ---| "MAIN_HAND" # The entity's main hand.
 ---| "OFF_HAND"  # The entity's off hand.
-
----A status effect for an entity.
----@class LivingEntityAPI.StatusEffect
----The name of this status effect.
----<!--
----@field name Minecraft.effectID
----The time left for this status effect in ticks.
----@field duration integer
----The level of this status effect.
----@field amplifier integer
----Determines if the particles of this status effect are visible.
----@field visible boolean
 
 
 ---==============================================================================================---

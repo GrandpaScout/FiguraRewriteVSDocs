@@ -10,8 +10,8 @@
 ---@return unknown ...
 function require(modname) end
 
----@generic bkmod
----@param modname string
----@param backup fun(): bkmod
----@return unknown|bkmod ...
+---@generic module: string
+---@param modname module
+---@param backup fun(modname: module): unknown
+---@return unknown ...
 function require(modname, backup) end

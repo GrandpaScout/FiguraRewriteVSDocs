@@ -140,6 +140,27 @@ function EventMouseMove:register(func, name) end
 
 
 ---==============================================================================================---
+---  EVENT.MOUSEPRESS extends EVENT                                                               ---
+---==============================================================================================---
+
+---An event with a `button` parameter, a `state` parameter, a `modifiers` parameter, and a single
+---return.
+---@class Event.MousePress: Event
+local EventMousePress
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@param func Event.MousePress.func
+---@param name? string
+function EventMousePress:register(func, name) end
+
+
+---==============================================================================================---
 ---  EVENT.MOUSESCROLL extends EVENT                                                             ---
 ---==============================================================================================---
 
@@ -158,6 +179,27 @@ local EventMouseScroll
 ---@param func Event.MouseScroll.func
 ---@param name? string
 function EventMouseScroll:register(func, name) end
+
+
+---==============================================================================================---
+---  EVENT.KEYPRESS extends EVENT                                                               ---
+---==============================================================================================---
+
+---An event with a `key` parameter, a `state` parameter, a `modifiers` parameter, and a single
+---return.
+---@class Event.KeyPress: Event
+local EventKeyPress
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@param func Event.KeyPress.func
+---@param name? string
+function EventKeyPress:register(func, name) end
 
 
 ---==============================================================================================---

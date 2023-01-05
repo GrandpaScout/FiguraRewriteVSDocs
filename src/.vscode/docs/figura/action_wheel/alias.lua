@@ -16,7 +16,7 @@
 ---@alias Action.untoggleFunc fun(state?: false, self?: Action)
 
 ---A function used by a ScrollAction when it is scrolled.
----@alias Action.scrollFunc fun(dir?: integer, self?: Action)
+---@alias Action.scrollFunc fun(dir?: number, self?: Action)
 
 
 ---==============================================================================================---

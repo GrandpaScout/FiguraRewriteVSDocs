@@ -15,7 +15,7 @@
 ---
 ---Create a new page with:
 ---```lua
----local page_var = <ActionWheelAPI>:createPage()
+---local page_var = <ActionWheelAPI>:newPage()
 ---```
 ---&emsp;  
 ---There are two ways to create a new action.  

@@ -26,13 +26,19 @@ function VanillaModelPart:getOriginRot() end
 function VanillaModelPart:getOriginVisible() end
 
 ---Gets if the script has set this part as visible.
----@return boolean
+---
+---Returns `nil` if it is following Minecraft's expected visibility.
+---@return boolean?
 function VanillaModelPart:getVisible() end
 
 
 ---===== SETTERS =====---
 
----Sets if this vanilla part is visible.
+---Sets this vanilla part to either be always visible, always invisible, or visible when Minecraft
+---says it should be.
+---
+---A boolean value will force the part to be (in)visible, `nil` will make the part visible when
+---Minecraft expects it to be.
 ---@param state? boolean
 function VanillaModelPart:setVisible(state) end
 
@@ -50,13 +56,19 @@ local VanillaModelGroup
 
 ---===== GETTERS =====---
 
----Gets if the script has set the vanilla parts in this group as visible.
----@return boolean
+---Gets if the script has set this part group as visible.
+---
+---Returns `nil` if it is following Minecraft's expected visibility.
+---@return boolean?
 function VanillaModelGroup:getVisible() end
 
 
 ---===== SETTERS =====---
 
----Sets if the vanilla parts in this group are visible.
+---Sets this group of vanilla parts to either be always visible, always invisible, or visible
+---when Minecraft says they should be.
+---
+---A boolean value will force the group to be (in)visible, `nil` will make the group visible when
+---Minecraft expects it to be.
 ---@param state? boolean
 function VanillaModelGroup:setVisible(state) end

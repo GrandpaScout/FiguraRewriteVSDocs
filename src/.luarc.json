@@ -217,7 +217,7 @@
       "not-yieldable", // `coroutine.yield` does not exist in Figura.
 
       // Code Style
-      //;"codestyle-check",
+      "codestyle-check", // Code style checking is completely subjective.
       "spell-check",     // Who needs spell check? Lmao.
 
       // Duplicate

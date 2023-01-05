@@ -12,6 +12,40 @@
 ---| 0  # compare == to
 ---| 1  # compare > to
 
+---@class ClientAPI.date
+---The current era. Usually `"AD"`.
+---@field era string
+---The current year
+---@field year integer
+---The current month as an integer.
+---@field month integer
+---The current month's name.
+---@field month_name string
+---The current week in the year.
+---@field week integer
+---The current day in the month.
+---@field day integer
+---The current day in the year.
+---@field year_day integer
+---The current day in the week.
+---@field week_day integer
+---The current weekday's name.
+---@field day_name string
+---The current hour of the day.
+---@field hour integer
+---The current minute of the hour.
+---@field minute integer
+---The current second of the minute.
+---@field second integer
+---The current millisecond of the second.
+---@field millisecond integer
+---The current timezone formatted as a four digit ISO 8601 offset. (`±hhmm`)
+---@field timezone string
+---The current timezone's name.
+---@field timezone_name string
+---Determines if daylight saving time is currently in effect.
+---@field daylight_saving boolean
+
 ---A table of server information.
 ---@class ClientAPI.serverData
 ---The IP of the server. This might not exist, such as when in singleplayer.

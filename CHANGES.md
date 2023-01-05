@@ -1,69 +1,83 @@
-# 0.1.0 RC12 #
+# 0.1.0 RC13 #
 
 V1
 --------------------------------------------------
-* Updated from 0.1.0 RC11 V7
-* Added references to RC12 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
-* [Changes made directly from RC12 changelog](
-    https://discord.com/channels/805969743466332191/959863825581101116/1047267509658714193
+* Updated from 0.1.0 RC12 V4
+* Added references to RC13 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
+* [Changes made directly from RC13 changelog](
+    https://discord.com/channels/805969743466332191/959863825581101116/1060019426784706571
   )
-  * Added `/ignoredTextures` to *`avatar.schema.json`*.
-  * Modified description of `ModelPart:partToWorldMatrix()` to mention that it updates in
-    first-person.
-  * Modified `require()` to include the backup function parameter.
-  * Added <kbd>**Event.MouseMove**</kbd>, <kbd>Event.MouseMove.func</kbd>, and `Event.MOUSE_MOVE`.
-  * Modified <kbd>**Event.MouseScroll.func**</kbd> to have a return value.
-  * Modified <kbd>**Event.SkullRender.func**</kbd> to have a third item parameter.
-  * Modified second parameter of <kbd>**Event.SkullRender.func**</kbd> to be a
-    <kbd>**BlockState**</kbd>.
-  * Renamed `Animation:addCode()` to `Animation:newCode()`.
-  * Added `Animation:setPlaying()`.
-    * Modified deprecation of `Animation.setPlayState()` to mention this.
-  * Renamed `TextureAPI:register()` to `TextureAPI:newTexture()`.
-  * Renamed `ActionWheelAPI:createPage()` and `ActionWheelAPI:createAction()` to
-    `ActionWheelAPI:newPage()` and `ActionWheelAPI:newAction()`.
-    * Modified deprecations of `ActionWheelAPI.SLOT_#` to mention this.
-  * Modified parameter `index` of `Page:setAction()` to include `-1`.
-  * Renamed global `keybind` to `keybinds`.
-    * Added deprecation of global `keybind` as the prewrite had this global name.
-  * Renamed `KeybindAPI:create()` to `KeybindAPI:newKeybind()`.
-    * Modified deprecation of `KeybindAPI.newKey()` to mention this.
-  * Renamed `ParticleAPI:addParticle()` to `ParticleAPI:newParticle()`.
-    * Modified deprecation of global `particle` to mention this.
-  * Renamed `SoundAPI:addSound()` to `SoundAPI:newSound()`.
-    * Modified deprecation of global `sound` to mention this.
-  * Renamed `ModelPart:addBlock()`, `ModelPart:addItem()`, and `ModelPart:addText()` to
-    `ModelPart:newBlock()`, `ModelPart:newItem()`, and `ModelPart:newItem()`.
-    * Modified deprecation of `ModelPart.addRenderTask()` to mention this.
-  * Added `ModelPart:setOverlay()` and `ModelPart:getOverlay()`.
-    * Removed deprecation of `ModelPart.setOverlay()` and `ModelPart.getOverlay()`.
-  * Removed `RenderTask:isEmissive()` and `RenderTask:emissive()`.
-    * Modified deprecation of `RenderTask.getEmissive()` and `RenderTask.setEmissive()` to mention
-      this.
-  * Added `RenderTask:getLight()`, `RenderTask:light()`, `RenderTask:getOverlay()`, and
-    `RenderTask:overlay()`.
-  * Added `PlayerAPI:hasCape()` and `PlayerAPI:hasSkin()`.
-  * Added <kbd>**ClientAPI.serverData**</kbd> and `ClientAPI.getServerData()`.
-  * Added `RendererAPI:getFOV()` and `RendererAPI:setFOV()`.
-* Fixed missing deprecation for `Animation.getOverride()`.
-* Fixed deprecation of `ModelPart.clearAllRenderTasks()` claiming no replacement.
-* Fixed deprecation of `ModelPart.getExtraTexEnabled()` having invalid code.
-* Fixed `ModelPart:removeTask()` having two signatures. (Was there a reason for both of these?)
-
-V2
---------------------------------------------------
-* Fixed wrong description of <kbd>Event.UseItem.func</kbd>.
-* Fixed missing boolean return of <kbd>Event.MouseMove.func</kbd> and
-  <kbd>Event.MouseScroll.func</kbd>.
-* Fixed wrong description of <kbd>Action</kbd>.
-
-V3
---------------------------------------------------
-* Removed deprecation of `PlayerAPI.getTargetedEntity`.
-
-V4
---------------------------------------------------
-* Fixed missing character in deprecation message of `LivingEntityAPI.getHealthPercentage`.
-* Slightly increased range of library checking in parent folders.
-  (This does not affect the docs themselves, only how they are gathered. Everything should still be
-  the same.)
+  * `require`'s backup function now takes the required module as a parameter.
+  * All instances of `:setX()` have a `:x()` instance and vice versa.
+    * All `:setX()` are simple setters.  
+      ```lua
+      object:setX(value)
+      object:setY(value)
+      object:setZ(value)
+      ```
+    * All `:x()` are chainable setters.  
+      ```lua
+      object:x(value):y(value):z(value)
+      -- or --
+      object
+        :x(value)
+        :y(value)
+        :z(value)
+      ```
+    * This affects:  
+      <kbd>Action</kbd>, <kbd>Animation</kbd>, <kbd>AvatarAPI</kbd>, <kbd>ConfigAPI</kbd>,
+      <kbd>HostAPI</kbd>, <kbd>Keybind</kbd>, <kbd>ModelPart</kbd>, <kbd>RenderTask</kbd>,
+      <kbd>BlockTask</kbd>, <kbd>ItemTask</kbd>, <kbd>TextTask</kbd>, <kbd>EntityNameplate</kbd>,
+      <kbd>Particle</kbd>, <kbd>Sound</kbd>, <kbd>Texture</kbd>, <kbd>Biome</kbd>, and
+      <kbd>BlockState</kbd>.
+  * Added `MOUSE_PRESS` event.
+    * Added `EventsAPI.MOUSE_PRESS`, <kbd>Event.MousePress</kbd>, <kbd>Event.MousePress.func</kbd>,
+      and <kbd>Minecraft.mouseid</kbd>.
+  * Added `KEY_PRESS` event.
+    * Added `EventsAPI.KEY_PRESS`, <kbd>Event.KeyPress</kbd>, <kbd>Event.KeyPress.func</kbd>, and
+      <kbd>Minecraft.keyid</kbd>.
+  * Added <kbd>Event.Press.state</kbd> and <kbd>Event.Press.modifiers</kbd>.
+  * Added `AvatarAPI:getTrustLevel`, `AvatarAPI:getMaxTextureSize`, `AvatarAPI:canHaveCustomHeads`,
+    `AvatarAPI:getUUID`, <kbd>AvatarAPI.trustLevel</kbd>, and <kbd>AvatarAPI.textureSizeLimit</kbd>.
+  * Added <kbd>AnimationAPI</kbd>.
+    * Changed type of global `animations` to this.
+  * Added `"NORMAL"` and `"SPECULAR"` to <kbd>ModelPart.textureType</kbd>.
+  * Updated description of `VanillaModelPart:getVisible`, `VanillaModelPart:setVisible`,
+    `VanillaModelGroup:getVisible`, and `VanillaModelGroup:setVisible` to mention how `nil` values
+    work.
+  * Updated `KeybindAPI:newKeybind` to have an optional `key` paramter.
+  * Added `KeybindAPI:of` and `KeybindAPI:fromVanilla`.
+  * Moved `Keybind.onPress` and `Keybind.onRelease` to `Keybind.press` and `Keybind.release`
+    respectively.
+  * Added `Keybind:onPress`, `Keybind:onRelease`, and their `setX` versions.
+  * Removed `Keybind.enabled` and `Keybind.gui`.
+  * Added `Keybind:enabled`, `Keybind:gui`, their `setX` versions, `Keybind:isEnabled`, and
+    `Keybind:hasGUI`.
+  * Added `ClientAPI.getDate` and <kbd>ClientAPI.date</kbd>.
+  * Added `HostAPI:clipboard`, its `setX` version, `HostAPI:getClipboard`,
+    `HostAPI:isAvatarUploaded`, `HostAPI:getAttackCharge`, and `HostAPI:isJumping`
+  * Moved `LivingEntityAPI:getStatusEffects` and <kbd>LivingEntityAPI.StatusEffect</kbd> to
+    `HostAPI:getStatusEffects` and <kbd>HostAPI.statusEffect</kbd> respectively.
+  * Added `RendererAPI:getCrosshairOffset` and `RendererAPI:setCrosshairOffset`.
+  * Modified description of `Nameplate:setText` and `NameplateGroup:setText` to mention `${name}`
+    and `${segdab}` placeholders.
+  * Removed `EntityNameplate.visible`, `EntityNameplate.shadow`, and `EntityNameplate.outline`.
+  * Added `EntityNameplate:visible`, `EntityNameplate:shadow`, `EntityNameplate:outline`,
+    `EntityNameplate:outlineColor`, `EntityNameplate:light`, their `setX` versions,
+    `EntityNameplate:isVisible`, `EntityNameplate:hasShadow`, `EntityNameplate:hasOutline`, and
+    `EntityNameplate:getLight`.
+  * Added `WorldAPI.getDimension`
+  * Added `EntityAPI:isAlive`, `EntityAPI:getPermissionLevel`, `EntityAPI:isCrouching`.
+  * Added `LivingEntity:getAbsorptionAmount`, `LivingEntity:isSensitiveToWater`,
+    `LivingEntity:getEntityCategory`, `LivingEntity:isGliding`, `LivingEntity:isBlocking`,
+    `LivingEntity:isVisuallySwimming`, `LivingEntity:riptideSpinning`, and
+    <kbd>LivingEntity.category</kbd>.
+  * Added `PlayerAPI:isFishing` and `PlayerAPI:getChargedAttackDelay`.
+* Fixed incorrect function name in tutorial of <kbd>ActionWheelAPI</kbd>.
+* Updated the labels for some keys.
+* Changed `dir` parameter of <kbd>Event.MouseScroll.func</kbd> and <kbd>Action.scrollFunc</kbd> to
+  `number` as [it is proven that it can be a decimal value](
+    https://discord.com/channels/805969743466332191/808155531389698079/1059821727233875988
+  ).
+* Updated description of `PlayerAPI:isFlying` to better explain which method of flight it checks.
+* `codestyle-check` is now a disabled diagnostic. It must be explicitly enabled.

@@ -73,6 +73,10 @@ function ClientAPI.getChunkStatistics() end
 ---@return Minecraft.shader
 function ClientAPI.getCurrentEffect() end
 
+---Gets the current date as a table.
+---@return ClientAPI.date
+function ClientAPI.getDate() end
+
 ---Gets the amount of entities in render distance.
 ---@return integer
 function ClientAPI.getEntityCount() end

@@ -17,7 +17,7 @@
 ---  TEXTUREAPI                                                                                  ---
 ---==============================================================================================---
 
----An API for playing and adding sounds.
+---An API for handling textures used by the avatar.
 ---
 ---Indexing this API with a string that does not result in a method may return a `Texture` object.
 ---@class TextureAPI: TextureAPI.*INTERNAL*

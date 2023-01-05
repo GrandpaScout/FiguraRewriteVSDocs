@@ -45,8 +45,11 @@ local AvatarAPI
 ---```
 ---Will result in the host seeing `"dos"` in avatar variable `"es_num"` and all other clients seeing
 ---`"uno"` in avatar variable `"es_num"`.
+---@generic self
+---@param self self
 ---@param key string
 ---@param value? any
+---@return self
 function AvatarAPI:store(key, value) end
 
 
@@ -63,6 +66,12 @@ function AvatarAPI:canEditNameplate() end
 ---This is affected by the `Vanilla Model Change` trust setting.
 ---@return AvatarAPI.booleanSwitch
 function AvatarAPI:canEditVanillaModel() end
+
+---Gets if the viewing client allows this avatar to have a custom head.
+---
+---This is affected by the `Custom Player Heads` trust setting.
+---@return AvatarAPI.booleanSwitch
+function AvatarAPI:canHaveCustomHeads() end
 
 ---Gets if the viewing client allows this avatar to render while it is offscreen.
 ---
@@ -156,6 +165,12 @@ function AvatarAPI:getMaxRenderCount() end
 ---@return AvatarAPI.soundLimit
 function AvatarAPI:getMaxSounds() end
 
+---Gets the maximum width/height the viewing client allows textures on this avatar to have.
+---
+---This is affected by the `Max Texture Size` trust setting.
+---@return AvatarAPI.textureSizeLimit
+function AvatarAPI:getMaxTextureSize() end
+
 ---Gets the maximum `TICK` instructions the viewing client allows this avatar to have.
 ---
 ---This is affected by the `Tick Instructions` trust setting.
@@ -209,6 +224,14 @@ function AvatarAPI:getSize() end
 ---@return integer
 function AvatarAPI:getTickCount() end
 
+---Gets the trust level of the avatar on the viewing client.
+---@return AvatarAPI.trustLevel
+function AvatarAPI:getTrustLevel() end
+
+---Gets the UUID of this avatar's owner.
+---@return string
+function AvatarAPI:getUUID() end
+
 ---Gets the recommended Figura version of this avatar.
 ---
 ---This is affected by the `version` metadata.
@@ -255,3 +278,27 @@ function AvatarAPI:setColor(color) end
 ---@param g number
 ---@param b number
 function AvatarAPI:setColor(r, g, b) end
+
+
+---===== CHAINED =====---
+
+---Sets the color theme of your avatar.
+---
+---This will set the color of the avatar's metadata in the wardrobe screen and the Mark on the
+---nameplate.
+---
+---If `color` is `nil`, it will default to white.
+---@generic self
+---@param self self
+---@param color Vector3
+---@return self
+function AvatarAPI:color(color) end
+
+---If `r`, `g`, or `b` are `nil` they will default to `1`.
+---@generic self
+---@param self self
+---@param r number
+---@param g number
+---@param b number
+---@return self
+function AvatarAPI:color(r, g, b) end

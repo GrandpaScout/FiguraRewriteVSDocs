@@ -66,22 +66,46 @@
 ---```
 ---<!--
 ---@field ENTITY_INIT Event.Generic | Event.Generic.func
+---This event runs when the mouse is pressed or released.
+---
+---This event uses the following callback:
+---```lua
+---function(key: integer, state: integer, modifiers: integer): boolean?
+---```
+---**`key`** The mouse button being pressed or released.  
+---**`state`** The state of the button. (1: pressed, 0: released).  
+---**`modifiers`** The modifier keys being pressed as a bitmask.  
+---  (`SHIFT`: `0001`, `CTRL`: `0010`, `ALT`: `0100`, `META`: `1000`)
+---**`return #1`** Whether to stop this press event from happening.
+---@field KEY_PRESS Event.MousePress | Event.MousePress.func
 ---This event runs when the mouse is moved.
 ---
 ---This event uses the following callback:
 ---```lua
 ---function(x: integer, y: integer): boolean?
 ---```
----**`x`** The horizontal position of the mouse.
----**`y`** The vertical position of the mouse.
+---**`x`** The horizontal delta of the mouse.  
+---**`y`** The vertical delta of the mouse.  
 ---**`return #1`** Whether to stop this move event from happening.
 ---<!--
 ---@field MOUSE_MOVE Event.MouseMove | Event.MouseMove.func
+---This event runs when the mouse is pressed or released.
+---
+---This event uses the following callback:
+---```lua
+---function(button: integer, state: integer, modifiers: integer): boolean?
+---```
+---**`button`** The mouse button being pressed or released.  
+---**`state`** The state of the button. (1: pressed, 0: released).  
+---**`modifiers`** The modifier keys being pressed as a bitmask.  
+---  (`SHIFT`: `0001`, `CTRL`: `0010`, `ALT`: `0100`, `META`: `1000`)
+---**`return #1`** Whether to stop this press event from happening.
+---@field MOUSE_PRESS Event.MousePress | Event.MousePress.func
 ---This event runs when the mouse wheel is scrolled.
 ---
 ---This event uses the following callback:
 ---```lua
----function(dir: integer): boolean?
+---function(dir: number): boolean?
 ---```
 ---**`dir`** The amount the mouse has scrolled since the last time this event triggered. This may be
 ---`0` if the mouse is scrolled left or right.

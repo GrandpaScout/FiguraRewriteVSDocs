@@ -187,6 +187,10 @@ function WorldAPI.getBlockState(pos) end
 ---@return BlockState
 function WorldAPI.getBlockState(x, y, z) end
 
+---Gets the dimension of this world.
+---@return Minecraft.dimensionID
+function WorldAPI.getDimension() end
+
 ---Gets an entity by its UUID.
 ---
 ---Returns `nil` if no loaded entity has the given UUID

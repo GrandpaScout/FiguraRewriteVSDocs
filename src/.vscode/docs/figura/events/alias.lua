@@ -34,6 +34,7 @@
 ---A function used by `RENDER` events.
 ---@alias Event.WorldRender.func fun(delta?: number)
 
+
 ---==============================================================================================---
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
@@ -41,6 +42,7 @@
 ---A function used by the `SKULL_RENDER` event.
 ---@alias Event.SkullRender.func
 ---| fun(delta?: number, block?: BlockState | nil, item?: ItemStack): boolean?
+
 
 ---==============================================================================================---
 ---  EVENT.MOUSEMOVE extends EVENT                                                               ---
@@ -51,11 +53,57 @@
 
 
 ---==============================================================================================---
+---  EVENT.PRESS extends EVENT                                                                   ---
+---==============================================================================================---
+
+---@alias Event.Press.state
+---| 0 # Released
+---| 1 # Pressed
+---| 2 # Held
+
+---@alias Event.Press.modifiers
+---| 0  # No modifiers
+---| 1  # `⇧ Shift`
+---| 2  # `✲ Ctrl`
+---| 3  # `✲ Ctrl` **+** `⇧ Shift`
+---| 4  # `⎇ Alt`
+---| 5  # `⎇ Alt` **+** `⇧ Shift`
+---| 6  # `✲ Ctrl` **+** `⎇ Alt`
+---| 7  # `✲ Ctrl` **+** `⎇ Alt` **+** `⇧ Shift`
+---| 8  # `❖ Super`
+---| 9  # `⇧ Shift` **+** `❖ Super`
+---| 10 # `✲ Ctrl` **+** `❖ Super`
+---| 11 # `✲ Ctrl` **+** `⇧ Shift` **+** `❖ Super`
+---| 12 # `⎇ Alt` **+** `❖ Super`
+---| 13 # `⎇ Alt` **+** `⇧ Shift` **+** `❖ Super`
+---| 14 # `✲ Ctrl` **+** `⎇ Alt` **+** `❖ Super`
+---| 15 # `✲ Ctrl` **+** `⎇ Alt` **+** `⇧ Shift` **+** `❖ Super`
+
+
+---==============================================================================================---
+---  EVENT.MOUSEPRESS extends EVENT                                                              ---
+---==============================================================================================---
+
+---A function used by the `MOUSE_PRESS` event.
+---@alias Event.MousePress.func
+---| fun(button?: Minecraft.mouseid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): boolean?
+
+
+---==============================================================================================---
 ---  EVENT.MOUSESCROLL extends EVENT                                                             ---
 ---==============================================================================================---
 
 ---A function used by the `MOUSE_SCROLL` event.
----@alias Event.MouseScroll.func fun(dir?: integer): boolean?
+---@alias Event.MouseScroll.func fun(dir?: number): boolean?
+
+
+---==============================================================================================---
+---  EVENT.KEYPRESS extends EVENT                                                              ---
+---==============================================================================================---
+
+---A function used by the `KEY_PRESS` event.
+---@alias Event.KeyPress.func
+---| fun(key?: Minecraft.keyid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): boolean?
 
 
 ---==============================================================================================---

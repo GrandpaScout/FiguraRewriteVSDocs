@@ -44,6 +44,78 @@ function Particle:isAlive() end
 ---Sets the color of this particle.
 ---
 ---If `color` is `nil`, it will default to `⟨1, 1, 1, 1⟩`.
+---@param color? Vector3 | Vector4
+function Particle:setColor(color) end
+
+---If `r`, `g`, `b`, or `a` are `nil`, they will default to `1`.
+---@param r? number
+---@param g? number
+---@param b? number
+---@param a? number
+function Particle:setColor(r, g, b, a) end
+
+---Sets the gravity of this particle.
+---
+---If `speed` is `nil`, it will default to `0`.
+---@param speed? number
+function Particle:setGravity(speed) end
+
+---Sets the amount of time this particle should exist for in ticks.
+---
+---If `time` is `nil`, it will default to `0`.
+---@param time? integer
+function Particle:setLifetime(time) end
+
+---Sets if this particle collides with blocks.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function Particle:setPhysics(state) end
+
+---Sets the world position of this particle.
+---
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param pos? Vector3
+function Particle:setPos(pos) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@param x? number
+---@param y? number
+---@param z? number
+function Particle:setPos(x, y, z) end
+
+---Sets the "power" of the particle.
+---
+---If `power` is `nil`, it will default to `0`.
+---
+---TODO: Needs more testing.
+---@param power? number
+function Particle:setPower(power) end
+
+---Sets the scale of this particle.
+---
+---If `scale` is `nil`, it will default to `0`.
+---@param scale? number
+function Particle:setScale(scale) end
+
+---Sets the velocity of this particle.
+---
+---If `vel` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param vel? Vector3
+function Particle:setVelocity(vel) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@param x? number
+---@param y? number
+---@param z? number
+function Particle:setVelocity(x, y, z) end
+
+
+---===== CHAINED =====---
+
+---Sets the color of this particle.
+---
+---If `color` is `nil`, it will default to `⟨1, 1, 1, 1⟩`.
 ---@generic self
 ---@param self self
 ---@param color? Vector3 | Vector4

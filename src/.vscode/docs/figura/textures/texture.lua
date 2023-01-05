@@ -17,26 +17,34 @@ local Texture
 ---color of the pixels in that area.
 ---
 ---If `x`, `y`, `width`, or `height` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param width? integer
 ---@param height? integer
 ---@param func Texture.applyFunc
+---@return self
 function Texture:applyFunc(x, y, width, height, func) end
 
 ---Fills the given area with a single color.
 ---
 ---If `x`, `y`, `width`, or `height` are `nil`, they will default to `0`.  
 ---If `color` is `nil`, it will default to `⟨0, 0, 0, 1⟩`
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param width? integer
 ---@param height? integer
 ---@param color? Vector3 | Vector4
+---@return self
 function Texture:fill(x, y, width, height, color) end
 
 ---If `x`, `y`, `width`, `height`, `r`, `g`, or `b` are `nil`, they will default to `0`.  
 ---If `a` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param width? integer
@@ -45,9 +53,13 @@ function Texture:fill(x, y, width, height, color) end
 ---@param g? number
 ---@param b? number
 ---@param a? number
+---@return self
 function Texture:fill(x, y, width, height, r, g, b, a) end
 
 ---Reverts this texture back to its original state.
+---@generic self
+---@param self self
+---@return self
 function Texture:restore() end
 
 ---Returns the base64 representation of this textire.
@@ -55,6 +67,9 @@ function Texture:restore() end
 function Texture:save() end
 
 ---Submits all changes to the texture, allowing them to be viewed in-game.
+---@generic self
+---@param self self
+---@return self
 function Texture:update() end
 
 
@@ -97,3 +112,31 @@ function Texture:setPixel(x, y, color) end
 ---@param b? number
 ---@param a? number
 function Texture:setPixel(x, y, r, g, b, a) end
+
+
+---===== CHAINED =====---
+
+---Sets the color of the given pixel.
+---
+---If `x` or `y` are `nil`, they will default to `0`.  
+---If `color` is `nil`, it will default to `⟨0, 0, 0, 1⟩`
+---@generic self
+---@param self self
+---@param x? integer
+---@param y? integer
+---@param color? Vector3 | Vector4
+---@return self
+function Texture:pixel(x, y, color) end
+
+---If `x`, `y`, `r`, `g`, or `b` are `nil`, they will default to `0`.  
+---If `a` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
+---@param x? integer
+---@param y? integer
+---@param r? number
+---@param g? number
+---@param b? number
+---@param a? number
+---@return self
+function Texture:pixel(x, y, r, g, b, a) end
