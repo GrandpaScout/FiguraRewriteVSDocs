@@ -247,6 +247,12 @@ local TextTask
 ---@return Vector3?
 function TextTask:getOutlineColor() end
 
+---Gets the text displayed on this task.
+---
+---Returns `nil` if nothing is being displayed.
+---@return string?
+function TextTask:getText() end
+
 ---Gets if this task's text has an outline.
 ---@return boolean
 function TextTask:hasOutline() end

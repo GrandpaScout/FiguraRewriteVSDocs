@@ -83,6 +83,11 @@ function ActionWheelAPI:newPage(title) end
 ---===== GETTERS =====---
 
 ---Gets a page by its name.
+---
+---If no name is given, a table of all registered pages is given instead.
+---@return {[string]?: Page}
+function ActionWheelAPI:getPage() end
+
 ---@param name string
 ---@return Page?
 function ActionWheelAPI:getPage(name) end

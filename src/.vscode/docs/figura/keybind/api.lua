@@ -62,6 +62,10 @@ function KeybindAPI:of(name, key, gui) end
 
 ---===== GETTERS =====---
 
+---Gets a table with all of this avatar's registered keybinds.
+---@return {[string]?: Keybind}
+function KeybindAPI:getKeybinds() end
+
 ---Gets the key code of the key bound to a Minecraft keybind.
 ---@param keybind Minecraft.keybind
 ---@return Minecraft.keyCode

@@ -33,6 +33,13 @@ function ConfigAPI:load(key) end
 function ConfigAPI:save(key, value) end
 
 
+---===== GETTERS =====---
+
+---Gets the name of the active config file.
+---@return string
+function ConfigAPI:getName() end
+
+
 ---===== SETTERS =====---
 
 ---Sets the active config file.

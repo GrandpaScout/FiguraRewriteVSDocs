@@ -80,6 +80,10 @@ function EntityAPI:getName() end
 ---@return table
 function EntityAPI:getNbt() end
 
+---Gets the passengers on this entity.
+---@return EntityAPI.any[]
+function EntityAPI:getPassengers() end
+
 ---Gets the server permission level of this entity.
 ---
 ---A permission of 2 is required to run most commands.
@@ -140,9 +144,13 @@ function EntityAPI:getType() end
 ---@return string
 function EntityAPI:getUUID() end
 
----Gets a variable that was stored on this entity by the avatar it is wearing.
+---Gets a variable that was stored on this entity by the avatar it is wearing.  
+---If no key is given, the entire variable table is returned instead.
 ---
 ---These variables are stored with `<AvatarAPI>:store()`.
+---@return table
+function EntityAPI:getVariable() end
+
 ---@param key string
 ---@return any
 function EntityAPI:getVariable(key) end
@@ -936,6 +944,13 @@ function PlayerAPI:getModelType() end
 ---Gets the saturation level of this player.
 ---@return number
 function PlayerAPI:getSaturation() end
+
+---Gets the NBT of an entity on the player's left or right shoulder.
+---
+---If `right` is `nil`, it will default to `false`.
+---@param right? boolean
+---@return table
+function PlayerAPI:getShoulderEntity(right) end
 
 ---Gets if this player has a cape.
 ---@return boolean

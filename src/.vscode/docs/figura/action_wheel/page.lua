@@ -28,6 +28,12 @@ function Page:newAction(index) end
 ---@return Action?
 function Page:getAction(index) end
 
+---Gets the title of this page.
+---
+---Returns `nil` if this page is unnamed.
+---@return string?
+function Page:getTitle() end
+
 
 ---===== SETTERS =====---
 
