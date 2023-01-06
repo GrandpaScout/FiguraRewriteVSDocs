@@ -24,3 +24,9 @@ Upcoming
   * Added `TextTask:getText`.
 * [`6d8dbdf`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/6d8dbdf)
   * Added `ConfigAPI:getName`.
+* [`306edfb`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/306edfb)
+  * Added `ClientAPI.getFrameTime`.
+  * Moved `Keybind:hasGUI` to `Keybind:isGuiEnabled`.
+  * Added `RendererAPI:shadowRadius`, `RendererAPI:cameraPos`, `RendererAPI:cameraPivot`,
+    `RendererAPI:cameraRot`, `RendererAPI:postEffect`, `RendererAPI:fov`, and
+    `RendererAPI:crosshairOffset`

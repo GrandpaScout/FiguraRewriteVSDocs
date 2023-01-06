@@ -22,6 +22,10 @@ local Keybind
 
 ---===== GETTERS =====---
 
+---Gets if this keybind should be processed while a gui is open.
+---@return boolean
+function Keybind:getGuiEnabled() end
+
 ---Gets the key code this keybind tracks.
 ---@return Minecraft.keyCode
 function Keybind:getKey() end
@@ -35,10 +39,6 @@ function Keybind:getKeyName() end
 ---Gets the name of this keybind.
 ---@return string
 function Keybind:getName() end
-
----Gets if this keybind should be processed while a gui is open.
----@return boolean
-function Keybind:hasGUI() end
 
 ---Gets if the key that this keybind tracks has not been changed with `:setKey()` or the keybinds
 ---menu.

@@ -128,6 +128,12 @@ function ClientAPI.getFPS() end
 ---@return string
 function ClientAPI.getFPSString() end
 
+---Gets the fraction of time between the last tick and the next tick.
+---
+---Effectively the `delta` parameter of `RENDER` events.
+---@return number
+function ClientAPI.getFrameTime() end
+
 ---Gets the viewing client's GUI Scale.
 ---
 ---If the setting is set to "auto" then this will return the actual scale.
