@@ -33,5 +33,6 @@ function Page:getAction(index) end
 
 ---Sets the given index of this page to the given action.
 ---@param index Page.index
+---| -1 # Put in the first open slot.
 ---@param action? Action
 function Page:setAction(index, action) end

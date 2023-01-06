@@ -80,6 +80,12 @@ function EntityAPI:getName() end
 ---@return table
 function EntityAPI:getNbt() end
 
+---Gets the server permission level of this entity.
+---
+---A permission of 2 is required to run most commands.
+---@return EntityAPI.permissionLevel
+function EntityAPI:getPermissionLevel() end
+
 ---Gets the current position of this entity in blocks.  
 ---If a `delta` is given, the position is interpolated between the previous and current ticks.
 ---
@@ -154,6 +160,14 @@ function EntityAPI:getVelocity() end
 ---Gets if this entity is wearing an avatar.
 ---@return boolean
 function EntityAPI:hasAvatar() end
+
+---Gets if this entity is alive.
+---@return boolean
+function EntityAPI:isAlive() end
+
+---Gets if this entity is crouching.
+---@return boolean
+function EntityAPI:isCrouching() end
 
 ---Gets if this entity is glowing for any reason (Glowing status effect, `Glowing` NBT, etc.)
 ---@return boolean
@@ -764,6 +778,10 @@ local LivingEntityAPI
 
 ---===== GETTERS =====---
 
+---Gets the amount of absorption this entity has.
+---@return number
+function LivingEntityAPI:getAbsorptionAmount() end
+
 ---Gets the hand this entity last used an item in.
 ---
 ---Defaults to `"MAIN_HAND"` if no item has been used.
@@ -801,6 +819,10 @@ function LivingEntityAPI:getBodyYaw(delta) end
 ---@return integer
 function LivingEntityAPI:getDeathTime() end
 
+---Gets the category this entity belongs to.
+---@return LivingEntityAPI.category
+function LivingEntityAPI:getEntityCategory() end
+
 ---Gets the health of this entity.
 ---@return number
 function LivingEntityAPI:getHealth() end
@@ -818,10 +840,6 @@ function LivingEntityAPI:getHeldItem(offhand) end
 ---Gets the maximum health of this entity.
 ---@return number
 function LivingEntityAPI:getMaxHealth() end
-
----Gets the status effects applied to this entity.
----@return LivingEntityAPI.StatusEffect[]
-function LivingEntityAPI:getStatusEffects() end
 
 ---Gets the amount of stingers stuck in this entity.
 ---@return integer
@@ -841,13 +859,25 @@ function LivingEntityAPI:getSwingDuration() end
 ---@return integer
 function LivingEntityAPI:getSwingTime() end
 
+---Gets if this entity is blocking.
+---@return boolean
+function LivingEntityAPI:isBlocking() end
+
 ---Gets if this entity is using a climbable block.
 ---@return boolean
 function LivingEntityAPI:isClimbing() end
 
+---Gets if this entity is gliding.
+---@return boolean
+function LivingEntityAPI:isGliding() end
+
 ---Gets if this entity is left-handed.
 ---@return boolean
 function LivingEntityAPI:isLeftHanded() end
+
+---Gets if this entity is damaged by water.
+---@return boolean
+function LivingEntityAPI:isSensitiveToWater() end
 
 ---Gets if this entity is currently swinging its arm.
 ---@return boolean
@@ -856,6 +886,14 @@ function LivingEntityAPI:isSwingingArm() end
 ---Gets if this entity is currently using an item.
 ---@return boolean
 function LivingEntityAPI:isUsingItem() end
+
+---Gets if this entity is in its swimming pose.
+---@return boolean
+function LivingEntityAPI:isVisuallySwimming() end
+
+---Gets if this entity is spinning with riptide.
+---@return boolean
+function LivingEntityAPI:riptideSpinning() end
 
 
 ---==============================================================================================---
@@ -868,6 +906,10 @@ local PlayerAPI
 
 
 ---===== GETTERS =====---
+
+---Gets the delay of this player's charged attacks in ticks.
+---@return number
+function PlayerAPI:getChargedAttackDelay() end
 
 ---Gets the experience level of this player.
 ---@return integer
@@ -895,7 +937,19 @@ function PlayerAPI:getModelType() end
 ---@return number
 function PlayerAPI:getSaturation() end
 
----Gets if this player is currently flying.
+---Gets if this player has a cape.
+---@return boolean
+function PlayerAPI:hasCape() end
+
+---Gets if this player has a skin.
+---@return boolean
+function PlayerAPI:hasSkin() end
+
+---Gets if this player is fishing.
+---@return boolean
+function PlayerAPI:isFishing() end
+
+---Gets if this player is currently in creative flight.
 ---@return boolean
 function PlayerAPI:isFlying() end
 

@@ -60,6 +60,18 @@ function RendererAPI:getCameraPos() end
 ---@return Vector3?
 function RendererAPI:getCameraRot() end
 
+---Gets the offset of the crosshair set by the script.
+---
+---Returns `nil` if no offset has been made.
+---@return Vector2?
+function RendererAPI:getCrosshairOffset() end
+
+---Gets the current FOV multiplier.
+---
+---Returns `nil` if no multiplier has been set.
+---@return number?
+function RendererAPI:getFOV() end
+
 ---Gets the radius of the host's shadow in blocks.
 ---
 ---Returns `nil` if no shadow radius is applied.
@@ -149,6 +161,23 @@ function RendererAPI:setCameraRot(rot) end
 ---@param y? number
 ---@param z? number
 function RendererAPI:setCameraRot(x, y, z) end
+
+---Offset the crosshair by the given amount of pixels.
+---
+---If `offset` is `nil`, the offset will be removed.
+---@param offset? Vector2
+function RendererAPI:setCrosshairOffset(offset) end
+
+---If `x` is `nil`, the offset will be removed.  
+---If `y` is `nil`, it will default to `0`.
+---@param x? number
+---@param y? number
+function RendererAPI:setCrosshairOffset(x, y) end
+
+---Sets the FOV multiplier.
+---
+---If `fov` is `nil`, it will default to `1`.
+function RendererAPI:setFOV(fov) end
 
 ---Sets the current vanilla post-processing shader.
 ---

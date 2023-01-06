@@ -128,7 +128,7 @@ function WorldAPI:raycastEntity(fromX, fromY, fromZ, toX, toY, toZ) end
 
 ---Gets a table of all loaded avatars' stored values.
 ---
----Avatars are indexed by owner's name.
+---Avatars are indexed by owner's UUID.
 ---@return {[string]: {[string]: any}}
 function WorldAPI.avatarVars() end
 
@@ -186,6 +186,10 @@ function WorldAPI.getBlockState(pos) end
 ---@param z? number
 ---@return BlockState
 function WorldAPI.getBlockState(x, y, z) end
+
+---Gets the dimension of this world.
+---@return Minecraft.dimensionID
+function WorldAPI.getDimension() end
 
 ---Gets an entity by its UUID.
 ---

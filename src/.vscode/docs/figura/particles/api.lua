@@ -30,14 +30,14 @@ local ParticleAPI
 ---@param name Minecraft.particleID
 ---@param posVel? Vector6
 ---@return Particle
-function ParticleAPI:addParticle(name, posVel) end
+function ParticleAPI:newParticle(name, posVel) end
 
 ---If `pos` or `vel` are `nil`, they will default to `⟨0, 0, 0⟩`.
 ---@param name Minecraft.particleID
 ---@param pos? Vector3
 ---@param vel? Vector3
 ---@return Particle
-function ParticleAPI:addParticle(name, pos, vel) end
+function ParticleAPI:newParticle(name, pos, vel) end
 
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.  
 ---If `velX`, `velY`, or `velZ` are `nil`, they will default to `0`.
@@ -47,7 +47,7 @@ function ParticleAPI:addParticle(name, pos, vel) end
 ---@param velY? number
 ---@param velZ? number
 ---@return Particle
-function ParticleAPI:addParticle(name, pos, velX, velY, velZ) end
+function ParticleAPI:newParticle(name, pos, velX, velY, velZ) end
 
 ---If `posX`, `posY`, or `posZ` are `nil`, they will default to `0`.  
 ---If `vel` is `nil`, it will default to `⟨0, 0, 0⟩`.
@@ -57,7 +57,7 @@ function ParticleAPI:addParticle(name, pos, velX, velY, velZ) end
 ---@param posZ? number
 ---@param vel? Vector3
 ---@return Particle
-function ParticleAPI:addParticle(name, posX, posY, posZ, vel) end
+function ParticleAPI:newParticle(name, posX, posY, posZ, vel) end
 
 ---If `posX`, `posY`, `posZ`, `velX`, `velY`, or `velZ` are `nil`, they will default to `0`.
 ---@param name Minecraft.particleID
@@ -68,7 +68,7 @@ function ParticleAPI:addParticle(name, posX, posY, posZ, vel) end
 ---@param velY? number
 ---@param velZ? number
 ---@return Particle
-function ParticleAPI:addParticle(name, posX, posY, posZ, velX, velY, velZ) end
+function ParticleAPI:newParticle(name, posX, posY, posZ, velX, velY, velZ) end
 
 ---Removes all particles spawned by this avatar.
 function ParticleAPI:removeParticles() end

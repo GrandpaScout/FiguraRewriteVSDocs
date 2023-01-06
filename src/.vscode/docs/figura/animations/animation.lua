@@ -21,7 +21,7 @@ local Animation
 ---@param time number
 ---@param code string
 ---@return self
-function Animation:addCode(time, code) end
+function Animation:newCode(time, code) end
 
 ---Pauses this animation. Resume with `:play()`.
 function Animation:pause() end
@@ -100,6 +100,99 @@ function Animation:getTime() end
 
 
 ---===== SETTERS =====---
+
+---Sets how much this animation affects the model.
+---
+---A blend weight of `0.5` will cause the animation to move and rotate the model 50% as much.
+---
+---If `weight` is `nil`, it will default to `0`.
+---@param weight? number
+function Animation:setBlend(weight) end
+
+---Sets this animation's end point in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@param time? number
+function Animation:setLength(time) end
+
+---Sets what this animation does when it reaches its end.
+---@param mode Animation.loopMode
+function Animation:setLoop(mode) end
+
+---Sets the amount of time this animation waits before starting another loop in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@param time? number
+function Animation:setLoopDelay(time) end
+
+---Sets this animation's starting point in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@param time? number
+function Animation:setOffset(time) end
+
+---Sets if this animation overrides vanilla position, rotation, and scale changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function Animation:setOverride(state) end
+
+---Sets if this animation overrides vanilla position changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function Animation:setOverridePos(state) end
+
+---Sets if this animation overrides vanilla rotation changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function Animation:setOverrideRot(state) end
+
+---Sets if this animation overrides vanilla scale changes.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function Animation:setOverrideScale(state) end
+
+---Sets this animation's priority.
+---
+---Priority determines what animations will play over each other.
+---* Lower priority animations will be overridden by higher priority animations.
+---* Same priority animations will merge together.
+---
+---If `priority` is `nil`, it will default to `0`.
+---@param priority? integer
+function Animation:setPriority(priority) end
+
+---Sets if this animation is currently playing.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function Animation:setPlaying(state) end
+
+---Sets this animation's current play time in seconds.
+---
+---If `time` is `nil`, it will default to `0`.
+---@param time? number
+function Animation:setTime(time) end
+
+---Sets this animation's speed multiplier.
+---
+---Negative numbers cause the animation to play in reverse.
+---
+---If `speed` is `nil`, it will default to `1`.
+---@param speed? number
+function Animation:setSpeed(speed) end
+
+---Sets how long the animation will wait in seconds before starting to play.
+---
+---If `time` is `nil`, it will default to `0`.
+---@param time? number
+function Animation:setStartDelay(time) end
+
+
+---===== CHAINED =====---
 
 ---Sets how much this animation affects the model.
 ---
@@ -195,6 +288,15 @@ function Animation:overrideScale(state) end
 ---@return self
 function Animation:priority(priority) end
 
+---Sets if this animation is currently playing.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function Animation:playing(state) end
+
 ---Sets this animation's current play time in seconds.
 ---
 ---If `time` is `nil`, it will default to `0`.
@@ -202,7 +304,7 @@ function Animation:priority(priority) end
 ---@param self self
 ---@param time? number
 ---@return self
-function Animation:setTime(time) end
+function Animation:time(time) end
 
 ---Sets this animation's speed multiplier.
 ---

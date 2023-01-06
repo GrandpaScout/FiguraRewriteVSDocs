@@ -28,10 +28,6 @@ function RenderTask:getRot() end
 ---@return Vector3
 function RenderTask:getScale() end
 
----Gets if this task is rendering at full brightness.
----@return boolean
-function RenderTask:isEmissive() end
-
 ---Gets if this task is rendering.
 ---@return boolean
 function RenderTask:isEnabled() end
@@ -39,14 +35,50 @@ function RenderTask:isEnabled() end
 
 ---===== SETTERS =====---
 
----Sets if this task should render at full brightness at all times.
+---Sets if this task should render at all.
 ---
 ---If `state` is `nil`, it will default to `false`.
----@generic self
----@param self self
 ---@param state? boolean
----@return self
-function RenderTask:emissive(state) end
+function RenderTask:setEnabled(state) end
+
+---Sets this task's position.
+---
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param pos? Vector3
+function RenderTask:setPos(pos) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@param x? number
+---@param y? number
+---@param z? number
+function RenderTask:setPos(x, y, z) end
+
+---Sets this task's rotation.
+---
+---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param rot? Vector3
+function RenderTask:setRot(rot) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@param x? number
+---@param y? number
+---@param z? number
+function RenderTask:setRot(x, y, z) end
+
+---Sets this task's scale multiplier.
+---
+---If `scale` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@param scale? Vector3
+function RenderTask:setScale(scale) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `1`.
+---@param x? number
+---@param y? number
+---@param z? number
+function RenderTask:setScale(x, y, z) end
+
+
+---===== CHAINED =====---
 
 ---Sets if this task should render at all.
 ---
@@ -128,6 +160,17 @@ local BlockTask
 ---Also supports block states and NBT similar to Minecraft's `/setblock` command.
 ---
 ---If `block` is `nil`, it will default to `"minecraft:air"`.
+---@param block? Minecraft.blockID | BlockState
+function BlockTask:setBlock(block) end
+
+
+---===== CHAINED =====---
+
+---Sets the block this task renders.
+---
+---Also supports block states and NBT similar to Minecraft's `/setblock` command.
+---
+---If `block` is `nil`, it will default to `"minecraft:air"`.
 ---@generic self
 ---@param self self
 ---@param block? Minecraft.blockID | BlockState
@@ -152,6 +195,21 @@ function ItemTask:getRenderType(renderType) end
 
 
 ---===== SETTERS =====---
+
+---Sets the item this task renders.
+---
+---Also supports NBT similar to Minecraft's `/give` command.
+---
+---If `item` is `nil`, it will default to `"minecraft:air"`.
+---@param item? Minecraft.itemID | ItemStack
+function ItemTask:setItem(item) end
+
+---Sets the rendering mode for the item this task renders.
+---@param renderType ItemTask.renderType
+function ItemTask:setRenderType(renderType) end
+
+
+---===== CHAINED =====---
 
 ---Sets the item this task renders.
 ---
@@ -207,6 +265,57 @@ function TextTask:isRight() end
 
 
 ---===== SETTERS =====---
+
+---Sets if this task's text should be centered on its pivot similar to nameplates.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function TextTask:setCentered(state) end
+
+---Sets if this task's text should have an outline.
+---
+---Due to how this effect works, the text will also be emissive and shadows will not work.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function TextTask:setOutline(state) end
+
+---Sets the color of this task's outline (if enabled.)
+---
+---If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param col? Vector3
+function TextTask:setOutlineColor(col) end
+
+---If `r`, `g`, or `b` are `nil`, they will default to `0`.
+---@param r? number
+---@param g? number
+---@param b? number
+function TextTask:setOutlineColor(r, g, b) end
+
+---Sets if this task should be anchored right.  
+---Does nothing if this task is centered.
+---
+---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function TextTask:setRight(state) end
+
+---Sets if this task's text should have a shadow.
+---
+---This has no immediate effect if this task also has an outline.
+---
+---If `state` is `nil`, it will default to `false`.
+---@*error The shadow fails to actually stick to the text properly in world space.
+---@param state? boolean
+function TextTask:setShadow(state) end
+
+---Sets this task's text.
+---
+---If `text` is `nil`, it will default to `""`.
+---@param text? string
+function TextTask:setText(text) end
+
+
+---===== CHAINED =====---
 
 ---Sets if this task's text should be centered on its pivot similar to nameplates.
 ---

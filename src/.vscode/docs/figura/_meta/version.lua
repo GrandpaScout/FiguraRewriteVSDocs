@@ -7,6 +7,9 @@
 ---==============================================================================================---
 
 ---@alias Figura.version string
+---| "0.1.0-rc.13" # Figura 0.1.0, Release Candidate 13
+---| "0.1.0-rc.12" # Figura 0.1.0, Release Candidate 12
+---| "0.1.0-rc.11" # Figura 0.1.0, Release Candidate 11
 ---| "0.1.0-rc.10" # Figura 0.1.0, Release Candidate 10
 ---| "0.1.0-rc.9"  # Figura 0.1.0, Release Candidate 9
 ---| "0.1.0-rc.8"  # Figura 0.1.0, Release Candidate 8
@@ -25,8 +28,18 @@
 ---| "0.1.0-pre.1" # Figura 0.1.0, Prerelease 1
 
 ---@alias Figura.versionWithMC string
+---| "0.1.0-rc.13+1.19.3" # Figura 0.1.0, Release Candidate 13 (1.19.3)
+---| "0.1.0-rc.13+1.19.2" # Figura 0.1.0, Release Candidate 13 (1.19.2)
+---| "0.1.0-rc.13+1.19"   # Figura 0.1.0, Release Candidate 13 (1.19)
+---| "0.1.0-rc.13+1.18.2" # Figura 0.1.0, Release Candidate 13 (1.18.2)
+---| "0.1.0-rc.12+1.19.2" # Figura 0.1.0, Release Candidate 12 (1.19.2)
+---| "0.1.0-rc.12+1.19"   # Figura 0.1.0, Release Candidate 12 (1.19)
+---| "0.1.0-rc.12+1.18.2" # Figura 0.1.0, Release Candidate 12 (1.18.2)
+---| "0.1.0-rc.11+1.19.2" # Figura 0.1.0, Release Candidate 11 (1.19.2)
+---| "0.1.0-rc.11+1.19"   # Figura 0.1.0, Release Candidate 11 (1.19)
+---| "0.1.0-rc.11+1.18.2" # Figura 0.1.0, Release Candidate 11 (1.18.2)
 ---| "0.1.0-rc.10+1.19.2" # Figura 0.1.0, Release Candidate 10 (1.19.2)
----| "0.1.0-rc.10+1.18.2" # Figura 0.1.0, Release Candidate 10 (1.19.2)
+---| "0.1.0-rc.10+1.18.2" # Figura 0.1.0, Release Candidate 10 (1.18.2)
 ---| "0.1.0-rc.9+1.19.2"  # Figura 0.1.0, Release Candidate 9 (1.19.2)
 ---| "0.1.0-rc.9+1.18.2"  # Figura 0.1.0, Release Candidate 9 (1.18.2)
 ---| "0.1.0-rc.8+1.19.2"  # Figura 0.1.0, Release Candidate 8 (1.19.2)

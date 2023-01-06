@@ -85,6 +85,8 @@
 ---@alias ModelPart.textureType
 ---| "PRIMARY"   # The primary texture.
 ---| "SECONDARY" # The secondary texture. (Usually the emissive texture.)
+---| "NORMAL"    # The normal map.
+---| "SPECULAR"  # The specular map.
 ---| "SKIN"      # The player's skin.
 ---| "CAPE"      # The player's cape.
 ---| "ELYTRA"    # The base elytra texture. To use the player's elytra, use `"CAPE"`.

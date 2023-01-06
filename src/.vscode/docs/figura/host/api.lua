@@ -55,6 +55,12 @@ function HostAPI:swingArm(offhand) end
 
 ---===== GETTERS =====---
 
+---Gets the current attack charge as a fraction.
+---
+---Attack charge below `0.9` will not result in a crit.
+---@return number
+function HostAPI:getAttackCharge() end
+
 ---Gets the custom color of the chat input text.
 ---@return integer
 function HostAPI:getChatColor() end
@@ -64,6 +70,12 @@ function HostAPI:getChatColor() end
 ---Returns `nil` if the chat input is not open.
 ---@return string?
 function HostAPI:getChatText() end
+
+---Gets the text contents of the clipboard.
+---
+---Returns `""` if the contents of the clipboard are not text.
+---@return string
+function HostAPI:getClipboard(text) end
 
 ---Gets the class name of the currently open screen.
 ---
@@ -78,6 +90,14 @@ function HostAPI:getScreen() end
 ---@return ItemStack | integer
 function HostAPI:getSlot(slot) end
 
+---Gets the status effects applied to the host.
+---@return HostAPI.statusEffect[]
+function HostAPI:getStatusEffects() end
+
+---Gets if this avatar is uploaded.
+---@return boolean
+function HostAPI:isAvatarUploaded() end
+
 ---Gets if the chat input is opened.
 ---@return boolean
 function HostAPI:isChatOpen() end
@@ -91,6 +111,10 @@ function HostAPI:isContainerOpen() end
 ---This is equivalent to global `player` being the avatar owner's player entity.
 ---@return boolean
 function HostAPI:isHost() end
+
+---Gets if the host is jumping.
+---@return boolean
+function HostAPI:isJumping() end
 
 
 ---===== SETTERS =====---
@@ -133,6 +157,10 @@ function HostAPI:setChatColor(r, g, b) end
 ---@param text string
 function HostAPI:setChatText(text) end
 
+---Sets the contents of the clipboard to the given text.
+---@param text string
+function HostAPI:setClipboard(text) end
+
 ---Sets the HUD subtitle to the given text.  
 ---The message may be a
 ---[Raw JSON Text object](https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition).
@@ -161,3 +189,107 @@ function HostAPI:setTitleTimes(times) end
 ---@param duration? number
 ---@param fadeOut? number
 function HostAPI:setTitleTimes(fadeIn, duration, fadeOut) end
+
+
+---===== CHAINED =====---
+
+---Sets the action bar message to the given text.  
+---The message may be a
+---[Raw JSON Text object](https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition).
+---
+---If `animated` is set, any text in the message that is not colored will cycle colors.
+---@generic self
+---@param self self
+---@param text string
+---@param animated? boolean
+---@return self
+function HostAPI:actionbar(text, animated) end
+
+---Does nothing.
+---@generic self
+---@param self self
+---@param bit integer
+---@param set boolean
+---@param alt boolean
+---@return self
+---@*hidden Debug function for setting badges.
+function HostAPI:badge(bit, set, alt) end
+
+---Sets the color of the text in the chat input.
+---
+---If the `color` is `nil`, the text color will be unset.
+---@generic self
+---@param self self
+---@param color? Vector3
+---@return self
+function HostAPI:chatColor(color) end
+
+---If `r` is `nil`, the text color will be unset.  
+---If `g` or `b` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function HostAPI:chatColor(r, g, b) end
+
+---Sets the text in the chat input to the text given.
+---
+---This will overwrite any text currently in the chat input and the cursor will be placed at the end
+---of the new text.
+---
+---This will do nothing if the input is not open.
+---@generic self
+---@param self self
+---@param text string
+---@return self
+function HostAPI:chatText(text) end
+
+---Sets the contents of the clipboard to the given text.
+---@generic self
+---@param self self
+---@param text string
+---@return self
+function HostAPI:clipboard(text) end
+
+---Sets the HUD subtitle to the given text.  
+---The message may be a
+---[Raw JSON Text object](https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition).
+---
+---This only prepares the subtitle, it does not print it out. Use `HostAPI:title()` to print out
+---the title and subtitle.
+---@generic self
+---@param self self
+---@param text string
+---@return self
+function HostAPI:subtitle(text) end
+
+---Sets the HUD title to the given text.  
+---The message may be a
+---[Raw JSON Text object](https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition).
+---
+---This will prepare and print the title. It will also print the subtitle if one is prepared.
+---@generic self
+---@param self self
+---@param text string
+---@return self
+function HostAPI:title(text) end
+
+---Sets the fade-in time, duration, and fade-out times of the HUD title and subtitle in seconds.
+---
+---If `times` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
+---@param times? Vector3
+---@return self
+function HostAPI:titleTimes(times) end
+
+---If `fadeIn`, `duration`, or `fadeOut` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param fadeIn? number
+---@param duration? number
+---@param fadeOut? number
+---@return self
+function HostAPI:titleTimes(fadeIn, duration, fadeOut) end

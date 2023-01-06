@@ -31,7 +31,7 @@ local SoundAPI
 ---`data` may either be a byte array or a base64 string.
 ---@param name string
 ---@param data string | integer[]
-function SoundAPI:addSound(name, data) end
+function SoundAPI:newSound(name, data) end
 
 ---Plays a sound at the given position.
 ---

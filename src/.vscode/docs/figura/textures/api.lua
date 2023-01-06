@@ -17,7 +17,7 @@
 ---  TEXTUREAPI                                                                                  ---
 ---==============================================================================================---
 
----An API for playing and adding sounds.
+---An API for handling textures used by the avatar.
 ---
 ---Indexing this API with a string that does not result in a method may return a `Texture` object.
 ---@class TextureAPI: TextureAPI.*INTERNAL*
@@ -37,7 +37,7 @@ function TextureAPI:read(name, data) end
 ---@param width integer
 ---@param height integer
 ---@return Texture
-function TextureAPI:register(name, width, height) end
+function TextureAPI:newTexture(name, width, height) end
 
 
 ---===== GETTERS =====---

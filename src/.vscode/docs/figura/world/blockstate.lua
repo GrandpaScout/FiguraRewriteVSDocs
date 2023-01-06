@@ -161,3 +161,24 @@ function BlockState:setPos(pos) end
 ---@param y? Vector3
 ---@param z? Vector3
 function BlockState:setPos(x, y, z) end
+
+
+---===== CHAINED =====---
+
+---Sets the position that this BlockState object uses for calculations.
+---
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
+---@param pos? Vector3
+---@return self
+function BlockState:pos(pos) end
+
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param x? Vector3
+---@param y? Vector3
+---@param z? Vector3
+---@return self
+function BlockState:pos(x, y, z) end

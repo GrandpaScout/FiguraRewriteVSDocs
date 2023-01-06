@@ -15,7 +15,7 @@
 ---
 ---Create a new page with:
 ---```lua
----local page_var = <ActionWheelAPI>:createPage()
+---local page_var = <ActionWheelAPI>:newPage()
 ---```
 ---&emsp;  
 ---There are two ways to create a new action.  
@@ -58,17 +58,6 @@ local ActionWheelAPI
 
 ---===== METHODS =====---
 
----Creates a new action that is not tied to a page.
----@return Action
-function ActionWheelAPI:createAction() end
-
----Creates a new page for use in the action wheel.
----
----If given a title, it will be stored with that title and can later be retrieved with `:getPage`
----@param title? string
----@return Page
-function ActionWheelAPI:createPage(title) end
-
 ---Attempts to execute an action on the current page of the action wheel.  
 ---This can only execute a `ClickAction`, any other action type will do nothing.
 ---
@@ -78,6 +67,17 @@ function ActionWheelAPI:createPage(title) end
 ---@param index? Page.index
 ---@param rightClick? boolean
 function ActionWheelAPI:execute(index, rightClick) end
+
+---Creates a new action that is not tied to a page.
+---@return Action
+function ActionWheelAPI:newAction() end
+
+---Creates a new page for use in the action wheel.
+---
+---If given a title, it will be stored with that title and can later be retrieved with `:getPage`
+---@param title? string
+---@return Page
+function ActionWheelAPI:newPage(title) end
 
 
 ---===== GETTERS =====---

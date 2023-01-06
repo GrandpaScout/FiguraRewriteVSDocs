@@ -127,6 +127,6 @@
 ---├•  end                                   │   end
 ---└•end                                     └•end
 ---```
----@class PingAPI
----@field [string] function
+---@*lserror Fails to collect functions properly
+----@class PingAPI
 local PingAPI

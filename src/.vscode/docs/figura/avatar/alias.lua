@@ -59,8 +59,15 @@
 ---| 0          # Blocked default
 ---| 4          # Untrusted default
 ---| 32         # Trusted default
----| 62         # Max slider value
+---| 63         # Max slider value
 ---| 2147483647 # Friend default, INFINITY
+
+---The default values for the Max Texture Size trust setting.
+---@alias AvatarAPI.textureSizeLimit integer
+---| 0    # Blocked default
+---| 128  # Untrusted default
+---| 512  # Trusted default
+---| 2048 # Friend default, max slider value
 
 ---The default values for the Tick Instructions trust setting.
 ---@alias AvatarAPI.tickLimit integer
@@ -85,3 +92,11 @@
 ---| 256        # Trusted default
 ---| 32767      # Max slider value
 ---| 2147483647 # Friend default, INFINITY
+
+---The trust levels in Figura.
+---@alias AvatarAPI.trustLevel
+---| "BLOCKED"   # Blocked
+---| "UNTRUSTED" # Untrusted, default
+---| "TRUSTED"   # Trusted
+---| "FRIEND"    # Friend
+---| "LOCAL"     # Local

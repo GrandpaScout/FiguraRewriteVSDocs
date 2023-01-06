@@ -48,13 +48,6 @@
 ---| "figura.config.panic_button"        # **Figura:** [Figura] Panic Button
 ---| "figura.config.popup_button"        # **Figura:** [Figura] Popup Menu
 ---| "figura.config.reload_button"       # **Figura:** [Figura] Reload Avatar
----| "key.modmenu.open_menu"             # **Mod Menu:** [Mod Menu] Open Mod Menu
----| "key.origins.primary_active"        # **Origins:** [Origins] Active Power (Primary)
----| "key.origins.secondary_active"      # **Origins:** [Origins] Active Power (Secondary)
----| "key.origins.view_origin"           # **Origins:** [Origins] View Origin
----| "iris.keybind.reload"               # **Iris:** [Iris] Reload Shaders
----| "iris.keybind.toggleShaders"        # **Iris:** [Iris] Shaderpack Selection Screen
----| "iris.keybind.shaderPackSelection"  # **Iris:** [Iris] Toggle Shaders
 
 
 --unknown: 🚫
@@ -174,10 +167,10 @@
 ---| "key.keyboard.right.control"   # `✲ RCtrl` **/** `⎈` **/** `⌃`
 ---| "key.keyboard.left.shift"      # `⇧ Shift`
 ---| "key.keyboard.right.shift"     # `⇧ RShift`
----| "key.keyboard.left.win"        # `⊞ Win` **/** `❖` **/** `⌘ Command` **/** `◆ Meta`
----| "key.keyboard.right.win"       # `⊞ RWin` **/** `❖` **/** `⌘ RCommand` **/** `◆ RMeta`
----| "key.keyboard.left.alt"        # `Alt` **/** `⌥ Option`
----| "key.keyboard.right.alt"       # `RAlt` **/** `Alt Gr` **/** `⌥ ROption`
+---| "key.keyboard.left.win"        # `⊞ Win` **/** `⌘ Command` **/** `❖ Super`
+---| "key.keyboard.right.win"       # `⊞ RWin` **/** `⌘ RCommand` **/** `❖ RSuper`
+---| "key.keyboard.left.alt"        # `⎇ Alt` **/** `⌥ Option`
+---| "key.keyboard.right.alt"       # `⎇ RAlt` **/** `Alt Gr` **/** `⌥ ROption`
 ---| "key.keyboard.menu"            # `☰ Menu`
 ---| "key.keyboard.insert"          # `Ins`
 ---| "key.keyboard.delete"          # `⌦ Del`
@@ -217,6 +210,144 @@
 ---| "key.mouse.6"                  # `Mouse 6`
 ---| "key.mouse.7"                  # `Mouse 7`
 ---| "key.mouse.8"                  # `Mouse 8`
+
+
+---A valid key id for use in the `KEY_PRESS` event.
+---@alias Minecraft.keyid integer
+---| -1  # 🚫 *Unknown*
+---| 32  # `␣ Space`
+---| 39  # `'`
+---| 44  # `,`
+---| 46  # `.`
+---| 47  # `/`
+---| 48  # `0`
+---| 49  # `1`
+---| 50  # `2`
+---| 51  # `3`
+---| 52  # `4`
+---| 53  # `5`
+---| 54  # `6`
+---| 55  # `7`
+---| 56  # `8`
+---| 57  # `9`
+---| 59  # `;`
+---| 61  # `=`
+---| 65  # `A`
+---| 66  # `B`
+---| 67  # `C`
+---| 68  # `D`
+---| 69  # `E`
+---| 60  # `F`
+---| 61  # `G`
+---| 62  # `H`
+---| 73  # `I`
+---| 74  # `J`
+---| 75  # `K`
+---| 76  # `L`
+---| 77  # `M`
+---| 78  # `N`
+---| 79  # `O`
+---| 70  # `P`
+---| 71  # `Q`
+---| 72  # `R`
+---| 83  # `S`
+---| 84  # `T`
+---| 85  # `U`
+---| 86  # `V`
+---| 87  # `W`
+---| 88  # `X`
+---| 89  # `Y`
+---| 90  # `Z`
+---| 91  # `[`
+---| 92  # `\`
+---| 93  # `]`
+---| 96  # ``‌`‌``
+---| 161 # `🌐¹`
+---| 162 # `🌐²`
+---| 256 # `⎋ Esc`
+---| 257 # `↵ Enter` **/** `↵ Return`
+---| 258 # `↹ Tab` **/** `⇥`
+---| 259 # `⟵ Backspace` **/** `⌫`
+---| 260 # `Ins`
+---| 261 # `⌦ Del`
+---| 262 # `→ Right`
+---| 263 # `← Left`
+---| 264 # `↓ Down`
+---| 265 # `↑ Up`
+---| 266 # `⇞ PgUp`
+---| 267 # `⇟ PgDn`
+---| 268 # `⤒ Home`
+---| 269 # `⤓ End`
+---| 280 # `🅰 Caps Lock` **/** `⇪`
+---| 281 # `Scroll Lock`
+---| 282 # `Num Lock` **/** `⌧ Clear`
+---| 283 # `PrtSc|SysRq`
+---| 284 # `Pause|Break`
+---| 290 # `F1`
+---| 291 # `F2`
+---| 292 # `F3`
+---| 293 # `F4`
+---| 294 # `F5`
+---| 295 # `F6`
+---| 296 # `F7`
+---| 297 # `F8`
+---| 298 # `F9`
+---| 299 # `F10`
+---| 300 # `F11`
+---| 301 # `F12`
+---| 302 # `F13`
+---| 303 # `F14`
+---| 304 # `F15`
+---| 305 # `F16`
+---| 306 # `F17`
+---| 307 # `F18`
+---| 308 # `F19`
+---| 309 # `F20`
+---| 310 # `F21`
+---| 311 # `F22`
+---| 312 # `F23`
+---| 313 # `F24`
+---| 314 # `F25`
+---| 320 # `KP 0`
+---| 321 # `KP 1`
+---| 322 # `KP 2`
+---| 323 # `KP 3`
+---| 324 # `KP 4`
+---| 325 # `KP 5`
+---| 326 # `KP 6`
+---| 327 # `KP 7`
+---| 328 # `KP 8`
+---| 329 # `KP 9`
+---| 330 # `KP .`
+---| 331 # `KP /`
+---| 332 # `KP *`
+---| 333 # `KP -`
+---| 334 # `KP +`
+---| 335 # `↵ KP Enter` **/** `⌤`
+---| 336 # `KP =`
+---| 340 # `⇧ Shift`
+---| 341 # `✲ Ctrl` **/** `⎈` **/** `⌃`
+---| 342 # `⎇ Alt` **/** `⌥ Option`
+---| 343 # `⊞ Win` **/** `⌘ Command` **/** `❖ Super`
+---| 344 # `⇧ RShift`
+---| 345 # `✲ RCtrl` **/** `⎈` **/** `⌃`
+---| 346 # `⎇ RAlt` **/** `Alt Gr` **/** `⌥ ROption`
+---| 347 # `⊞ RWin` **/** `⌘ RCommand` **/** `❖ RSuper`
+---| 348 # `☰ Menu`
+
+
+---A valid mouse button id for use in the `MOUSE_PRESS` event.
+---@alias Minecraft.mouseid integer
+---| -1 # 🚫 *Unknown*
+---| 0  # `Mouse Left`
+---| 1  # `Mouse Right`
+---| 2  # `Mouse Middle`
+---| 3  # `Mouse Back`
+---| 4  # `Mouse Forward`
+---| 5  # `Mouse 6`
+---| 6  # `Mouse 7`
+---| 7  # `Mouse 8`
+
 
 ---A key's name.
 ---

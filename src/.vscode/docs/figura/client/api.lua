@@ -73,6 +73,10 @@ function ClientAPI.getChunkStatistics() end
 ---@return Minecraft.shader
 function ClientAPI.getCurrentEffect() end
 
+---Gets the current date as a table.
+---@return ClientAPI.date
+function ClientAPI.getDate() end
+
 ---Gets the amount of entities in render distance.
 ---@return integer
 function ClientAPI.getEntityCount() end
@@ -160,6 +164,10 @@ function ClientAPI.getScaledWindowSize() end
 ---Gets the server's brand.
 ---@return Minecraft.serverBrand
 function ClientAPI.getServerBrand() end
+
+---Gets the IP, name, and MotD of the server this client is connected on.
+---@return ClientAPI.serverData
+function ClientAPI.getServerData() end
 
 ---Gets the sound info line from the debug screen.
 ---
