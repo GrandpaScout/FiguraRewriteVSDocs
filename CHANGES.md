@@ -97,3 +97,9 @@ V2
   `EntityNameplate:isVisible` and `EntityNameplate:visible` respectively.
 * Removed deprecations of `RenderTask.setEnabled`, `RenderTask.setPos`, `RenderTask.setRot`,
   `RenderTask.setScale`, `BlockTask.setBlock`, `ItemTask.setItem`, and `TextTask.setText`.
+
+V3
+--------------------------------------------------
+* Fixed description of `AnimationAPI`. This is what I get for copying and pasting shit to do less
+  work.
+* Fixed `KEY_PRESS` event using wrong event type.

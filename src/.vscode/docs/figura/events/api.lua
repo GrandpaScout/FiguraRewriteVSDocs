@@ -77,7 +77,7 @@
 ---**`modifiers`** The modifier keys being pressed as a bitmask.  
 ---  (`SHIFT`: `0001`, `CTRL`: `0010`, `ALT`: `0100`, `META`: `1000`)
 ---**`return #1`** Whether to stop this press event from happening.
----@field KEY_PRESS Event.MousePress | Event.MousePress.func
+---@field KEY_PRESS Event.KeyPress | Event.KeyPress.func
 ---This event runs when the mouse is moved.
 ---
 ---This event uses the following callback:

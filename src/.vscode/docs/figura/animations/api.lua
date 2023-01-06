@@ -26,7 +26,7 @@
 ---
 ---To access the animations of an avatar, use:
 ---```lua
----models.<bbmodel_name>.<animation_name>
+---animations.<bbmodel_name>.<animation_name>
 ---```
 ---&emsp;  
 ---Be careful when naming animations, an animation name that contains special characters (such as
