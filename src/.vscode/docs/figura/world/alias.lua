@@ -116,6 +116,15 @@
 ---  ITEMSTACK                                                                                   ---
 ---==============================================================================================---
 
+---A valid item equipment slot.
+---@alias ItemStack.equipmentSlot
+---| "mainhand" # Main Hand
+---| "offhand"  # Off Hand
+---| "feet"     # Feet
+---| "legs"     # Legs
+---| "chest"    # Chest
+---| "head"     # Head
+
 ---A valid item rarity.
 ---@alias ItemStack.rarity
 ---| "COMMON"   # White.

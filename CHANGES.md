@@ -30,3 +30,9 @@ Upcoming
   * Added `RendererAPI:shadowRadius`, `RendererAPI:cameraPos`, `RendererAPI:cameraPivot`,
     `RendererAPI:cameraRot`, `RendererAPI:postEffect`, `RendererAPI:fov`, and
     `RendererAPI:crosshairOffset`
+
+2023-01-07
+--------------------------------------------------
+* [`d489a58`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/d489a58)
+  * Added `ItemStack:isArmor()`, `ItemStack:isTool`, and `ItemStack:getEquipmentSlot`,
+    <kbd>ItemStack.equipmentSlot</kbd>

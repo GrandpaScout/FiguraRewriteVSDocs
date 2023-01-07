@@ -42,6 +42,10 @@ function ItemStack:getCount() end
 ---@return integer
 function ItemStack:getDamage() end
 
+---Gets the equipment slot of this item.
+---@return ItemStack.equipmentSlot
+function ItemStack:getEquipmentSlot() end
+
 ---Gets the maximum amount this item can stack to.
 ---@return integer
 function ItemStack:getMaxCount() end
@@ -80,6 +84,10 @@ function ItemStack:getUseDuration() end
 ---@return boolean
 function ItemStack:hasGlint() end
 
+---Gets if this item is armor.
+---@return boolean
+function ItemStack:isArmor() end
+
 ---Gets if this item is also a block.
 ---@return boolean
 function ItemStack:isBlockItem() end
@@ -99,3 +107,7 @@ function ItemStack:isFood() end
 ---Gets if this item is stackable.
 ---@return boolean
 function ItemStack:isStackable() end
+
+---Gets if this item is a tool.
+---@return boolean
+function ItemStack:isTool() end
