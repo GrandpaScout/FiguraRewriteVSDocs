@@ -102,7 +102,8 @@ function EventWorldRender:register(func, name) end
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 
----An event with a `delta` parameter, a `block` parameter, an `item` parameter, and a single return.
+---An event with a `delta` parameter, a `block` parameter, an `item` parameter, an `entity`
+---parameter, a `ctx` parameter, and a single return.
 ---@class Event.SkullRender: Event
 local EventSkullRender
 

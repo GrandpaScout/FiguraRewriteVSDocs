@@ -146,11 +146,13 @@
 ---
 ---This event uses the following callback:
 ---```lua
----function(delta: number, pos: Vector3|nil): boolean?
+---function(delta: number, block?: BlockState, item?: ItemStack, entity?: EntityAPI, ctx: string): boolean?
 ---```
 ---**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`pos`** The position of the skull block being rendered. If this is `nil`, the skull is being
----worn by an entity.  
+---**`block`** The block form of the skull if the skull is placed as a block.  
+---**`item`** The item form of the skull if the skull is being rendered as an item.  
+---**`entity`** The entity wearing this skull if it is placed on an entity's head.  
+---**`ctx`** The context of this skull render event.  
 ---**`return #1`** Whether the currently rendering skull should be hidden instead.
 ---<!--
 ---@field SKULL_RENDER Event.SkullRender | Event.SkullRender.func

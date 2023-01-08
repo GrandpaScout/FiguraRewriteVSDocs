@@ -16,7 +16,7 @@ Upcoming
     [Thanks, Katt](
       https://discord.com/channels/805969743466332191/808155531389698079/1060703969380421752
     ).
-  * Fixed an incorrect alt for parent type "Skull" (💀 **⇒** ☠)
+  * Fixed an incorrect alt for parent type "Skull". (💀 **⇒** ☠)
 * [`1b24e76`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/1b24e76)
   * Modified `ActionWheelAPI:getPage` to have a 0-parameter overload.
   * Added `Page:getTitle`.
@@ -29,10 +29,18 @@ Upcoming
   * Moved `Keybind:hasGUI` to `Keybind:isGuiEnabled`.
   * Added `RendererAPI:shadowRadius`, `RendererAPI:cameraPos`, `RendererAPI:cameraPivot`,
     `RendererAPI:cameraRot`, `RendererAPI:postEffect`, `RendererAPI:fov`, and
-    `RendererAPI:crosshairOffset`
+    `RendererAPI:crosshairOffset`.
 
 2023-01-07
 --------------------------------------------------
 * [`d489a58`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/d489a58)
   * Added `ItemStack:isArmor()`, `ItemStack:isTool`, and `ItemStack:getEquipmentSlot`,
-    <kbd>ItemStack.equipmentSlot</kbd>
+    <kbd>ItemStack.equipmentSlot</kbd>.
+
+2023-01-08
+--------------------------------------------------
+* [`d489a58`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/d489a58)
+  * Updated <kbd>Event.SkullRender.func</kbd> to have its new parameters.
+  * Added <kbd>Event.SkullRender.context</kbd>.
+  * Updated description of `EventsAPI.SKULL_RENDER` to mention changes to the event and to fix a few
+    errors.

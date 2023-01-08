@@ -39,9 +39,17 @@
 ---  EVENT.SKULLRENDER extends EVENT                                                             ---
 ---==============================================================================================---
 
+---A valid skull render context.
+---@alias Event.SkullRender.context
+---| "HEAD"       # Worn on head.
+---| "RIGHT_HAND" # Held in right hand.
+---| "LEFT_HAND"  # Held in left hand.
+---| "BLOCK"      # Placed as a block.
+---| "OTHER"      # Some other context.
+
 ---A function used by the `SKULL_RENDER` event.
 ---@alias Event.SkullRender.func
----| fun(delta?: number, block?: BlockState | nil, item?: ItemStack): boolean?
+---| fun(delta?: number, block?: BlockState, item?: ItemStack, entity?: EntityAPI.any, ctx: Event.SkullRender.context): boolean?
 
 
 ---==============================================================================================---
