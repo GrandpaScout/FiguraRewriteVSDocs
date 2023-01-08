@@ -39,7 +39,7 @@ Upcoming
 
 2023-01-08
 --------------------------------------------------
-* [`d489a58`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/d489a58)
+* [`5b42e22`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/5b42e22)
   * Updated <kbd>Event.SkullRender.func</kbd> to have its new parameters.
   * Added <kbd>Event.SkullRender.context</kbd>.
   * Updated description of `EventsAPI.SKULL_RENDER` to mention changes to the event and to fix a few
