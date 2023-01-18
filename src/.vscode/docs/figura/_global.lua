@@ -248,8 +248,7 @@ function listFiles(dir, recursive) end
 
 ---Alias of `print`.
 ---> ***
----> Receives any number of arguments and prints them to chat.
---->
+---> Receives any number of arguments and prints them to chat seperated by two spaces.  
 ---> If a string value is given, it will be printed as-is with no formatting.
 --->
 ---> If a non-string value is given, the value will be formatted in a readable manner and given a
@@ -267,11 +266,14 @@ function log(...) end
 
 ---Alias of `printJson`.
 ---> ***
----> Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
+---> Receives any number of arguments and prints them to chat without a seperator.  
+---> If a string value is given, it will be parsed as a Raw JSON Text component.
+--->
+---> This function does not print the standard log prefix.
 ---> ***
----@param json? string
+---@param ... any
 ---@return string
-function logJson(json) end
+function logJson(...) end
 
 ---Alias of `printTable`.
 ---> ***
@@ -293,10 +295,13 @@ function logJson(json) end
 ---@return string
 function logTable(t, depth, silent) end
 
----Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
----@param json? string
+---Receives any number of arguments and prints them to chat without a seperator.  
+---If a string value is given, it will be parsed as a Raw JSON Text component.
+---
+---This function does not print the standard log prefix.
+---@param ... any
 ---@return string
-function printJson(json) end
+function printJson(...) end
 
 ---Prints the contents of the given table or userdata object to chat down to the specified depth.  
 ---If a userdata object is given, every default Figura method and field on it is printed.

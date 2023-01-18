@@ -23,8 +23,11 @@ function Event:clear() end
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func function
 ---@param name? string
+---@return self
 function Event:register(func, name) end
 
 ---Removes *all* functions with the given name from this event.
@@ -51,8 +54,11 @@ local EventGeneric
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.Generic.func
 ---@param name? string
+---@return self
 function EventGeneric:register(func, name) end
 
 
@@ -72,8 +78,11 @@ local EventRender
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.Render.func
 ---@param name? string
+---@return self
 function EventRender:register(func, name) end
 
 
@@ -93,8 +102,11 @@ local EventWorldRender
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.WorldRender.func
 ---@param name? string
+---@return self
 function EventWorldRender:register(func, name) end
 
 
@@ -115,8 +127,11 @@ local EventSkullRender
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.SkullRender.func
 ---@param name? string
+---@return self
 function EventSkullRender:register(func, name) end
 
 
@@ -135,8 +150,11 @@ local EventMouseMove
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.MouseMove.func
 ---@param name? string
+---@return self
 function EventMouseMove:register(func, name) end
 
 
@@ -156,8 +174,11 @@ local EventMousePress
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.MousePress.func
 ---@param name? string
+---@return self
 function EventMousePress:register(func, name) end
 
 
@@ -177,8 +198,11 @@ local EventMouseScroll
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.MouseScroll.func
 ---@param name? string
+---@return self
 function EventMouseScroll:register(func, name) end
 
 
@@ -198,8 +222,11 @@ local EventKeyPress
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.KeyPress.func
 ---@param name? string
+---@return self
 function EventKeyPress:register(func, name) end
 
 
@@ -219,8 +246,11 @@ local EventSendMessage
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.SendMessage.func
 ---@param name? string
+---@return self
 function EventSendMessage:register(func, name) end
 
 
@@ -240,8 +270,11 @@ local EventReceiveMessage
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.ReceiveMessage.func
 ---@param name? string
+---@return self
 function EventReceiveMessage:register(func, name) end
 
 
@@ -261,6 +294,9 @@ local EventUseItem
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.UseItem.func
 ---@param name? string
+---@return self
 function EventUseItem:register(func, name) end

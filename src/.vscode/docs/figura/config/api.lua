@@ -45,7 +45,10 @@ function ConfigAPI:getName() end
 ---Sets the active config file.
 ---
 ---`<ConfigAPI>:load()` and `<ConfigAPI>:save()` will read and write to the active config file.
+---@generic self
+---@param self self
 ---@param name string
+---@return self
 function ConfigAPI:setName(name) end
 
 

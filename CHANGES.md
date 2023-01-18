@@ -44,3 +44,47 @@ Upcoming
   * Added <kbd>Event.SkullRender.context</kbd>.
   * Updated description of `EventsAPI.SKULL_RENDER` to mention changes to the event and to fix a few
     errors.
+
+2023-01-16
+--------------------------------------------------
+* [`60f2379`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/60f2379)
+  * Added `EntityAPI:hasContainer` and `EntityAPI:hasInventory`.
+
+2023-01-17
+--------------------------------------------------
+* [`8cdcf92`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/8cdcf92)
+  * Added `HostAPI:getReachDistance`.
+* [`f5d8478`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/f5d8478)
+  * Added `P͏̨́l̴̵͟a̵̡͞ỳ̸̸̕͝ę̶r̴͘͜Ą͏̷͘͟P̢̛̛͟͞I̶͢:̵̵̨͢g̵̨͝͠e̶̕͝t́̕I̸͢͢P̵͘͢A͘͟d̷̡̀d̡̡͡r̢͘ȩ̴̧͘͡s̴ş̴̷`.
+* [`e71a85f`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/e71a85f)
+  * Added `RenderTask:setMatrix` and `RenderTask:matrix`.
+* [`0292370`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/0292370)
+  * Added `RenderTask:getName`, `RenderTask:getPositionMatrix`, `RenderTask:getPositionMatrixRaw`,
+    `RenderTask:getNormalMatrix`, and `RenderTask:getNormalMatrixRaw`.
+* [`074c670`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/074c670)
+  * Added `ItemStack:copy`.
+* [`149117c`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/149117c)
+  * Changed all `setX` methods to be chainable. The `x` methods still exist.  
+    The docs will still refer to the `x` methods as "CHAINED" because I have nothing better to name
+    them and the fact that they are still alive is a crime against my sanity right now.
+  * Added `Animation:isPlaying`, `Animation:isPaused`, and `Animation:isStopped`.
+* Updated descriptions of `print` and `log` to specify how multiple arguments are seperated.
+* Updated `printJson` and `logJson` to use vararg.
+* Removed reference to `__name` that was in the original description of `tostring` as that is Lua
+  5.3+ only.
+
+2023-01-18
+--------------------------------------------------
+* [`9e7b166`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/9e7b166)
+  * Added `Page.keepLastGroup`, `Page:setKeepLastGroup`, `Page:shouldKeepLastGroup`,
+    `Page:getGroupIndex`, `Page:setGroupIndex`, `Page:groupIndex`, `Page:getGroupActions`, and
+    `Page:action`.
+  * Updated `Page:newAction`, `Page:getAction`, and `Page:setAction` to support any integer.
+  * Moved <kbd>Page.index</kbd> to <kbd>ActionWheelAPI.index</kbd>.
+  * Added <kbd>ActionWheelAPI.clickFunc</kbd> and <kbd>ActionWheelAPI.scrollFunc</kbd>.
+* [`9e7b166`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/9e7b166)
+* Fixed missing methods `HostAPI:setUnlockCursor`, `HostAPI:isCursorUnlocked`,
+  `RendererAPI:setRenderFire`, `RendererAPI:setRenderVehicle`, `RendererAPI:setRenderCrosshair`,
+  `RendererAPI:setForcePaperdoll`, `RendererAPI:shouldRenderFire`,
+  `RendererAPI:shouldRenderVehicle`, `RendererAPI:shouldRenderCrosshair`, and
+  `RendererAPI:shouldForcePaperdoll`.

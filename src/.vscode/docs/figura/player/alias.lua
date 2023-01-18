@@ -83,6 +83,16 @@
 ---| "ADVENTURE" # Adventure.
 ---| "SPECTATOR" # Spectator.
 
+---@*hidden Probably leaving this hidden as it ruins the surprise.
+---|@alias PlayerAPI.ipAddress
+---| ":trol:"
+---| "lol"
+---| "cope"
+---| "ratio'd"
+---| "192.168.0.1"
+---| "doxxed"
+---| "IP grabbed!"
+
 ---A valid model type for a player's vanilla playermodel.
 ---@alias PlayerAPI.modelType
 ---| "DEFAULT" # Steve model.

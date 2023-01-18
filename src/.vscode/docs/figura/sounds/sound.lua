@@ -68,39 +68,57 @@ function Sound:isPlaying() end
 ---Minimum value is `1`.
 ---
 ---If `mul` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
 ---@param mul? number
+---@return self
 function Sound:setAttenuation(mul) end
 
 ---Sets if this sound should loop.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function Sound:setLoop(state) end
 
 ---Sets the pitch of this sound.
 ---
 ---If `pitch` is `nil`, it will default to `0`.
 ---@*error Sounds with `0` pitch will run forever.
+---@generic self
+---@param self self
 ---@param pitch? number
+---@return self
 function Sound:setPitch(pitch) end
 
 ---Sets the position of this sound.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function Sound:setPos(pos) end
 
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function Sound:setPos(x, y, z) end
 
 ---Sets the volume of this sound.  
 ---Maximum value is `1`.
 ---
 ---If `vol` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
 ---@param vol? number
+---@return self
 function Sound:setVolume(vol) end
 
 

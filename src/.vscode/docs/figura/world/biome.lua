@@ -74,13 +74,19 @@ function Biome:isHot() end
 ---Sets the position used by this Biome object for its calculations.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function Biome:setPos(pos) end
 
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? Vector3
 ---@param y? Vector3
 ---@param z? Vector3
+---@return self
 function Biome:setPos(x, y, z) end
 
 

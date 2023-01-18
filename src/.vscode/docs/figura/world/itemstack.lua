@@ -23,6 +23,10 @@ local ItemStack
 
 ---===== METHODS =====---
 
+---Creates a copy of this item stack.
+---@return ItemStack
+function ItemStack:copy() end
+
 ---Creates an item stack string with this item.
 ---@return string
 function ItemStack:toStackString() end

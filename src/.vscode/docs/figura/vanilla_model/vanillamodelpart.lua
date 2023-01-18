@@ -39,7 +39,10 @@ function VanillaModelPart:getVisible() end
 ---
 ---A boolean value will force the part to be (in)visible, `nil` will make the part visible when
 ---Minecraft expects it to be.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function VanillaModelPart:setVisible(state) end
 
 
@@ -70,5 +73,8 @@ function VanillaModelGroup:getVisible() end
 ---
 ---A boolean value will force the group to be (in)visible, `nil` will make the group visible when
 ---Minecraft expects it to be.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function VanillaModelGroup:setVisible(state) end

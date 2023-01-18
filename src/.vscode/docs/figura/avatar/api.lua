@@ -270,13 +270,19 @@ function AvatarAPI:hasTexture() end
 ---nameplate.
 ---
 ---If `color` is `nil`, it will default to white.
+---@generic self
+---@param self self
 ---@param color Vector3
+---@return self
 function AvatarAPI:setColor(color) end
 
 ---If `r`, `g`, or `b` are `nil` they will default to `1`.
+---@generic self
+---@param self self
 ---@param r number
 ---@param g number
 ---@param b number
+---@return self
 function AvatarAPI:setColor(r, g, b) end
 
 

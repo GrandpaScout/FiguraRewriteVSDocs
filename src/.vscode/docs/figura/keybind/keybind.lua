@@ -59,31 +59,46 @@ function Keybind:isPressed() end
 ---Sets if this keybind should be processed at all.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function Keybind:setEnabled(state) end
 
 ---Sets if this keybind should be processed while a GUI is open.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function Keybind:setGUI(state) end
 
 ---Sets the key that this keybind tracks.
+---@generic self
+---@param self self
 ---@param key Minecraft.keyCode
+---@return self
 function Keybind:setKey(key) end
 
 ---Sets the function this keybind should run when pressed.
 ---
 ---If `true` is returned from the given function, any Minecraft keybinds bound to the same key as
 ---this keybind are blocked.
+---@generic self
+---@param self self
 ---@param func? Keybind.func
+---@return self
 function Keybind:setOnPress(func) end
 
 ---Sets the function this keybind should run when released.
 ---
 ---If `true` is returned from the given function, any Minecraft keybinds bound to the same key as
 ---this keybind are blocked.
+---@generic self
+---@param self self
 ---@param func? Keybind.func
+---@return self
 function Keybind:setOnRelease(func) end
 
 

@@ -98,19 +98,25 @@ function Texture:getPixel(x, y) end
 ---
 ---If `x` or `y` are `nil`, they will default to `0`.  
 ---If `color` is `nil`, it will default to `⟨0, 0, 0, 1⟩`
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param color? Vector3 | Vector4
+---@return self
 function Texture:setPixel(x, y, color) end
 
 ---If `x`, `y`, `r`, `g`, or `b` are `nil`, they will default to `0`.  
 ---If `a` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param r? number
 ---@param g? number
 ---@param b? number
 ---@param a? number
+---@return self
 function Texture:setPixel(x, y, r, g, b, a) end
 
 

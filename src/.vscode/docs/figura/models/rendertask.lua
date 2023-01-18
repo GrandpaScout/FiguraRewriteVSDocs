@@ -16,9 +16,29 @@ local RenderTask
 
 ---===== GETTERS =====---
 
+---Gets the name of this task.
+---@return string
+function RenderTask:getName() end
+
+---Recalculates then gets the normal matrix of this task.
+---@return Matrix3
+function RenderTask:getNormalMatrix() end
+
+---Gets the normal matrix of this task without recalculating it.
+---@return Matrix3
+function RenderTask:getNormalMatrixRaw() end
+
 ---Gets this task's position.
 ---@return Vector3
 function RenderTask:getPos() end
+
+---Recalculates then gets the position matrix of this task.
+---@return Matrix4
+function RenderTask:getPositionMatrix() end
+
+---Gets the position matrix of this task without recalculating it.
+---@return Matrix4
+function RenderTask:getPositionMatrixRaw() end
 
 ---Gets this task's rotation.
 ---@return Vector3
@@ -40,6 +60,10 @@ function RenderTask:isEnabled() end
 ---If `state` is `nil`, it will default to `false`.
 ---@param state? boolean
 function RenderTask:setEnabled(state) end
+
+---Sets the matrix applied to this task.
+---@param mat Matrix4
+function RenderTask:setMatrix(mat) end
 
 ---Sets this task's position.
 ---
@@ -88,6 +112,13 @@ function RenderTask:setScale(x, y, z) end
 ---@param state? boolean
 ---@return self
 function RenderTask:enabled(state) end
+
+---Sets the matrix applied to this task.
+---@generic self
+---@param self self
+---@param mat Matrix4
+---@return self
+function RenderTask:matrix(mat) end
 
 ---Sets this task's position.
 ---
@@ -160,7 +191,10 @@ local BlockTask
 ---Also supports block states and NBT similar to Minecraft's `/setblock` command.
 ---
 ---If `block` is `nil`, it will default to `"minecraft:air"`.
+---@generic self
+---@param self self
 ---@param block? Minecraft.blockID | BlockState
+---@return self
 function BlockTask:setBlock(block) end
 
 
@@ -201,11 +235,17 @@ function ItemTask:getRenderType(renderType) end
 ---Also supports NBT similar to Minecraft's `/give` command.
 ---
 ---If `item` is `nil`, it will default to `"minecraft:air"`.
+---@generic self
+---@param self self
 ---@param item? Minecraft.itemID | ItemStack
+---@return self
 function ItemTask:setItem(item) end
 
 ---Sets the rendering mode for the item this task renders.
+---@generic self
+---@param self self
 ---@param renderType ItemTask.renderType
+---@return self
 function ItemTask:setRenderType(renderType) end
 
 
@@ -275,7 +315,10 @@ function TextTask:isRight() end
 ---Sets if this task's text should be centered on its pivot similar to nameplates.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function TextTask:setCentered(state) end
 
 ---Sets if this task's text should have an outline.
@@ -283,26 +326,38 @@ function TextTask:setCentered(state) end
 ---Due to how this effect works, the text will also be emissive and shadows will not work.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function TextTask:setOutline(state) end
 
 ---Sets the color of this task's outline (if enabled.)
 ---
 ---If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param col? Vector3
+---@return self
 function TextTask:setOutlineColor(col) end
 
 ---If `r`, `g`, or `b` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param r? number
 ---@param g? number
 ---@param b? number
+---@return self
 function TextTask:setOutlineColor(r, g, b) end
 
 ---Sets if this task should be anchored right.  
 ---Does nothing if this task is centered.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function TextTask:setRight(state) end
 
 ---Sets if this task's text should have a shadow.
@@ -311,13 +366,19 @@ function TextTask:setRight(state) end
 ---
 ---If `state` is `nil`, it will default to `false`.
 ---@*error The shadow fails to actually stick to the text properly in world space.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function TextTask:setShadow(state) end
 
 ---Sets this task's text.
 ---
 ---If `text` is `nil`, it will default to `""`.
+---@generic self
+---@param self self
 ---@param text? string
+---@return self
 function TextTask:setText(text) end
 
 

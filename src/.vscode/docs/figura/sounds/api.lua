@@ -64,5 +64,8 @@ function SoundAPI:playSound(sound, x, y, z, volume, pitch, loop) end
 ---`sound` is the name of the sound to stop.
 ---
 ---If `sound` is `nil`, all sounds are stopped.
+---@generic self
+---@param self self
 ---@param sound? Minecraft.soundID
+---@return self
 function SoundAPI:stopSound(sound) end

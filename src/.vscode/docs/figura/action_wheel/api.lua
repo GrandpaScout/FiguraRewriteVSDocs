@@ -45,12 +45,19 @@
 ---```
 ---@class ActionWheelAPI
 ---The function that is executed when the screen is left-clicked while the action wheel is open.
+---
+---If this function returns `true`, the selected action will not be activated.
 ---<!--
 ---@field leftClick? Action.clickFunc
 ---The function that is executed when the screen is right-clicked while the action wheel is open.
+---
+---If this function returns `true`, the selected action will not be activated.
 ---<!--
 ---@field rightClick? Action.clickFunc
 ---The function that is executed when the screen is scrolled while the action wheel is open.
+---
+---If this function returns `true`, the selected action will not be activated and the current page
+---will not scroll through groups.
 ---<!--
 ---@field scroll? Action.scrollFunc
 local ActionWheelAPI
@@ -64,8 +71,11 @@ local ActionWheelAPI
 ---If `index` is `nil`, the last selected action is executed.
 ---
 ---If `rightClick` is `true`, it will execute the right-click function instead.
----@param index? Page.index
+---@generic self
+---@param self self
+---@param index? ActionWheelAPI.index
 ---@param rightClick? boolean
+---@return self
 function ActionWheelAPI:execute(index, rightClick) end
 
 ---Creates a new action that is not tied to a page.
@@ -101,7 +111,7 @@ function ActionWheelAPI:getCurrentPage() end
 ---Gets the index of the currently hovered action.
 ---@return
 ---| 0 # None selected
----| Page.index
+---| ActionWheelAPI.index
 function ActionWheelAPI:getSelected() end
 
 ---Gets if the wheel is visible or not.
@@ -112,5 +122,8 @@ function ActionWheelAPI:isEnabled() end
 ---===== SETTERS =====---
 
 ---Sets the active page of the action wheel to the given page.
+---@generic self
+---@param self self
 ---@param page? string | Page
+---@return self
 function ActionWheelAPI:setPage(page) end

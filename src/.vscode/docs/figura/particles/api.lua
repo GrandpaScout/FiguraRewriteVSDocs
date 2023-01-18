@@ -71,4 +71,7 @@ function ParticleAPI:newParticle(name, posX, posY, posZ, vel) end
 function ParticleAPI:newParticle(name, posX, posY, posZ, velX, velY, velZ) end
 
 ---Removes all particles spawned by this avatar.
+---@generic self
+---@param self self
+---@return self
 function ParticleAPI:removeParticles() end

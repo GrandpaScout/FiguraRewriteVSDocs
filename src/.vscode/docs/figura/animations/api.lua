@@ -62,6 +62,9 @@ local AnimationAPI
 ---===== METHODS =====---
 
 ---Stops all playing and paused animations.
+---@generic self
+---@param self self
+---@return self
 function AnimationAPI:stopAll() end
 
 ---===== GETTERS =====---

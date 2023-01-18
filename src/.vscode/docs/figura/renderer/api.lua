@@ -86,6 +86,22 @@ function RendererAPI:isCameraBackwards() end
 ---@return boolean
 function RendererAPI:isFirstPerson() end
 
+---Gets the paperdoll render should be visible even if no action is being performed.
+---@return boolean
+function RendererAPI:shouldForcePaperdoll() end
+
+---Gets if the on-fire effect is rendered.
+---@return boolean
+function RendererAPI:shouldRenderFire() end
+
+---Gets if the vehicle the host is riding should be rendered.
+---@return boolean
+function RendererAPI:shouldRenderVehicle() end
+
+---Gets if the crosshair should be rendered.
+---@return boolean
+function RendererAPI:shouldRenderCrosshair() end
+
 
 ---===== SETTERS =====---
 
@@ -94,14 +110,20 @@ function RendererAPI:isFirstPerson() end
 ---To set the pivot position to an absolute position in the world, see `:setCameraPivot()`.
 ---
 ---If `pos` is `nil`, the pivot position offset will be removed.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function RendererAPI:offsetCameraPivot(pos) end
 
 ---If `x` is `nil`, the pivot position offset will be removed.  
 ---If `y` or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RendererAPI:offsetCameraPivot(x, y, z) end
 
 ---Sets the rotation offset of the camera in degrees.
@@ -109,14 +131,20 @@ function RendererAPI:offsetCameraPivot(x, y, z) end
 ---To set the rotation to an absolute rotation, see `:setCameraRot()`.
 ---
 ---If `rot` is `nil`, the rotation offset will be removed.
+---@generic self
+---@param self self
 ---@param rot? Vector3
+---@return self
 function RendererAPI:offsetCameraRot(rot) end
 
 ---If `x` is `nil`, the rotation offset will be removed.  
 ---If `y` or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RendererAPI:offsetCameraRot(x, y, z) end
 
 ---Sets the absolute pivot position of the camera in blocks.
@@ -124,27 +152,39 @@ function RendererAPI:offsetCameraRot(x, y, z) end
 ---To set the pivot position to a relative position, see `:offsetCameraPivot()`.
 ---
 ---If `pos` is `nil`, the absolute pivot position will be removed.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function RendererAPI:setCameraPivot(pos) end
 
 ---If `x` is `nil`, the absolute pivot position will be removed.  
 ---If `y` or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RendererAPI:setCameraPivot(x, y, z) end
 
 ---Sets the position offset of the camera in blocks.
 ---
 ---If `pos` is `nil`, the position offset will be removed.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function RendererAPI:setCameraPos(pos) end
 
 ---If `x` is `nil`, the position offset will be removed.  
 ---If `y` or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RendererAPI:setCameraPos(x, y, z) end
 
 ---Sets the absolute rotation of the camera in degrees.
@@ -152,44 +192,105 @@ function RendererAPI:setCameraPos(x, y, z) end
 ---To set the rotation to a relative rotation, see `:offsetCameraRot()`.
 ---
 ---If `rot` is `nil`, the absolute rotation will be removed.
+---@generic self
+---@param self self
 ---@param rot? Vector3
+---@return self
 function RendererAPI:setCameraRot(rot) end
 
 ---If `x` is `nil`, the absolute rotation will be removed.  
 ---If `y` or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RendererAPI:setCameraRot(x, y, z) end
 
 ---Offset the crosshair by the given amount of pixels.
 ---
 ---If `offset` is `nil`, the offset will be removed.
+---@generic self
+---@param self self
 ---@param offset? Vector2
+---@return self
 function RendererAPI:setCrosshairOffset(offset) end
 
 ---If `x` is `nil`, the offset will be removed.  
 ---If `y` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
+---@return self
 function RendererAPI:setCrosshairOffset(x, y) end
+
+---Sets if the paperdoll render should be visible even if no action is being performed.
+---
+---This does nothing if the paperdoll is disabled or always visible.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RendererAPI:setForcePaperdoll(state) end
 
 ---Sets the FOV multiplier.
 ---
 ---If `fov` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
+---@param fov? number
+---@return self
 function RendererAPI:setFOV(fov) end
+
+---Sets if the crosshair should be rendered.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RendererAPI:setRenderCrosshair(state) end
+
+---Sets if the on-fire effect should be rendered.  
+---This does *not* affect the first-person fire effect.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RendererAPI:setRenderFire(state) end
+
+---Sets if the vehicle the host is riding should be rendered.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RendererAPI:setRenderVehicle(state) end
 
 ---Sets the current vanilla post-processing shader.
 ---
 ---If `shader` is `nil`, no shader will be applied.
+---@generic self
+---@param self self
 ---@param shader? Minecraft.shader
+---@return self
 function RendererAPI:setPostEffect(shader) end
 
 ---Sets the radius of the host's shadow in blocks.  
 ---The maximum value is 12.
 ---
 ---If `radius` is `nil`, the shadow radius will be reset.
+---@generic self
+---@param self self
 ---@param radius? number
+---@return self
 function RendererAPI:setShadowRadius(radius) end
 
 

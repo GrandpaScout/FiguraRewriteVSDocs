@@ -33,7 +33,10 @@ function Nameplate:getText() end
 ---
 ---If `${badges}` or `${segdab}` are visible anywhere in the text, the badges are removed from their
 ---default position.
+---@generic self
+---@param self self
 ---@param text? string
+---@return self
 function Nameplate:setText(text) end
 
 
@@ -59,7 +62,10 @@ local NameplateGroup
 ---
 ---If `${badges}` or `${segdab}` are visible anywhere in the text, the badges are removed from their
 ---default position.
+---@generic self
+---@param self self
 ---@param text? string
+---@return self
 function NameplateGroup:setText(text) end
 
 
@@ -113,67 +119,97 @@ function EntityNameplate:isVisible() end
 ---
 ---If `color` is `nil`, it will default to `⟨0, 0, 0, x⟩` where `x` is the value of the Text
 ---Background Opacity setting in Minecraft's accessibility menu.
+---@generic self
+---@param self self
 ---@param color? Vector4
+---@return self
 function EntityNameplate:setBackgroundColor(color) end
 
 ---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.  
 ---If `a` is `nil`, it will default to the Text Background Opacity setting in Minecraft's
 ---accessibility menu.
+---@generic self
+---@param self self
 ---@param color? Vector3
 ---@param a? number
+---@return self
 function EntityNameplate:setBackgroundColor(color, a) end
 
 ---If `r`, `g`, or `b` are `nil`, they will default to `0`.  
 ---If `a` is `nil`, it will default to the Text Background Opacity setting in Minecraft's
 ---accessibility menu.
+---@generic self
+---@param self self
 ---@param r? number
 ---@param g? number
 ---@param b? number
 ---@param a? number
+---@return self
 function EntityNameplate:setBackgroundColor(r, g, b, a) end
 
 ---Sets if this nameplate's text has an outline.  
 ---Text shadow will do nothing while this is `true`.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function EntityNameplate:setOutline(state) end
 
 ---Sets the position offset of this nameplate in blocks.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function EntityNameplate:setPos(pos) end
 
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function EntityNameplate:setPos(x, y, z) end
 
 ---Sets the scale multiplier of this nameplate.
 ---
 ---If `scale` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param scale? Vector3
+---@return self
 function EntityNameplate:setScale(scale) end
 
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function EntityNameplate:setScale(x, y, z) end
 
 ---Sets if this nameplate's text has a shadow.  
 ---Has no immediate effect if text outline is enabled.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function EntityNameplate:setShadow(state) end
 
 ---Sets if this nameplate is visible.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function EntityNameplate:setVisible(state) end
 
 

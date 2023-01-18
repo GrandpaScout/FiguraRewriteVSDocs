@@ -285,9 +285,7 @@ function tonumber(e) end
 ---Receives a value of any type and converts it to a string in a human-readable format.
 ---
 ---If the metatable of `v` has a `__tostring` field, then `tostring` calls the corresponding value
----with `v` as argument, and uses the result of the call as its result. Otherwise, if the metatable
----of `v` has a `__name` field with a string value, `tostring` may use that string in its final
----result.
+---with `v` as argument, and uses the result of the call as its result.
 ---
 ---For complete control of how numbers are converted, use
 ---[string.format](command:extension.lua.doc?["en-us/52/manual.html/pdf-string.format"]).
@@ -303,8 +301,7 @@ function tostring(v) end
 ---  MISC                                                                                        ---
 ---==============================================================================================---
 
----Receives any number of arguments and prints them to chat.
----
+---Receives any number of arguments and prints them to chat seperated by two spaces.  
 ---If a string value is given, it will be printed as-is with no formatting.
 ---
 ---If a non-string value is given, the value will be formatted in a readable manner and given a

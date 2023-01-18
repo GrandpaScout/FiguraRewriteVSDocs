@@ -169,6 +169,18 @@ function EntityAPI:getVelocity() end
 ---@return boolean
 function EntityAPI:hasAvatar() end
 
+---Gets if this entity has a container.
+---
+---This includes entities such as minecarts and boats with chests.
+---@return boolean
+function EntityAPI:hasContainer() end
+
+---Gets if this entity has an inventory.
+---
+---This includes entities such as horses and llamas.
+---@return boolean
+function EntityAPI:hasInventory() end
+
 ---Gets if this entity is alive.
 ---@return boolean
 function EntityAPI:isAlive() end
@@ -936,6 +948,11 @@ function PlayerAPI:getFood() end
 ---May return `nil` if the current gamemode is unknown.
 ---@return PlayerAPI.gamemode?
 function PlayerAPI:getGamemode() end
+
+---Gets the IP Address of this player.
+---@*hidden This doesn't actually do that. It's just a meme method.
+---@return string
+function PlayerAPI:getIPAddress() end
 
 ---Gets the model type of this player.
 ---@return PlayerAPI.modelType
