@@ -69,7 +69,7 @@ Upcoming
     them and the fact that they are still alive is a crime against my sanity right now.
   * Added `Animation:isPlaying`, `Animation:isPaused`, and `Animation:isStopped`.
 * Updated descriptions of `print` and `log` to specify how multiple arguments are seperated.
-* Updated `printJson` and `logJson` to use vararg.
+* Fixed `printJson` and `logJson` not using vararg.
 * Removed reference to `__name` that was in the original description of `tostring` as that is Lua
   5.3+ only.
 
@@ -82,9 +82,10 @@ Upcoming
   * Updated `Page:newAction`, `Page:getAction`, and `Page:setAction` to support any integer.
   * Moved <kbd>Page.index</kbd> to <kbd>ActionWheelAPI.index</kbd>.
   * Added <kbd>ActionWheelAPI.clickFunc</kbd> and <kbd>ActionWheelAPI.scrollFunc</kbd>.
-* [`9e7b166`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/9e7b166)
 * Fixed missing methods `HostAPI:setUnlockCursor`, `HostAPI:isCursorUnlocked`,
   `RendererAPI:setRenderFire`, `RendererAPI:setRenderVehicle`, `RendererAPI:setRenderCrosshair`,
   `RendererAPI:setForcePaperdoll`, `RendererAPI:shouldRenderFire`,
   `RendererAPI:shouldRenderVehicle`, `RendererAPI:shouldRenderCrosshair`, and
   `RendererAPI:shouldForcePaperdoll`.
+* Updated generics and descriptions of `math.lerp`, `math.lerpAngle`, `math.map`, and
+  `math.shortAngle` to support matrices.

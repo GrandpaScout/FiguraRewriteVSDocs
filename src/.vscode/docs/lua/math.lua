@@ -21,10 +21,10 @@ math.worldScale = 1.0666666667
 ---@return number
 function math.clamp(x, min, max) end
 
----Linearly interpolates between two numbers or vectors.
+---Linearly interpolates between two numbers, vectors, or matrices.
 ---
----Numbers and vectors can go in *any* of the three parameters, but only *one* type of vector may be
----used maximum.  
+---Numbers, vectors, and matrices can go in *any* of the three parameters, but only *one* type of
+---vector or matrix may be used maximum.  
 ---If any vector type is used, the return will be the type of that vector.
 ---```html
 ---<a>(3)
@@ -37,21 +37,23 @@ function math.clamp(x, min, max) end
 --- ╧     1 = 8
 ---<b>(8)
 ---```
----@generic A: number | Vector.any, B: number | Vector.any, T: number | Vector.any
+---@generic A: number | Vector.any | Matrix.any
+---@generic B: number | Vector.any | Matrix.any
+---@generic T: number | Vector.any | Matrix.any
 ---@param a A
 ---@param b B
 ---@param t T
 ---@return number | A | B | T
 function math.lerp(a, b, t) end
 
----Linearly interpolates between two number or vector angles.  
+---Linearly interpolates between two number angles, vector angles, or matrices.  
 ---The shortest path to the destination angle will always be taken, even if it ends up with the
 ---result being out of the 0 to 360 (or -180 to 180) bounds.
 ---
 ---The final number will be reduced modulo 360.
 ---
----Numbers and vectors can go in *any* of the three parameters, but only *one* type of vector may be
----used maximum.  
+---Numbers, vectors, and matrices can go in *any* of the three parameters, but only *one* type of
+---vector or matrix may be used maximum.  
 ---If any vector type is used, the return will be the type of that vector.
 ---```html
 ---             ,--- <a>(60°)
@@ -66,18 +68,20 @@ function math.lerp(a, b, t) end
 ---
 ---
 ---```
----@generic A: number | Vector.any, B: number | Vector.any, T: number | Vector.any
+---@generic A: number | Vector.any | Matrix.any
+---@generic B: number | Vector.any | Matrix.any
+---@generic T: number | Vector.any | Matrix.any
 ---@param a A
 ---@param b B
 ---@param t T
 ---@return number | A | B | T
 function math.lerpAngle(a, b, t) end
 
----Converts a number from one range to another.
+---Converts a number, vector, or matrix from one range to another.
 ---
----Numbers and vectors can go in *any* of the five parameters, but only *one* type of vector may be
----used maximum.  
----If any vector type is used, the return will be the type of that vector.
+---Numbers, vectors, and matrices can go in *any* of the five parameters, but only *one* type of
+---vector or matrix may be used maximum.  
+---If any vector or matrix type is used, the return will be the type of that vector or matrix.
 ---```html
 --- (0)  v     v   v   (12)
 ---<aMin>╟─┼─┼─╫─┼─┼─╢<aMax>
@@ -87,9 +91,9 @@ function math.lerpAngle(a, b, t) end
 ---<bMin>╟─┼─┼─╫─┼─┼─╢<bMax>
 --- (32)               (64)
 ---```
----@generic V: number | Vector.any
----@generic A1: number | Vector.any, A2: number | Vector.any
----@generic B1: number | Vector.any, B2: number | Vector.any
+---@generic V: number | Vector.any | Matrix.any
+---@generic A1: number | Vector.any | Matrix.any, A2: number | Vector.any | Matrix.any
+---@generic B1: number | Vector.any | Matrix.any, B2: number | Vector.any | Matrix.any
 ---@param v V
 ---@param aMin A1
 ---@param aMax A2
@@ -111,7 +115,8 @@ function math.round(x) end
 ---Numbers and vectors can go in *any* of the two parameters, but only *one* type of vector may be
 ---used maximum.  
 ---If any vector type is used, the return will be the type of that vector.
----@generic A: number | Vector.any, B: number | Vector.any
+---@generic A: number | Vector.any | Matrix.any
+---@generic B: number | Vector.any | Matrix.any
 ---@param a A
 ---@param b B
 ---@return number | A | B
