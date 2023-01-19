@@ -89,3 +89,7 @@ Upcoming
   `RendererAPI:shouldForcePaperdoll`.
 * Updated generics and descriptions of `math.lerp`, `math.lerpAngle`, `math.map`, and
   `math.shortAngle` to support matrices.
+
+2023-01-19
+--------------------------------------------------
+* Removed deprecation of `Animation.isPlaying`.

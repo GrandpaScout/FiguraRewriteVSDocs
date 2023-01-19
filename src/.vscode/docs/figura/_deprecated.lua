@@ -158,11 +158,6 @@ Animation.getReplace = nil
 Animation.getStartOffset = nil
 
 ---@type nil
----`.isPlaying` is deprecated. To get if the animation is playing, use `:getPlayState()`.
----@deprecated '".isPlaying" is deprecated, replace with ":getPlayState()"'
-Animation.isPlaying = nil
-
----@type nil
 ---`.setBlendTime` is deprecated. It has no replacement.
 ---@deprecated '".setBlendTime" is deprecated'
 Animation.setBlendTime = nil
