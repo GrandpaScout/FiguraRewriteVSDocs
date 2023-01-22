@@ -981,10 +981,6 @@ function PlayerAPI:hasSkin() end
 ---@return boolean
 function PlayerAPI:isFishing() end
 
----Gets if this player is currently in creative flight.
----@return boolean
-function PlayerAPI:isFlying() end
-
 ---Gets if the given skin layer is set to be visible.
 ---@param layer PlayerAPI.skinLayer
 ---@return boolean

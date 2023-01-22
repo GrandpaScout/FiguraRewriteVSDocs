@@ -132,6 +132,10 @@ function HostAPI:isContainerOpen() end
 ---@return boolean
 function HostAPI:isCursorUnlocked() end
 
+---Gets if the host is currently in creative flight.
+---@return boolean
+function HostAPI:isFlying() end
+
 ---Gets if this instance of the script is running on the avatar owner's computer.
 ---
 ---This is equivalent to global `player` being the avatar owner's player entity.

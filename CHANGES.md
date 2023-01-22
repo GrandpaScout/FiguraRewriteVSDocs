@@ -93,3 +93,9 @@ Upcoming
 2023-01-19
 --------------------------------------------------
 * Removed deprecation of `Animation.isPlaying`.
+
+2023-01-22
+--------------------------------------------------
+* [`6ed2725`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/6ed2725)
+  * Moved `PlayerAPI:isFlying` to `HostAPI:isFlying`.  
+    Yet another poor method banished to the shadow realm.
