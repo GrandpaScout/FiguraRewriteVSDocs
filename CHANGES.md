@@ -99,3 +99,8 @@ Upcoming
 * [`6ed2725`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/6ed2725)
   * Moved `PlayerAPI:isFlying` to `HostAPI:isFlying`.  
     Yet another poor method banished to the shadow realm.
+
+2023-01-23
+--------------------------------------------------
+* [`9b1f903`](https://github.com/Kingdom-of-The-Moon/FiguraRewriteRewrite/commit/9b1f903)
+  * Added `ClientAPI.isModLoaded`.

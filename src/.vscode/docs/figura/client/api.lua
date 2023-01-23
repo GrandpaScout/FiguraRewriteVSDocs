@@ -252,6 +252,11 @@ function ClientAPI.isDebugOverlayEnabled() end
 ---@return boolean
 function ClientAPI.isHudEnabled() end
 
+---Gets if a mod with the specified ID is loaded.
+---@param id string
+---@return boolean
+function ClientAPI.isModLoaded(id) end
+
 ---Gets if the viewing client is in the pause menu
 ---@return boolean
 function ClientAPI.isPaused() end

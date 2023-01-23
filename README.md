@@ -1,5 +1,5 @@
 # VSCode Documentation for Figura Rewrite.
-### Branch version: <kbd>**UPCOMING**</kbd> <kbd>**2023-01-22**</kbd>
+### Branch version: <kbd>**UPCOMING**</kbd> <kbd>**2023-01-23**</kbd>
 
 Documentation for Figura in Visual Studio Code.
 
