@@ -92,7 +92,7 @@
 ---| "net.minecraft.class_3934" @ HandledScreen->CartographyTableScreen
 ---**Minecraft:** Crafting Table
 ---| "net.minecraft.class_479"  @ HandledScreen->CraftingScreen
----**Minecraft:** Echanting Table
+---**Minecraft:** Enchanting Table
 ---| "net.minecraft.class_486"  @ HandledScreen->EnchantmentScreen
 ---**Minecraft:** Anvil
 ---| "net.minecraft.class_471"  @ HandledScreen->ForgingScreen->AnvilScreen
