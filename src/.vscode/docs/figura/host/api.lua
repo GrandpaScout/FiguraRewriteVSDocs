@@ -86,8 +86,8 @@ function HostAPI:getScreen() end
 ---Gets the `ItemStack` in the given slot.
 ---
 ---Returns an `ItemStack` of air if no item exists in that slot.
----@param slot Minecraft.slotID
----@return ItemStack | integer
+---@param slot Minecraft.slotID | integer
+---@return ItemStack
 function HostAPI:getSlot(slot) end
 
 ---Gets the status effects applied to the host.
