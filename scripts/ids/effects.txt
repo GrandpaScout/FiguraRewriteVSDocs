@@ -33,3 +33,4 @@ Bad Luck	unluck	27
 Water Breathing	water_breathing	13	
 Weakness	weakness	18	
 Wither	wither	20	
+Darkness	darkness	33	

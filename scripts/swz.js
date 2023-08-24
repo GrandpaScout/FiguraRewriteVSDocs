@@ -15,9 +15,9 @@ if (!I_Understand_What_I_Am_Doing_Let_Me_Run_This_Plz) {
 }
 
 var swzchars = [
-  "xyzwth",
+  "xyzw",
   "rgba",
-  "123456"
+  "1234"
 ]
 
 var toMB = 1 / 1048576
@@ -30,8 +30,6 @@ function swzind(str) {
     .replace(/[g2]/g, "y")
     .replace(/[b3]/g, "z")
     .replace(/[a4]/g, "w")
-    .replace(/5/g, "t")
-    .replace(/6/g, "h")
     .split("")
 }
 
@@ -40,8 +38,8 @@ function swzind(str) {
  * @param {number} to
  * @param {?string} str
  * @param {?string} base
- */
- function swizzleOf(from, to, str, base) {
+**/
+function swizzleOf(from, to, str, base) {
   if (!str) {
     const strs = ["_"];
     swzchars.forEach((v) => {

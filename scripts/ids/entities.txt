@@ -7,6 +7,7 @@ Entity	Resource location
  Bat	bat
  Bee	bee
  Blaze	blaze
+ Camel	camel
  Cat	cat
  Cave Spider	cave_spider
  Chicken	chicken
@@ -52,6 +53,7 @@ Entity	Resource location
  Sheep	sheep
  Shulker	shulker
  Silverfish	silverfish
+ Sniffer	sniffer
  Skeleton	skeleton
  Skeleton Horse	skeleton_horse
  Slime	slime
@@ -76,6 +78,10 @@ Entity	Resource location
  Zombie Horse	zombie_horse
  Zombie Villager	zombie_villager
  Zombified Piglin	zombified_piglin
+ Allay	allay
+ Frog	frog
+ Tadpole	tadpole
+ Warden	warden
 Miscellaneous
 Entity	Resource location
  Area Effect Cloud	area_effect_cloud
@@ -87,6 +93,10 @@ Entity	Resource location
  Leash Knot	leash_knot
  Lightning Bolt	lightning_bolt
  Marker	marker
+ Interaction	interaction
+ Block Display	block_display
+ Entity Display	entity_display
+ Item Display	item_display
  Painting	painting
 Projectiles
 Entity	Resource location
@@ -109,12 +119,13 @@ Entity	Resource location
 Vehicles
 Entity	Resource location
  Boat	boat
+ Boat with Chest	chest_boat
  Minecart with Chest	chest_minecart
  Minecart with Command Block	command_block_minecart
  Minecart with Furnace	furnace_minecart
  Minecart with Hopper	hopper_minecart
  Minecart	minecart
- Minecart with Spawner	spawner_minecart
+ Minecart with Monster Spawner	spawner_minecart
  Minecart with TNT	tnt_minecart
 Blocks
 Entity	Resource location

@@ -65,7 +65,7 @@ collector(resolve(cwd, "out/biomes.lua"), "Minecraft.biomeID string", [
 
 const blocks = []
 let longestBlockID = 0
-const blocksMatch = /^.+?\.png\t(?:minecraft:)?(?<id>.+?)\t(?<name>.+?)\t(?<item>.+?)$/i
+const blocksMatch = /^.+?\t(?:minecraft:)?(?<id>.+?)\t(?<name>.+?)\t(?<item>.+?)$/i
 const blocksModdedMatch = /^(?<ns>.+?):(?<id>.+?)\s*\|\s*(?<name>.+?)(?:\s*\|\s*(?:(?<item>identical|true|yes|y|t)|.*?))?$/i
 
 // For block-items

@@ -188,6 +188,7 @@
  Mooshroom Spawn Egg	mooshroom_spawn_egg
  Mule Spawn Egg	mule_spawn_egg
  Mushroom Stew	mushroom_stew
+ Music Disc (5)	music_disc_5
  Music Disc (11)	music_disc_11
  Music Disc (13)	music_disc_13
  Music Disc (blocks)	music_disc_blocks
@@ -198,6 +199,7 @@
  Music Disc (mellohi)	music_disc_mellohi
  Music Disc (otherside)	music_disc_otherside
  Music Disc (Pigstep)	music_disc_pigstep
+ Music Disc (Relic)	music_disc_relic
  Music Disc (stal)	music_disc_stal
  Music Disc (strad)	music_disc_strad
  Music Disc (wait)	music_disc_wait
@@ -331,3 +333,68 @@
  Zombie Spawn Egg	zombie_spawn_egg
  Zombie Villager Spawn Egg	zombie_villager_spawn_egg
  Zombified Piglin Spawn Egg	zombified_piglin_spawn_egg
+ Bucket of Tadpole	tadpole_bucket
+ Disc Fragment	disc_fragment_5
+ Echo Shard	echo_shard
+ Goat Horn	goat_horn
+ Mangrove Boat	mangrove_boat
+ Recovery Compass	recovery_compass
+ Allay Spawn Egg	allay_spawn_egg
+ Frog Spawn Egg	frog_spawn_egg
+ Tadpole Spawn Egg	tadpole_spawn_egg
+ Warden Spawn Egg	warden_spawn_egg
+ Oak Boat with Chest	oak_chest_boat
+ Spruce Boat with Chest	spruce_chest_boat
+ Birch Boat with Chest	birch_chest_boat
+ Jungle Boat with Chest	jungle_chest_boat
+ Acacia Boat with Chest	acacia_chest_boat
+ Dark Oak Boat with Chest	dark_oak_chest_boat
+ Mangrove Boat with Chest	mangrove_chest_boat
+ Nether Wart	nether_wart
+ Banner Pattern (Snout)	piglin_banner_pattern
+ Ender Dragon Spawn Egg	ender_dragon_spawn_egg
+ Iron Golem Spawn Egg	iron_golem_spawn_egg
+ Snow Golem Spawn Egg	snow_golem_spawn_egg
+ Wither Spawn Egg	wither_spawn_egg
+ Brush	brush
+ Pitcher Pod	pitcher_pod
+ Angler Pottery Sherd	angler_pottery_sherd
+ Archer Pottery Sherd	archer_pottery_sherd
+ Arms Up Pottery Sherd	arms_up_pottery_sherd
+ Blade Pottery Sherd	blade_pottery_sherd
+ Brewer Pottery Sherd	brewer_pottery_sherd
+ Burn Pottery Sherd	burn_pottery_sherd
+ Danger Pottery Sherd	danger_pottery_sherd
+ Explorer Pottery Sherd	explorer_pottery_sherd
+ Friend Pottery Sherd	friend_pottery_sherd
+ Heart Pottery Sherd	heart_pottery_sherd
+ Heartbreak Pottery Sherd	heartbreak_pottery_sherd
+ Howl Pottery Sherd	howl_pottery_sherd
+ Miner Pottery Sherd	miner_pottery_sherd
+ Mourner Pottery Sherd	mourner_pottery_sherd
+ Plenty Pottery Sherd	plenty_pottery_sherd
+ Prize Pottery Sherd	prize_pottery_sherd
+ Sheaf Pottery Sherd	sheaf_pottery_sherd
+ Shelter Pottery Sherd	shelter_pottery_sherd
+ Skull Pottery Sherd	skull_pottery_sherd
+ Snort Pottery Sherd	snort_pottery_sherd
+ Smithing Template (Netherite Upgrade)	netherite_upgrade_smithing_template
+ Smithing Template (Coast Armor Trim)	coast_armor_trim_smithing_template
+ Smithing Template (Dune Armor Trim)	dune_armor_trim_smithing_template
+ Smithing Template (Eye Armor Trim)	eye_armor_trim_smithing_template
+ Smithing Template (Host Armor Trim)	host_armor_trim_smithing_template
+ Smithing Template (Raiser Armor Trim)	raiser_armor_trim_smithing_template
+ Smithing Template (Rib Armor Trim)	rib_armor_trim_smithing_template
+ Smithing Template (Sentry Armor Trim)	sentry_armor_trim_smithing_template
+ Smithing Template (Shaper Armor Trim)	shaper_armor_trim_smithing_template
+ Smithing Template (Silence Armor Trim)	silence_armor_trim_smithing_template
+ Smithing Template (Snout Armor Trim)	snout_armor_trim_smithing_template
+ Smithing Template (Spire Armor Trim)	spire_armor_trim_smithing_template
+ Smithing Template (Tide Armor Trim)	tide_armor_trim_smithing_template
+ Smithing Template (Vex Armor Trim)	vex_armor_trim_smithing_template
+ Smithing Template (Ward Armor Trim)	ward_armor_trim_smithing_template
+ Smithing Template (Wayfinder Armor Trim)	wayfinder_armor_trim_smithing_template
+ Smithing Template (Wild Armor Trim)	wild_armor_trim_smithing_template
+ Camel Spawn Egg	camel_spawn_egg
+ Sniffer Spawn Egg	sniffer_spawn_egg
+ Torchflower Seeds	torchflower_seeds

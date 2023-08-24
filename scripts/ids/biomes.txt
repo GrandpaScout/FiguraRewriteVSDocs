@@ -8,11 +8,11 @@
  Ice Spikes	ice_spikes	4
  Desert	desert	5
  Swamp	swamp	6
-Mangrove Swamp	mangrove_swamp	7
+ Mangrove Swamp	mangrove_swamp	7
  Forest	forest	8
  Flower Forest	flower_forest	9
  Birch Forest	birch_forest	10
-Dark Forest	dark_forest	11
+ Dark Forest	dark_forest	11
  Old Growth Birch Forest	old_growth_birch_forest	12
  Old Growth Pine Taiga	old_growth_pine_taiga	13
  Old Growth Spruce Taiga	old_growth_spruce_taiga	14
@@ -31,36 +31,37 @@ Dark Forest	dark_forest	11
  Eroded Badlands	eroded_badlands	27
  Wooded Badlands	wooded_badlands	28
  Meadow	meadow	29
- Grove	grove	30
- Snowy Slopes	snowy_slopes	31
- Frozen Peaks	frozen_peaks	32
- Jagged Peaks	jagged_peaks	33
- Stony Peaks	stony_peaks	34
- River	river	35
- Frozen River	frozen_river	36
- Beach	beach	37
- Snowy Beach	snowy_beach	38
- Stony Shore	stony_shore	39
- Warm Ocean	warm_ocean	40
- Lukewarm Ocean	lukewarm_ocean	41
- Deep Lukewarm Ocean	deep_lukewarm_ocean	42
- Ocean	ocean	43
- Deep Ocean	deep_ocean	44
- Cold Ocean	cold_ocean	45
- Deep Cold Ocean	deep_cold_ocean	46
- Frozen Ocean	frozen_ocean	47
- Deep Frozen Ocean	deep_frozen_ocean	48
- Mushroom Fields	mushroom_fields	49
- Dripstone Caves	dripstone_caves	50
- Lush Caves	lush_caves	51
-Deep Dark	deep_dark	52
- Nether Wastes	nether_wastes	53
- Warped Forest	warped_forest	54
- Crimson Forest	crimson_forest	55
- Soul Sand Valley	soul_sand_valley	56
- Basalt Deltas	basalt_deltas	57
- The End	the_end	58
- End Highlands	end_highlands	59
- End Midlands	end_midlands	60
- Small End Islands	small_end_islands	61
- End Barrens	end_barrens	62
+ Cherry Grove	cherry_grove	30
+ Grove	grove	31
+ Snowy Slopes	snowy_slopes	32
+ Frozen Peaks	frozen_peaks	33
+ Jagged Peaks	jagged_peaks	34
+ Stony Peaks	stony_peaks	35
+ River	river	36
+ Frozen River	frozen_river	37
+ Beach	beach	38
+ Snowy Beach	snowy_beach	39
+ Stony Shore	stony_shore	40
+ Warm Ocean	warm_ocean	41
+ Lukewarm Ocean	lukewarm_ocean	42
+ Deep Lukewarm Ocean	deep_lukewarm_ocean	43
+ Ocean	ocean	44
+ Deep Ocean	deep_ocean	45
+ Cold Ocean	cold_ocean	46
+ Deep Cold Ocean	deep_cold_ocean	47
+ Frozen Ocean	frozen_ocean	48
+ Deep Frozen Ocean	deep_frozen_ocean	49
+ Mushroom Fields	mushroom_fields	50
+ Dripstone Caves	dripstone_caves	51
+ Lush Caves	lush_caves	52
+ Deep Dark	deep_dark	53
+ Nether Wastes	nether_wastes	54
+ Warped Forest	warped_forest	55
+ Crimson Forest	crimson_forest	56
+ Soul Sand Valley	soul_sand_valley	57
+ Basalt Deltas	basalt_deltas	58
+ The End	the_end	59
+ End Highlands	end_highlands	60
+ End Midlands	end_midlands	61
+ Small End Islands	small_end_islands	62
+ End Barrens	end_barrens	63
