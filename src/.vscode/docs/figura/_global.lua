@@ -1,4 +1,5 @@
----@meta
+---@meta _
+---@diagnostic disable: duplicate-set-field
 
 
 ---==============================================================================================---
@@ -206,7 +207,7 @@ pings = {}
 
 ---The Minecraft player the current avatar is attached to.
 ---<!--
----@type PlayerAPI
+---@type Player
 player = {}
 
 ---@type RendererAPI
@@ -220,7 +221,7 @@ textures = {}
 
 ---The Minecraft entity the current avatar is attached to.
 ---<!--
----@type EntityAPI
+---@type Entity
 user = {}
 
 ---@type VanillaModelAPI
@@ -248,8 +249,7 @@ function listFiles(dir, recursive) end
 
 ---Alias of `print`.
 ---> ***
----> Receives any number of arguments and prints them to chat.
---->
+---> Receives any number of arguments and prints them to chat seperated by two spaces.  
 ---> If a string value is given, it will be printed as-is with no formatting.
 --->
 ---> If a non-string value is given, the value will be formatted in a readable manner and given a
@@ -267,11 +267,14 @@ function log(...) end
 
 ---Alias of `printJson`.
 ---> ***
----> Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
+---> Receives any number of arguments and prints them to chat without a seperator.  
+---> If a string value is given, it will be parsed as a Raw JSON Text component.
+--->
+---> This function does not print the standard log prefix.
 ---> ***
----@param json? string
+---@param ... any
 ---@return string
-function logJson(json) end
+function logJson(...) end
 
 ---Alias of `printTable`.
 ---> ***
@@ -293,10 +296,19 @@ function logJson(json) end
 ---@return string
 function logTable(t, depth, silent) end
 
----Prints a Raw Json Text component to chat, similar to the `/tellraw` command.
----@param json? string
+---Converts a JSON string into the appropriate Lua value.
+---@*error arrays with nulls in them do not parse correctly.
+---@param json string
+---@return (boolean | number | string | table)?
+function parseJson(json) end
+
+---Receives any number of arguments and prints them to chat without a seperator.  
+---If a string value is given, it will be parsed as a Raw JSON Text component.
+---
+---This function does not print the standard log prefix.
+---@param ... any
 ---@return string
-function printJson(json) end
+function printJson(...) end
 
 ---Prints the contents of the given table or userdata object to chat down to the specified depth.  
 ---If a userdata object is given, every default Figura method and field on it is printed.
@@ -312,6 +324,14 @@ function printJson(json) end
 ---@return string
 function printTable(t, depth, silent) end
 
+---Converts a Lua value into a JSON string.
+---
+---Any value that is not a boolean, number, string, or table will become a `null`.
+---@*error array-like tables with nils in the middle of them do not convert correctly.
+---@param value any
+---@return string
+function toJson(value) end
+
 ---Alias of `<VectorsAPI>.vec`.
 ---> ***
 ---> Creates a vector out of the given numbers.
@@ -322,6 +342,10 @@ function printTable(t, depth, silent) end
 ---@return Vector2
 function vec(x, y) end
 
+---Alias of `<VectorsAPI>.vec`.
+---> ***
+---> Creates a vector out of the given numbers.
+---> ***
 ---@*vmerror (`x`|`y`) == `nil` && `z` == `<number>`
 ---@param x number
 ---@param y number
@@ -329,6 +353,10 @@ function vec(x, y) end
 ---@return Vector3
 function vec(x, y, z) end
 
+---Alias of `<VectorsAPI>.vec`.
+---> ***
+---> Creates a vector out of the given numbers.
+---> ***
 ---@*vmerror (`x`|`y`|`z`) == `nil` && `w` == `<number>`
 ---@param x number
 ---@param y number
@@ -336,22 +364,3 @@ function vec(x, y, z) end
 ---@param w number
 ---@return Vector4
 function vec(x, y, z, w) end
-
----@*vmerror (`x`|`y`|`z`|`w`) == `nil` && `t` == `<number>`
----@param x number
----@param y number
----@param z number
----@param w number
----@param t number
----@return Vector5
-function vec(x, y, z, w, t) end
-
----@*vmerror (`x`|`y`|`z`|`w`|`t`) == `nil` && `h` == `<number>`
----@param x number
----@param y number
----@param z number
----@param w number
----@param t number
----@param h number
----@return Vector6
-function vec(x, y, z, w, t, h) end

@@ -1,14 +1,13 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  VECTOR                                                                                      ---
----==============================================================================================---
+---==================================================================================================================---
+---  VECTOR                                                                                                          ---
+---==================================================================================================================---
 
 ---A union of all Vector sub-types.
 ---<!--
----@alias Vector.any Vector2 | Vector3 | Vector4 | Vector5 | Vector6
+---@alias Vector.any Vector2 | Vector3 | Vector4
 
----A function that can be applied to a vector.
 ---@alias Vector.applyFunc fun(value?: number, index?: integer): number

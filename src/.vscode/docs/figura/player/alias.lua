@@ -1,17 +1,16 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  ENTITYAPI                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  ENTITY                                                                                                          ---
+---==================================================================================================================---
 
 ---A union of all Entity sub-types.
 ---<!--
----@alias EntityAPI.any EntityAPI | LivingEntityAPI | PlayerAPI
+---@alias Entity.any Entity | LivingEntity | Player
 
----A valid equipment slot on an entity.
----@alias EntityAPI.slot
+---@alias Entity.slot
 ---| 1 # Main Hand
 ---| 2 # Off Hand
 ---| 3 # Boots
@@ -19,16 +18,14 @@
 ---| 5 # Chestplate
 ---| 6 # Helmet
 
----A valid server permission level.
----@alias EntityAPI.permissionLevel
+---@alias Entity.permissionLevel
 ---| 0 # No permissions
 ---| 1 # Bypass spawn protection
 ---| 2 # Use cheat commands
 ---| 3 # Use player management commands
 ---| 4 # Use server management commands
 
----A valid pose for an entity.
----@alias EntityAPI.pose
+---@alias Entity.pose
 ---| "STANDING"     # No special pose.
 ---| "FALL_FLYING"  # Using elytra.
 ---| "SLEEPING"     # Sleeping in bed.
@@ -44,8 +41,7 @@
 ---| "EMERGING"     # Warden emerging.
 ---| "DIGGING"      # Warden leaving.
 
----A valid block side.
----@alias EntityAPI.blockSide
+---@alias Entity.blockSide
 ---| "north"
 ---| "east"
 ---| "south"
@@ -54,42 +50,90 @@
 ---| "down"
 
 
----==============================================================================================---
----  LIVIINGENTITYAPI extends ENTITYAPI                                                          ---
----==============================================================================================---
+---==================================================================================================================---
+---  LIVINGENTITY extends ENTITY                                                                                     ---
+---==================================================================================================================---
 
----A valid entity category.
----@alias LivingEntityAPI.category string
+---@alias LivingEntity.category string
 ---| "UNDEFINED" # Default.
 ---| "UNDEAD"    # Undead, takes more damage from Smite.
 ---| "ARTHROPOD" # Spider-like, takes more damage from Bane of Arthropods.
 ---| "WATER"     # Aquatic, takes more damage from Impaling.
 ---| "ILLAGER"   # Illager faction, takes part in village raids.
 
----A valid hand for an entity.
----@alias LivingEntityAPI.hand
+---@alias LivingEntity.hand
 ---| "MAIN_HAND" # The entity's main hand.
 ---| "OFF_HAND"  # The entity's off hand.
 
 
----==============================================================================================---
----  PLAYERAPI extends LIVIINGENTITYAPI extends ENTITYAPI                                        ---
----==============================================================================================---
+---==================================================================================================================---
+---  PLAYER extends LIVINGENTITY extends ENTITY                                                                      ---
+---==================================================================================================================---
 
----A valid gamemode for a player.
----@alias PlayerAPI.gamemode
+---@alias Player.gamemode
 ---| "SURVIVAL"  # Survival.
 ---| "CREATIVE"  # Creative.
 ---| "ADVENTURE" # Adventure.
 ---| "SPECTATOR" # Spectator.
 
----A valid model type for a player's vanilla playermodel.
----@alias PlayerAPI.modelType
+---@alias Player.modelType
 ---| "DEFAULT" # Steve model.
 ---| "SLIM"    # Alex model.
 
----A valid secondary layer for a player's skin.
----@alias PlayerAPI.skinLayer
+---@class Player.teamInfo
+---The internal name of this team
+---@field name string
+---The name that is displayed to players.
+---@field display_name string
+---The text that appears before the names of players on this team.
+---@field prefix string
+---The text that appears after the names of players on this team.
+---@field suffix string
+---This team's color. Affects name and glow outline color.
+---
+---`"reset"` is the "unassigned" color.
+---@field color
+---| "aqua"
+---| "black"
+---| "blue"
+---| "dark_aqua"
+---| "dark_blue"
+---| "dark_gray"
+---| "dark_green"
+---| "dark_purple"
+---| "dark_red"
+---| "gold"
+---| "gray"
+---| "green"
+---| "light_purple"
+---| "red"
+---| "reset"
+---| "white"
+---| "yellow"
+---Whether this team can attack teammates.
+---@field friendly_fire boolean
+---Whether this team can see invisible teammates.
+---@field see_friendly_invisibles boolean
+---When players in this team should push other entities.
+---@field collision_rule
+---| "always"
+---| "never"
+---| "pushOtherTeams" # Only push teammates
+---| "pushOwnTeam"    # Only push non-teammates
+---When death messages of players in this team should be printed to chat.
+---@field death_message_visibility
+---| "always"
+---| "never"
+---| "hideForOwnTeam"    # Only show to non-teammates
+---| "hideForOtherTeams" # Only show to teammates
+---When nametags of players in this team should be visible.
+---@field nametag_visibility
+---| "always"
+---| "never"
+---| "hideForOwnTeam"    # Only show to non-teammates
+---| "hideForOtherTeams" # Only show to teammates
+
+---@alias Player.skinLayer
 ---| "HAT"             # Head layer.
 ---| "JACKET"          # Body layer.
 ---| "LEFT_SLEEVE"     # Left arm layer.

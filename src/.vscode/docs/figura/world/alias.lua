@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  WORLDAPI                                                                                    ---
----==============================================================================================---
+---==================================================================================================================---
+---  WORLDAPI                                                                                                        ---
+---==================================================================================================================---
 
 ---A valid phase of the moon.
 ---@alias WorldAPI.moonPhase
@@ -18,9 +18,9 @@
 ---| 7 # Waxing Gibbous.
 
 
----==============================================================================================---
----  BIOME                                                                                       ---
----==============================================================================================---
+---==================================================================================================================---
+---  BIOME                                                                                                           ---
+---==================================================================================================================---
 
 ---A valid precipitation type.
 ---@alias Biome.precipitation
@@ -29,66 +29,11 @@
 ---| "SNOW" # Snow.
 
 
----==============================================================================================---
----  BLOCKSTATE                                                                                  ---
----==============================================================================================---
+---==================================================================================================================---
+---  BLOCKSTATE                                                                                                      ---
+---==================================================================================================================---
 
----A valid block material.
----
----These materials use intermediary names.
----@alias BlockState.material string
----| "field_15913" # Cobwebs (`COBWEB`)
----| "field_15914" # Stone-like (`STONE`)
----| "field_15915" # Bubble Column (`BUBBLE_COLUMN`)
----| "field_15916" # Sand-like (`SAND`)
----| "field_15917" # Sponge (`SPONGE`)
----| "field_15918" # Redstone Lamp (`BUILDABLE_GLASS`)
----| "field_15919" # Portal (`PORTAL`)
----| "field_15920" # Water (`WATER`)
----| "field_15921" # Moss Block (`MOSS`)
----| "field_15922" # Lava (`LAVA`)
----| "field_15923" # Leafy (`LEAVES`)
----| "field_15924" # Small Decoration (`DECORATION`)
----| "field_15925" # Cactus (`CACTUS`)
----| "field_15926" # Replacable Underwater Plant (`REPLACEABLE_WATER_PLANT`)
----| "field_15927" # Structure Void (`STRUCTURAL_AIR`)
----| "field_15928" # Dense Ice (`ICE_SOLID`)
----| "field_15930" # Egg (`EGG`)
----| "field_15931" # Wooly (`WOOL`)
----| "field_15932" # Wooden (`WOOD`)
----| "field_15933" # Piston (`PISTON`)
----| "field_15934" # Snow Block (`SNOW`)
----| "field_15935" # Plant (`PLANT`)
----| "field_15936" # Clay / Organic (`CLAY`)
----| "field_15937" # Cake (`CAKE`)
----| "field_15938" # Bamboo Sapling (`BAMBOO_SAPLING`)
----| "field_15941" # Dirt (`SOIL`)
----| "field_15942" # Glass (`GLASS`)
----| "field_15943" # Fire (`FIRE`)
----| "field_15945" # Plant Block (`GRASS`)
----| "field_15946" # Bamboo (`BAMBOO`)
----| "field_15947" # Underwater Plants (`WATER_PLANT`)
----| "field_15948" # Snow Layers (`TOP_SNOW`)
----| "field_15949" # Heavy Metallic (`HEAVY_METAL`)
----| "field_15952" # Barrier (`BARRIER`)
----| "field_15953" # Metallic (`METAL`)
----| "field_15954" # Vegetable Blocks (`VEGETABLE`)
----| "field_15955" # Explosives (`EXPLOSIVE`)
----| "field_15956" # Misc Plants (`REPLACEABLE_PLANT`)
----| "field_15957" # Carpet (`CLOTH_DECORATION`)
----| "field_15958" # Weak Ice (`ICE`)
----| "field_15959" # Air (`AIR`)
----| "field_17008" # Shulker Box (`SHULKER_BOX`)
----| "field_22223" # Nether Wooden (`NETHER_WOOD`)
----| "field_26708" # Nether Plants (`REPLACEABLE_FIREPROOF_PLANT`)
----| "field_27340" # Amethyst (`AMETHYST`)
----| "field_27890" # Powder Snow (`POWDER_SNOW`)
----| "field_28242" # Sculk (`SCULK`)
----| "field_37828" # Frogspawn (`FROGSPAWN`)
----| "field_38977" # Frog Light (`FROG_LIGHT`)
-
----A block sound table.
----@class BlockState.Sounds
+---@class BlockState.blockSounds
 ---The sound that plays when this block is broken.
 ---<!--
 ---@field break Minecraft.soundID
@@ -101,29 +46,51 @@
 ---The pitch these sounds will play at.
 ---@field pitch number
 ---The sound that plays when this block is placed.
----
----*No, that is not a typo. This is the actual key used in Figura.*
 ---<!--
----@*error This is probably meant to be "place"
----@field plate Minecraft.soundID
+---@field place Minecraft.soundID
 ---The sound that plays when this block is stepped on.
 ---<!--
 ---@field step Minecraft.soundID
 ---The volume these sounds will play at.
 ---@field volume number
 
----==============================================================================================---
----  ITEMSTACK                                                                                   ---
----==============================================================================================---
+---@class BlockState.blockTextures
+---The paths of textures that don't have a definite side assigned to them.
+---@field NONE string[]
+---The paths of textures that are assigned as the particles to use when the block is broken.
+---@field PARTICLE string[]
+---The paths of textures that are assigned to the north side of the block.
+---@field NORTH string[]
+---The paths of textures that are assigned to the south side of the block.
+---@field SOUTH string[]
+---The paths of textures that are assigned to the west side of the block.
+---@field WEST string[]
+---The paths of textures that are assigned to the east side of the block.
+---@field EAST string[]
+---The paths of textures that are assigned to the top side of the block.
+---@field UP string[]
+---The paths of textures that are assigned to the bottom side of the block.
+---@field DOWN string[]
 
----A valid item rarity.
+
+---==================================================================================================================---
+---  ITEMSTACK                                                                                                       ---
+---==================================================================================================================---
+
+---@alias ItemStack.equipmentSlot
+---| "MAINHAND" # Main Hand
+---| "OFFHAND"  # Off Hand
+---| "FEET"     # Feet
+---| "LEGS"     # Legs
+---| "CHEST"    # Chest
+---| "HEAD"     # Head
+
 ---@alias ItemStack.rarity
 ---| "COMMON"   # White.
 ---| "UNCOMMON" # Yellow.
 ---| "RARE"     # Aqua.
 ---| "EPIC"     # Light purple.
 
----A valid item use action.
 ---@alias ItemStack.useAction
 ---| "NONE"      # No animation.
 ---| "EAT"       # Eat food.

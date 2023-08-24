@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  SOUNDAPI-INTERNAL                                                                           ---
----==============================================================================================---
+---==================================================================================================================---
+---  SOUNDAPI-INTERNAL                                                                                               ---
+---==================================================================================================================---
 
 ---**INTERNAL CLASS**&emsp;*Do not use this!*
 ---
@@ -13,9 +13,9 @@
 ---@field [string] Sound
 
 
----==============================================================================================---
----  SOUNDAPI                                                                                    ---
----==============================================================================================---
+---==================================================================================================================---
+---  SOUNDAPI                                                                                                        ---
+---==================================================================================================================---
 
 ---An API for playing and adding sounds.
 ---
@@ -26,6 +26,11 @@ local SoundAPI
 
 
 ---===== METHODS =====---
+
+---Checks if the given sound id exists.
+---@param id string
+---@return boolean
+function SoundAPI:isPresent(id) end
 
 ---Registers a new sound with the given name and data.  
 ---`data` may either be a byte array or a base64 string.
@@ -48,6 +53,11 @@ function SoundAPI:newSound(name, data) end
 ---@param loop? boolean
 function SoundAPI:playSound(sound, pos, volume, pitch, loop) end
 
+---Plays a sound at the given position.
+---
+---If `volume` is below `1`, it will change the actual volume of the sound. If it is above `1`, it
+---will only multiply the distance the sound can be heard from.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.  
 ---If `volume` or `pitch` are `nil`, they will default to `1`.  
 ---If `loop` is `nil`, it will default to `false`
@@ -64,5 +74,15 @@ function SoundAPI:playSound(sound, x, y, z, volume, pitch, loop) end
 ---`sound` is the name of the sound to stop.
 ---
 ---If `sound` is `nil`, all sounds are stopped.
+---@generic self
+---@param self self
 ---@param sound? Minecraft.soundID
+---@return self
 function SoundAPI:stopSound(sound) end
+
+
+---===== GETTERS =====---
+
+---Gets a list of the names of all custom sounds found in the avatar.
+---@return string[]
+function SoundAPI:getCustomSounds() end

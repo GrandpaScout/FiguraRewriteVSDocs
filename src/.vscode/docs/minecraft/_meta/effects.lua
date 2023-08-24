@@ -1,9 +1,11 @@
----A valid Minecraft status effect id.
+---@meta _
+
 ---@alias Minecraft.effectID string
 ---| "effect.minecraft.absorption"          # Absorption
 ---| "effect.minecraft.bad_omen"            # Bad Omen
 ---| "effect.minecraft.blindness"           # Blindness
 ---| "effect.minecraft.conduit_power"       # Conduit Power
+---| "effect.minecraft.darkness"            # Darkness
 ---| "effect.minecraft.dolphins_grace"      # Dolphin's Grace
 ---| "effect.minecraft.fire_resistance"     # Fire Resistance
 ---| "effect.minecraft.glowing"             # Glowing
@@ -32,4 +34,3 @@
 ---| "effect.minecraft.water_breathing"     # Water Breathing
 ---| "effect.minecraft.weakness"            # Weakness
 ---| "effect.minecraft.wither"              # Wither
-

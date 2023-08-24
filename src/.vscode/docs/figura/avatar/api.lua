@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  AVATARAPI                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  AVATARAPI                                                                                                       ---
+---==================================================================================================================---
 
 ---An API mainly used for getting avatar metadata.
 ---
@@ -12,11 +12,10 @@
 ---
 ---This API contains many getters for avatar metadata and avatar resources.
 ---
----Avatar metadata includes the data in the `avatar.json` file, the total size of the avatar, and
----the existence of certain types of files.
+---Avatar metadata includes the data in the `avatar.json` file, the total size of the avatar, and the existence of
+---certain types of files.
 ---
----Avatar resources include current/max script instructions and current/max model & animation
----complexity.
+---Avatar resources include current/max script instructions and current/max model & animation complexity.
 ---
 ---This API also controls avatar variables through `<AvatarAPI>:store()`.
 ---@class AvatarAPI
@@ -29,7 +28,7 @@ local AvatarAPI
 ---
 ---Other avatars can access this value by using the following function:
 ---```lua
----<PlayerAPI>:getVariable(key)
+---<Player>:getVariable(key)
 ---```
 ---
 ---> ***
@@ -43,8 +42,8 @@ local AvatarAPI
 ---
 ---avatar:store("es_num", var)
 ---```
----Will result in the host seeing `"dos"` in avatar variable `"es_num"` and all other clients seeing
----`"uno"` in avatar variable `"es_num"`.
+---Will result in the host seeing `"dos"` in avatar variable `"es_num"` and all other clients seeing `"uno"` in avatar
+---variable `"es_num"`.
 ---@generic self
 ---@param self self
 ---@param key string
@@ -57,32 +56,32 @@ function AvatarAPI:store(key, value) end
 
 ---Gets if the viewing client allows this avatar to change the nameplate.
 ---
----This is affected by the `Nameplate Change` trust setting.
----@return AvatarAPI.booleanSwitch
+---This is affected by the `Nameplate Change` permission.
+---@return boolean
 function AvatarAPI:canEditNameplate() end
 
 ---Gets if the viewing client allows this avatar to change the vanilla player model.
 ---
----This is affected by the `Vanilla Model Change` trust setting.
----@return AvatarAPI.booleanSwitch
+---This is affected by the `Vanilla Model Change` permission.
+---@return boolean
 function AvatarAPI:canEditVanillaModel() end
 
 ---Gets if the viewing client allows this avatar to have a custom head.
 ---
----This is affected by the `Custom Player Heads` trust setting.
----@return AvatarAPI.booleanSwitch
-function AvatarAPI:canHaveCustomHeads() end
+---This is affected by the `Custom Player Skull` permission.
+---@return boolean
+function AvatarAPI:canHaveCustomSkull() end
 
 ---Gets if the viewing client allows this avatar to render while it is offscreen.
 ---
----This is affected by the `Render Offscreen` trust setting.
----@return AvatarAPI.booleanSwitch
+---This is affected by the `Render Offscreen` permission.
+---@return boolean
 function AvatarAPI:canRenderOffscreen() end
 
 ---Gets if the viewing client allows this avatar to play custom sounds.
 ---
----This is affected by the `Custom Sounds` trust setting.
----@return AvatarAPI.booleanSwitch
+---This is affected by the `Custom Sounds` permission.
+---@return boolean
 function AvatarAPI:canUseCustomSounds() end
 
 ---Gets the number of currently playing animation channels in this avatar.
@@ -112,7 +111,7 @@ function AvatarAPI:getComplexity() end
 
 ---Gets the current instruction count in the current context or event.
 ---
----Instructions are the bytecodes that Lua runs.
+---Instructions make up the bytecode that Lua runs.
 ---@return integer
 function AvatarAPI:getCurrentInstructions() end
 
@@ -122,6 +121,10 @@ function AvatarAPI:getCurrentInstructions() end
 ---@return integer
 function AvatarAPI:getEntityInitCount() end
 
+---Gets the name of the entity wearing this avatar.
+---@return integer
+function AvatarAPI:getEntityName() end
+
 ---Gets the amount of instructions run in init.
 ---
 ---This value is only updated after init has run.
@@ -130,71 +133,85 @@ function AvatarAPI:getInitCount() end
 
 ---Gets the maximum animation complexity the viewing client allows this avatar to have.
 ---
----This is affected by the `Animation Complexity` trust setting.
----@return AvatarAPI.animationComplexityLimit
+---This is affected by the `Animation Complexity` permission.
+---@return integer
 function AvatarAPI:getMaxAnimationComplexity() end
+
+---Gets the maximum animation instruction count the viewing client allows this avatar to have.
+---
+---This is affected by the `Animation Instructions` permission.
+---@return integer
+function AvatarAPI:getMaxAnimationCount() end
 
 ---Gets the maximum complexity the viewing client allows this avatar to have.
 ---
----This is affected by the `Max Complexity` trust setting.
----@return AvatarAPI.complexityLimit
+---This is affected by the `Max Complexity` permission.
+---@return integer
 function AvatarAPI:getMaxComplexity() end
 
 ---Gets the maximum init instruction count the viewing client allows this avatar to have.
 ---
----This is affected by the `Init Instructions` trust setting.
----@return AvatarAPI.initLimit
+---This is affected by the `Init Instructions` permission.
+---@return integer
 function AvatarAPI:getMaxInitCount() end
 
----Gets the maximum particles/tick the viewing client allows this avatar to have.
+---Gets the maximum particles per tick the viewing client allows this avatar to have.
 ---
----This is affected by the `Max Particles` trust setting.
----@return AvatarAPI.particleLimit
+---This is affected by the `Max Particles` permission.
+---@return integer
 function AvatarAPI:getMaxParticles() end
 
----Gets the maximum `RENDER` and `POST_RENDER` instructions the viewing client allows this avatar to
----have.
+---Gets the maximum `RENDER` and `POST_RENDER` instructions the viewing client allows this avatar to have.
 ---
----This is affected by the `Render Instructions` trust setting.
----@return AvatarAPI.renderLimit
+---This is affected by the `Render Instructions` permission.
+---@return integer
 function AvatarAPI:getMaxRenderCount() end
 
 ---Gets the maximum sounds/tick the viewing client allows this avatar to have.
 ---
----This is affected by the `Max Sounds` trust setting.
----@return AvatarAPI.soundLimit
+---This is affected by the `Max Sounds` permission.
+---@return integer
 function AvatarAPI:getMaxSounds() end
 
----Gets the maximum width/height the viewing client allows textures on this avatar to have.
+---Gets the maximum width/height the viewing client allows textures created by this avatar's script to have.
 ---
----This is affected by the `Max Texture Size` trust setting.
----@return AvatarAPI.textureSizeLimit
+---This is affected by the `Max Texture Size` permission.
+---@return integer
 function AvatarAPI:getMaxTextureSize() end
 
 ---Gets the maximum `TICK` instructions the viewing client allows this avatar to have.
 ---
----This is affected by the `Tick Instructions` trust setting.
----@return AvatarAPI.tickLimit
+---This is affected by the `Tick Instructions` permission.
+---@return integer
 function AvatarAPI:getMaxTickCount() end
 
----Gets the maximum `WORLD_RENDER` and `POST_WORLD_RENDER` instructions the viewing client allows
----this avatar to have.
+---Gets the maximum `WORLD_RENDER` and `POST_WORLD_RENDER` instructions the viewing client allows this avatar to have.
 ---
----This is affected by the `World Render Instructions` trust setting.
----@return AvatarAPI.worldRenderLimit
+---This is affected by the `World Render Instructions` permission.
+---@return integer
 function AvatarAPI:getMaxWorldRenderCount() end
 
 ---Gets the maximum `WORLD_TICK` instructions the viewing client allows this avatar to have.
 ---
----This is affected by the `World Tick Instructions` trust setting.
----@return AvatarAPI.worldTickLimit
+---This is affected by the `World Tick Instructions` permission.
+---@return integer
 function AvatarAPI:getMaxWorldTickCount() end
+
+---Gets the NBT representation of this avatar.
+---@return table
+function AvatarAPI:getNBT() end
 
 ---Gets the name of this avatar.
 ---
 ---Returns the name of the containing folder if no name is found.
 ---@return string
 function AvatarAPI:getName() end
+
+---Gets the name of this avatar.
+---
+---Returns the name of the containing folder if no name is found.
+---@return AvatarAPI.permissionLevel
+function AvatarAPI:getPermissionLevel() end
 
 ---Gets the amount of particles remaining for this avatar on the viewing client.
 ---
@@ -224,10 +241,6 @@ function AvatarAPI:getSize() end
 ---@return integer
 function AvatarAPI:getTickCount() end
 
----Gets the trust level of the avatar on the viewing client.
----@return AvatarAPI.trustLevel
-function AvatarAPI:getTrustLevel() end
-
 ---Gets the UUID of this avatar's owner.
 ---@return string
 function AvatarAPI:getUUID() end
@@ -250,11 +263,11 @@ function AvatarAPI:getWorldRenderCount() end
 ---@return integer
 function AvatarAPI:getWorldTickCount() end
 
----Gets if this avatar's script has errored...
+---Gets if this avatar's script has errored.
 ---
----I'll let you figure out why this is useless.
----@*hidden Useless. The script is unable to run this function if it has errored.
----@return false
+---This can be used by other avatars (if this avatar reveals it with `:store()`) to check if another user's Avatar has
+---failed.
+---@return boolean
 function AvatarAPI:hasScriptError() end
 
 ---Gets if this avatar contains a texture.
@@ -266,17 +279,26 @@ function AvatarAPI:hasTexture() end
 
 ---Sets the color theme of your avatar.
 ---
----This will set the color of the avatar's metadata in the wardrobe screen and the Mark on the
----nameplate.
+---This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
 ---
 ---If `color` is `nil`, it will default to white.
+---@generic self
+---@param self self
 ---@param color Vector3
+---@return self
 function AvatarAPI:setColor(color) end
 
+---Sets the color theme of your avatar.
+---
+---This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
+---
 ---If `r`, `g`, or `b` are `nil` they will default to `1`.
+---@generic self
+---@param self self
 ---@param r number
 ---@param g number
 ---@param b number
+---@return self
 function AvatarAPI:setColor(r, g, b) end
 
 
@@ -284,8 +306,7 @@ function AvatarAPI:setColor(r, g, b) end
 
 ---Sets the color theme of your avatar.
 ---
----This will set the color of the avatar's metadata in the wardrobe screen and the Mark on the
----nameplate.
+---This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
 ---
 ---If `color` is `nil`, it will default to white.
 ---@generic self
@@ -294,6 +315,10 @@ function AvatarAPI:setColor(r, g, b) end
 ---@return self
 function AvatarAPI:color(color) end
 
+---Sets the color theme of your avatar.
+---
+---This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
+---
 ---If `r`, `g`, or `b` are `nil` they will default to `1`.
 ---@generic self
 ---@param self self

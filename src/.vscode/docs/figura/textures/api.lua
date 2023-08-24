@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  TEXTUREAPI-INTERNAL                                                                         ---
----==============================================================================================---
+---==================================================================================================================---
+---  TEXTUREAPI-INTERNAL                                                                                             ---
+---==================================================================================================================---
 
 ---**INTERNAL CLASS**&emsp;*Do not use this!*
 ---
@@ -13,9 +13,9 @@
 ---@field [string]? Texture
 
 
----==============================================================================================---
----  TEXTUREAPI                                                                                  ---
----==============================================================================================---
+---==================================================================================================================---
+---  TEXTUREAPI                                                                                                      ---
+---==================================================================================================================---
 
 ---An API for handling textures used by the avatar.
 ---
@@ -25,6 +25,27 @@ local TextureAPI
 
 
 ---===== METHODS =====---
+
+---Creates a copy of the given texture under a new name.
+---@param name string
+---@param tex Texture
+---@return Texture
+function TextureAPI:copy(name, tex) end
+
+---Creates a new texture object from a texture resource.
+---
+---Despite this function's name, it can get textures from mods and resource packs.
+---@param name string
+---@param path string
+---@return Texture
+function TextureAPI:fromVanilla(name, path) end
+
+---Gets a script-generated texture by name.
+---
+---This *cannot* get textures that are initally part of the avatar, use `textures["texture.name"]` for those.
+---@param name string
+---@return Texture?
+function TextureAPI:get(name) end
 
 ---Creates a texture from a base64 string or byte array.
 ---@param name string
@@ -42,11 +63,6 @@ function TextureAPI:newTexture(name, width, height) end
 
 ---===== GETTERS =====---
 
----Gets a texture by name.
----@param name string
----@return Texture?
-function TextureAPI:get(name) end
-
----Gets a list of all textures used by the avatar.
+---Gets a list of all textures that are initally part of the avatar.
 ---@return Texture[]
 function TextureAPI:getTextures() end

@@ -1,4 +1,5 @@
----A valid Minecraft enchantment id.
+---@meta _
+
 ---@alias Minecraft.enchantmentID string
 ---| "minecraft:aqua_affinity"         # Aqua Affinity
 ---| "minecraft:bane_of_arthropods"    # Bane of Arthropods

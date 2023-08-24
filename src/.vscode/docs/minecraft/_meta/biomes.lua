@@ -1,10 +1,12 @@
----A valid Minecraft biome id.
+---@meta _
+
 ---@alias Minecraft.biomeID string
 ---| "minecraft:badlands"                 # Badlands
 ---| "minecraft:bamboo_jungle"            # Bamboo Jungle
 ---| "minecraft:basalt_deltas"            # Basalt Deltas
 ---| "minecraft:beach"                    # Beach
 ---| "minecraft:birch_forest"             # Birch Forest
+---| "minecraft:cherry_grove"             # Cherry Grove
 ---| "minecraft:cold_ocean"               # Cold Ocean
 ---| "minecraft:crimson_forest"           # Crimson Forest
 ---| "minecraft:dark_forest"              # Dark Forest

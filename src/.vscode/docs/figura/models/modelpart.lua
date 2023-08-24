@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  MODELPART-INTERNAL                                                                          ---
----==============================================================================================---
+---==================================================================================================================---
+---  MODELPART-INTERNAL                                                                                              ---
+---==================================================================================================================---
 
 ---**INTERNAL CLASS**&emsp;*Do not use this!*
 ---
@@ -13,32 +13,102 @@
 ---@field [string] ModelPart
 
 
----==============================================================================================---
----  MODELPART                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  MODELPART                                                                                                       ---
+---==================================================================================================================---
 
 ---A part of the avatar's model.  
 ---This can be a group, cube, or mesh.
 ---@class ModelPart: ModelPart.*INTERNAL*
+---The function to run after this model part calculates its matrices, but before it is fully rendered.
+---@field midRender ModelPart.renderFunc
+---The function to run just after this model part has fully rendered.
+---@field postRender ModelPart.renderFunc
+---The function to run just before this model part starts rendering.
+---@field preRender ModelPart.renderFunc
 local ModelPart
 
 
 ---===== METHODS =====---
 
----Adds a Block Render Task to this part.
+---Adds the given part as a child of this part.
+---@generic self
+---@param self self
+---@param part ModelPart
+---@return self
+function ModelPart:addChild(part) end
+
+---Creates a shallow copy of this part.
+---
+---*This does not create a deep copy, all of the child parts are references to the original child parts.*
+---@return ModelPart
+function ModelPart:copy() end
+
+---Makes this part a child of the given part.
+---
+---If this part already has a parent, it is removed from that parent first.
+---@*error Throws if this part has no parent.
+---@generic self
+---@param self self
+---@param parent ModelPart
+---@return self
+function ModelPart:moveTo(parent) end
+
+---Adds a block task to this part.
 ---@param name string
 ---@return BlockTask
 function ModelPart:newBlock(name) end
 
----Adds an Item Render Task to this part.
+---Adds an item task to this part.
 ---@param name string
 ---@return ItemTask
 function ModelPart:newItem(name) end
 
----Adds a Text Render Task to this part.
+---Adds a blank part to this part. The initial parent type of the part can optionally be set.
+---
+---If `parent` is `nil`, it will default to `"None"`.
+---@param name string
+---@param parent? ModelPart.parentType
+---@return ModelPart
+function ModelPart:newPart(name, parent) end
+
+---Adds a sprite task to this part.
+---@param name string
+---@return SpriteTask
+function ModelPart:newSprite(name) end
+
+---Adds the given render task to this part.
+---@*hidden This function's name doesn't make much sense. Feels like it should be called "addTask" to match "addChild".
+---@*error Missing in-game doc string.
+---@generic task: RenderTask
+---@param task task
+---@return task
+function ModelPart:newTask(task) end
+
+---Adds a text task to this part.
 ---@param name string
 ---@return TextTask
 function ModelPart:newText(name) end
+
+---Removes the given part from this part.
+
+---Gets a matrix which transforms a local position of this part to a world position.
+---
+---This matrix only updates in `POST_RENDER` or `.midRender`, if you attempt to use it in `RENDER` or `.preRender`, it
+---will be one frame behind.
+---
+---This matrix will not update if the part is not visible. (Unless you are in first-person.)
+---@*error The matrix is incorrect if the camera is rolled.
+---@return Matrix4
+function ModelPart:partToWorldMatrix() end
+
+---Removes the given part as a child of this part.
+---@*error Makes no attempt to check if the given part is actually a child of this part.
+---@generic self
+---@param self self
+---@param part ModelPart
+---@return self
+function ModelPart:removeChild(part) end
 
 ---Removes a previously added render task by name.  
 ---If no name is given, all render tasks are removed from this part.
@@ -50,6 +120,10 @@ function ModelPart:removeTask(name) end
 
 
 ---===== GETTERS =====---
+
+---Gets all vertices of this part sorted by the name of the texture they use.
+---@return {[string]: Vertex[]}
+function ModelPart:getAllVertices() end
 
 ---Gets the position offset caused by any currently playing animations.
 ---@return Vector3
@@ -69,8 +143,7 @@ function ModelPart:getChildren() end
 
 ---Gets the color multiplier of this part.
 ---
----This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will
----result in black.
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
 ---@return Vector3
 function ModelPart:getColor() end
 
@@ -94,14 +167,21 @@ function ModelPart:getNormalMatrixRaw() end
 
 ---Gets the pivot offset of this part.
 ---
----If you are looking for the true pivot position, use `:getPivot()`.
+---If you are looking for the normal pivot position, use `:getPivot()`.
 ---@return Vector3
 function ModelPart:getOffsetPivot() end
 
 ---Gets the rotation offset of this part in degrees.
 ---
----If you are looking for the true rotation, use `:getRot()`.
+---If you are looking for the normal rotation, use `:getRot()`.
+---@return Vector3
 function ModelPart:getOffsetRot() end
+
+---Gets the scale offset of this part.
+---
+---If you are looking for the normal scale, use `:getScale()`.
+---@return Vector3
+function ModelPart:getOffsetScale() end
 
 ---Gets the opacity multiplier of this part.
 ---@return number
@@ -135,6 +215,12 @@ function ModelPart:getPositionMatrix() end
 ---@return Matrix4
 function ModelPart:getPositionMatrixRaw() end
 
+---Gets the color multiplier of this part's primary layer.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---@return Vector3
+function ModelPart:getPrimaryColor() end
+
 ---Gets the render type of this part's primary layer.
 ---
 ---Returns `nil` if it is inheriting from its parent.
@@ -149,17 +235,27 @@ function ModelPart:getRot() end
 ---@return Vector3
 function ModelPart:getScale() end
 
+---Gets the color multiplier of this part's secondary layer.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---@return Vector3
+function ModelPart:getSecondaryColor() end
+
 ---Gets the render type of this part's secondary layer.
 ---
 ---Returns `nil` if it is inheriting from its parent.
 ---@return ModelPart.renderType?
 function ModelPart:getSecondaryRenderType() end
 
+---Gets a table of all render tasks on this part.
+---@return {[string]?: RenderTask.any}
+function ModelPart:getTask() end
+
 ---Gets the render task with the given name from this part.  
----If no name is given, a list of all render tasks on this part is returned.
+---If a render task with the given name isn't found, `nil` is returned instead.
 ---
----If the task is confirmed to be of a certain type, add `--[[@as ???Task]]` after the function call
----to allow the Lua Server to know which task type it should expect.
+---If the task is confirmed to be of a certain type, add `--[[@as ???Task]]` after the function call to allow the Lua
+---Server to know which task type it should expect.
 ---```lua
 ---local task = <ModelPart>:getTask("TotallyABlockTask") --[[@as BlockTask]]
 ---      ┌┴──────────────────────┐
@@ -168,16 +264,12 @@ function ModelPart:getSecondaryRenderType() end
 ---      │}                      │
 ---      └───────────────────────┘
 ---```
----@return {[string]?: RenderTask.any}
-function ModelPart:getTask() end
-
 ---@param name string
----@return RenderTask.any
+---@return RenderTask.any?
 function ModelPart:getTask(name) end
 
 ---Gets a list of all the textures this part uses.
----
----This does not do anything if used on a group part.
+---@*error Gets a list of all textures instead.
 ---@return Texture[]
 function ModelPart:getTextures() end
 
@@ -186,6 +278,30 @@ function ModelPart:getTextures() end
 ---Throws if the part has multiple different sized textures on its faces.
 ---@return Vector2
 function ModelPart:getTextureSize() end
+
+---Gets the actual pivot position of this part.
+---
+---This is the sum of the pivot's position and the pivot offset.
+---@return Vector3
+function ModelPart:getTruePivot() end
+
+---Gets the actual position of this part.
+---
+---This is the sum of the position and any position offsets created by any playing animations.
+---@return Vector3
+function ModelPart:getTruePos() end
+
+---Gets the actual rotation of this part.
+---
+---This is the sum of the rotation, rotation offset, and any further rotation offsets created by any playing animations.
+---@return Vector3
+function ModelPart:getTrueRot() end
+
+---Gets the actual scale of this part.
+---
+---This is the sum of the scale, scale offset, and any further scale offsets created by any playing animations.
+---@return Vector3
+function ModelPart:getTrueScale() end
 
 ---Gets the type of this part.
 ---@return ModelPart.type
@@ -205,10 +321,15 @@ function ModelPart:getUVMatrix() end
 ---@return Vector2
 function ModelPart:getUVPixels() end
 
+---Gets the vertices accociated with the given texture in this part.
+---@param texture string
+---@return Vertex[]
+function ModelPart:getVertices(texture) end
+
 ---Gets if this part is visible.
 ---
----Returns `nil` if it is inheriting from its parent.
----@return boolean?
+---This check includes the entire chain of parts up to the root.
+---@return boolean
 function ModelPart:getVisible() end
 
 ---Gets if this part is a child of another part.
@@ -228,219 +349,469 @@ function ModelPart:overrideVanillaRot() end
 ---@return boolean
 function ModelPart:overrideVanillaScale() end
 
----Gets a matrix which transforms a point from this part's position to a world position.
----
----This matrix only updates in `POST_RENDER`, if you attempt to use it in `RENDER`, it will be one
----frame behind.
----
----This matrix will not update if the part is not visible. (Unless you are in first-person.)
----@*error The matrix is incorrect if the camera is rolled.
----@return Matrix4
-function ModelPart:partToWorldMatrix() end
-
 
 ---===== SETTERS =====---
 
----Sets the pivot offset of this part.
+---Sets the color multiplier of this part.
 ---
----If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@param pos? Vector3
-function ModelPart:setOffsetPivot(pos) end
-
----If `x`, `y`, or `z` are `nil`, they will default to `0`.
----@param x? number
----@param y? number
----@param z? number
-function ModelPart:setOffsetPivot(x, y, z) end
-
----Sets the rotation offset of this part.
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
 ---
----If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@param rot? Vector3
-function ModelPart:setOffsetRot(rot) end
-
----If `x`, `y`, or `z` are `nil`, they will default to `0`.
----@param x? number
----@param y? number
----@param z? number
-function ModelPart:setOffsetRot(x, y, z) end
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3
+---@return self
+function ModelPart:setColor(col) end
 
 ---Sets the color multiplier of this part.
 ---
----This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will
----result in black.
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
 ---
----If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
----@param col? Vector3
-function ModelPart:setColor(col) end
-
 ---If `r`, `g`, or `b` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
 ---@param r? number
 ---@param g? number
 ---@param b? number
+---@return self
 function ModelPart:setColor(r, g, b) end
 
 ---Sets the block light and sky light overrides of this part.  
 ---Light values above 15 or below 0 will cause the part to stop rendering.
 ---
----Light overrides are removed if `light` is `nil`.
+---If `light` is `nil`, light overrides are removed.
+---@generic self
+---@param self self
 ---@param light? Vector2
+---@return self
 function ModelPart:setLight(light) end
 
----Light overrides are removed if `block` is `nil`.  
+---Sets the block light and sky light overrides of this part.  
+---Light values above 15 or below 0 will cause the part to stop rendering.
+---
+---If `block` is `nil`, light overrides are removed.  
 ---If `sky` is `nil`, it will default to `0`.
----@param block? range*0-15
----@param sky? range*0-15
+---@generic self
+---@param self self
+---@param block? integer
+---@param sky? integer
+---@return self
 function ModelPart:setLight(block, sky) end
 
 ---Sets the position matrix of this part to the given matrix.
 ---
----This does not change the actual position, rotation, or scale of the part and the effects of this
----matrix will be removed if `:setPos()`, `:setRot()`, or `:setScale()` are used.
+---This does not change the actual position, rotation, or scale of the part and the effects of this matrix will be
+---removed if `:setPos()`, `:setRot()`, or `:setScale()` are used.
+---@generic self
+---@param self self
 ---@param mat Matrix4
+---@return self
 function ModelPart:setMatrix(mat) end
+
+---Sets the function to run after this model part calculates its matrices, but before it is fully rendered.
+---@generic self
+---@param self self
+---@param func? ModelPart.renderFunc
+---@return self
+function ModelPart:setMidRender(func) end
+
+---Sets the pivot offset of this part.
+---
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
+---@param pos? Vector3
+---@return self
+function ModelPart:setOffsetPivot(pos) end
+
+---Sets the pivot offset of this part.
+---
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@param z? number
+---@return self
+function ModelPart:setOffsetPivot(x, y, z) end
+
+---Sets the rotation offset of this part.
+---
+---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
+---@param rot? Vector3
+---@return self
+function ModelPart:setOffsetRot(rot) end
+
+---Sets the rotation offset of this part.
+---
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@param z? number
+---@return self
+function ModelPart:setOffsetRot(x, y, z) end
+
+---Sets the scale offset of this part.
+---
+---If `scale` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param scale? Vector3
+---@return self
+function ModelPart:setOffsetScale(scale) end
+
+---Sets the scale offset of this part.
+---
+---If `x` is `nil`, it will default to `1`.
+---If `y` or `z` are `nil`, they will default to the value of `x`.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@param z? number
+---@return self
+function ModelPart:setOffsetScale(x, y, z) end
 
 ---Sets the opacity multiplier of this part.
 ---
----This only has an effect if the render type of the part supports it.
----(`TRANSLUCENT`/`TRANSLUCENT_CULL`)
+---This only has an effect if the render type of the part supports it. (`TRANSLUCENT`/`TRANSLUCENT_CULL`)
+---@generic self
+---@param self self
 ---@param opacity number
+---@return self
 function ModelPart:setOpacity(opacity) end
 
 ---Sets the white flash and hurt overlays on this part.
 ---
 ---If `overlays` is `nil`, all overlays are removed.
+---@generic self
+---@param self self
 ---@param overlays? Vector2
+---@return self
 function ModelPart:setOverlay(overlays) end
 
+---Sets the white flash and hurt overlays on this part.
+---
 ---If `white` is `nil`, all overlays are removed.  
 ---If `hurt` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
 ---@param white? integer
 ---@param hurt? integer
+---@return self
 function ModelPart:setOverlay(white, hurt) end
 
 ---Sets the keyword this part follows.
+---@generic self
+---@param self self
 ---@param parent ModelPart.parentType
+---@return self
 function ModelPart:setParentType(parent) end
 
 ---Sets the pivot position of this part.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function ModelPart:setPivot(pos) end
 
+---Sets the pivot position of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function ModelPart:setPivot(x, y, z) end
 
 ---Sets the position offset of this part.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function ModelPart:setPos(pos) end
 
+---Sets the position offset of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function ModelPart:setPos(x, y, z) end
+
+---Sets the function to run just after this model part has fully rendered.
+---@generic self
+---@param self self
+---@param func ModelPart.renderFunc
+---@return self
+function ModelPart:setPostRender(func) end
+
+---Sets the function to run just before this model part starts rendering.
+---@generic self
+---@param self self
+---@param func ModelPart.renderFunc
+---@return self
+function ModelPart:setPreRender(func) end
+
+---Sets the color multiplier of this part's primary layer.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3
+---@return self
+function ModelPart:setPrimaryColor(col) end
+
+---Sets the color multiplier of this part's primary layer.
+---
+---This is a multiplier, that means that `1, 1, 1` will result in no change and `0, 0, 0` will result in black.
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function ModelPart:setPrimaryColor(r, g, b) end
 
 ---Sets the render type of this part's primary layer.
 ---
 ---This part inherits from its parent if `renderType` is `nil`.
+---@generic self
+---@param self self
 ---@param renderType ModelPart.renderType
+---@return self
 function ModelPart:setPrimaryRenderType(renderType) end
 
 ---Sets the primary texture of this part.  
----Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for this part.  
----Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture
----for this part.
+---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the texture source.  
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture source.
 ---
 ---If `texture` is `nil`, it will default to `"PRIMARY"`.
+---@generic self
+---@param self self
 ---@param texture ModelPart.textureType
----@param extra? string | Texture
-function ModelPart:setPrimaryTexture(texture, extra) end
+---@param source? string | Texture
+---@return self
+function ModelPart:setPrimaryTexture(texture, source) end
 
 ---Sets the rotation of this part.
 ---
 ---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param rot? Vector3
+---@return self
 function ModelPart:setRot(rot) end
 
+---Sets the rotation of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function ModelPart:setRot(x, y, z) end
 
 ---Sets the scale multiplier of this part.
 ---
----If `scale` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---If `scale` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
 ---@param scale? Vector3
+---@return self
 function ModelPart:setScale(scale) end
 
----If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---Sets the scale multiplier of this part.
+---
+---If `x` is `nil`, it will default to `1`.
+---If `y` or `z` are `nil`, they will default to the value of `x`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function ModelPart:setScale(x, y, z) end
+
+---Sets the color multiplier of this part's secondary layer.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3
+---@return self
+function ModelPart:setSecondaryColor(col) end
+
+---Sets the color multiplier of this part's secondary layer.
+---
+---This is a multiplier, that means that `1, 1, 1` will result in no change and `0, 0, 0` will result in black.
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function ModelPart:setSecondaryColor(r, g, b) end
 
 ---Sets the render type of this part's secondary layer.
 ---
 ---This part inherits from its parent if `renderType` is `nil`.
+---@generic self
+---@param self self
 ---@param renderType ModelPart.renderType
+---@return self
 function ModelPart:setSecondaryRenderType(renderType) end
 
 ---Sets the secondary texture of this part.  
----Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.  
----Setting the texture type to `"CUSTOM"` allows selecting a Figura texture to use as the texture
----for this part.
+---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the texture source.  
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture source.
 ---
 ---If `texture` is `nil`, it will default to `"SECONDARY"`.
+---@generic self
+---@param self self
 ---@param texture ModelPart.textureType
 ---@param extra? string | Texture
+---@return self
 function ModelPart:setSecondaryTexture(texture, extra) end
 
 ---Sets the UV offset of this part as a percentage of the texture's size.
 ---
 ---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
 ---@param uv? Vector2
+---@return self
 function ModelPart:setUV(uv) end
 
+---Sets the UV offset of this part as a percentage of the texture's size.
+---
 ---If `u` or `v` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param u? number
 ---@param v? number
+---@return self
 function ModelPart:setUV(u, v) end
 
 ---Sets the matrix that is applied to all UV points.
+---@generic self
+---@param self self
 ---@param mat Matrix3
+---@return self
 function ModelPart:setUVMatrix(mat) end
 
 ---Sets the UV offset of this part in pixels.  
 ---Throws if the part has multiple different sized textures on its faces.
 ---
 ---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
 ---@param uv? Vector2
+---@return self
 function ModelPart:setUVPixels(uv) end
 
+---Sets the UV offset of this part in pixels.  
+---Throws if the part has multiple different sized textures on its faces.
+---
 ---If `u` or `v` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param u? number
 ---@param v? number
+---@return self
 function ModelPart:setUVPixels(u, v) end
 
----Sets this part to either be always visible, always invisible, or visible when its parent is.
+---Sets if this part is visible.  
+---If this part's parent is invisible, this does nothing and this part will always be invisible.
 ---
----A boolean value will force the part to be (in)visible, `nil` will make the part inherit its
----parent's visiblity.
----@param visible? boolean
-function ModelPart:setVisible(visible) end
+---If `state` is `nil`, it will default to `true`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function ModelPart:setVisible(state) end
 
 
 ---===== SETTERS =====---
+
+---Sets the color multiplier of this part.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3
+---@return self
+function ModelPart:color(col) end
+
+---Sets the color multiplier of this part.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function ModelPart:color(r, g, b) end
+
+---Sets the block light and sky light overrides of this part.  
+---Light values above 15 or below 0 will cause the part to stop rendering.
+---
+---If `light` is `nil`, light overrides are removed.
+---@generic self
+---@param self self
+---@param light? Vector2
+---@return self
+function ModelPart:light(light) end
+
+---Sets the block light and sky light overrides of this part.  
+---Light values above 15 or below 0 will cause the part to stop rendering.
+---
+---If `block` is `nil`, light overrides are removed.  
+---If `sky` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param block? integer
+---@param sky? integer
+---@return self
+function ModelPart:light(block, sky) end
+
+---Sets the position matrix of this part to the given matrix.
+---
+---This does not change the actual position, rotation, or scale of the part and the effects of this matrix will be
+---removed if `:setPos()`, `:setRot()`, or `:setScale()` are used.
+---@generic self
+---@param self self
+---@param mat Matrix4
+---@return self
+function ModelPart:matrix(mat) end
 
 ---Sets the pivot offset of this part.
 ---
@@ -451,6 +822,8 @@ function ModelPart:setVisible(visible) end
 ---@return self
 function ModelPart:offsetPivot(pos) end
 
+---Sets the pivot offset of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -469,6 +842,8 @@ function ModelPart:offsetPivot(x, y, z) end
 ---@return self
 function ModelPart:offsetRot(rot) end
 
+---Sets the rotation offset of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -478,60 +853,30 @@ function ModelPart:offsetRot(rot) end
 ---@return self
 function ModelPart:offsetRot(x, y, z) end
 
----Sets the color multiplier of this part.
+---Sets the scale offset of this part.
 ---
----This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will
----result in black.
+---If `scale` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param scale? Vector3
+---@return self
+function ModelPart:offsetScale(scale) end
+
+---Sets the scale offset of this part.
 ---
----If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---If `x` is `nil`, it will default to `1`.
+---If `y` or `z` are `nil`, they will default to the value of `x`.
 ---@generic self
 ---@param self self
----@param col? Vector3
+---@param x? number
+---@param y? number
+---@param z? number
 ---@return self
-function ModelPart:color(col) end
-
----If `r`, `g`, or `b` are `nil`, they will default to `1`.
----@generic self
----@param self self
----@param r? number
----@param g? number
----@param b? number
----@return self
-function ModelPart:color(r, g, b) end
-
----Sets the block light and sky light overrides of this part.  
----Light values above 15 or below 0 will cause the part to stop rendering.
----
----Light overrides are removed if `light` is `nil`.
----@generic self
----@param self self
----@param light? Vector2
----@return self
-function ModelPart:light(light) end
-
----Light overrides are removed if `block` is `nil`.  
----If `sky` is `nil`, it will default to `0`.
----@generic self
----@param self self
----@param block? range*0-15
----@param sky? range*0-15
----@return self
-function ModelPart:light(block, sky) end
-
----Sets the position matrix of this part to the given matrix.
----
----This does not change the actual position, rotation, or scale of the part and the effects of this
----matrix will be removed if `:setPos()`, `:setRot()`, or `:setScale()` are used.
----@generic self
----@param self self
----@param mat Matrix4
----@return self
-function ModelPart:matrix(mat) end
+function ModelPart:offsetScale(x, y, z) end
 
 ---Sets the opacity multiplier of this part.
 ---
----This only has an effect if the render type of the part supports it.
----(`TRANSLUCENT`/`TRANSLUCENT_CULL`)
+---This only has an effect if the render type of the part supports it. (`TRANSLUCENT`/`TRANSLUCENT_CULL`)
 ---@generic self
 ---@param self self
 ---@param opacity number
@@ -547,6 +892,8 @@ function ModelPart:opacity(opacity) end
 ---@return self
 function ModelPart:overlay(overlays) end
 
+---Sets the white flash and hurt overlays on this part.
+---
 ---If `white` is `nil`, all overlays are removed.  
 ---If `hurt` is `nil`, it will default to `0`.
 ---@generic self
@@ -572,6 +919,8 @@ function ModelPart:parentType(parent) end
 ---@return self
 function ModelPart:pivot(pos) end
 
+---Sets the pivot position of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -590,6 +939,8 @@ function ModelPart:pivot(x, y, z) end
 ---@return self
 function ModelPart:pos(pos) end
 
+---Sets the position offset of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -599,6 +950,30 @@ function ModelPart:pos(pos) end
 ---@return self
 function ModelPart:pos(x, y, z) end
 
+---Sets the color multiplier of this part's primary layer.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3
+---@return self
+function ModelPart:primaryColor(col) end
+
+---Sets the color multiplier of this part's primary layer.
+---
+---This is a multiplier, that means that `1, 1, 1` will result in no change and `0, 0, 0` will result in black.
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function ModelPart:primaryColor(r, g, b) end
+
 ---Sets the render type of this part's primary layer.
 ---
 ---This part inherits from its parent if `renderType` is `nil`.
@@ -606,21 +981,19 @@ function ModelPart:pos(x, y, z) end
 ---@param self self
 ---@param renderType ModelPart.renderType
 ---@return self
-function ModelPart:primaryRenderType(renderType) end
+function ModelPart:primaryTexture(renderType) end
 
 ---Sets the primary texture of this part.  
----Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for this part.  
----Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture
----for this part.
+---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the texture source.  
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture source.
 ---
 ---If `texture` is `nil`, it will default to `"PRIMARY"`.
 ---@generic self
 ---@param self self
 ---@param texture ModelPart.textureType
----@param extra? string | Texture
+---@param source? string | Texture
 ---@return self
-function ModelPart:primaryTexture(texture, extra) end
+function ModelPart:primaryTexture(texture, source) end
 
 ---Sets the rotation of this part.
 ---
@@ -631,6 +1004,8 @@ function ModelPart:primaryTexture(texture, extra) end
 ---@return self
 function ModelPart:rot(rot) end
 
+---Sets the rotation of this part.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -649,7 +1024,10 @@ function ModelPart:rot(x, y, z) end
 ---@return self
 function ModelPart:scale(scale) end
 
----If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---Sets the scale multiplier of this part.
+---
+---If `x` is `nil`, it will default to `1`.
+---If `y` or `z` are `nil`, they will default to the value of `x`.
 ---@generic self
 ---@param self self
 ---@param x? number
@@ -658,6 +1036,30 @@ function ModelPart:scale(scale) end
 ---@return self
 function ModelPart:scale(x, y, z) end
 
+---Sets the color multiplier of this part's secondary layer.
+---
+---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3
+---@return self
+function ModelPart:secondaryColor(col) end
+
+---Sets the color multiplier of this part's secondary layer.
+---
+---This is a multiplier, that means that `1, 1, 1` will result in no change and `0, 0, 0` will result in black.
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function ModelPart:secondaryColor(r, g, b) end
+
 ---Sets the render type of this part's secondary layer.
 ---
 ---This part inherits from its parent if `renderType` is `nil`.
@@ -665,13 +1067,11 @@ function ModelPart:scale(x, y, z) end
 ---@param self self
 ---@param renderType ModelPart.renderType
 ---@return self
-function ModelPart:secondaryRenderType(renderType) end
+function ModelPart:secondaryTexture(renderType) end
 
 ---Sets the secondary texture of this part.  
----Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the
----texture for the part.  
----Setting the texture type to `"CUSTOM"` allows selecting a Figura texture to use as the texture
----for this part.
+---Setting the texture type to `"RESOURCE"` allows selecting any namespaced texture to use as the texture source.  
+---Setting the texture type to `"CUSTOM"` allows selecting a Figura `Texture` to use as the texture source.
 ---
 ---If `texture` is `nil`, it will default to `"SECONDARY"`.
 ---@generic self
@@ -690,6 +1090,8 @@ function ModelPart:secondaryTexture(texture, extra) end
 ---@return self
 function ModelPart:uv(uv) end
 
+---Sets the UV offset of this part as a percentage of the texture's size.
+---
 ---If `u` or `v` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -715,6 +1117,9 @@ function ModelPart:uvMatrix(mat) end
 ---@return self
 function ModelPart:uvPixels(uv) end
 
+---Sets the UV offset of this part in pixels.  
+---Throws if the part has multiple different sized textures on its faces.
+---
 ---If `u` or `v` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -723,12 +1128,12 @@ function ModelPart:uvPixels(uv) end
 ---@return self
 function ModelPart:uvPixels(u, v) end
 
----Sets this part to either be always visible, always invisible, or visible when its parent is.
+---Sets if this part is visible.  
+---If this part's parent is invisible, this does nothing and this part will always be invisible.
 ---
----A boolean value will force the part to be (in)visible, `nil` will make the part inherit its
----parent's visiblity.
+---If `state` is `nil`, it will default to `true`.
 ---@generic self
 ---@param self self
----@param visible? boolean
+---@param state? boolean
 ---@return self
-function ModelPart:visible(visible) end
+function ModelPart:visible(state) end

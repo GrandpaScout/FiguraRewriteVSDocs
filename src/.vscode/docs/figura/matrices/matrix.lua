@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  MATRIX                                                                                      ---
----==============================================================================================---
+---==================================================================================================================---
+---  MATRIX                                                                                                          ---
+---==================================================================================================================---
 
 ---The base class of all matrices.
 ---
@@ -44,9 +44,9 @@ function Matrix:reset() end
 function Matrix:transpose() end
 
 
----==============================================================================================---
----  MATRIX2 extends MATRIX                                                                      ---
----==============================================================================================---
+---==================================================================================================================---
+---  MATRIX2 extends MATRIX                                                                                          ---
+---==================================================================================================================---
 
 ---A 2x2 matrix.
 ---@class Matrix2: Matrix
@@ -95,24 +95,24 @@ local Matrix2
 ---@return self
 function Matrix2:add(other) end
 
----Augments the given value to a vector `⟨x, 1⟩`, multiplies that vector against this matrix, then
----deaugments the vector to return `x`.
+---Augments the given value to a vector `⟨x, 1⟩`, multiplies that vector against this matrix, then deaugments the vector
+---to return `x`.
 ---
 ---If `x` is `nil`, it will default to `0`.
 ---@param x? number
 ---@return number
 function Matrix2:apply(x) end
 
----Augments the given value to a vector `⟨x, 0⟩`, multiplies that vector against this matrix, then
----deaugments the vector to return `x`.
+---Augments the given value to a vector `⟨x, 0⟩`, multiplies that vector against this matrix, then deaugments the vector
+---to return `x`.
 ---
 ---If `x` is `nil`, it will default to `0`.
 ---@param x? number
 ---@return number
 function Matrix2:applyDir(x) end
 
----Copies this matrix and augments the copy, adding a blank column and row to it and placing a `1`
----in the corner of the new row and column.
+---Copies this matrix and augments the copy, adding a blank column and row to it and placing a `1` in the corner of the
+---new row and column.
 ---@return Matrix3
 function Matrix2:augmented() end
 
@@ -124,16 +124,14 @@ function Matrix2:copy() end
 ---@return Matrix2
 function Matrix2:inverted() end
 
----Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the
----operation.
+---Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the operation.
 ---@generic self
 ---@param self self
 ---@param other Matrix2
 ---@return self
 function Matrix2:multiply(other) end
 
----Multiplies this matrix by another matrix, placing the other matrix on the right-hand side of the
----operation.
+---Multiplies this matrix by another matrix, placing the other matrix on the right-hand side of the operation.
 ---@generic self
 ---@param self self
 ---@param other Matrix2
@@ -159,6 +157,8 @@ function Matrix2:rotate(angle) end
 ---@return self
 function Matrix2:scale(scales) end
 
+---Scales this matrix by the given factors.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -189,19 +189,19 @@ function Matrix2:transposed() end
 ---===== GETTERS =====---
 
 ---Gets the column at the given index as a vector.
----@param index Matrix2.rowCol
+---@param index 1 | 2
 ---@return Vector2
 function Matrix2:getColumn(index) end
 
 ---Gets the row at the given index as a vector.
----@param index Matrix2.rowCol
+---@param index 1 | 2
 ---@return Vector2
 function Matrix2:getRow(index) end
 
 
----==============================================================================================---
----  MATRIX3 extends MATRIX                                                                      ---
----==============================================================================================---
+---==================================================================================================================---
+---  MATRIX3 extends MATRIX                                                                                          ---
+---==================================================================================================================---
 
 ---A 3x3 matrix.
 ---@class Matrix3: Matrix
@@ -267,36 +267,42 @@ local Matrix3
 ---@return self
 function Matrix3:add(other) end
 
----Augments the given value to a vector `⟨x, y, 1⟩`, multiplies that vector against this matrix,
----then deaugments the vector to return `⟨x, y⟩`.
+---Augments the given value to a vector `⟨x, y, 1⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y⟩`.
 ---
 ---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param vec? Vector2
 ---@return Vector2
 function Matrix3:apply(vec) end
 
+---Augments the given values to a vector `⟨x, y, 1⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y⟩`.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
 ---@return Vector2
 function Matrix3:apply(x, y) end
 
----Augments the given value to a vector `⟨x, y, 0⟩`, multiplies that vector against this matrix,
----then deaugments the vector to return `⟨x, y⟩`.
+---Augments the given value to a vector `⟨x, y, 0⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y⟩`.
 ---
 ---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param vec? Vector2
 ---@return Vector2
 function Matrix3:applyDir(vec) end
 
+---Augments the given values to a vector `⟨x, y, 0⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y⟩`.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
 ---@return Vector2
 function Matrix3:applyDir(x, y) end
 
----Copies this matrix and augments the copy, adding a blank column and row to it and placing a `1`
----in the corner of the new row and column.
+---Copies this matrix and augments the copy, adding a blank column and row to it and placing a `1` in the corner of the
+---new row and column.
 ---@return Matrix4
 function Matrix3:augmented() end
 
@@ -312,16 +318,14 @@ function Matrix3:deaugmented() end
 ---@return Matrix3
 function Matrix3:inverted() end
 
----Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the
----operation.
+---Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the operation.
 ---@generic self
 ---@param self self
 ---@param other Matrix3
 ---@return self
 function Matrix3:multiply(other) end
 
----Multiplies this matrix by another matrix, placing the other matrix on the right-hand side of the
----operation.
+---Multiplies this matrix by another matrix, placing the other matrix on the right-hand side of the operation.
 ---@generic self
 ---@param self self
 ---@param other Matrix3
@@ -337,6 +341,8 @@ function Matrix3:rightMultiply(other) end
 ---@return self
 function Matrix3:rotate(angles) end
 
+---Rotates this matrix by the given angles in degrees.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -382,6 +388,8 @@ function Matrix3:rotateZ(angle) end
 ---@return self
 function Matrix3:scale(scales) end
 
+---Scales this matrix by the given factors.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -414,6 +422,8 @@ function Matrix3:sub(other) end
 ---@return self
 function Matrix3:translate(vec) end
 
+---Translates this matrix by the given amounts.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -430,19 +440,19 @@ function Matrix3:transposed() end
 ---===== GETTERS =====---
 
 ---Gets the column at the given index as a vector.
----@param index Matrix3.rowCol
+---@param index 1 | 2 | 3
 ---@return Vector3
 function Matrix3:getColumn(index) end
 
 ---Gets the row at the given index as a vector.
----@param index Matrix3.rowCol
+---@param index 1 | 2 | 3
 ---@return Vector3
 function Matrix3:getRow(index) end
 
 
----==============================================================================================---
----  MATRIX4 extends MATRIX                                                                      ---
----==============================================================================================---
+---==================================================================================================================---
+---  MATRIX4 extends MATRIX                                                                                          ---
+---==================================================================================================================---
 
 ---A 4x4 matrix.
 ---@class Matrix4: Matrix
@@ -527,14 +537,17 @@ local Matrix4
 ---@return self
 function Matrix4:add(other) end
 
----Augments the given value to a vector `⟨x, y, z, 1⟩`, multiplies that vector against this matrix,
----then deaugments the vector to return `⟨x, y, z⟩`.
+---Augments the given value to a vector `⟨x, y, z, 1⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y, z⟩`.
 ---
 ---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param vec? Vector3
 ---@return Vector3
 function Matrix4:apply(vec) end
 
+---Augments the given value to a vector `⟨x, y, z, 1⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y, z⟩`.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -542,14 +555,17 @@ function Matrix4:apply(vec) end
 ---@return Vector3
 function Matrix4:apply(x, y, z) end
 
----Augments the given value to a vector `⟨x, y, z, 0⟩`, multiplies that vector against this matrix,
----then deaugments the vector to return `⟨x, y, z⟩`.
+---Augments the given value to a vector `⟨x, y, z, 0⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y, z⟩`.
 ---
 ---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param vec? Vector3
 ---@return Vector3
 function Matrix4:applyDir(vec) end
 
+---Augments the given value to a vector `⟨x, y, z, 0⟩`, multiplies that vector against this matrix, then deaugments the
+---vector to return `⟨x, y, z⟩`.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -569,16 +585,14 @@ function Matrix4:deaugmented() end
 ---@return Matrix4
 function Matrix4:inverted() end
 
----Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the
----operation.
+---Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the operation.
 ---@generic self
 ---@param self self
 ---@param other Matrix4
 ---@return self
 function Matrix4:multiply(other) end
 
----Multiplies this matrix by another matrix, placing the other matrix on the right-hand side of the
----operation.
+---Multiplies this matrix by another matrix, placing the other matrix on the right-hand side of the operation.
 ---@generic self
 ---@param self self
 ---@param other Matrix4
@@ -594,6 +608,8 @@ function Matrix4:rightMultiply(other) end
 ---@return self
 function Matrix4:rotate(angles) end
 
+---Rotates this matrix by the given angles in degrees.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -639,6 +655,8 @@ function Matrix4:rotateZ(angle) end
 ---@return self
 function Matrix4:scale(scales) end
 
+---Scales this matrix by the given factors.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -671,6 +689,8 @@ function Matrix4:sub(other) end
 ---@return self
 function Matrix4:translate(vec) end
 
+---Translates this matrix by the given amounts.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -688,11 +708,11 @@ function Matrix4:transposed() end
 ---===== GETTERS =====---
 
 ---Gets the column at the given index as a vector.
----@param index Matrix4.rowCol
+---@param index 1 | 2 | 3 | 4
 ---@return Vector4
 function Matrix4:getColumn(index) end
 
 ---Gets the row at the given index as a vector.
----@param index Matrix4.rowCol
+---@param index 1 | 2 | 3 | 4
 ---@return Vector4
 function Matrix4:getRow(index) end

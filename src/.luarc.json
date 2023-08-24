@@ -222,7 +222,7 @@
 
       // Duplicate
       //;"duplicate-index",
-      //;"duplicate-set-field",
+      "duplicate-set-field", // Due to how Figura's events work, this needs to be disabled.
 
       // Global
       //;"global-in-nil-env",
@@ -332,8 +332,8 @@
   |*  FORMAT: Controls the formatter and code checking options.                                   *|
   \*==============================================================================================*/
   "format": {
-    // Only use the formatter for code checking.
-    "enable": false,
+    // Enable formatting.
+    "enable": true,
 
     // Formatter settings.
     "defaultConfig": {

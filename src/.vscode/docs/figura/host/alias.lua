@@ -1,15 +1,23 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  HOSTAPI                                                                                     ---
----==============================================================================================---
+---==================================================================================================================---
+---  HOSTAPI                                                                                                         ---
+---==================================================================================================================---
 
----A status effect for an entity.
+---@class HostAPI.chatMessage
+---The plain text of the message.
+---@field message string
+---The JSON object representing the message.
+---@field json string
+---The background color of the message as an integer.
+---@field background integer
+---The tick that this message was added to the chat.
+---@field addedTime integer
+
 ---@class HostAPI.statusEffect
 ---The name of this status effect.
----<!--
 ---@field name Minecraft.effectID
 ---The time left for this status effect in ticks.
 ---@field duration integer

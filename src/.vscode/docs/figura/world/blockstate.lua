@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  BLOCKSTATE                                                                                  ---
----==============================================================================================---
+---==================================================================================================================---
+---  BLOCKSTATE                                                                                                      ---
+---==================================================================================================================---
 
 ---A Minecraft block.
 ---@class BlockState
@@ -13,13 +13,18 @@
 ---@field id Minecraft.blockID
 ---The state properties of this block.
 ---
----This is `nil` if this block has no properties.
----<!--
----@field properties? Minecraft.blockProperties
+---This is empty if this block has no properties.
+---@field properties Minecraft.blockProperties
 local BlockState
 
 
 ---===== METHODS =====---
+
+---Creates an ItemStack that represents this block.
+---
+---Returns `nil` if no valid item was found.
+---@return ItemStack?
+function BlockState:asItem() end
 
 ---Creates a block state string with this block.
 ---@return string
@@ -27,12 +32,6 @@ function BlockState:toStateString() end
 
 
 ---===== GETTERS =====---
-
----Gets the item representation of this block, whatever that may be.
----
----Returns `nil` if no valid item was found.
----@return ItemStack?
-function BlockState:asItem() end
 
 ---Gets if this block generates its own redstone power.
 ---@return boolean
@@ -42,11 +41,11 @@ function BlockState:emitsRedstonePower() end
 ---@return number
 function BlockState:getBlastResistance() end
 
----Gets the shape of this block's collision as a list of 6-element vectors.  
----Each vector contains both corners of a box in the shape `⟨minX, minY, minZ, maxX, maxY, maxZ⟩`.
+---Gets the shape of this block's collision as a list of Vector3 pairs.  
+---Each pair contains both corners of a box in the shape as `{⟨minX, minY, minZ⟩, ⟨maxX, maxY, maxZ⟩}`.
 ---
 ---The coordinates used are relative to the starting corner of this block's position.
----@return Vector6[]
+---@return {[1]: Vector3, [2]: Vector3}[]
 function BlockState:getCollisionShape() end
 
 ---Gets the amount of power a comparator reading this block would output.
@@ -55,8 +54,7 @@ function BlockState:getComparatorOutput() end
 
 ---Gets the client-side NBT data of this block.
 ---
----This data *will* be different from what the server (and `/data`) sees as clients do not receive
----all NBT data.
+---This data *will* be different from what the server (and `/data`) sees as clients do not receive all NBT data.
 ---
 ---Returns `nil` if there is no NBT data attached to this block.
 ---@return table?
@@ -74,6 +72,10 @@ function BlockState:getFriction() end
 ---@return number
 function BlockState:getHardness() end
 
+---Gets the id of this block.
+---@return string
+function BlockState:getID() end
+
 ---Gets the multiplier to jump height this block applies to entities standing on it.
 ---@return number
 function BlockState:getJumpVelocityMultiplier() end
@@ -86,34 +88,36 @@ function BlockState:getLuminance() end
 ---@return Vector3
 function BlockState:getMapColor() end
 
----Gets the id of this block's material.
----
----Blocks with similar materials usually share similar properties.
----@return BlockState.material
-function BlockState:getMaterial() end
-
 ---Gets how much this block reduces light level.
 ---@return range*0-15
 function BlockState:getOpacity() end
 
----Gets the shape of this block's outline as a list of 6-element vectors.  
----Each vector contains both corners of a box in the shape `⟨minX, minY, minZ, maxX, maxY, maxZ⟩`.
+---Gets the shape of this block's outline as a list of Vector3 pairs.  
+---Each pair contains both corners of a box in the shape as `{⟨minX, minY, minZ⟩, ⟨maxX, maxY, maxZ⟩}`.
 ---
 ---The coordinates used are relative to the starting corner of this block's position.
----@return Vector6[]
+---@return {[1]: Vector3, [2]: Vector3}[]
 function BlockState:getOutlineShape() end
 
 ---Gets the position that this BlockState object uses for calculations.
 ---@return Vector3
 function BlockState:getPos() end
 
+---Gets the properties of this BlockState.
+---@return Minecraft.blockProperties
+function BlockState:getProperties() end
+
 ---Gets information on the basic sounds this block plays.
----@return BlockState.Sounds
+---@return BlockState.blockSounds
 function BlockState:getSounds() end
 
 ---Gets a list of all the block tags for this block.
 ---@return string[]
 function BlockState:getTags() end
+
+---Gets all of the textures this block uses.
+---@return BlockState.blockTextures
+function BlockState:getTextures() end
 
 ---Gets the multiplier to movement speed this block applies to entities standing on it.
 ---@return number
@@ -130,6 +134,10 @@ function BlockState:hasCollision() end
 ---Gets if this block has emissive textures.
 ---@return boolean
 function BlockState:hasEmissiveLighting() end
+
+---Gets if this block is considered "air".
+---@return boolean
+function BlockState:isAir() end
 
 ---Gets if the collision of this block is a cube that takes the entire block space.
 ---@return boolean
@@ -153,13 +161,21 @@ function BlockState:isTranslucent() end
 ---Sets the position that this BlockState object uses for calculations.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function BlockState:setPos(pos) end
 
+---Sets the position that this BlockState object uses for calculations.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? Vector3
 ---@param y? Vector3
 ---@param z? Vector3
+---@return self
 function BlockState:setPos(x, y, z) end
 
 
@@ -174,6 +190,8 @@ function BlockState:setPos(x, y, z) end
 ---@return self
 function BlockState:pos(pos) end
 
+---Sets the position that this BlockState object uses for calculations.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self

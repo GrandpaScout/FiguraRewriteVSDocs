@@ -1,4 +1,5 @@
----A valid Minecraft particle id.
+---@meta _
+
 ---@alias Minecraft.particleID string
 ---| "minecraft:ambient_entity_effect"    # Ambient Entity Effect
 ---| "minecraft:angry_villager"           # Angry Villager

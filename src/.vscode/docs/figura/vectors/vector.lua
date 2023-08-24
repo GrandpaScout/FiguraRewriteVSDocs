@@ -15,9 +15,9 @@
 ---If this vector is confirmed to be valid, its type can be cast by adding `--[[@as Vector#]]` after
 ---indexing.
 ---```lua
----local v5 = <Vector>.xyx_z --[[@as Vector5]]
+---local v4 = <Vector>.xy_z --[[@as Vector4]]
 ---      ┌┴──────────────────┐
----      │local v5: Vector5 {│
+---      │local v4: Vector4 {│
 ---      │    ...            │
 ---      │}                  │
 ---      └───────────────────┘
@@ -39,12 +39,11 @@
 ---@operator len: integer
 ---@operator add(number | Vector): Vector
 ---@operator sub(number | Vector): Vector
----@operator mul(number | Vector): Vector
----@*error Modifies the vector instead of copying it.
----@operator mul(Matrix): Vector
+---@*error Multiplying by a Matrix modifies the vector instead of copying it.
+---@operator mul(number | Vector | Matrix): Vector
 ---@operator div(number | Vector): Vector
 ---@operator mod(number | Vector): Vector
----@field _ 0            # A zero.
+---@field _ 0 # A zero.
 ---An empty Vector2.
 ---<!--
 ---@field __ Vector2
@@ -54,12 +53,6 @@
 ---An empty Vector4.
 ---<!--
 ---@field ____ Vector4
----An empty Vector5.
----<!--
----@field _____ Vector5
----An empty Vector6.
----<!--
----@field ______ Vector6
 local Vector
 
 
@@ -107,6 +100,16 @@ function Vector:dot(vec) end
 ---Creates and returns a copy of this vector with its elements rounded down.
 ---@return Vector
 function Vector:floor() end
+
+---Calculates the length of this vector.
+---@return number
+function Vector:length() end
+
+---Calculates the squared length of this vector.
+---
+---Faster as it avoids a square root, but only useful for length comparisons.
+---@return number
+function Vector:lengthSquared() end
 
 ---Modifies this vector so its length is `1`.  
 ---Does nothing if this vector's length is `0`.
@@ -159,18 +162,6 @@ function Vector:toString() end
 function Vector:unpack() end
 
 
----===== GETTERS =====---
-
----Gets the length of this vector.
----@return number
-function Vector:length() end
-
----Gets the length of this vector squared.  
----Faster as it avoids a square root.
----@return number
-function Vector:lengthSquared() end
-
-
 ---==============================================================================================---
 ---  VECTOR2 extends VECTOR                                                                      ---
 ---==============================================================================================---
@@ -181,9 +172,8 @@ function Vector:lengthSquared() end
 ---@operator len: 2
 ---@operator add(number | Vector2): Vector2
 ---@operator sub(number | Vector2): Vector2
----@operator mul(number | Vector2): Vector2
----@*error Modifies the vector instead of copying it.
----@operator mul(Matrix2): Vector2
+---@*error Multiplying by a Matrix modifies the vector instead of copying it.
+---@operator mul(number | Vector2 | Matrix2): Vector2
 ---@operator div(number | Vector2): Vector2
 ---@operator mod(number | Vector2): Vector2
 ---@field x number     # The first element.
@@ -203,12 +193,6 @@ function Vector:lengthSquared() end
 ---Convert to Vector4.
 ---<!--
 ---@field xy__ Vector4
----Convert to Vector5.
----<!--
----@field xy___ Vector5
----Convert to Vector6.
----<!--
----@field xy____ Vector6
 local Vector2
 
 
@@ -223,6 +207,8 @@ local Vector2
 ---@return self
 function Vector2:add(vec) end
 
+---Adds the given vector or values to this vector.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -230,6 +216,13 @@ function Vector2:add(vec) end
 ---@param y? number
 ---@return self
 function Vector2:add(x, y) end
+
+---Creates and returns a Vector3 using the values of this vector and the given `z` value.
+---
+---If `z` is `nil`, it will default to `1`.
+---@param z? number
+---@return Vector3
+function Vector2:augmented(z) end
 
 ---Creates and returns a copy of this vector with its elements rounded up.
 ---@return Vector2
@@ -256,6 +249,8 @@ function Vector2:copy() end
 ---@return self
 function Vector2:div(vec) end
 
+---Divides this vector by the given vector or values.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -282,6 +277,8 @@ function Vector2:floor() end
 ---@return self
 function Vector2:mul(vec) end
 
+---Multiplies this vector by the given vector or values.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -304,6 +301,8 @@ function Vector2:normalized() end
 ---@return self
 function Vector2:reduce(vec) end
 
+---Reduces this vector modulo the given vector or values.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -321,6 +320,8 @@ function Vector2:reduce(x, y) end
 ---@return self
 function Vector2:set(vec) end
 
+---Sets the elements of this vector to the given vector or values.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -338,6 +339,8 @@ function Vector2:set(x, y) end
 ---@return self
 function Vector2:sub(vec) end
 
+---Subtracts the given vector or values from this vector.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -362,6 +365,11 @@ function Vector2:toRad() end
 ---@return self
 function Vector2:transform(mat) end
 
+---Converts this vector into separate numbers and returns them.
+---@return number x
+---@return number y
+function Vector2:unpack() end
+
 
 ---==============================================================================================---
 ---  VECTOR3 extends VECTOR                                                                      ---
@@ -373,9 +381,8 @@ function Vector2:transform(mat) end
 ---@operator len: 3
 ---@operator add(number | Vector3): Vector3
 ---@operator sub(number | Vector3): Vector3
----@operator mul(number | Vector3): Vector3
----@*error Modifies the vector instead of copying it.
----@operator mul(Matrix3): Vector3
+---@*error Multiplying by a Matrix modifies the vector instead of copying it.
+---@operator mul(number | Vector3 | Matrix3): Vector3
 ---@operator div(number | Vector3): Vector3
 ---@operator mod(number | Vector3): Vector3
 ---@field x number     # The first element.
@@ -399,12 +406,6 @@ function Vector2:transform(mat) end
 ---Convert to Vector4.
 ---<!--
 ---@field xyz_ Vector4
----Convert to Vector5.
----<!--
----@field xyz__ Vector5
----Convert to Vector6.
----<!--
----@field xyz___ Vector6
 local Vector3
 
 
@@ -428,9 +429,12 @@ function Vector3:add(vec) end
 ---@return self
 function Vector3:add(x, y, z) end
 
----Creates and returns a vector `⟨x, y, z, 1⟩` using the values of this vector.
+---Creates and returns a Vector4 using the values of this vector and the given `w` value.
+---
+---If `w` is `nil`, it will default to `1`.
+---@param w? number
 ---@return Vector4
-function Vector3:augmented() end
+function Vector3:augmented(w) end
 
 ---Creates and returns a copy of this vector with its elements rounded up.
 ---@return Vector3
@@ -469,6 +473,8 @@ function Vector3:crossed(vec) end
 ---@return self
 function Vector3:div(vec) end
 
+---Divides this vector by the given vector or values.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -496,6 +502,8 @@ function Vector3:floor() end
 ---@return self
 function Vector3:mul(vec) end
 
+---Multiplies this vector by the given vector or values.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -519,6 +527,8 @@ function Vector3:normalized() end
 ---@return self
 function Vector3:reduce(vec) end
 
+---Reduces this vector modulo the given vector or values.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -537,6 +547,8 @@ function Vector3:reduce(x, y, z) end
 ---@return self
 function Vector3:set(vec) end
 
+---Sets the elements of this vector to the given vector or values.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -555,6 +567,8 @@ function Vector3:set(x, y, z) end
 ---@return self
 function Vector3:sub(vec) end
 
+---Subtracts the given vector or values from this vector.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -580,6 +594,12 @@ function Vector3:toRad() end
 ---@return self
 function Vector3:transform(mat) end
 
+---Converts this vector into separate numbers and returns them.
+---@return number x
+---@return number y
+---@return number z
+function Vector3:unpack() end
+
 
 ---==============================================================================================---
 ---  VECTOR4 extends VECTOR                                                                      ---
@@ -591,9 +611,8 @@ function Vector3:transform(mat) end
 ---@operator len: 4
 ---@operator add(number | Vector4): Vector4
 ---@operator sub(number | Vector4): Vector4
----@operator mul(number | Vector4): Vector4
----@*error Modifies the vector instead of copying it.
----@operator mul(Matrix4): Vector4
+---@*error Multiplying by a Matrix modifies the vector instead of copying it.
+---@operator mul(number | Vector4 | Matrix4): Vector4
 ---@operator div(number | Vector4): Vector4
 ---@operator mod(number | Vector4): Vector4
 ---@field x number     # The first element.
@@ -621,12 +640,6 @@ function Vector3:transform(mat) end
 ---A copy of this vector.
 ---<!--
 ---@field xyzw Vector4
----Convert to Vector5.
----<!--
----@field xyzw_ Vector5
----Convert to Vector6.
----<!--
----@field xyzw__ Vector6
 local Vector4
 
 
@@ -641,6 +654,8 @@ local Vector4
 ---@return self
 function Vector4:add(vec) end
 
+---Adds the given vector or values to this vector.
+---
 ---If `x`, `y`, `z`, or `w` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -676,6 +691,8 @@ function Vector4:copy() end
 ---@return self
 function Vector4:div(vec) end
 
+---Divides this vector by the given vector or values.
+---
 ---If `x`, `y`, `z`, or `w` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -704,6 +721,8 @@ function Vector4:floor() end
 ---@return self
 function Vector4:mul(vec) end
 
+---Multiplies this vector by the given vector or values.
+---
 ---If `x`, `y`, `z`, or `w` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -728,6 +747,8 @@ function Vector4:normalized() end
 ---@return self
 function Vector4:reduce(vec) end
 
+---Reduces this vector modulo the given vector or values.
+---
 ---If `x`, `y`, `z`, or `w` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -747,6 +768,8 @@ function Vector4:reduce(x, y, z, w) end
 ---@return self
 function Vector4:set(vec) end
 
+---Sets the elements of this vector to the given vector or values.
+---
 ---If `x`, `y`, `z`, or `w` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -766,6 +789,8 @@ function Vector4:set(x, y, z, w) end
 ---@return self
 function Vector4:sub(vec) end
 
+---Subtracts the given vector or values from this vector.
+---
 ---If `x`, `y`, `z`, or `w` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -792,433 +817,9 @@ function Vector4:toRad() end
 ---@return self
 function Vector4:transform(mat) end
 
-
----==============================================================================================---
----  VECTOR5 extends VECTOR                                                                      ---
----==============================================================================================---
-
----A vector that is five elements long.
----@class Vector5: Vector
----@operator unm: Vector5
----@operator len: 5
----@operator add(number | Vector5): Vector5
----@operator sub(number | Vector5): Vector5
----@operator mul(number | Vector5): Vector5
----@operator div(number | Vector5): Vector5
----@operator mod(number | Vector5): Vector5
----@field x number     # The first element.
----@field r number     # The first element.
----@field ["1"] number # The first element.
----@field [1] number   # The first element.
----@field y number     # The second element.
----@field g number     # The second element.
----@field ["2"] number # The second element.
----@field [2] number   # The second element.
----@field z number     # The third element.
----@field b number     # The third element.
----@field ["3"] number # The third element.
----@field [3] number   # The third element.
----@field w number     # The fourth element.
----@field a number     # The fourth element.
----@field ["4"] number # The fourth element.
----@field [4] number   # The fourth element.
----@field t number     # The fifth element.
----@field ["5"] number # The fifth element.
----@field [5] number   # The fifth element.
----Convert to Vector2.
----<!--
----@field xy Vector2
----Convert to Vector3.
----<!--
----@field xyz Vector3
----Convert to Vector4.
----<!--
----@field xyzw Vector4
----A copy of this vector.
----<!--
----@field xyzwt Vector5
----Convert to Vector6.
----<!--
----@field xyzwt_ Vector6
-local Vector5
-
-
----===== METHODS =====---
-
----Adds the given vector or values to this vector.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector5
----@return self
-function Vector5:add(vec) end
-
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return self
-function Vector5:add(x, y, z, w, t) end
-
----Creates and returns a copy of this vector with its elements rounded up.
----@return Vector5
-function Vector5:ceil() end
-
----Creates and returns a copy of this vector with its length clamped to the given values.
----
----If `min` or `max` are `nil`, the length will not be clamped from that side.
----@param min? number
----@param max? number
----@return Vector5
-function Vector5:clamped(min, max) end
-
----Creates and returns a copy of this vector.
----@return Vector5
-function Vector5:copy() end
-
----Divides this vector by the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector5
----@return self
-function Vector5:div(vec) end
-
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return self
-function Vector5:div(x, y, z, w, t) end
-
----Gets the dot product of this vector and another.
----@param vec Vector5
----@return number
-function Vector5:dot(vec) end
-
----Creates and returns a copy of this vector with its elements rounded down.
----@return Vector5
-function Vector5:floor() end
-
----Multiplies this vector by the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector5
----@return self
-function Vector5:mul(vec) end
-
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return self
-function Vector5:mul(x, y, z, w, t) end
-
----Creates and returns a copy of this vector modified to have a length of 1.  
----The copy does not change length if this vector's length is `0`.
----@return Vector5
-function Vector5:normalized() end
-
----Reduces this vector modulo the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector5
----@return self
-function Vector5:reduce(vec) end
-
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return self
-function Vector5:reduce(x, y, z, w, t) end
-
----Sets the elements of this vector to the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector5
----@return self
-function Vector5:set(vec) end
-
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return self
-function Vector5:set(x, y, z, w, t) end
-
----Subtracts the given vector or values from this vector.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector5
----@return self
-function Vector5:sub(vec) end
-
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return self
-function Vector5:sub(x, y, z, w, t) end
-
----Creates and returns a copy of this vector as radians converted to degrees.
----@return Vector5
-function Vector5:toDeg() end
-
----Creates and returns a copy of this vector as degrees converted to radians.
----@return Vector5
-function Vector5:toRad() end
-
-
----==============================================================================================---
----  VECTOR6 extends VECTOR                                                                      ---
----==============================================================================================---
-
----A vector that is six elements long.
----@class Vector6: Vector
----@operator unm: Vector6
----@operator len: 6
----@operator add(number | Vector6): Vector6
----@operator sub(number | Vector6): Vector6
----@operator mul(number | Vector6): Vector6
----@operator div(number | Vector6): Vector6
----@operator mod(number | Vector6): Vector6
----@field x number     # The first element.
----@field r number     # The first element.
----@field ["1"] number # The first element.
----@field [1] number   # The first element.
----@field y number     # The second element.
----@field g number     # The second element.
----@field ["2"] number # The second element.
----@field [2] number   # The second element.
----@field z number     # The third element.
----@field b number     # The third element.
----@field ["3"] number # The third element.
----@field [3] number   # The third element.
----@field w number     # The fourth element.
----@field a number     # The fourth element.
----@field ["4"] number # The fourth element.
----@field [4] number   # The fourth element.
----@field t number     # The fifth element.
----@field ["5"] number # The fifth element.
----@field [5] number   # The fifth element.
----@field h number     # The sixth element.
----@field ["6"] number # The sixth element.
----@field [6] number   # The sixth element.
----Convert to Vector2.
----<!--
----@field xy Vector2
----Convert to Vector3.
----<!--
----@field xyz Vector3
----Convert to Vector4.
----<!--
----@field xyzw Vector4
----Convert to Vector5.
----<!--
----@field xyzwt Vector5
----A copy of this vector.
----<!--
----@field xyzwth Vector6
-local Vector6
-
-
----===== METHODS =====---
-
----Adds the given vector or values to this vector.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector6
----@return self
-function Vector6:add(vec) end
-
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return self
-function Vector6:add(x, y, z, w, t, h) end
-
----Creates and returns a copy of this vector with its elements rounded up.
----@return Vector6
-function Vector6:ceil() end
-
----Creates and returns a copy of this vector with its length clamped to the given values.
----
----If `min` or `max` are `nil`, the length will not be clamped from that side.
----@param min? number
----@param max? number
----@return Vector6
-function Vector6:clamped(min, max) end
-
----Creates and returns a copy of this vector.
----@return Vector6
-function Vector6:copy() end
-
----Divides this vector by the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector6
----@return self
-function Vector6:div(vec) end
-
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return self
-function Vector6:div(x, y, z, w, t, h) end
-
----Gets the dot product of this vector and another.
----@param vec Vector6
----@return number
-function Vector6:dot(vec) end
-
----Creates and returns a copy of this vector with its elements rounded down.
----@return Vector6
-function Vector6:floor() end
-
----Multiplies this vector by the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector6
----@return self
-function Vector6:mul(vec) end
-
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return self
-function Vector6:mul(x, y, z, w, t, h) end
-
----Creates and returns a copy of this vector modified to have a length of 1.  
----The copy does not change length if this vector's length is `0`.
----@return Vector6
-function Vector6:normalized() end
-
----Reduces this vector modulo the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector6
----@return self
-function Vector6:reduce(vec) end
-
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return self
-function Vector6:reduce(x, y, z, w, t, h) end
-
----Sets the elements of this vector to the given vector or values.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector6
----@return self
-function Vector6:set(vec) end
-
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return self
-function Vector6:set(x, y, z, w, t, h) end
-
----Subtracts the given vector or values from this vector.
----
----If `vec` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
----@generic self
----@param self self
----@param vec? Vector6
----@return self
-function Vector6:sub(vec) end
-
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@generic self
----@param self self
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return self
-function Vector6:sub(x, y, z, w, t, h) end
-
----Creates and returns a copy of this vector as radians converted to degrees.
----@return Vector6
-function Vector6:toDeg() end
-
----Creates and returns a copy of this vector as degrees converted to radians.
----@return Vector6
-function Vector6:toRad() end
+---Converts this vector into separate numbers and returns them.
+---@return number x
+---@return number y
+---@return number z
+---@return number w
+function Vector4:unpack() end

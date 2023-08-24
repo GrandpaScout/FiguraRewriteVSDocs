@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  SOUNDAPI-INTERNAL                                                                           ---
----==============================================================================================---
+---==================================================================================================================---
+---  SOUNDAPI-INTERNAL                                                                                               ---
+---==================================================================================================================---
 
 ---**INTERNAL CLASS**&emsp;*Do not use this!*
 ---
@@ -13,9 +13,9 @@
 ---@field [string] Particle
 
 
----==============================================================================================---
----  PARTICLEAPI                                                                                 ---
----==============================================================================================---
+---==================================================================================================================---
+---  PARTICLEAPI                                                                                                     ---
+---==================================================================================================================---
 
 ---An API for handling particle effects.
 ---@class ParticleAPI: ParticleAPI.*INTERNAL*
@@ -24,14 +24,13 @@ local ParticleAPI
 
 ---===== METHODS =====---
 
+---Checks if the given particle id is registered in the game.
+---@param id string
+---@return boolean
+function ParticleAPI:isPresent(id) end
+
 ---Creates a single particle in the world at the given position and optionally with a velocity.
 ---
----If `posVel` is `nil`, it will default to `⟨0, 0, 0, 0, 0, 0⟩`.
----@param name Minecraft.particleID
----@param posVel? Vector6
----@return Particle
-function ParticleAPI:newParticle(name, posVel) end
-
 ---If `pos` or `vel` are `nil`, they will default to `⟨0, 0, 0⟩`.
 ---@param name Minecraft.particleID
 ---@param pos? Vector3
@@ -39,6 +38,8 @@ function ParticleAPI:newParticle(name, posVel) end
 ---@return Particle
 function ParticleAPI:newParticle(name, pos, vel) end
 
+---Creates a single particle in the world at the given position and optionally with a velocity.
+---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.  
 ---If `velX`, `velY`, or `velZ` are `nil`, they will default to `0`.
 ---@param name Minecraft.particleID
@@ -49,6 +50,8 @@ function ParticleAPI:newParticle(name, pos, vel) end
 ---@return Particle
 function ParticleAPI:newParticle(name, pos, velX, velY, velZ) end
 
+---Creates a single particle in the world at the given position and optionally with a velocity.
+---
 ---If `posX`, `posY`, or `posZ` are `nil`, they will default to `0`.  
 ---If `vel` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param name Minecraft.particleID
@@ -59,6 +62,8 @@ function ParticleAPI:newParticle(name, pos, velX, velY, velZ) end
 ---@return Particle
 function ParticleAPI:newParticle(name, posX, posY, posZ, vel) end
 
+---Creates a single particle in the world at the given position and optionally with a velocity.
+---
 ---If `posX`, `posY`, `posZ`, `velX`, `velY`, or `velZ` are `nil`, they will default to `0`.
 ---@param name Minecraft.particleID
 ---@param posX? number
@@ -71,4 +76,7 @@ function ParticleAPI:newParticle(name, posX, posY, posZ, vel) end
 function ParticleAPI:newParticle(name, posX, posY, posZ, velX, velY, velZ) end
 
 ---Removes all particles spawned by this avatar.
+---@generic self
+---@param self self
+---@return self
 function ParticleAPI:removeParticles() end

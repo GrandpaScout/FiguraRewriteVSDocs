@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  CLIENTAPI                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  CLIENTAPI                                                                                                       ---
+---==================================================================================================================---
 
 ---An API for getting information from the Minecraft game client.
 ---@class ClientAPI
@@ -29,6 +29,17 @@ function ClientAPI.compareVersions(compare, to) end
 ---@return string
 function ClientAPI.intUUIDToString(i1, i2, i3, i4) end
 
+---Gets a list of paths to every texture atlas.
+---@return string[]
+function ClientAPI.listAtlases() end
+
+---Converts a string UUID to a 4-int UUID.
+---@param uuid string
+---@return integer
+---@return integer
+---@return integer
+---@return integer
+function ClientAPI.uuidToIntArray(uuid) end
 
 ---===== GETTERS =====---
 
@@ -43,6 +54,19 @@ function ClientAPI.getActiveResourcePacks() end
 ---Gets the viewing client's allocated memory in bytes.
 ---@return integer
 function ClientAPI.getAllocatedMemory() end
+
+---Gets the atlas at the given path.
+---@param path string
+---@return TextureAtlas
+function ClientAPI.getAtlas(path) end
+
+---Gets a unit vector pointing in the same direction as the viewing client's camera.
+---@return Vector3
+function ClientAPI.getCameraDir() end
+
+---Gets the entity that the camera is following.
+---@return Vector3
+function ClientAPI.getCameraEntity() end
 
 ---Gets the position of the viewing client's camera.
 ---@return Vector3
@@ -66,6 +90,12 @@ function ClientAPI.getCameraRot() end
 ---```
 ---@return string
 function ClientAPI.getChunkStatistics() end
+
+---Gets the Namespaced ID of the currently active *vanilla* shader.
+---
+---These are the same shaders that are used when spectating mobs.
+---@return Minecraft.clientBrand
+function ClientAPI.getClientBrand() end
 
 ---Gets the Namespaced ID of the currently active *vanilla* shader.
 ---
@@ -128,6 +158,12 @@ function ClientAPI.getFPS() end
 ---@return string
 function ClientAPI.getFPSString() end
 
+---Gets the fraction of time between the last tick and the next tick.
+---
+---Effectively the `delta` parameter of `RENDER` events.
+---@return number
+function ClientAPI.getFrameTime() end
+
 ---Gets the viewing client's GUI Scale.
 ---
 ---If the setting is set to "auto" then this will return the actual scale.
@@ -188,6 +224,20 @@ function ClientAPI.getSoundStatistics() end
 ---@return integer
 function ClientAPI.getSystemTime() end
 
+---Gets the contents of the server's tab list.
+---@return ClientAPI.tabList
+function ClientAPI.getTabList() end
+
+---Gets the width and height of the given text in text-pixels.
+---
+---If `maxwidth` is set, the text will be trimmed to this width.  
+---If `wrap` is set, the text will automatically wrap at `maxwidth`.
+---@param text string
+---@param maxwidth? integer
+---@param wrap? boolean
+---@return Vector2
+function ClientAPI.getTextDimensions(text, maxwidth, wrap) end
+
 ---Gets the height of the given text in text-pixels.  
 ---(This is usually a multiple of 9.)
 ---@param text string
@@ -201,24 +251,27 @@ function ClientAPI.getTextHeight(text) end
 ---@return integer
 function ClientAPI.getTextWidth(text) end
 
+---Converts a language key to a translated string.
+---
+---If `args` is a string or list of strings, the translation will use those strings in place of variables.
+---@param key string
+---@param args? string | string[]
+function ClientAPI.getTranslatedString(key, args) end
+
 ---Gets the viewing client's used memory in bytes.
 ---@return integer
 function ClientAPI.getUsedMemory() end
 
 ---Gets the viewing client's Minecraft version.
----
----This includes any mod loaders.
 ---@return string
 function ClientAPI.getVersion() end
 
----Gets the viewing client's Minecraft version type.
----
----This is almost always `"Fabric"`.
----@return string | "Fabric"
-function ClientAPI.getVersionType() end
+---Gets the name of the viewing client's Minecraft version.
+---@return string
+function ClientAPI.getVersionName() end
 
 ---Gets the viewing client as a player.
----@return PlayerAPI
+---@return Viewer
 function ClientAPI.getViewer() end
 
 ---Gets the size of the viewing client's Minecraft window in pixels.
@@ -246,9 +299,18 @@ function ClientAPI.isDebugOverlayEnabled() end
 ---@return boolean
 function ClientAPI.isHudEnabled() end
 
----Gets if the viewing client is in the pause menu
+---Gets if a mod with the specified ID is loaded.
+---@param id string
+---@return boolean
+function ClientAPI.isModLoaded(id) end
+
+---Gets if the viewing client is in the pause menu.
 ---@return boolean
 function ClientAPI.isPaused() end
+
+---Gets if the viewing client's Minecraft version is a snapshot.
+---@return boolean
+function ClientAPI.isSnapshot() end
 
 ---Gets if the viewing client has the Minecraft window focused.
 ---@return boolean

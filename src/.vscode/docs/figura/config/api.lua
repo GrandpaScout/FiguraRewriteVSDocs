@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  CONFIGAPI                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  CONFIGAPI                                                                                                       ---
+---==================================================================================================================---
 
 ---An API for storing and loading information between avatar sessions.
 ---@class ConfigAPI
@@ -13,11 +13,11 @@ local ConfigAPI
 
 ---===== METHODS =====---
 
----Loads the given key from the active config file.  
----If no key is given, the entire config file is loaded.
+---Loads the entire active config file.
 ---@return {[string]?: ConfigAPI.validType}
 function ConfigAPI:load() end
 
+---Loads the given key from the active config file.
 ---@param key string
 ---@return ConfigAPI.validType?
 function ConfigAPI:load(key) end
@@ -33,12 +33,22 @@ function ConfigAPI:load(key) end
 function ConfigAPI:save(key, value) end
 
 
+---===== GETTERS =====---
+
+---Gets the name of the active config file.
+---@return string
+function ConfigAPI:getName() end
+
+
 ---===== SETTERS =====---
 
 ---Sets the active config file.
 ---
 ---`<ConfigAPI>:load()` and `<ConfigAPI>:save()` will read and write to the active config file.
+---@generic self
+---@param self self
 ---@param name string
+---@return self
 function ConfigAPI:setName(name) end
 
 

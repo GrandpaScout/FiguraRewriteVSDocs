@@ -13,6 +13,21 @@ local VectorAPI
 
 ---===== METHODS =====---
 
+---Converts a pitch and yaw to a direction vector.
+---
+---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param vec? Vector2
+---@return Vector3
+function VectorAPI.angleToDir(vec) end
+
+---Converts a pitch and yaw to a direction vector.
+---
+---If `pitch` or `yaw` are `nil`, they will default to `0`.
+---@param pitch? number
+---@param yaw? number
+---@return Vector3
+function VectorAPI.angleToDir(pitch, yaw) end
+
 ---Parses a hexadecimal string and converts it into a color vector.
 ---
 ---The `#` is optional and the hex color can have any length, though only the first 6 digits are
@@ -33,6 +48,8 @@ function VectorAPI.hexToRGB(hex) end
 ---@return Vector3
 function VectorAPI.hsvToRGB(hsv) end
 
+---Converts the given HSV values to a color vector.
+---
 ---If `h`, `s`, or `v` are `nil`, they will default to `0`.
 ---@param h? number
 ---@param s? number
@@ -50,11 +67,14 @@ function VectorAPI.intToRGB(int) end
 ---Converts the given rgb values to a 6-length hex string.  
 ---The `#` is not included.
 ---
----If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@param col? Vector3
+---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param color? Vector3
 ---@return string
-function VectorAPI.rgbToHex(col) end
+function VectorAPI.rgbToHex(color) end
 
+---Converts the given rgb values to a 6-length hex string.  
+---The `#` is not included.
+---
 ---If `r`, `g`, or `b` are `nil`, they will default to `0`.
 ---@param r? number
 ---@param g? number
@@ -64,11 +84,13 @@ function VectorAPI.rgbToHex(r, g, b) end
 
 ---Converts the given rgb values to HSV.
 ---
----If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@param col? Vector3
+---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param color? Vector3
 ---@return Vector3
-function VectorAPI.rgbToHSV(col) end
+function VectorAPI.rgbToHSV(color) end
 
+---Converts the given rgb values to HSV.
+---
 ---If `r`, `g`, or `b` are `nil`, they will default to `0`.
 ---@param r? number
 ---@param g? number
@@ -78,11 +100,13 @@ function VectorAPI.rgbToHSV(r, g, b) end
 
 ---Converts the given rgb values to an integer.
 ---
----If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@param col? Vector3
+---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@param color? Vector3
 ---@return integer
-function VectorAPI.rgbToInt(col) end
+function VectorAPI.rgbToInt(color) end
 
+---Converts the given rgb values to an integer.
+---
 ---If `r`, `g`, or `b` are `nil`, they will default to `0`.
 ---@param r? number
 ---@param g? number
@@ -101,6 +125,8 @@ function VectorAPI.rgbToInt(r, g, b) end
 ---@return Vector3
 function VectorAPI.rotateAroundAxis(angle, vec, axis) end
 
+---Rotates a vector an amount of degrees around an axis.
+---
 ---If `angle`, `x`, `y`, or `z` are `nil`, they will default to `0`.  
 ---If `axis` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param angle? number
@@ -111,6 +137,8 @@ function VectorAPI.rotateAroundAxis(angle, vec, axis) end
 ---@return Vector3
 function VectorAPI.rotateAroundAxis(angle, x, y, z, axis) end
 
+---Rotates a vector an amount of degrees around an axis.
+---
 ---If `angle`, `axisX`, `axisY`, or `axisZ` are `nil`, they will default to `0`.  
 ---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param angle? number
@@ -121,6 +149,8 @@ function VectorAPI.rotateAroundAxis(angle, x, y, z, axis) end
 ---@return Vector3
 function VectorAPI.rotateAroundAxis(angle, vec, axisX, axisY, axisZ) end
 
+---Rotates a vector an amount of degrees around an axis.
+---
 ---If `angle`, `x`, `y`, `z`, `axisX`, `axisY`, or `axisZ` are `nil`, they will default to `0`.
 ---@param angle? number
 ---@param x? number
@@ -168,25 +198,6 @@ function VectorAPI.vec(x, y, z) end
 ---@return Vector4
 function VectorAPI.vec(x, y, z, w) end
 
----@*vmerror (`x`|`y`|`z`|`w`) == `nil` && `t` == `<number>`
----@param x number
----@param y number
----@param z number
----@param w number
----@param t number
----@return Vector5
-function VectorAPI.vec(x, y, z, w, t) end
-
----@*vmerror (`x`|`y`|`z`|`w`|`t`) == `nil` && `h` == `<number>`
----@param x number
----@param y number
----@param z number
----@param w number
----@param t number
----@param h number
----@return Vector6
-function VectorAPI.vec(x, y, z, w, t, h) end
-
 ---Creates a 2-element vector.
 ---
 ---If `x` or `y` are `nil`, they will default to `0`.
@@ -213,29 +224,6 @@ function VectorAPI.vec3(x, y, z) end
 ---@param w? number
 ---@return Vector4
 function VectorAPI.vec4(x, y, z, w) end
-
----Creates a 5-element vector.
----
----If `x`, `y`, `z`, `w`, or `t` are `nil`, they will default to `0`.
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@return Vector5
-function VectorAPI.vec5(x, y, z, w, t) end
-
----Creates a 6-element vector.
----
----If `x`, `y`, `z`, `w`, `t`, or `h` are `nil`, they will default to `0`.
----@param x? number
----@param y? number
----@param z? number
----@param w? number
----@param t? number
----@param h? number
----@return Vector6
-function VectorAPI.vec6(x, y, z, w, t, h) end
 
 ---Converts the given world position to a position on the viewing client's screen.
 ---

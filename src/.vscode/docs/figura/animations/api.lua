@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  ANIMATIONAPI-INTERNAL                                                                       ---
----==============================================================================================---
+---==================================================================================================================---
+---  ANIMATIONAPI-INTERNAL                                                                                           ---
+---==================================================================================================================---
 
 ---**INTERNAL CLASS**&emsp;*Do not use this!*
 ---
@@ -13,9 +13,9 @@
 ---@field [string]? {[string]: Animation}
 
 
----==============================================================================================---
----  ANIMATIONAPI                                                                                ---
----==============================================================================================---
+---==================================================================================================================---
+---  ANIMATIONAPI                                                                                                    ---
+---==================================================================================================================---
 
 ---An API for handling the animations of this avatar.
 ---
@@ -29,9 +29,8 @@
 ---animations.<bbmodel_name>.<animation_name>
 ---```
 ---&emsp;  
----Be careful when naming animations, an animation name that contains special characters (such as
----`.`) or matches a Lua keyword is not a valid identifier and requires an alternate way of
----accessing the animation.
+---Be careful when naming animations, an animation name that contains special characters (such as `.`) or matches a Lua
+---keyword is not a valid identifier and requires an alternate way of accessing the animation.
 ---
 ---If an animation is named `and`, it will conflict with the Lua keyword `and`.
 ---```lua
@@ -62,6 +61,9 @@ local AnimationAPI
 ---===== METHODS =====---
 
 ---Stops all playing and paused animations.
+---@generic self
+---@param self self
+---@return self
 function AnimationAPI:stopAll() end
 
 ---===== GETTERS =====---

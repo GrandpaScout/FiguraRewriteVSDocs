@@ -1,60 +1,61 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  EVENT.GENERIC extends EVENT                                                                 ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.GENERIC extends EVENT                                                                                     ---
+---==================================================================================================================---
 
----A function used by generic events.
 ---@alias Event.Generic.func fun()
 
 
----==============================================================================================---
----  EVENT.RENDER extends EVENT                                                                 ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.ARROWRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
 
----A valid render context.
----@alias Event.Render.context
----| "FIGURA_GUI"    # A Figura GUI is rendering the avatar.
----| "MINECRAFT_GUI" # A Minecraft GUI is rendering the avatar.
----| "PAPERDOLL"     # The Figura paper doll is rendering the avatar.
----| "FIRST_PERSON"  # The first-person view is rendering the avatar.
----| "RENDER"        # The third-person view is rendering the avatar.
----| "OTHER"         # Some other view is rendering the avatar.
-
----A function used by the `RENDER` event.
----@alias Event.Render.func fun(delta?: number, ctx?: Event.Render.context)
+---@alias Event.ArrowRender.func fun(delta?: number, entity?: Entity): (hide: boolean?)
 
 
----==============================================================================================---
----  EVENT.WORLDRENDER extends EVENT                                                             ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.CHARTYPED extends EVENT                                                                                   ---
+---==================================================================================================================---
 
----A function used by `RENDER` events.
----@alias Event.WorldRender.func fun(delta?: number)
-
-
----==============================================================================================---
----  EVENT.SKULLRENDER extends EVENT                                                             ---
----==============================================================================================---
-
----A function used by the `SKULL_RENDER` event.
----@alias Event.SkullRender.func
----| fun(delta?: number, block?: BlockState | nil, item?: ItemStack): boolean?
+---@alias Event.CharTyped.func fun(char?: string, modifiers?: Event.Press.modifiers, codepoint?: integer)
 
 
----==============================================================================================---
----  EVENT.MOUSEMOVE extends EVENT                                                               ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.CHATRECEIVEMESSAGE extends EVENT                                                                          ---
+---==================================================================================================================---
 
----A function used by the `MOUSE_MOVE` event.
----@alias Event.MouseMove.func fun(x?: integer, y?: integer): boolean?
+---@alias Event.ChatReceiveMessage.func
+---| fun(message?: string, json?: string): (replace: string|false?, bgcolor: Vector3?)
 
 
----==============================================================================================---
----  EVENT.PRESS extends EVENT                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.CHATSENDMESSAGE extends EVENT                                                                             ---
+---==================================================================================================================---
+
+---@alias Event.ChatSendMessage.func fun(message?: string): (replace: string?)
+
+
+---==================================================================================================================---
+---  EVENT.ITEMRENDER extends EVENT                                                                                  ---
+---==================================================================================================================---
+
+---@alias Event.ItemRender.renderType
+---| "FIRST_PERSON_LEFT_HAND"  # First-person, left hand.
+---| "FIRST_PERSON_RIGHT_HAND" # First-person, right hand.
+---| "THIRD_PERSON_LEFT_HAND"  # Third-person, left hand.
+---| "THIRD_PERSON_RIGHT_HAND" # Third-person, right hand.
+---| "HEAD"                    # Wearing on head.
+
+---@alias Event.ItemRender.func
+---| fun(item?: ItemStack, mode?: Event.ItemRender.renderType, pos?: Vector3, rot?: Vector3, scale?: Vector3, lefthanded?: boolean): (replace: ModelPart?)
+
+
+---==================================================================================================================---
+---  EVENT.PRESS extends EVENT                                                                                       ---
+---==================================================================================================================---
 
 ---@alias Event.Press.state
 ---| 0 # Released
@@ -80,51 +81,95 @@
 ---| 15 # `✲ Ctrl` **+** `⎇ Alt` **+** `⇧ Shift` **+** `❖ Super`
 
 
----==============================================================================================---
----  EVENT.MOUSEPRESS extends EVENT                                                              ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.KEYPRESS extends EVENT                                                                                    ---
+---==================================================================================================================---
 
----A function used by the `MOUSE_PRESS` event.
----@alias Event.MousePress.func
----| fun(button?: Minecraft.mouseid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): boolean?
-
-
----==============================================================================================---
----  EVENT.MOUSESCROLL extends EVENT                                                             ---
----==============================================================================================---
-
----A function used by the `MOUSE_SCROLL` event.
----@alias Event.MouseScroll.func fun(dir?: number): boolean?
-
-
----==============================================================================================---
----  EVENT.KEYPRESS extends EVENT                                                              ---
----==============================================================================================---
-
----A function used by the `KEY_PRESS` event.
 ---@alias Event.KeyPress.func
----| fun(key?: Minecraft.keyid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): boolean?
+---| fun(key?: Minecraft.keyid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): (cancel: boolean?)
 
 
----==============================================================================================---
----  EVENT.SENDMESSAGE extends EVENT                                                             ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.MOUSEMOVE extends EVENT                                                                                   ---
+---==================================================================================================================---
 
----A function used by the `CHAT_SEND_MESSAGE` event.
----@alias Event.SendMessage.func fun(message?: string): string?
-
-
----==============================================================================================---
----  EVENT.RECEIVEMESSAGE extends EVENT                                                          ---
----==============================================================================================---
-
----A function used by the `CHAT_RECEIVE_MESSAGE` event.
----@alias Event.ReceiveMessage.func fun(message?: string)
+---@alias Event.MouseMove.func fun(x?: integer, y?: integer): boolean?
 
 
----==============================================================================================---
----  EVENT.USEITEM extends EVENT                                                                 ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.MOUSEPRESS extends EVENT                                                                                  ---
+---==================================================================================================================---
 
----A function used by the `USE_ITEM` event.
+---@alias Event.MousePress.func
+---| fun(button?: Minecraft.mouseid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): (cancel: boolean?)
+
+
+---==================================================================================================================---
+---  EVENT.MOUSESCROLL extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@alias Event.MouseScroll.func fun(dir?: number): (cancel: boolean?)
+
+
+---==================================================================================================================---
+---  EVENT.ONPLAYSOUND extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@alias Event.OnPlaySound.category
+---| "MASTER"  # Master Volume
+---| "MUSIC"   # Music
+---| "RECORDS" # Jukebox/Note Blocks
+---| "WEATHER" # Weather
+---| "BLOCKS"  # Blocks
+---| "HOSTILE" # Hostile Creatures
+---| "NEUTRAL" # Friendly Creatures
+---| "PLAYERS" # Players
+---| "AMBIENT" # Ambient/Environment
+---| "VOICE"   # Voice/Speech
+
+---@alias Event.OnPlaySound.func
+---| fun(id?: string, pos?: Vector3, volume?: number, pitch?: number, loop?: boolean, category?: Event.OnPlaySound.category, path?: string)
+
+
+---==================================================================================================================---
+---  EVENT.RENDER extends EVENT                                                                                      ---
+---==================================================================================================================---
+
+---@alias Event.Render.context
+---| "FIGURA_GUI"    # A Figura GUI is rendering the avatar.
+---| "MINECRAFT_GUI" # A Minecraft GUI is rendering the avatar.
+---| "PAPERDOLL"     # The Figura paper doll is rendering the avatar.
+---| "FIRST_PERSON"  # The first-person view is rendering the avatar.
+---| "RENDER"        # The third-person view is rendering the avatar.
+---| "OTHER"         # Some other view is rendering the avatar.
+
+---@alias Event.Render.func fun(delta?: number, ctx?: Event.Render.context, matrix?: Matrix4)
+
+
+---==================================================================================================================---
+---  EVENT.WORLDRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@alias Event.WorldRender.func fun(delta?: number)
+
+
+---==================================================================================================================---
+---  EVENT.SKULLRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@alias Event.SkullRender.context
+---| "HEAD"       # Worn on head.
+---| "RIGHT_HAND" # Held in right hand.
+---| "LEFT_HAND"  # Held in left hand.
+---| "BLOCK"      # Placed as a block.
+---| "OTHER"      # Some other context.
+
+---@alias Event.SkullRender.func
+---| fun(delta?: number, block?: BlockState, item?: ItemStack, entity?: Entity.any, ctx: Event.SkullRender.context): (hide: boolean?)
+
+
+---==================================================================================================================---
+---  EVENT.USEITEM extends EVENT                                                                                     ---
+---==================================================================================================================---
+
 ---@alias Event.UseItem.func fun(item?: ItemStack, anim?: ItemStack.useAction, ptc_count?: integer)

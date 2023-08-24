@@ -1,194 +1,236 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  EVENTSAPI                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENTSAPI                                                                                                       ---
+---==================================================================================================================---
 
 ---An API that contains all of the in-game events that Figura handles.
 ---
 ---Events can have callback functions registered to them which will run when the event does.
----
----There is no *set* order that events will run in, however the following groups of events will
----always run in the same order relative to each other if run at the same time:
----* * `ENTITY_INIT`
----  * `WORLD_TICK`
----  * `TICK`
----  * `CHAT_RECEIVE_MESSAGE`
----  * `RENDER`  
----    &nbsp;
----* * `WORLD_RENDER`
----  * `SKULL_RENDER`
----  * `POST_WORLD_RENDER`
----  * `POST_RENDER`
----
----The following events have an untested or undetermined order:
----* `CHAT_SEND_MESSAGE`
----* `MOUSE_SCROLL`
 ---@class EventsAPI
+---This event runs every frame for every arrow the avatar's owner has fired.
+---> ```lua
+---> (callback) function(delta: number, entity: Entity)
+--->   -> hide: boolean?
+---> ```
+---> ***
+---> A callback that is given the current tick delta and the arrow that is being rendered.
+--->
+---> Return `true` to completely hide the current arrow.
+---<!--
+---@field ARROW_RENDER Event.ArrowRender | Event.ArrowRender.func
+---This event runs for every character typed on the keyboard.
+---> ```lua
+---> (callback) function(char: string, modifiers: integer, codepoint: integer)
+---> ```
+---> ***
+---> A callback that is given the string representation of the typed character, the active modifier keys as a bitmask,
+---> and the codepoint of the typed character.
+---@field CHAR_TYPED Event.CharTyped | Event.CharTyped.func
 ---This event runs every time a message is received in chat.  
+---The message can be modified by the callbacks in this event.
+---
 ---Avoid sending anything to the chat during this event as it will create an infinite loop.
----
----This event uses the following callback:
----```lua
----function(message: string)
----```
----**`message`** The message this event received.
+---> ```lua
+---> (callback) function(message: string, json: string)
+--->   -> replace: (string|false)?
+--->   2. bgcolor: Vector3?
+---> ```
+---> ***
+---> A callback that is given a received chat message's contents.
+--->
+---> Return a string to replace the message, `false` to remove the message, or `nil` to do nothing.  
+---> If a color vector is given as the second return, the background color of the message is changed.
 ---<!--
----@field CHAT_RECEIVE_MESSAGE Event.ReceiveMessage | Event.ReceiveMessage.func
----This event runs every time the host attempts to send a message to chat.  
----This message can be modified by the functions in this event.
+---@field CHAT_RECEIVE_MESSAGE Event.ChatReceiveMessage | Event.ChatReceiveMessage.func
+---This event runs every time the host sends a message to chat.  
+---The message can be modified by the callbacks in this event.
 ---
----Return `nil` to force the message to not be sent.  
----Return the `message` the event grabbed to leave the message alone.
----
----If the `Chat Messages` permission is enabled in Figura's settings, the sent message can also be
----modified by returning a different value.  
----The value will be turned into a string before it is sent if it is not a string already.
----
----When the return value is changed, it is changed for every function after it. This means that, for
----example, returning `nil` will cause all functions after it to have a `nil` `message`.
----
----This event uses the following callback:
----```lua
----function(message?: string): string?
----```
----**`message?`** The message that was going to be sent.  
----**`return #1`** The message that should be sent. If this is `nil`, send nothing.
+---When the message is changed, it is changed for every callback after it. This means that, for
+---example, returning `nil` will cause all callbacks after it to have a `message` argument of `nil`.
+---> ```lua
+---> (callback) function(message?: string)
+--->   -> replace: string?
+---> ```
+---> ***
+---> A callback that is given the contents of a message the avatar owner is about to send.
+--->
+---> Return a string to replace the message (only if the `Chat Messages` setting is enabled) or `nil` to block the
+---> message.  
+---> If you return `message` without any modifications, nothing happens.
 ---<!--
----@field CHAT_SEND_MESSAGE Event.SendMessage | Event.SendMessage.func
+---@field CHAT_SEND_MESSAGE Event.ChatSendMessage | Event.ChatSendMessage.func
 ---This event runs as soon as the avatar's owner loads in.
 ---
----This event uses the following callback:
----```lua
----function()
----```
+---As soon as this event starts running, it is safe to use the `player` global variable to access information about the
+---avatar's owner.
+---> ```lua
+---> (callback) function()
+---> ```
+---> ***
+---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
 ---<!--
 ---@field ENTITY_INIT Event.Generic | Event.Generic.func
----This event runs when the mouse is pressed or released.
----
----This event uses the following callback:
----```lua
----function(key: integer, state: integer, modifiers: integer): boolean?
----```
----**`key`** The mouse button being pressed or released.  
----**`state`** The state of the button. (1: pressed, 0: released).  
----**`modifiers`** The modifier keys being pressed as a bitmask.  
----  (`SHIFT`: `0001`, `CTRL`: `0010`, `ALT`: `0100`, `META`: `1000`)
----**`return #1`** Whether to stop this press event from happening.
+---This event runs every frame for every item equipped on the avatar's owner.  
+---The item can be replaced with a model by the callbacks in this event.
+---> ```lua
+---> (callback) function(item: ItemStack, mode: string, pos: Vector3, rot: Vector3, scale: Vector3, lefthanded: boolean)
+--->   -> replace: ModelPart?
+---> ```
+---> ***
+---> A callback that is given an item being rendered, the rendering mode of the item, the transformations applied to the
+---> item, and whether the current rendering mode is left-handed.
+--->
+---> Returning a model part will cause the item to be completely replaced with the given part.  
+---> The model part *must* have the `Item` parent type for this to work.
+---<!--
+---@field ITEM_RENDER Event.ItemRender | Event.ItemRender.func
+---This event runs when a key is pressed, held, or released.
+---> ```lua
+---> (callback) function(key: integer, state: integer, modifiers: integer)
+--->   -> cancel: boolean?
+---> ```
+---> ***
+---> A callback that is given the id of a key being pressed, the press state of the key, and the active modifier keys as
+---> a bitmask.
+--->
+---> Return `true` to cancel the key event.
+---<!--
 ---@field KEY_PRESS Event.KeyPress | Event.KeyPress.func
 ---This event runs when the mouse is moved.
----
----This event uses the following callback:
----```lua
----function(x: integer, y: integer): boolean?
----```
----**`x`** The horizontal delta of the mouse.  
----**`y`** The vertical delta of the mouse.  
----**`return #1`** Whether to stop this move event from happening.
+---> ```lua
+---> (callback) function(x: integer, y: integer)
+--->   -> cancel: boolean?
+---> ```
+---> ***
+---> A callback that is given the x and y change of the mouse's position in pixels.
+--->
+---> Return `true` to deny the change.
 ---<!--
 ---@field MOUSE_MOVE Event.MouseMove | Event.MouseMove.func
 ---This event runs when the mouse is pressed or released.
----
----This event uses the following callback:
----```lua
----function(button: integer, state: integer, modifiers: integer): boolean?
----```
----**`button`** The mouse button being pressed or released.  
----**`state`** The state of the button. (1: pressed, 0: released).  
----**`modifiers`** The modifier keys being pressed as a bitmask.  
----  (`SHIFT`: `0001`, `CTRL`: `0010`, `ALT`: `0100`, `META`: `1000`)
----**`return #1`** Whether to stop this press event from happening.
+---> ```lua
+---> (callback) function(button: integer, state: integer, modifiers: integer)
+--->   -> cancel: boolean?
+---> ```
+---> ***
+---> A callback that is given the id of a mouse button being pressed, the press state of the button, and the active
+---> modifier keys as a bitmask.
+--->
+---> Return `true` to deny the change.
+---<!--
 ---@field MOUSE_PRESS Event.MousePress | Event.MousePress.func
 ---This event runs when the mouse wheel is scrolled.
----
----This event uses the following callback:
----```lua
----function(dir: number): boolean?
----```
----**`dir`** The amount the mouse has scrolled since the last time this event triggered. This may be
----`0` if the mouse is scrolled left or right.
----**`return #1`** Whether to stop this move event from happening.
+---> ```lua
+---> (callback) function(dir: number)
+--->   -> cancel: boolean?
+---> ```
+---> ***
+---> A callback that is given the amount the scroll wheel has scrolled. This is *usually* `1` or `-1` but can be more or
+---> less due to certain factors.
+--->
+---> Return `true` to deny the scroll.
 ---<!--
 ---@field MOUSE_SCROLL Event.MouseScroll | Event.MouseScroll.func
----This event runs after the avatar has rendered.
+---This event runs when a sound is played.
+---> ```lua
+---> (callback) function(id: string, pos: Vector3, volume: number, pitch: number, loop: boolean, category: string, path: string)
+---> ```
+---> ***
+---> A callback that is given the id of a sound, its position, volume, pitch, whether it loops, its category, and the
+---> path of the sound file it played.
+--->
+---> If `path` is `nil`, the sound was played by a Figura avatar.
+---<!--
+---@field ON_PLAY_SOUND Event.OnPlaySound | Event.OnPlaySound.func
+---This event runs after the avatar has fully rendered.  
+---`:partToWorldMatrix()` is fully updated in this event.
 ---
----This event uses the following callback:
----```lua
----function(delta: number)
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`ctx`** The context of this render event.
+---By the time this event runs, the avatar will have to wait until the next frame to apply modifications visually.
+---> ```lua
+---> (callback) function(delta: number, ctx: string, matrix: Matrix4)
+---> ```
+---> ***
+---> A callback that is given the current tick delta, the context that the avatar is rendering in, and the matrix used
+---> to render the avatar.
 ---<!--
 ---@field POST_RENDER Event.Render | Event.Render.func
----This event runs after the world has rendered.
+---This event runs after the world has fully rendered.  
+---This event always runs, even if the avatar is not visible.
 ---
----This event uses the following callback:
----```lua
----function(delta: number)
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---By the time this event runs, "World" parts will have to wait until the next frame to apply modifications visually.
+---> ```lua
+---> (callback) function(delta: number)
+---> ```
+---> ***
+---> A callback that is given the current tick delta.
 ---<!--
----@field POST_WORLD_RENDER Event.Render | Event.Render.func
+---@field POST_WORLD_RENDER Event.WorldRender | Event.WorldRender.func
 ---This event runs before the avatar is rendered.
----
----This event uses the following callback:
----```lua
----function(delta: number, ctx: string)
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`ctx`** The context of this render event.
+---> ```lua
+---> (callback) function(delta: number, ctx: string, matrix: Matrix4)
+---> ```
+---> ***
+---> A callback that is given the current tick delta, the context that the avatar is rendering in, and the matrix used
+---> to render the avatar.
 ---<!--
 ---@field RENDER Event.Render | Event.Render.func
+---This event runs when the client reloads its resources. (Such as with <kbd>F3+T</kbd>.)
+---> ```lua
+---> (callback) function()
+---> ```
+---> ***
+---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
+---<!--
+---@field RESOURCE_RELOAD Event.Generic | Event.Generic.func
 ---This event runs before a skull block is rendered.  
 ---This event runs for each visible skull block.
----
----This event uses the following callback:
----```lua
----function(delta: number, pos: Vector3|nil): boolean?
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.  
----**`pos`** The position of the skull block being rendered. If this is `nil`, the skull is being
----worn by an entity.  
----**`return #1`** Whether the currently rendering skull should be hidden instead.
+---> ```lua
+---> (callback) function(delta: number, block?: BlockState, item?: ItemStack, entity?: Entity, ctx: string)
+---> ```
+---> ***
+---> A callback that is given the current tick delta, a block state if the skull is placed, an item stack if the skull
+---> is being held, or an entity if the skull is being worn, and the context the skull is being rendered in.
 ---<!--
 ---@field SKULL_RENDER Event.SkullRender | Event.SkullRender.func
 ---This event runs every tick while the player entity is loaded.
----
----This event uses the following callback:
----```lua
----function()
----```
+---> ```lua
+---> (callback) function()
+---> ```
+---> ***
+---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
 ---<!--
 ---@field TICK Event.Generic | Event.Generic.func
+---This event runs twice every 4 ticks while an item is being used.
+---> ```lua
+---> (callback) function(item: ItemStack, anim: ItemStack.useAction, ptc_count: integer)
+---> ```
+---> ***
+---> A callback that is given the item being used, the animation the item is doing, and the amount of particles this
+---> action will create.
+---<!--
+---@field USE_ITEM Event.UseItem | Event.UseItem.func
 ---This event runs before the world is rendered.
----
----This event uses the following callback:
----```lua
----function(delta: number)
----```
----**`delta`** The progress between the last tick and the current tick as a number 0-1.
+---> ```lua
+---> (callback) function(delta: number)
+---> ```
+---> ***
+---> A callback that is given the current tick delta.
 ---<!--
 ---@field WORLD_RENDER Event.Render | Event.Render.func
 ---This event runs every tick.
----
----This event uses the following callback:
----```lua
----function()
----```
+---> ```lua
+---> (callback) function()
+---> ```
+---> ***
+---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
 ---<!--
 ---@field WORLD_TICK Event.Generic | Event.Generic.func
----This event runs twice every 4 ticks while an item is being used.
----
----This event uses the following callback:
----```lua
----function(item: ItemStack, anim: string, ptc_count: integer)
----```
----**`item`** The item being used.  
----**`anim`** The animation of the item being used.  
----**`ptc_count`** The amount of particles this item will create.
----<!--
----@field USE_ITEM Event.UseItem | Event.UseItem.func
 local EventsAPI
 
+
+---Gets a table of all available events.
+---@return {[string]: Event}
+function EventsAPI:getEvents() end

@@ -1,12 +1,11 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  CLIENTAPI                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  CLIENTAPI                                                                                                       ---
+---==================================================================================================================---
 
----A version comparison result.
 ---@alias ClientAPI.comparison
 ---| -1 # compare < to
 ---| 0  # compare == to
@@ -46,7 +45,6 @@
 ---Determines if daylight saving time is currently in effect.
 ---@field daylight_saving boolean
 
----A table of server information.
 ---@class ClientAPI.serverData
 ---The IP of the server. This might not exist, such as when in singleplayer.
 ---@field ip? string
@@ -54,3 +52,15 @@
 ---@field name string
 ---The server's Message of the Day.
 ---@field motd string
+
+---@class ClientAPI.tabList
+---The list of all players' names on the server's tab list.
+---@field players string[]
+---The tab list header.
+---@field header? string
+---The raw JSON of the tab list header.
+---@field headerJson? string
+---The tab list footer.
+---@field footer? string
+---The raw JSON of the tab list footer.
+---@field footerJson? string

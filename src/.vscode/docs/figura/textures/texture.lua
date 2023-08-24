@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  TEXTURE                                                                                     ---
----==============================================================================================---
+---==================================================================================================================---
+---  TEXTURE                                                                                                         ---
+---==================================================================================================================---
 
 ---A texture for use by the avatar.
 ---@class Texture
@@ -27,6 +27,19 @@ local Texture
 ---@return self
 function Texture:applyFunc(x, y, width, height, func) end
 
+---Transforms an area of pixels in this texture with the given matrix.
+---
+---If `x`, `y`, `width`, or `height` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param x? integer
+---@param y? integer
+---@param width? integer
+---@param height? integer
+---@param mat Matrix4
+---@return self
+function Texture:applyMatrix(x, y, width, height, mat) end
+
 ---Fills the given area with a single color.
 ---
 ---If `x`, `y`, `width`, or `height` are `nil`, they will default to `0`.  
@@ -41,6 +54,8 @@ function Texture:applyFunc(x, y, width, height, func) end
 ---@return self
 function Texture:fill(x, y, width, height, color) end
 
+---Fills the given area with a single color.
+---
 ---If `x`, `y`, `width`, `height`, `r`, `g`, or `b` are `nil`, they will default to `0`.  
 ---If `a` is `nil`, it will default to `0`.
 ---@generic self
@@ -98,19 +113,27 @@ function Texture:getPixel(x, y) end
 ---
 ---If `x` or `y` are `nil`, they will default to `0`.  
 ---If `color` is `nil`, it will default to `⟨0, 0, 0, 1⟩`
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param color? Vector3 | Vector4
+---@return self
 function Texture:setPixel(x, y, color) end
 
+---Sets the color of the given pixel.
+---
 ---If `x`, `y`, `r`, `g`, or `b` are `nil`, they will default to `0`.  
 ---If `a` is `nil`, it will default to `1`.
+---@generic self
+---@param self self
 ---@param x? integer
 ---@param y? integer
 ---@param r? number
 ---@param g? number
 ---@param b? number
 ---@param a? number
+---@return self
 function Texture:setPixel(x, y, r, g, b, a) end
 
 
@@ -128,6 +151,8 @@ function Texture:setPixel(x, y, r, g, b, a) end
 ---@return self
 function Texture:pixel(x, y, color) end
 
+---Sets the color of the given pixel.
+---
 ---If `x`, `y`, `r`, `g`, or `b` are `nil`, they will default to `0`.  
 ---If `a` is `nil`, it will default to `1`.
 ---@generic self

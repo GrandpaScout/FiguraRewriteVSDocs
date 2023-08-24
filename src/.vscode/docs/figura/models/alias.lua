@@ -1,65 +1,98 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  MODELPART                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  MODELPART                                                                                                       ---
+---==================================================================================================================---
 
----A valid parent type for a model part.
+---@alias ModelPart.renderFunc fun(delta?: number, context?: Event.Render.context, part?: ModelPart)
+
 ---@alias ModelPart.parentType
----| "None"                 # Follow the player.
----| "NONE"                 # Alias for `"None"`
----| "Head"                 # Follow the player's head.
----| "HEAD"                 # Alias for `"Head"`
----| "Body"                 # Follow the player's body.
----| "BODY"                 # Alias for `"Body"`
----| "LeftArm"              # Follow the player's left arm.
----| "LEFT_ARM"             # Alias for `"LeftArm"`
----| "RightArm"             # Follow the player's right arm.
----| "RIGHT_ARM"            # Alias for `"LeftArm"`
----| "LeftLeg"              # Follow the player's left leg.
----| "LEFT_LEG"             # Alias for `"LeftLeg"`
----| "RightLeg"             # Follow the player's right leg.
----| "RIGHT_LEG"            # Alias for `"RightLeg"`
----| "LeftElytra"           # Follow the player's left elytra wing.
----| "LEFT_ELYTRA"          # Alias for `"LeftElytra"`
----| "LeftElytron"          # Alias for `"LeftElytra"`
----| "LEFT_ELYTRON"         # Alias for `"LeftElytra"`
----| "RightElytra"          # Follow the player's right elytra wing.
----| "RIGHT_ELYTRA"         # Alias for `"RightElytra"`
----| "RightElytron"         # Alias for `"RightElytra"`
----| "RIGHT_ELYTRON"        # Alias for `"RightElytra"`
----| "Cape"                 # Follow the player's cape.
----| "CAPE"                 # Alias for `"Cape"`
----| "World"                # Appear as a world object.
----| "WORLD"                # Alias for `"World"`
----| "Hud"                  # Appear on the HUD.
----| "HUD"                  # Alias for `"Hud"`
----| "Gui"                  # Alias for `"Hud"`
----| "GUI"                  # Alias for `"Hud"`
----| "Camera"               # Face the viewing client's camera.
----| "CAMERA"               # Alias for `"Camera"`
----| "Skull"                # Replace the player's skull block.
----| "SKULL"                # Alias for `"Skull"`
----| "\u{1F480}"            # Alias for `"Skull"`
----| [[\xF0\x9F\x92\x80]]   # Alias for `"Skull"` ([U+1F480] 💀, as UTF-8 bytes)
----| "LeftItemPivot"        # Sets a new left item pivot point.
----| "LEFT_ITEM_PIVOT"      # Alias for `"LeftItemPivot"`
----| "RightItemPivot"       # Sets a new right item pivot point.
----| "RIGHT_ITEM_PIVOT"     # Alias for `"RightItemPivot"`
----| "LeftSpyglassPivot"    # Sets a new left spyglass pivot point.
----| "LEFT_SPYGLASS_PIVOT"  # Alias for `"LeftSpyglassPivot"`
----| "RightSpyglassPivot"   # Sets a new right spyglass pivot point.
----| "RIGHT_SPYGLASS_PIVOT" # Alias for `"RightSpyglassPivot"`
----| "HelmetItemPivot"      # Sets a new helmet item pivot point.
----| "HELMET_ITEM_PIVOT"    # Alias for `"HelmetItemPivot"`
----| "LeftParrotPivot"      # Sets a new left parrot pivot point.
----| "LEFT_PARROT_PIVOT"    # Alias for `"LeftParrotPivot"`
----| "RightParrotPivot"     # Sets a new right parrot pivot point.
----| "RIGHT_PARROT_PIVOT"   # Alias for `"RightParrotPivot"`
+---| "None"                   # Follow the player.
+---| "NONE"                   # Alias for `"None"`.
+---| "Model"                  # Alias for `"None"`.
+---| "MODEL"                  # Alias for `"None"`.
+---| "Head"                   # Follow the player's head.
+---| "HEAD"                   # Alias for `"Head"`.
+---| "Body"                   # Follow the player's body.
+---| "BODY"                   # Alias for `"Body"`.
+---| "LeftArm"                # Follow the player's left arm.
+---| "LEFT_ARM"               # Alias for `"LeftArm"`.
+---| "RightArm"               # Follow the player's right arm.
+---| "RIGHT_ARM"              # Alias for `"LeftArm"`.
+---| "LeftLeg"                # Follow the player's left leg.
+---| "LEFT_LEG"               # Alias for `"LeftLeg"`.
+---| "RightLeg"               # Follow the player's right leg.
+---| "RIGHT_LEG"              # Alias for `"RightLeg"`.
+---| "LeftElytra"             # Follow the player's left elytra wing.
+---| "LEFT_ELYTRA"            # Alias for `"LeftElytra"`.
+---| "LeftElytron"            # Alias for `"LeftElytra"`.
+---| "LEFT_ELYTRON"           # Alias for `"LeftElytra"`.
+---| "RightElytra"            # Follow the player's right elytra wing.
+---| "RIGHT_ELYTRA"           # Alias for `"RightElytra"`.
+---| "RightElytron"           # Alias for `"RightElytra"`.
+---| "RIGHT_ELYTRON"          # Alias for `"RightElytra"`.
+---| "Cape"                   # Follow the player's cape.
+---| "CAPE"                   # Alias for `"Cape"`.
+---| "World"                  # Appear as a world object.
+---| "WORLD"                  # Alias for `"World"`.
+---| "Hud"                    # Appear on the HUD.
+---| "HUD"                    # Alias for `"Hud"`.
+---| "HeadsUpDisplay"         # Alias for `"Hud"`.
+---| "Gui"                    # Alias for `"Hud"`.
+---| "GUI"                    # Alias for `"Hud"`.
+---| "GraphicalUserInterface" # Alias for `"Hud"`.
+---| "JraficalUserInterface"  # Alias for `"Hud"`.
+---| "Camera"                 # Face the viewing client's camera.
+---| "CAMERA"                 # Alias for `"Camera"`
+---
+---| "Skull"                  # Replaces the player's skull block.
+---| "SKULL"                  # Alias for `"Skull"`.
+---| "\u{2620}"               # Alias for `"Skull"`.
+---| [[\xE2\x98\xA0]]         # Alias for `"Skull"`. ([U+2620] ☠, as UTF-8 bytes)
+---| "Portrait"               # Replaces the head icon in the tab list and in the permissions screen.
+---| "PORTRAIT"               # Alias for `"Portrait"`.
+---| "Arrow"                  # Replaces the player's shot arrows.
+---| "ARROW"                  # Alias for `"Arrow"`.
+---Prepares this group to replace an equipped item. This must be returned by an `ITEM_RENDER` event for it to work.
+---| "Item"
+---| "ITEM"                   # Alias for `"Item"`.
+---
+---| "HelmetPivot"            # Sets a new helmet armor pivot point.
+---| "HELMET_PIVOT"           # Alias for `"HelmetPivot"`.
+---| "HelmetItemPivot"        # Sets a new helmet item pivot point.
+---| "HELMET_ITEM_PIVOT"      # Alias for `"HelmetItemPivot"`.
+---| "ChestplatePivot"        # Sets a new chestplate armor pivot point.
+---| "CHESTPLATE_PIVOT"       # Alias for `"ChestplatePivot"`.
+---| "LeftShoulderPivot"      # Sets a new left shoulder armor pivot point.
+---| "LEFT_SHOULDER_PIVOT"    # Alias for `"LeftShoulderPivot"`.
+---| "RightShoulderPivot"     # Sets a new right shoulder armor pivot point.
+---| "RIGHT_SHOULDER_PIVOT"   # Alias for `"RightShoulderPivot"`.
+---| "LeggingsPivot"          # Sets a new leggings belt armor pivot point.
+---| "LEGGINGS_PIVOT"         # Alias for `"LeggingsPivot"`.
+---| "LeftLeggingPivot"       # Sets a new left legging armor pivot point.
+---| "LEFT_LEGGING_PIVOT"     # Alias for `"LeftLeggingPivot"`.
+---| "RightLeggingPivot"      # Sets a new right legging armor pivot point.
+---| "RIGHT_LEGGING_PIVOT"    # Alias for `"RightLeggingPivot"`.
+---| "LeftBootPivot"          # Sets a new left boot armor pivot point.
+---| "LEFT_BOOT_PIVOT"        # Alias for `"LeftBootPivot"`.
+---| "RightBootPivot"         # Sets a new right boot armor pivot point.
+---| "RIGHT_BOOT_PIVOT"       # Alias for `"RightBootPivot"`.
+---
+---| "LeftItemPivot"          # Sets a new left item pivot point.
+---| "LEFT_ITEM_PIVOT"        # Alias for `"LeftItemPivot"`.
+---| "RightItemPivot"         # Sets a new right item pivot point.
+---| "RIGHT_ITEM_PIVOT"       # Alias for `"RightItemPivot"`.
+---| "LeftSpyglassPivot"      # Sets a new left spyglass pivot point.
+---| "LEFT_SPYGLASS_PIVOT"    # Alias for `"LeftSpyglassPivot"`.
+---| "RightSpyglassPivot"     # Sets a new right spyglass pivot point.
+---| "RIGHT_SPYGLASS_PIVOT"   # Alias for `"RightSpyglassPivot"`.
+---| "LeftParrotPivot"        # Sets a new left parrot pivot point.
+---| "LEFT_PARROT_PIVOT"      # Alias for `"LeftParrotPivot"`.
+---| "RightParrotPivot"       # Sets a new right parrot pivot point.
+---| "RIGHT_PARROT_PIVOT"     # Alias for `"RightParrotPivot"`.
 
----A valid render type for a model part.
 ---@alias ModelPart.renderType
 ---| "NONE"             # Disable rendering.
 ---| "CUTOUT"           # Default render mode. Used for simple opaque and transparent parts.
@@ -75,13 +108,11 @@
 ---| "LINES"            # Adds a white outline.
 ---| "LINES_STRIP"      # Similar to `"LINES"`, but also adds some more lines in-between.
 
----A valid type for a model part.
 ---@alias ModelPart.type
 ---| "GROUP" # A Blockbench group, .bbmodel file, or system folder.
 ---| "CUBE"  # A Blockbench cube.
 ---| "MESH"  # A Blockbench mesh.
 
----A valid texture type for a model part.
 ---@alias ModelPart.textureType
 ---| "PRIMARY"   # The primary texture.
 ---| "SECONDARY" # The secondary texture. (Usually the emissive texture.)
@@ -100,15 +131,14 @@
 
 ---A union of all RenderTask sub-types.
 ---<!--
----@alias RenderTask.any BlockTask|ItemTask|TextTask
+---@alias RenderTask.any BlockTask | ItemTask | TextTask
 
 
 ---==============================================================================================---
 ---  ITEMTASK extends RENDERTASK                                                                 ---
 ---==============================================================================================---
 
----A valid render type for an item task.
----@alias ItemTask.renderType
+---@alias ItemTask.renderMode
 ---| "NONE"                    # No transformations.
 ---| "FIRST_PERSON_LEFT_HAND"  # First-person, left hand.
 ---| "FIRST_PERSON_RIGHT_HAND" # First-person, right hand.
@@ -118,3 +148,10 @@
 ---| "GUI"                     # In GUI slot.
 ---| "GROUND"                  # Dropped item.
 ---| "FIXED"                   # In item frame.
+
+
+---==============================================================================================---
+---  TEXTTASK extends RENDERTASK                                                                 ---
+---==============================================================================================---
+
+

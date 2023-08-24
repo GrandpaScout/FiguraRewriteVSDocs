@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  MATRICESAPI                                                                                 ---
----==============================================================================================---
+---==================================================================================================================---
+---  MATRICESAPI                                                                                                     ---
+---==================================================================================================================---
 
 ---An API for working with matrices.
 ---
@@ -43,41 +43,32 @@ local MatricesAPI
 
 ---===== METHODS =====---
 
----Creates a 2x2 matrix.
----
----If given vectors, those vectors become the columns of the matrix.
----
----If given nothing, the 2x2 identity matrix is returned.
+---Creates a 2x2 identity matrix.
 ---@return Matrix2
 function MatricesAPI.mat2() end
 
+---Creates a 2x2 matrix with the given Vectors as the columns of the matrix.
 ---@param col1 Vector2
 ---@param col2 Vector2
 ---@return Matrix2
 function MatricesAPI.mat2(col1, col2) end
 
----Creates a 3x3 matrix.
----
----If given vectors, those vectors become the columns of the matrix.
----
----If given nothing, the 3x3 identity matrix is returned.
+---Creates a 3x3 identity matrix.
 ---@return Matrix3
 function MatricesAPI.mat3() end
 
+---Creates a 3x3 matrix with the given Vectors as the columns of the matrix.
 ---@param col1 Vector3
 ---@param col2 Vector3
 ---@param col3 Vector3
 ---@return Matrix3
 function MatricesAPI.mat3(col1, col2, col3) end
 
----Creates a 4x4 matrix.
----
----If given vectors, those vectors become the columns of the matrix.
----
----If given nothing, the 4x4 identity matrix is returned.
+---Creates a 4x4 identity matrix.
 ---@return Matrix4
 function MatricesAPI.mat4() end
 
+---Creates a 4x4 matrix with the given Vectors as the columns of the matrix.
 ---@param col1 Vector4
 ---@param col2 Vector4
 ---@param col3 Vector4
@@ -101,6 +92,8 @@ function MatricesAPI.rotation2(angle) end
 ---@return Matrix3
 function MatricesAPI.rotation3(rot) end
 
+---Creates a 3x3 matrix that rotates by the given angles in degrees.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -117,6 +110,10 @@ function MatricesAPI.rotation3(x, y, z) end
 ---@return Matrix4
 function MatricesAPI.rotation4(rot) end
 
+---Creates a 4x4 matrix that rotates by the given angles in degrees.
+---
+---The rotation is done in `ZYX` order.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -131,6 +128,8 @@ function MatricesAPI.rotation4(x, y, z) end
 ---@return Matrix2
 function MatricesAPI.scale2(scales) end
 
+---Creates a 2x2 matrix that scales by the given factors.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -144,6 +143,8 @@ function MatricesAPI.scale2(x, y) end
 ---@return Matrix3
 function MatricesAPI.scale3(scales) end
 
+---Creates a 3x3 matrix that scales by the given factors.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -158,6 +159,8 @@ function MatricesAPI.scale3(x, y, z) end
 ---@return Matrix4
 function MatricesAPI.scale4(scales) end
 
+---Creates a 4x4 matrix that scales by the given factors.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -172,6 +175,8 @@ function MatricesAPI.scale4(x, y, z) end
 ---@return Matrix3
 function MatricesAPI.translate3(offset) end
 
+---Creates a 3x3 matrix that translates by the given offset.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -185,6 +190,8 @@ function MatricesAPI.translate3(x, y) end
 ---@return Matrix4
 function MatricesAPI.translate4(offset) end
 
+---Creates a 4x4 matrix that translates by the given offset.
+---
 ---If `x` or `y` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number

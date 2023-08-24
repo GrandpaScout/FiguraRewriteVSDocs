@@ -1,34 +1,33 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  MINECRAFT                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  MINECRAFT                                                                                                       ---
+---==================================================================================================================---
 
----A valid Minecraft shader.
 ---@alias Minecraft.shader string
----| "notch"           # Halves resolution and adds dithering.
----| "fxaa"            # Adds a small amount of anti-aliasing.
----| "art"             # Pixels are blurred outwards.
----| "bumpy"           # Outlines color differences.
----| "blobs2"          # Similar to `art`, but less intensive.
----| "pencil"          # Gives everything a pencil-sketch look.
----| "color_convolve"  # Intensifies colors.
----| "deconverge"      # Offsets the color channels.
----| "flip"            # Flips the view vertically.
----| "invert"          # Inverts and desaturates colors. (Enderman)
----| "ntsc"            # Makes the view look like a CRT monitor.
----| "outline"         # A less complex `bumpy`. Might not work.
----| "phosphor"        # Pixels on the screen linger.
----| "scan_pincushion" # `ntsc` but without the blur and less intensive.
----| "sobel"           # Turns everything except for edges black.
----| "bits"            # 8-bit color with very low resolution.
----| "desaturate"      # Reduces intensity of colors drastically.
----| "green"           # `scan_pincushion` & `bits` with green overlay.
----| "blur"            # Blurs the screen.
----| "wobble"          # Colors cycle and pixels move up and down.
----| "blobs"           # `blobs2` and `art`, but stronger with distance.
----| "antialias"       # Adds anti-aliasing.
----| "creeper"         # Lowered resolution and green overlay. (Creeper)
----| "spider"          # Splits screen into "eyes" (Spider, Cave Spider)
+---| "minecraft:shaders/post/notch.json"           # Halves resolution and adds dithering.
+---| "minecraft:shaders/post/fxaa.json"            # Adds a small amount of anti-aliasing.
+---| "minecraft:shaders/post/art.json"             # Pixels are blurred outwards.
+---| "minecraft:shaders/post/bumpy.json"           # Outlines color differences.
+---| "minecraft:shaders/post/blobs2.json"          # Similar to `art`, but less intensive.
+---| "minecraft:shaders/post/pencil.json"          # Gives everything a pencil-sketch look.
+---| "minecraft:shaders/post/color_convolve.json"  # Intensifies colors.
+---| "minecraft:shaders/post/deconverge.json"      # Offsets the color channels.
+---| "minecraft:shaders/post/flip.json"            # Flips the view vertically.
+---| "minecraft:shaders/post/invert.json"          # Inverts and desaturates colors. (Enderman)
+---| "minecraft:shaders/post/ntsc.json"            # Makes the view look like a CRT monitor.
+---| "minecraft:shaders/post/outline.json"         # A less complex `bumpy`. Might not work.
+---| "minecraft:shaders/post/phosphor.json"        # Pixels on the screen linger.
+---| "minecraft:shaders/post/scan_pincushion.json" # `ntsc` but without the blur and less intensive.
+---| "minecraft:shaders/post/sobel.json"           # Turns everything except for edges black.
+---| "minecraft:shaders/post/bits.json"            # 8-bit color with very low resolution.
+---| "minecraft:shaders/post/desaturate.json"      # Reduces intensity of colors drastically.
+---| "minecraft:shaders/post/green.json"           # `scan_pincushion` & `bits` with green overlay.
+---| "minecraft:shaders/post/blur.json"            # Blurs the screen.
+---| "minecraft:shaders/post/wobble.json"          # Colors cycle and pixels move up and down.
+---| "minecraft:shaders/post/blobs.json"           # `blobs2` and `art`, but stronger with distance.
+---| "minecraft:shaders/post/antialias.json"       # Adds anti-aliasing.
+---| "minecraft:shaders/post/creeper.json"         # Lowered resolution and green overlay. (Creeper)
+---| "minecraft:shaders/post/spider.json"          # Splits screen into "eyes" (Spider, Cave Spider)

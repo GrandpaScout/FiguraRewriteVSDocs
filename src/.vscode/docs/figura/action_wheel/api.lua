@@ -1,17 +1,16 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  ACTIONWHEELAPI                                                                              ---
----==============================================================================================---
+---==================================================================================================================---
+---  ACTIONWHEELAPI                                                                                                  ---
+---==================================================================================================================---
 
 ---An API for customizing the action wheel.
 ---
 ---> ***
 ---
----The action wheel works off a page system. The action wheel can be assigned a page of up to 8
----actions to show.
+---The action wheel works off a page system. The action wheel can be assigned a page of up to 8 actions to show.
 ---
 ---Create a new page with:
 ---```lua
@@ -45,14 +44,18 @@
 ---```
 ---@class ActionWheelAPI
 ---The function that is executed when the screen is left-clicked while the action wheel is open.
----<!--
----@field leftClick? Action.clickFunc
+---
+---If this function returns `true`, the selected action will not be activated.
+---@field leftClick? ActionWheelAPI.clickFunc
 ---The function that is executed when the screen is right-clicked while the action wheel is open.
----<!--
----@field rightClick? Action.clickFunc
+---
+---If this function returns `true`, the selected action will not be activated.
+---@field rightClick? ActionWheelAPI.clickFunc
 ---The function that is executed when the screen is scrolled while the action wheel is open.
----<!--
----@field scroll? Action.scrollFunc
+---
+---If this function returns `true`, the selected action will not be activated and the current page
+---will not scroll through groups.
+---@field scroll? ActionWheelAPI.scrollFunc
 local ActionWheelAPI
 
 
@@ -61,20 +64,32 @@ local ActionWheelAPI
 ---Attempts to execute an action on the current page of the action wheel.  
 ---This can only execute a `ClickAction`, any other action type will do nothing.
 ---
----If `index` is `nil`, the last selected action is executed.
----
+---If `index` is `nil`, the last selected action is executed.  
 ---If `rightClick` is `true`, it will execute the right-click function instead.
----@param index? Page.index
----@param rightClick? boolean
-function ActionWheelAPI:execute(index, rightClick) end
+---@generic self
+---@param self self
+---@param index? ActionWheelAPI.index
+---@param rightclick? boolean
+---@return self
+function ActionWheelAPI:execute(index, rightclick) end
 
----Creates a new action that is not tied to a page.
+---Creates a new action that is not assigned to a page.
+---
+---Use the following to add an action to a page:
+---```lua
+---<Page>:setAction(-1, <Action>)
+---```
 ---@return Action
 function ActionWheelAPI:newAction() end
 
 ---Creates a new page for use in the action wheel.
 ---
----If given a title, it will be stored with that title and can later be retrieved with `:getPage`
+---If given a title, it will be stored with that title and can later be retrieved with `:getPage`.
+---
+---Use the following to make the action wheel use a page:
+---```lua
+---action_wheel:setPage(<Page>)
+---```
 ---@param title? string
 ---@return Page
 function ActionWheelAPI:newPage(title) end
@@ -82,22 +97,32 @@ function ActionWheelAPI:newPage(title) end
 
 ---===== GETTERS =====---
 
----Gets a page by its name.
----@param name string
----@return Page?
-function ActionWheelAPI:getPage(name) end
-
 ---Gets the active page.
 ---
 ---Returns `nil` if there is no active page.
 ---@return Page?
 function ActionWheelAPI:getCurrentPage() end
 
+---Gets a table of all registered pages.
+---@return {[string]?: Page}
+function ActionWheelAPI:getPage() end
+
+---Gets a page by its title.
+---@param title string
+---@return Page?
+function ActionWheelAPI:getPage(title) end
+
 ---Gets the index of the currently hovered action.
 ---@return
 ---| 0 # None selected
----| Page.index
+---| ActionWheelAPI.index
 function ActionWheelAPI:getSelected() end
+
+---Gets the currently hovered action.
+---
+---Returns `nil` if there is no action being hovered.
+---@return Action?
+function ActionWheelAPI:getSelectedAction() end
 
 ---Gets if the wheel is visible or not.
 ---@return boolean
@@ -107,5 +132,10 @@ function ActionWheelAPI:isEnabled() end
 ---===== SETTERS =====---
 
 ---Sets the active page of the action wheel to the given page.
+---
+---If `page` is `nil`, the action wheel is emptied.
+---@generic self
+---@param self self
 ---@param page? string | Page
+---@return self
 function ActionWheelAPI:setPage(page) end

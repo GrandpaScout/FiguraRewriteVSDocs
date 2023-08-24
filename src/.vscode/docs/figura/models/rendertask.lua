@@ -1,24 +1,61 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  RENDERTASK                                                                                  ---
----==============================================================================================---
+---==================================================================================================================---
+---  RENDERTASK                                                                                                      ---
+---==================================================================================================================---
 
 ---The base class of all render tasks.
 ---
 ---This should never be used directly unless the type of task does not need to be known.  
----If the type of subtask will be inferred later in your function, use `RenderTask.any` instead.
+---If the type of task will be inferred later in your function, use `RenderTask.any` instead.
 ---@class RenderTask
 local RenderTask
 
 
+---===== METHODS =====---
+
+---Removes this render task from its parent model part.
+---@generic self
+---@param self self
+---@return self
+function RenderTask:remove() end
+
+
 ---===== GETTERS =====---
+
+---Gets the current light overrides of this task.
+---@return Vector2?
+function RenderTask:getLight() end
+
+---Gets the name of this task.
+---@return string
+function RenderTask:getName() end
+
+---Recalculates then gets the normal matrix of this task.
+---@return Matrix3
+function RenderTask:getNormalMatrix() end
+
+---Gets the normal matrix of this task without recalculating it.
+---@return Matrix3
+function RenderTask:getNormalMatrixRaw() end
+
+---Gets the overlay values of this task.
+---@return Vector2?
+function RenderTask:getOverlay() end
 
 ---Gets this task's position.
 ---@return Vector3
 function RenderTask:getPos() end
+
+---Recalculates then gets the position matrix of this task.
+---@return Matrix4
+function RenderTask:getPositionMatrix() end
+
+---Gets the position matrix of this task without recalculating it.
+---@return Matrix4
+function RenderTask:getPositionMatrixRaw() end
 
 ---Gets this task's rotation.
 ---@return Vector3
@@ -30,16 +67,60 @@ function RenderTask:getScale() end
 
 ---Gets if this task is rendering.
 ---@return boolean
-function RenderTask:isEnabled() end
+function RenderTask:isVisible() end
 
 
 ---===== SETTERS =====---
 
----Sets if this task should render at all.
+---Sets the block light and sky light overrides of this task.  
+---Light values above 15 or below 0 will cause the task to stop rendering.
 ---
----If `state` is `nil`, it will default to `false`.
----@param state? boolean
-function RenderTask:setEnabled(state) end
+---If `light` is `nil`, light overrides are removed.
+---@generic self
+---@param self self
+---@param light? Vector2
+---@return self
+function RenderTask:setLight(light) end
+
+---Sets the block light and sky light overrides of this task.  
+---Light values above 15 or below 0 will cause the task to stop rendering.
+---
+---If `block` is `nil`, light overrides are removed.  
+---If `sky` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param block? integer
+---@param sky? integer
+---@return self
+function RenderTask:setLight(block, sky) end
+
+---Sets the matrix applied as the position matrix for this task.
+---
+---This does not overwrite the position, rotation, or scale of the render task. The given matrix is used for rendering
+---instead until one of the previously listed values are modified, after which the task will stop using the matrix and
+---return to using the position, rotation, and scale for rendering.
+---@param mat Matrix4
+function RenderTask:setMatrix(mat) end
+
+---Sets the white flash and hurt overlays on this task.
+---
+---If `overlays` is `nil`, all overlays are removed.
+---@generic self
+---@param self self
+---@param overlays? Vector2
+---@return self
+function RenderTask:setOverlay(overlays) end
+
+---Sets the white flash and hurt overlays on this task.
+---
+---If `white` is `nil`, all overlays are removed.  
+---If `hurt` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param white? integer
+---@param hurt? integer
+---@return self
+function RenderTask:setOverlay(white, hurt) end
 
 ---Sets this task's position.
 ---
@@ -47,6 +128,8 @@ function RenderTask:setEnabled(state) end
 ---@param pos? Vector3
 function RenderTask:setPos(pos) end
 
+---Sets this task's position.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -59,6 +142,8 @@ function RenderTask:setPos(x, y, z) end
 ---@param rot? Vector3
 function RenderTask:setRot(rot) end
 
+---Sets this task's rotation.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@param x? number
 ---@param y? number
@@ -71,23 +156,75 @@ function RenderTask:setRot(x, y, z) end
 ---@param scale? Vector3
 function RenderTask:setScale(scale) end
 
+---Sets this task's scale multiplier.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `1`.
 ---@param x? number
 ---@param y? number
 ---@param z? number
 function RenderTask:setScale(x, y, z) end
 
-
----===== CHAINED =====---
-
 ---Sets if this task should render at all.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@param state? boolean
+function RenderTask:setVisible(state) end
+
+
+---===== CHAINED =====---
+
+---Sets the block light and sky light overrides of this task.  
+---Light values above 15 or below 0 will cause the task to stop rendering.
+---
+---If `light` is `nil`, light overrides are removed.
 ---@generic self
 ---@param self self
----@param state? boolean
+---@param light? Vector2
 ---@return self
-function RenderTask:enabled(state) end
+function RenderTask:light(light) end
+
+---Sets the block light and sky light overrides of this task.  
+---Light values above 15 or below 0 will cause the task to stop rendering.
+---
+---If `block` is `nil`, light overrides are removed.  
+---If `sky` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param block? integer
+---@param sky? integer
+---@return self
+function RenderTask:light(block, sky) end
+
+---Sets the matrix applied as the position matrix for this task.
+---
+---This does not overwrite the position, rotation, or scale of the render task. The given matrix is used for rendering
+---instead until one of the previously listed values are modified, after which the task will stop using the matrix and
+---return to using the position, rotation, and scale for rendering.
+---@generic self
+---@param self self
+---@param mat Matrix4
+---@return self
+function RenderTask:matrix(mat) end
+
+---Sets the white flash and hurt overlays on this task.
+---
+---If `overlays` is `nil`, all overlays are removed.
+---@generic self
+---@param self self
+---@param overlays? Vector2
+---@return self
+function RenderTask:overlay(overlays) end
+
+---Sets the white flash and hurt overlays on this task.
+---
+---If `white` is `nil`, all overlays are removed.  
+---If `hurt` is `nil`, it will default to `0`.
+---@generic self
+---@param self self
+---@param white? integer
+---@param hurt? integer
+---@return self
+function RenderTask:overlay(white, hurt) end
 
 ---Sets this task's position.
 ---
@@ -98,6 +235,8 @@ function RenderTask:enabled(state) end
 ---@return self
 function RenderTask:pos(pos) end
 
+---Sets this task's position.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -116,6 +255,8 @@ function RenderTask:pos(x, y, z) end
 ---@return self
 function RenderTask:rot(rot) end
 
+---Sets this task's rotation.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -134,6 +275,8 @@ function RenderTask:rot(x, y, z) end
 ---@return self
 function RenderTask:scale(scale) end
 
+---Sets this task's scale multiplier.
+---
 ---If `x`, `y`, or `z` are `nil`, they will default to `1`.
 ---@generic self
 ---@param self self
@@ -143,10 +286,19 @@ function RenderTask:scale(scale) end
 ---@return self
 function RenderTask:scale(x, y, z) end
 
+---Sets if this task should render at all.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RenderTask:visible(state) end
 
----==============================================================================================---
----  BLOCKTASK extends RENDERTASK                                                                ---
----==============================================================================================---
+
+---==================================================================================================================---
+---  BLOCKTASK extends RENDERTASK                                                                                    ---
+---==================================================================================================================---
 
 ---A render task that renders a Minecraft block.
 ---@class BlockTask: RenderTask
@@ -160,7 +312,10 @@ local BlockTask
 ---Also supports block states and NBT similar to Minecraft's `/setblock` command.
 ---
 ---If `block` is `nil`, it will default to `"minecraft:air"`.
+---@generic self
+---@param self self
 ---@param block? Minecraft.blockID | BlockState
+---@return self
 function BlockTask:setBlock(block) end
 
 
@@ -190,26 +345,39 @@ local ItemTask
 ---===== GETTERS =====---
 
 ---Gets the rendering mode for the item this task renders.
----@return ItemTask.renderType
-function ItemTask:getRenderType(renderType) end
+---@return ItemTask.renderMode
+function ItemTask:getDisplayMode() end
 
 
 ---===== SETTERS =====---
+
+---Sets the rendering mode for the item this task renders.
+---@generic self
+---@param self self
+---@param mode ItemTask.renderMode
+---@return self
+function ItemTask:setDisplayMode(mode) end
 
 ---Sets the item this task renders.
 ---
 ---Also supports NBT similar to Minecraft's `/give` command.
 ---
 ---If `item` is `nil`, it will default to `"minecraft:air"`.
+---@generic self
+---@param self self
 ---@param item? Minecraft.itemID | ItemStack
+---@return self
 function ItemTask:setItem(item) end
-
----Sets the rendering mode for the item this task renders.
----@param renderType ItemTask.renderType
-function ItemTask:setRenderType(renderType) end
 
 
 ---===== CHAINED =====---
+
+---Sets the rendering mode for the item this task renders.
+---@generic self
+---@param self self
+---@param mode ItemTask.renderMode
+---@return self
+function ItemTask:displayMode(mode) end
 
 ---Sets the item this task renders.
 ---
@@ -222,17 +390,352 @@ function ItemTask:setRenderType(renderType) end
 ---@return self
 function ItemTask:item(item) end
 
----Sets the rendering mode for the item this task renders.
+
+---==================================================================================================================---
+---  SPRITETASK extends RENDERTASK                                                                                   ---
+---==================================================================================================================---
+
+---A render task that renders a texture as a sprite.
+---@class SpriteTask: RenderTask
+local SpriteTask
+
+
+---===== GETTERS =====---
+
+---Gets the color multiplier of this part.  
+---This also includes opacity.
+---
+---This is a multiplier, that means that `⟨1, 1, 1, 1⟩` will result in no change and `⟨0, 0, 0, 1⟩` will
+---result in black.
+---@return Vector4
+function SpriteTask:getColor() end
+
+---Gets the size of the texture this task uses in pixels.
+---@return Vector2
+function SpriteTask:getDimensions() end
+
+---Gets the size of the region this task uses from its texture.
+---@return Vector2
+function SpriteTask:getRegion() end
+
+---Gets the render type of this task.
+---@return ModelPart.renderType
+function SpriteTask:getRenderType() end
+
+---Gets the width and height of this task.
+---@return Vector2
+function SpriteTask:getSize() end
+
+---Gets the path to the texture this task uses.
+---@return string?
+function SpriteTask:getTexture() end
+
+---Gets the UV offset of this task.
+---@return Vector2
+function SpriteTask:getUV() end
+
+---Gets the UV offset of this task in pixels.
+---
+---Returns `nil` if no UV offset is set.
+---@return Vector2
+function SpriteTask:getUVPixels() end
+
+---Gets the list of vertices this task uses to render itself.
+---
+---Any modifications to these vertices will be undone if you change the position, rotation, or scale of this task.
+---@return Vertex[]
+function SpriteTask:getVertices() end
+
+
+---===== SETTERS =====---
+
+---Sets the color multiplier of this part.  
+---Optionally takes a Vector4 to control opacity.
+---
+---This is a multiplier, that means that `⟨1, 1, 1, 1⟩` will result in no change and `⟨0, 0, 0, 1⟩` will result in
+---black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1, 1⟩`.
 ---@generic self
 ---@param self self
----@param renderType ItemTask.renderType
+---@param col? Vector3 | Vector4
 ---@return self
-function ItemTask:renderType(renderType) end
+function SpriteTask:setColor(col) end
+
+---Sets the color multiplier of this part.
+---
+---This is a multiplier, that means that `1, 1, 1, 1` will result in no change and `0, 0, 0, 1` will result in black.
+---
+---If `r`, `g`, `b`, or `a` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@param a? number
+---@return self
+function SpriteTask:setColor(r, g, b, a) end
+
+---Sets the size of the texture this task uses in pixels.
+---
+---If `size` is `nil`, an error is thrown.
+---@generic self
+---@param self self
+---@param size Vector2
+---@return self
+function SpriteTask:setDimensions(size) end
+
+---Sets the size of the texture this task uses in pixels.
+---
+---If `width` or `height` are `nil`, an error is thrown.
+---@generic self
+---@param self self
+---@param width integer
+---@param height integer
+---@return self
+function SpriteTask:setDimensions(width, height) end
+
+---Sets the size of the region this task uses from its texture.
+---
+---If `size` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param size? Vector2
+---@return self
+function SpriteTask:setRegion(size) end
+
+---Sets the size of the region this task uses from its texture.
+---
+---If `width` or `height` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param width? integer
+---@param height? integer
+---@return self
+function SpriteTask:setRegion(width, height) end
+
+---Sets the render type of this task.
+---@generic self
+---@param self self
+---@param rendertype ModelPart.renderType
+---@return self
+function SpriteTask:setRenderType(rendertype) end
+
+---Sets the width and height of this task.
+---
+---If `size` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param size? Vector2
+---@return self
+function SpriteTask:setSize(size) end
+
+---Sets the width and height of this task.
+---
+---If `width` or `height` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param width? integer
+---@param height? integer
+---@return self
+function SpriteTask:setSize(width, height) end
+
+---Sets the texture this task uses to the given texture or path.
+---
+---The width and height of the texture must be given.
+---@generic self
+---@param self self
+---@param texture? Texture | string
+---@param width? integer
+---@param height? integer
+---@return self
+function SpriteTask:setTexture(texture, width, height) end
+
+---Sets the UV offset of this task.
+---
+---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param uv? Vector2
+---@return self
+function SpriteTask:setUV(uv) end
+
+---Sets the UV offset of this task.
+---
+---If `u` or `v` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param u? number
+---@param v? number
+---@return self
+function SpriteTask:setUV(u, v) end
+
+---Sets the UV offset of this task in pixels.
+---
+---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param uv? Vector2
+---@return self
+function SpriteTask:setUVPixels(uv) end
+
+---Sets the UV offset of this task in pixels.
+---
+---If `u` or `v` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param u? number
+---@param v? number
+---@return self
+function SpriteTask:setUVPixels(u, v) end
 
 
----==============================================================================================---
----  TEXTTASK extends RENDERTASK                                                                 ---
----==============================================================================================---
+---===== CHAINED =====---
+
+---Sets the color multiplier of this part.  
+---Optionally takes a Vector4 to control opacity.
+---
+---This is a multiplier, that means that `⟨1, 1, 1, 1⟩` will result in no change and `⟨0, 0, 0, 1⟩` will result in
+---black.
+---
+---If `col` is `nil`, it will default to `⟨1, 1, 1, 1⟩`.
+---@generic self
+---@param self self
+---@param col? Vector3 | Vector4
+---@return self
+function SpriteTask:color(col) end
+
+---Sets the color multiplier of this part.
+---
+---This is a multiplier, that means that `1, 1, 1, 1` will result in no change and `0, 0, 0, 1` will result in black.
+---
+---If `r`, `g`, `b`, or `a` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@param a? number
+---@return self
+function SpriteTask:color(r, g, b, a) end
+
+---Sets the size of the texture this task uses in pixels.
+---
+---If `size` is `nil`, an error is thrown.
+---@generic self
+---@param self self
+---@param size Vector2
+---@return self
+function SpriteTask:dimensions(size) end
+
+---Sets the size of the texture this task uses in pixels.
+---
+---If `width` or `height` are `nil`, an error is thrown.
+---@generic self
+---@param self self
+---@param width integer
+---@param height integer
+---@return self
+function SpriteTask:dimensions(width, height) end
+
+---Sets the size of the region this task uses from its texture.
+---
+---If `size` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param size? Vector2
+---@return self
+function SpriteTask:region(size) end
+
+---Sets the size of the region this task uses from its texture.
+---
+---If `width` or `height` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param width? integer
+---@param height? integer
+---@return self
+function SpriteTask:region(width, height) end
+
+---Sets the render type of this task.
+---@generic self
+---@param self self
+---@param rendertype ModelPart.renderType
+---@return self
+function SpriteTask:renderType(rendertype) end
+
+---Sets the width and height of this task.
+---
+---If `size` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param size? Vector2
+---@return self
+function SpriteTask:size(size) end
+
+---Sets the width and height of this task.
+---
+---If `width` or `height` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param width? integer
+---@param height? integer
+---@return self
+function SpriteTask:size(width, height) end
+
+---Sets the texture this task uses to the given texture or path.
+---
+---The width and height of the texture must be given.
+---@generic self
+---@param self self
+---@param texture? Texture | string
+---@param width? integer
+---@param height? integer
+---@return self
+function SpriteTask:texture(texture, width, height) end
+
+---Sets the UV offset of this task.
+---
+---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param uv? Vector2
+---@return self
+function SpriteTask:uv(uv) end
+
+---Sets the UV offset of this task.
+---
+---If `u` or `v` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param u? number
+---@param v? number
+---@return self
+function SpriteTask:uv(u, v) end
+
+---Sets the UV offset of this task in pixels.
+---
+---If `uv` is `nil`, it will default to `⟨0, 0⟩`.
+---@generic self
+---@param self self
+---@param uv? Vector2
+---@return self
+function SpriteTask:uvPixels(uv) end
+
+---Sets the UV offset of this task in pixels.
+---
+---If `u` or `v` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param u? number
+---@param v? number
+---@return self
+function SpriteTask:uvPixels(u, v) end
+
+
+---==================================================================================================================---
+---  TEXTTASK extends RENDERTASK                                                                                     ---
+---==================================================================================================================---
 
 ---A render task that renders Minecraft text.
 ---@class TextTask: RenderTask
@@ -241,11 +744,40 @@ local TextTask
 
 ---===== GETTERS =====---
 
----Gets the color of this task's text outline.
+---Gets the horizontal alignment of the text in this task.
+---@return "LEFT" | "CENTER" | "RIGHT"
+function TextTask:getAlignment() end
+
+---Gets the color of this task's background.  
+---This function incorrectly gets a vector of `⟨b, a, r, g⟩` instead of the expected `⟨r, g, b, a⟩`.
 ---
----Returns `nil` if the outline color has never been set.
----@return Vector3?
+---Returns `nil` if the background color has never been set.
+---@*error returns a barg vector instead of an rgba vector
+---@return Vector4?
+function TextTask:getBackgroundColor() end
+
+---Gets the opacity of this task.
+---@return number
+function TextTask:getOpacity() end
+
+---Gets the color of this task's text outline.
+---@*vmerror if attempt to return `nil`
+---@return Vector3
 function TextTask:getOutlineColor() end
+
+---Gets the text displayed on this task.
+---
+---Returns `nil` if nothing is being displayed.
+---@return string?
+function TextTask:getText() end
+
+---Gets the maximum width of this task in text-pixels.
+---@return integer
+function TextTask:getWidth() end
+
+---Gets if this task has a background.
+---@return boolean
+function TextTask:hasBackground() end
 
 ---Gets if this task's text has an outline.
 ---@return boolean
@@ -255,80 +787,189 @@ function TextTask:hasOutline() end
 ---@return boolean
 function TextTask:hasShadow() end
 
----Gets if this task's text is centered on its pivot.
+---Gets if this task's text should wrap around if it gets too long.
+---@*error Incorrectly uses PascalCase.
 ---@return boolean
-function TextTask:isCentered() end
+function TextTask:HasWrap() end
 
----Gets if this task's text is anchored right.
+---Gets if this task is able to be seen through everything.
 ---@return boolean
-function TextTask:isRight() end
-
+function TextTask:isSeeThrough() end
 
 ---===== SETTERS =====---
 
----Sets if this task's text should be centered on its pivot similar to nameplates.
+---Sets the horizontal alignment of the text in this task.
+---@generic self
+---@param self self
+---@param align "LEFT" | "CENTER" | "RIGHT"
+---@return self
+function TextTask:setAlignment(align) end
+
+---Sets if this task has a background.
 ---
----If `state` is `nil`, it will default to `false`.
+---If `state` is `nil`, it will default to `false`
+---@generic self
+---@param self self
 ---@param state? boolean
-function TextTask:setCentered(state) end
+---@return self
+function TextTask:setBackground(state) end
 
----Sets if this task's text should have an outline.
+---Sets the color of this task's background.  
+---If a `Vector3` is given, it is augmented with the `a` value defined below.
 ---
----Due to how this effect works, the text will also be emissive and shadows will not work.
----
----If `state` is `nil`, it will default to `false`.
----@param state? boolean
-function TextTask:setOutline(state) end
+---If `color` is `nil`, it will default to `⟨0, 0, 0, a⟩` where `a` is either `0.24705` or the Text Background Opacity
+---setting if Text Background is set to "Everywhere".
+---@generic self
+---@param self self
+---@param color? Vector3 | Vector4
+---@return self
+function TextTask:setBackgroundColor(color) end
 
----Sets the color of this task's outline (if enabled.)
+---Sets the color of this task's background.
 ---
----If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
----@param col? Vector3
-function TextTask:setOutlineColor(col) end
-
----If `r`, `g`, or `b` are `nil`, they will default to `0`.
+---If `r`, `g`, or `b` are `nil`, they will default to `0`.  
+---If `a` is `nil`, it will default to either `0.24705` or the Text Background Opacity setting if Text Background is set
+---to "Everywhere".
+---@generic self
+---@param self self
 ---@param r? number
 ---@param g? number
 ---@param b? number
-function TextTask:setOutlineColor(r, g, b) end
+---@param a? number
+---@return self
+function TextTask:setBackgroundColor(r, g, b, a) end
 
----Sets if this task should be anchored right.  
----Does nothing if this task is centered.
----
----If `state` is `nil`, it will default to `false`.
----@param state? boolean
-function TextTask:setRight(state) end
+---Sets the opacity of this task.
+---@generic self
+---@param self self
+---@param opacity number
+---@return self
+function TextTask:setOpacity(opacity) end
 
----Sets if this task's text should have a shadow.
----
----This has no immediate effect if this task also has an outline.
----
----If `state` is `nil`, it will default to `false`.
----@*error The shadow fails to actually stick to the text properly in world space.
----@param state? boolean
-function TextTask:setShadow(state) end
-
----Sets this task's text.
----
----If `text` is `nil`, it will default to `""`.
----@param text? string
-function TextTask:setText(text) end
-
-
----===== CHAINED =====---
-
----Sets if this task's text should be centered on its pivot similar to nameplates.
+---Sets if this task's text should have an outline.  
+---Text shadows are not rendered if this is enabled.
 ---
 ---If `state` is `nil`, it will default to `false`.
 ---@generic self
 ---@param self self
 ---@param state? boolean
 ---@return self
-function TextTask:centered(state) end
+function TextTask:setOutline(state) end
 
----Sets if this task's text should have an outline.
+---Sets the color of this task's outline (if enabled.)
 ---
----Due to how this effect works, the text will also be emissive and shadows will not work.
+---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
+---@param color? Vector3
+---@return self
+function TextTask:setOutlineColor(color) end
+
+---Sets the color of this task's outline (if enabled.)
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@return self
+function TextTask:setOutlineColor(r, g, b) end
+
+---Sets if this task is able to be seen through everything.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function TextTask:setSeeThrough(state) end
+
+---Sets if this task's text should have a shadow.
+---
+---This has no immediate effect if this task also has an outline.
+---
+---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function TextTask:setShadow(state) end
+
+---Sets this task's text.
+---
+---If `text` is `nil`, nothing will render.
+---@generic self
+---@param self self
+---@param text? string
+---@return self
+function TextTask:setText(text) end
+
+---Sets the maximum width of this task in text-pixels.
+---@generic self
+---@param self self
+---@param width? integer
+---@return self
+function TextTask:setWidth(width) end
+
+---Sets if this task's text should wrap around if it gets too long.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function TextTask:setWrap(state) end
+
+
+---===== CHAINED =====---
+
+---Sets the horizontal alignment of the text in this task.
+---@generic self
+---@param self self
+---@param align "LEFT" | "CENTER" | "RIGHT"
+---@return self
+function TextTask:alignment(align) end
+
+---Sets if this task has a background.
+---
+---If `state` is `nil`, it will default to `false`
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function TextTask:background(state) end
+
+---Sets the color of this task's background.  
+---If a `Vector3` is given, it is augmented with the `a` value defined below.
+---
+---If `color` is `nil`, it will default to `⟨0, 0, 0, a⟩` where `a` is either `0.24705` or the Text Background Opacity
+---setting if Text Background is set to "Everywhere".
+---@generic self
+---@param self self
+---@param color? Vector3 | Vector4
+---@return self
+function TextTask:backgroundColor(color) end
+
+---Sets the color of this task's background.
+---
+---If `r`, `g`, or `b` are `nil`, they will default to `0`.  
+---If `a` is `nil`, it will default to either `0.24705` or the Text Background Opacity setting if Text Background is set
+---to "Everywhere".
+---@generic self
+---@param self self
+---@param r? number
+---@param g? number
+---@param b? number
+---@param a? number
+---@return self
+function TextTask:backgroundColor(r, g, b, a) end
+
+---Sets the opacity of this task.
+---@generic self
+---@param self self
+---@param opacity number
+---@return self
+function TextTask:opacity(opacity) end
+
+---Sets if this task's text should have an outline.  
+---Text shadows are not rendered if this is enabled.
 ---
 ---If `state` is `nil`, it will default to `false`.
 ---@generic self
@@ -339,13 +980,15 @@ function TextTask:outline(state) end
 
 ---Sets the color of this task's outline (if enabled.)
 ---
----If `col` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---If `color` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@generic self
 ---@param self self
----@param col? Vector3
+---@param color? Vector3
 ---@return self
-function TextTask:outlineColor(col) end
+function TextTask:outlineColor(color) end
 
+---Sets the color of this task's outline (if enabled.)
+---
 ---If `r`, `g`, or `b` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
@@ -355,22 +998,18 @@ function TextTask:outlineColor(col) end
 ---@return self
 function TextTask:outlineColor(r, g, b) end
 
----Sets if this task should be anchored right.  
----Does nothing if this task is centered.
----
----If `state` is `nil`, it will default to `false`.
+---Sets if this task is able to be seen through everything.
 ---@generic self
 ---@param self self
 ---@param state? boolean
 ---@return self
-function TextTask:right(state) end
+function TextTask:seeThrough(state) end
 
 ---Sets if this task's text should have a shadow.
 ---
 ---This has no immediate effect if this task also has an outline.
 ---
 ---If `state` is `nil`, it will default to `false`.
----@*error The shadow fails to actually stick to the text properly in world space.
 ---@generic self
 ---@param self self
 ---@param state? boolean
@@ -379,9 +1018,23 @@ function TextTask:shadow(state) end
 
 ---Sets this task's text.
 ---
----If `text` is `nil`, it will default to `""`.
+---If `text` is `nil`, nothing will render.
 ---@generic self
 ---@param self self
 ---@param text? string
 ---@return self
 function TextTask:text(text) end
+
+---Sets the maximum width of this task in text-pixels.
+---@generic self
+---@param self self
+---@param width? integer
+---@return self
+function TextTask:width(width) end
+
+---Sets if this task's text should wrap around if it gets too long.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function TextTask:wrap(state) end

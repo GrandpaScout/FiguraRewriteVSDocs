@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  MINECRAFT                                                                                   ---
----==============================================================================================---
+---==================================================================================================================---
+---  MINECRAFT                                                                                                       ---
+---==================================================================================================================---
 
 -- This enum follows a *very* specific order.
 -- * The order that Minecraft sub-screens are listed at the fabric maven page,
@@ -92,7 +92,7 @@
 ---| "net.minecraft.class_3934" @ HandledScreen->CartographyTableScreen
 ---**Minecraft:** Crafting Table
 ---| "net.minecraft.class_479"  @ HandledScreen->CraftingScreen
----**Minecraft:** Echanting Table
+---**Minecraft:** Enchanting Table
 ---| "net.minecraft.class_486"  @ HandledScreen->EnchantmentScreen
 ---**Minecraft:** Anvil
 ---| "net.minecraft.class_471"  @ HandledScreen->ForgingScreen->AnvilScreen

@@ -1,4 +1,4 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
@@ -6,13 +6,13 @@
 ---  KEYBINDAPI                                                                                  ---
 ---==============================================================================================---
 
----A custom keybind that can trigger code.
+---An API for handling custom keybinds.
 ---
 ---> ***
 ---
 ---Create a new keybind with:
 ---```lua
----local kb_var = <KeybindAPI>:create("Keybind Name", "key.keyboard.keycode")
+---local kb_var = <KeybindAPI>:newKeybind("Keybind Name", "key.keyboard.keycode")
 ---```
 ---Keybinds can be bound to run lua code with:
 ---```
@@ -61,6 +61,10 @@ function KeybindAPI:newKeybind(name, key, gui, override) end
 function KeybindAPI:of(name, key, gui) end
 
 ---===== GETTERS =====---
+
+---Gets a table with all of this avatar's registered keybinds.
+---@return {[string]?: Keybind}
+function KeybindAPI:getKeybinds() end
 
 ---Gets the key code of the key bound to a Minecraft keybind.
 ---@param keybind Minecraft.keybind

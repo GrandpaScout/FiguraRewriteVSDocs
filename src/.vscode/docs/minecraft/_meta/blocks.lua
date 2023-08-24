@@ -1,9 +1,11 @@
----A valid Minecraft block id.
+---@meta _
+
 ---@alias Minecraft.blockID string
 ---| "minecraft:acacia_button"                      # Acacia Button
 ---| "minecraft:acacia_door"                        # Acacia Door
 ---| "minecraft:acacia_fence"                       # Acacia Fence
 ---| "minecraft:acacia_fence_gate"                  # Acacia Fence Gate
+---| "minecraft:acacia_hanging_sign"                # Acacia Hanging Sign
 ---| "minecraft:acacia_leaves"                      # Acacia Leaves
 ---| "minecraft:acacia_log"                         # Acacia Log
 ---| "minecraft:acacia_planks"                      # Acacia Planks
@@ -13,6 +15,7 @@
 ---| "minecraft:acacia_slab"                        # Acacia Slab
 ---| "minecraft:acacia_stairs"                      # Acacia Stairs
 ---| "minecraft:acacia_trapdoor"                    # Acacia Trapdoor
+---| "minecraft:acacia_wall_hanging_sign"           # Acacia Wall Hanging Sign
 ---| "minecraft:acacia_wall_sign"                   # Acacia Wall Sign
 ---| "minecraft:acacia_wood"                        # Acacia Wood
 ---| "minecraft:activator_rail"                     # Activator Rail
@@ -32,7 +35,24 @@
 ---| "minecraft:azalea_leaves"                      # Azalea Leaves
 ---| "minecraft:azure_bluet"                        # Azure Bluet
 ---| "minecraft:bamboo"                             # Bamboo
+---| "minecraft:bamboo_block"                       # Block of Bamboo
+---| "minecraft:bamboo_button"                      # Bamboo Button
+---| "minecraft:bamboo_door"                        # Bamboo Door
+---| "minecraft:bamboo_fence"                       # Bamboo Fence
+---| "minecraft:bamboo_fence_gate"                  # Bamboo Fence Gate
+---| "minecraft:bamboo_hanging_sign"                # Bamboo Hanging Sign
+---| "minecraft:bamboo_mosaic"                      # Bamboo Mosaic
+---| "minecraft:bamboo_mosaic_slab"                 # Bamboo Mosaic Slab
+---| "minecraft:bamboo_mosaic_stairs"               # Bamboo Mosaic
+---| "minecraft:bamboo_planks"                      # Bamboo Planks
+---| "minecraft:bamboo_pressure_plate"              # Bamboo Pressure Plate
 ---| "minecraft:bamboo_sapling"                     # Bamboo Shoot
+---| "minecraft:bamboo_sign"                        # Bamboo Sign
+---| "minecraft:bamboo_slab"                        # Bamboo Slab
+---| "minecraft:bamboo_stairs"                      # Bamboo Stairs
+---| "minecraft:bamboo_trapdoor"                    # Bamboo Trapdoor
+---| "minecraft:bamboo_wall_hanging_sign"           # Bamboo Wall Hanging Sign
+---| "minecraft:bamboo_wall_sign"                   # Bamboo Wall Sign
 ---| "minecraft:barrel"                             # Barrel
 ---| "minecraft:barrier"                            # Barrier
 ---| "minecraft:basalt"                             # Basalt
@@ -48,6 +68,7 @@
 ---| "minecraft:birch_door"                         # Birch Door
 ---| "minecraft:birch_fence"                        # Birch Fence
 ---| "minecraft:birch_fence_gate"                   # Birch Fence Gate
+---| "minecraft:birch_hanging_sign"                 # Birch Hanging Sign
 ---| "minecraft:birch_leaves"                       # Birch Leaves
 ---| "minecraft:birch_log"                          # Birch Log
 ---| "minecraft:birch_planks"                       # Birch Planks
@@ -57,6 +78,7 @@
 ---| "minecraft:birch_slab"                         # Birch Slab
 ---| "minecraft:birch_stairs"                       # Birch Stairs
 ---| "minecraft:birch_trapdoor"                     # Birch Trapdoor
+---| "minecraft:birch_wall_hanging_sign"            # Birch Wall Hanging Sign
 ---| "minecraft:birch_wall_sign"                    # Birch Wall Sign
 ---| "minecraft:birch_wood"                         # Birch Wood
 ---| "minecraft:black_banner"                       # Black Banner
@@ -130,6 +152,7 @@
 ---| "minecraft:cactus"                             # Cactus
 ---| "minecraft:cake"                               # Cake
 ---| "minecraft:calcite"                            # Calcite
+---| "minecraft:calibrated_sculk_sensor"            # Calibrated Sculk Sensor
 ---| "minecraft:campfire"                           # Campfire
 ---| "minecraft:candle"                             # Candle
 ---| "minecraft:candle_cake"                        # Cake with Candle
@@ -142,8 +165,24 @@
 ---| "minecraft:cave_vines_plant"                   # Cave Vines Plant
 ---| "minecraft:chain"                              # Chain
 ---| "minecraft:chain_command_block"                # Chain Command Block
+---| "minecraft:cherry_button"                      # Cherry Button
+---| "minecraft:cherry_door"                        # Cherry Door
+---| "minecraft:cherry_fence"                       # Cherry Fence
+---| "minecraft:cherry_fence_gate"                  # Cherry Fence Gate
+---| "minecraft:cherry_hanging_sign"                # Cherry Hanging Sign
+---| "minecraft:cherry_leaves"                      # Cherry Leaves
+---| "minecraft:cherry_planks"                      # Cherry Planks
+---| "minecraft:cherry_pressure_plate"              # Cherry Pressure Plate
+---| "minecraft:cherry_sapling"                     # Cherry Sapling
+---| "minecraft:cherry_sign"                        # Cherry Sign
+---| "minecraft:cherry_slab"                        # Cherry Slab
+---| "minecraft:cherry_stairs"                      # Cherry Stairs
+---| "minecraft:cherry_trapdoor"                    # Cherry Trapdoor
+---| "minecraft:cherry_wall_hanging_sign"           # Cherry Wall Hanging Sign
+---| "minecraft:cherry_wall_sign"                   # Cherry Wall Sign
 ---| "minecraft:chest"                              # Chest
 ---| "minecraft:chipped_anvil"                      # Chipped Anvil
+---| "minecraft:chiseled_bookshelf"                 # Chiseled Bookshelf
 ---| "minecraft:chiseled_deepslate"                 # Chiseled Deepslate
 ---| "minecraft:chiseled_nether_bricks"             # Chiseled Nether Bricks
 ---| "minecraft:chiseled_polished_blackstone"       # Chiseled Polished Blackstone
@@ -187,6 +226,7 @@
 ---| "minecraft:crimson_fence"                      # Crimson Fence
 ---| "minecraft:crimson_fence_gate"                 # Crimson Fence Gate
 ---| "minecraft:crimson_fungus"                     # Crimson Fungus
+---| "minecraft:crimson_hanging_sign"               # Crimson Hanging Sign
 ---| "minecraft:crimson_hyphae"                     # Crimson Hyphae
 ---| "minecraft:crimson_nylium"                     # Crimson Nylium
 ---| "minecraft:crimson_planks"                     # Crimson Planks
@@ -197,6 +237,7 @@
 ---| "minecraft:crimson_stairs"                     # Crimson Stairs
 ---| "minecraft:crimson_stem"                       # Crimson Stem
 ---| "minecraft:crimson_trapdoor"                   # Crimson Trapdoor
+---| "minecraft:crimson_wall_hanging_sign"          # Crimson Wall Hanging Sign
 ---| "minecraft:crimson_wall_sign"                  # Crimson Wall Sign
 ---| "minecraft:crying_obsidian"                    # Crying Obsidian
 ---| "minecraft:cut_copper"                         # Cut Copper
@@ -226,6 +267,7 @@
 ---| "minecraft:dark_oak_door"                      # Dark Oak Door
 ---| "minecraft:dark_oak_fence"                     # Dark Oak Fence
 ---| "minecraft:dark_oak_fence_gate"                # Dark Oak Fence Gate
+---| "minecraft:dark_oak_hanging_sign"              # Dark Oak Hanging Sign
 ---| "minecraft:dark_oak_leaves"                    # Dark Oak Leaves
 ---| "minecraft:dark_oak_log"                       # Dark Oak Log
 ---| "minecraft:dark_oak_planks"                    # Dark Oak Planks
@@ -235,6 +277,7 @@
 ---| "minecraft:dark_oak_slab"                      # Dark Oak Slab
 ---| "minecraft:dark_oak_stairs"                    # Dark Oak Stairs
 ---| "minecraft:dark_oak_trapdoor"                  # Dark Oak Trapdoor
+---| "minecraft:dark_oak_wall_hanging_sign"         # Dark Oak Wall Hanging Sign
 ---| "minecraft:dark_oak_wall_sign"                 # Dark Oak Wall Sign
 ---| "minecraft:dark_oak_wood"                      # Dark Oak Wood
 ---| "minecraft:dark_prismarine"                    # Dark Prismarine
@@ -323,6 +366,7 @@
 ---| "minecraft:flower_pot"                         # Flower Pot
 ---| "minecraft:flowering_azalea"                   # Flowering Azalea
 ---| "minecraft:flowering_azalea_leaves"            # Flowering Azalea Leaves
+---| "minecraft:frogspawn"                          # Frogspawn
 ---| "minecraft:frosted_ice"                        # Frosted Ice
 ---| "minecraft:furnace"                            # Furnace
 ---| "minecraft:gilded_blackstone"                  # Gilded Blackstone
@@ -398,6 +442,7 @@
 ---| "minecraft:jungle_door"                        # Jungle Door
 ---| "minecraft:jungle_fence"                       # Jungle Fence
 ---| "minecraft:jungle_fence_gate"                  # Jungle Fence Gate
+---| "minecraft:jungle_hanging_sign"                # Jungle Hanging Sign
 ---| "minecraft:jungle_leaves"                      # Jungle Leaves
 ---| "minecraft:jungle_log"                         # Jungle Log
 ---| "minecraft:jungle_planks"                      # Jungle Planks
@@ -407,6 +452,7 @@
 ---| "minecraft:jungle_slab"                        # Jungle Slab
 ---| "minecraft:jungle_stairs"                      # Jungle Stairs
 ---| "minecraft:jungle_trapdoor"                    # Jungle Trapdoor
+---| "minecraft:jungle_wall_hanging_sign"           # Jungle Wall Hanging Sign
 ---| "minecraft:jungle_wall_sign"                   # Jungle Wall Sign
 ---| "minecraft:jungle_wood"                        # Jungle Wood
 ---| "minecraft:kelp"                               # Kelp
@@ -486,6 +532,24 @@
 ---| "minecraft:magenta_wall_banner"                # Magenta Wall Banner
 ---| "minecraft:magenta_wool"                       # Magenta Wool
 ---| "minecraft:magma_block"                        # Magma Block
+---| "minecraft:mangrove_button"                    # Mangrove Button
+---| "minecraft:mangrove_door"                      # Mangrove Door
+---| "minecraft:mangrove_fence"                     # Mangrove Fence
+---| "minecraft:mangrove_fence_gate"                # Mangrove Fence Gate
+---| "minecraft:mangrove_hanging_sign"              # Mangrove Hanging Sign
+---| "minecraft:mangrove_leaves"                    # Mangrove Leaves
+---| "minecraft:mangrove_log"                       # Mangrove Log
+---| "minecraft:mangrove_planks"                    # Mangrove Planks
+---| "minecraft:mangrove_pressure_plate"            # Mangrove Pressure Plate
+---| "minecraft:mangrove_propagule"                 # Mangrove Propagule
+---| "minecraft:mangrove_roots"                     # Mangrove Roots
+---| "minecraft:mangrove_sign"                      # Mangrove Sign
+---| "minecraft:mangrove_slab"                      # Mangrove Slab
+---| "minecraft:mangrove_stairs"                    # Mangrove Stairs
+---| "minecraft:mangrove_trapdoor"                  # Mangrove Trapdoor
+---| "minecraft:mangrove_wall_hanging_sign"         # Mangrove Wall Hanging Sign
+---| "minecraft:mangrove_wall_sign"                 # Mangrove Wall Sign
+---| "minecraft:mangrove_wood"                      # Mangrove Wood
 ---| "minecraft:medium_amethyst_bud"                # Medium Amethyst Bud
 ---| "minecraft:melon"                              # Melon
 ---| "minecraft:melon_stem"                         # Melon Stem
@@ -500,6 +564,12 @@
 ---| "minecraft:mossy_stone_brick_wall"             # Mossy Stone Brick Wall
 ---| "minecraft:mossy_stone_bricks"                 # Mossy Stone Bricks
 ---| "minecraft:moving_piston"                      # Moving Piston
+---| "minecraft:mud"                                # Mud
+---| "minecraft:mud_brick_slab"                     # Mud Brick Slab
+---| "minecraft:mud_brick_stairs"                   # Mud Brick Stairs
+---| "minecraft:mud_brick_wall"                     # Mud Brick Wall
+---| "minecraft:mud_bricks"                         # Mud Bricks
+---| "minecraft:muddy_mangrove_roots"               # Muddy Mangrove Roots
 ---| "minecraft:mushroom_stem"                      # Mushroom Stem
 ---| "minecraft:mycelium"                           # Mycelium
 ---| "minecraft:nether_brick_fence"                 # Nether Brick Fence
@@ -520,6 +590,7 @@
 ---| "minecraft:oak_door"                           # Oak Door
 ---| "minecraft:oak_fence"                          # Oak Fence
 ---| "minecraft:oak_fence_gate"                     # Oak Fence Gate
+---| "minecraft:oak_hanging_sign"                   # Oak Hanging Sign
 ---| "minecraft:oak_leaves"                         # Oak Leaves
 ---| "minecraft:oak_log"                            # Oak Log
 ---| "minecraft:oak_planks"                         # Oak Planks
@@ -529,10 +600,12 @@
 ---| "minecraft:oak_slab"                           # Oak Slab
 ---| "minecraft:oak_stairs"                         # Oak Stairs
 ---| "minecraft:oak_trapdoor"                       # Oak Trapdoor
+---| "minecraft:oak_wall_hanging_sign"              # Oak Wall Hanging Sign
 ---| "minecraft:oak_wall_sign"                      # Oak Wall Sign
 ---| "minecraft:oak_wood"                           # Oak Wood
 ---| "minecraft:observer"                           # Observer
 ---| "minecraft:obsidian"                           # Obsidian
+---| "minecraft:ochre_froglight"                    # Ochre Froglight
 ---| "minecraft:orange_banner"                      # Orange Banner
 ---| "minecraft:orange_bed"                         # Orange Bed
 ---| "minecraft:orange_candle"                      # Orange Candle
@@ -554,8 +627,12 @@
 ---| "minecraft:oxidized_cut_copper_slab"           # Oxidized Cut Copper Slab
 ---| "minecraft:oxidized_cut_copper_stairs"         # Oxidized Cut Copper Stairs
 ---| "minecraft:packed_ice"                         # Packed Ice
+---| "minecraft:packed_mud"                         # Packed Mud
+---| "minecraft:pearlescent_froglight"              # Pearlescent Froglight
 ---| "minecraft:peony"                              # Peony
 ---| "minecraft:petrified_oak_slab"                 # Petrified Oak Slab
+---| "minecraft:piglin_head"                        # Piglin Head
+---| "minecraft:piglin_wall_head"                   # Piglin Wall Head
 ---| "minecraft:pink_banner"                        # Pink Banner
 ---| "minecraft:pink_bed"                           # Pink Bed
 ---| "minecraft:pink_candle"                        # Pink Candle
@@ -564,6 +641,7 @@
 ---| "minecraft:pink_concrete"                      # Pink Concrete
 ---| "minecraft:pink_concrete_powder"               # Pink Concrete Powder
 ---| "minecraft:pink_glazed_terracotta"             # Pink Glazed Terracotta
+---| "minecraft:pink_petals"                        # Pink Petals
 ---| "minecraft:pink_shulker_box"                   # Pink Shulker Box
 ---| "minecraft:pink_stained_glass"                 # Pink Stained Glass
 ---| "minecraft:pink_stained_glass_pane"            # Pink Stained Glass Pane
@@ -573,6 +651,7 @@
 ---| "minecraft:pink_wool"                          # Pink Wool
 ---| "minecraft:piston"                             # Piston
 ---| "minecraft:piston_head"                        # Piston Head
+---| "minecraft:pitcher_plant"                      # Pitcher Plant
 ---| "minecraft:player_head"                        # Player Head
 ---| "minecraft:player_wall_head"                   # Player Wall Head
 ---| "minecraft:podzol"                             # Podzol
@@ -612,6 +691,7 @@
 ---| "minecraft:potted_blue_orchid"                 # Potted Blue Orchid
 ---| "minecraft:potted_brown_mushroom"              # Potted Brown Mushroom
 ---| "minecraft:potted_cactus"                      # Potted Cactus
+---| "minecraft:potted_cherry_sapling"              # Potted Cherry Sapling
 ---| "minecraft:potted_cornflower"                  # Potted Cornflower
 ---| "minecraft:potted_crimson_fungus"              # Potted Crimson Fungus
 ---| "minecraft:potted_crimson_roots"               # Potted Crimson Roots
@@ -622,6 +702,7 @@
 ---| "minecraft:potted_flowering_azalea_bush"       # Potted Flowering Azalea
 ---| "minecraft:potted_jungle_sapling"              # Potted Jungle Sapling
 ---| "minecraft:potted_lily_of_the_valley"          # Potted Lily of the Valley
+---| "minecraft:potted_mangrove_propagule"          # Potted Mangrove Propagule
 ---| "minecraft:potted_oak_sapling"                 # Potted Oak Sapling
 ---| "minecraft:potted_orange_tulip"                # Potted Orange Tulip
 ---| "minecraft:potted_oxeye_daisy"                 # Potted Oxeye Daisy
@@ -630,6 +711,7 @@
 ---| "minecraft:potted_red_mushroom"                # Potted Red Mushroom
 ---| "minecraft:potted_red_tulip"                   # Potted Red Tulip
 ---| "minecraft:potted_spruce_sapling"              # Potted Spruce Sapling
+---| "minecraft:potted_torchflower"                 # Potted Torchflower
 ---| "minecraft:potted_warped_fungus"               # Potted Warped Fungus
 ---| "minecraft:potted_warped_roots"                # Potted Warped Roots
 ---| "minecraft:potted_white_tulip"                 # Potted White Tulip
@@ -705,6 +787,7 @@
 ---| "minecraft:redstone_torch"                     # Redstone Torch
 ---| "minecraft:redstone_wall_torch"                # Redstone Wall Torch
 ---| "minecraft:redstone_wire"                      # Redstone Wire
+---| "minecraft:reinforced_deepslate"               # Reinforced Deepslate
 ---| "minecraft:repeater"                           # Redstone Repeater
 ---| "minecraft:repeating_command_block"            # Repeating Command Block
 ---| "minecraft:respawn_anchor"                     # Respawn Anchor
@@ -716,7 +799,11 @@
 ---| "minecraft:sandstone_stairs"                   # Sandstone Stairs
 ---| "minecraft:sandstone_wall"                     # Sandstone Wall
 ---| "minecraft:scaffolding"                        # Scaffolding
+---| "minecraft:sculk"                              # Sculk
+---| "minecraft:sculk_catalyst"                     # Sculk Catalyst
 ---| "minecraft:sculk_sensor"                       # Sculk Sensor
+---| "minecraft:sculk_shrieker"                     # Sculk Shrieker
+---| "minecraft:sculk_vein"                         # Sculk Vein
 ---| "minecraft:sea_lantern"                        # Sea Lantern
 ---| "minecraft:sea_pickle"                         # Sea Pickle
 ---| "minecraft:seagrass"                           # Seagrass
@@ -741,6 +828,7 @@
 ---| "minecraft:smooth_sandstone_stairs"            # Smooth Sandstone Stairs
 ---| "minecraft:smooth_stone"                       # Smooth Stone
 ---| "minecraft:smooth_stone_slab"                  # Smooth Stone Slab
+---| "minecraft:sniffer_egg"                        # Sniffer Egg
 ---| "minecraft:snow"                               # Snow
 ---| "minecraft:snow_block"                         # Snow Block
 ---| "minecraft:soul_campfire"                      # Soul Campfire
@@ -750,13 +838,14 @@
 ---| "minecraft:soul_soil"                          # Soul Soil
 ---| "minecraft:soul_torch"                         # Soul Torch
 ---| "minecraft:soul_wall_torch"                    # Soul Wall Torch
----| "minecraft:spawner"                            # Spawner
+---| "minecraft:spawner"                            # Monster Spawner
 ---| "minecraft:sponge"                             # Sponge
 ---| "minecraft:spore_blossom"                      # Spore Blossom
 ---| "minecraft:spruce_button"                      # Spruce Button
 ---| "minecraft:spruce_door"                        # Spruce Door
 ---| "minecraft:spruce_fence"                       # Spruce Fence
 ---| "minecraft:spruce_fence_gate"                  # Spruce Fence Gate
+---| "minecraft:spruce_hanging_sign"                # Spruce Hanging Sign
 ---| "minecraft:spruce_leaves"                      # Spruce Leaves
 ---| "minecraft:spruce_log"                         # Spruce Log
 ---| "minecraft:spruce_planks"                      # Spruce Planks
@@ -766,6 +855,7 @@
 ---| "minecraft:spruce_slab"                        # Spruce Slab
 ---| "minecraft:spruce_stairs"                      # Spruce Stairs
 ---| "minecraft:spruce_trapdoor"                    # Spruce Trapdoor
+---| "minecraft:spruce_wall_hanging_sign"           # Spruce Wall Hanging Sign
 ---| "minecraft:spruce_wall_sign"                   # Spruce Wall Sign
 ---| "minecraft:spruce_wood"                        # Spruce Wood
 ---| "minecraft:sticky_piston"                      # Sticky Piston
@@ -781,6 +871,7 @@
 ---| "minecraft:stonecutter"                        # Stonecutter
 ---| "minecraft:stripped_acacia_log"                # Stripped Acacia Log
 ---| "minecraft:stripped_acacia_wood"               # Stripped Acacia Wood
+---| "minecraft:stripped_bamboo_block"              # Block of Stripped Bamboo
 ---| "minecraft:stripped_birch_log"                 # Stripped Birch Log
 ---| "minecraft:stripped_birch_wood"                # Stripped Birch Wood
 ---| "minecraft:stripped_crimson_hyphae"            # Stripped Crimson Hyphae
@@ -789,6 +880,8 @@
 ---| "minecraft:stripped_dark_oak_wood"             # Stripped Dark Oak Wood
 ---| "minecraft:stripped_jungle_log"                # Stripped Jungle Log
 ---| "minecraft:stripped_jungle_wood"               # Stripped Jungle Wood
+---| "minecraft:stripped_mangrove_log"              # Stripped Mangrove Log
+---| "minecraft:stripped_mangrove_wood"             # Stripped Mangrove Wood
 ---| "minecraft:stripped_oak_log"                   # Stripped Oak Log
 ---| "minecraft:stripped_oak_wood"                  # Stripped Oak Wood
 ---| "minecraft:stripped_spruce_log"                # Stripped Spruce Log
@@ -799,6 +892,8 @@
 ---| "minecraft:structure_void"                     # Structure Void
 ---| "minecraft:sugar_cane"                         # Sugar Cane
 ---| "minecraft:sunflower"                          # Sunflower
+---| "minecraft:suspicious_gravel"                  # Suspicious Gravel
+---| "minecraft:suspicious_sand"                    # Suspicious Sand
 ---| "minecraft:sweet_berry_bush"                   # Sweet Berry Bush
 ---| "minecraft:tall_grass"                         # Tall Grass
 ---| "minecraft:tall_seagrass"                      # Tall Seagrass
@@ -807,6 +902,8 @@
 ---| "minecraft:tinted_glass"                       # Tinted Glass
 ---| "minecraft:tnt"                                # TNT
 ---| "minecraft:torch"                              # Torch
+---| "minecraft:torchflower"                        # Torchflower
+---| "minecraft:torchflower_crop"                   # Torchflower Crop
 ---| "minecraft:trapped_chest"                      # Trapped Chest
 ---| "minecraft:tripwire"                           # Tripwire
 ---| "minecraft:tripwire_hook"                      # Tripwire Hook
@@ -818,6 +915,7 @@
 ---| "minecraft:turtle_egg"                         # Turtle Egg
 ---| "minecraft:twisting_vines"                     # Twisting Vines
 ---| "minecraft:twisting_vines_plant"               # Twisting Vines Plant
+---| "minecraft:verdant_froglight"                  # Verdant Froglight
 ---| "minecraft:vine"                               # Vines
 ---| "minecraft:void_air"                           # Void Air
 ---| "minecraft:wall_torch"                         # Wall Torch
@@ -826,6 +924,7 @@
 ---| "minecraft:warped_fence"                       # Warped Fence
 ---| "minecraft:warped_fence_gate"                  # Warped Fence Gate
 ---| "minecraft:warped_fungus"                      # Warped Fungus
+---| "minecraft:warped_hanging_sign"                # Warped Hanging Sign
 ---| "minecraft:warped_hyphae"                      # Warped Hyphae
 ---| "minecraft:warped_nylium"                      # Warped Nylium
 ---| "minecraft:warped_planks"                      # Warped Planks
@@ -836,6 +935,7 @@
 ---| "minecraft:warped_stairs"                      # Warped Stairs
 ---| "minecraft:warped_stem"                        # Warped Stem
 ---| "minecraft:warped_trapdoor"                    # Warped Trapdoor
+---| "minecraft:warped_wall_hanging_sign"           # Warped Wall Hanging Sign
 ---| "minecraft:warped_wall_sign"                   # Warped Wall Sign
 ---| "minecraft:warped_wart_block"                  # Warped Wart Block
 ---| "minecraft:water"                              # Water

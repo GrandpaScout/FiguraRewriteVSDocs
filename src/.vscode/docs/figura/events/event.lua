@@ -1,10 +1,10 @@
----@meta
+---@meta _
 ---@diagnostic disable: duplicate-set-field
 
 
----==============================================================================================---
----  EVENT                                                                                       ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT                                                                                                           ---
+---==================================================================================================================---
 
 ---A hook for a specific event in Minecraft.
 ---
@@ -23,8 +23,11 @@ function Event:clear() end
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func function
 ---@param name? string
+---@return self
 function Event:register(func, name) end
 
 ---Removes *all* functions with the given name from this event.
@@ -34,12 +37,18 @@ function Event:register(func, name) end
 ---@return integer
 function Event:remove(name) end
 
+---===== GETTERS =====---
 
----==============================================================================================---
----  EVENT.GENERIC extends EVENT                                                                 ---
----==============================================================================================---
+---Gets the amount of callbacks registered to this event with the given name.
+---@param name string
+---@return integer
+function Event:getRegisteredCount(name) end
 
----A generic event with no parameters or returns.
+
+---==================================================================================================================---
+---  EVENT.GENERIC extends EVENT                                                                                     ---
+---==================================================================================================================---
+
 ---@class Event.Generic: Event
 local EventGeneric
 
@@ -51,39 +60,20 @@ local EventGeneric
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.Generic.func
 ---@param name? string
+---@return self
 function EventGeneric:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.RENDER extends EVENT                                                                  ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.ARROWRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
 
----A generic render event with a `delta` parameter and a `ctx` parameter.
----@class Event.Render: Event
-local EventRender
-
-
----===== METHODS =====---
-
----Registers a function to be run when this event triggers.
----
----Functions are run in the order they are registered.
----
----If a name is given, you can choose to remove the function later with `:remove(name)`
----@param func Event.Render.func
----@param name? string
-function EventRender:register(func, name) end
-
-
----==============================================================================================---
----  EVENT.WORLDRENDER extends EVENT                                                             ---
----==============================================================================================---
-
----A render event with a single `delta` parameter.
----@class Event.WorldRender: Event
-local EventWorldRender
+---@class Event.ArrowRender: Event
+local EventArrowRender
 
 
 ---===== METHODS =====---
@@ -93,18 +83,20 @@ local EventWorldRender
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
----@param func Event.WorldRender.func
+---@generic self
+---@param self self
+---@param func Event.ArrowRender.func
 ---@param name? string
-function EventWorldRender:register(func, name) end
+---@return self
+function EventArrowRender:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.SKULLRENDER extends EVENT                                                             ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.CHARTYPED extends EVENT                                                                                   ---
+---==================================================================================================================---
 
----An event with a `delta` parameter, a `block` parameter, an `item` parameter, and a single return.
----@class Event.SkullRender: Event
-local EventSkullRender
+---@class Event.CharTyped: Event
+local EventCharTyped
 
 
 ---===== METHODS =====---
@@ -114,16 +106,87 @@ local EventSkullRender
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
----@param func Event.SkullRender.func
+---@generic self
+---@param self self
+---@param func Event.CharTyped.func
 ---@param name? string
-function EventSkullRender:register(func, name) end
+---@return self
+function EventCharTyped:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.MOUSEMOVE extends EVENT                                                               ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.CHATRECEIVEMESSAGE extends EVENT                                                                          ---
+---==================================================================================================================---
 
----An event with a `x` parameter, a `y` parameter, and a single return.
+---@class Event.ChatReceiveMessage: Event
+local EventChatReceiveMessage
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.ChatReceiveMessage.func
+---@param name? string
+---@return self
+function EventChatReceiveMessage:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.CHATSENDMESSAGE extends EVENT                                                                             ---
+---==================================================================================================================---
+
+---@class Event.ChatSendMessage: Event
+local EventChatSendMessage
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.ChatSendMessage.func
+---@param name? string
+---@return self
+function EventChatSendMessage:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.ITEMRENDER extends EVENT                                                                                  ---
+---==================================================================================================================---
+
+---@class Event.ItemRender: Event
+local EventItemRender
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.ItemRender.func
+---@param name? string
+---@return self
+function EventItemRender:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.MOUSEMOVE extends EVENT                                                                                   ---
+---==================================================================================================================---
+
 ---@class Event.MouseMove: Event
 local EventMouseMove
 
@@ -134,17 +197,18 @@ local EventMouseMove
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.MouseMove.func
 ---@param name? string
+---@return self
 function EventMouseMove:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.MOUSEPRESS extends EVENT                                                               ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.MOUSEPRESS extends EVENT                                                                                  ---
+---==================================================================================================================---
 
----An event with a `button` parameter, a `state` parameter, a `modifiers` parameter, and a single
----return.
 ---@class Event.MousePress: Event
 local EventMousePress
 
@@ -155,16 +219,18 @@ local EventMousePress
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.MousePress.func
 ---@param name? string
+---@return self
 function EventMousePress:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.MOUSESCROLL extends EVENT                                                             ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.MOUSESCROLL extends EVENT                                                                                 ---
+---==================================================================================================================---
 
----An event with a `dir` parameter and a single return.
 ---@class Event.MouseScroll: Event
 local EventMouseScroll
 
@@ -176,17 +242,110 @@ local EventMouseScroll
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.MouseScroll.func
 ---@param name? string
+---@return self
 function EventMouseScroll:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.KEYPRESS extends EVENT                                                               ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.ONPLAYSOUND extends EVENT                                                                                 ---
+---==================================================================================================================---
 
----An event with a `key` parameter, a `state` parameter, a `modifiers` parameter, and a single
----return.
+---@class Event.OnPlaySound: Event
+local EventOnPlaySound
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.OnPlaySound.func
+---@param name? string
+---@return self
+function EventOnPlaySound:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.RENDER extends EVENT                                                                                      ---
+---==================================================================================================================---
+
+---@class Event.Render: Event
+local EventRender
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.Render.func
+---@param name? string
+---@return self
+function EventRender:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.WORLDRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@class Event.WorldRender: Event
+local EventWorldRender
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.WorldRender.func
+---@param name? string
+---@return self
+function EventWorldRender:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.SKULLRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@class Event.SkullRender: Event
+local EventSkullRender
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.SkullRender.func
+---@param name? string
+---@return self
+function EventSkullRender:register(func, name) end
+
+
+---==================================================================================================================---
+---  EVENT.KEYPRESS extends EVENT                                                                                    ---
+---==================================================================================================================---
+
 ---@class Event.KeyPress: Event
 local EventKeyPress
 
@@ -197,58 +356,18 @@ local EventKeyPress
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.KeyPress.func
 ---@param name? string
+---@return self
 function EventKeyPress:register(func, name) end
 
 
----==============================================================================================---
----  EVENT.SENDMESSAGE extends EVENT                                                             ---
----==============================================================================================---
+---==================================================================================================================---
+---  EVENT.USEITEM extends EVENT                                                                                     ---
+---==================================================================================================================---
 
----An event with a single `message` parameter and a single return.
----@class Event.SendMessage: Event
-local EventSendMessage
-
-
----===== METHODS =====---
-
----Registers a function to be run when this event triggers.
----
----Functions are run in the order they are registered.
----
----If a name is given, you can choose to remove the function later with `:remove(name)`
----@param func Event.SendMessage.func
----@param name? string
-function EventSendMessage:register(func, name) end
-
-
----==============================================================================================---
----  EVENT.RECEIVEMESSAGE extends EVENT                                                          ---
----==============================================================================================---
-
----An event with a single `message` parameter.
----@class Event.ReceiveMessage: Event
-local EventReceiveMessage
-
-
----===== METHODS =====---
-
----Registers a function to be run when this event triggers.
----
----Functions are run in the order they are registered.
----
----If a name is given, you can choose to remove the function later with `:remove(name)`
----@param func Event.ReceiveMessage.func
----@param name? string
-function EventReceiveMessage:register(func, name) end
-
-
----==============================================================================================---
----  EVENT.USEITEM extends EVENT                                                                 ---
----==============================================================================================---
-
----An event with an `item`, an `anim`, and a `particle_count` parameter.
 ---@class Event.UseItem: Event
 local EventUseItem
 
@@ -260,6 +379,9 @@ local EventUseItem
 ---Functions are run in the order they are registered.
 ---
 ---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
 ---@param func Event.UseItem.func
 ---@param name? string
+---@return self
 function EventUseItem:register(func, name) end

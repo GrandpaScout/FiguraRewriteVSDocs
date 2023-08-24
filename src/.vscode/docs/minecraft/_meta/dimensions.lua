@@ -1,4 +1,5 @@
----A valid Minecraft dimension id.
+---@meta _
+
 ---@alias Minecraft.dimensionID string
 ---| "minecraft:overworld"  # Overworld
 ---| "minecraft:the_end"    # The End
