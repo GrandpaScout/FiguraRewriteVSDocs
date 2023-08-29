@@ -298,6 +298,7 @@ function logTable(t, depth, silent) end
 
 ---Converts a JSON string into the appropriate Lua value.
 ---@*error arrays with nulls in them do not parse correctly.
+---@*vmerror on JSON parsing error
 ---@param json string
 ---@return (boolean | number | string | table)?
 function parseJson(json) end

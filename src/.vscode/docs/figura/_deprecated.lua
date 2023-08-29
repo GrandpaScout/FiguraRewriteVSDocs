@@ -290,7 +290,7 @@ BlockState.isCollidable = nil
 
 ---@type «deprecated»
 ---`block_state` is deprecated. Replace the following:
----* `block-state.createBlock()` with `world.newBlock()`.
+---* `block_state.createBlock()` with `world.newBlock()`.
 ---@deprecated [[Complex, hover for more info]]
 block_state = nil
 
@@ -831,8 +831,11 @@ ModelPart.getMimicMode = nil
 ModelPart.getRenderTask = nil
 
 ---@type «deprecated»
----`.getShader()` is deprecated. It has no replacement.
----@deprecated [[No replacement]]
+---`.getShader()` is deprecated.
+---
+---To get if the end portal effect is applied to this part, use `:getPrimaryRenderType() == "END_PORTAL"`.  
+---To get if the glint effect is applied to this part, use `:getSecondaryRenderType() == "GLINT"`.
+---@deprecated [[Complex, hover for more info]]
 ModelPart.getShader = nil
 
 ---@type «deprecated»
@@ -1332,7 +1335,7 @@ Vector.angleTo = nil
 ---`.asTable` is deprecated. It has no direct replacement.
 ---
 ---A table can be made out of a vector with the following: `{<Vector>:unpack()}`.
----@deprecated [[Has code replacemen]]
+---@deprecated [[Has code replacement]]
 Vector.asTable = nil
 
 ---@type «deprecated»
@@ -1429,4 +1432,5 @@ WorldAPI.hasWorld = nil
 
 ---@type «deprecated»
 ---`.isLightning()` is deprecated. To get if the current weather is thunder, use `.isThundering()`.
+---@deprecated [[Replace with ".isThundering()"]]
 WorldAPI.isLightning = nil
