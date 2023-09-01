@@ -70,8 +70,10 @@ function AnimationAPI:stopAll() end
 
 ---Gets an array of every animation on the avatar.
 ---@return Animation[]
+---@nodiscard
 function AnimationAPI:getAnimations() end
 
 ---Gets an array of every playing animation.
 ---@return Animation[]
+---@nodiscard
 function AnimationAPI:getPlaying() end

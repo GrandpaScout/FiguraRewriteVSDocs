@@ -27,6 +27,7 @@ local ParticleAPI
 ---Checks if the given particle id is registered in the game.
 ---@param id string
 ---@return boolean
+---@nodiscard
 function ParticleAPI:isPresent(id) end
 
 ---Creates a single particle in the world at the given position and optionally with a velocity.

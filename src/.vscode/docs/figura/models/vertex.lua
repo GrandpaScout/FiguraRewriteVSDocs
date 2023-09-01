@@ -15,14 +15,17 @@ local Vertex
 
 ---Gets the normal vector of this vertex.
 ---@return Vector3
+---@nodiscard
 function Vertex:getNormal() end
 
 ---Gets the position of this vertex.
 ---@return Vector3
+---@nodiscard
 function Vertex:getPos() end
 
 ---Gets the UV position of this vertex on its face's texture.
 ---@return Vector2
+---@nodiscard
 function Vertex:getUV() end
 
 

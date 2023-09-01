@@ -15,11 +15,13 @@ local ConfigAPI
 
 ---Loads the entire active config file.
 ---@return {[string]?: ConfigAPI.validType}
+---@nodiscard
 function ConfigAPI:load() end
 
 ---Loads the given key from the active config file.
 ---@param key string
 ---@return ConfigAPI.validType?
+---@nodiscard
 function ConfigAPI:load(key) end
 
 ---Saves the given key and value to the active config file.
@@ -37,6 +39,7 @@ function ConfigAPI:save(key, value) end
 
 ---Gets the name of the active config file.
 ---@return string
+---@nodiscard
 function ConfigAPI:getName() end
 
 

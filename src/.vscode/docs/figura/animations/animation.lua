@@ -55,42 +55,52 @@ function Animation:stop() end
 ---
 ---A blend weight of `0.5` will cause the animation to move and rotate the model 50% as much.
 ---@return number
+---@nodiscard
 function Animation:getBlend() end
 
 ---Gets this animation's end point in seconds.
 ---@return number
+---@nodiscard
 function Animation:getLength() end
 
 ---Gets what this animation does when it reaches its end.
 ---@return Animation.loopMode
+---@nodiscard
 function Animation:getLoop() end
 
 ---Gets the amount of time this animation waits before starting another loop in seconds.
 ---@return number
+---@nodiscard
 function Animation:getLoopDelay() end
 
 ---Gets this animation's name.
 ---@return string
+---@nodiscard
 function Animation:getName() end
 
 ---Gets this animation's starting point in seconds.
 ---@return number
+---@nodiscard
 function Animation:getOffset() end
 
 ---Gets if this animation overrides vanilla position changes.
 ---@return boolean
+---@nodiscard
 function Animation:getOverridePos() end
 
 ---Gets if this animation overrides vanilla rotation changes.
 ---@return boolean
+---@nodiscard
 function Animation:getOverrideRot() end
 
 ---Gets if this animation overrides vanilla scale changes.
 ---@return boolean
+---@nodiscard
 function Animation:getOverrideScale() end
 
 ---Gets this animation's current play state.
 ---@return Animation.playStates
+---@nodiscard
 function Animation:getPlayState() end
 
 ---Gets this animation's priority.
@@ -101,30 +111,37 @@ function Animation:getPlayState() end
 ---
 ---Default priority is `0`.
 ---@return integer
+---@nodiscard
 function Animation:getPriority() end
 
 ---Gets this animation's speed multiplier.
 ---@return number
+---@nodiscard
 function Animation:getSpeed() end
 
 ---Gets how long the animation will wait in seconds before starting to play.
 ---@return number
+---@nodiscard
 function Animation:getStartDelay() end
 
 ---Gets this animation's current play time in seconds.
 ---@return number
+---@nodiscard
 function Animation:getTime() end
 
 ---Gets if this animation is currently paused.
 ---@return boolean
+---@nodiscard
 function Animation:isPaused() end
 
 ---Gets if this animation is currently playing.
 ---@return boolean
+---@nodiscard
 function Animation:isPlaying() end
 
 ---Gets if this animation is currently stopped.
 ---@return boolean
+---@nodiscard
 function Animation:isStopped() end
 
 

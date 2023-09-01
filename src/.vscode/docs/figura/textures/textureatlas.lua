@@ -15,6 +15,7 @@ local TextureAtlas
 
 ---Creates a list of paths to every sprite inside of this atlas.
 ---@return string[]
+---@nodiscard
 function TextureAtlas:listSprites() end
 
 
@@ -22,6 +23,7 @@ function TextureAtlas:listSprites() end
 
 ---Gets the height of this atlas in pixels.
 ---@return integer
+---@nodiscard
 function TextureAtlas:getHeight() end
 
 ---Gets the UV for a specific sprite in this atlas.
@@ -29,8 +31,10 @@ function TextureAtlas:getHeight() end
 ---If the given sprite path is not found in this atlas, the UV for `minecraft:missingno` is returned instead.
 ---@param path string
 ---@return Vector4
+---@nodiscard
 function TextureAtlas:getSpriteUV(path) end
 
 ---Gets the width of this atlas in pixels.
 ---@return integer
+---@nodiscard
 function TextureAtlas:getWidth() end

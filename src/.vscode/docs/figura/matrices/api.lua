@@ -45,16 +45,19 @@ local MatricesAPI
 
 ---Creates a 2x2 identity matrix.
 ---@return Matrix2
+---@nodiscard
 function MatricesAPI.mat2() end
 
 ---Creates a 2x2 matrix with the given Vectors as the columns of the matrix.
 ---@param col1 Vector2
 ---@param col2 Vector2
 ---@return Matrix2
+---@nodiscard
 function MatricesAPI.mat2(col1, col2) end
 
 ---Creates a 3x3 identity matrix.
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.mat3() end
 
 ---Creates a 3x3 matrix with the given Vectors as the columns of the matrix.
@@ -62,10 +65,12 @@ function MatricesAPI.mat3() end
 ---@param col2 Vector3
 ---@param col3 Vector3
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.mat3(col1, col2, col3) end
 
 ---Creates a 4x4 identity matrix.
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.mat4() end
 
 ---Creates a 4x4 matrix with the given Vectors as the columns of the matrix.
@@ -74,6 +79,7 @@ function MatricesAPI.mat4() end
 ---@param col3 Vector4
 ---@param col4 Vector4
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.mat4(col1, col2, col3, col4) end
 
 ---Creates a 2x2 matrix that rotates by the given angle in degrees.
@@ -81,6 +87,7 @@ function MatricesAPI.mat4(col1, col2, col3, col4) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix2
+---@nodiscard
 function MatricesAPI.rotation2(angle) end
 
 ---Creates a 3x3 matrix that rotates by the given angles in degrees.
@@ -90,6 +97,7 @@ function MatricesAPI.rotation2(angle) end
 ---If `angles` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param rot? Vector3
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.rotation3(rot) end
 
 ---Creates a 3x3 matrix that rotates by the given angles in degrees.
@@ -99,6 +107,7 @@ function MatricesAPI.rotation3(rot) end
 ---@param y? number
 ---@param z? number
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.rotation3(x, y, z) end
 
 ---Creates a 4x4 matrix that rotates by the given angles in degrees.
@@ -108,6 +117,7 @@ function MatricesAPI.rotation3(x, y, z) end
 ---If `angles` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param rot? Vector3
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.rotation4(rot) end
 
 ---Creates a 4x4 matrix that rotates by the given angles in degrees.
@@ -119,6 +129,7 @@ function MatricesAPI.rotation4(rot) end
 ---@param y? number
 ---@param z? number
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.rotation4(x, y, z) end
 
 ---Creates a 2x2 matrix that scales by the given factors.
@@ -126,6 +137,7 @@ function MatricesAPI.rotation4(x, y, z) end
 ---If `scales` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param scales? Vector2
 ---@return Matrix2
+---@nodiscard
 function MatricesAPI.scale2(scales) end
 
 ---Creates a 2x2 matrix that scales by the given factors.
@@ -134,6 +146,7 @@ function MatricesAPI.scale2(scales) end
 ---@param x? number
 ---@param y? number
 ---@return Matrix2
+---@nodiscard
 function MatricesAPI.scale2(x, y) end
 
 ---Creates a 3x3 matrix that scales by the given factors.
@@ -141,6 +154,7 @@ function MatricesAPI.scale2(x, y) end
 ---If `scales` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param scales? Vector3
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.scale3(scales) end
 
 ---Creates a 3x3 matrix that scales by the given factors.
@@ -150,6 +164,7 @@ function MatricesAPI.scale3(scales) end
 ---@param y? number
 ---@param z? number
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.scale3(x, y, z) end
 
 ---Creates a 4x4 matrix that scales by the given factors.
@@ -157,6 +172,7 @@ function MatricesAPI.scale3(x, y, z) end
 ---If `scales` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param scales? Vector3
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.scale4(scales) end
 
 ---Creates a 4x4 matrix that scales by the given factors.
@@ -166,6 +182,7 @@ function MatricesAPI.scale4(scales) end
 ---@param y? number
 ---@param z? number
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.scale4(x, y, z) end
 
 ---Creates a 3x3 matrix that translates by the given offset.
@@ -173,6 +190,7 @@ function MatricesAPI.scale4(x, y, z) end
 ---If `offset` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param offset? Vector2
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.translate3(offset) end
 
 ---Creates a 3x3 matrix that translates by the given offset.
@@ -181,6 +199,7 @@ function MatricesAPI.translate3(offset) end
 ---@param x? number
 ---@param y? number
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.translate3(x, y) end
 
 ---Creates a 4x4 matrix that translates by the given offset.
@@ -188,6 +207,7 @@ function MatricesAPI.translate3(x, y) end
 ---If `offset` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param offset? Vector3
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.translate4(offset) end
 
 ---Creates a 4x4 matrix that translates by the given offset.
@@ -197,6 +217,7 @@ function MatricesAPI.translate4(offset) end
 ---@param y? number
 ---@param z? number
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.translate4(x, y, z) end
 
 ---Creates a 3x3 matrix that rotates in the X axis by the given angle in degrees.
@@ -204,6 +225,7 @@ function MatricesAPI.translate4(x, y, z) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.xRotation3(angle) end
 
 ---Creates a 4x4 matrix that rotates in the X axis by the given angle in degrees.
@@ -211,6 +233,7 @@ function MatricesAPI.xRotation3(angle) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.xRotation4(angle) end
 
 ---Creates a 3x3 matrix that rotates in the Y axis by the given angle in degrees.
@@ -218,6 +241,7 @@ function MatricesAPI.xRotation4(angle) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.yRotation3(angle) end
 
 ---Creates a 4x4 matrix that rotates in the Y axis by the given angle in degrees.
@@ -225,6 +249,7 @@ function MatricesAPI.yRotation3(angle) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.yRotation4(angle) end
 
 ---Creates a 3x3 matrix that rotates in the Z axis by the given angle in degrees.
@@ -232,6 +257,7 @@ function MatricesAPI.yRotation4(angle) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix3
+---@nodiscard
 function MatricesAPI.zRotation3(angle) end
 
 ---Creates a 4x4 matrix that rotates in the Z axis by the given angle in degrees.
@@ -239,4 +265,5 @@ function MatricesAPI.zRotation3(angle) end
 ---If `angle` is `nil`, it will default to `0`.
 ---@param angle? number
 ---@return Matrix4
+---@nodiscard
 function MatricesAPI.zRotation4(angle) end

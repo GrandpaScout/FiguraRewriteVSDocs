@@ -23,36 +23,44 @@ local Keybind
 
 ---Gets the numeric ID of the key this keybind is bound to.
 ---@return Minecraft.keyid
+---@nodiscard
 function Keybind:getID() end
 
 ---Gets the key code this keybind tracks.
 ---@return Minecraft.keyCode
+---@nodiscard
 function Keybind:getKey() end
 
 ---Gets the name of the key this keybind tracks.
 ---
 ---The return value should be meant for display purposes as it will change depending on language.
 ---@return string
+---@nodiscard
 function Keybind:getKeyName() end
 
 ---Gets the name of this keybind.
 ---@return string
+---@nodiscard
 function Keybind:getName() end
 
 ---Gets if the key that this keybind tracks has not been changed with `:setKey()` or the keybinds menu.
 ---@return boolean
+---@nodiscard
 function Keybind:isDefault() end
 
 ---Gets if this keybind should be processed at all.
 ---@return boolean
+---@nodiscard
 function Keybind:isEnabled() end
 
 ---Gets if this keybind should be processed while a gui is open.
 ---@return boolean
+---@nodiscard
 function Keybind:isGuiEnabled() end
 
 ---Gets whether this key is currently pressed down.
 ---@return boolean
+---@nodiscard
 function Keybind:isPressed() end
 
 

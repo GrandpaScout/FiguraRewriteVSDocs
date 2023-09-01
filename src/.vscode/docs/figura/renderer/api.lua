@@ -30,36 +30,42 @@ local RendererAPI
 ---
 ---Returns `nil` if it has not been set yet.
 ---@return Vector4?
+---@nodiscard
 function RendererAPI:getBlockOutlineColor() end
 
 ---Gets the matrix of the camera.
 ---
 ---Returns `nil` if no matrix is applied.
 ---@return Matrix4?
+---@nodiscard
 function RendererAPI:getCameraMatrix() end
 
 ---Gets the normal matrix of the camera.
 ---
 ---Returns `nil` if no normal matrix is applied.
 ---@return Matrix3?
+---@nodiscard
 function RendererAPI:getCameraNormal() end
 
 ---Gets the pivot position offset of the camera in blocks.
 ---
 ---Returns `nil` if no pivot position offset is applied.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getCameraOffsetPivot() end
 
 ---Gets the rotation offset of the camera in degrees.
 ---
 ---Returns `nil` if no rotation offset is applied.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getCameraOffsetRot() end
 
 ---Gets the absolute pivot position of the camera in blocks.
 ---
 ---Returns `nil` if no absolute position is applied.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getCameraPivot() end
 
 ---Gets the position offset of the camera in blocks.
@@ -69,6 +75,7 @@ function RendererAPI:getCameraPivot() end
 ---
 ---Returns `nil` if no position offset is applied.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getCameraPos() end
 
 ---Gets the absolute rotation of the camera in degrees.
@@ -78,30 +85,35 @@ function RendererAPI:getCameraPos() end
 ---
 ---Returns `nil` if no absolute rotation is applied.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getCameraRot() end
 
 ---Gets the offset of the host's crosshair in pixels.
 ---
 ---Returns `nil` if no offset has been set.
 ---@return Vector2?
+---@nodiscard
 function RendererAPI:getCrosshairOffset() end
 
 ---Gets the offset of the host's eye position in blocks.
 ---
 ---Returns `nil` if no offset has been set.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getEyeOffset() end
 
 ---Gets the current FOV multiplier.
 ---
 ---Returns `nil` if no multiplier has been set.
 ---@return number?
+---@nodiscard
 function RendererAPI:getFOV() end
 
 ---Gets the color of the host's glow outline.
 ---
 ---Returns `nil` if no color has been set.
 ---@return Vector3?
+---@nodiscard
 function RendererAPI:getOutlineColor() end
 
 ---Gets the texture path of the host's on-fire primary layer.
@@ -109,18 +121,21 @@ function RendererAPI:getOutlineColor() end
 ---Throws if it has not been set.
 ---@*vmerror if no primary fire texture has been applied.
 ---@return string
+---@nodiscard
 function RendererAPI:getPrimaryFireTexture() end
 
 ---Gets if the host's left arm should be rendered in first-person.
 ---
 ---Returns `nil` if it has not been set.
 ---@return boolean?
+---@nodiscard
 function RendererAPI:getRenderLeftArm() end
 
 ---Gets if the host's right arm should be rendered in first-person.
 ---
 ---Returns `nil` if it has not been set.
 ---@return boolean?
+---@nodiscard
 function RendererAPI:getRenderRightArm() end
 
 ---Gets the texture path of the host's on-fire secondary layer.
@@ -128,20 +143,24 @@ function RendererAPI:getRenderRightArm() end
 ---Throws if it has not been set.
 ---@*vmerror if no secondary fire texture has been applied.
 ---@return string
+---@nodiscard
 function RendererAPI:getSecondaryFireTexture() end
 
 ---Gets the radius of the host's shadow in blocks.
 ---
 ---Returns `nil` if no shadow radius is applied.
 ---@return number?
+---@nodiscard
 function RendererAPI:getShadowRadius() end
 
 ---Gets if the host's third-person camera is facing backwards.
 ---@return boolean
+---@nodiscard
 function RendererAPI:isCameraBackwards() end
 
 ---Gets if the host's first-person camera is active.
 ---@return boolean
+---@nodiscard
 function RendererAPI:isFirstPerson() end
 
 ---Gets if the host is rendered upside-down.
@@ -149,26 +168,32 @@ function RendererAPI:isFirstPerson() end
 ---Throws if it has not been set
 ---@*vmerror if upside-down state has not been set.
 ---@return boolean
+---@nodiscard
 function RendererAPI:isUpsideDown() end
 
 ---Gets if the host's paperdoll render should be visible even if no action is being performed.
 ---@return boolean
+---@nodiscard
 function RendererAPI:shouldForcePaperdoll() end
 
 ---Gets if the host's crosshair should be rendered.
 ---@return boolean
+---@nodiscard
 function RendererAPI:shouldRenderCrosshair() end
 
 ---Gets if the on-fire effect should be rendered on the host when they are on fire.
 ---@return boolean
+---@nodiscard
 function RendererAPI:shouldRenderFire() end
 
 ---Gets if the host's HUD should be rendered.
 ---@return boolean
+---@nodiscard
 function RendererAPI:shouldRenderHUD() end
 
 ---Gets if the vehicle the host is riding should be rendered.
 ---@return boolean
+---@nodiscard
 function RendererAPI:shouldRenderVehicle() end
 
 

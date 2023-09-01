@@ -233,4 +233,5 @@ local EventsAPI
 
 ---Gets a table of all available events.
 ---@return {[string]: Event}
+---@nodiscard
 function EventsAPI:getEvents() end

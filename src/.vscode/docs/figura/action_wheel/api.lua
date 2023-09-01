@@ -80,6 +80,7 @@ function ActionWheelAPI:execute(index, rightclick) end
 ---<Page>:setAction(-1, <Action>)
 ---```
 ---@return Action
+---@nodiscard
 function ActionWheelAPI:newAction() end
 
 ---Creates a new page for use in the action wheel.
@@ -101,31 +102,37 @@ function ActionWheelAPI:newPage(title) end
 ---
 ---Returns `nil` if there is no active page.
 ---@return Page?
+---@nodiscard
 function ActionWheelAPI:getCurrentPage() end
 
 ---Gets a table of all registered pages.
 ---@return {[string]?: Page}
+---@nodiscard
 function ActionWheelAPI:getPage() end
 
 ---Gets a page by its title.
 ---@param title string
 ---@return Page?
+---@nodiscard
 function ActionWheelAPI:getPage(title) end
 
 ---Gets the index of the currently hovered action.
 ---@return
 ---| 0 # None selected
 ---| ActionWheelAPI.index
+---@nodiscard
 function ActionWheelAPI:getSelected() end
 
 ---Gets the currently hovered action.
 ---
 ---Returns `nil` if there is no action being hovered.
 ---@return Action?
+---@nodiscard
 function ActionWheelAPI:getSelectedAction() end
 
 ---Gets if the wheel is visible or not.
 ---@return boolean
+---@nodiscard
 function ActionWheelAPI:isEnabled() end
 
 

@@ -245,6 +245,7 @@ world = {}
 ---@param dir? string
 ---@param recursive? boolean
 ---@return string[]
+---@nodiscard
 function listFiles(dir, recursive) end
 
 ---Alias of `print`.
@@ -301,6 +302,7 @@ function logTable(t, depth, silent) end
 ---@*vmerror on JSON parsing error
 ---@param json string
 ---@return (boolean | number | string | table)?
+---@nodiscard
 function parseJson(json) end
 
 ---Receives any number of arguments and prints them to chat without a seperator.  
@@ -331,6 +333,7 @@ function printTable(t, depth, silent) end
 ---@*error array-like tables with nils in the middle of them do not convert correctly.
 ---@param value any
 ---@return string
+---@nodiscard
 function toJson(value) end
 
 ---Alias of `<VectorsAPI>.vec`.
@@ -341,6 +344,7 @@ function toJson(value) end
 ---@param x number
 ---@param y number
 ---@return Vector2
+---@nodiscard
 function vec(x, y) end
 
 ---Alias of `<VectorsAPI>.vec`.
@@ -352,6 +356,7 @@ function vec(x, y) end
 ---@param y number
 ---@param z number
 ---@return Vector3
+---@nodiscard
 function vec(x, y, z) end
 
 ---Alias of `<VectorsAPI>.vec`.
@@ -364,4 +369,5 @@ function vec(x, y, z) end
 ---@param z number
 ---@param w number
 ---@return Vector4
+---@nodiscard
 function vec(x, y, z, w) end

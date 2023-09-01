@@ -45,6 +45,7 @@ function TextureAPI:fromVanilla(name, path) end
 ---This *cannot* get textures that are initally part of the avatar, use `textures["texture.name"]` for those.
 ---@param name string
 ---@return Texture?
+---@nodiscard
 function TextureAPI:get(name) end
 
 ---Creates a texture from a base64 string or byte array.
@@ -65,4 +66,5 @@ function TextureAPI:newTexture(name, width, height) end
 
 ---Gets a list of all textures that are initally part of the avatar.
 ---@return Texture[]
+---@nodiscard
 function TextureAPI:getTextures() end

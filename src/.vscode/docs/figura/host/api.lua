@@ -33,6 +33,7 @@ function HostAPI:clearTitle() end
 ---Saves a snapshot of the screen as a texture with the given name.
 ---@param name string
 ---@return Texture
+---@nodiscard
 function HostAPI:screenshot(name) end
 
 ---Sends a command as the player. The `/` is optional.  
@@ -66,16 +67,19 @@ function HostAPI:swingArm(offhand) end
 
 ---Gets the amount of air the host has left in ticks.
 ---@return integer
+---@nodiscard
 function HostAPI:getAir() end
 
 ---Gets the current attack charge of the host as a fraction.
 ---
 ---Attack charge below `0.9` will not result in a crit.
 ---@return number
+---@nodiscard
 function HostAPI:getAttackCharge() end
 
 ---Gets the custom color of the chat input text.
 ---@return integer
+---@nodiscard
 function HostAPI:getChatColor() end
 
 ---Gets the contents of the chat message at the given index where `1` is the most recent message.  
@@ -83,38 +87,45 @@ function HostAPI:getChatColor() end
 ---Returns `nil` if no message is found at the given index.
 ---@param index integer
 ---@return HostAPI.chatMessage?
+---@nodiscard
 function HostAPI:getChatMessage(index) end
 
 ---Gets the text that is currently in the chat input.
 ---
 ---Returns `nil` if the chat input is not open.
 ---@return string?
+---@nodiscard
 function HostAPI:getChatText() end
 
 ---Gets the text contents of the clipboard.
 ---
 ---Returns `""` if the contents of the clipboard are not text.
 ---@return string
+---@nodiscard
 function HostAPI:getClipboard() end
 
 ---Gets the block that would be targeted by the Pick Block keybind.
 ---@return BlockState? block
 ---@return Vector3? pos
 ---@return Entity.blockSide? face
+---@nodiscard
 function HostAPI:getPickBlock() end
 
 ---Gets the entity that would be targeted by the Pick Block keybind.
 ---@return Entity.any?
+---@nodiscard
 function HostAPI:getPickEntity() end
 
 ---Gets the reach distance of the host in blocks.
 ---@return number
+---@nodiscard
 function HostAPI:getReachDistance() end
 
 ---Gets the class name of the currently open screen.
 ---
 ---Returns `nil` if no screen is open.
 ---@return Minecraft.screenID?
+---@nodiscard
 function HostAPI:getScreen() end
 
 ---Gets the `ItemStack` in the given slot of the currently open screen.
@@ -123,6 +134,7 @@ function HostAPI:getScreen() end
 ---Returns `nil` if the given slot id is out of range, there is no open screen, or the current screen has no slots.
 ---@param slot Minecraft.slotID
 ---@return ItemStack?
+---@nodiscard
 function HostAPI:getScreenSlot(slot) end
 
 ---Gets the amount of slots in the currently open screen.
@@ -130,6 +142,7 @@ function HostAPI:getScreenSlot(slot) end
 ---Returns `nil` if there is no screen or the current screen has no slots.
 ---@param slot Minecraft.slotID
 ---@return integer?
+---@nodiscard
 function HostAPI:getScreenSlotCount(slot) end
 
 ---Gets the `ItemStack` in the given slot.
@@ -137,42 +150,52 @@ function HostAPI:getScreenSlotCount(slot) end
 ---Returns an `ItemStack` of air if no item exists in that slot.
 ---@param slot Minecraft.slotID
 ---@return ItemStack
+---@nodiscard
 function HostAPI:getSlot(slot) end
 
 ---Gets the status effects applied to the host.
 ---@return HostAPI.statusEffect[]
+---@nodiscard
 function HostAPI:getStatusEffects() end
 
 ---Gets if this avatar is uploaded.
 ---@return boolean
+---@nodiscard
 function HostAPI:isAvatarUploaded() end
 
 ---Gets if the chat input is opened.
 ---@return boolean
+---@nodiscard
 function HostAPI:isChatOpen() end
 
 ---Gets if the chat is verified.
 ---@return boolean
+---@nodiscard
 function HostAPI:isChatVerified() end
 
 ---Gets if the currently open screen (if any) can hold items.
 ---@return boolean
+---@nodiscard
 function HostAPI:isContainerOpen() end
 
 ---Gets if the cursor is currently unlocked.
 ---@return boolean
+---@nodiscard
 function HostAPI:isCursorUnlocked() end
 
 ---Gets if the host is currently in creative flight.
 ---@return boolean
+---@nodiscard
 function HostAPI:isFlying() end
 
 ---Gets if this instance of the script is running on the avatar owner's computer.
 ---@return boolean
+---@nodiscard
 function HostAPI:isHost() end
 
 ---Gets if the host is jumping.
 ---@return boolean
+---@nodiscard
 function HostAPI:isJumping() end
 
 

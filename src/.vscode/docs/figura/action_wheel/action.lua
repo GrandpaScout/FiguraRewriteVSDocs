@@ -30,34 +30,40 @@ local Action
 ---
 ---Returns `nil` if the color has not been set or has been reset.
 ---@return Vector3?
+---@nodiscard
 function Action:getColor() end
 
 ---Gets the background color of this action when it is hovered over.
 ---
 ---Returns `nil` if the color has not been set or has been reset.
 ---@return Vector3?
+---@nodiscard
 function Action:getHoverColor() end
 
 ---Gets the title that appears when this action is hovered over.
 ---
 ---Returns `nil` if the title has not been set or has been reset.
 ---@return string?
+---@nodiscard
 function Action:getTitle() end
 
 ---Gets the background color of this action while it is toggled on.
 ---
 ---Returns `nil` if the color has not been set or has been reset.
 ---@return Vector3?
+---@nodiscard
 function Action:getToggleColor() end
 
 ---Gets the title that appears when this action is hovered over while toggled on.
 ---
 ---Returns `nil` if the title has not been set or has been reset.
 ---@return string?
+---@nodiscard
 function Action:getToggleTitle() end
 
 ---Gets if this action is toggled on.
 ---@return boolean
+---@nodiscard
 function Action:isToggled() end
 
 

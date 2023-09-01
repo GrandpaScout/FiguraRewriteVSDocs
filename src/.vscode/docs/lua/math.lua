@@ -19,6 +19,7 @@ math.worldScale = 1.0666666667
 ---@param min number
 ---@param max number
 ---@return number
+---@nodiscard
 function math.clamp(x, min, max) end
 
 ---Linearly interpolates between two numbers, vectors, or matrices.
@@ -44,6 +45,7 @@ function math.clamp(x, min, max) end
 ---@param b B
 ---@param t T
 ---@return number | A | B | T
+---@nodiscard
 function math.lerp(a, b, t) end
 
 ---Linearly interpolates between two number angles, vector angles, or matrices.  
@@ -75,6 +77,7 @@ function math.lerp(a, b, t) end
 ---@param b B
 ---@param t T
 ---@return number | A | B | T
+---@nodiscard
 function math.lerpAngle(a, b, t) end
 
 ---Converts a number, vector, or matrix from one range to another.
@@ -100,11 +103,13 @@ function math.lerpAngle(a, b, t) end
 ---@param bMin B1
 ---@param bMax B2
 ---@return number | V | A1 | A2 | B1 | B2
+---@nodiscard
 function math.map(v, aMin, aMax, bMin, bMax) end
 
 ---Rounds the given value to the nearest integer.
 ---@param x number
 ---@return integer
+---@nodiscard
 function math.round(x) end
 
 ---Gets the shortest angle between two numbers or vectors.
@@ -120,6 +125,7 @@ function math.round(x) end
 ---@param a A
 ---@param b B
 ---@return number | A | B
+---@nodiscard
 function math.shortAngle(a, b) end
 
 ---Gets the sign of the given value.
@@ -133,4 +139,5 @@ function math.shortAngle(a, b) end
 ---| -1 # Negative / NaN
 ---| 0 # Zero
 ---| 1 # Positive
+---@nodiscard
 function math.sign(x) end

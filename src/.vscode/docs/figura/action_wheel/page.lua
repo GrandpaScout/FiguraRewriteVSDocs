@@ -30,6 +30,7 @@ function Page:newAction(index) end
 ---Gets the action at the given index in this page.
 ---@param index integer
 ---@return Action?
+---@nodiscard
 function Page:getAction(index) end
 
 ---Gets a list of all actions in this page.
@@ -37,20 +38,24 @@ function Page:getAction(index) end
 ---If `group` is given, only the actions from that group of 8 are returned.
 ---@param group? integer
 ---@return Action[]
+---@nodiscard
 function Page:getActions(group) end
 
 ---Gets the index of the active group in this page.
 ---@return integer
+---@nodiscard
 function Page:getSlotsShift() end
 
 ---Gets the title of this page.
 ---
 ---Returns `nil` if this page is unnamed.
 ---@return string?
+---@nodiscard
 function Page:getTitle() end
 
 ---Gets if the last active group should be kept when this page is not active.
 ---@return boolean
+---@nodiscard
 function Page:shouldKeepSlots() end
 
 

@@ -27,46 +27,57 @@ function RenderTask:remove() end
 
 ---Gets the current light overrides of this task.
 ---@return Vector2?
+---@nodiscard
 function RenderTask:getLight() end
 
 ---Gets the name of this task.
 ---@return string
+---@nodiscard
 function RenderTask:getName() end
 
 ---Recalculates then gets the normal matrix of this task.
 ---@return Matrix3
+---@nodiscard
 function RenderTask:getNormalMatrix() end
 
 ---Gets the normal matrix of this task without recalculating it.
 ---@return Matrix3
+---@nodiscard
 function RenderTask:getNormalMatrixRaw() end
 
 ---Gets the overlay values of this task.
 ---@return Vector2?
+---@nodiscard
 function RenderTask:getOverlay() end
 
 ---Gets this task's position.
 ---@return Vector3
+---@nodiscard
 function RenderTask:getPos() end
 
 ---Recalculates then gets the position matrix of this task.
 ---@return Matrix4
+---@nodiscard
 function RenderTask:getPositionMatrix() end
 
 ---Gets the position matrix of this task without recalculating it.
 ---@return Matrix4
+---@nodiscard
 function RenderTask:getPositionMatrixRaw() end
 
 ---Gets this task's rotation.
 ---@return Vector3
+---@nodiscard
 function RenderTask:getRot() end
 
 ---Gets this task's scale multiplier.
 ---@return Vector3
+---@nodiscard
 function RenderTask:getScale() end
 
 ---Gets if this task is rendering.
 ---@return boolean
+---@nodiscard
 function RenderTask:isVisible() end
 
 
@@ -346,6 +357,7 @@ local ItemTask
 
 ---Gets the rendering mode for the item this task renders.
 ---@return ItemTask.renderMode
+---@nodiscard
 function ItemTask:getDisplayMode() end
 
 
@@ -408,42 +420,51 @@ local SpriteTask
 ---This is a multiplier, that means that `⟨1, 1, 1, 1⟩` will result in no change and `⟨0, 0, 0, 1⟩` will
 ---result in black.
 ---@return Vector4
+---@nodiscard
 function SpriteTask:getColor() end
 
 ---Gets the size of the texture this task uses in pixels.
 ---@return Vector2
+---@nodiscard
 function SpriteTask:getDimensions() end
 
 ---Gets the size of the region this task uses from its texture.
 ---@return Vector2
+---@nodiscard
 function SpriteTask:getRegion() end
 
 ---Gets the render type of this task.
 ---@return ModelPart.renderType
+---@nodiscard
 function SpriteTask:getRenderType() end
 
 ---Gets the width and height of this task.
 ---@return Vector2
+---@nodiscard
 function SpriteTask:getSize() end
 
 ---Gets the path to the texture this task uses.
 ---@return string?
+---@nodiscard
 function SpriteTask:getTexture() end
 
 ---Gets the UV offset of this task.
 ---@return Vector2
+---@nodiscard
 function SpriteTask:getUV() end
 
 ---Gets the UV offset of this task in pixels.
 ---
 ---Returns `nil` if no UV offset is set.
 ---@return Vector2
+---@nodiscard
 function SpriteTask:getUVPixels() end
 
 ---Gets the list of vertices this task uses to render itself.
 ---
 ---Any modifications to these vertices will be undone if you change the position, rotation, or scale of this task.
 ---@return Vertex[]
+---@nodiscard
 function SpriteTask:getVertices() end
 
 
@@ -746,6 +767,7 @@ local TextTask
 
 ---Gets the horizontal alignment of the text in this task.
 ---@return "LEFT" | "CENTER" | "RIGHT"
+---@nodiscard
 function TextTask:getAlignment() end
 
 ---Gets the color of this task's background.  
@@ -754,46 +776,56 @@ function TextTask:getAlignment() end
 ---Returns `nil` if the background color has never been set.
 ---@*error returns a barg vector instead of an rgba vector
 ---@return Vector4?
+---@nodiscard
 function TextTask:getBackgroundColor() end
 
 ---Gets the opacity of this task.
 ---@return number
+---@nodiscard
 function TextTask:getOpacity() end
 
 ---Gets the color of this task's text outline.
 ---@*vmerror if attempt to return `nil`
 ---@return Vector3
+---@nodiscard
 function TextTask:getOutlineColor() end
 
 ---Gets the text displayed on this task.
 ---
 ---Returns `nil` if nothing is being displayed.
 ---@return string?
+---@nodiscard
 function TextTask:getText() end
 
 ---Gets the maximum width of this task in text-pixels.
 ---@return integer
+---@nodiscard
 function TextTask:getWidth() end
 
 ---Gets if this task has a background.
 ---@return boolean
+---@nodiscard
 function TextTask:hasBackground() end
 
 ---Gets if this task's text has an outline.
 ---@return boolean
+---@nodiscard
 function TextTask:hasOutline() end
 
 ---Gets if this task's text has a shadow.
 ---@return boolean
+---@nodiscard
 function TextTask:hasShadow() end
 
 ---Gets if this task's text should wrap around if it gets too long.
 ---@*error Incorrectly uses PascalCase.
 ---@return boolean
+---@nodiscard
 function TextTask:HasWrap() end
 
 ---Gets if this task is able to be seen through everything.
 ---@return boolean
+---@nodiscard
 function TextTask:isSeeThrough() end
 
 ---===== SETTERS =====---

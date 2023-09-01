@@ -21,6 +21,7 @@ local WorldAPI
 ---@param block Minecraft.blockID
 ---@param pos? Vector3
 ---@return BlockState
+---@nodiscard
 function WorldAPI.newBlock(block, pos) end
 
 ---Creates a new block state from the given values.
@@ -33,6 +34,7 @@ function WorldAPI.newBlock(block, pos) end
 ---@param y? number
 ---@param z? number
 ---@return BlockState
+---@nodiscard
 function WorldAPI.newBlock(block, x, y, z) end
 
 ---Creates a new item from the given values.
@@ -45,6 +47,7 @@ function WorldAPI.newBlock(block, x, y, z) end
 ---@param count? integer
 ---@param damage? integer
 ---@return ItemStack
+---@nodiscard
 function WorldAPI.newItem(item, count, damage) end
 
 ---Does nothing.
@@ -146,6 +149,7 @@ function WorldAPI.newItem(item, count, damage) end
 ---
 ---Avatars are indexed by owner's UUID.
 ---@return {[string]: {[string]: any}}
+---@nodiscard
 function WorldAPI.avatarVars() end
 
 ---Gets if a world exists yet.  
@@ -153,6 +157,7 @@ function WorldAPI.avatarVars() end
 ---
 ---Most other world functions will fail if this is not true.
 ---@return boolean
+---@nodiscard
 function WorldAPI.exists() end
 
 ---Gets the biome at the given world position.
@@ -162,6 +167,7 @@ function WorldAPI.exists() end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return Biome
+---@nodiscard
 function WorldAPI.getBiome(pos) end
 
 ---Gets the biome at the given world position.
@@ -173,6 +179,7 @@ function WorldAPI.getBiome(pos) end
 ---@param y? number
 ---@param z? number
 ---@return Biome
+---@nodiscard
 function WorldAPI.getBiome(x, y, z) end
 
 ---Gets the block-only light level at the given world position.
@@ -182,6 +189,7 @@ function WorldAPI.getBiome(x, y, z) end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getBlockLightLevel(pos) end
 
 ---Gets the block-only light level at the given world position.
@@ -193,6 +201,7 @@ function WorldAPI.getBlockLightLevel(pos) end
 ---@param y? number
 ---@param z? number
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getBlockLightLevel(x, y, z) end
 
 ---Gets a list of all blocks in the given bounds.
@@ -203,6 +212,7 @@ function WorldAPI.getBlockLightLevel(x, y, z) end
 ---@param min? Vector3
 ---@param max? Vector3
 ---@return BlockState[]
+---@nodiscard
 function WorldAPI.getBlocks(min, max) end
 
 ---Gets a list of all blocks in the given bounds.
@@ -216,6 +226,7 @@ function WorldAPI.getBlocks(min, max) end
 ---@param minZ? number
 ---@param max? Vector3
 ---@return BlockState[]
+---@nodiscard
 function WorldAPI.getBlocks(minX, minY, minZ, max) end
 
 ---Gets a list of all blocks in the given bounds.
@@ -229,6 +240,7 @@ function WorldAPI.getBlocks(minX, minY, minZ, max) end
 ---@param maxY? number
 ---@param maxZ? number
 ---@return BlockState[]
+---@nodiscard
 function WorldAPI.getBlocks(min, maxX, maxY, maxZ) end
 
 ---Gets a list of all blocks in the given bounds.
@@ -243,6 +255,7 @@ function WorldAPI.getBlocks(min, maxX, maxY, maxZ) end
 ---@param maxY? number
 ---@param maxZ? number
 ---@return BlockState[]
+---@nodiscard
 function WorldAPI.getBlocks(minX, minY, minZ, maxX, maxY, maxZ) end
 
 ---Gets the block at the given world position.
@@ -252,6 +265,7 @@ function WorldAPI.getBlocks(minX, minY, minZ, maxX, maxY, maxZ) end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return BlockState
+---@nodiscard
 function WorldAPI.getBlockState(pos) end
 
 ---Gets the block at the given world position.
@@ -263,15 +277,18 @@ function WorldAPI.getBlockState(pos) end
 ---@param y? number
 ---@param z? number
 ---@return BlockState
+---@nodiscard
 function WorldAPI.getBlockState(x, y, z) end
 
 ---Gets the lower and upper building bounds of the world.
 ---@return integer lower
 ---@return integer upper
+---@nodiscard
 function WorldAPI.getBuildHeight() end
 
 ---Gets the dimension of this world.
 ---@return Minecraft.dimensionID
+---@nodiscard
 function WorldAPI.getDimension() end
 
 ---Gets an entity by its UUID.
@@ -279,6 +296,7 @@ function WorldAPI.getDimension() end
 ---Returns `nil` if no loaded entity has the given UUID
 ---@param uuid string
 ---@return Entity.any
+---@nodiscard
 function WorldAPI.getEntity(uuid) end
 
 ---Gets the overall light level at the given world position.
@@ -288,6 +306,7 @@ function WorldAPI.getEntity(uuid) end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getLightLevel(pos) end
 
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
@@ -295,16 +314,19 @@ function WorldAPI.getLightLevel(pos) end
 ---@param y? number
 ---@param z? number
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getLightLevel(x, y, z) end
 
 ---Gets the phase of the moon.
 ---@return WorldAPI.moonPhase
+---@nodiscard
 function WorldAPI.getMoonPhase() end
 
 ---Gets a list of all loaded players in the world.
 ---
 ---Players are indexed by name.
 ---@return {[string]: Player}
+---@nodiscard
 function WorldAPI.getPlayers() end
 
 ---Gets the current rain density, optionally with a delta for getting the density between ticks.
@@ -315,6 +337,7 @@ function WorldAPI.getPlayers() end
 ---If `delta` is `nil`, it will default to `1`.
 ---@param delta? number
 ---@return number
+---@nodiscard
 function WorldAPI.getRainGradient(delta) end
 
 ---Gets the maximum redstone power level of the blocks directly adjacent to the given world
@@ -327,6 +350,7 @@ function WorldAPI.getRainGradient(delta) end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getRedstonePower(pos) end
 
 ---Gets the maximum redstone power level of the blocks directly adjacent to the given world
@@ -341,6 +365,7 @@ function WorldAPI.getRedstonePower(pos) end
 ---@param y? number
 ---@param z? number
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getRedstonePower(x, y, z) end
 
 ---Gets the sky-only light level at the given world position.
@@ -350,6 +375,7 @@ function WorldAPI.getRedstonePower(x, y, z) end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getSkyLightLevel(pos) end
 
 ---Gets the sky-only light level at the given world position.
@@ -361,10 +387,12 @@ function WorldAPI.getSkyLightLevel(pos) end
 ---@param y? number
 ---@param z? number
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getSkyLightLevel(x, y, z) end
 
 ---Gets the spawn point of the world.
 ---@return Vector3
+---@nodiscard
 function WorldAPI.getSpawnPoint() end
 
 ---Gets the redstone power level that the given world position is receiving.  
@@ -375,6 +403,7 @@ function WorldAPI.getSpawnPoint() end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getStrongRedstonePower(pos) end
 
 ---Gets the redstone power level that the given world position is receiving.  
@@ -387,6 +416,7 @@ function WorldAPI.getStrongRedstonePower(pos) end
 ---@param y? number
 ---@param z? number
 ---@return range*0-15
+---@nodiscard
 function WorldAPI.getStrongRedstonePower(x, y, z) end
 
 ---Gets the world's game time in ticks. If a delta is given, it is simply added.  
@@ -395,6 +425,7 @@ function WorldAPI.getStrongRedstonePower(x, y, z) end
 ---If `delta` is `nil`, it will default to `0`.
 ---@param delta? number
 ---@return number
+---@nodiscard
 function WorldAPI.getTime(delta) end
 
 ---Gets the world's day time in ticks. If a delta is given, it is simply added.  
@@ -408,6 +439,7 @@ function WorldAPI.getTime(delta) end
 ---If `delta` is `nil`, it will default to `0`.
 ---@param delta? number
 ---@return number
+---@nodiscard
 function WorldAPI.getTimeOfDay(delta) end
 
 ---Gets if the given world position can see the sky directly above it.
@@ -417,6 +449,7 @@ function WorldAPI.getTimeOfDay(delta) end
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
 ---@return boolean
+---@nodiscard
 function WorldAPI.isOpenSky(pos) end
 
 ---Gets if the given world position can see the sky directly above it.
@@ -428,8 +461,10 @@ function WorldAPI.isOpenSky(pos) end
 ---@param y? number
 ---@param z? number
 ---@return boolean
+---@nodiscard
 function WorldAPI.isOpenSky(x, y, z) end
 
 ---Gets if there is currently a thunderstorm in the world.
 ---@return boolean
+---@nodiscard
 function WorldAPI.isThundering() end

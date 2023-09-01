@@ -19,6 +19,7 @@ local VanillaPart
 ---
 ---Returns `nil` if a rotation offset is not set.
 ---@return Vector3?
+---@nodiscard
 function VanillaPart:getOffsetRot() end
 
 ---Gets the scale offset of this vanilla part.
@@ -27,30 +28,35 @@ function VanillaPart:getOffsetRot() end
 ---
 ---Returns `nil` if a scale offset is not set.
 ---@return Vector3?
+---@nodiscard
 function VanillaPart:getOffsetScale() end
 
 ---Gets the position offset of this vanilla part.
 ---
 ---Returns `nil` if a position offset is not set.
 ---@return Vector3?
+---@nodiscard
 function VanillaPart:getPos() end
 
 ---Gets the rotation of this vanilla part in degrees.
 ---
 ---Returns `nil` if a rotation is not set.
 ---@return Vector3?
+---@nodiscard
 function VanillaPart:getRot() end
 
 ---Gets the scale multiplier of this vanilla part.
 ---
 ---Returns `nil` if a scale is not set.
 ---@return Vector3?
+---@nodiscard
 function VanillaPart:getScale() end
 
 ---Gets if this vanilla part is visible.
 ---
 ---Returns `nil` if this part is following Minecraft's expected visibility.
 ---@return boolean?
+---@nodiscard
 function VanillaPart:getVisible() end
 
 
@@ -314,16 +320,20 @@ local VanillaModelPart
 
 ---Gets the position offset applied by Minecraft to this vanilla part.
 ---@return Vector3
+---@nodiscard
 function VanillaModelPart:getOriginPos() end
 
 ---Gets the rotation applied by Minecraft to this vanilla part in degrees.
 ---@return Vector3
+---@nodiscard
 function VanillaModelPart:getOriginRot() end
 
 ---Gets the scale applied by Minecraft to this vanilla part.
 ---@return Vector3
+---@nodiscard
 function VanillaModelPart:getOriginRot() end
 
 ---Gets whether Minecraft has set this vanilla part as visible.
 ---@return boolean
+---@nodiscard
 function VanillaModelPart:getOriginVisible() end

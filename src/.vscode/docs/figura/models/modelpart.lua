@@ -42,6 +42,7 @@ function ModelPart:addChild(part) end
 ---
 ---*This does not create a deep copy, all of the child parts are references to the original child parts.*
 ---@return ModelPart
+---@nodiscard
 function ModelPart:copy() end
 
 ---Makes this part a child of the given part.
@@ -57,11 +58,13 @@ function ModelPart:moveTo(parent) end
 ---Adds a block task to this part.
 ---@param name string
 ---@return BlockTask
+---@nodiscard
 function ModelPart:newBlock(name) end
 
 ---Adds an item task to this part.
 ---@param name string
 ---@return ItemTask
+---@nodiscard
 function ModelPart:newItem(name) end
 
 ---Adds a blank part to this part. The initial parent type of the part can optionally be set.
@@ -70,11 +73,13 @@ function ModelPart:newItem(name) end
 ---@param name string
 ---@param parent? ModelPart.parentType
 ---@return ModelPart
+---@nodiscard
 function ModelPart:newPart(name, parent) end
 
 ---Adds a sprite task to this part.
 ---@param name string
 ---@return SpriteTask
+---@nodiscard
 function ModelPart:newSprite(name) end
 
 ---Adds the given render task to this part.
@@ -88,6 +93,7 @@ function ModelPart:newTask(task) end
 ---Adds a text task to this part.
 ---@param name string
 ---@return TextTask
+---@nodiscard
 function ModelPart:newText(name) end
 
 ---Removes the given part from this part.
@@ -100,6 +106,7 @@ function ModelPart:newText(name) end
 ---This matrix will not update if the part is not visible. (Unless you are in first-person.)
 ---@*error The matrix is incorrect if the camera is rolled.
 ---@return Matrix4
+---@nodiscard
 function ModelPart:partToWorldMatrix() end
 
 ---Removes the given part as a child of this part.
@@ -123,132 +130,160 @@ function ModelPart:removeTask(name) end
 
 ---Gets all vertices of this part sorted by the name of the texture they use.
 ---@return {[string]: Vertex[]}
+---@nodiscard
 function ModelPart:getAllVertices() end
 
 ---Gets the position offset caused by any currently playing animations.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getAnimPos() end
 
 ---Gets the rotation offset in degrees caused by any currently playing animations.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getAnimRot() end
 
 ---Gets the scale multiplier caused by any currently playing animations.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getAnimScale() end
 
 ---Gets the children of this part.
 ---@return ModelPart[]
+---@nodiscard
 function ModelPart:getChildren() end
 
 ---Gets the color multiplier of this part.
 ---
 ---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getColor() end
 
 ---Gets the light overrides set earlier by `:setLight()`.
 ---
 ---Returns `nil` if no light overrides are set.
 ---@return Vector2?
+---@nodiscard
 function ModelPart:getLight() end
 
 ---Gets the name of this part.
 ---@return string
+---@nodiscard
 function ModelPart:getName() end
 
 ---Recalculates then gets the normal matrix of this part.
 ---@return Matrix3
+---@nodiscard
 function ModelPart:getNormalMatrix() end
 
 ---Gets the normal matrix of this part without recalculating it.
 ---@return Matrix3
+---@nodiscard
 function ModelPart:getNormalMatrixRaw() end
 
 ---Gets the pivot offset of this part.
 ---
 ---If you are looking for the normal pivot position, use `:getPivot()`.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getOffsetPivot() end
 
 ---Gets the rotation offset of this part in degrees.
 ---
 ---If you are looking for the normal rotation, use `:getRot()`.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getOffsetRot() end
 
 ---Gets the scale offset of this part.
 ---
 ---If you are looking for the normal scale, use `:getScale()`.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getOffsetScale() end
 
 ---Gets the opacity multiplier of this part.
 ---@return number
+---@nodiscard
 function ModelPart:getOpacity() end
 
 ---Gets the overlay values of this part.
 ---@return Vector2?
+---@nodiscard
 function ModelPart:getOverlay() end
 
 ---Gets the parent of this part, if it has any.
 ---@return ModelPart?
+---@nodiscard
 function ModelPart:getParent() end
 
 ---Gets the keyword this part follows.
 ---@return ModelPart.parentType
+---@nodiscard
 function ModelPart:getParentType() end
 
 ---Gets the pivot position of this part.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getPivot() end
 
 ---Gets the position offset of this part.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getPos() end
 
 ---Recalculates then gets the position matrix of this part.
 ---@return Matrix4
+---@nodiscard
 function ModelPart:getPositionMatrix() end
 
 ---Gets the position matrix of this part without recalculating it.
 ---@return Matrix4
+---@nodiscard
 function ModelPart:getPositionMatrixRaw() end
 
 ---Gets the color multiplier of this part's primary layer.
 ---
 ---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getPrimaryColor() end
 
 ---Gets the render type of this part's primary layer.
 ---
 ---Returns `nil` if it is inheriting from its parent.
 ---@return ModelPart.renderType?
+---@nodiscard
 function ModelPart:getPrimaryRenderType() end
 
 ---Gets the rotation of this part in degrees.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getRot() end
 
 ---Gets the scale multiplier of this part.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getScale() end
 
 ---Gets the color multiplier of this part's secondary layer.
 ---
 ---This is a multiplier, that means that `⟨1, 1, 1⟩` will result in no change and `⟨0, 0, 0⟩` will result in black.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getSecondaryColor() end
 
 ---Gets the render type of this part's secondary layer.
 ---
 ---Returns `nil` if it is inheriting from its parent.
 ---@return ModelPart.renderType?
+---@nodiscard
 function ModelPart:getSecondaryRenderType() end
 
 ---Gets a table of all render tasks on this part.
 ---@return {[string]?: RenderTask.any}
+---@nodiscard
 function ModelPart:getTask() end
 
 ---Gets the render task with the given name from this part.  
@@ -266,87 +301,104 @@ function ModelPart:getTask() end
 ---```
 ---@param name string
 ---@return RenderTask.any?
+---@nodiscard
 function ModelPart:getTask(name) end
 
 ---Gets a list of all the textures this part uses.
 ---@*error Gets a list of all textures instead.
 ---@return Texture[]
+---@nodiscard
 function ModelPart:getTextures() end
 
 ---Gets the width and height of this part's texture in pixels.
 ---
 ---Throws if the part has multiple different sized textures on its faces.
 ---@return Vector2
+---@nodiscard
 function ModelPart:getTextureSize() end
 
 ---Gets the actual pivot position of this part.
 ---
 ---This is the sum of the pivot's position and the pivot offset.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getTruePivot() end
 
 ---Gets the actual position of this part.
 ---
 ---This is the sum of the position and any position offsets created by any playing animations.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getTruePos() end
 
 ---Gets the actual rotation of this part.
 ---
 ---This is the sum of the rotation, rotation offset, and any further rotation offsets created by any playing animations.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getTrueRot() end
 
 ---Gets the actual scale of this part.
 ---
 ---This is the sum of the scale, scale offset, and any further scale offsets created by any playing animations.
 ---@return Vector3
+---@nodiscard
 function ModelPart:getTrueScale() end
 
 ---Gets the type of this part.
 ---@return ModelPart.type
+---@nodiscard
 function ModelPart:getType() end
 
 ---Gets the UV offset of this part.
 ---@return Vector2
+---@nodiscard
 function ModelPart:getUV() end
 
 ---Gets the UV matrix of this part.
 ---@return Matrix3
+---@nodiscard
 function ModelPart:getUVMatrix() end
 
 ---Gets the UV offset of this part in pixels.
 ---
 ---Returns `nil` if no UV offset is set.
 ---@return Vector2
+---@nodiscard
 function ModelPart:getUVPixels() end
 
 ---Gets the vertices accociated with the given texture in this part.
 ---@param texture string
 ---@return Vertex[]
+---@nodiscard
 function ModelPart:getVertices(texture) end
 
 ---Gets if this part is visible.
 ---
 ---This check includes the entire chain of parts up to the root.
 ---@return boolean
+---@nodiscard
 function ModelPart:getVisible() end
 
 ---Gets if this part is a child of another part.
 ---@param part ModelPart
 ---@return boolean
+---@nodiscard
 function ModelPart:isChildOf(part) end
 
 ---Gets if an animation is overriding the vanilla position of this part.
 ---@return boolean
+---@nodiscard
 function ModelPart:overrideVanillaPos() end
 
 ---Gets if an animation is overriding the vanilla rotation of this part.
 ---@return boolean
+---@nodiscard
 function ModelPart:overrideVanillaRot() end
 
 ---Gets if an animation is overriding the vanilla scale of this part.
 ---@return boolean
+---@nodiscard
 function ModelPart:overrideVanillaScale() end
 
 

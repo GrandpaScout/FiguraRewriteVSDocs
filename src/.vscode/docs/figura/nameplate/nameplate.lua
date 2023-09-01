@@ -19,6 +19,7 @@ local Nameplate
 ---
 ---Returns `nil` if it has never been set.
 ---@return string?
+---@nodiscard
 function Nameplate:getText() end
 
 
@@ -86,42 +87,50 @@ local EntityNameplate
 ---Returns `nil` if the background color has never been set.
 ---@*error returns a barg vector instead of an rgba vector
 ---@return Vector4?
+---@nodiscard
 function EntityNameplate:getBackgroundColor() end
 
 ---Gets the light overrides of this nameplate.
 ---
 ---Returns `nil` if it has never been set.
 ---@return Vector2?
+---@nodiscard
 function EntityNameplate:getLight() end
 
 ---Gets the pivot position of this nameplate in blocks.
 ---
 ---Returns `nil` if it has never been set.
 ---@return Vector3?
+---@nodiscard
 function EntityNameplate:getPivot() end
 
 ---Gets the position offset of this nameplate in blocks.
 ---
 ---Returns `nil` if it has never been set.
 ---@return Vector3?
+---@nodiscard
 function EntityNameplate:getPos() end
 
 ---Gets the scale multiplier of this nameplate.
 ---
 ---Returns `nil` if it has never been set.
 ---@return Vector3?
+---@nodiscard
 function EntityNameplate:getScale() end
 
 ---Gets if this nameplate's text has an outline.
 ---@return boolean
+---@nodiscard
 function EntityNameplate:hasOutline() end
 
 ---Gets if this nameplate's text has a shadow.
 ---@return boolean
+---@nodiscard
 function EntityNameplate:hasShadow() end
 
 ---Gets if this nameplate is visible.
 ---@return boolean
+---@nodiscard
 function EntityNameplate:isVisible() end
 
 

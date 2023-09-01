@@ -110,21 +110,37 @@ function ipairs(t) end
 
 ---Loads a chunk from the given string.
 ---
+---If a chunk name is given, it is used in error messages involving the created chunk.  
+---If an environment is given, it is treated as the `_ENV` of the created chunk.
+---
 ---~~[View documents](command:extension.lua.doc?["en-us/51/manual.html/pdf-loadstring"])~~  
 ---This function does not exist in normal Lua 5.2 and is somewhat similar to the Lua 5.1 function of
 ---the same name.
 ---@param text string
+---@param chunkname? string
+---@param env? table
 ---@return function?
 ---@return string? error_message
 ---@nodiscard
-function loadstring(text) end
+function loadstring(text, chunkname, env) end
 
 ---An alias of `loadstring`.
+---> ***
+---> Loads a chunk from the given string.
+--->
+---> If a chunk name is given, it is used in error messages involving the created chunk.  
+---> If an environment is given, it is treated as the `_ENV` of the created chunk.
+---> ***
+---
+---~~[View documents](command:extension.lua.doc?["en-us/51/manual.html/pdf-load"])~~  
+---This function has been modified by Figura and does not work how it does in normal Lua 5.2.
 ---@param text string
+---@param chunkname? string
+---@param env? table
 ---@return function?
 ---@return string? error_message
 ---@nodiscard
-function load(text) end
+function load(text, chunkname, env) end
 
 
 ---==============================================================================================---
@@ -342,12 +358,13 @@ function select(index, ...) end
 ---| "Action"
 ---| "ActionWheelAPI"
 ---| "Animation"
+---| "AnimationAPI"
 ---| "AvatarAPI"
 ---| "Biome"
 ---| "BlockState"
 ---| "BlockTask"
----| "ClickAction"
 ---| "ClientAPI"
+---| "ConfigAPI"
 ---| "EntityAPI"
 ---| "EntityNameplateCustomization"
 ---| "Event"
@@ -366,27 +383,32 @@ function select(index, ...) end
 ---| "NameplateAPI"
 ---| "NameplateCustomization"
 ---| "NameplateCustomizationGroup"
+---| "NullEntity"
 ---| "Page"
+---| "Particle"
 ---| "ParticleAPI"
 ---| "PingAPI"
 ---| "PingFunction"
 ---| "PlayerAPI"
 ---| "RenderTask"
 ---| "RendererAPI"
----| "ScrollAction"
 ---| "Sound"
 ---| "SoundAPI"
+---| "SpriteTask"
 ---| "TextTask"
----| "ToggleAction"
+---| "Texture"
+---| "TextureAPI"
+---| "TextureAtlas"
 ---| "VanillaModelAPI"
 ---| "VanillaModelGroup"
 ---| "VanillaModelPart"
+---| "VanillaPart"
 ---| "Vector2"
 ---| "Vector3"
 ---| "Vector4"
----| "Vector5"
----| "Vector6"
 ---| "VectorsAPI"
+---| "Vertex"
+---| "ViewerAPI"
 ---| "WorldAPI"
 
 

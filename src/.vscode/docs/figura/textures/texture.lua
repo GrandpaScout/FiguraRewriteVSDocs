@@ -79,6 +79,7 @@ function Texture:restore() end
 
 ---Returns the base64 representation of this textire.
 ---@return string
+---@nodiscard
 function Texture:save() end
 
 ---Submits all changes to the texture, allowing them to be viewed in-game.
@@ -92,10 +93,12 @@ function Texture:update() end
 
 ---Gets the width and height of this texture as a vector.
 ---@return Vector2
+---@nodiscard
 function Texture:getDimensions() end
 
 ---Gets the name of this texture.
 ---@return string
+---@nodiscard
 function Texture:getName() end
 
 ---Gets the color of the specified pixel.
@@ -104,6 +107,7 @@ function Texture:getName() end
 ---@param x? integer
 ---@param y? integer
 ---@return Vector4
+---@nodiscard
 function Texture:getPixel(x, y) end
 
 

@@ -30,6 +30,7 @@ local SoundAPI
 ---Checks if the given sound id exists.
 ---@param id string
 ---@return boolean
+---@nodiscard
 function SoundAPI:isPresent(id) end
 
 ---Registers a new sound with the given name and data.  
@@ -85,4 +86,5 @@ function SoundAPI:stopSound(sound) end
 
 ---Gets a list of the names of all custom sounds found in the avatar.
 ---@return string[]
+---@nodiscard
 function SoundAPI:getCustomSounds() end

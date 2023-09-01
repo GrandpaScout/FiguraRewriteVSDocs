@@ -42,6 +42,7 @@ function Event:remove(name) end
 ---Gets the amount of callbacks registered to this event with the given name.
 ---@param name string
 ---@return integer
+---@nodiscard
 function Event:getRegisteredCount(name) end
 
 

@@ -32,42 +32,52 @@ function Particle:spawn() end
 
 ---Gets the color of this particle.
 ---@return Vector4
+---@nodiscard
 function Particle:getColor() end
 
 ---Gets the gravity of this particle.
 ---@return number
+---@nodiscard
 function Particle:getGravity() end
 
 ---Gets the total amount of time this particle will be active for in ticks.
 ---@return integer
+---@nodiscard
 function Particle:getLifetime() end
 
 ---Gets the position of this particle.
 ---@return Vector3
+---@nodiscard
 function Particle:getPos() end
 
 ---Gets the power of this particle.
 ---@return number
+---@nodiscard
 function Particle:getPower() end
 
 ---Gets the scale multiplier of this particle.
 ---@return number
+---@nodiscard
 function Particle:getScale() end
 
 ---Gets the size of this particle.
 ---@return number
+---@nodiscard
 function Particle:getSize() end
 
 ---Gets the velocity of this particle.
 ---@return Vector3
+---@nodiscard
 function Particle:getVelocity() end
 
 ---Gets if this particle collides with solid objects.
 ---@return boolean
+---@nodiscard
 function Particle:hasPhysics() end
 
 ---Gets if this particle currently exists.
 ---@return boolean
+---@nodiscard
 function Particle:isAlive() end
 
 

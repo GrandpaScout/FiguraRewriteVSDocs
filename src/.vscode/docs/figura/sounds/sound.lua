@@ -39,32 +39,39 @@ function Sound:stop() end
 
 ---Gets the multiplier for the distance this sound can be heard from.
 ---@return number
+---@nodiscard
 function Sound:getAttenuation() end
 
 ---Gets the pitch of this sound.
 ---@return number
+---@nodiscard
 function Sound:getPitch() end
 
 ---Gets the position of this sound.
 ---@return Vector3
+---@nodiscard
 function Sound:getPos() end
 
 ---Gets the subtitle of this sound.
 ---
 ---Returns `nil` if no subtitle is shown for this sound.
 ---@return string?
+---@nodiscard
 function Sound:getSubtitle() end
 
 ---Gets the volume of this sound.
 ---@return number
+---@nodiscard
 function Sound:getVolume() end
 
 ---Gets if this sound is looping.
 ---@return boolean
+---@nodiscard
 function Sound:isLooping() end
 
 ---Gets if this sound is currently playing.
 ---@return boolean
+---@nodiscard
 function Sound:isPlaying() end
 
 

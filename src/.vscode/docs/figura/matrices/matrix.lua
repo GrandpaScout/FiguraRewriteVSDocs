@@ -23,6 +23,7 @@ local Matrix
 
 ---Calculates and returns the determinant of this matrix.
 ---@return number
+---@nodiscard
 function Matrix:det() end
 
 ---Inverts this matrix.
@@ -101,6 +102,7 @@ function Matrix2:add(other) end
 ---If `x` is `nil`, it will default to `0`.
 ---@param x? number
 ---@return number
+---@nodiscard
 function Matrix2:apply(x) end
 
 ---Augments the given value to a vector `⟨x, 0⟩`, multiplies that vector against this matrix, then deaugments the vector
@@ -109,19 +111,23 @@ function Matrix2:apply(x) end
 ---If `x` is `nil`, it will default to `0`.
 ---@param x? number
 ---@return number
+---@nodiscard
 function Matrix2:applyDir(x) end
 
 ---Copies this matrix and augments the copy, adding a blank column and row to it and placing a `1` in the corner of the
 ---new row and column.
 ---@return Matrix3
+---@nodiscard
 function Matrix2:augmented() end
 
 ---Creates and returns a copy of this matrix.
 ---@return Matrix2
+---@nodiscard
 function Matrix2:copy() end
 
 ---Creates and returns an inverted copy of this matrix.
 ---@return Matrix2
+---@nodiscard
 function Matrix2:inverted() end
 
 ---Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the operation.
@@ -183,6 +189,7 @@ function Matrix2:sub(other) end
 
 ---Creates and returns a transposed copy of this matrix.
 ---@return Matrix2
+---@nodiscard
 function Matrix2:transposed() end
 
 
@@ -191,11 +198,13 @@ function Matrix2:transposed() end
 ---Gets the column at the given index as a vector.
 ---@param index 1 | 2
 ---@return Vector2
+---@nodiscard
 function Matrix2:getColumn(index) end
 
 ---Gets the row at the given index as a vector.
 ---@param index 1 | 2
 ---@return Vector2
+---@nodiscard
 function Matrix2:getRow(index) end
 
 
@@ -273,6 +282,7 @@ function Matrix3:add(other) end
 ---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param vec? Vector2
 ---@return Vector2
+---@nodiscard
 function Matrix3:apply(vec) end
 
 ---Augments the given values to a vector `⟨x, y, 1⟩`, multiplies that vector against this matrix, then deaugments the
@@ -282,6 +292,7 @@ function Matrix3:apply(vec) end
 ---@param x? number
 ---@param y? number
 ---@return Vector2
+---@nodiscard
 function Matrix3:apply(x, y) end
 
 ---Augments the given value to a vector `⟨x, y, 0⟩`, multiplies that vector against this matrix, then deaugments the
@@ -290,6 +301,7 @@ function Matrix3:apply(x, y) end
 ---If `vec` is `nil`, it will default to `⟨0, 0⟩`.
 ---@param vec? Vector2
 ---@return Vector2
+---@nodiscard
 function Matrix3:applyDir(vec) end
 
 ---Augments the given values to a vector `⟨x, y, 0⟩`, multiplies that vector against this matrix, then deaugments the
@@ -299,23 +311,28 @@ function Matrix3:applyDir(vec) end
 ---@param x? number
 ---@param y? number
 ---@return Vector2
+---@nodiscard
 function Matrix3:applyDir(x, y) end
 
 ---Copies this matrix and augments the copy, adding a blank column and row to it and placing a `1` in the corner of the
 ---new row and column.
 ---@return Matrix4
+---@nodiscard
 function Matrix3:augmented() end
 
 ---Creates and returns a copy of this matrix.
 ---@return Matrix3
+---@nodiscard
 function Matrix3:copy() end
 
 ---Copies this matrix and deaugments the copy, removing a column and row from it.
 ---@return Matrix2
+---@nodiscard
 function Matrix3:deaugmented() end
 
 ---Creates and returns an inverted copy of this matrix.
 ---@return Matrix3
+---@nodiscard
 function Matrix3:inverted() end
 
 ---Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the operation.
@@ -434,6 +451,7 @@ function Matrix3:translate(x, y) end
 
 ---Creates and returns a transposed copy of this matrix.
 ---@return Matrix3
+---@nodiscard
 function Matrix3:transposed() end
 
 
@@ -442,11 +460,13 @@ function Matrix3:transposed() end
 ---Gets the column at the given index as a vector.
 ---@param index 1 | 2 | 3
 ---@return Vector3
+---@nodiscard
 function Matrix3:getColumn(index) end
 
 ---Gets the row at the given index as a vector.
 ---@param index 1 | 2 | 3
 ---@return Vector3
+---@nodiscard
 function Matrix3:getRow(index) end
 
 
@@ -543,6 +563,7 @@ function Matrix4:add(other) end
 ---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param vec? Vector3
 ---@return Vector3
+---@nodiscard
 function Matrix4:apply(vec) end
 
 ---Augments the given value to a vector `⟨x, y, z, 1⟩`, multiplies that vector against this matrix, then deaugments the
@@ -553,6 +574,7 @@ function Matrix4:apply(vec) end
 ---@param y? number
 ---@param z? number
 ---@return Vector3
+---@nodiscard
 function Matrix4:apply(x, y, z) end
 
 ---Augments the given value to a vector `⟨x, y, z, 0⟩`, multiplies that vector against this matrix, then deaugments the
@@ -561,6 +583,7 @@ function Matrix4:apply(x, y, z) end
 ---If `vec` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param vec? Vector3
 ---@return Vector3
+---@nodiscard
 function Matrix4:applyDir(vec) end
 
 ---Augments the given value to a vector `⟨x, y, z, 0⟩`, multiplies that vector against this matrix, then deaugments the
@@ -571,18 +594,22 @@ function Matrix4:applyDir(vec) end
 ---@param y? number
 ---@param z? number
 ---@return Vector3
+---@nodiscard
 function Matrix4:applyDir(x, y, z) end
 
 ---Creates and returns a copy of this matrix.
 ---@return Matrix4
+---@nodiscard
 function Matrix4:copy() end
 
 ---Copies this matrix and deaugments the copy, removing a column and row from it.
 ---@return Matrix3
+---@nodiscard
 function Matrix4:deaugmented() end
 
 ---Creates and returns an inverted copy of this matrix.
 ---@return Matrix4
+---@nodiscard
 function Matrix4:inverted() end
 
 ---Multiplies this matrix by another matrix, placing the other matrix on the left-hand side of the operation.
@@ -702,6 +729,7 @@ function Matrix4:translate(x, y, z) end
 
 ---Creates and returns a transposed copy of this matrix.
 ---@return Matrix4
+---@nodiscard
 function Matrix4:transposed() end
 
 
@@ -710,9 +738,11 @@ function Matrix4:transposed() end
 ---Gets the column at the given index as a vector.
 ---@param index 1 | 2 | 3 | 4
 ---@return Vector4
+---@nodiscard
 function Matrix4:getColumn(index) end
 
 ---Gets the row at the given index as a vector.
 ---@param index 1 | 2 | 3 | 4
 ---@return Vector4
+---@nodiscard
 function Matrix4:getRow(index) end
