@@ -249,3 +249,9 @@ V3
     `:getMaxCount()`, `:getMaxDamage()`, `:getName()`, `:getPopTime()`, `:getRarity()`, `:getRepairCost()`, `:getTag()`,
     `:getTags()`, `:getUseAction()`, `:getUseDuration()`, `:hasGlint()`, `:isArmor()`, `:isBlockItem()`,
     `:isDamageable()`, `:isEnchantable()`, `:isFood()`, `:isStackable()`, `:isTool()`
+
+V4
+--------------------------------------------------
+* Fixed return type of two functions
+  * `Entity:getControllingPassenger()` `Entity.any` -> `Entity.any?`
+  * `AvatarAPI:getEntityName()` `integer` -> `string`

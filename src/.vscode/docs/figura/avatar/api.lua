@@ -133,7 +133,7 @@ function AvatarAPI:getCurrentInstructions() end
 function AvatarAPI:getEntityInitCount() end
 
 ---Gets the name of the entity wearing this avatar.
----@return integer
+---@return string
 ---@nodiscard
 function AvatarAPI:getEntityName() end
 

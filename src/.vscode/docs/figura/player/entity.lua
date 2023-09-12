@@ -29,7 +29,7 @@ function Entity:getControlledVehicle() end
 ---Gets the entity that is controlling this entity's movement.
 ---
 ---If this entity is not being controlled by another entity, this returns `nil`.
----@return Entity.any
+---@return Entity.any?
 ---@nodiscard
 function Entity:getControllingPassenger() end
 
@@ -184,7 +184,7 @@ function Entity:getVariable(key) end
 ---Gets the entity that this entity is riding.
 ---
 ---Returns `nil` if there is no vehicle.
----@return Entity.any
+---@return Entity.any?
 ---@nodiscard
 function Entity:getVehicle() end
 
