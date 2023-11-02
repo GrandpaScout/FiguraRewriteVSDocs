@@ -255,3 +255,7 @@ V4
 * Fixed return type of two functions
   * `Entity:getControllingPassenger()` `Entity.any` -> `Entity.any?`
   * `AvatarAPI:getEntityName()` `integer` -> `string`
+
+V5
+--------------------------------------------------
+* Filled out `figuraMetatables`'s contents.
