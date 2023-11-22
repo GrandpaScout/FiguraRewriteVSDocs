@@ -259,3 +259,16 @@ V4
 V5
 --------------------------------------------------
 * Filled out `figuraMetatables`'s contents.
+
+V6
+--------------------------------------------------
+* Updated alias building scripts.
+  * The scripts now directly access the Minecraft Wiki for vanilla values.
+  * Modded values can still be entered via file. The modded values now use the `x.txt` files instead of the
+    `x.modded.txt` files.
+  * The build script uses the <kbd>FiguraRewriteVSDocs_BuildScript/1.0 (@GrandpaScout/FiguraRewriteVSDocs)</kbd>
+    User-Agent.
+* Applied updates to ID aliases using the new scripts.  
+  ### Affected aliases:
+  * `Minecraft.blockID`, `Minecraft.itemID`, `Minecraft.particleID`, `Minecraft.soundID`
+* Changed diagnostics in `_global.lua` and `_deprecated.lua` to avoid errors that really shouldn't be happening.

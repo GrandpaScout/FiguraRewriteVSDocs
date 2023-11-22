@@ -1,3 +1,0 @@
-# Syntax:
-# modid:biome_id | **Mod Name:** Biome Name
-

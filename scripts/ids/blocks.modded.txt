@@ -1,6 +1,0 @@
-# Syntax, Block with no item:
-# modid:block_id | **Mod Name:** Block Name
-
-# Syntax, Block with matching item:
-# modid:block_id | **Mod Name:** Block Name | identical
-

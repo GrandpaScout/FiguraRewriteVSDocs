@@ -1,6 +1,6 @@
-# Data from Minecraft Wiki @ https://minecraft.fandom.com/wiki/Java_Edition_data_values#Dimensions
-# Select *all* table data cells to clone info.
+# Put custom/modded dimensions here.
+# Lines starting with "#" are comments.
 
- Overworld	overworld	0
- The Nether	the_nether	-1
- The End	the_end	1
+# Syntax:
+# examplemod:example_dimension_id | **Example Mod:** Example Dimension Name
+

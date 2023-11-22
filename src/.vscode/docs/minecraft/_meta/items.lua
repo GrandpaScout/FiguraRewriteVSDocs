@@ -46,6 +46,7 @@
 ---| "minecraft:bamboo"                                 # Bamboo
 ---| "minecraft:bamboo_block"                           # Block of Bamboo
 ---| "minecraft:bamboo_button"                          # Bamboo Button
+---| "minecraft:bamboo_chest_raft"                      # Bamboo Raft with Chest
 ---| "minecraft:bamboo_door"                            # Bamboo Door
 ---| "minecraft:bamboo_fence"                           # Bamboo Fence
 ---| "minecraft:bamboo_fence_gate"                      # Bamboo Fence Gate
@@ -55,6 +56,7 @@
 ---| "minecraft:bamboo_mosaic_stairs"                   # Bamboo Mosaic
 ---| "minecraft:bamboo_planks"                          # Bamboo Planks
 ---| "minecraft:bamboo_pressure_plate"                  # Bamboo Pressure Plate
+---| "minecraft:bamboo_raft"                            # Bamboo Raft
 ---| "minecraft:bamboo_sign"                            # Bamboo Sign
 ---| "minecraft:bamboo_slab"                            # Bamboo Slab
 ---| "minecraft:bamboo_stairs"                          # Bamboo Stairs
@@ -190,12 +192,15 @@
 ---| "minecraft:chainmail_helmet"                       # Chainmail Helmet
 ---| "minecraft:chainmail_leggings"                     # Chainmail Leggings
 ---| "minecraft:charcoal"                               # Charcoal
+---| "minecraft:cherry_boat"                            # Cherry Boat
 ---| "minecraft:cherry_button"                          # Cherry Button
+---| "minecraft:cherry_chest_boat"                      # Cherry Boat with Chest
 ---| "minecraft:cherry_door"                            # Cherry Door
 ---| "minecraft:cherry_fence"                           # Cherry Fence
 ---| "minecraft:cherry_fence_gate"                      # Cherry Fence Gate
 ---| "minecraft:cherry_hanging_sign"                    # Cherry Hanging Sign
 ---| "minecraft:cherry_leaves"                          # Cherry Leaves
+---| "minecraft:cherry_log"                             # Cherry Log
 ---| "minecraft:cherry_planks"                          # Cherry Planks
 ---| "minecraft:cherry_pressure_plate"                  # Cherry Pressure Plate
 ---| "minecraft:cherry_sapling"                         # Cherry Sapling
@@ -203,6 +208,7 @@
 ---| "minecraft:cherry_slab"                            # Cherry Slab
 ---| "minecraft:cherry_stairs"                          # Cherry Stairs
 ---| "minecraft:cherry_trapdoor"                        # Cherry Trapdoor
+---| "minecraft:cherry_wood"                            # Cherry Wood
 ---| "minecraft:chest"                                  # Chest
 ---| "minecraft:chest_minecart"                         # Minecart with Chest
 ---| "minecraft:chicken"                                # Raw Chicken
@@ -347,6 +353,7 @@
 ---| "minecraft:dead_tube_coral_block"                  # Dead Tube Coral Block
 ---| "minecraft:dead_tube_coral_fan"                    # Dead Tube Coral Fan
 ---| "minecraft:debug_stick"                            # Debug Stick
+---| "minecraft:decorated_pot"                          # Decorated Pot
 ---| "minecraft:deepslate"                              # Deepslate
 ---| "minecraft:deepslate_brick_slab"                   # Deepslate Brick Slab
 ---| "minecraft:deepslate_brick_stairs"                 # Deepslate Brick Stairs
@@ -1096,6 +1103,8 @@
 ---| "minecraft:stripped_bamboo_block"                  # Block of Stripped Bamboo
 ---| "minecraft:stripped_birch_log"                     # Stripped Birch Log
 ---| "minecraft:stripped_birch_wood"                    # Stripped Birch Wood
+---| "minecraft:stripped_cherry_log"                    # Stripped Cherry Log
+---| "minecraft:stripped_cherry_wood"                   # Stripped Cherry Wood
 ---| "minecraft:stripped_crimson_hyphae"                # Stripped Crimson Hyphae
 ---| "minecraft:stripped_crimson_stem"                  # Stripped Crimson Stem
 ---| "minecraft:stripped_dark_oak_log"                  # Stripped Dark Oak Log

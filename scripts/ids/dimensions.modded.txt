@@ -1,3 +1,0 @@
-# Syntax:
-# modid:dimension_id | **Mod Name:** Dimension Name
-

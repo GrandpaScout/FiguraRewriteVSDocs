@@ -1,1474 +1,1539 @@
 ---@meta _
 
 ---@alias Minecraft.soundID string
----| "minecraft:ambient.basalt_deltas.additions"                  #
----| "minecraft:ambient.basalt_deltas.loop"                       #
----| "minecraft:ambient.basalt_deltas.mood"                       #
----| "minecraft:ambient.cave"                                     #
----| "minecraft:ambient.crimson_forest.additions"                 #
----| "minecraft:ambient.crimson_forest.loop"                      #
----| "minecraft:ambient.crimson_forest.mood"                      #
----| "minecraft:ambient.nether_wastes.additions"                  #
----| "minecraft:ambient.nether_wastes.loop"                       #
----| "minecraft:ambient.nether_wastes.mood"                       #
----| "minecraft:ambient.soul_sand_valley.additions"               #
----| "minecraft:ambient.soul_sand_valley.loop"                    #
----| "minecraft:ambient.soul_sand_valley.mood"                    #
----| "minecraft:ambient.underwater.enter"                         #
----| "minecraft:ambient.underwater.exit"                          #
----| "minecraft:ambient.underwater.loop"                          #
----| "minecraft:ambient.underwater.loop.additions"                #
----| "minecraft:ambient.underwater.loop.additions.rare"           #
----| "minecraft:ambient.underwater.loop.additions.ultra_rare"     #
----| "minecraft:ambient.warped_forest.additions"                  #
----| "minecraft:ambient.warped_forest.loop"                       #
----| "minecraft:ambient.warped_forest.mood"                       #
----| "minecraft:block.amethyst_block.break"                       #
----| "minecraft:block.amethyst_block.chime"                       #
----| "minecraft:block.amethyst_block.fall"                        #
----| "minecraft:block.amethyst_block.hit"                         #
----| "minecraft:block.amethyst_block.place"                       #
----| "minecraft:block.amethyst_block.resonate"                    #
----| "minecraft:block.amethyst_block.step"                        #
----| "minecraft:block.amethyst_cluster.break"                     #
----| "minecraft:block.amethyst_cluster.fall"                      #
----| "minecraft:block.amethyst_cluster.hit"                       #
----| "minecraft:block.amethyst_cluster.place"                     #
----| "minecraft:block.amethyst_cluster.step"                      #
----| "minecraft:block.ancient_debris.break"                       #
----| "minecraft:block.ancient_debris.fall"                        #
----| "minecraft:block.ancient_debris.hit"                         #
----| "minecraft:block.ancient_debris.place"                       #
----| "minecraft:block.ancient_debris.step"                        #
----| "minecraft:block.anvil.break"                                #
----| "minecraft:block.anvil.destroy"                              #
----| "minecraft:block.anvil.fall"                                 #
----| "minecraft:block.anvil.hit"                                  #
----| "minecraft:block.anvil.land"                                 #
----| "minecraft:block.anvil.place"                                #
----| "minecraft:block.anvil.step"                                 #
----| "minecraft:block.anvil.use"                                  #
----| "minecraft:block.azalea.break"                               #
----| "minecraft:block.azalea.fall"                                #
----| "minecraft:block.azalea.hit"                                 #
----| "minecraft:block.azalea.place"                               #
----| "minecraft:block.azalea.step"                                #
----| "minecraft:block.azalea_leaves.break"                        #
----| "minecraft:block.azalea_leaves.fall"                         #
----| "minecraft:block.azalea_leaves.hit"                          #
----| "minecraft:block.azalea_leaves.place"                        #
----| "minecraft:block.azalea_leaves.step"                         #
----| "minecraft:block.bamboo.break"                               #
----| "minecraft:block.bamboo.fall"                                #
----| "minecraft:block.bamboo.hit"                                 #
----| "minecraft:block.bamboo.place"                               #
----| "minecraft:block.bamboo.step"                                #
----| "minecraft:block.bamboo_sapling.break"                       #
----| "minecraft:block.bamboo_sapling.hit"                         #
----| "minecraft:block.bamboo_sapling.place"                       #
----| "minecraft:block.bamboo_wood.break"                          #
----| "minecraft:block.bamboo_wood.fall"                           #
----| "minecraft:block.bamboo_wood.hit"                            #
----| "minecraft:block.bamboo_wood.place"                          #
----| "minecraft:block.bamboo_wood.step"                           #
----| "minecraft:block.bamboo_wood_button.click_off"               #
----| "minecraft:block.bamboo_wood_button.click_on"                #
----| "minecraft:block.bamboo_wood_door.close"                     #
----| "minecraft:block.bamboo_wood_door.open"                      #
----| "minecraft:block.bamboo_wood_fence_gate.close"               #
----| "minecraft:block.bamboo_wood_fence_gate.open"                #
----| "minecraft:block.bamboo_wood_hanging_sign.break"             #
----| "minecraft:block.bamboo_wood_hanging_sign.fall"              #
----| "minecraft:block.bamboo_wood_hanging_sign.hit"               #
----| "minecraft:block.bamboo_wood_hanging_sign.place"             #
----| "minecraft:block.bamboo_wood_hanging_sign.step"              #
----| "minecraft:block.bamboo_wood_pressure_plate.click_off"       #
----| "minecraft:block.bamboo_wood_pressure_plate.click_on"        #
----| "minecraft:block.bamboo_wood_trapdoor.close"                 #
----| "minecraft:block.bamboo_wood_trapdoor.open"                  #
----| "minecraft:block.barrel.close"                               #
----| "minecraft:block.barrel.open"                                #
----| "minecraft:block.basalt.break"                               #
----| "minecraft:block.basalt.fall"                                #
----| "minecraft:block.basalt.hit"                                 #
----| "minecraft:block.basalt.place"                               #
----| "minecraft:block.basalt.step"                                #
----| "minecraft:block.beacon.activate"                            #
----| "minecraft:block.beacon.ambient"                             #
----| "minecraft:block.beacon.deactivate"                          #
----| "minecraft:block.beacon.power_select"                        #
----| "minecraft:block.beehive.drip"                               #
----| "minecraft:block.beehive.enter"                              #
----| "minecraft:block.beehive.exit"                               #
----| "minecraft:block.beehive.shear"                              #
----| "minecraft:block.beehive.work"                               #
----| "minecraft:block.bell.resonate"                              #
----| "minecraft:block.bell.use"                                   #
----| "minecraft:block.big_dripleaf.break"                         #
----| "minecraft:block.big_dripleaf.fall"                          #
----| "minecraft:block.big_dripleaf.hit"                           #
----| "minecraft:block.big_dripleaf.place"                         #
----| "minecraft:block.big_dripleaf.step"                          #
----| "minecraft:block.big_dripleaf.tilt_down"                     #
----| "minecraft:block.big_dripleaf.tilt_up"                       #
----| "minecraft:block.blastfurnace.fire_crackle"                  #
----| "minecraft:block.bone_block.break"                           #
----| "minecraft:block.bone_block.fall"                            #
----| "minecraft:block.bone_block.hit"                             #
----| "minecraft:block.bone_block.place"                           #
----| "minecraft:block.bone_block.step"                            #
----| "minecraft:block.brewing_stand.brew"                         #
----| "minecraft:block.bubble_column.bubble_pop"                   #
----| "minecraft:block.bubble_column.upwards_ambient"              #
----| "minecraft:block.bubble_column.upwards_inside"               #
----| "minecraft:block.bubble_column.whirlpool_ambient"            #
----| "minecraft:block.bubble_column.whirlpool_inside"             #
----| "minecraft:block.cake.add_candle"                            #
----| "minecraft:block.calcite.break"                              #
----| "minecraft:block.calcite.fall"                               #
----| "minecraft:block.calcite.hit"                                #
----| "minecraft:block.calcite.place"                              #
----| "minecraft:block.calcite.step"                               #
----| "minecraft:block.campfire.crackle"                           #
----| "minecraft:block.candle.ambient"                             #
----| "minecraft:block.candle.break"                               #
----| "minecraft:block.candle.extinguish"                          #
----| "minecraft:block.candle.fall"                                #
----| "minecraft:block.candle.hit"                                 #
----| "minecraft:block.candle.place"                               #
----| "minecraft:block.candle.step"                                #
----| "minecraft:block.cave_vines.break"                           #
----| "minecraft:block.cave_vines.fall"                            #
----| "minecraft:block.cave_vines.hit"                             #
----| "minecraft:block.cave_vines.pick_berries"                    #
----| "minecraft:block.cave_vines.place"                           #
----| "minecraft:block.cave_vines.step"                            #
----| "minecraft:block.chain.break"                                #
----| "minecraft:block.chain.fall"                                 #
----| "minecraft:block.chain.hit"                                  #
----| "minecraft:block.chain.place"                                #
----| "minecraft:block.chain.step"                                 #
----| "minecraft:block.cherry_leaves.break"                        #
----| "minecraft:block.cherry_leaves.fall"                         #
----| "minecraft:block.cherry_leaves.hit"                          #
----| "minecraft:block.cherry_leaves.place"                        #
----| "minecraft:block.cherry_leaves.step"                         #
----| "minecraft:block.cherry_sapling.break"                       #
----| "minecraft:block.cherry_sapling.fall"                        #
----| "minecraft:block.cherry_sapling.hit"                         #
----| "minecraft:block.cherry_sapling.place"                       #
----| "minecraft:block.cherry_sapling.step"                        #
----| "minecraft:block.cherry_wood.break"                          #
----| "minecraft:block.cherry_wood.fall"                           #
----| "minecraft:block.cherry_wood.hit"                            #
----| "minecraft:block.cherry_wood.place"                          #
----| "minecraft:block.cherry_wood.step"                           #
----| "minecraft:block.cherry_wood_button.click_off"               #
----| "minecraft:block.cherry_wood_button.click_on"                #
----| "minecraft:block.cherry_wood_door.close"                     #
----| "minecraft:block.cherry_wood_door.open"                      #
----| "minecraft:block.cherry_wood_fence_gate.close"               #
----| "minecraft:block.cherry_wood_fence_gate.open"                #
----| "minecraft:block.cherry_wood_hanging_sign.break"             #
----| "minecraft:block.cherry_wood_hanging_sign.fall"              #
----| "minecraft:block.cherry_wood_hanging_sign.hit"               #
----| "minecraft:block.cherry_wood_hanging_sign.place"             #
----| "minecraft:block.cherry_wood_hanging_sign.step"              #
----| "minecraft:block.cherry_wood_pressure_plate.click_off"       #
----| "minecraft:block.cherry_wood_pressure_plate.click_on"        #
----| "minecraft:block.cherry_wood_trapdoor.close"                 #
----| "minecraft:block.cherry_wood_trapdoor.open"                  #
----| "minecraft:block.chest.close"                                #
----| "minecraft:block.chest.locked"                               #
----| "minecraft:block.chest.open"                                 #
----| "minecraft:block.chiseled_bookshelf.break"                   #
----| "minecraft:block.chiseled_bookshelf.fall"                    #
----| "minecraft:block.chiseled_bookshelf.hit"                     #
----| "minecraft:block.chiseled_bookshelf.insert"                  #
----| "minecraft:block.chiseled_bookshelf.insert.enchanted"        #
----| "minecraft:block.chiseled_bookshelf.pickup"                  #
----| "minecraft:block.chiseled_bookshelf.pickup.enchanted"        #
----| "minecraft:block.chiseled_bookshelf.place"                   #
----| "minecraft:block.chiseled_bookshelf.step"                    #
----| "minecraft:block.chorus_flower.death"                        #
----| "minecraft:block.chorus_flower.grow"                         #
----| "minecraft:block.comparator.click"                           #
----| "minecraft:block.composter.empty"                            #
----| "minecraft:block.composter.fill"                             #
----| "minecraft:block.composter.fill_success"                     #
----| "minecraft:block.composter.ready"                            #
----| "minecraft:block.conduit.activate"                           #
----| "minecraft:block.conduit.ambient"                            #
----| "minecraft:block.conduit.ambient.short"                      #
----| "minecraft:block.conduit.attack.target"                      #
----| "minecraft:block.conduit.deactivate"                         #
----| "minecraft:block.copper.break"                               #
----| "minecraft:block.copper.fall"                                #
----| "minecraft:block.copper.hit"                                 #
----| "minecraft:block.copper.place"                               #
----| "minecraft:block.copper.step"                                #
----| "minecraft:block.coral_block.break"                          #
----| "minecraft:block.coral_block.fall"                           #
----| "minecraft:block.coral_block.hit"                            #
----| "minecraft:block.coral_block.place"                          #
----| "minecraft:block.coral_block.step"                           #
----| "minecraft:block.crop.break"                                 #
----| "minecraft:block.decorated_pot.break"                        #
----| "minecraft:block.decorated_pot.fall"                         #
----| "minecraft:block.decorated_pot.hit"                          #
----| "minecraft:block.decorated_pot.place"                        #
----| "minecraft:block.decorated_pot.shatter"                      #
----| "minecraft:block.decorated_pot.step"                         #
----| "minecraft:block.deepslate.break"                            #
----| "minecraft:block.deepslate.fall"                             #
----| "minecraft:block.deepslate.hit"                              #
----| "minecraft:block.deepslate.place"                            #
----| "minecraft:block.deepslate.step"                             #
----| "minecraft:block.deepslate_bricks.break"                     #
----| "minecraft:block.deepslate_bricks.fall"                      #
----| "minecraft:block.deepslate_bricks.hit"                       #
----| "minecraft:block.deepslate_bricks.place"                     #
----| "minecraft:block.deepslate_bricks.step"                      #
----| "minecraft:block.deepslate_tiles.break"                      #
----| "minecraft:block.deepslate_tiles.fall"                       #
----| "minecraft:block.deepslate_tiles.hit"                        #
----| "minecraft:block.deepslate_tiles.place"                      #
----| "minecraft:block.deepslate_tiles.step"                       #
----| "minecraft:block.dispenser.dispense"                         #
----| "minecraft:block.dispenser.fail"                             #
----| "minecraft:block.dispenser.launch"                           #
----| "minecraft:block.dripstone_block.break"                      #
----| "minecraft:block.dripstone_block.fall"                       #
----| "minecraft:block.dripstone_block.hit"                        #
----| "minecraft:block.dripstone_block.place"                      #
----| "minecraft:block.dripstone_block.step"                       #
----| "minecraft:block.enchantment_table.use"                      #
----| "minecraft:block.end_gateway.spawn"                          #
----| "minecraft:block.end_portal.spawn"                           #
----| "minecraft:block.end_portal_frame.fill"                      #
----| "minecraft:block.ender_chest.close"                          #
----| "minecraft:block.ender_chest.open"                           #
----| "minecraft:block.fence_gate.close"                           #
----| "minecraft:block.fence_gate.open"                            #
----| "minecraft:block.fire.ambient"                               #
----| "minecraft:block.fire.extinguish"                            #
----| "minecraft:block.flowering_azalea.break"                     #
----| "minecraft:block.flowering_azalea.fall"                      #
----| "minecraft:block.flowering_azalea.hit"                       #
----| "minecraft:block.flowering_azalea.place"                     #
----| "minecraft:block.flowering_azalea.step"                      #
----| "minecraft:block.froglight.break"                            #
----| "minecraft:block.froglight.fall"                             #
----| "minecraft:block.froglight.hit"                              #
----| "minecraft:block.froglight.place"                            #
----| "minecraft:block.froglight.step"                             #
----| "minecraft:block.frogspawn.break"                            #
----| "minecraft:block.frogspawn.fall"                             #
----| "minecraft:block.frogspawn.hatch"                            #
----| "minecraft:block.frogspawn.hit"                              #
----| "minecraft:block.frogspawn.place"                            #
----| "minecraft:block.frogspawn.step"                             #
----| "minecraft:block.fungus.break"                               #
----| "minecraft:block.fungus.fall"                                #
----| "minecraft:block.fungus.hit"                                 #
----| "minecraft:block.fungus.place"                               #
----| "minecraft:block.fungus.step"                                #
----| "minecraft:block.furnace.fire_crackle"                       #
----| "minecraft:block.gilded_blackstone.break"                    #
----| "minecraft:block.gilded_blackstone.fall"                     #
----| "minecraft:block.gilded_blackstone.hit"                      #
----| "minecraft:block.gilded_blackstone.place"                    #
----| "minecraft:block.gilded_blackstone.step"                     #
----| "minecraft:block.glass.break"                                #
----| "minecraft:block.glass.fall"                                 #
----| "minecraft:block.glass.hit"                                  #
----| "minecraft:block.glass.place"                                #
----| "minecraft:block.glass.step"                                 #
----| "minecraft:block.grass.break"                                #
----| "minecraft:block.grass.fall"                                 #
----| "minecraft:block.grass.hit"                                  #
----| "minecraft:block.grass.place"                                #
----| "minecraft:block.grass.step"                                 #
----| "minecraft:block.gravel.break"                               #
----| "minecraft:block.gravel.fall"                                #
----| "minecraft:block.gravel.hit"                                 #
----| "minecraft:block.gravel.place"                               #
----| "minecraft:block.gravel.step"                                #
----| "minecraft:block.grindstone.use"                             #
----| "minecraft:block.growing_plant.crop"                         #
----| "minecraft:block.hanging_roots.break"                        #
----| "minecraft:block.hanging_roots.fall"                         #
----| "minecraft:block.hanging_roots.hit"                          #
----| "minecraft:block.hanging_roots.place"                        #
----| "minecraft:block.hanging_roots.step"                         #
----| "minecraft:block.hanging_sign.break"                         #
----| "minecraft:block.hanging_sign.fall"                          #
----| "minecraft:block.hanging_sign.hit"                           #
----| "minecraft:block.hanging_sign.place"                         #
----| "minecraft:block.hanging_sign.step"                          #
----| "minecraft:block.honey_block.break"                          #
----| "minecraft:block.honey_block.fall"                           #
----| "minecraft:block.honey_block.hit"                            #
----| "minecraft:block.honey_block.place"                          #
----| "minecraft:block.honey_block.slide"                          #
----| "minecraft:block.honey_block.step"                           #
----| "minecraft:block.iron_door.close"                            #
----| "minecraft:block.iron_door.open"                             #
----| "minecraft:block.iron_trapdoor.close"                        #
----| "minecraft:block.iron_trapdoor.open"                         #
----| "minecraft:block.ladder.break"                               #
----| "minecraft:block.ladder.fall"                                #
----| "minecraft:block.ladder.hit"                                 #
----| "minecraft:block.ladder.place"                               #
----| "minecraft:block.ladder.step"                                #
----| "minecraft:block.lantern.break"                              #
----| "minecraft:block.lantern.fall"                               #
----| "minecraft:block.lantern.hit"                                #
----| "minecraft:block.lantern.place"                              #
----| "minecraft:block.lantern.step"                               #
----| "minecraft:block.large_amethyst_bud.break"                   #
----| "minecraft:block.large_amethyst_bud.place"                   #
----| "minecraft:block.lava.ambient"                               #
----| "minecraft:block.lava.extinguish"                            #
----| "minecraft:block.lava.pop"                                   #
----| "minecraft:block.lever.click"                                #
----| "minecraft:block.lily_pad.place"                             #
----| "minecraft:block.lodestone.break"                            #
----| "minecraft:block.lodestone.fall"                             #
----| "minecraft:block.lodestone.hit"                              #
----| "minecraft:block.lodestone.place"                            #
----| "minecraft:block.lodestone.step"                             #
----| "minecraft:block.mangrove_roots.break"                       #
----| "minecraft:block.mangrove_roots.fall"                        #
----| "minecraft:block.mangrove_roots.hit"                         #
----| "minecraft:block.mangrove_roots.place"                       #
----| "minecraft:block.mangrove_roots.step"                        #
----| "minecraft:block.medium_amethyst_bud.break"                  #
----| "minecraft:block.medium_amethyst_bud.place"                  #
----| "minecraft:block.metal.break"                                #
----| "minecraft:block.metal.fall"                                 #
----| "minecraft:block.metal.hit"                                  #
----| "minecraft:block.metal.place"                                #
----| "minecraft:block.metal.step"                                 #
----| "minecraft:block.metal_pressure_plate.click_off"             #
----| "minecraft:block.metal_pressure_plate.click_on"              #
----| "minecraft:block.moss.break"                                 #
----| "minecraft:block.moss.fall"                                  #
----| "minecraft:block.moss.hit"                                   #
----| "minecraft:block.moss.place"                                 #
----| "minecraft:block.moss.step"                                  #
----| "minecraft:block.moss_carpet.break"                          #
----| "minecraft:block.moss_carpet.fall"                           #
----| "minecraft:block.moss_carpet.hit"                            #
----| "minecraft:block.moss_carpet.place"                          #
----| "minecraft:block.moss_carpet.step"                           #
----| "minecraft:block.mud.break"                                  #
----| "minecraft:block.mud.fall"                                   #
----| "minecraft:block.mud.hit"                                    #
----| "minecraft:block.mud.place"                                  #
----| "minecraft:block.mud.step"                                   #
----| "minecraft:block.mud_bricks.break"                           #
----| "minecraft:block.mud_bricks.fall"                            #
----| "minecraft:block.mud_bricks.hit"                             #
----| "minecraft:block.mud_bricks.place"                           #
----| "minecraft:block.mud_bricks.step"                            #
----| "minecraft:block.muddy_mangrove_roots.break"                 #
----| "minecraft:block.muddy_mangrove_roots.fall"                  #
----| "minecraft:block.muddy_mangrove_roots.hit"                   #
----| "minecraft:block.muddy_mangrove_roots.place"                 #
----| "minecraft:block.muddy_mangrove_roots.step"                  #
----| "minecraft:block.nether_bricks.break"                        #
----| "minecraft:block.nether_bricks.fall"                         #
----| "minecraft:block.nether_bricks.hit"                          #
----| "minecraft:block.nether_bricks.place"                        #
----| "minecraft:block.nether_bricks.step"                         #
----| "minecraft:block.nether_gold_ore.break"                      #
----| "minecraft:block.nether_gold_ore.fall"                       #
----| "minecraft:block.nether_gold_ore.hit"                        #
----| "minecraft:block.nether_gold_ore.place"                      #
----| "minecraft:block.nether_gold_ore.step"                       #
----| "minecraft:block.nether_ore.break"                           #
----| "minecraft:block.nether_ore.fall"                            #
----| "minecraft:block.nether_ore.hit"                             #
----| "minecraft:block.nether_ore.place"                           #
----| "minecraft:block.nether_ore.step"                            #
----| "minecraft:block.nether_sprouts.break"                       #
----| "minecraft:block.nether_sprouts.fall"                        #
----| "minecraft:block.nether_sprouts.hit"                         #
----| "minecraft:block.nether_sprouts.place"                       #
----| "minecraft:block.nether_sprouts.step"                        #
----| "minecraft:block.nether_wart.break"                          #
----| "minecraft:block.nether_wood.break"                          #
----| "minecraft:block.nether_wood.fall"                           #
----| "minecraft:block.nether_wood.hit"                            #
----| "minecraft:block.nether_wood.place"                          #
----| "minecraft:block.nether_wood.step"                           #
----| "minecraft:block.nether_wood_button.click_off"               #
----| "minecraft:block.nether_wood_button.click_on"                #
----| "minecraft:block.nether_wood_door.close"                     #
----| "minecraft:block.nether_wood_door.open"                      #
----| "minecraft:block.nether_wood_fence_gate.close"               #
----| "minecraft:block.nether_wood_fence_gate.open"                #
----| "minecraft:block.nether_wood_hanging_sign.break"             #
----| "minecraft:block.nether_wood_hanging_sign.fall"              #
----| "minecraft:block.nether_wood_hanging_sign.hit"               #
----| "minecraft:block.nether_wood_hanging_sign.place"             #
----| "minecraft:block.nether_wood_hanging_sign.step"              #
----| "minecraft:block.nether_wood_pressure_plate.click_off"       #
----| "minecraft:block.nether_wood_pressure_plate.click_on"        #
----| "minecraft:block.nether_wood_trapdoor.close"                 #
----| "minecraft:block.nether_wood_trapdoor.open"                  #
----| "minecraft:block.netherite_block.break"                      #
----| "minecraft:block.netherite_block.fall"                       #
----| "minecraft:block.netherite_block.hit"                        #
----| "minecraft:block.netherite_block.place"                      #
----| "minecraft:block.netherite_block.step"                       #
----| "minecraft:block.netherrack.break"                           #
----| "minecraft:block.netherrack.fall"                            #
----| "minecraft:block.netherrack.hit"                             #
----| "minecraft:block.netherrack.place"                           #
----| "minecraft:block.netherrack.step"                            #
----| "minecraft:block.note_block.banjo"                           #
----| "minecraft:block.note_block.basedrum"                        #
----| "minecraft:block.note_block.bass"                            #
----| "minecraft:block.note_block.bell"                            #
----| "minecraft:block.note_block.bit"                             #
----| "minecraft:block.note_block.chime"                           #
----| "minecraft:block.note_block.cow_bell"                        #
----| "minecraft:block.note_block.didgeridoo"                      #
----| "minecraft:block.note_block.flute"                           #
----| "minecraft:block.note_block.guitar"                          #
----| "minecraft:block.note_block.harp"                            #
----| "minecraft:block.note_block.hat"                             #
----| "minecraft:block.note_block.imitate.creeper"                 #
----| "minecraft:block.note_block.imitate.ender_dragon"            #
----| "minecraft:block.note_block.imitate.piglin"                  #
----| "minecraft:block.note_block.imitate.skeleton"                #
----| "minecraft:block.note_block.imitate.wither_skeleton"         #
----| "minecraft:block.note_block.imitate.zombie"                  #
----| "minecraft:block.note_block.iron_xylophone"                  #
----| "minecraft:block.note_block.pling"                           #
----| "minecraft:block.note_block.snare"                           #
----| "minecraft:block.note_block.xylophone"                       #
----| "minecraft:block.nylium.break"                               #
----| "minecraft:block.nylium.fall"                                #
----| "minecraft:block.nylium.hit"                                 #
----| "minecraft:block.nylium.place"                               #
----| "minecraft:block.nylium.step"                                #
----| "minecraft:block.packed_mud.break"                           #
----| "minecraft:block.packed_mud.fall"                            #
----| "minecraft:block.packed_mud.hit"                             #
----| "minecraft:block.packed_mud.place"                           #
----| "minecraft:block.packed_mud.step"                            #
----| "minecraft:block.pink_petals.break"                          #
----| "minecraft:block.pink_petals.fall"                           #
----| "minecraft:block.pink_petals.hit"                            #
----| "minecraft:block.pink_petals.place"                          #
----| "minecraft:block.pink_petals.step"                           #
----| "minecraft:block.piston.contract"                            #
----| "minecraft:block.piston.extend"                              #
----| "minecraft:block.pointed_dripstone.break"                    #
----| "minecraft:block.pointed_dripstone.drip_lava"                #
----| "minecraft:block.pointed_dripstone.drip_lava_into_cauldron"  #
----| "minecraft:block.pointed_dripstone.drip_water"               #
----| "minecraft:block.pointed_dripstone.drip_water_into_cauldron" #
----| "minecraft:block.pointed_dripstone.fall"                     #
----| "minecraft:block.pointed_dripstone.hit"                      #
----| "minecraft:block.pointed_dripstone.land"                     #
----| "minecraft:block.pointed_dripstone.place"                    #
----| "minecraft:block.pointed_dripstone.step"                     #
----| "minecraft:block.polished_deepslate.break"                   #
----| "minecraft:block.polished_deepslate.fall"                    #
----| "minecraft:block.polished_deepslate.hit"                     #
----| "minecraft:block.polished_deepslate.place"                   #
----| "minecraft:block.polished_deepslate.step"                    #
----| "minecraft:block.portal.ambient"                             #
----| "minecraft:block.portal.travel"                              #
----| "minecraft:block.portal.trigger"                             #
----| "minecraft:block.powder_snow.break"                          #
----| "minecraft:block.powder_snow.fall"                           #
----| "minecraft:block.powder_snow.hit"                            #
----| "minecraft:block.powder_snow.place"                          #
----| "minecraft:block.powder_snow.step"                           #
----| "minecraft:block.pumpkin.carve"                              #
----| "minecraft:block.redstone_torch.burnout"                     #
----| "minecraft:block.respawn_anchor.ambient"                     #
----| "minecraft:block.respawn_anchor.charge"                      #
----| "minecraft:block.respawn_anchor.deplete"                     #
----| "minecraft:block.respawn_anchor.set_spawn"                   #
----| "minecraft:block.rooted_dirt.break"                          #
----| "minecraft:block.rooted_dirt.fall"                           #
----| "minecraft:block.rooted_dirt.hit"                            #
----| "minecraft:block.rooted_dirt.place"                          #
----| "minecraft:block.rooted_dirt.step"                           #
----| "minecraft:block.roots.break"                                #
----| "minecraft:block.roots.fall"                                 #
----| "minecraft:block.roots.hit"                                  #
----| "minecraft:block.roots.place"                                #
----| "minecraft:block.roots.step"                                 #
----| "minecraft:block.sand.break"                                 #
----| "minecraft:block.sand.fall"                                  #
----| "minecraft:block.sand.hit"                                   #
----| "minecraft:block.sand.place"                                 #
----| "minecraft:block.sand.step"                                  #
----| "minecraft:block.scaffolding.break"                          #
----| "minecraft:block.scaffolding.fall"                           #
----| "minecraft:block.scaffolding.hit"                            #
----| "minecraft:block.scaffolding.place"                          #
----| "minecraft:block.scaffolding.step"                           #
----| "minecraft:block.sculk.break"                                #
----| "minecraft:block.sculk.charge"                               #
----| "minecraft:block.sculk.fall"                                 #
----| "minecraft:block.sculk.hit"                                  #
----| "minecraft:block.sculk.place"                                #
----| "minecraft:block.sculk.spread"                               #
----| "minecraft:block.sculk.step"                                 #
----| "minecraft:block.sculk_catalyst.bloom"                       #
----| "minecraft:block.sculk_catalyst.break"                       #
----| "minecraft:block.sculk_catalyst.fall"                        #
----| "minecraft:block.sculk_catalyst.hit"                         #
----| "minecraft:block.sculk_catalyst.place"                       #
----| "minecraft:block.sculk_catalyst.step"                        #
----| "minecraft:block.sculk_sensor.break"                         #
----| "minecraft:block.sculk_sensor.clicking"                      #
----| "minecraft:block.sculk_sensor.clicking_stop"                 #
----| "minecraft:block.sculk_sensor.fall"                          #
----| "minecraft:block.sculk_sensor.hit"                           #
----| "minecraft:block.sculk_sensor.place"                         #
----| "minecraft:block.sculk_sensor.step"                          #
----| "minecraft:block.sculk_shrieker.break"                       #
----| "minecraft:block.sculk_shrieker.fall"                        #
----| "minecraft:block.sculk_shrieker.hit"                         #
----| "minecraft:block.sculk_shrieker.place"                       #
----| "minecraft:block.sculk_shrieker.shriek"                      #
----| "minecraft:block.sculk_shrieker.step"                        #
----| "minecraft:block.sculk_vein.break"                           #
----| "minecraft:block.sculk_vein.fall"                            #
----| "minecraft:block.sculk_vein.hit"                             #
----| "minecraft:block.sculk_vein.place"                           #
----| "minecraft:block.sculk_vein.step"                            #
----| "minecraft:block.shroomlight.break"                          #
----| "minecraft:block.shroomlight.fall"                           #
----| "minecraft:block.shroomlight.hit"                            #
----| "minecraft:block.shroomlight.place"                          #
----| "minecraft:block.shroomlight.step"                           #
----| "minecraft:block.shulker_box.close"                          #
----| "minecraft:block.shulker_box.open"                           #
----| "minecraft:block.sign.waxed_interact_fail"                   #
----| "minecraft:block.slime_block.break"                          #
----| "minecraft:block.slime_block.fall"                           #
----| "minecraft:block.slime_block.hit"                            #
----| "minecraft:block.slime_block.place"                          #
----| "minecraft:block.slime_block.step"                           #
----| "minecraft:block.small_amethyst_bud.break"                   #
----| "minecraft:block.small_amethyst_bud.place"                   #
----| "minecraft:block.small_dripleaf.break"                       #
----| "minecraft:block.small_dripleaf.fall"                        #
----| "minecraft:block.small_dripleaf.hit"                         #
----| "minecraft:block.small_dripleaf.place"                       #
----| "minecraft:block.small_dripleaf.step"                        #
----| "minecraft:block.smithing_table.use"                         #
----| "minecraft:block.smoker.smoke"                               #
----| "minecraft:block.sniffer_egg.crack"                          #
----| "minecraft:block.sniffer_egg.hatch"                          #
----| "minecraft:block.sniffer_egg.plop"                           #
----| "minecraft:block.snow.break"                                 #
----| "minecraft:block.snow.fall"                                  #
----| "minecraft:block.snow.hit"                                   #
----| "minecraft:block.snow.place"                                 #
----| "minecraft:block.snow.step"                                  #
----| "minecraft:block.soul_sand.break"                            #
----| "minecraft:block.soul_sand.fall"                             #
----| "minecraft:block.soul_sand.hit"                              #
----| "minecraft:block.soul_sand.place"                            #
----| "minecraft:block.soul_sand.step"                             #
----| "minecraft:block.soul_soil.break"                            #
----| "minecraft:block.soul_soil.fall"                             #
----| "minecraft:block.soul_soil.hit"                              #
----| "minecraft:block.soul_soil.place"                            #
----| "minecraft:block.soul_soil.step"                             #
----| "minecraft:block.spore_blossom.break"                        #
----| "minecraft:block.spore_blossom.fall"                         #
----| "minecraft:block.spore_blossom.hit"                          #
----| "minecraft:block.spore_blossom.place"                        #
----| "minecraft:block.spore_blossom.step"                         #
----| "minecraft:block.stem.break"                                 #
----| "minecraft:block.stem.fall"                                  #
----| "minecraft:block.stem.hit"                                   #
----| "minecraft:block.stem.place"                                 #
----| "minecraft:block.stem.step"                                  #
----| "minecraft:block.stone.break"                                #
----| "minecraft:block.stone.fall"                                 #
----| "minecraft:block.stone.hit"                                  #
----| "minecraft:block.stone.place"                                #
----| "minecraft:block.stone.step"                                 #
----| "minecraft:block.stone_button.click_off"                     #
----| "minecraft:block.stone_button.click_on"                      #
----| "minecraft:block.stone_pressure_plate.click_off"             #
----| "minecraft:block.stone_pressure_plate.click_on"              #
----| "minecraft:block.suspicious_gravel.break"                    #
----| "minecraft:block.suspicious_gravel.fall"                     #
----| "minecraft:block.suspicious_gravel.hit"                      #
----| "minecraft:block.suspicious_gravel.place"                    #
----| "minecraft:block.suspicious_gravel.step"                     #
----| "minecraft:block.suspicious_sand.break"                      #
----| "minecraft:block.suspicious_sand.fall"                       #
----| "minecraft:block.suspicious_sand.hit"                        #
----| "minecraft:block.suspicious_sand.place"                      #
----| "minecraft:block.suspicious_sand.step"                       #
----| "minecraft:block.sweet_berry_bush.break"                     #
----| "minecraft:block.sweet_berry_bush.pick_berries"              #
----| "minecraft:block.sweet_berry_bush.place"                     #
----| "minecraft:block.tripwire.attach"                            #
----| "minecraft:block.tripwire.click_off"                         #
----| "minecraft:block.tripwire.click_on"                          #
----| "minecraft:block.tripwire.detach"                            #
----| "minecraft:block.tuff.break"                                 #
----| "minecraft:block.tuff.fall"                                  #
----| "minecraft:block.tuff.hit"                                   #
----| "minecraft:block.tuff.place"                                 #
----| "minecraft:block.tuff.step"                                  #
----| "minecraft:block.vine.break"                                 #
----| "minecraft:block.vine.fall"                                  #
----| "minecraft:block.vine.hit"                                   #
----| "minecraft:block.vine.place"                                 #
----| "minecraft:block.vine.step"                                  #
----| "minecraft:block.wart_block.break"                           #
----| "minecraft:block.wart_block.fall"                            #
----| "minecraft:block.wart_block.hit"                             #
----| "minecraft:block.wart_block.place"                           #
----| "minecraft:block.wart_block.step"                            #
----| "minecraft:block.water.ambient"                              #
----| "minecraft:block.weeping_vines.break"                        #
----| "minecraft:block.weeping_vines.fall"                         #
----| "minecraft:block.weeping_vines.hit"                          #
----| "minecraft:block.weeping_vines.place"                        #
----| "minecraft:block.weeping_vines.step"                         #
----| "minecraft:block.wet_grass.break"                            #
----| "minecraft:block.wet_grass.fall"                             #
----| "minecraft:block.wet_grass.hit"                              #
----| "minecraft:block.wet_grass.place"                            #
----| "minecraft:block.wet_grass.step"                             #
----| "minecraft:block.wood.break"                                 #
----| "minecraft:block.wood.fall"                                  #
----| "minecraft:block.wood.hit"                                   #
----| "minecraft:block.wood.place"                                 #
----| "minecraft:block.wood.step"                                  #
----| "minecraft:block.wooden_button.click_off"                    #
----| "minecraft:block.wooden_button.click_on"                     #
----| "minecraft:block.wooden_door.close"                          #
----| "minecraft:block.wooden_door.open"                           #
----| "minecraft:block.wooden_pressure_plate.click_off"            #
----| "minecraft:block.wooden_pressure_plate.click_on"             #
----| "minecraft:block.wooden_trapdoor.close"                      #
----| "minecraft:block.wooden_trapdoor.open"                       #
----| "minecraft:block.wool.break"                                 #
----| "minecraft:block.wool.fall"                                  #
----| "minecraft:block.wool.hit"                                   #
----| "minecraft:block.wool.place"                                 #
----| "minecraft:block.wool.step"                                  #
----| "minecraft:enchant.thorns.hit"                               #
----| "minecraft:entity.allay.ambient_with_item"                   #
----| "minecraft:entity.allay.ambient_without_item"                #
----| "minecraft:entity.allay.death"                               #
----| "minecraft:entity.allay.hurt"                                #
----| "minecraft:entity.allay.item_given"                          #
----| "minecraft:entity.allay.item_taken"                          #
----| "minecraft:entity.allay.item_thrown"                         #
----| "minecraft:entity.armor_stand.break"                         #
----| "minecraft:entity.armor_stand.fall"                          #
----| "minecraft:entity.armor_stand.hit"                           #
----| "minecraft:entity.armor_stand.place"                         #
----| "minecraft:entity.arrow.hit"                                 #
----| "minecraft:entity.arrow.hit_player"                          #
----| "minecraft:entity.arrow.shoot"                               #
----| "minecraft:entity.axolotl.attack"                            #
----| "minecraft:entity.axolotl.death"                             #
----| "minecraft:entity.axolotl.hurt"                              #
----| "minecraft:entity.axolotl.idle_air"                          #
----| "minecraft:entity.axolotl.idle_water"                        #
----| "minecraft:entity.axolotl.splash"                            #
----| "minecraft:entity.axolotl.swim"                              #
----| "minecraft:entity.bat.ambient"                               #
----| "minecraft:entity.bat.death"                                 #
----| "minecraft:entity.bat.hurt"                                  #
----| "minecraft:entity.bat.loop"                                  #
----| "minecraft:entity.bat.takeoff"                               #
----| "minecraft:entity.bee.death"                                 #
----| "minecraft:entity.bee.hurt"                                  #
----| "minecraft:entity.bee.loop"                                  #
----| "minecraft:entity.bee.loop_aggressive"                       #
----| "minecraft:entity.bee.pollinate"                             #
----| "minecraft:entity.bee.sting"                                 #
----| "minecraft:entity.blaze.ambient"                             #
----| "minecraft:entity.blaze.burn"                                #
----| "minecraft:entity.blaze.death"                               #
----| "minecraft:entity.blaze.hurt"                                #
----| "minecraft:entity.blaze.shoot"                               #
----| "minecraft:entity.boat.paddle_land"                          #
----| "minecraft:entity.boat.paddle_water"                         #
----| "minecraft:entity.camel.ambient"                             #
----| "minecraft:entity.camel.dash"                                #
----| "minecraft:entity.camel.dash_ready"                          #
----| "minecraft:entity.camel.death"                               #
----| "minecraft:entity.camel.eat"                                 #
----| "minecraft:entity.camel.hurt"                                #
----| "minecraft:entity.camel.saddle"                              #
----| "minecraft:entity.camel.sit"                                 #
----| "minecraft:entity.camel.stand"                               #
----| "minecraft:entity.camel.step"                                #
----| "minecraft:entity.camel.step_sand"                           #
----| "minecraft:entity.cat.ambient"                               #
----| "minecraft:entity.cat.beg_for_food"                          #
----| "minecraft:entity.cat.death"                                 #
----| "minecraft:entity.cat.eat"                                   #
----| "minecraft:entity.cat.hiss"                                  #
----| "minecraft:entity.cat.hurt"                                  #
----| "minecraft:entity.cat.purr"                                  #
----| "minecraft:entity.cat.purreow"                               #
----| "minecraft:entity.cat.stray_ambient"                         #
----| "minecraft:entity.chicken.ambient"                           #
----| "minecraft:entity.chicken.death"                             #
----| "minecraft:entity.chicken.egg"                               #
----| "minecraft:entity.chicken.hurt"                              #
----| "minecraft:entity.chicken.step"                              #
----| "minecraft:entity.cod.ambient"                               #
----| "minecraft:entity.cod.death"                                 #
----| "minecraft:entity.cod.flop"                                  #
----| "minecraft:entity.cod.hurt"                                  #
----| "minecraft:entity.cow.ambient"                               #
----| "minecraft:entity.cow.death"                                 #
----| "minecraft:entity.cow.hurt"                                  #
----| "minecraft:entity.cow.milk"                                  #
----| "minecraft:entity.cow.step"                                  #
----| "minecraft:entity.creeper.death"                             #
----| "minecraft:entity.creeper.hurt"                              #
----| "minecraft:entity.creeper.primed"                            #
----| "minecraft:entity.dolphin.ambient"                           #
----| "minecraft:entity.dolphin.ambient_water"                     #
----| "minecraft:entity.dolphin.attack"                            #
----| "minecraft:entity.dolphin.death"                             #
----| "minecraft:entity.dolphin.eat"                               #
----| "minecraft:entity.dolphin.hurt"                              #
----| "minecraft:entity.dolphin.jump"                              #
----| "minecraft:entity.dolphin.play"                              #
----| "minecraft:entity.dolphin.splash"                            #
----| "minecraft:entity.dolphin.swim"                              #
----| "minecraft:entity.donkey.ambient"                            #
----| "minecraft:entity.donkey.angry"                              #
----| "minecraft:entity.donkey.chest"                              #
----| "minecraft:entity.donkey.death"                              #
----| "minecraft:entity.donkey.eat"                                #
----| "minecraft:entity.donkey.hurt"                               #
----| "minecraft:entity.dragon_fireball.explode"                   #
----| "minecraft:entity.drowned.ambient"                           #
----| "minecraft:entity.drowned.ambient_water"                     #
----| "minecraft:entity.drowned.death"                             #
----| "minecraft:entity.drowned.death_water"                       #
----| "minecraft:entity.drowned.hurt"                              #
----| "minecraft:entity.drowned.hurt_water"                        #
----| "minecraft:entity.drowned.shoot"                             #
----| "minecraft:entity.drowned.step"                              #
----| "minecraft:entity.drowned.swim"                              #
----| "minecraft:entity.egg.throw"                                 #
----| "minecraft:entity.elder_guardian.ambient"                    #
----| "minecraft:entity.elder_guardian.ambient_land"               #
----| "minecraft:entity.elder_guardian.curse"                      #
----| "minecraft:entity.elder_guardian.death"                      #
----| "minecraft:entity.elder_guardian.death_land"                 #
----| "minecraft:entity.elder_guardian.flop"                       #
----| "minecraft:entity.elder_guardian.hurt"                       #
----| "minecraft:entity.elder_guardian.hurt_land"                  #
----| "minecraft:entity.ender_dragon.ambient"                      #
----| "minecraft:entity.ender_dragon.death"                        #
----| "minecraft:entity.ender_dragon.flap"                         #
----| "minecraft:entity.ender_dragon.growl"                        #
----| "minecraft:entity.ender_dragon.hurt"                         #
----| "minecraft:entity.ender_dragon.shoot"                        #
----| "minecraft:entity.ender_eye.death"                           #
----| "minecraft:entity.ender_eye.launch"                          #
----| "minecraft:entity.ender_pearl.throw"                         #
----| "minecraft:entity.enderman.ambient"                          #
----| "minecraft:entity.enderman.death"                            #
----| "minecraft:entity.enderman.hurt"                             #
----| "minecraft:entity.enderman.scream"                           #
----| "minecraft:entity.enderman.stare"                            #
----| "minecraft:entity.enderman.teleport"                         #
----| "minecraft:entity.endermite.ambient"                         #
----| "minecraft:entity.endermite.death"                           #
----| "minecraft:entity.endermite.hurt"                            #
----| "minecraft:entity.endermite.step"                            #
----| "minecraft:entity.evoker.ambient"                            #
----| "minecraft:entity.evoker.cast_spell"                         #
----| "minecraft:entity.evoker.celebrate"                          #
----| "minecraft:entity.evoker.death"                              #
----| "minecraft:entity.evoker.hurt"                               #
----| "minecraft:entity.evoker.prepare_attack"                     #
----| "minecraft:entity.evoker.prepare_summon"                     #
----| "minecraft:entity.evoker.prepare_wololo"                     #
----| "minecraft:entity.evoker_fangs.attack"                       #
----| "minecraft:entity.experience_bottle.throw"                   #
----| "minecraft:entity.experience_orb.pickup"                     #
----| "minecraft:entity.firework_rocket.blast"                     #
----| "minecraft:entity.firework_rocket.blast_far"                 #
----| "minecraft:entity.firework_rocket.large_blast"               #
----| "minecraft:entity.firework_rocket.large_blast_far"           #
----| "minecraft:entity.firework_rocket.launch"                    #
----| "minecraft:entity.firework_rocket.shoot"                     #
----| "minecraft:entity.firework_rocket.twinkle"                   #
----| "minecraft:entity.firework_rocket.twinkle_far"               #
----| "minecraft:entity.fish.swim"                                 #
----| "minecraft:entity.fishing_bobber.retrieve"                   #
----| "minecraft:entity.fishing_bobber.splash"                     #
----| "minecraft:entity.fishing_bobber.throw"                      #
----| "minecraft:entity.fox.aggro"                                 #
----| "minecraft:entity.fox.ambient"                               #
----| "minecraft:entity.fox.bite"                                  #
----| "minecraft:entity.fox.death"                                 #
----| "minecraft:entity.fox.eat"                                   #
----| "minecraft:entity.fox.hurt"                                  #
----| "minecraft:entity.fox.screech"                               #
----| "minecraft:entity.fox.sleep"                                 #
----| "minecraft:entity.fox.sniff"                                 #
----| "minecraft:entity.fox.spit"                                  #
----| "minecraft:entity.fox.teleport"                              #
----| "minecraft:entity.frog.ambient"                              #
----| "minecraft:entity.frog.death"                                #
----| "minecraft:entity.frog.eat"                                  #
----| "minecraft:entity.frog.hurt"                                 #
----| "minecraft:entity.frog.lay_spawn"                            #
----| "minecraft:entity.frog.long_jump"                            #
----| "minecraft:entity.frog.step"                                 #
----| "minecraft:entity.frog.tongue"                               #
----| "minecraft:entity.generic.big_fall"                          #
----| "minecraft:entity.generic.burn"                              #
----| "minecraft:entity.generic.death"                             #
----| "minecraft:entity.generic.drink"                             #
----| "minecraft:entity.generic.eat"                               #
----| "minecraft:entity.generic.explode"                           #
----| "minecraft:entity.generic.extinguish_fire"                   #
----| "minecraft:entity.generic.hurt"                              #
----| "minecraft:entity.generic.small_fall"                        #
----| "minecraft:entity.generic.splash"                            #
----| "minecraft:entity.generic.swim"                              #
----| "minecraft:entity.ghast.ambient"                             #
----| "minecraft:entity.ghast.death"                               #
----| "minecraft:entity.ghast.hurt"                                #
----| "minecraft:entity.ghast.scream"                              #
----| "minecraft:entity.ghast.shoot"                               #
----| "minecraft:entity.ghast.warn"                                #
----| "minecraft:entity.glow_item_frame.add_item"                  #
----| "minecraft:entity.glow_item_frame.break"                     #
----| "minecraft:entity.glow_item_frame.place"                     #
----| "minecraft:entity.glow_item_frame.remove_item"               #
----| "minecraft:entity.glow_item_frame.rotate_item"               #
----| "minecraft:entity.glow_squid.ambient"                        #
----| "minecraft:entity.glow_squid.death"                          #
----| "minecraft:entity.glow_squid.hurt"                           #
----| "minecraft:entity.glow_squid.squirt"                         #
----| "minecraft:entity.goat.ambient"                              #
----| "minecraft:entity.goat.death"                                #
----| "minecraft:entity.goat.eat"                                  #
----| "minecraft:entity.goat.horn_break"                           #
----| "minecraft:entity.goat.hurt"                                 #
----| "minecraft:entity.goat.long_jump"                            #
----| "minecraft:entity.goat.milk"                                 #
----| "minecraft:entity.goat.prepare_ram"                          #
----| "minecraft:entity.goat.ram_impact"                           #
----| "minecraft:entity.goat.screaming.ambient"                    #
----| "minecraft:entity.goat.screaming.death"                      #
----| "minecraft:entity.goat.screaming.eat"                        #
----| "minecraft:entity.goat.screaming.hurt"                       #
----| "minecraft:entity.goat.screaming.long_jump"                  #
----| "minecraft:entity.goat.screaming.milk"                       #
----| "minecraft:entity.goat.screaming.prepare_ram"                #
----| "minecraft:entity.goat.screaming.ram_impact"                 #
----| "minecraft:entity.goat.step"                                 #
----| "minecraft:entity.guardian.ambient"                          #
----| "minecraft:entity.guardian.ambient_land"                     #
----| "minecraft:entity.guardian.attack"                           #
----| "minecraft:entity.guardian.death"                            #
----| "minecraft:entity.guardian.death_land"                       #
----| "minecraft:entity.guardian.flop"                             #
----| "minecraft:entity.guardian.hurt"                             #
----| "minecraft:entity.guardian.hurt_land"                        #
----| "minecraft:entity.hoglin.ambient"                            #
----| "minecraft:entity.hoglin.angry"                              #
----| "minecraft:entity.hoglin.attack"                             #
----| "minecraft:entity.hoglin.converted_to_zombified"             #
----| "minecraft:entity.hoglin.death"                              #
----| "minecraft:entity.hoglin.hurt"                               #
----| "minecraft:entity.hoglin.retreat"                            #
----| "minecraft:entity.hoglin.step"                               #
----| "minecraft:entity.horse.ambient"                             #
----| "minecraft:entity.horse.angry"                               #
----| "minecraft:entity.horse.armor"                               #
----| "minecraft:entity.horse.breathe"                             #
----| "minecraft:entity.horse.death"                               #
----| "minecraft:entity.horse.eat"                                 #
----| "minecraft:entity.horse.gallop"                              #
----| "minecraft:entity.horse.hurt"                                #
----| "minecraft:entity.horse.jump"                                #
----| "minecraft:entity.horse.land"                                #
----| "minecraft:entity.horse.saddle"                              #
----| "minecraft:entity.horse.step"                                #
----| "minecraft:entity.horse.step_wood"                           #
----| "minecraft:entity.hostile.big_fall"                          #
----| "minecraft:entity.hostile.death"                             #
----| "minecraft:entity.hostile.hurt"                              #
----| "minecraft:entity.hostile.small_fall"                        #
----| "minecraft:entity.hostile.splash"                            #
----| "minecraft:entity.hostile.swim"                              #
----| "minecraft:entity.husk.ambient"                              #
----| "minecraft:entity.husk.converted_to_zombie"                  #
----| "minecraft:entity.husk.death"                                #
----| "minecraft:entity.husk.hurt"                                 #
----| "minecraft:entity.husk.step"                                 #
----| "minecraft:entity.illusioner.ambient"                        #
----| "minecraft:entity.illusioner.cast_spell"                     #
----| "minecraft:entity.illusioner.death"                          #
----| "minecraft:entity.illusioner.hurt"                           #
----| "minecraft:entity.illusioner.mirror_move"                    #
----| "minecraft:entity.illusioner.prepare_blindness"              #
----| "minecraft:entity.illusioner.prepare_mirror"                 #
----| "minecraft:entity.iron_golem.attack"                         #
----| "minecraft:entity.iron_golem.damage"                         #
----| "minecraft:entity.iron_golem.death"                          #
----| "minecraft:entity.iron_golem.hurt"                           #
----| "minecraft:entity.iron_golem.repair"                         #
----| "minecraft:entity.iron_golem.step"                           #
----| "minecraft:entity.item.break"                                #
----| "minecraft:entity.item.pickup"                               #
----| "minecraft:entity.item_frame.add_item"                       #
----| "minecraft:entity.item_frame.break"                          #
----| "minecraft:entity.item_frame.place"                          #
----| "minecraft:entity.item_frame.remove_item"                    #
----| "minecraft:entity.item_frame.rotate_item"                    #
----| "minecraft:entity.leash_knot.break"                          #
----| "minecraft:entity.leash_knot.place"                          #
----| "minecraft:entity.lightning_bolt.impact"                     #
----| "minecraft:entity.lightning_bolt.thunder"                    #
----| "minecraft:entity.lingering_potion.throw"                    #
----| "minecraft:entity.llama.ambient"                             #
----| "minecraft:entity.llama.angry"                               #
----| "minecraft:entity.llama.chest"                               #
----| "minecraft:entity.llama.death"                               #
----| "minecraft:entity.llama.eat"                                 #
----| "minecraft:entity.llama.hurt"                                #
----| "minecraft:entity.llama.spit"                                #
----| "minecraft:entity.llama.step"                                #
----| "minecraft:entity.llama.swag"                                #
----| "minecraft:entity.magma_cube.death"                          #
----| "minecraft:entity.magma_cube.death_small"                    #
----| "minecraft:entity.magma_cube.hurt"                           #
----| "minecraft:entity.magma_cube.hurt_small"                     #
----| "minecraft:entity.magma_cube.jump"                           #
----| "minecraft:entity.magma_cube.squish"                         #
----| "minecraft:entity.magma_cube.squish_small"                   #
----| "minecraft:entity.minecart.inside"                           #
----| "minecraft:entity.minecart.inside.underwater"                #
----| "minecraft:entity.minecart.riding"                           #
----| "minecraft:entity.mooshroom.convert"                         #
----| "minecraft:entity.mooshroom.eat"                             #
----| "minecraft:entity.mooshroom.milk"                            #
----| "minecraft:entity.mooshroom.shear"                           #
----| "minecraft:entity.mooshroom.suspicious_milk"                 #
----| "minecraft:entity.mule.ambient"                              #
----| "minecraft:entity.mule.angry"                                #
----| "minecraft:entity.mule.chest"                                #
----| "minecraft:entity.mule.death"                                #
----| "minecraft:entity.mule.eat"                                  #
----| "minecraft:entity.mule.hurt"                                 #
----| "minecraft:entity.ocelot.ambient"                            #
----| "minecraft:entity.ocelot.death"                              #
----| "minecraft:entity.ocelot.hurt"                               #
----| "minecraft:entity.painting.break"                            #
----| "minecraft:entity.painting.place"                            #
----| "minecraft:entity.panda.aggressive_ambient"                  #
----| "minecraft:entity.panda.ambient"                             #
----| "minecraft:entity.panda.bite"                                #
----| "minecraft:entity.panda.cant_breed"                          #
----| "minecraft:entity.panda.death"                               #
----| "minecraft:entity.panda.eat"                                 #
----| "minecraft:entity.panda.hurt"                                #
----| "minecraft:entity.panda.pre_sneeze"                          #
----| "minecraft:entity.panda.sneeze"                              #
----| "minecraft:entity.panda.step"                                #
----| "minecraft:entity.panda.worried_ambient"                     #
----| "minecraft:entity.parrot.ambient"                            #
----| "minecraft:entity.parrot.death"                              #
----| "minecraft:entity.parrot.eat"                                #
----| "minecraft:entity.parrot.fly"                                #
----| "minecraft:entity.parrot.hurt"                               #
----| "minecraft:entity.parrot.imitate.blaze"                      #
----| "minecraft:entity.parrot.imitate.creeper"                    #
----| "minecraft:entity.parrot.imitate.drowned"                    #
----| "minecraft:entity.parrot.imitate.elder_guardian"             #
----| "minecraft:entity.parrot.imitate.ender_dragon"               #
----| "minecraft:entity.parrot.imitate.endermite"                  #
----| "minecraft:entity.parrot.imitate.evoker"                     #
----| "minecraft:entity.parrot.imitate.ghast"                      #
----| "minecraft:entity.parrot.imitate.guardian"                   #
----| "minecraft:entity.parrot.imitate.hoglin"                     #
----| "minecraft:entity.parrot.imitate.husk"                       #
----| "minecraft:entity.parrot.imitate.illusioner"                 #
----| "minecraft:entity.parrot.imitate.magma_cube"                 #
----| "minecraft:entity.parrot.imitate.phantom"                    #
----| "minecraft:entity.parrot.imitate.piglin"                     #
----| "minecraft:entity.parrot.imitate.piglin_brute"               #
----| "minecraft:entity.parrot.imitate.pillager"                   #
----| "minecraft:entity.parrot.imitate.ravager"                    #
----| "minecraft:entity.parrot.imitate.shulker"                    #
----| "minecraft:entity.parrot.imitate.silverfish"                 #
----| "minecraft:entity.parrot.imitate.skeleton"                   #
----| "minecraft:entity.parrot.imitate.slime"                      #
----| "minecraft:entity.parrot.imitate.spider"                     #
----| "minecraft:entity.parrot.imitate.stray"                      #
----| "minecraft:entity.parrot.imitate.vex"                        #
----| "minecraft:entity.parrot.imitate.vindicator"                 #
----| "minecraft:entity.parrot.imitate.warden"                     #
----| "minecraft:entity.parrot.imitate.witch"                      #
----| "minecraft:entity.parrot.imitate.wither"                     #
----| "minecraft:entity.parrot.imitate.wither_skeleton"            #
----| "minecraft:entity.parrot.imitate.zoglin"                     #
----| "minecraft:entity.parrot.imitate.zombie"                     #
----| "minecraft:entity.parrot.imitate.zombie_villager"            #
----| "minecraft:entity.parrot.step"                               #
----| "minecraft:entity.phantom.ambient"                           #
----| "minecraft:entity.phantom.bite"                              #
----| "minecraft:entity.phantom.death"                             #
----| "minecraft:entity.phantom.flap"                              #
----| "minecraft:entity.phantom.hurt"                              #
----| "minecraft:entity.phantom.swoop"                             #
----| "minecraft:entity.pig.ambient"                               #
----| "minecraft:entity.pig.death"                                 #
----| "minecraft:entity.pig.hurt"                                  #
----| "minecraft:entity.pig.saddle"                                #
----| "minecraft:entity.pig.step"                                  #
----| "minecraft:entity.piglin.admiring_item"                      #
----| "minecraft:entity.piglin.ambient"                            #
----| "minecraft:entity.piglin.angry"                              #
----| "minecraft:entity.piglin.celebrate"                          #
----| "minecraft:entity.piglin.converted_to_zombified"             #
----| "minecraft:entity.piglin.death"                              #
----| "minecraft:entity.piglin.hurt"                               #
----| "minecraft:entity.piglin.jealous"                            #
----| "minecraft:entity.piglin.retreat"                            #
----| "minecraft:entity.piglin.step"                               #
----| "minecraft:entity.piglin_brute.ambient"                      #
----| "minecraft:entity.piglin_brute.angry"                        #
----| "minecraft:entity.piglin_brute.converted_to_zombified"       #
----| "minecraft:entity.piglin_brute.death"                        #
----| "minecraft:entity.piglin_brute.hurt"                         #
----| "minecraft:entity.piglin_brute.step"                         #
----| "minecraft:entity.pillager.ambient"                          #
----| "minecraft:entity.pillager.celebrate"                        #
----| "minecraft:entity.pillager.death"                            #
----| "minecraft:entity.pillager.hurt"                             #
----| "minecraft:entity.player.attack.crit"                        #
----| "minecraft:entity.player.attack.knockback"                   #
----| "minecraft:entity.player.attack.nodamage"                    #
----| "minecraft:entity.player.attack.strong"                      #
----| "minecraft:entity.player.attack.sweep"                       #
----| "minecraft:entity.player.attack.weak"                        #
----| "minecraft:entity.player.big_fall"                           #
----| "minecraft:entity.player.breath"                             #
----| "minecraft:entity.player.burp"                               #
----| "minecraft:entity.player.death"                              #
----| "minecraft:entity.player.hurt"                               #
----| "minecraft:entity.player.hurt_drown"                         #
----| "minecraft:entity.player.hurt_freeze"                        #
----| "minecraft:entity.player.hurt_on_fire"                       #
----| "minecraft:entity.player.hurt_sweet_berry_bush"              #
----| "minecraft:entity.player.levelup"                            #
----| "minecraft:entity.player.small_fall"                         #
----| "minecraft:entity.player.splash"                             #
----| "minecraft:entity.player.splash.high_speed"                  #
----| "minecraft:entity.player.swim"                               #
----| "minecraft:entity.polar_bear.ambient"                        #
----| "minecraft:entity.polar_bear.ambient_baby"                   #
----| "minecraft:entity.polar_bear.death"                          #
----| "minecraft:entity.polar_bear.hurt"                           #
----| "minecraft:entity.polar_bear.step"                           #
----| "minecraft:entity.polar_bear.warning"                        #
----| "minecraft:entity.puffer_fish.ambient"                       #
----| "minecraft:entity.puffer_fish.blow_out"                      #
----| "minecraft:entity.puffer_fish.blow_up"                       #
----| "minecraft:entity.puffer_fish.death"                         #
----| "minecraft:entity.puffer_fish.flop"                          #
----| "minecraft:entity.puffer_fish.hurt"                          #
----| "minecraft:entity.puffer_fish.sting"                         #
----| "minecraft:entity.rabbit.ambient"                            #
----| "minecraft:entity.rabbit.attack"                             #
----| "minecraft:entity.rabbit.death"                              #
----| "minecraft:entity.rabbit.hurt"                               #
----| "minecraft:entity.rabbit.jump"                               #
----| "minecraft:entity.ravager.ambient"                           #
----| "minecraft:entity.ravager.attack"                            #
----| "minecraft:entity.ravager.celebrate"                         #
----| "minecraft:entity.ravager.death"                             #
----| "minecraft:entity.ravager.hurt"                              #
----| "minecraft:entity.ravager.roar"                              #
----| "minecraft:entity.ravager.step"                              #
----| "minecraft:entity.ravager.stunned"                           #
----| "minecraft:entity.salmon.ambient"                            #
----| "minecraft:entity.salmon.death"                              #
----| "minecraft:entity.salmon.flop"                               #
----| "minecraft:entity.salmon.hurt"                               #
----| "minecraft:entity.sheep.ambient"                             #
----| "minecraft:entity.sheep.death"                               #
----| "minecraft:entity.sheep.hurt"                                #
----| "minecraft:entity.sheep.shear"                               #
----| "minecraft:entity.sheep.step"                                #
----| "minecraft:entity.shulker.ambient"                           #
----| "minecraft:entity.shulker.close"                             #
----| "minecraft:entity.shulker.death"                             #
----| "minecraft:entity.shulker.hurt"                              #
----| "minecraft:entity.shulker.hurt_closed"                       #
----| "minecraft:entity.shulker.open"                              #
----| "minecraft:entity.shulker.shoot"                             #
----| "minecraft:entity.shulker.teleport"                          #
----| "minecraft:entity.shulker_bullet.hit"                        #
----| "minecraft:entity.shulker_bullet.hurt"                       #
----| "minecraft:entity.silverfish.ambient"                        #
----| "minecraft:entity.silverfish.death"                          #
----| "minecraft:entity.silverfish.hurt"                           #
----| "minecraft:entity.silverfish.step"                           #
----| "minecraft:entity.skeleton.ambient"                          #
----| "minecraft:entity.skeleton.converted_to_stray"               #
----| "minecraft:entity.skeleton.death"                            #
----| "minecraft:entity.skeleton.hurt"                             #
----| "minecraft:entity.skeleton.shoot"                            #
----| "minecraft:entity.skeleton.step"                             #
----| "minecraft:entity.skeleton_horse.ambient"                    #
----| "minecraft:entity.skeleton_horse.ambient_water"              #
----| "minecraft:entity.skeleton_horse.death"                      #
----| "minecraft:entity.skeleton_horse.gallop_water"               #
----| "minecraft:entity.skeleton_horse.hurt"                       #
----| "minecraft:entity.skeleton_horse.jump_water"                 #
----| "minecraft:entity.skeleton_horse.step_water"                 #
----| "minecraft:entity.skeleton_horse.swim"                       #
----| "minecraft:entity.slime.attack"                              #
----| "minecraft:entity.slime.death"                               #
----| "minecraft:entity.slime.death_small"                         #
----| "minecraft:entity.slime.hurt"                                #
----| "minecraft:entity.slime.hurt_small"                          #
----| "minecraft:entity.slime.jump"                                #
----| "minecraft:entity.slime.jump_small"                          #
----| "minecraft:entity.slime.squish"                              #
----| "minecraft:entity.slime.squish_small"                        #
----| "minecraft:entity.sniffer.death"                             #
----| "minecraft:entity.sniffer.digging"                           #
----| "minecraft:entity.sniffer.digging_stop"                      #
----| "minecraft:entity.sniffer.drop_seed"                         #
----| "minecraft:entity.sniffer.eat"                               #
----| "minecraft:entity.sniffer.happy"                             #
----| "minecraft:entity.sniffer.hurt"                              #
----| "minecraft:entity.sniffer.idle"                              #
----| "minecraft:entity.sniffer.scenting"                          #
----| "minecraft:entity.sniffer.searching"                         #
----| "minecraft:entity.sniffer.sniffing"                          #
----| "minecraft:entity.sniffer.step"                              #
----| "minecraft:entity.snow_golem.ambient"                        #
----| "minecraft:entity.snow_golem.death"                          #
----| "minecraft:entity.snow_golem.hurt"                           #
----| "minecraft:entity.snow_golem.shear"                          #
----| "minecraft:entity.snow_golem.shoot"                          #
----| "minecraft:entity.snowball.throw"                            #
----| "minecraft:entity.spider.ambient"                            #
----| "minecraft:entity.spider.death"                              #
----| "minecraft:entity.spider.hurt"                               #
----| "minecraft:entity.spider.step"                               #
----| "minecraft:entity.splash_potion.break"                       #
----| "minecraft:entity.splash_potion.throw"                       #
----| "minecraft:entity.squid.ambient"                             #
----| "minecraft:entity.squid.death"                               #
----| "minecraft:entity.squid.hurt"                                #
----| "minecraft:entity.squid.squirt"                              #
----| "minecraft:entity.stray.ambient"                             #
----| "minecraft:entity.stray.death"                               #
----| "minecraft:entity.stray.hurt"                                #
----| "minecraft:entity.stray.step"                                #
----| "minecraft:entity.strider.ambient"                           #
----| "minecraft:entity.strider.death"                             #
----| "minecraft:entity.strider.eat"                               #
----| "minecraft:entity.strider.happy"                             #
----| "minecraft:entity.strider.hurt"                              #
----| "minecraft:entity.strider.retreat"                           #
----| "minecraft:entity.strider.saddle"                            #
----| "minecraft:entity.strider.step"                              #
----| "minecraft:entity.strider.step_lava"                         #
----| "minecraft:entity.tadpole.death"                             #
----| "minecraft:entity.tadpole.flop"                              #
----| "minecraft:entity.tadpole.grow_up"                           #
----| "minecraft:entity.tadpole.hurt"                              #
----| "minecraft:entity.tnt.primed"                                #
----| "minecraft:entity.tropical_fish.ambient"                     #
----| "minecraft:entity.tropical_fish.death"                       #
----| "minecraft:entity.tropical_fish.flop"                        #
----| "minecraft:entity.tropical_fish.hurt"                        #
----| "minecraft:entity.turtle.ambient_land"                       #
----| "minecraft:entity.turtle.death"                              #
----| "minecraft:entity.turtle.death_baby"                         #
----| "minecraft:entity.turtle.egg_break"                          #
----| "minecraft:entity.turtle.egg_crack"                          #
----| "minecraft:entity.turtle.egg_hatch"                          #
----| "minecraft:entity.turtle.hurt"                               #
----| "minecraft:entity.turtle.hurt_baby"                          #
----| "minecraft:entity.turtle.lay_egg"                            #
----| "minecraft:entity.turtle.shamble"                            #
----| "minecraft:entity.turtle.shamble_baby"                       #
----| "minecraft:entity.turtle.swim"                               #
----| "minecraft:entity.vex.ambient"                               #
----| "minecraft:entity.vex.charge"                                #
----| "minecraft:entity.vex.death"                                 #
----| "minecraft:entity.vex.hurt"                                  #
----| "minecraft:entity.villager.ambient"                          #
----| "minecraft:entity.villager.celebrate"                        #
----| "minecraft:entity.villager.death"                            #
----| "minecraft:entity.villager.hurt"                             #
----| "minecraft:entity.villager.no"                               #
----| "minecraft:entity.villager.trade"                            #
----| "minecraft:entity.villager.work_armorer"                     #
----| "minecraft:entity.villager.work_butcher"                     #
----| "minecraft:entity.villager.work_cartographer"                #
----| "minecraft:entity.villager.work_cleric"                      #
----| "minecraft:entity.villager.work_farmer"                      #
----| "minecraft:entity.villager.work_fisherman"                   #
----| "minecraft:entity.villager.work_fletcher"                    #
----| "minecraft:entity.villager.work_leatherworker"               #
----| "minecraft:entity.villager.work_librarian"                   #
----| "minecraft:entity.villager.work_mason"                       #
----| "minecraft:entity.villager.work_shepherd"                    #
----| "minecraft:entity.villager.work_toolsmith"                   #
----| "minecraft:entity.villager.work_weaponsmith"                 #
----| "minecraft:entity.villager.yes"                              #
----| "minecraft:entity.vindicator.ambient"                        #
----| "minecraft:entity.vindicator.celebrate"                      #
----| "minecraft:entity.vindicator.death"                          #
----| "minecraft:entity.vindicator.hurt"                           #
----| "minecraft:entity.wandering_trader.ambient"                  #
----| "minecraft:entity.wandering_trader.death"                    #
----| "minecraft:entity.wandering_trader.disappeared"              #
----| "minecraft:entity.wandering_trader.drink_milk"               #
----| "minecraft:entity.wandering_trader.drink_potion"             #
----| "minecraft:entity.wandering_trader.hurt"                     #
----| "minecraft:entity.wandering_trader.no"                       #
----| "minecraft:entity.wandering_trader.reappeared"               #
----| "minecraft:entity.wandering_trader.trade"                    #
----| "minecraft:entity.wandering_trader.yes"                      #
----| "minecraft:entity.warden.agitated"                           #
----| "minecraft:entity.warden.ambient"                            #
----| "minecraft:entity.warden.angry"                              #
----| "minecraft:entity.warden.attack_impact"                      #
----| "minecraft:entity.warden.death"                              #
----| "minecraft:entity.warden.dig"                                #
----| "minecraft:entity.warden.emerge"                             #
----| "minecraft:entity.warden.heartbeat"                          #
----| "minecraft:entity.warden.hurt"                               #
----| "minecraft:entity.warden.listening"                          #
----| "minecraft:entity.warden.listening_angry"                    #
----| "minecraft:entity.warden.nearby_close"                       #
----| "minecraft:entity.warden.nearby_closer"                      #
----| "minecraft:entity.warden.nearby_closest"                     #
----| "minecraft:entity.warden.roar"                               #
----| "minecraft:entity.warden.sniff"                              #
----| "minecraft:entity.warden.sonic_boom"                         #
----| "minecraft:entity.warden.sonic_charge"                       #
----| "minecraft:entity.warden.step"                               #
----| "minecraft:entity.warden.tendril_clicks"                     #
----| "minecraft:entity.witch.ambient"                             #
----| "minecraft:entity.witch.celebrate"                           #
----| "minecraft:entity.witch.death"                               #
----| "minecraft:entity.witch.drink"                               #
----| "minecraft:entity.witch.hurt"                                #
----| "minecraft:entity.witch.throw"                               #
----| "minecraft:entity.wither.ambient"                            #
----| "minecraft:entity.wither.break_block"                        #
----| "minecraft:entity.wither.death"                              #
----| "minecraft:entity.wither.hurt"                               #
----| "minecraft:entity.wither.shoot"                              #
----| "minecraft:entity.wither.spawn"                              #
----| "minecraft:entity.wither_skeleton.ambient"                   #
----| "minecraft:entity.wither_skeleton.death"                     #
----| "minecraft:entity.wither_skeleton.hurt"                      #
----| "minecraft:entity.wither_skeleton.step"                      #
----| "minecraft:entity.wolf.ambient"                              #
----| "minecraft:entity.wolf.death"                                #
----| "minecraft:entity.wolf.growl"                                #
----| "minecraft:entity.wolf.howl"                                 #
----| "minecraft:entity.wolf.hurt"                                 #
----| "minecraft:entity.wolf.pant"                                 #
----| "minecraft:entity.wolf.shake"                                #
----| "minecraft:entity.wolf.step"                                 #
----| "minecraft:entity.wolf.whine"                                #
----| "minecraft:entity.zoglin.ambient"                            #
----| "minecraft:entity.zoglin.angry"                              #
----| "minecraft:entity.zoglin.attack"                             #
----| "minecraft:entity.zoglin.death"                              #
----| "minecraft:entity.zoglin.hurt"                               #
----| "minecraft:entity.zoglin.step"                               #
----| "minecraft:entity.zombie.ambient"                            #
----| "minecraft:entity.zombie.attack_iron_door"                   #
----| "minecraft:entity.zombie.attack_wooden_door"                 #
----| "minecraft:entity.zombie.break_wooden_door"                  #
----| "minecraft:entity.zombie.converted_to_drowned"               #
----| "minecraft:entity.zombie.death"                              #
----| "minecraft:entity.zombie.destroy_egg"                        #
----| "minecraft:entity.zombie.hurt"                               #
----| "minecraft:entity.zombie.infect"                             #
----| "minecraft:entity.zombie.step"                               #
----| "minecraft:entity.zombie_horse.ambient"                      #
----| "minecraft:entity.zombie_horse.death"                        #
----| "minecraft:entity.zombie_horse.hurt"                         #
----| "minecraft:entity.zombie_villager.ambient"                   #
----| "minecraft:entity.zombie_villager.converted"                 #
----| "minecraft:entity.zombie_villager.cure"                      #
----| "minecraft:entity.zombie_villager.death"                     #
----| "minecraft:entity.zombie_villager.hurt"                      #
----| "minecraft:entity.zombie_villager.step"                      #
----| "minecraft:entity.zombified_piglin.ambient"                  #
----| "minecraft:entity.zombified_piglin.angry"                    #
----| "minecraft:entity.zombified_piglin.death"                    #
----| "minecraft:entity.zombified_piglin.hurt"                     #
----| "minecraft:event.raid.horn"                                  #
----| "minecraft:item.armor.equip_chain"                           #
----| "minecraft:item.armor.equip_diamond"                         #
----| "minecraft:item.armor.equip_elytra"                          #
----| "minecraft:item.armor.equip_generic"                         #
----| "minecraft:item.armor.equip_gold"                            #
----| "minecraft:item.armor.equip_iron"                            #
----| "minecraft:item.armor.equip_leather"                         #
----| "minecraft:item.armor.equip_netherite"                       #
----| "minecraft:item.armor.equip_turtle"                          #
----| "minecraft:item.axe.scrape"                                  #
----| "minecraft:item.axe.strip"                                   #
----| "minecraft:item.axe.wax_off"                                 #
----| "minecraft:item.bone_meal.use"                               #
----| "minecraft:item.book.page_turn"                              #
----| "minecraft:item.book.put"                                    #
----| "minecraft:item.bottle.empty"                                #
----| "minecraft:item.bottle.fill"                                 #
----| "minecraft:item.bottle.fill_dragonbreath"                    #
----| "minecraft:item.brush.brushing.generic"                      #
----| "minecraft:item.brush.brushing.gravel"                       #
----| "minecraft:item.brush.brushing.gravel.complete"              #
----| "minecraft:item.brush.brushing.sand"                         #
----| "minecraft:item.brush.brushing.sand.complete"                #
----| "minecraft:item.bucket.empty"                                #
----| "minecraft:item.bucket.empty_axolotl"                        #
----| "minecraft:item.bucket.empty_fish"                           #
----| "minecraft:item.bucket.empty_lava"                           #
----| "minecraft:item.bucket.empty_powder_snow"                    #
----| "minecraft:item.bucket.empty_tadpole"                        #
----| "minecraft:item.bucket.fill"                                 #
----| "minecraft:item.bucket.fill_axolotl"                         #
----| "minecraft:item.bucket.fill_fish"                            #
----| "minecraft:item.bucket.fill_lava"                            #
----| "minecraft:item.bucket.fill_powder_snow"                     #
----| "minecraft:item.bucket.fill_tadpole"                         #
----| "minecraft:item.bundle.drop_contents"                        #
----| "minecraft:item.bundle.insert"                               #
----| "minecraft:item.bundle.remove_one"                           #
----| "minecraft:item.chorus_fruit.teleport"                       #
----| "minecraft:item.crop.plant"                                  #
----| "minecraft:item.crossbow.hit"                                #
----| "minecraft:item.crossbow.loading_end"                        #
----| "minecraft:item.crossbow.loading_middle"                     #
----| "minecraft:item.crossbow.loading_start"                      #
----| "minecraft:item.crossbow.quick_charge_1"                     #
----| "minecraft:item.crossbow.quick_charge_2"                     #
----| "minecraft:item.crossbow.quick_charge_3"                     #
----| "minecraft:item.crossbow.shoot"                              #
----| "minecraft:item.dye.use"                                     #
----| "minecraft:item.elytra.flying"                               #
----| "minecraft:item.firecharge.use"                              #
----| "minecraft:item.flintandsteel.use"                           #
----| "minecraft:item.glow_ink_sac.use"                            #
----| "minecraft:item.goat_horn.sound.0"                           #
----| "minecraft:item.goat_horn.sound.1"                           #
----| "minecraft:item.goat_horn.sound.2"                           #
----| "minecraft:item.goat_horn.sound.3"                           #
----| "minecraft:item.goat_horn.sound.4"                           #
----| "minecraft:item.goat_horn.sound.5"                           #
----| "minecraft:item.goat_horn.sound.6"                           #
----| "minecraft:item.goat_horn.sound.7"                           #
----| "minecraft:item.hoe.till"                                    #
----| "minecraft:item.honey_bottle.drink"                          #
----| "minecraft:item.honeycomb.wax_on"                            #
----| "minecraft:item.ink_sac.use"                                 #
----| "minecraft:item.lodestone_compass.lock"                      #
----| "minecraft:item.nether_wart.plant"                           #
----| "minecraft:item.shield.block"                                #
----| "minecraft:item.shield.break"                                #
----| "minecraft:item.shovel.flatten"                              #
----| "minecraft:item.spyglass.stop_using"                         #
----| "minecraft:item.spyglass.use"                                #
----| "minecraft:item.totem.use"                                   #
----| "minecraft:item.trident.hit"                                 #
----| "minecraft:item.trident.hit_ground"                          #
----| "minecraft:item.trident.return"                              #
----| "minecraft:item.trident.riptide_1"                           #
----| "minecraft:item.trident.riptide_2"                           #
----| "minecraft:item.trident.riptide_3"                           #
----| "minecraft:item.trident.throw"                               #
----| "minecraft:item.trident.thunder"                             #
----| "minecraft:music.creative"                                   #
----| "minecraft:music.credits"                                    #
----| "minecraft:music.dragon"                                     #
----| "minecraft:music.end"                                        #
----| "minecraft:music.game"                                       #
----| "minecraft:music.menu"                                       #
----| "minecraft:music.nether.basalt_deltas"                       #
----| "minecraft:music.nether.crimson_forest"                      #
----| "minecraft:music.nether.nether_wastes"                       #
----| "minecraft:music.nether.soul_sand_valley"                    #
----| "minecraft:music.nether.warped_forest"                       #
----| "minecraft:music.overworld.badlands"                         #
----| "minecraft:music.overworld.bamboo_jungle"                    #
----| "minecraft:music.overworld.cherry_grove"                     #
----| "minecraft:music.overworld.deep_dark"                        #
----| "minecraft:music.overworld.desert"                           #
----| "minecraft:music.overworld.dripstone_caves"                  #
----| "minecraft:music.overworld.flower_forest"                    #
----| "minecraft:music.overworld.forest"                           #
----| "minecraft:music.overworld.frozen_peaks"                     #
----| "minecraft:music.overworld.grove"                            #
----| "minecraft:music.overworld.jagged_peaks"                     #
----| "minecraft:music.overworld.jungle"                           #
----| "minecraft:music.overworld.lush_caves"                       #
----| "minecraft:music.overworld.meadow"                           #
----| "minecraft:music.overworld.old_growth_taiga"                 #
----| "minecraft:music.overworld.snowy_slopes"                     #
----| "minecraft:music.overworld.sparse_jungle"                    #
----| "minecraft:music.overworld.stony_peaks"                      #
----| "minecraft:music.overworld.swamp"                            #
----| "minecraft:music.under_water"                                #
----| "minecraft:music_disc.11"                                    #
----| "minecraft:music_disc.13"                                    #
----| "minecraft:music_disc.5"                                     #
----| "minecraft:music_disc.blocks"                                #
----| "minecraft:music_disc.cat"                                   #
----| "minecraft:music_disc.chirp"                                 #
----| "minecraft:music_disc.far"                                   #
----| "minecraft:music_disc.mall"                                  #
----| "minecraft:music_disc.mellohi"                               #
----| "minecraft:music_disc.otherside"                             #
----| "minecraft:music_disc.pigstep"                               #
----| "minecraft:music_disc.relic"                                 #
----| "minecraft:music_disc.stal"                                  #
----| "minecraft:music_disc.strad"                                 #
----| "minecraft:music_disc.wait"                                  #
----| "minecraft:music_disc.ward"                                  #
----| "minecraft:particle.soul_escape"                             #
----| "minecraft:ui.button.click"                                  #
----| "minecraft:ui.cartography_table.take_result"                 #
----| "minecraft:ui.loom.select_pattern"                           #
----| "minecraft:ui.loom.take_result"                              #
----| "minecraft:ui.stonecutter.select_recipe"                     #
----| "minecraft:ui.stonecutter.take_result"                       #
----| "minecraft:ui.toast.challenge_complete"                      #
----| "minecraft:ui.toast.in"                                      #
----| "minecraft:ui.toast.out"                                     #
----| "minecraft:weather.rain"                                     #
----| "minecraft:weather.rain.above"                               #
+---| "minecraft:ambient.basalt_deltas.additions"                  # Ambient: Basalt Deltas Additions
+---| "minecraft:ambient.basalt_deltas.loop"                       # Ambient: Basalt Deltas Loop
+---| "minecraft:ambient.basalt_deltas.mood"                       # Ambient: Basalt Deltas Mood
+---| "minecraft:ambient.cave"                                     # Ambient: Cave
+---| "minecraft:ambient.crimson_forest.additions"                 # Ambient: Crimson Forest Additions
+---| "minecraft:ambient.crimson_forest.loop"                      # Ambient: Crimson Forest Loop
+---| "minecraft:ambient.crimson_forest.mood"                      # Ambient: Crimson Forest Mood
+---| "minecraft:ambient.nether_wastes.additions"                  # Ambient: Nether Wastes Additions
+---| "minecraft:ambient.nether_wastes.loop"                       # Ambient: Nether Wastes Loop
+---| "minecraft:ambient.nether_wastes.mood"                       # Ambient: Nether Wastes Mood
+---| "minecraft:ambient.soul_sand_valley.additions"               # Ambient: Soul Sand Valley Additions
+---| "minecraft:ambient.soul_sand_valley.loop"                    # Ambient: Soul Sand Valley Loop
+---| "minecraft:ambient.soul_sand_valley.mood"                    # Ambient: Soul Sand Valley Mood
+---| "minecraft:ambient.underwater.enter"                         # Ambient: Underwater Enter
+---| "minecraft:ambient.underwater.exit"                          # Ambient: Underwater Exit
+---| "minecraft:ambient.underwater.loop"                          # Ambient: Underwater Loop
+---| "minecraft:ambient.underwater.loop.additions"                # Ambient: Underwater Loop Additions
+---| "minecraft:ambient.underwater.loop.additions.rare"           # Ambient: Underwater Loop Additions Rare
+---| "minecraft:ambient.underwater.loop.additions.ultra_rare"     # Ambient: Underwater Loop Additions Ultra Rare
+---| "minecraft:ambient.warped_forest.additions"                  # Ambient: Warped Forest Additions
+---| "minecraft:ambient.warped_forest.loop"                       # Ambient: Warped Forest Loop
+---| "minecraft:ambient.warped_forest.mood"                       # Ambient: Warped Forest Mood
+---| "minecraft:block.amethyst_block.break"                       # Block: Amethyst Block Break
+---| "minecraft:block.amethyst_block.chime"                       # Block: Amethyst Block Chime
+---| "minecraft:block.amethyst_block.fall"                        # Block: Amethyst Block Fall
+---| "minecraft:block.amethyst_block.hit"                         # Block: Amethyst Block Hit
+---| "minecraft:block.amethyst_block.place"                       # Block: Amethyst Block Place
+---| "minecraft:block.amethyst_block.resonate"                    # Block: Amethyst Block Resonate
+---| "minecraft:block.amethyst_block.step"                        # Block: Amethyst Block Step
+---| "minecraft:block.amethyst_cluster.break"                     # Block: Amethyst Cluster Break
+---| "minecraft:block.amethyst_cluster.fall"                      # Block: Amethyst Cluster Fall
+---| "minecraft:block.amethyst_cluster.hit"                       # Block: Amethyst Cluster Hit
+---| "minecraft:block.amethyst_cluster.place"                     # Block: Amethyst Cluster Place
+---| "minecraft:block.amethyst_cluster.step"                      # Block: Amethyst Cluster Step
+---| "minecraft:block.ancient_debris.break"                       # Block: Ancient Debris Break
+---| "minecraft:block.ancient_debris.fall"                        # Block: Ancient Debris Fall
+---| "minecraft:block.ancient_debris.hit"                         # Block: Ancient Debris Hit
+---| "minecraft:block.ancient_debris.place"                       # Block: Ancient Debris Place
+---| "minecraft:block.ancient_debris.step"                        # Block: Ancient Debris Step
+---| "minecraft:block.anvil.break"                                # Block: Anvil Break
+---| "minecraft:block.anvil.destroy"                              # Block: Anvil Destroy
+---| "minecraft:block.anvil.fall"                                 # Block: Anvil Fall
+---| "minecraft:block.anvil.hit"                                  # Block: Anvil Hit
+---| "minecraft:block.anvil.land"                                 # Block: Anvil Land
+---| "minecraft:block.anvil.place"                                # Block: Anvil Place
+---| "minecraft:block.anvil.step"                                 # Block: Anvil Step
+---| "minecraft:block.anvil.use"                                  # Block: Anvil Use
+---| "minecraft:block.azalea.break"                               # Block: Azalea Break
+---| "minecraft:block.azalea.fall"                                # Block: Azalea Fall
+---| "minecraft:block.azalea.hit"                                 # Block: Azalea Hit
+---| "minecraft:block.azalea.place"                               # Block: Azalea Place
+---| "minecraft:block.azalea.step"                                # Block: Azalea Step
+---| "minecraft:block.azalea_leaves.break"                        # Block: Azalea Leaves Break
+---| "minecraft:block.azalea_leaves.fall"                         # Block: Azalea Leaves Fall
+---| "minecraft:block.azalea_leaves.hit"                          # Block: Azalea Leaves Hit
+---| "minecraft:block.azalea_leaves.place"                        # Block: Azalea Leaves Place
+---| "minecraft:block.azalea_leaves.step"                         # Block: Azalea Leaves Step
+---| "minecraft:block.bamboo.break"                               # Block: Bamboo Break
+---| "minecraft:block.bamboo.fall"                                # Block: Bamboo Fall
+---| "minecraft:block.bamboo.hit"                                 # Block: Bamboo Hit
+---| "minecraft:block.bamboo.place"                               # Block: Bamboo Place
+---| "minecraft:block.bamboo.step"                                # Block: Bamboo Step
+---| "minecraft:block.bamboo_sapling.break"                       # Block: Bamboo Sapling Break
+---| "minecraft:block.bamboo_sapling.hit"                         # Block: Bamboo Sapling Hit
+---| "minecraft:block.bamboo_sapling.place"                       # Block: Bamboo Sapling Place
+---| "minecraft:block.bamboo_wood.break"                          # Block: Bamboo Wood Break
+---| "minecraft:block.bamboo_wood.fall"                           # Block: Bamboo Wood Fall
+---| "minecraft:block.bamboo_wood.hit"                            # Block: Bamboo Wood Hit
+---| "minecraft:block.bamboo_wood.place"                          # Block: Bamboo Wood Place
+---| "minecraft:block.bamboo_wood.step"                           # Block: Bamboo Wood Step
+---| "minecraft:block.bamboo_wood_button.click_off"               # Block: Bamboo Wood Button Click Off
+---| "minecraft:block.bamboo_wood_button.click_on"                # Block: Bamboo Wood Button Click On
+---| "minecraft:block.bamboo_wood_door.close"                     # Block: Bamboo Wood Door Close
+---| "minecraft:block.bamboo_wood_door.open"                      # Block: Bamboo Wood Door Open
+---| "minecraft:block.bamboo_wood_fence_gate.close"               # Block: Bamboo Wood Fence Gate Close
+---| "minecraft:block.bamboo_wood_fence_gate.open"                # Block: Bamboo Wood Fence Gate Open
+---| "minecraft:block.bamboo_wood_hanging_sign.break"             # Block: Bamboo Wood Hanging Sign Break
+---| "minecraft:block.bamboo_wood_hanging_sign.fall"              # Block: Bamboo Wood Hanging Sign Fall
+---| "minecraft:block.bamboo_wood_hanging_sign.hit"               # Block: Bamboo Wood Hanging Sign Hit
+---| "minecraft:block.bamboo_wood_hanging_sign.place"             # Block: Bamboo Wood Hanging Sign Place
+---| "minecraft:block.bamboo_wood_hanging_sign.step"              # Block: Bamboo Wood Hanging Sign Step
+---| "minecraft:block.bamboo_wood_pressure_plate.click_off"       # Block: Bamboo Wood Pressure Plate Click Off
+---| "minecraft:block.bamboo_wood_pressure_plate.click_on"        # Block: Bamboo Wood Pressure Plate Click On
+---| "minecraft:block.bamboo_wood_trapdoor.close"                 # Block: Bamboo Wood Trapdoor Close
+---| "minecraft:block.bamboo_wood_trapdoor.open"                  # Block: Bamboo Wood Trapdoor Open
+---| "minecraft:block.barrel.close"                               # Block: Barrel Close
+---| "minecraft:block.barrel.open"                                # Block: Barrel Open
+---| "minecraft:block.basalt.break"                               # Block: Basalt Break
+---| "minecraft:block.basalt.fall"                                # Block: Basalt Fall
+---| "minecraft:block.basalt.hit"                                 # Block: Basalt Hit
+---| "minecraft:block.basalt.place"                               # Block: Basalt Place
+---| "minecraft:block.basalt.step"                                # Block: Basalt Step
+---| "minecraft:block.beacon.activate"                            # Block: Beacon Activate
+---| "minecraft:block.beacon.ambient"                             # Block: Beacon Ambient
+---| "minecraft:block.beacon.deactivate"                          # Block: Beacon Deactivate
+---| "minecraft:block.beacon.power_select"                        # Block: Beacon Power Select
+---| "minecraft:block.beehive.drip"                               # Block: Beehive Drip
+---| "minecraft:block.beehive.enter"                              # Block: Beehive Enter
+---| "minecraft:block.beehive.exit"                               # Block: Beehive Exit
+---| "minecraft:block.beehive.shear"                              # Block: Beehive Shear
+---| "minecraft:block.beehive.work"                               # Block: Beehive Work
+---| "minecraft:block.bell.resonate"                              # Block: Bell Resonate
+---| "minecraft:block.bell.use"                                   # Block: Bell Use
+---| "minecraft:block.big_dripleaf.break"                         # Block: Big Dripleaf Break
+---| "minecraft:block.big_dripleaf.fall"                          # Block: Big Dripleaf Fall
+---| "minecraft:block.big_dripleaf.hit"                           # Block: Big Dripleaf Hit
+---| "minecraft:block.big_dripleaf.place"                         # Block: Big Dripleaf Place
+---| "minecraft:block.big_dripleaf.step"                          # Block: Big Dripleaf Step
+---| "minecraft:block.big_dripleaf.tilt_down"                     # Block: Big Dripleaf Tilt Down
+---| "minecraft:block.big_dripleaf.tilt_up"                       # Block: Big Dripleaf Tilt Up
+---| "minecraft:block.blastfurnace.fire_crackle"                  # Block: Blastfurnace Fire Crackle
+---| "minecraft:block.bone_block.break"                           # Block: Bone Block Break
+---| "minecraft:block.bone_block.fall"                            # Block: Bone Block Fall
+---| "minecraft:block.bone_block.hit"                             # Block: Bone Block Hit
+---| "minecraft:block.bone_block.place"                           # Block: Bone Block Place
+---| "minecraft:block.bone_block.step"                            # Block: Bone Block Step
+---| "minecraft:block.brewing_stand.brew"                         # Block: Brewing Stand Brew
+---| "minecraft:block.bubble_column.bubble_pop"                   # Block: Bubble Column Bubble Pop
+---| "minecraft:block.bubble_column.upwards_ambient"              # Block: Bubble Column Upwards Ambient
+---| "minecraft:block.bubble_column.upwards_inside"               # Block: Bubble Column Upwards Inside
+---| "minecraft:block.bubble_column.whirlpool_ambient"            # Block: Bubble Column Whirlpool Ambient
+---| "minecraft:block.bubble_column.whirlpool_inside"             # Block: Bubble Column Whirlpool Inside
+---| "minecraft:block.cake.add_candle"                            # Block: Cake Add Candle
+---| "minecraft:block.calcite.break"                              # Block: Calcite Break
+---| "minecraft:block.calcite.fall"                               # Block: Calcite Fall
+---| "minecraft:block.calcite.hit"                                # Block: Calcite Hit
+---| "minecraft:block.calcite.place"                              # Block: Calcite Place
+---| "minecraft:block.calcite.step"                               # Block: Calcite Step
+---| "minecraft:block.campfire.crackle"                           # Block: Campfire Crackle
+---| "minecraft:block.candle.ambient"                             # Block: Candle Ambient
+---| "minecraft:block.candle.break"                               # Block: Candle Break
+---| "minecraft:block.candle.extinguish"                          # Block: Candle Extinguish
+---| "minecraft:block.candle.fall"                                # Block: Candle Fall
+---| "minecraft:block.candle.hit"                                 # Block: Candle Hit
+---| "minecraft:block.candle.place"                               # Block: Candle Place
+---| "minecraft:block.candle.step"                                # Block: Candle Step
+---| "minecraft:block.cave_vines.break"                           # Block: Cave Vines Break
+---| "minecraft:block.cave_vines.fall"                            # Block: Cave Vines Fall
+---| "minecraft:block.cave_vines.hit"                             # Block: Cave Vines Hit
+---| "minecraft:block.cave_vines.pick_berries"                    # Block: Cave Vines Pick Berries
+---| "minecraft:block.cave_vines.place"                           # Block: Cave Vines Place
+---| "minecraft:block.cave_vines.step"                            # Block: Cave Vines Step
+---| "minecraft:block.chain.break"                                # Block: Chain Break
+---| "minecraft:block.chain.fall"                                 # Block: Chain Fall
+---| "minecraft:block.chain.hit"                                  # Block: Chain Hit
+---| "minecraft:block.chain.place"                                # Block: Chain Place
+---| "minecraft:block.chain.step"                                 # Block: Chain Step
+---| "minecraft:block.cherry_leaves.break"                        # Block: Cherry Leaves Break
+---| "minecraft:block.cherry_leaves.fall"                         # Block: Cherry Leaves Fall
+---| "minecraft:block.cherry_leaves.hit"                          # Block: Cherry Leaves Hit
+---| "minecraft:block.cherry_leaves.place"                        # Block: Cherry Leaves Place
+---| "minecraft:block.cherry_leaves.step"                         # Block: Cherry Leaves Step
+---| "minecraft:block.cherry_sapling.break"                       # Block: Cherry Sapling Break
+---| "minecraft:block.cherry_sapling.fall"                        # Block: Cherry Sapling Fall
+---| "minecraft:block.cherry_sapling.hit"                         # Block: Cherry Sapling Hit
+---| "minecraft:block.cherry_sapling.place"                       # Block: Cherry Sapling Place
+---| "minecraft:block.cherry_sapling.step"                        # Block: Cherry Sapling Step
+---| "minecraft:block.cherry_wood.break"                          # Block: Cherry Wood Break
+---| "minecraft:block.cherry_wood.fall"                           # Block: Cherry Wood Fall
+---| "minecraft:block.cherry_wood.hit"                            # Block: Cherry Wood Hit
+---| "minecraft:block.cherry_wood.place"                          # Block: Cherry Wood Place
+---| "minecraft:block.cherry_wood.step"                           # Block: Cherry Wood Step
+---| "minecraft:block.cherry_wood_button.click_off"               # Block: Cherry Wood Button Click Off
+---| "minecraft:block.cherry_wood_button.click_on"                # Block: Cherry Wood Button Click On
+---| "minecraft:block.cherry_wood_door.close"                     # Block: Cherry Wood Door Close
+---| "minecraft:block.cherry_wood_door.open"                      # Block: Cherry Wood Door Open
+---| "minecraft:block.cherry_wood_fence_gate.close"               # Block: Cherry Wood Fence Gate Close
+---| "minecraft:block.cherry_wood_fence_gate.open"                # Block: Cherry Wood Fence Gate Open
+---| "minecraft:block.cherry_wood_hanging_sign.break"             # Block: Cherry Wood Hanging Sign Break
+---| "minecraft:block.cherry_wood_hanging_sign.fall"              # Block: Cherry Wood Hanging Sign Fall
+---| "minecraft:block.cherry_wood_hanging_sign.hit"               # Block: Cherry Wood Hanging Sign Hit
+---| "minecraft:block.cherry_wood_hanging_sign.place"             # Block: Cherry Wood Hanging Sign Place
+---| "minecraft:block.cherry_wood_hanging_sign.step"              # Block: Cherry Wood Hanging Sign Step
+---| "minecraft:block.cherry_wood_pressure_plate.click_off"       # Block: Cherry Wood Pressure Plate Click Off
+---| "minecraft:block.cherry_wood_pressure_plate.click_on"        # Block: Cherry Wood Pressure Plate Click On
+---| "minecraft:block.cherry_wood_trapdoor.close"                 # Block: Cherry Wood Trapdoor Close
+---| "minecraft:block.cherry_wood_trapdoor.open"                  # Block: Cherry Wood Trapdoor Open
+---| "minecraft:block.chest.close"                                # Block: Chest Close
+---| "minecraft:block.chest.locked"                               # Block: Chest Locked
+---| "minecraft:block.chest.open"                                 # Block: Chest Open
+---| "minecraft:block.chiseled_bookshelf.break"                   # Block: Chiseled Bookshelf Break
+---| "minecraft:block.chiseled_bookshelf.fall"                    # Block: Chiseled Bookshelf Fall
+---| "minecraft:block.chiseled_bookshelf.hit"                     # Block: Chiseled Bookshelf Hit
+---| "minecraft:block.chiseled_bookshelf.insert"                  # Block: Chiseled Bookshelf Insert
+---| "minecraft:block.chiseled_bookshelf.insert.enchanted"        # Block: Chiseled Bookshelf Insert Enchanted
+---| "minecraft:block.chiseled_bookshelf.pickup"                  # Block: Chiseled Bookshelf Pickup
+---| "minecraft:block.chiseled_bookshelf.pickup.enchanted"        # Block: Chiseled Bookshelf Pickup Enchanted
+---| "minecraft:block.chiseled_bookshelf.place"                   # Block: Chiseled Bookshelf Place
+---| "minecraft:block.chiseled_bookshelf.step"                    # Block: Chiseled Bookshelf Step
+---| "minecraft:block.chorus_flower.death"                        # Block: Chorus Flower Death
+---| "minecraft:block.chorus_flower.grow"                         # Block: Chorus Flower Grow
+---| "minecraft:block.comparator.click"                           # Block: Comparator Click
+---| "minecraft:block.composter.empty"                            # Block: Composter Empty
+---| "minecraft:block.composter.fill"                             # Block: Composter Fill
+---| "minecraft:block.composter.fill_success"                     # Block: Composter Fill Success
+---| "minecraft:block.composter.ready"                            # Block: Composter Ready
+---| "minecraft:block.conduit.activate"                           # Block: Conduit Activate
+---| "minecraft:block.conduit.ambient"                            # Block: Conduit Ambient
+---| "minecraft:block.conduit.ambient.short"                      # Block: Conduit Ambient Short
+---| "minecraft:block.conduit.attack.target"                      # Block: Conduit Attack Target
+---| "minecraft:block.conduit.deactivate"                         # Block: Conduit Deactivate
+---| "minecraft:block.copper.break"                               # Block: Copper Break
+---| "minecraft:block.copper.fall"                                # Block: Copper Fall
+---| "minecraft:block.copper.hit"                                 # Block: Copper Hit
+---| "minecraft:block.copper.place"                               # Block: Copper Place
+---| "minecraft:block.copper.step"                                # Block: Copper Step
+---| "minecraft:block.copper_bulb.break"                          # Block: Copper Bulb Break
+---| "minecraft:block.copper_bulb.fall"                           # Block: Copper Bulb Fall
+---| "minecraft:block.copper_bulb.hit"                            # Block: Copper Bulb Hit
+---| "minecraft:block.copper_bulb.place"                          # Block: Copper Bulb Place
+---| "minecraft:block.copper_bulb.step"                           # Block: Copper Bulb Step
+---| "minecraft:block.copper_bulb.turn_off"                       # Block: Copper Bulb Turn Off
+---| "minecraft:block.copper_bulb.turn_on"                        # Block: Copper Bulb Turn On
+---| "minecraft:block.copper_door.close"                          # Block: Copper Door Close
+---| "minecraft:block.copper_door.open"                           # Block: Copper Door Open
+---| "minecraft:block.copper_grate.break"                         # Block: Copper Grate Break
+---| "minecraft:block.copper_grate.fall"                          # Block: Copper Grate Fall
+---| "minecraft:block.copper_grate.hit"                           # Block: Copper Grate Hit
+---| "minecraft:block.copper_grate.place"                         # Block: Copper Grate Place
+---| "minecraft:block.copper_grate.step"                          # Block: Copper Grate Step
+---| "minecraft:block.copper_trapdoor.close"                      # Block: Copper Trapdoor Close
+---| "minecraft:block.copper_trapdoor.open"                       # Block: Copper Trapdoor Open
+---| "minecraft:block.coral_block.break"                          # Block: Coral Block Break
+---| "minecraft:block.coral_block.fall"                           # Block: Coral Block Fall
+---| "minecraft:block.coral_block.hit"                            # Block: Coral Block Hit
+---| "minecraft:block.coral_block.place"                          # Block: Coral Block Place
+---| "minecraft:block.coral_block.step"                           # Block: Coral Block Step
+---| "minecraft:block.crafter.craft"                              # Block: Crafter Craft
+---| "minecraft:block.crafter.fail"                               # Block: Crafter Fail
+---| "minecraft:block.crop.break"                                 # Block: Crop Break
+---| "minecraft:block.decorated_pot.break"                        # Block: Decorated Pot Break
+---| "minecraft:block.decorated_pot.fall"                         # Block: Decorated Pot Fall
+---| "minecraft:block.decorated_pot.hit"                          # Block: Decorated Pot Hit
+---| "minecraft:block.decorated_pot.insert"                       # Block: Decorated Pot Insert
+---| "minecraft:block.decorated_pot.insert_fail"                  # Block: Decorated Pot Insert Fail
+---| "minecraft:block.decorated_pot.place"                        # Block: Decorated Pot Place
+---| "minecraft:block.decorated_pot.shatter"                      # Block: Decorated Pot Shatter
+---| "minecraft:block.decorated_pot.step"                         # Block: Decorated Pot Step
+---| "minecraft:block.deepslate.break"                            # Block: Deepslate Break
+---| "minecraft:block.deepslate.fall"                             # Block: Deepslate Fall
+---| "minecraft:block.deepslate.hit"                              # Block: Deepslate Hit
+---| "minecraft:block.deepslate.place"                            # Block: Deepslate Place
+---| "minecraft:block.deepslate.step"                             # Block: Deepslate Step
+---| "minecraft:block.deepslate_bricks.break"                     # Block: Deepslate Bricks Break
+---| "minecraft:block.deepslate_bricks.fall"                      # Block: Deepslate Bricks Fall
+---| "minecraft:block.deepslate_bricks.hit"                       # Block: Deepslate Bricks Hit
+---| "minecraft:block.deepslate_bricks.place"                     # Block: Deepslate Bricks Place
+---| "minecraft:block.deepslate_bricks.step"                      # Block: Deepslate Bricks Step
+---| "minecraft:block.deepslate_tiles.break"                      # Block: Deepslate Tiles Break
+---| "minecraft:block.deepslate_tiles.fall"                       # Block: Deepslate Tiles Fall
+---| "minecraft:block.deepslate_tiles.hit"                        # Block: Deepslate Tiles Hit
+---| "minecraft:block.deepslate_tiles.place"                      # Block: Deepslate Tiles Place
+---| "minecraft:block.deepslate_tiles.step"                       # Block: Deepslate Tiles Step
+---| "minecraft:block.dispenser.dispense"                         # Block: Dispenser Dispense
+---| "minecraft:block.dispenser.fail"                             # Block: Dispenser Fail
+---| "minecraft:block.dispenser.launch"                           # Block: Dispenser Launch
+---| "minecraft:block.dripstone_block.break"                      # Block: Dripstone Block Break
+---| "minecraft:block.dripstone_block.fall"                       # Block: Dripstone Block Fall
+---| "minecraft:block.dripstone_block.hit"                        # Block: Dripstone Block Hit
+---| "minecraft:block.dripstone_block.place"                      # Block: Dripstone Block Place
+---| "minecraft:block.dripstone_block.step"                       # Block: Dripstone Block Step
+---| "minecraft:block.enchantment_table.use"                      # Block: Enchantment Table Use
+---| "minecraft:block.end_gateway.spawn"                          # Block: End Gateway Spawn
+---| "minecraft:block.end_portal.spawn"                           # Block: End Portal Spawn
+---| "minecraft:block.end_portal_frame.fill"                      # Block: End Portal Frame Fill
+---| "minecraft:block.ender_chest.close"                          # Block: Ender Chest Close
+---| "minecraft:block.ender_chest.open"                           # Block: Ender Chest Open
+---| "minecraft:block.fence_gate.close"                           # Block: Fence Gate Close
+---| "minecraft:block.fence_gate.open"                            # Block: Fence Gate Open
+---| "minecraft:block.fire.ambient"                               # Block: Fire Ambient
+---| "minecraft:block.fire.extinguish"                            # Block: Fire Extinguish
+---| "minecraft:block.flowering_azalea.break"                     # Block: Flowering Azalea Break
+---| "minecraft:block.flowering_azalea.fall"                      # Block: Flowering Azalea Fall
+---| "minecraft:block.flowering_azalea.hit"                       # Block: Flowering Azalea Hit
+---| "minecraft:block.flowering_azalea.place"                     # Block: Flowering Azalea Place
+---| "minecraft:block.flowering_azalea.step"                      # Block: Flowering Azalea Step
+---| "minecraft:block.froglight.break"                            # Block: Froglight Break
+---| "minecraft:block.froglight.fall"                             # Block: Froglight Fall
+---| "minecraft:block.froglight.hit"                              # Block: Froglight Hit
+---| "minecraft:block.froglight.place"                            # Block: Froglight Place
+---| "minecraft:block.froglight.step"                             # Block: Froglight Step
+---| "minecraft:block.frogspawn.break"                            # Block: Frogspawn Break
+---| "minecraft:block.frogspawn.fall"                             # Block: Frogspawn Fall
+---| "minecraft:block.frogspawn.hatch"                            # Block: Frogspawn Hatch
+---| "minecraft:block.frogspawn.hit"                              # Block: Frogspawn Hit
+---| "minecraft:block.frogspawn.place"                            # Block: Frogspawn Place
+---| "minecraft:block.frogspawn.step"                             # Block: Frogspawn Step
+---| "minecraft:block.fungus.break"                               # Block: Fungus Break
+---| "minecraft:block.fungus.fall"                                # Block: Fungus Fall
+---| "minecraft:block.fungus.hit"                                 # Block: Fungus Hit
+---| "minecraft:block.fungus.place"                               # Block: Fungus Place
+---| "minecraft:block.fungus.step"                                # Block: Fungus Step
+---| "minecraft:block.furnace.fire_crackle"                       # Block: Furnace Fire Crackle
+---| "minecraft:block.gilded_blackstone.break"                    # Block: Gilded Blackstone Break
+---| "minecraft:block.gilded_blackstone.fall"                     # Block: Gilded Blackstone Fall
+---| "minecraft:block.gilded_blackstone.hit"                      # Block: Gilded Blackstone Hit
+---| "minecraft:block.gilded_blackstone.place"                    # Block: Gilded Blackstone Place
+---| "minecraft:block.gilded_blackstone.step"                     # Block: Gilded Blackstone Step
+---| "minecraft:block.glass.break"                                # Block: Glass Break
+---| "minecraft:block.glass.fall"                                 # Block: Glass Fall
+---| "minecraft:block.glass.hit"                                  # Block: Glass Hit
+---| "minecraft:block.glass.place"                                # Block: Glass Place
+---| "minecraft:block.glass.step"                                 # Block: Glass Step
+---| "minecraft:block.grass.break"                                # Block: Grass Break
+---| "minecraft:block.grass.fall"                                 # Block: Grass Fall
+---| "minecraft:block.grass.hit"                                  # Block: Grass Hit
+---| "minecraft:block.grass.place"                                # Block: Grass Place
+---| "minecraft:block.grass.step"                                 # Block: Grass Step
+---| "minecraft:block.gravel.break"                               # Block: Gravel Break
+---| "minecraft:block.gravel.fall"                                # Block: Gravel Fall
+---| "minecraft:block.gravel.hit"                                 # Block: Gravel Hit
+---| "minecraft:block.gravel.place"                               # Block: Gravel Place
+---| "minecraft:block.gravel.step"                                # Block: Gravel Step
+---| "minecraft:block.grindstone.use"                             # Block: Grindstone Use
+---| "minecraft:block.growing_plant.crop"                         # Block: Growing Plant Crop
+---| "minecraft:block.hanging_roots.break"                        # Block: Hanging Roots Break
+---| "minecraft:block.hanging_roots.fall"                         # Block: Hanging Roots Fall
+---| "minecraft:block.hanging_roots.hit"                          # Block: Hanging Roots Hit
+---| "minecraft:block.hanging_roots.place"                        # Block: Hanging Roots Place
+---| "minecraft:block.hanging_roots.step"                         # Block: Hanging Roots Step
+---| "minecraft:block.hanging_sign.break"                         # Block: Hanging Sign Break
+---| "minecraft:block.hanging_sign.fall"                          # Block: Hanging Sign Fall
+---| "minecraft:block.hanging_sign.hit"                           # Block: Hanging Sign Hit
+---| "minecraft:block.hanging_sign.place"                         # Block: Hanging Sign Place
+---| "minecraft:block.hanging_sign.step"                          # Block: Hanging Sign Step
+---| "minecraft:block.hanging_sign.waxed_interact_fail"           # Block: Hanging Sign Waxed Interact Fail
+---| "minecraft:block.honey_block.break"                          # Block: Honey Block Break
+---| "minecraft:block.honey_block.fall"                           # Block: Honey Block Fall
+---| "minecraft:block.honey_block.hit"                            # Block: Honey Block Hit
+---| "minecraft:block.honey_block.place"                          # Block: Honey Block Place
+---| "minecraft:block.honey_block.slide"                          # Block: Honey Block Slide
+---| "minecraft:block.honey_block.step"                           # Block: Honey Block Step
+---| "minecraft:block.iron_door.close"                            # Block: Iron Door Close
+---| "minecraft:block.iron_door.open"                             # Block: Iron Door Open
+---| "minecraft:block.iron_trapdoor.close"                        # Block: Iron Trapdoor Close
+---| "minecraft:block.iron_trapdoor.open"                         # Block: Iron Trapdoor Open
+---| "minecraft:block.ladder.break"                               # Block: Ladder Break
+---| "minecraft:block.ladder.fall"                                # Block: Ladder Fall
+---| "minecraft:block.ladder.hit"                                 # Block: Ladder Hit
+---| "minecraft:block.ladder.place"                               # Block: Ladder Place
+---| "minecraft:block.ladder.step"                                # Block: Ladder Step
+---| "minecraft:block.lantern.break"                              # Block: Lantern Break
+---| "minecraft:block.lantern.fall"                               # Block: Lantern Fall
+---| "minecraft:block.lantern.hit"                                # Block: Lantern Hit
+---| "minecraft:block.lantern.place"                              # Block: Lantern Place
+---| "minecraft:block.lantern.step"                               # Block: Lantern Step
+---| "minecraft:block.large_amethyst_bud.break"                   # Block: Large Amethyst Bud Break
+---| "minecraft:block.large_amethyst_bud.place"                   # Block: Large Amethyst Bud Place
+---| "minecraft:block.lava.ambient"                               # Block: Lava Ambient
+---| "minecraft:block.lava.extinguish"                            # Block: Lava Extinguish
+---| "minecraft:block.lava.pop"                                   # Block: Lava Pop
+---| "minecraft:block.lever.click"                                # Block: Lever Click
+---| "minecraft:block.lily_pad.place"                             # Block: Lily Pad Place
+---| "minecraft:block.lodestone.break"                            # Block: Lodestone Break
+---| "minecraft:block.lodestone.fall"                             # Block: Lodestone Fall
+---| "minecraft:block.lodestone.hit"                              # Block: Lodestone Hit
+---| "minecraft:block.lodestone.place"                            # Block: Lodestone Place
+---| "minecraft:block.lodestone.step"                             # Block: Lodestone Step
+---| "minecraft:block.mangrove_roots.break"                       # Block: Mangrove Roots Break
+---| "minecraft:block.mangrove_roots.fall"                        # Block: Mangrove Roots Fall
+---| "minecraft:block.mangrove_roots.hit"                         # Block: Mangrove Roots Hit
+---| "minecraft:block.mangrove_roots.place"                       # Block: Mangrove Roots Place
+---| "minecraft:block.mangrove_roots.step"                        # Block: Mangrove Roots Step
+---| "minecraft:block.medium_amethyst_bud.break"                  # Block: Medium Amethyst Bud Break
+---| "minecraft:block.medium_amethyst_bud.place"                  # Block: Medium Amethyst Bud Place
+---| "minecraft:block.metal.break"                                # Block: Metal Break
+---| "minecraft:block.metal.fall"                                 # Block: Metal Fall
+---| "minecraft:block.metal.hit"                                  # Block: Metal Hit
+---| "minecraft:block.metal.place"                                # Block: Metal Place
+---| "minecraft:block.metal.step"                                 # Block: Metal Step
+---| "minecraft:block.metal_pressure_plate.click_off"             # Block: Metal Pressure Plate Click Off
+---| "minecraft:block.metal_pressure_plate.click_on"              # Block: Metal Pressure Plate Click On
+---| "minecraft:block.moss.break"                                 # Block: Moss Break
+---| "minecraft:block.moss.fall"                                  # Block: Moss Fall
+---| "minecraft:block.moss.hit"                                   # Block: Moss Hit
+---| "minecraft:block.moss.place"                                 # Block: Moss Place
+---| "minecraft:block.moss.step"                                  # Block: Moss Step
+---| "minecraft:block.moss_carpet.break"                          # Block: Moss Carpet Break
+---| "minecraft:block.moss_carpet.fall"                           # Block: Moss Carpet Fall
+---| "minecraft:block.moss_carpet.hit"                            # Block: Moss Carpet Hit
+---| "minecraft:block.moss_carpet.place"                          # Block: Moss Carpet Place
+---| "minecraft:block.moss_carpet.step"                           # Block: Moss Carpet Step
+---| "minecraft:block.mud.break"                                  # Block: Mud Break
+---| "minecraft:block.mud.fall"                                   # Block: Mud Fall
+---| "minecraft:block.mud.hit"                                    # Block: Mud Hit
+---| "minecraft:block.mud.place"                                  # Block: Mud Place
+---| "minecraft:block.mud.step"                                   # Block: Mud Step
+---| "minecraft:block.mud_bricks.break"                           # Block: Mud Bricks Break
+---| "minecraft:block.mud_bricks.fall"                            # Block: Mud Bricks Fall
+---| "minecraft:block.mud_bricks.hit"                             # Block: Mud Bricks Hit
+---| "minecraft:block.mud_bricks.place"                           # Block: Mud Bricks Place
+---| "minecraft:block.mud_bricks.step"                            # Block: Mud Bricks Step
+---| "minecraft:block.muddy_mangrove_roots.break"                 # Block: Muddy Mangrove Roots Break
+---| "minecraft:block.muddy_mangrove_roots.fall"                  # Block: Muddy Mangrove Roots Fall
+---| "minecraft:block.muddy_mangrove_roots.hit"                   # Block: Muddy Mangrove Roots Hit
+---| "minecraft:block.muddy_mangrove_roots.place"                 # Block: Muddy Mangrove Roots Place
+---| "minecraft:block.muddy_mangrove_roots.step"                  # Block: Muddy Mangrove Roots Step
+---| "minecraft:block.nether_bricks.break"                        # Block: Nether Bricks Break
+---| "minecraft:block.nether_bricks.fall"                         # Block: Nether Bricks Fall
+---| "minecraft:block.nether_bricks.hit"                          # Block: Nether Bricks Hit
+---| "minecraft:block.nether_bricks.place"                        # Block: Nether Bricks Place
+---| "minecraft:block.nether_bricks.step"                         # Block: Nether Bricks Step
+---| "minecraft:block.nether_gold_ore.break"                      # Block: Nether Gold Ore Break
+---| "minecraft:block.nether_gold_ore.fall"                       # Block: Nether Gold Ore Fall
+---| "minecraft:block.nether_gold_ore.hit"                        # Block: Nether Gold Ore Hit
+---| "minecraft:block.nether_gold_ore.place"                      # Block: Nether Gold Ore Place
+---| "minecraft:block.nether_gold_ore.step"                       # Block: Nether Gold Ore Step
+---| "minecraft:block.nether_ore.break"                           # Block: Nether Ore Break
+---| "minecraft:block.nether_ore.fall"                            # Block: Nether Ore Fall
+---| "minecraft:block.nether_ore.hit"                             # Block: Nether Ore Hit
+---| "minecraft:block.nether_ore.place"                           # Block: Nether Ore Place
+---| "minecraft:block.nether_ore.step"                            # Block: Nether Ore Step
+---| "minecraft:block.nether_sprouts.break"                       # Block: Nether Sprouts Break
+---| "minecraft:block.nether_sprouts.fall"                        # Block: Nether Sprouts Fall
+---| "minecraft:block.nether_sprouts.hit"                         # Block: Nether Sprouts Hit
+---| "minecraft:block.nether_sprouts.place"                       # Block: Nether Sprouts Place
+---| "minecraft:block.nether_sprouts.step"                        # Block: Nether Sprouts Step
+---| "minecraft:block.nether_wart.break"                          # Block: Nether Wart Break
+---| "minecraft:block.nether_wood.break"                          # Block: Nether Wood Break
+---| "minecraft:block.nether_wood.fall"                           # Block: Nether Wood Fall
+---| "minecraft:block.nether_wood.hit"                            # Block: Nether Wood Hit
+---| "minecraft:block.nether_wood.place"                          # Block: Nether Wood Place
+---| "minecraft:block.nether_wood.step"                           # Block: Nether Wood Step
+---| "minecraft:block.nether_wood_button.click_off"               # Block: Nether Wood Button Click Off
+---| "minecraft:block.nether_wood_button.click_on"                # Block: Nether Wood Button Click On
+---| "minecraft:block.nether_wood_door.close"                     # Block: Nether Wood Door Close
+---| "minecraft:block.nether_wood_door.open"                      # Block: Nether Wood Door Open
+---| "minecraft:block.nether_wood_fence_gate.close"               # Block: Nether Wood Fence Gate Close
+---| "minecraft:block.nether_wood_fence_gate.open"                # Block: Nether Wood Fence Gate Open
+---| "minecraft:block.nether_wood_hanging_sign.break"             # Block: Nether Wood Hanging Sign Break
+---| "minecraft:block.nether_wood_hanging_sign.fall"              # Block: Nether Wood Hanging Sign Fall
+---| "minecraft:block.nether_wood_hanging_sign.hit"               # Block: Nether Wood Hanging Sign Hit
+---| "minecraft:block.nether_wood_hanging_sign.place"             # Block: Nether Wood Hanging Sign Place
+---| "minecraft:block.nether_wood_hanging_sign.step"              # Block: Nether Wood Hanging Sign Step
+---| "minecraft:block.nether_wood_pressure_plate.click_off"       # Block: Nether Wood Pressure Plate Click Off
+---| "minecraft:block.nether_wood_pressure_plate.click_on"        # Block: Nether Wood Pressure Plate Click On
+---| "minecraft:block.nether_wood_trapdoor.close"                 # Block: Nether Wood Trapdoor Close
+---| "minecraft:block.nether_wood_trapdoor.open"                  # Block: Nether Wood Trapdoor Open
+---| "minecraft:block.netherite_block.break"                      # Block: Netherite Block Break
+---| "minecraft:block.netherite_block.fall"                       # Block: Netherite Block Fall
+---| "minecraft:block.netherite_block.hit"                        # Block: Netherite Block Hit
+---| "minecraft:block.netherite_block.place"                      # Block: Netherite Block Place
+---| "minecraft:block.netherite_block.step"                       # Block: Netherite Block Step
+---| "minecraft:block.netherrack.break"                           # Block: Netherrack Break
+---| "minecraft:block.netherrack.fall"                            # Block: Netherrack Fall
+---| "minecraft:block.netherrack.hit"                             # Block: Netherrack Hit
+---| "minecraft:block.netherrack.place"                           # Block: Netherrack Place
+---| "minecraft:block.netherrack.step"                            # Block: Netherrack Step
+---| "minecraft:block.note_block.banjo"                           # Block: Note Block Banjo
+---| "minecraft:block.note_block.basedrum"                        # Block: Note Block Basedrum
+---| "minecraft:block.note_block.bass"                            # Block: Note Block Bass
+---| "minecraft:block.note_block.bell"                            # Block: Note Block Bell
+---| "minecraft:block.note_block.bit"                             # Block: Note Block Bit
+---| "minecraft:block.note_block.chime"                           # Block: Note Block Chime
+---| "minecraft:block.note_block.cow_bell"                        # Block: Note Block Cow Bell
+---| "minecraft:block.note_block.didgeridoo"                      # Block: Note Block Didgeridoo
+---| "minecraft:block.note_block.flute"                           # Block: Note Block Flute
+---| "minecraft:block.note_block.guitar"                          # Block: Note Block Guitar
+---| "minecraft:block.note_block.harp"                            # Block: Note Block Harp
+---| "minecraft:block.note_block.hat"                             # Block: Note Block Hat
+---| "minecraft:block.note_block.imitate.creeper"                 # Block: Note Block Imitate Creeper
+---| "minecraft:block.note_block.imitate.ender_dragon"            # Block: Note Block Imitate Ender Dragon
+---| "minecraft:block.note_block.imitate.piglin"                  # Block: Note Block Imitate Piglin
+---| "minecraft:block.note_block.imitate.skeleton"                # Block: Note Block Imitate Skeleton
+---| "minecraft:block.note_block.imitate.wither_skeleton"         # Block: Note Block Imitate Wither Skeleton
+---| "minecraft:block.note_block.imitate.zombie"                  # Block: Note Block Imitate Zombie
+---| "minecraft:block.note_block.iron_xylophone"                  # Block: Note Block Iron Xylophone
+---| "minecraft:block.note_block.pling"                           # Block: Note Block Pling
+---| "minecraft:block.note_block.snare"                           # Block: Note Block Snare
+---| "minecraft:block.note_block.xylophone"                       # Block: Note Block Xylophone
+---| "minecraft:block.nylium.break"                               # Block: Nylium Break
+---| "minecraft:block.nylium.fall"                                # Block: Nylium Fall
+---| "minecraft:block.nylium.hit"                                 # Block: Nylium Hit
+---| "minecraft:block.nylium.place"                               # Block: Nylium Place
+---| "minecraft:block.nylium.step"                                # Block: Nylium Step
+---| "minecraft:block.packed_mud.break"                           # Block: Packed Mud Break
+---| "minecraft:block.packed_mud.fall"                            # Block: Packed Mud Fall
+---| "minecraft:block.packed_mud.hit"                             # Block: Packed Mud Hit
+---| "minecraft:block.packed_mud.place"                           # Block: Packed Mud Place
+---| "minecraft:block.packed_mud.step"                            # Block: Packed Mud Step
+---| "minecraft:block.pink_petals.break"                          # Block: Pink Petals Break
+---| "minecraft:block.pink_petals.fall"                           # Block: Pink Petals Fall
+---| "minecraft:block.pink_petals.hit"                            # Block: Pink Petals Hit
+---| "minecraft:block.pink_petals.place"                          # Block: Pink Petals Place
+---| "minecraft:block.pink_petals.step"                           # Block: Pink Petals Step
+---| "minecraft:block.piston.contract"                            # Block: Piston Contract
+---| "minecraft:block.piston.extend"                              # Block: Piston Extend
+---| "minecraft:block.pointed_dripstone.break"                    # Block: Pointed Dripstone Break
+---| "minecraft:block.pointed_dripstone.drip_lava"                # Block: Pointed Dripstone Drip Lava
+---| "minecraft:block.pointed_dripstone.drip_lava_into_cauldron"  # Block: Pointed Dripstone Drip Lava Into Cauldron
+---| "minecraft:block.pointed_dripstone.drip_water"               # Block: Pointed Dripstone Drip Water
+---| "minecraft:block.pointed_dripstone.drip_water_into_cauldron" # Block: Pointed Dripstone Drip Water Into Cauldron
+---| "minecraft:block.pointed_dripstone.fall"                     # Block: Pointed Dripstone Fall
+---| "minecraft:block.pointed_dripstone.hit"                      # Block: Pointed Dripstone Hit
+---| "minecraft:block.pointed_dripstone.land"                     # Block: Pointed Dripstone Land
+---| "minecraft:block.pointed_dripstone.place"                    # Block: Pointed Dripstone Place
+---| "minecraft:block.pointed_dripstone.step"                     # Block: Pointed Dripstone Step
+---| "minecraft:block.polished_deepslate.break"                   # Block: Polished Deepslate Break
+---| "minecraft:block.polished_deepslate.fall"                    # Block: Polished Deepslate Fall
+---| "minecraft:block.polished_deepslate.hit"                     # Block: Polished Deepslate Hit
+---| "minecraft:block.polished_deepslate.place"                   # Block: Polished Deepslate Place
+---| "minecraft:block.polished_deepslate.step"                    # Block: Polished Deepslate Step
+---| "minecraft:block.polished_tuff.break"                        # Block: Polished Tuff Break
+---| "minecraft:block.polished_tuff.fall"                         # Block: Polished Tuff Fall
+---| "minecraft:block.polished_tuff.hit"                          # Block: Polished Tuff Hit
+---| "minecraft:block.polished_tuff.place"                        # Block: Polished Tuff Place
+---| "minecraft:block.polished_tuff.step"                         # Block: Polished Tuff Step
+---| "minecraft:block.portal.ambient"                             # Block: Portal Ambient
+---| "minecraft:block.portal.travel"                              # Block: Portal Travel
+---| "minecraft:block.portal.trigger"                             # Block: Portal Trigger
+---| "minecraft:block.powder_snow.break"                          # Block: Powder Snow Break
+---| "minecraft:block.powder_snow.fall"                           # Block: Powder Snow Fall
+---| "minecraft:block.powder_snow.hit"                            # Block: Powder Snow Hit
+---| "minecraft:block.powder_snow.place"                          # Block: Powder Snow Place
+---| "minecraft:block.powder_snow.step"                           # Block: Powder Snow Step
+---| "minecraft:block.pumpkin.carve"                              # Block: Pumpkin Carve
+---| "minecraft:block.redstone_torch.burnout"                     # Block: Redstone Torch Burnout
+---| "minecraft:block.respawn_anchor.ambient"                     # Block: Respawn Anchor Ambient
+---| "minecraft:block.respawn_anchor.charge"                      # Block: Respawn Anchor Charge
+---| "minecraft:block.respawn_anchor.deplete"                     # Block: Respawn Anchor Deplete
+---| "minecraft:block.respawn_anchor.set_spawn"                   # Block: Respawn Anchor Set Spawn
+---| "minecraft:block.rooted_dirt.break"                          # Block: Rooted Dirt Break
+---| "minecraft:block.rooted_dirt.fall"                           # Block: Rooted Dirt Fall
+---| "minecraft:block.rooted_dirt.hit"                            # Block: Rooted Dirt Hit
+---| "minecraft:block.rooted_dirt.place"                          # Block: Rooted Dirt Place
+---| "minecraft:block.rooted_dirt.step"                           # Block: Rooted Dirt Step
+---| "minecraft:block.roots.break"                                # Block: Roots Break
+---| "minecraft:block.roots.fall"                                 # Block: Roots Fall
+---| "minecraft:block.roots.hit"                                  # Block: Roots Hit
+---| "minecraft:block.roots.place"                                # Block: Roots Place
+---| "minecraft:block.roots.step"                                 # Block: Roots Step
+---| "minecraft:block.sand.break"                                 # Block: Sand Break
+---| "minecraft:block.sand.fall"                                  # Block: Sand Fall
+---| "minecraft:block.sand.hit"                                   # Block: Sand Hit
+---| "minecraft:block.sand.place"                                 # Block: Sand Place
+---| "minecraft:block.sand.step"                                  # Block: Sand Step
+---| "minecraft:block.scaffolding.break"                          # Block: Scaffolding Break
+---| "minecraft:block.scaffolding.fall"                           # Block: Scaffolding Fall
+---| "minecraft:block.scaffolding.hit"                            # Block: Scaffolding Hit
+---| "minecraft:block.scaffolding.place"                          # Block: Scaffolding Place
+---| "minecraft:block.scaffolding.step"                           # Block: Scaffolding Step
+---| "minecraft:block.sculk.break"                                # Block: Sculk Break
+---| "minecraft:block.sculk.charge"                               # Block: Sculk Charge
+---| "minecraft:block.sculk.fall"                                 # Block: Sculk Fall
+---| "minecraft:block.sculk.hit"                                  # Block: Sculk Hit
+---| "minecraft:block.sculk.place"                                # Block: Sculk Place
+---| "minecraft:block.sculk.spread"                               # Block: Sculk Spread
+---| "minecraft:block.sculk.step"                                 # Block: Sculk Step
+---| "minecraft:block.sculk_catalyst.bloom"                       # Block: Sculk Catalyst Bloom
+---| "minecraft:block.sculk_catalyst.break"                       # Block: Sculk Catalyst Break
+---| "minecraft:block.sculk_catalyst.fall"                        # Block: Sculk Catalyst Fall
+---| "minecraft:block.sculk_catalyst.hit"                         # Block: Sculk Catalyst Hit
+---| "minecraft:block.sculk_catalyst.place"                       # Block: Sculk Catalyst Place
+---| "minecraft:block.sculk_catalyst.step"                        # Block: Sculk Catalyst Step
+---| "minecraft:block.sculk_sensor.break"                         # Block: Sculk Sensor Break
+---| "minecraft:block.sculk_sensor.clicking"                      # Block: Sculk Sensor Clicking
+---| "minecraft:block.sculk_sensor.clicking_stop"                 # Block: Sculk Sensor Clicking Stop
+---| "minecraft:block.sculk_sensor.fall"                          # Block: Sculk Sensor Fall
+---| "minecraft:block.sculk_sensor.hit"                           # Block: Sculk Sensor Hit
+---| "minecraft:block.sculk_sensor.place"                         # Block: Sculk Sensor Place
+---| "minecraft:block.sculk_sensor.step"                          # Block: Sculk Sensor Step
+---| "minecraft:block.sculk_shrieker.break"                       # Block: Sculk Shrieker Break
+---| "minecraft:block.sculk_shrieker.fall"                        # Block: Sculk Shrieker Fall
+---| "minecraft:block.sculk_shrieker.hit"                         # Block: Sculk Shrieker Hit
+---| "minecraft:block.sculk_shrieker.place"                       # Block: Sculk Shrieker Place
+---| "minecraft:block.sculk_shrieker.shriek"                      # Block: Sculk Shrieker Shriek
+---| "minecraft:block.sculk_shrieker.step"                        # Block: Sculk Shrieker Step
+---| "minecraft:block.sculk_vein.break"                           # Block: Sculk Vein Break
+---| "minecraft:block.sculk_vein.fall"                            # Block: Sculk Vein Fall
+---| "minecraft:block.sculk_vein.hit"                             # Block: Sculk Vein Hit
+---| "minecraft:block.sculk_vein.place"                           # Block: Sculk Vein Place
+---| "minecraft:block.sculk_vein.step"                            # Block: Sculk Vein Step
+---| "minecraft:block.shroomlight.break"                          # Block: Shroomlight Break
+---| "minecraft:block.shroomlight.fall"                           # Block: Shroomlight Fall
+---| "minecraft:block.shroomlight.hit"                            # Block: Shroomlight Hit
+---| "minecraft:block.shroomlight.place"                          # Block: Shroomlight Place
+---| "minecraft:block.shroomlight.step"                           # Block: Shroomlight Step
+---| "minecraft:block.shulker_box.close"                          # Block: Shulker Box Close
+---| "minecraft:block.shulker_box.open"                           # Block: Shulker Box Open
+---| "minecraft:block.sign.waxed_interact_fail"                   # Block: Sign Waxed Interact Fail
+---| "minecraft:block.slime_block.break"                          # Block: Slime Block Break
+---| "minecraft:block.slime_block.fall"                           # Block: Slime Block Fall
+---| "minecraft:block.slime_block.hit"                            # Block: Slime Block Hit
+---| "minecraft:block.slime_block.place"                          # Block: Slime Block Place
+---| "minecraft:block.slime_block.step"                           # Block: Slime Block Step
+---| "minecraft:block.small_amethyst_bud.break"                   # Block: Small Amethyst Bud Break
+---| "minecraft:block.small_amethyst_bud.place"                   # Block: Small Amethyst Bud Place
+---| "minecraft:block.small_dripleaf.break"                       # Block: Small Dripleaf Break
+---| "minecraft:block.small_dripleaf.fall"                        # Block: Small Dripleaf Fall
+---| "minecraft:block.small_dripleaf.hit"                         # Block: Small Dripleaf Hit
+---| "minecraft:block.small_dripleaf.place"                       # Block: Small Dripleaf Place
+---| "minecraft:block.small_dripleaf.step"                        # Block: Small Dripleaf Step
+---| "minecraft:block.smithing_table.use"                         # Block: Smithing Table Use
+---| "minecraft:block.smoker.smoke"                               # Block: Smoker Smoke
+---| "minecraft:block.sniffer_egg.crack"                          # Block: Sniffer Egg Crack
+---| "minecraft:block.sniffer_egg.hatch"                          # Block: Sniffer Egg Hatch
+---| "minecraft:block.sniffer_egg.plop"                           # Block: Sniffer Egg Plop
+---| "minecraft:block.snow.break"                                 # Block: Snow Break
+---| "minecraft:block.snow.fall"                                  # Block: Snow Fall
+---| "minecraft:block.snow.hit"                                   # Block: Snow Hit
+---| "minecraft:block.snow.place"                                 # Block: Snow Place
+---| "minecraft:block.snow.step"                                  # Block: Snow Step
+---| "minecraft:block.soul_sand.break"                            # Block: Soul Sand Break
+---| "minecraft:block.soul_sand.fall"                             # Block: Soul Sand Fall
+---| "minecraft:block.soul_sand.hit"                              # Block: Soul Sand Hit
+---| "minecraft:block.soul_sand.place"                            # Block: Soul Sand Place
+---| "minecraft:block.soul_sand.step"                             # Block: Soul Sand Step
+---| "minecraft:block.soul_soil.break"                            # Block: Soul Soil Break
+---| "minecraft:block.soul_soil.fall"                             # Block: Soul Soil Fall
+---| "minecraft:block.soul_soil.hit"                              # Block: Soul Soil Hit
+---| "minecraft:block.soul_soil.place"                            # Block: Soul Soil Place
+---| "minecraft:block.soul_soil.step"                             # Block: Soul Soil Step
+---| "minecraft:block.sponge.absorb"                              # Block: Sponge Absorb
+---| "minecraft:block.sponge.break"                               # Block: Sponge Break
+---| "minecraft:block.sponge.fall"                                # Block: Sponge Fall
+---| "minecraft:block.sponge.hit"                                 # Block: Sponge Hit
+---| "minecraft:block.sponge.place"                               # Block: Sponge Place
+---| "minecraft:block.sponge.step"                                # Block: Sponge Step
+---| "minecraft:block.spore_blossom.break"                        # Block: Spore Blossom Break
+---| "minecraft:block.spore_blossom.fall"                         # Block: Spore Blossom Fall
+---| "minecraft:block.spore_blossom.hit"                          # Block: Spore Blossom Hit
+---| "minecraft:block.spore_blossom.place"                        # Block: Spore Blossom Place
+---| "minecraft:block.spore_blossom.step"                         # Block: Spore Blossom Step
+---| "minecraft:block.stem.break"                                 # Block: Stem Break
+---| "minecraft:block.stem.fall"                                  # Block: Stem Fall
+---| "minecraft:block.stem.hit"                                   # Block: Stem Hit
+---| "minecraft:block.stem.place"                                 # Block: Stem Place
+---| "minecraft:block.stem.step"                                  # Block: Stem Step
+---| "minecraft:block.stone.break"                                # Block: Stone Break
+---| "minecraft:block.stone.fall"                                 # Block: Stone Fall
+---| "minecraft:block.stone.hit"                                  # Block: Stone Hit
+---| "minecraft:block.stone.place"                                # Block: Stone Place
+---| "minecraft:block.stone.step"                                 # Block: Stone Step
+---| "minecraft:block.stone_button.click_off"                     # Block: Stone Button Click Off
+---| "minecraft:block.stone_button.click_on"                      # Block: Stone Button Click On
+---| "minecraft:block.stone_pressure_plate.click_off"             # Block: Stone Pressure Plate Click Off
+---| "minecraft:block.stone_pressure_plate.click_on"              # Block: Stone Pressure Plate Click On
+---| "minecraft:block.suspicious_gravel.break"                    # Block: Suspicious Gravel Break
+---| "minecraft:block.suspicious_gravel.fall"                     # Block: Suspicious Gravel Fall
+---| "minecraft:block.suspicious_gravel.hit"                      # Block: Suspicious Gravel Hit
+---| "minecraft:block.suspicious_gravel.place"                    # Block: Suspicious Gravel Place
+---| "minecraft:block.suspicious_gravel.step"                     # Block: Suspicious Gravel Step
+---| "minecraft:block.suspicious_sand.break"                      # Block: Suspicious Sand Break
+---| "minecraft:block.suspicious_sand.fall"                       # Block: Suspicious Sand Fall
+---| "minecraft:block.suspicious_sand.hit"                        # Block: Suspicious Sand Hit
+---| "minecraft:block.suspicious_sand.place"                      # Block: Suspicious Sand Place
+---| "minecraft:block.suspicious_sand.step"                       # Block: Suspicious Sand Step
+---| "minecraft:block.sweet_berry_bush.break"                     # Block: Sweet Berry Bush Break
+---| "minecraft:block.sweet_berry_bush.pick_berries"              # Block: Sweet Berry Bush Pick Berries
+---| "minecraft:block.sweet_berry_bush.place"                     # Block: Sweet Berry Bush Place
+---| "minecraft:block.trial_spawner.ambient"                      # Block: Trial Spawner Ambient
+---| "minecraft:block.trial_spawner.break"                        # Block: Trial Spawner Break
+---| "minecraft:block.trial_spawner.close_shutter"                # Block: Trial Spawner Close Shutter
+---| "minecraft:block.trial_spawner.detect_player"                # Block: Trial Spawner Detect Player
+---| "minecraft:block.trial_spawner.eject_item"                   # Block: Trial Spawner Eject Item
+---| "minecraft:block.trial_spawner.fall"                         # Block: Trial Spawner Fall
+---| "minecraft:block.trial_spawner.hit"                          # Block: Trial Spawner Hit
+---| "minecraft:block.trial_spawner.open_shutter"                 # Block: Trial Spawner Open Shutter
+---| "minecraft:block.trial_spawner.place"                        # Block: Trial Spawner Place
+---| "minecraft:block.trial_spawner.spawn_mob"                    # Block: Trial Spawner Spawn Mob
+---| "minecraft:block.trial_spawner.step"                         # Block: Trial Spawner Step
+---| "minecraft:block.tripwire.attach"                            # Block: Tripwire Attach
+---| "minecraft:block.tripwire.click_off"                         # Block: Tripwire Click Off
+---| "minecraft:block.tripwire.click_on"                          # Block: Tripwire Click On
+---| "minecraft:block.tripwire.detach"                            # Block: Tripwire Detach
+---| "minecraft:block.tuff.break"                                 # Block: Tuff Break
+---| "minecraft:block.tuff.fall"                                  # Block: Tuff Fall
+---| "minecraft:block.tuff.hit"                                   # Block: Tuff Hit
+---| "minecraft:block.tuff.place"                                 # Block: Tuff Place
+---| "minecraft:block.tuff.step"                                  # Block: Tuff Step
+---| "minecraft:block.tuff_bricks.break"                          # Block: Tuff Bricks Break
+---| "minecraft:block.tuff_bricks.fall"                           # Block: Tuff Bricks Fall
+---| "minecraft:block.tuff_bricks.hit"                            # Block: Tuff Bricks Hit
+---| "minecraft:block.tuff_bricks.place"                          # Block: Tuff Bricks Place
+---| "minecraft:block.tuff_bricks.step"                           # Block: Tuff Bricks Step
+---| "minecraft:block.vine.break"                                 # Block: Vine Break
+---| "minecraft:block.vine.fall"                                  # Block: Vine Fall
+---| "minecraft:block.vine.hit"                                   # Block: Vine Hit
+---| "minecraft:block.vine.place"                                 # Block: Vine Place
+---| "minecraft:block.vine.step"                                  # Block: Vine Step
+---| "minecraft:block.wart_block.break"                           # Block: Wart Block Break
+---| "minecraft:block.wart_block.fall"                            # Block: Wart Block Fall
+---| "minecraft:block.wart_block.hit"                             # Block: Wart Block Hit
+---| "minecraft:block.wart_block.place"                           # Block: Wart Block Place
+---| "minecraft:block.wart_block.step"                            # Block: Wart Block Step
+---| "minecraft:block.water.ambient"                              # Block: Water Ambient
+---| "minecraft:block.weeping_vines.break"                        # Block: Weeping Vines Break
+---| "minecraft:block.weeping_vines.fall"                         # Block: Weeping Vines Fall
+---| "minecraft:block.weeping_vines.hit"                          # Block: Weeping Vines Hit
+---| "minecraft:block.weeping_vines.place"                        # Block: Weeping Vines Place
+---| "minecraft:block.weeping_vines.step"                         # Block: Weeping Vines Step
+---| "minecraft:block.wet_grass.break"                            # Block: Wet Grass Break
+---| "minecraft:block.wet_grass.fall"                             # Block: Wet Grass Fall
+---| "minecraft:block.wet_grass.hit"                              # Block: Wet Grass Hit
+---| "minecraft:block.wet_grass.place"                            # Block: Wet Grass Place
+---| "minecraft:block.wet_grass.step"                             # Block: Wet Grass Step
+---| "minecraft:block.wet_sponge.break"                           # Block: Wet Sponge Break
+---| "minecraft:block.wet_sponge.fall"                            # Block: Wet Sponge Fall
+---| "minecraft:block.wet_sponge.hit"                             # Block: Wet Sponge Hit
+---| "minecraft:block.wet_sponge.place"                           # Block: Wet Sponge Place
+---| "minecraft:block.wet_sponge.step"                            # Block: Wet Sponge Step
+---| "minecraft:block.wood.break"                                 # Block: Wood Break
+---| "minecraft:block.wood.fall"                                  # Block: Wood Fall
+---| "minecraft:block.wood.hit"                                   # Block: Wood Hit
+---| "minecraft:block.wood.place"                                 # Block: Wood Place
+---| "minecraft:block.wood.step"                                  # Block: Wood Step
+---| "minecraft:block.wooden_button.click_off"                    # Block: Wooden Button Click Off
+---| "minecraft:block.wooden_button.click_on"                     # Block: Wooden Button Click On
+---| "minecraft:block.wooden_door.close"                          # Block: Wooden Door Close
+---| "minecraft:block.wooden_door.open"                           # Block: Wooden Door Open
+---| "minecraft:block.wooden_pressure_plate.click_off"            # Block: Wooden Pressure Plate Click Off
+---| "minecraft:block.wooden_pressure_plate.click_on"             # Block: Wooden Pressure Plate Click On
+---| "minecraft:block.wooden_trapdoor.close"                      # Block: Wooden Trapdoor Close
+---| "minecraft:block.wooden_trapdoor.open"                       # Block: Wooden Trapdoor Open
+---| "minecraft:block.wool.break"                                 # Block: Wool Break
+---| "minecraft:block.wool.fall"                                  # Block: Wool Fall
+---| "minecraft:block.wool.hit"                                   # Block: Wool Hit
+---| "minecraft:block.wool.place"                                 # Block: Wool Place
+---| "minecraft:block.wool.step"                                  # Block: Wool Step
+---| "minecraft:enchant.thorns.hit"                               # Enchant: Thorns Hit
+---| "minecraft:entity.allay.ambient_with_item"                   # Entity: Allay Ambient With Item
+---| "minecraft:entity.allay.ambient_without_item"                # Entity: Allay Ambient Without Item
+---| "minecraft:entity.allay.death"                               # Entity: Allay Death
+---| "minecraft:entity.allay.hurt"                                # Entity: Allay Hurt
+---| "minecraft:entity.allay.item_given"                          # Entity: Allay Item Given
+---| "minecraft:entity.allay.item_taken"                          # Entity: Allay Item Taken
+---| "minecraft:entity.allay.item_thrown"                         # Entity: Allay Item Thrown
+---| "minecraft:entity.armor_stand.break"                         # Entity: Armor Stand Break
+---| "minecraft:entity.armor_stand.fall"                          # Entity: Armor Stand Fall
+---| "minecraft:entity.armor_stand.hit"                           # Entity: Armor Stand Hit
+---| "minecraft:entity.armor_stand.place"                         # Entity: Armor Stand Place
+---| "minecraft:entity.arrow.hit"                                 # Entity: Arrow Hit
+---| "minecraft:entity.arrow.hit_player"                          # Entity: Arrow Hit Player
+---| "minecraft:entity.arrow.shoot"                               # Entity: Arrow Shoot
+---| "minecraft:entity.axolotl.attack"                            # Entity: Axolotl Attack
+---| "minecraft:entity.axolotl.death"                             # Entity: Axolotl Death
+---| "minecraft:entity.axolotl.hurt"                              # Entity: Axolotl Hurt
+---| "minecraft:entity.axolotl.idle_air"                          # Entity: Axolotl Idle Air
+---| "minecraft:entity.axolotl.idle_water"                        # Entity: Axolotl Idle Water
+---| "minecraft:entity.axolotl.splash"                            # Entity: Axolotl Splash
+---| "minecraft:entity.axolotl.swim"                              # Entity: Axolotl Swim
+---| "minecraft:entity.bat.ambient"                               # Entity: Bat Ambient
+---| "minecraft:entity.bat.death"                                 # Entity: Bat Death
+---| "minecraft:entity.bat.hurt"                                  # Entity: Bat Hurt
+---| "minecraft:entity.bat.loop"                                  # Entity: Bat Loop
+---| "minecraft:entity.bat.takeoff"                               # Entity: Bat Takeoff
+---| "minecraft:entity.bee.death"                                 # Entity: Bee Death
+---| "minecraft:entity.bee.hurt"                                  # Entity: Bee Hurt
+---| "minecraft:entity.bee.loop"                                  # Entity: Bee Loop
+---| "minecraft:entity.bee.loop_aggressive"                       # Entity: Bee Loop Aggressive
+---| "minecraft:entity.bee.pollinate"                             # Entity: Bee Pollinate
+---| "minecraft:entity.bee.sting"                                 # Entity: Bee Sting
+---| "minecraft:entity.blaze.ambient"                             # Entity: Blaze Ambient
+---| "minecraft:entity.blaze.burn"                                # Entity: Blaze Burn
+---| "minecraft:entity.blaze.death"                               # Entity: Blaze Death
+---| "minecraft:entity.blaze.hurt"                                # Entity: Blaze Hurt
+---| "minecraft:entity.blaze.shoot"                               # Entity: Blaze Shoot
+---| "minecraft:entity.boat.paddle_land"                          # Entity: Boat Paddle Land
+---| "minecraft:entity.boat.paddle_water"                         # Entity: Boat Paddle Water
+---| "minecraft:entity.breeze.death"                              # Entity: Breeze Death
+---| "minecraft:entity.breeze.hurt"                               # Entity: Breeze Hurt
+---| "minecraft:entity.breeze.idle_air"                           # Entity: Breeze Idle Air
+---| "minecraft:entity.breeze.idle_ground"                        # Entity: Breeze Idle Ground
+---| "minecraft:entity.breeze.inhale"                             # Entity: Breeze Inhale
+---| "minecraft:entity.breeze.jump"                               # Entity: Breeze Jump
+---| "minecraft:entity.breeze.land"                               # Entity: Breeze Land
+---| "minecraft:entity.breeze.shoot"                              # Entity: Breeze Shoot
+---| "minecraft:entity.breeze.slide"                              # Entity: Breeze Slide
+---| "minecraft:entity.camel.ambient"                             # Entity: Camel Ambient
+---| "minecraft:entity.camel.dash"                                # Entity: Camel Dash
+---| "minecraft:entity.camel.dash_ready"                          # Entity: Camel Dash Ready
+---| "minecraft:entity.camel.death"                               # Entity: Camel Death
+---| "minecraft:entity.camel.eat"                                 # Entity: Camel Eat
+---| "minecraft:entity.camel.hurt"                                # Entity: Camel Hurt
+---| "minecraft:entity.camel.saddle"                              # Entity: Camel Saddle
+---| "minecraft:entity.camel.sit"                                 # Entity: Camel Sit
+---| "minecraft:entity.camel.stand"                               # Entity: Camel Stand
+---| "minecraft:entity.camel.step"                                # Entity: Camel Step
+---| "minecraft:entity.camel.step_sand"                           # Entity: Camel Step Sand
+---| "minecraft:entity.cat.ambient"                               # Entity: Cat Ambient
+---| "minecraft:entity.cat.beg_for_food"                          # Entity: Cat Beg For Food
+---| "minecraft:entity.cat.death"                                 # Entity: Cat Death
+---| "minecraft:entity.cat.eat"                                   # Entity: Cat Eat
+---| "minecraft:entity.cat.hiss"                                  # Entity: Cat Hiss
+---| "minecraft:entity.cat.hurt"                                  # Entity: Cat Hurt
+---| "minecraft:entity.cat.purr"                                  # Entity: Cat Purr
+---| "minecraft:entity.cat.purreow"                               # Entity: Cat Purreow
+---| "minecraft:entity.cat.stray_ambient"                         # Entity: Cat Stray Ambient
+---| "minecraft:entity.chicken.ambient"                           # Entity: Chicken Ambient
+---| "minecraft:entity.chicken.death"                             # Entity: Chicken Death
+---| "minecraft:entity.chicken.egg"                               # Entity: Chicken Egg
+---| "minecraft:entity.chicken.hurt"                              # Entity: Chicken Hurt
+---| "minecraft:entity.chicken.step"                              # Entity: Chicken Step
+---| "minecraft:entity.cod.ambient"                               # Entity: Cod Ambient
+---| "minecraft:entity.cod.death"                                 # Entity: Cod Death
+---| "minecraft:entity.cod.flop"                                  # Entity: Cod Flop
+---| "minecraft:entity.cod.hurt"                                  # Entity: Cod Hurt
+---| "minecraft:entity.cow.ambient"                               # Entity: Cow Ambient
+---| "minecraft:entity.cow.death"                                 # Entity: Cow Death
+---| "minecraft:entity.cow.hurt"                                  # Entity: Cow Hurt
+---| "minecraft:entity.cow.milk"                                  # Entity: Cow Milk
+---| "minecraft:entity.cow.step"                                  # Entity: Cow Step
+---| "minecraft:entity.creeper.death"                             # Entity: Creeper Death
+---| "minecraft:entity.creeper.hurt"                              # Entity: Creeper Hurt
+---| "minecraft:entity.creeper.primed"                            # Entity: Creeper Primed
+---| "minecraft:entity.dolphin.ambient"                           # Entity: Dolphin Ambient
+---| "minecraft:entity.dolphin.ambient_water"                     # Entity: Dolphin Ambient Water
+---| "minecraft:entity.dolphin.attack"                            # Entity: Dolphin Attack
+---| "minecraft:entity.dolphin.death"                             # Entity: Dolphin Death
+---| "minecraft:entity.dolphin.eat"                               # Entity: Dolphin Eat
+---| "minecraft:entity.dolphin.hurt"                              # Entity: Dolphin Hurt
+---| "minecraft:entity.dolphin.jump"                              # Entity: Dolphin Jump
+---| "minecraft:entity.dolphin.play"                              # Entity: Dolphin Play
+---| "minecraft:entity.dolphin.splash"                            # Entity: Dolphin Splash
+---| "minecraft:entity.dolphin.swim"                              # Entity: Dolphin Swim
+---| "minecraft:entity.donkey.ambient"                            # Entity: Donkey Ambient
+---| "minecraft:entity.donkey.angry"                              # Entity: Donkey Angry
+---| "minecraft:entity.donkey.chest"                              # Entity: Donkey Chest
+---| "minecraft:entity.donkey.death"                              # Entity: Donkey Death
+---| "minecraft:entity.donkey.eat"                                # Entity: Donkey Eat
+---| "minecraft:entity.donkey.hurt"                               # Entity: Donkey Hurt
+---| "minecraft:entity.dragon_fireball.explode"                   # Entity: Dragon Fireball Explode
+---| "minecraft:entity.drowned.ambient"                           # Entity: Drowned Ambient
+---| "minecraft:entity.drowned.ambient_water"                     # Entity: Drowned Ambient Water
+---| "minecraft:entity.drowned.death"                             # Entity: Drowned Death
+---| "minecraft:entity.drowned.death_water"                       # Entity: Drowned Death Water
+---| "minecraft:entity.drowned.hurt"                              # Entity: Drowned Hurt
+---| "minecraft:entity.drowned.hurt_water"                        # Entity: Drowned Hurt Water
+---| "minecraft:entity.drowned.shoot"                             # Entity: Drowned Shoot
+---| "minecraft:entity.drowned.step"                              # Entity: Drowned Step
+---| "minecraft:entity.drowned.swim"                              # Entity: Drowned Swim
+---| "minecraft:entity.egg.throw"                                 # Entity: Egg Throw
+---| "minecraft:entity.elder_guardian.ambient"                    # Entity: Elder Guardian Ambient
+---| "minecraft:entity.elder_guardian.ambient_land"               # Entity: Elder Guardian Ambient Land
+---| "minecraft:entity.elder_guardian.curse"                      # Entity: Elder Guardian Curse
+---| "minecraft:entity.elder_guardian.death"                      # Entity: Elder Guardian Death
+---| "minecraft:entity.elder_guardian.death_land"                 # Entity: Elder Guardian Death Land
+---| "minecraft:entity.elder_guardian.flop"                       # Entity: Elder Guardian Flop
+---| "minecraft:entity.elder_guardian.hurt"                       # Entity: Elder Guardian Hurt
+---| "minecraft:entity.elder_guardian.hurt_land"                  # Entity: Elder Guardian Hurt Land
+---| "minecraft:entity.ender_dragon.ambient"                      # Entity: Ender Dragon Ambient
+---| "minecraft:entity.ender_dragon.death"                        # Entity: Ender Dragon Death
+---| "minecraft:entity.ender_dragon.flap"                         # Entity: Ender Dragon Flap
+---| "minecraft:entity.ender_dragon.growl"                        # Entity: Ender Dragon Growl
+---| "minecraft:entity.ender_dragon.hurt"                         # Entity: Ender Dragon Hurt
+---| "minecraft:entity.ender_dragon.shoot"                        # Entity: Ender Dragon Shoot
+---| "minecraft:entity.ender_eye.death"                           # Entity: Ender Eye Death
+---| "minecraft:entity.ender_eye.launch"                          # Entity: Ender Eye Launch
+---| "minecraft:entity.ender_pearl.throw"                         # Entity: Ender Pearl Throw
+---| "minecraft:entity.enderman.ambient"                          # Entity: Enderman Ambient
+---| "minecraft:entity.enderman.death"                            # Entity: Enderman Death
+---| "minecraft:entity.enderman.hurt"                             # Entity: Enderman Hurt
+---| "minecraft:entity.enderman.scream"                           # Entity: Enderman Scream
+---| "minecraft:entity.enderman.stare"                            # Entity: Enderman Stare
+---| "minecraft:entity.enderman.teleport"                         # Entity: Enderman Teleport
+---| "minecraft:entity.endermite.ambient"                         # Entity: Endermite Ambient
+---| "minecraft:entity.endermite.death"                           # Entity: Endermite Death
+---| "minecraft:entity.endermite.hurt"                            # Entity: Endermite Hurt
+---| "minecraft:entity.endermite.step"                            # Entity: Endermite Step
+---| "minecraft:entity.evoker.ambient"                            # Entity: Evoker Ambient
+---| "minecraft:entity.evoker.cast_spell"                         # Entity: Evoker Cast Spell
+---| "minecraft:entity.evoker.celebrate"                          # Entity: Evoker Celebrate
+---| "minecraft:entity.evoker.death"                              # Entity: Evoker Death
+---| "minecraft:entity.evoker.hurt"                               # Entity: Evoker Hurt
+---| "minecraft:entity.evoker.prepare_attack"                     # Entity: Evoker Prepare Attack
+---| "minecraft:entity.evoker.prepare_summon"                     # Entity: Evoker Prepare Summon
+---| "minecraft:entity.evoker.prepare_wololo"                     # Entity: Evoker Prepare Wololo
+---| "minecraft:entity.evoker_fangs.attack"                       # Entity: Evoker Fangs Attack
+---| "minecraft:entity.experience_bottle.throw"                   # Entity: Experience Bottle Throw
+---| "minecraft:entity.experience_orb.pickup"                     # Entity: Experience Orb Pickup
+---| "minecraft:entity.firework_rocket.blast"                     # Entity: Firework Rocket Blast
+---| "minecraft:entity.firework_rocket.blast_far"                 # Entity: Firework Rocket Blast Far
+---| "minecraft:entity.firework_rocket.large_blast"               # Entity: Firework Rocket Large Blast
+---| "minecraft:entity.firework_rocket.large_blast_far"           # Entity: Firework Rocket Large Blast Far
+---| "minecraft:entity.firework_rocket.launch"                    # Entity: Firework Rocket Launch
+---| "minecraft:entity.firework_rocket.shoot"                     # Entity: Firework Rocket Shoot
+---| "minecraft:entity.firework_rocket.twinkle"                   # Entity: Firework Rocket Twinkle
+---| "minecraft:entity.firework_rocket.twinkle_far"               # Entity: Firework Rocket Twinkle Far
+---| "minecraft:entity.fish.swim"                                 # Entity: Fish Swim
+---| "minecraft:entity.fishing_bobber.retrieve"                   # Entity: Fishing Bobber Retrieve
+---| "minecraft:entity.fishing_bobber.splash"                     # Entity: Fishing Bobber Splash
+---| "minecraft:entity.fishing_bobber.throw"                      # Entity: Fishing Bobber Throw
+---| "minecraft:entity.fox.aggro"                                 # Entity: Fox Aggro
+---| "minecraft:entity.fox.ambient"                               # Entity: Fox Ambient
+---| "minecraft:entity.fox.bite"                                  # Entity: Fox Bite
+---| "minecraft:entity.fox.death"                                 # Entity: Fox Death
+---| "minecraft:entity.fox.eat"                                   # Entity: Fox Eat
+---| "minecraft:entity.fox.hurt"                                  # Entity: Fox Hurt
+---| "minecraft:entity.fox.screech"                               # Entity: Fox Screech
+---| "minecraft:entity.fox.sleep"                                 # Entity: Fox Sleep
+---| "minecraft:entity.fox.sniff"                                 # Entity: Fox Sniff
+---| "minecraft:entity.fox.spit"                                  # Entity: Fox Spit
+---| "minecraft:entity.fox.teleport"                              # Entity: Fox Teleport
+---| "minecraft:entity.frog.ambient"                              # Entity: Frog Ambient
+---| "minecraft:entity.frog.death"                                # Entity: Frog Death
+---| "minecraft:entity.frog.eat"                                  # Entity: Frog Eat
+---| "minecraft:entity.frog.hurt"                                 # Entity: Frog Hurt
+---| "minecraft:entity.frog.lay_spawn"                            # Entity: Frog Lay Spawn
+---| "minecraft:entity.frog.long_jump"                            # Entity: Frog Long Jump
+---| "minecraft:entity.frog.step"                                 # Entity: Frog Step
+---| "minecraft:entity.frog.tongue"                               # Entity: Frog Tongue
+---| "minecraft:entity.generic.big_fall"                          # Entity: Generic Big Fall
+---| "minecraft:entity.generic.burn"                              # Entity: Generic Burn
+---| "minecraft:entity.generic.death"                             # Entity: Generic Death
+---| "minecraft:entity.generic.drink"                             # Entity: Generic Drink
+---| "minecraft:entity.generic.eat"                               # Entity: Generic Eat
+---| "minecraft:entity.generic.explode"                           # Entity: Generic Explode
+---| "minecraft:entity.generic.extinguish_fire"                   # Entity: Generic Extinguish Fire
+---| "minecraft:entity.generic.hurt"                              # Entity: Generic Hurt
+---| "minecraft:entity.generic.small_fall"                        # Entity: Generic Small Fall
+---| "minecraft:entity.generic.splash"                            # Entity: Generic Splash
+---| "minecraft:entity.generic.swim"                              # Entity: Generic Swim
+---| "minecraft:entity.generic.wind_burst"                        # Entity: Generic Wind Burst
+---| "minecraft:entity.ghast.ambient"                             # Entity: Ghast Ambient
+---| "minecraft:entity.ghast.death"                               # Entity: Ghast Death
+---| "minecraft:entity.ghast.hurt"                                # Entity: Ghast Hurt
+---| "minecraft:entity.ghast.scream"                              # Entity: Ghast Scream
+---| "minecraft:entity.ghast.shoot"                               # Entity: Ghast Shoot
+---| "minecraft:entity.ghast.warn"                                # Entity: Ghast Warn
+---| "minecraft:entity.glow_item_frame.add_item"                  # Entity: Glow Item Frame Add Item
+---| "minecraft:entity.glow_item_frame.break"                     # Entity: Glow Item Frame Break
+---| "minecraft:entity.glow_item_frame.place"                     # Entity: Glow Item Frame Place
+---| "minecraft:entity.glow_item_frame.remove_item"               # Entity: Glow Item Frame Remove Item
+---| "minecraft:entity.glow_item_frame.rotate_item"               # Entity: Glow Item Frame Rotate Item
+---| "minecraft:entity.glow_squid.ambient"                        # Entity: Glow Squid Ambient
+---| "minecraft:entity.glow_squid.death"                          # Entity: Glow Squid Death
+---| "minecraft:entity.glow_squid.hurt"                           # Entity: Glow Squid Hurt
+---| "minecraft:entity.glow_squid.squirt"                         # Entity: Glow Squid Squirt
+---| "minecraft:entity.goat.ambient"                              # Entity: Goat Ambient
+---| "minecraft:entity.goat.death"                                # Entity: Goat Death
+---| "minecraft:entity.goat.eat"                                  # Entity: Goat Eat
+---| "minecraft:entity.goat.horn_break"                           # Entity: Goat Horn Break
+---| "minecraft:entity.goat.hurt"                                 # Entity: Goat Hurt
+---| "minecraft:entity.goat.long_jump"                            # Entity: Goat Long Jump
+---| "minecraft:entity.goat.milk"                                 # Entity: Goat Milk
+---| "minecraft:entity.goat.prepare_ram"                          # Entity: Goat Prepare Ram
+---| "minecraft:entity.goat.ram_impact"                           # Entity: Goat Ram Impact
+---| "minecraft:entity.goat.screaming.ambient"                    # Entity: Goat Screaming Ambient
+---| "minecraft:entity.goat.screaming.death"                      # Entity: Goat Screaming Death
+---| "minecraft:entity.goat.screaming.eat"                        # Entity: Goat Screaming Eat
+---| "minecraft:entity.goat.screaming.hurt"                       # Entity: Goat Screaming Hurt
+---| "minecraft:entity.goat.screaming.long_jump"                  # Entity: Goat Screaming Long Jump
+---| "minecraft:entity.goat.screaming.milk"                       # Entity: Goat Screaming Milk
+---| "minecraft:entity.goat.screaming.prepare_ram"                # Entity: Goat Screaming Prepare Ram
+---| "minecraft:entity.goat.screaming.ram_impact"                 # Entity: Goat Screaming Ram Impact
+---| "minecraft:entity.goat.step"                                 # Entity: Goat Step
+---| "minecraft:entity.guardian.ambient"                          # Entity: Guardian Ambient
+---| "minecraft:entity.guardian.ambient_land"                     # Entity: Guardian Ambient Land
+---| "minecraft:entity.guardian.attack"                           # Entity: Guardian Attack
+---| "minecraft:entity.guardian.death"                            # Entity: Guardian Death
+---| "minecraft:entity.guardian.death_land"                       # Entity: Guardian Death Land
+---| "minecraft:entity.guardian.flop"                             # Entity: Guardian Flop
+---| "minecraft:entity.guardian.hurt"                             # Entity: Guardian Hurt
+---| "minecraft:entity.guardian.hurt_land"                        # Entity: Guardian Hurt Land
+---| "minecraft:entity.hoglin.ambient"                            # Entity: Hoglin Ambient
+---| "minecraft:entity.hoglin.angry"                              # Entity: Hoglin Angry
+---| "minecraft:entity.hoglin.attack"                             # Entity: Hoglin Attack
+---| "minecraft:entity.hoglin.converted_to_zombified"             # Entity: Hoglin Converted To Zombified
+---| "minecraft:entity.hoglin.death"                              # Entity: Hoglin Death
+---| "minecraft:entity.hoglin.hurt"                               # Entity: Hoglin Hurt
+---| "minecraft:entity.hoglin.retreat"                            # Entity: Hoglin Retreat
+---| "minecraft:entity.hoglin.step"                               # Entity: Hoglin Step
+---| "minecraft:entity.horse.ambient"                             # Entity: Horse Ambient
+---| "minecraft:entity.horse.angry"                               # Entity: Horse Angry
+---| "minecraft:entity.horse.armor"                               # Entity: Horse Armor
+---| "minecraft:entity.horse.breathe"                             # Entity: Horse Breathe
+---| "minecraft:entity.horse.death"                               # Entity: Horse Death
+---| "minecraft:entity.horse.eat"                                 # Entity: Horse Eat
+---| "minecraft:entity.horse.gallop"                              # Entity: Horse Gallop
+---| "minecraft:entity.horse.hurt"                                # Entity: Horse Hurt
+---| "minecraft:entity.horse.jump"                                # Entity: Horse Jump
+---| "minecraft:entity.horse.land"                                # Entity: Horse Land
+---| "minecraft:entity.horse.saddle"                              # Entity: Horse Saddle
+---| "minecraft:entity.horse.step"                                # Entity: Horse Step
+---| "minecraft:entity.horse.step_wood"                           # Entity: Horse Step Wood
+---| "minecraft:entity.hostile.big_fall"                          # Entity: Hostile Big Fall
+---| "minecraft:entity.hostile.death"                             # Entity: Hostile Death
+---| "minecraft:entity.hostile.hurt"                              # Entity: Hostile Hurt
+---| "minecraft:entity.hostile.small_fall"                        # Entity: Hostile Small Fall
+---| "minecraft:entity.hostile.splash"                            # Entity: Hostile Splash
+---| "minecraft:entity.hostile.swim"                              # Entity: Hostile Swim
+---| "minecraft:entity.husk.ambient"                              # Entity: Husk Ambient
+---| "minecraft:entity.husk.converted_to_zombie"                  # Entity: Husk Converted To Zombie
+---| "minecraft:entity.husk.death"                                # Entity: Husk Death
+---| "minecraft:entity.husk.hurt"                                 # Entity: Husk Hurt
+---| "minecraft:entity.husk.step"                                 # Entity: Husk Step
+---| "minecraft:entity.illusioner.ambient"                        # Entity: Illusioner Ambient
+---| "minecraft:entity.illusioner.cast_spell"                     # Entity: Illusioner Cast Spell
+---| "minecraft:entity.illusioner.death"                          # Entity: Illusioner Death
+---| "minecraft:entity.illusioner.hurt"                           # Entity: Illusioner Hurt
+---| "minecraft:entity.illusioner.mirror_move"                    # Entity: Illusioner Mirror Move
+---| "minecraft:entity.illusioner.prepare_blindness"              # Entity: Illusioner Prepare Blindness
+---| "minecraft:entity.illusioner.prepare_mirror"                 # Entity: Illusioner Prepare Mirror
+---| "minecraft:entity.iron_golem.attack"                         # Entity: Iron Golem Attack
+---| "minecraft:entity.iron_golem.damage"                         # Entity: Iron Golem Damage
+---| "minecraft:entity.iron_golem.death"                          # Entity: Iron Golem Death
+---| "minecraft:entity.iron_golem.hurt"                           # Entity: Iron Golem Hurt
+---| "minecraft:entity.iron_golem.repair"                         # Entity: Iron Golem Repair
+---| "minecraft:entity.iron_golem.step"                           # Entity: Iron Golem Step
+---| "minecraft:entity.item.break"                                # Entity: Item Break
+---| "minecraft:entity.item.pickup"                               # Entity: Item Pickup
+---| "minecraft:entity.item_frame.add_item"                       # Entity: Item Frame Add Item
+---| "minecraft:entity.item_frame.break"                          # Entity: Item Frame Break
+---| "minecraft:entity.item_frame.place"                          # Entity: Item Frame Place
+---| "minecraft:entity.item_frame.remove_item"                    # Entity: Item Frame Remove Item
+---| "minecraft:entity.item_frame.rotate_item"                    # Entity: Item Frame Rotate Item
+---| "minecraft:entity.leash_knot.break"                          # Entity: Leash Knot Break
+---| "minecraft:entity.leash_knot.place"                          # Entity: Leash Knot Place
+---| "minecraft:entity.lightning_bolt.impact"                     # Entity: Lightning Bolt Impact
+---| "minecraft:entity.lightning_bolt.thunder"                    # Entity: Lightning Bolt Thunder
+---| "minecraft:entity.lingering_potion.throw"                    # Entity: Lingering Potion Throw
+---| "minecraft:entity.llama.ambient"                             # Entity: Llama Ambient
+---| "minecraft:entity.llama.angry"                               # Entity: Llama Angry
+---| "minecraft:entity.llama.chest"                               # Entity: Llama Chest
+---| "minecraft:entity.llama.death"                               # Entity: Llama Death
+---| "minecraft:entity.llama.eat"                                 # Entity: Llama Eat
+---| "minecraft:entity.llama.hurt"                                # Entity: Llama Hurt
+---| "minecraft:entity.llama.spit"                                # Entity: Llama Spit
+---| "minecraft:entity.llama.step"                                # Entity: Llama Step
+---| "minecraft:entity.llama.swag"                                # Entity: Llama Swag
+---| "minecraft:entity.magma_cube.death"                          # Entity: Magma Cube Death
+---| "minecraft:entity.magma_cube.death_small"                    # Entity: Magma Cube Death Small
+---| "minecraft:entity.magma_cube.hurt"                           # Entity: Magma Cube Hurt
+---| "minecraft:entity.magma_cube.hurt_small"                     # Entity: Magma Cube Hurt Small
+---| "minecraft:entity.magma_cube.jump"                           # Entity: Magma Cube Jump
+---| "minecraft:entity.magma_cube.squish"                         # Entity: Magma Cube Squish
+---| "minecraft:entity.magma_cube.squish_small"                   # Entity: Magma Cube Squish Small
+---| "minecraft:entity.minecart.inside"                           # Entity: Minecart Inside
+---| "minecraft:entity.minecart.inside.underwater"                # Entity: Minecart Inside Underwater
+---| "minecraft:entity.minecart.riding"                           # Entity: Minecart Riding
+---| "minecraft:entity.mooshroom.convert"                         # Entity: Mooshroom Convert
+---| "minecraft:entity.mooshroom.eat"                             # Entity: Mooshroom Eat
+---| "minecraft:entity.mooshroom.milk"                            # Entity: Mooshroom Milk
+---| "minecraft:entity.mooshroom.shear"                           # Entity: Mooshroom Shear
+---| "minecraft:entity.mooshroom.suspicious_milk"                 # Entity: Mooshroom Suspicious Milk
+---| "minecraft:entity.mule.ambient"                              # Entity: Mule Ambient
+---| "minecraft:entity.mule.angry"                                # Entity: Mule Angry
+---| "minecraft:entity.mule.chest"                                # Entity: Mule Chest
+---| "minecraft:entity.mule.death"                                # Entity: Mule Death
+---| "minecraft:entity.mule.eat"                                  # Entity: Mule Eat
+---| "minecraft:entity.mule.hurt"                                 # Entity: Mule Hurt
+---| "minecraft:entity.ocelot.ambient"                            # Entity: Ocelot Ambient
+---| "minecraft:entity.ocelot.death"                              # Entity: Ocelot Death
+---| "minecraft:entity.ocelot.hurt"                               # Entity: Ocelot Hurt
+---| "minecraft:entity.painting.break"                            # Entity: Painting Break
+---| "minecraft:entity.painting.place"                            # Entity: Painting Place
+---| "minecraft:entity.panda.aggressive_ambient"                  # Entity: Panda Aggressive Ambient
+---| "minecraft:entity.panda.ambient"                             # Entity: Panda Ambient
+---| "minecraft:entity.panda.bite"                                # Entity: Panda Bite
+---| "minecraft:entity.panda.cant_breed"                          # Entity: Panda Cant Breed
+---| "minecraft:entity.panda.death"                               # Entity: Panda Death
+---| "minecraft:entity.panda.eat"                                 # Entity: Panda Eat
+---| "minecraft:entity.panda.hurt"                                # Entity: Panda Hurt
+---| "minecraft:entity.panda.pre_sneeze"                          # Entity: Panda Pre Sneeze
+---| "minecraft:entity.panda.sneeze"                              # Entity: Panda Sneeze
+---| "minecraft:entity.panda.step"                                # Entity: Panda Step
+---| "minecraft:entity.panda.worried_ambient"                     # Entity: Panda Worried Ambient
+---| "minecraft:entity.parrot.ambient"                            # Entity: Parrot Ambient
+---| "minecraft:entity.parrot.death"                              # Entity: Parrot Death
+---| "minecraft:entity.parrot.eat"                                # Entity: Parrot Eat
+---| "minecraft:entity.parrot.fly"                                # Entity: Parrot Fly
+---| "minecraft:entity.parrot.hurt"                               # Entity: Parrot Hurt
+---| "minecraft:entity.parrot.imitate.blaze"                      # Entity: Parrot Imitate Blaze
+---| "minecraft:entity.parrot.imitate.breeze"                     # Entity: Parrot Imitate Breeze
+---| "minecraft:entity.parrot.imitate.creeper"                    # Entity: Parrot Imitate Creeper
+---| "minecraft:entity.parrot.imitate.drowned"                    # Entity: Parrot Imitate Drowned
+---| "minecraft:entity.parrot.imitate.elder_guardian"             # Entity: Parrot Imitate Elder Guardian
+---| "minecraft:entity.parrot.imitate.ender_dragon"               # Entity: Parrot Imitate Ender Dragon
+---| "minecraft:entity.parrot.imitate.endermite"                  # Entity: Parrot Imitate Endermite
+---| "minecraft:entity.parrot.imitate.evoker"                     # Entity: Parrot Imitate Evoker
+---| "minecraft:entity.parrot.imitate.ghast"                      # Entity: Parrot Imitate Ghast
+---| "minecraft:entity.parrot.imitate.guardian"                   # Entity: Parrot Imitate Guardian
+---| "minecraft:entity.parrot.imitate.hoglin"                     # Entity: Parrot Imitate Hoglin
+---| "minecraft:entity.parrot.imitate.husk"                       # Entity: Parrot Imitate Husk
+---| "minecraft:entity.parrot.imitate.illusioner"                 # Entity: Parrot Imitate Illusioner
+---| "minecraft:entity.parrot.imitate.magma_cube"                 # Entity: Parrot Imitate Magma Cube
+---| "minecraft:entity.parrot.imitate.phantom"                    # Entity: Parrot Imitate Phantom
+---| "minecraft:entity.parrot.imitate.piglin"                     # Entity: Parrot Imitate Piglin
+---| "minecraft:entity.parrot.imitate.piglin_brute"               # Entity: Parrot Imitate Piglin Brute
+---| "minecraft:entity.parrot.imitate.pillager"                   # Entity: Parrot Imitate Pillager
+---| "minecraft:entity.parrot.imitate.ravager"                    # Entity: Parrot Imitate Ravager
+---| "minecraft:entity.parrot.imitate.shulker"                    # Entity: Parrot Imitate Shulker
+---| "minecraft:entity.parrot.imitate.silverfish"                 # Entity: Parrot Imitate Silverfish
+---| "minecraft:entity.parrot.imitate.skeleton"                   # Entity: Parrot Imitate Skeleton
+---| "minecraft:entity.parrot.imitate.slime"                      # Entity: Parrot Imitate Slime
+---| "minecraft:entity.parrot.imitate.spider"                     # Entity: Parrot Imitate Spider
+---| "minecraft:entity.parrot.imitate.stray"                      # Entity: Parrot Imitate Stray
+---| "minecraft:entity.parrot.imitate.vex"                        # Entity: Parrot Imitate Vex
+---| "minecraft:entity.parrot.imitate.vindicator"                 # Entity: Parrot Imitate Vindicator
+---| "minecraft:entity.parrot.imitate.warden"                     # Entity: Parrot Imitate Warden
+---| "minecraft:entity.parrot.imitate.witch"                      # Entity: Parrot Imitate Witch
+---| "minecraft:entity.parrot.imitate.wither"                     # Entity: Parrot Imitate Wither
+---| "minecraft:entity.parrot.imitate.wither_skeleton"            # Entity: Parrot Imitate Wither Skeleton
+---| "minecraft:entity.parrot.imitate.zoglin"                     # Entity: Parrot Imitate Zoglin
+---| "minecraft:entity.parrot.imitate.zombie"                     # Entity: Parrot Imitate Zombie
+---| "minecraft:entity.parrot.imitate.zombie_villager"            # Entity: Parrot Imitate Zombie Villager
+---| "minecraft:entity.parrot.step"                               # Entity: Parrot Step
+---| "minecraft:entity.phantom.ambient"                           # Entity: Phantom Ambient
+---| "minecraft:entity.phantom.bite"                              # Entity: Phantom Bite
+---| "minecraft:entity.phantom.death"                             # Entity: Phantom Death
+---| "minecraft:entity.phantom.flap"                              # Entity: Phantom Flap
+---| "minecraft:entity.phantom.hurt"                              # Entity: Phantom Hurt
+---| "minecraft:entity.phantom.swoop"                             # Entity: Phantom Swoop
+---| "minecraft:entity.pig.ambient"                               # Entity: Pig Ambient
+---| "minecraft:entity.pig.death"                                 # Entity: Pig Death
+---| "minecraft:entity.pig.hurt"                                  # Entity: Pig Hurt
+---| "minecraft:entity.pig.saddle"                                # Entity: Pig Saddle
+---| "minecraft:entity.pig.step"                                  # Entity: Pig Step
+---| "minecraft:entity.piglin.admiring_item"                      # Entity: Piglin Admiring Item
+---| "minecraft:entity.piglin.ambient"                            # Entity: Piglin Ambient
+---| "minecraft:entity.piglin.angry"                              # Entity: Piglin Angry
+---| "minecraft:entity.piglin.celebrate"                          # Entity: Piglin Celebrate
+---| "minecraft:entity.piglin.converted_to_zombified"             # Entity: Piglin Converted To Zombified
+---| "minecraft:entity.piglin.death"                              # Entity: Piglin Death
+---| "minecraft:entity.piglin.hurt"                               # Entity: Piglin Hurt
+---| "minecraft:entity.piglin.jealous"                            # Entity: Piglin Jealous
+---| "minecraft:entity.piglin.retreat"                            # Entity: Piglin Retreat
+---| "minecraft:entity.piglin.step"                               # Entity: Piglin Step
+---| "minecraft:entity.piglin_brute.ambient"                      # Entity: Piglin Brute Ambient
+---| "minecraft:entity.piglin_brute.angry"                        # Entity: Piglin Brute Angry
+---| "minecraft:entity.piglin_brute.converted_to_zombified"       # Entity: Piglin Brute Converted To Zombified
+---| "minecraft:entity.piglin_brute.death"                        # Entity: Piglin Brute Death
+---| "minecraft:entity.piglin_brute.hurt"                         # Entity: Piglin Brute Hurt
+---| "minecraft:entity.piglin_brute.step"                         # Entity: Piglin Brute Step
+---| "minecraft:entity.pillager.ambient"                          # Entity: Pillager Ambient
+---| "minecraft:entity.pillager.celebrate"                        # Entity: Pillager Celebrate
+---| "minecraft:entity.pillager.death"                            # Entity: Pillager Death
+---| "minecraft:entity.pillager.hurt"                             # Entity: Pillager Hurt
+---| "minecraft:entity.player.attack.crit"                        # Entity: Player Attack Crit
+---| "minecraft:entity.player.attack.knockback"                   # Entity: Player Attack Knockback
+---| "minecraft:entity.player.attack.nodamage"                    # Entity: Player Attack Nodamage
+---| "minecraft:entity.player.attack.strong"                      # Entity: Player Attack Strong
+---| "minecraft:entity.player.attack.sweep"                       # Entity: Player Attack Sweep
+---| "minecraft:entity.player.attack.weak"                        # Entity: Player Attack Weak
+---| "minecraft:entity.player.big_fall"                           # Entity: Player Big Fall
+---| "minecraft:entity.player.breath"                             # Entity: Player Breath
+---| "minecraft:entity.player.burp"                               # Entity: Player Burp
+---| "minecraft:entity.player.death"                              # Entity: Player Death
+---| "minecraft:entity.player.hurt"                               # Entity: Player Hurt
+---| "minecraft:entity.player.hurt_drown"                         # Entity: Player Hurt Drown
+---| "minecraft:entity.player.hurt_freeze"                        # Entity: Player Hurt Freeze
+---| "minecraft:entity.player.hurt_on_fire"                       # Entity: Player Hurt On Fire
+---| "minecraft:entity.player.hurt_sweet_berry_bush"              # Entity: Player Hurt Sweet Berry Bush
+---| "minecraft:entity.player.levelup"                            # Entity: Player Levelup
+---| "minecraft:entity.player.small_fall"                         # Entity: Player Small Fall
+---| "minecraft:entity.player.splash"                             # Entity: Player Splash
+---| "minecraft:entity.player.splash.high_speed"                  # Entity: Player Splash High Speed
+---| "minecraft:entity.player.swim"                               # Entity: Player Swim
+---| "minecraft:entity.player.teleport"                           # Entity: Player Teleport
+---| "minecraft:entity.polar_bear.ambient"                        # Entity: Polar Bear Ambient
+---| "minecraft:entity.polar_bear.ambient_baby"                   # Entity: Polar Bear Ambient Baby
+---| "minecraft:entity.polar_bear.death"                          # Entity: Polar Bear Death
+---| "minecraft:entity.polar_bear.hurt"                           # Entity: Polar Bear Hurt
+---| "minecraft:entity.polar_bear.step"                           # Entity: Polar Bear Step
+---| "minecraft:entity.polar_bear.warning"                        # Entity: Polar Bear Warning
+---| "minecraft:entity.puffer_fish.ambient"                       # Entity: Puffer Fish Ambient
+---| "minecraft:entity.puffer_fish.blow_out"                      # Entity: Puffer Fish Blow Out
+---| "minecraft:entity.puffer_fish.blow_up"                       # Entity: Puffer Fish Blow Up
+---| "minecraft:entity.puffer_fish.death"                         # Entity: Puffer Fish Death
+---| "minecraft:entity.puffer_fish.flop"                          # Entity: Puffer Fish Flop
+---| "minecraft:entity.puffer_fish.hurt"                          # Entity: Puffer Fish Hurt
+---| "minecraft:entity.puffer_fish.sting"                         # Entity: Puffer Fish Sting
+---| "minecraft:entity.rabbit.ambient"                            # Entity: Rabbit Ambient
+---| "minecraft:entity.rabbit.attack"                             # Entity: Rabbit Attack
+---| "minecraft:entity.rabbit.death"                              # Entity: Rabbit Death
+---| "minecraft:entity.rabbit.hurt"                               # Entity: Rabbit Hurt
+---| "minecraft:entity.rabbit.jump"                               # Entity: Rabbit Jump
+---| "minecraft:entity.ravager.ambient"                           # Entity: Ravager Ambient
+---| "minecraft:entity.ravager.attack"                            # Entity: Ravager Attack
+---| "minecraft:entity.ravager.celebrate"                         # Entity: Ravager Celebrate
+---| "minecraft:entity.ravager.death"                             # Entity: Ravager Death
+---| "minecraft:entity.ravager.hurt"                              # Entity: Ravager Hurt
+---| "minecraft:entity.ravager.roar"                              # Entity: Ravager Roar
+---| "minecraft:entity.ravager.step"                              # Entity: Ravager Step
+---| "minecraft:entity.ravager.stunned"                           # Entity: Ravager Stunned
+---| "minecraft:entity.salmon.ambient"                            # Entity: Salmon Ambient
+---| "minecraft:entity.salmon.death"                              # Entity: Salmon Death
+---| "minecraft:entity.salmon.flop"                               # Entity: Salmon Flop
+---| "minecraft:entity.salmon.hurt"                               # Entity: Salmon Hurt
+---| "minecraft:entity.sheep.ambient"                             # Entity: Sheep Ambient
+---| "minecraft:entity.sheep.death"                               # Entity: Sheep Death
+---| "minecraft:entity.sheep.hurt"                                # Entity: Sheep Hurt
+---| "minecraft:entity.sheep.shear"                               # Entity: Sheep Shear
+---| "minecraft:entity.sheep.step"                                # Entity: Sheep Step
+---| "minecraft:entity.shulker.ambient"                           # Entity: Shulker Ambient
+---| "minecraft:entity.shulker.close"                             # Entity: Shulker Close
+---| "minecraft:entity.shulker.death"                             # Entity: Shulker Death
+---| "minecraft:entity.shulker.hurt"                              # Entity: Shulker Hurt
+---| "minecraft:entity.shulker.hurt_closed"                       # Entity: Shulker Hurt Closed
+---| "minecraft:entity.shulker.open"                              # Entity: Shulker Open
+---| "minecraft:entity.shulker.shoot"                             # Entity: Shulker Shoot
+---| "minecraft:entity.shulker.teleport"                          # Entity: Shulker Teleport
+---| "minecraft:entity.shulker_bullet.hit"                        # Entity: Shulker Bullet Hit
+---| "minecraft:entity.shulker_bullet.hurt"                       # Entity: Shulker Bullet Hurt
+---| "minecraft:entity.silverfish.ambient"                        # Entity: Silverfish Ambient
+---| "minecraft:entity.silverfish.death"                          # Entity: Silverfish Death
+---| "minecraft:entity.silverfish.hurt"                           # Entity: Silverfish Hurt
+---| "minecraft:entity.silverfish.step"                           # Entity: Silverfish Step
+---| "minecraft:entity.skeleton.ambient"                          # Entity: Skeleton Ambient
+---| "minecraft:entity.skeleton.converted_to_stray"               # Entity: Skeleton Converted To Stray
+---| "minecraft:entity.skeleton.death"                            # Entity: Skeleton Death
+---| "minecraft:entity.skeleton.hurt"                             # Entity: Skeleton Hurt
+---| "minecraft:entity.skeleton.shoot"                            # Entity: Skeleton Shoot
+---| "minecraft:entity.skeleton.step"                             # Entity: Skeleton Step
+---| "minecraft:entity.skeleton_horse.ambient"                    # Entity: Skeleton Horse Ambient
+---| "minecraft:entity.skeleton_horse.ambient_water"              # Entity: Skeleton Horse Ambient Water
+---| "minecraft:entity.skeleton_horse.death"                      # Entity: Skeleton Horse Death
+---| "minecraft:entity.skeleton_horse.gallop_water"               # Entity: Skeleton Horse Gallop Water
+---| "minecraft:entity.skeleton_horse.hurt"                       # Entity: Skeleton Horse Hurt
+---| "minecraft:entity.skeleton_horse.jump_water"                 # Entity: Skeleton Horse Jump Water
+---| "minecraft:entity.skeleton_horse.step_water"                 # Entity: Skeleton Horse Step Water
+---| "minecraft:entity.skeleton_horse.swim"                       # Entity: Skeleton Horse Swim
+---| "minecraft:entity.slime.attack"                              # Entity: Slime Attack
+---| "minecraft:entity.slime.death"                               # Entity: Slime Death
+---| "minecraft:entity.slime.death_small"                         # Entity: Slime Death Small
+---| "minecraft:entity.slime.hurt"                                # Entity: Slime Hurt
+---| "minecraft:entity.slime.hurt_small"                          # Entity: Slime Hurt Small
+---| "minecraft:entity.slime.jump"                                # Entity: Slime Jump
+---| "minecraft:entity.slime.jump_small"                          # Entity: Slime Jump Small
+---| "minecraft:entity.slime.squish"                              # Entity: Slime Squish
+---| "minecraft:entity.slime.squish_small"                        # Entity: Slime Squish Small
+---| "minecraft:entity.sniffer.death"                             # Entity: Sniffer Death
+---| "minecraft:entity.sniffer.digging"                           # Entity: Sniffer Digging
+---| "minecraft:entity.sniffer.digging_stop"                      # Entity: Sniffer Digging Stop
+---| "minecraft:entity.sniffer.drop_seed"                         # Entity: Sniffer Drop Seed
+---| "minecraft:entity.sniffer.eat"                               # Entity: Sniffer Eat
+---| "minecraft:entity.sniffer.happy"                             # Entity: Sniffer Happy
+---| "minecraft:entity.sniffer.hurt"                              # Entity: Sniffer Hurt
+---| "minecraft:entity.sniffer.idle"                              # Entity: Sniffer Idle
+---| "minecraft:entity.sniffer.scenting"                          # Entity: Sniffer Scenting
+---| "minecraft:entity.sniffer.searching"                         # Entity: Sniffer Searching
+---| "minecraft:entity.sniffer.sniffing"                          # Entity: Sniffer Sniffing
+---| "minecraft:entity.sniffer.step"                              # Entity: Sniffer Step
+---| "minecraft:entity.snow_golem.ambient"                        # Entity: Snow Golem Ambient
+---| "minecraft:entity.snow_golem.death"                          # Entity: Snow Golem Death
+---| "minecraft:entity.snow_golem.hurt"                           # Entity: Snow Golem Hurt
+---| "minecraft:entity.snow_golem.shear"                          # Entity: Snow Golem Shear
+---| "minecraft:entity.snow_golem.shoot"                          # Entity: Snow Golem Shoot
+---| "minecraft:entity.snowball.throw"                            # Entity: Snowball Throw
+---| "minecraft:entity.spider.ambient"                            # Entity: Spider Ambient
+---| "minecraft:entity.spider.death"                              # Entity: Spider Death
+---| "minecraft:entity.spider.hurt"                               # Entity: Spider Hurt
+---| "minecraft:entity.spider.step"                               # Entity: Spider Step
+---| "minecraft:entity.splash_potion.break"                       # Entity: Splash Potion Break
+---| "minecraft:entity.splash_potion.throw"                       # Entity: Splash Potion Throw
+---| "minecraft:entity.squid.ambient"                             # Entity: Squid Ambient
+---| "minecraft:entity.squid.death"                               # Entity: Squid Death
+---| "minecraft:entity.squid.hurt"                                # Entity: Squid Hurt
+---| "minecraft:entity.squid.squirt"                              # Entity: Squid Squirt
+---| "minecraft:entity.stray.ambient"                             # Entity: Stray Ambient
+---| "minecraft:entity.stray.death"                               # Entity: Stray Death
+---| "minecraft:entity.stray.hurt"                                # Entity: Stray Hurt
+---| "minecraft:entity.stray.step"                                # Entity: Stray Step
+---| "minecraft:entity.strider.ambient"                           # Entity: Strider Ambient
+---| "minecraft:entity.strider.death"                             # Entity: Strider Death
+---| "minecraft:entity.strider.eat"                               # Entity: Strider Eat
+---| "minecraft:entity.strider.happy"                             # Entity: Strider Happy
+---| "minecraft:entity.strider.hurt"                              # Entity: Strider Hurt
+---| "minecraft:entity.strider.retreat"                           # Entity: Strider Retreat
+---| "minecraft:entity.strider.saddle"                            # Entity: Strider Saddle
+---| "minecraft:entity.strider.step"                              # Entity: Strider Step
+---| "minecraft:entity.strider.step_lava"                         # Entity: Strider Step Lava
+---| "minecraft:entity.tadpole.death"                             # Entity: Tadpole Death
+---| "minecraft:entity.tadpole.flop"                              # Entity: Tadpole Flop
+---| "minecraft:entity.tadpole.grow_up"                           # Entity: Tadpole Grow Up
+---| "minecraft:entity.tadpole.hurt"                              # Entity: Tadpole Hurt
+---| "minecraft:entity.tnt.primed"                                # Entity: Tnt Primed
+---| "minecraft:entity.tropical_fish.ambient"                     # Entity: Tropical Fish Ambient
+---| "minecraft:entity.tropical_fish.death"                       # Entity: Tropical Fish Death
+---| "minecraft:entity.tropical_fish.flop"                        # Entity: Tropical Fish Flop
+---| "minecraft:entity.tropical_fish.hurt"                        # Entity: Tropical Fish Hurt
+---| "minecraft:entity.turtle.ambient_land"                       # Entity: Turtle Ambient Land
+---| "minecraft:entity.turtle.death"                              # Entity: Turtle Death
+---| "minecraft:entity.turtle.death_baby"                         # Entity: Turtle Death Baby
+---| "minecraft:entity.turtle.egg_break"                          # Entity: Turtle Egg Break
+---| "minecraft:entity.turtle.egg_crack"                          # Entity: Turtle Egg Crack
+---| "minecraft:entity.turtle.egg_hatch"                          # Entity: Turtle Egg Hatch
+---| "minecraft:entity.turtle.hurt"                               # Entity: Turtle Hurt
+---| "minecraft:entity.turtle.hurt_baby"                          # Entity: Turtle Hurt Baby
+---| "minecraft:entity.turtle.lay_egg"                            # Entity: Turtle Lay Egg
+---| "minecraft:entity.turtle.shamble"                            # Entity: Turtle Shamble
+---| "minecraft:entity.turtle.shamble_baby"                       # Entity: Turtle Shamble Baby
+---| "minecraft:entity.turtle.swim"                               # Entity: Turtle Swim
+---| "minecraft:entity.vex.ambient"                               # Entity: Vex Ambient
+---| "minecraft:entity.vex.charge"                                # Entity: Vex Charge
+---| "minecraft:entity.vex.death"                                 # Entity: Vex Death
+---| "minecraft:entity.vex.hurt"                                  # Entity: Vex Hurt
+---| "minecraft:entity.villager.ambient"                          # Entity: Villager Ambient
+---| "minecraft:entity.villager.celebrate"                        # Entity: Villager Celebrate
+---| "minecraft:entity.villager.death"                            # Entity: Villager Death
+---| "minecraft:entity.villager.hurt"                             # Entity: Villager Hurt
+---| "minecraft:entity.villager.no"                               # Entity: Villager No
+---| "minecraft:entity.villager.trade"                            # Entity: Villager Trade
+---| "minecraft:entity.villager.work_armorer"                     # Entity: Villager Work Armorer
+---| "minecraft:entity.villager.work_butcher"                     # Entity: Villager Work Butcher
+---| "minecraft:entity.villager.work_cartographer"                # Entity: Villager Work Cartographer
+---| "minecraft:entity.villager.work_cleric"                      # Entity: Villager Work Cleric
+---| "minecraft:entity.villager.work_farmer"                      # Entity: Villager Work Farmer
+---| "minecraft:entity.villager.work_fisherman"                   # Entity: Villager Work Fisherman
+---| "minecraft:entity.villager.work_fletcher"                    # Entity: Villager Work Fletcher
+---| "minecraft:entity.villager.work_leatherworker"               # Entity: Villager Work Leatherworker
+---| "minecraft:entity.villager.work_librarian"                   # Entity: Villager Work Librarian
+---| "minecraft:entity.villager.work_mason"                       # Entity: Villager Work Mason
+---| "minecraft:entity.villager.work_shepherd"                    # Entity: Villager Work Shepherd
+---| "minecraft:entity.villager.work_toolsmith"                   # Entity: Villager Work Toolsmith
+---| "minecraft:entity.villager.work_weaponsmith"                 # Entity: Villager Work Weaponsmith
+---| "minecraft:entity.villager.yes"                              # Entity: Villager Yes
+---| "minecraft:entity.vindicator.ambient"                        # Entity: Vindicator Ambient
+---| "minecraft:entity.vindicator.celebrate"                      # Entity: Vindicator Celebrate
+---| "minecraft:entity.vindicator.death"                          # Entity: Vindicator Death
+---| "minecraft:entity.vindicator.hurt"                           # Entity: Vindicator Hurt
+---| "minecraft:entity.wandering_trader.ambient"                  # Entity: Wandering Trader Ambient
+---| "minecraft:entity.wandering_trader.death"                    # Entity: Wandering Trader Death
+---| "minecraft:entity.wandering_trader.disappeared"              # Entity: Wandering Trader Disappeared
+---| "minecraft:entity.wandering_trader.drink_milk"               # Entity: Wandering Trader Drink Milk
+---| "minecraft:entity.wandering_trader.drink_potion"             # Entity: Wandering Trader Drink Potion
+---| "minecraft:entity.wandering_trader.hurt"                     # Entity: Wandering Trader Hurt
+---| "minecraft:entity.wandering_trader.no"                       # Entity: Wandering Trader No
+---| "minecraft:entity.wandering_trader.reappeared"               # Entity: Wandering Trader Reappeared
+---| "minecraft:entity.wandering_trader.trade"                    # Entity: Wandering Trader Trade
+---| "minecraft:entity.wandering_trader.yes"                      # Entity: Wandering Trader Yes
+---| "minecraft:entity.warden.agitated"                           # Entity: Warden Agitated
+---| "minecraft:entity.warden.ambient"                            # Entity: Warden Ambient
+---| "minecraft:entity.warden.angry"                              # Entity: Warden Angry
+---| "minecraft:entity.warden.attack_impact"                      # Entity: Warden Attack Impact
+---| "minecraft:entity.warden.death"                              # Entity: Warden Death
+---| "minecraft:entity.warden.dig"                                # Entity: Warden Dig
+---| "minecraft:entity.warden.emerge"                             # Entity: Warden Emerge
+---| "minecraft:entity.warden.heartbeat"                          # Entity: Warden Heartbeat
+---| "minecraft:entity.warden.hurt"                               # Entity: Warden Hurt
+---| "minecraft:entity.warden.listening"                          # Entity: Warden Listening
+---| "minecraft:entity.warden.listening_angry"                    # Entity: Warden Listening Angry
+---| "minecraft:entity.warden.nearby_close"                       # Entity: Warden Nearby Close
+---| "minecraft:entity.warden.nearby_closer"                      # Entity: Warden Nearby Closer
+---| "minecraft:entity.warden.nearby_closest"                     # Entity: Warden Nearby Closest
+---| "minecraft:entity.warden.roar"                               # Entity: Warden Roar
+---| "minecraft:entity.warden.sniff"                              # Entity: Warden Sniff
+---| "minecraft:entity.warden.sonic_boom"                         # Entity: Warden Sonic Boom
+---| "minecraft:entity.warden.sonic_charge"                       # Entity: Warden Sonic Charge
+---| "minecraft:entity.warden.step"                               # Entity: Warden Step
+---| "minecraft:entity.warden.tendril_clicks"                     # Entity: Warden Tendril Clicks
+---| "minecraft:entity.witch.ambient"                             # Entity: Witch Ambient
+---| "minecraft:entity.witch.celebrate"                           # Entity: Witch Celebrate
+---| "minecraft:entity.witch.death"                               # Entity: Witch Death
+---| "minecraft:entity.witch.drink"                               # Entity: Witch Drink
+---| "minecraft:entity.witch.hurt"                                # Entity: Witch Hurt
+---| "minecraft:entity.witch.throw"                               # Entity: Witch Throw
+---| "minecraft:entity.wither.ambient"                            # Entity: Wither Ambient
+---| "minecraft:entity.wither.break_block"                        # Entity: Wither Break Block
+---| "minecraft:entity.wither.death"                              # Entity: Wither Death
+---| "minecraft:entity.wither.hurt"                               # Entity: Wither Hurt
+---| "minecraft:entity.wither.shoot"                              # Entity: Wither Shoot
+---| "minecraft:entity.wither.spawn"                              # Entity: Wither Spawn
+---| "minecraft:entity.wither_skeleton.ambient"                   # Entity: Wither Skeleton Ambient
+---| "minecraft:entity.wither_skeleton.death"                     # Entity: Wither Skeleton Death
+---| "minecraft:entity.wither_skeleton.hurt"                      # Entity: Wither Skeleton Hurt
+---| "minecraft:entity.wither_skeleton.step"                      # Entity: Wither Skeleton Step
+---| "minecraft:entity.wolf.ambient"                              # Entity: Wolf Ambient
+---| "minecraft:entity.wolf.death"                                # Entity: Wolf Death
+---| "minecraft:entity.wolf.growl"                                # Entity: Wolf Growl
+---| "minecraft:entity.wolf.howl"                                 # Entity: Wolf Howl
+---| "minecraft:entity.wolf.hurt"                                 # Entity: Wolf Hurt
+---| "minecraft:entity.wolf.pant"                                 # Entity: Wolf Pant
+---| "minecraft:entity.wolf.shake"                                # Entity: Wolf Shake
+---| "minecraft:entity.wolf.step"                                 # Entity: Wolf Step
+---| "minecraft:entity.wolf.whine"                                # Entity: Wolf Whine
+---| "minecraft:entity.zoglin.ambient"                            # Entity: Zoglin Ambient
+---| "minecraft:entity.zoglin.angry"                              # Entity: Zoglin Angry
+---| "minecraft:entity.zoglin.attack"                             # Entity: Zoglin Attack
+---| "minecraft:entity.zoglin.death"                              # Entity: Zoglin Death
+---| "minecraft:entity.zoglin.hurt"                               # Entity: Zoglin Hurt
+---| "minecraft:entity.zoglin.step"                               # Entity: Zoglin Step
+---| "minecraft:entity.zombie.ambient"                            # Entity: Zombie Ambient
+---| "minecraft:entity.zombie.attack_iron_door"                   # Entity: Zombie Attack Iron Door
+---| "minecraft:entity.zombie.attack_wooden_door"                 # Entity: Zombie Attack Wooden Door
+---| "minecraft:entity.zombie.break_wooden_door"                  # Entity: Zombie Break Wooden Door
+---| "minecraft:entity.zombie.converted_to_drowned"               # Entity: Zombie Converted To Drowned
+---| "minecraft:entity.zombie.death"                              # Entity: Zombie Death
+---| "minecraft:entity.zombie.destroy_egg"                        # Entity: Zombie Destroy Egg
+---| "minecraft:entity.zombie.hurt"                               # Entity: Zombie Hurt
+---| "minecraft:entity.zombie.infect"                             # Entity: Zombie Infect
+---| "minecraft:entity.zombie.step"                               # Entity: Zombie Step
+---| "minecraft:entity.zombie_horse.ambient"                      # Entity: Zombie Horse Ambient
+---| "minecraft:entity.zombie_horse.death"                        # Entity: Zombie Horse Death
+---| "minecraft:entity.zombie_horse.hurt"                         # Entity: Zombie Horse Hurt
+---| "minecraft:entity.zombie_villager.ambient"                   # Entity: Zombie Villager Ambient
+---| "minecraft:entity.zombie_villager.converted"                 # Entity: Zombie Villager Converted
+---| "minecraft:entity.zombie_villager.cure"                      # Entity: Zombie Villager Cure
+---| "minecraft:entity.zombie_villager.death"                     # Entity: Zombie Villager Death
+---| "minecraft:entity.zombie_villager.hurt"                      # Entity: Zombie Villager Hurt
+---| "minecraft:entity.zombie_villager.step"                      # Entity: Zombie Villager Step
+---| "minecraft:entity.zombified_piglin.ambient"                  # Entity: Zombified Piglin Ambient
+---| "minecraft:entity.zombified_piglin.angry"                    # Entity: Zombified Piglin Angry
+---| "minecraft:entity.zombified_piglin.death"                    # Entity: Zombified Piglin Death
+---| "minecraft:entity.zombified_piglin.hurt"                     # Entity: Zombified Piglin Hurt
+---| "minecraft:event.raid.horn"                                  # Event: Raid Horn
+---| "minecraft:item.armor.equip_chain"                           # Item: Armor Equip Chain
+---| "minecraft:item.armor.equip_diamond"                         # Item: Armor Equip Diamond
+---| "minecraft:item.armor.equip_elytra"                          # Item: Armor Equip Elytra
+---| "minecraft:item.armor.equip_generic"                         # Item: Armor Equip Generic
+---| "minecraft:item.armor.equip_gold"                            # Item: Armor Equip Gold
+---| "minecraft:item.armor.equip_iron"                            # Item: Armor Equip Iron
+---| "minecraft:item.armor.equip_leather"                         # Item: Armor Equip Leather
+---| "minecraft:item.armor.equip_netherite"                       # Item: Armor Equip Netherite
+---| "minecraft:item.armor.equip_turtle"                          # Item: Armor Equip Turtle
+---| "minecraft:item.axe.scrape"                                  # Item: Axe Scrape
+---| "minecraft:item.axe.strip"                                   # Item: Axe Strip
+---| "minecraft:item.axe.wax_off"                                 # Item: Axe Wax Off
+---| "minecraft:item.bone_meal.use"                               # Item: Bone Meal Use
+---| "minecraft:item.book.page_turn"                              # Item: Book Page Turn
+---| "minecraft:item.book.put"                                    # Item: Book Put
+---| "minecraft:item.bottle.empty"                                # Item: Bottle Empty
+---| "minecraft:item.bottle.fill"                                 # Item: Bottle Fill
+---| "minecraft:item.bottle.fill_dragonbreath"                    # Item: Bottle Fill Dragonbreath
+---| "minecraft:item.brush.brushing.generic"                      # Item: Brush Brushing Generic
+---| "minecraft:item.brush.brushing.gravel"                       # Item: Brush Brushing Gravel
+---| "minecraft:item.brush.brushing.gravel.complete"              # Item: Brush Brushing Gravel Complete
+---| "minecraft:item.brush.brushing.sand"                         # Item: Brush Brushing Sand
+---| "minecraft:item.brush.brushing.sand.complete"                # Item: Brush Brushing Sand Complete
+---| "minecraft:item.bucket.empty"                                # Item: Bucket Empty
+---| "minecraft:item.bucket.empty_axolotl"                        # Item: Bucket Empty Axolotl
+---| "minecraft:item.bucket.empty_fish"                           # Item: Bucket Empty Fish
+---| "minecraft:item.bucket.empty_lava"                           # Item: Bucket Empty Lava
+---| "minecraft:item.bucket.empty_powder_snow"                    # Item: Bucket Empty Powder Snow
+---| "minecraft:item.bucket.empty_tadpole"                        # Item: Bucket Empty Tadpole
+---| "minecraft:item.bucket.fill"                                 # Item: Bucket Fill
+---| "minecraft:item.bucket.fill_axolotl"                         # Item: Bucket Fill Axolotl
+---| "minecraft:item.bucket.fill_fish"                            # Item: Bucket Fill Fish
+---| "minecraft:item.bucket.fill_lava"                            # Item: Bucket Fill Lava
+---| "minecraft:item.bucket.fill_powder_snow"                     # Item: Bucket Fill Powder Snow
+---| "minecraft:item.bucket.fill_tadpole"                         # Item: Bucket Fill Tadpole
+---| "minecraft:item.bundle.drop_contents"                        # Item: Bundle Drop Contents
+---| "minecraft:item.bundle.insert"                               # Item: Bundle Insert
+---| "minecraft:item.bundle.remove_one"                           # Item: Bundle Remove One
+---| "minecraft:item.chorus_fruit.teleport"                       # Item: Chorus Fruit Teleport
+---| "minecraft:item.crop.plant"                                  # Item: Crop Plant
+---| "minecraft:item.crossbow.hit"                                # Item: Crossbow Hit
+---| "minecraft:item.crossbow.loading_end"                        # Item: Crossbow Loading End
+---| "minecraft:item.crossbow.loading_middle"                     # Item: Crossbow Loading Middle
+---| "minecraft:item.crossbow.loading_start"                      # Item: Crossbow Loading Start
+---| "minecraft:item.crossbow.quick_charge_"                      # Item: Crossbow Quick Charge 
+---| "minecraft:item.crossbow.quick_charge_"                      # Item: Crossbow Quick Charge 
+---| "minecraft:item.crossbow.quick_charge_"                      # Item: Crossbow Quick Charge 
+---| "minecraft:item.crossbow.shoot"                              # Item: Crossbow Shoot
+---| "minecraft:item.dye.use"                                     # Item: Dye Use
+---| "minecraft:item.elytra.flying"                               # Item: Elytra Flying
+---| "minecraft:item.firecharge.use"                              # Item: Firecharge Use
+---| "minecraft:item.flintandsteel.use"                           # Item: Flintandsteel Use
+---| "minecraft:item.glow_ink_sac.use"                            # Item: Glow Ink Sac Use
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.goat_horn.sound."                            # Item: Goat Horn Sound 
+---| "minecraft:item.hoe.till"                                    # Item: Hoe Till
+---| "minecraft:item.honey_bottle.drink"                          # Item: Honey Bottle Drink
+---| "minecraft:item.honeycomb.wax_on"                            # Item: Honeycomb Wax On
+---| "minecraft:item.ink_sac.use"                                 # Item: Ink Sac Use
+---| "minecraft:item.lodestone_compass.lock"                      # Item: Lodestone Compass Lock
+---| "minecraft:item.nether_wart.plant"                           # Item: Nether Wart Plant
+---| "minecraft:item.shield.block"                                # Item: Shield Block
+---| "minecraft:item.shield.break"                                # Item: Shield Break
+---| "minecraft:item.shovel.flatten"                              # Item: Shovel Flatten
+---| "minecraft:item.spyglass.stop_using"                         # Item: Spyglass Stop Using
+---| "minecraft:item.spyglass.use"                                # Item: Spyglass Use
+---| "minecraft:item.totem.use"                                   # Item: Totem Use
+---| "minecraft:item.trident.hit"                                 # Item: Trident Hit
+---| "minecraft:item.trident.hit_ground"                          # Item: Trident Hit Ground
+---| "minecraft:item.trident.return"                              # Item: Trident Return
+---| "minecraft:item.trident.riptide_"                            # Item: Trident Riptide 
+---| "minecraft:item.trident.riptide_"                            # Item: Trident Riptide 
+---| "minecraft:item.trident.riptide_"                            # Item: Trident Riptide 
+---| "minecraft:item.trident.throw"                               # Item: Trident Throw
+---| "minecraft:item.trident.thunder"                             # Item: Trident Thunder
+---| "minecraft:music.creative"                                   # Music: Creative
+---| "minecraft:music.credits"                                    # Music: Credits
+---| "minecraft:music.dragon"                                     # Music: Dragon
+---| "minecraft:music.end"                                        # Music: End
+---| "minecraft:music.game"                                       # Music: Game
+---| "minecraft:music.menu"                                       # Music: Menu
+---| "minecraft:music.nether.basalt_deltas"                       # Music: Nether Basalt Deltas
+---| "minecraft:music.nether.crimson_forest"                      # Music: Nether Crimson Forest
+---| "minecraft:music.nether.nether_wastes"                       # Music: Nether Nether Wastes
+---| "minecraft:music.nether.soul_sand_valley"                    # Music: Nether Soul Sand Valley
+---| "minecraft:music.nether.warped_forest"                       # Music: Nether Warped Forest
+---| "minecraft:music.overworld.badlands"                         # Music: Overworld Badlands
+---| "minecraft:music.overworld.bamboo_jungle"                    # Music: Overworld Bamboo Jungle
+---| "minecraft:music.overworld.cherry_grove"                     # Music: Overworld Cherry Grove
+---| "minecraft:music.overworld.deep_dark"                        # Music: Overworld Deep Dark
+---| "minecraft:music.overworld.desert"                           # Music: Overworld Desert
+---| "minecraft:music.overworld.dripstone_caves"                  # Music: Overworld Dripstone Caves
+---| "minecraft:music.overworld.flower_forest"                    # Music: Overworld Flower Forest
+---| "minecraft:music.overworld.forest"                           # Music: Overworld Forest
+---| "minecraft:music.overworld.frozen_peaks"                     # Music: Overworld Frozen Peaks
+---| "minecraft:music.overworld.grove"                            # Music: Overworld Grove
+---| "minecraft:music.overworld.jagged_peaks"                     # Music: Overworld Jagged Peaks
+---| "minecraft:music.overworld.jungle"                           # Music: Overworld Jungle
+---| "minecraft:music.overworld.lush_caves"                       # Music: Overworld Lush Caves
+---| "minecraft:music.overworld.meadow"                           # Music: Overworld Meadow
+---| "minecraft:music.overworld.old_growth_taiga"                 # Music: Overworld Old Growth Taiga
+---| "minecraft:music.overworld.snowy_slopes"                     # Music: Overworld Snowy Slopes
+---| "minecraft:music.overworld.sparse_jungle"                    # Music: Overworld Sparse Jungle
+---| "minecraft:music.overworld.stony_peaks"                      # Music: Overworld Stony Peaks
+---| "minecraft:music.overworld.swamp"                            # Music: Overworld Swamp
+---| "minecraft:music.under_water"                                # Music: Under Water
+---| "minecraft:music_disc.11"                                    # Music_Disc: 11
+---| "minecraft:music_disc.13"                                    # Music_Disc: 13
+---| "minecraft:music_disc.5"                                     # Music_Disc: 5
+---| "minecraft:music_disc.blocks"                                # Music_Disc: Blocks
+---| "minecraft:music_disc.cat"                                   # Music_Disc: Cat
+---| "minecraft:music_disc.chirp"                                 # Music_Disc: Chirp
+---| "minecraft:music_disc.far"                                   # Music_Disc: Far
+---| "minecraft:music_disc.mall"                                  # Music_Disc: Mall
+---| "minecraft:music_disc.mellohi"                               # Music_Disc: Mellohi
+---| "minecraft:music_disc.otherside"                             # Music_Disc: Otherside
+---| "minecraft:music_disc.pigstep"                               # Music_Disc: Pigstep
+---| "minecraft:music_disc.relic"                                 # Music_Disc: Relic
+---| "minecraft:music_disc.stal"                                  # Music_Disc: Stal
+---| "minecraft:music_disc.strad"                                 # Music_Disc: Strad
+---| "minecraft:music_disc.wait"                                  # Music_Disc: Wait
+---| "minecraft:music_disc.ward"                                  # Music_Disc: Ward
+---| "minecraft:particle.soul_escape"                             # Particle: Soul Escape
+---| "minecraft:ui.button.click"                                  # Ui: Button Click
+---| "minecraft:ui.cartography_table.take_result"                 # Ui: Cartography Table Take Result
+---| "minecraft:ui.loom.select_pattern"                           # Ui: Loom Select Pattern
+---| "minecraft:ui.loom.take_result"                              # Ui: Loom Take Result
+---| "minecraft:ui.stonecutter.select_recipe"                     # Ui: Stonecutter Select Recipe
+---| "minecraft:ui.stonecutter.take_result"                       # Ui: Stonecutter Take Result
+---| "minecraft:ui.toast.challenge_complete"                      # Ui: Toast Challenge Complete
+---| "minecraft:ui.toast.in"                                      # Ui: Toast In
+---| "minecraft:ui.toast.out"                                     # Ui: Toast Out
+---| "minecraft:weather.rain"                                     # Weather: Rain
+---| "minecraft:weather.rain.above"                               # Weather: Rain Above

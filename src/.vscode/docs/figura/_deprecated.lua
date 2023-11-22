@@ -1,5 +1,5 @@
 ---@meta _
----@diagnostic disable: duplicate-set-field, codestyle-check
+---@diagnostic disable
 
 
 ---@class «deprecated»

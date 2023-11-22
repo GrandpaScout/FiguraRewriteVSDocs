@@ -171,6 +171,7 @@
 ---| "minecraft:cherry_fence_gate"                  # Cherry Fence Gate
 ---| "minecraft:cherry_hanging_sign"                # Cherry Hanging Sign
 ---| "minecraft:cherry_leaves"                      # Cherry Leaves
+---| "minecraft:cherry_log"                         # Cherry Log
 ---| "minecraft:cherry_planks"                      # Cherry Planks
 ---| "minecraft:cherry_pressure_plate"              # Cherry Pressure Plate
 ---| "minecraft:cherry_sapling"                     # Cherry Sapling
@@ -180,6 +181,7 @@
 ---| "minecraft:cherry_trapdoor"                    # Cherry Trapdoor
 ---| "minecraft:cherry_wall_hanging_sign"           # Cherry Wall Hanging Sign
 ---| "minecraft:cherry_wall_sign"                   # Cherry Wall Sign
+---| "minecraft:cherry_wood"                        # Cherry Wood
 ---| "minecraft:chest"                              # Chest
 ---| "minecraft:chipped_anvil"                      # Chipped Anvil
 ---| "minecraft:chiseled_bookshelf"                 # Chiseled Bookshelf
@@ -305,6 +307,7 @@
 ---| "minecraft:dead_tube_coral_block"              # Dead Tube Coral Block
 ---| "minecraft:dead_tube_coral_fan"                # Dead Tube Coral Fan
 ---| "minecraft:dead_tube_coral_wall_fan"           # Dead Tube Coral Wall Fan
+---| "minecraft:decorated_pot"                      # Decorated Pot
 ---| "minecraft:deepslate"                          # Deepslate
 ---| "minecraft:deepslate_brick_slab"               # Deepslate Brick Slab
 ---| "minecraft:deepslate_brick_stairs"             # Deepslate Brick Stairs
@@ -651,6 +654,7 @@
 ---| "minecraft:pink_wool"                          # Pink Wool
 ---| "minecraft:piston"                             # Piston
 ---| "minecraft:piston_head"                        # Piston Head
+---| "minecraft:pitcher_crop"                       # Pitcher Crop
 ---| "minecraft:pitcher_plant"                      # Pitcher Plant
 ---| "minecraft:player_head"                        # Player Head
 ---| "minecraft:player_wall_head"                   # Player Wall Head
@@ -874,6 +878,8 @@
 ---| "minecraft:stripped_bamboo_block"              # Block of Stripped Bamboo
 ---| "minecraft:stripped_birch_log"                 # Stripped Birch Log
 ---| "minecraft:stripped_birch_wood"                # Stripped Birch Wood
+---| "minecraft:stripped_cherry_log"                # Stripped Cherry Log
+---| "minecraft:stripped_cherry_wood"               # Stripped Cherry Wood
 ---| "minecraft:stripped_crimson_hyphae"            # Stripped Crimson Hyphae
 ---| "minecraft:stripped_crimson_stem"              # Stripped Crimson Stem
 ---| "minecraft:stripped_dark_oak_log"              # Stripped Dark Oak Log

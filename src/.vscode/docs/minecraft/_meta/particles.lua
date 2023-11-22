@@ -73,7 +73,7 @@
 ---| "minecraft:sneeze"                   # Sneeze
 ---| "minecraft:snowflake"                # Snowflake
 ---| "minecraft:soul"                     # Soul
----| "minecraft:sould_fire_flame"         # Sould Fire Flame
+---| "minecraft:soul_fire_flame"          # Soul Fire Flame
 ---| "minecraft:spit"                     # Spit
 ---| "minecraft:splash"                   # Splash
 ---| "minecraft:spore_blossom_air"        # Spore Blossom Air
