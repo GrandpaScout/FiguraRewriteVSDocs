@@ -272,3 +272,36 @@ V6
   ### Affected aliases:
   * `Minecraft.blockID`, `Minecraft.itemID`, `Minecraft.particleID`, `Minecraft.soundID`
 * Changed diagnostics in `_global.lua` and `_deprecated.lua` to avoid errors that really shouldn't be happening.
+
+V7
+--------------------------------------------------
+### Scripts
+* Updated block property building scripts.
+  * The Figura script now uses the barrier floor to detect out of bounds world positions. This should hopefully be more
+    stable than checking for void air.
+  * The Figura script now copies directly to clipboard instead of printing to chat.
+  * The Node script now accesses the Minecraft Wiki for the descriptions of properties that don't have one set in the
+    `descriptions.js` file.  
+    If the Minecraft Wiki does not have a description for a property, it will use a default error description instead.
+* Added Schema building scripts.
+  * These scripts can be ran to create a new `avatar.schema.json` file.
+* All build scripts now use a common file for functions they share.
+* `Minecraft.blockProperties` alias updated using new script.
+* `avatar.schema.json` updated using new script.
+
+### Documentation
+* Fixed pings always existing even if they have not been defined.
+* Fixed wrong type of `events.WORLD_RENDER`.
+* Added missing functions `Player:getExhaustion()`, `ModelPart:primaryRenderType()`, and
+  `ModelPart:secondaryRenderType()`.
+* Fixed missing parameter `name` in `ModelPart:copy()`.
+* Fixed wrong type of parameter `renderType` in `ModelPart:setPrimaryRenderType()` and
+  `ModelPart:setSecondaryRenderType()`.
+* Fixed `RenderTask:setMatrix()`, `RenderTask:setPos()`, `RenderTask:setRot()`, `RenderTask:setScale()`, and
+  `RenderTask:setVisible()` not returning `<self>`.
+* Changed description of `ModelPart:getAllVertices()` and `ModelPart:getVertices()`.  
+  Eventually I'm going to rewrite all of the descriptions. A lot of them are just restating the name of the function or
+  don't actually add anything useful.
+* Deprecations are now ***hidden*** by default. To enable them, open the `.code-workspace` file and change
+  `"editor.suggest.showDeprecated": false` to `"editor.suggest.showDeprecated": true`.
+* Removed `"inject-field"` diagnostic. (Hopefully? I can't run the version of LuaLS that has that diagnostic.)

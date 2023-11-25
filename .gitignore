@@ -9,3 +9,7 @@
 
 # This isn't done yet.
 /doc
+
+# Used for testing.
+/script.lua
+/avatar.json

@@ -482,6 +482,9 @@ function Player:getChargedAttackDelay() end
 function Player:getCoolDownPercent(stack, delta) end
 
 ---Gets the hunger exhaustion of this player.
+---@return number
+---@nodiscard
+function Player:getExhaustion() end
 
 ---Gets the experience level of this player.
 ---@return integer

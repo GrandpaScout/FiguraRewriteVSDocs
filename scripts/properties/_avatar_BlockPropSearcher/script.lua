@@ -42,7 +42,7 @@ local function readBlock(x, y, z)
 
   local data = id:match("^minecraft:") and blocks or moddedBlocks
 
-  if id == OOB and blockAt(x, y + 1, z).id == OOB and blockAt(x, y - 1, z).id == OOB then
+  if blockAt(x, 60, z).id ~= BARRIER then
     return false, "Found the void. Make sure the search is within world bounds and your render distance is high enough to see the entire grid."
   elseif id == BLANK then
     --print(("found blank at <%d, %d>"):format(x, z))
@@ -93,7 +93,7 @@ local function cycle()
   for _ = 1, CYCLE_SIZE do
     s, e = readBlock(pos.x, 70, pos.z)
     if s == nil then
-
+      -- Do nothing.
     elseif s == false then
       state.waiting = true
 
@@ -101,15 +101,21 @@ local function cycle()
         (
           "Search paused at <%d, %d>:\n" ..
           "%s\n\n" ..
-          
+
           "After fixing this issue, you can unpause the search by typing\n" ..
-          "  §7/figura run Continue()§r"
+          "  §7/figura run §bContinue()§r"
         ):format(pos.x, pos.z, e)
       )
 
       break
     elseif s == true then
-      print("Done. You can now view the BLK table to see all data.")
+      print(
+        "Done.\n" ..
+        "To view the collected data, search the §bBLK§f.§avanilla§r table\n" ..
+        "    (and the §bBLK§f.§amodded§r table if using content mods).\n" ..
+        "To start compiling the data, run\n" ..
+        "  §7/figura run §bCompile()§r"
+      )
       events.TICK:remove("searchCycle")
       state = nil
       break
@@ -365,13 +371,18 @@ function Compile()
 
   BLK.compiled = props
   BLK.compileO = occur
-  print("Done.")
+  print(
+    "Done.\n" ..
+    "To view the compiled data, search the §bBLK§f.§acompiled§r table.\n" ..
+    "To copy the data to your clipboard, run\n" ..
+    "  §7/figura run §bCopy()§r"
+  )
 end
 
 
 
 
-function Print()
+function Copy()
   local cmp = BLK.compiled --[[@as table]]
   local rnk = BLK.compileO.rank
 
@@ -396,7 +407,7 @@ function Print()
 
   local out = {
     --""
-    "%" .. table.concat(ranks.r2b, ",") .. "%|"
+    "%" .. table.concat(ranks.r2b, ",") .. "%"
   }
 
   local pns = {}
@@ -407,41 +418,25 @@ function Print()
   table.sort(pns)
 
   for _, pn in ipairs(pns) do
-    local currentOut = out[#out]
     local p = cmp[pn]
     local ranges = {}
     for _, r in ipairs(p) do
-      ranges[#ranges+1] =
+      ranges[#ranges+1] = (
         r.range.hash .. ";" ..
-        (table.concat(r.blocks, ",") .. ",")
-          :gsub("minecraft:", ":")
+        ("," .. table.concat(r.blocks, ",") .. ",")
+          :gsub(",minecraft:", ",:")
           :gsub("([a-z0-9_:/.-]+),", subsRank)
-          :sub(1, -2)
+          :sub(2, -2)
+      )
     end
 
-    local chunk = pn .. "~" .. table.concat(ranges, "+") .. "|"
-    if (#currentOut + #chunk) > 9000 then
-      out[#out] = currentOut:sub(1, -2)
-      out[#out+1] = chunk
-    else
-      out[#out] = currentOut .. chunk
-    end
+    out[#out+1] = pn .. "~" .. table.concat(ranges, "+")
   end
 
-  local len = 0
-
-  local i = 1
-  events.TICK:register(function()
-    local str = out[i]
-    i = i + 1
-
-    if not str then
-      print("Printed " .. len .. " bytes over " .. #out .. " chunks.")
-      events.TICK:remove("printTick")
-      return
-    end
-
-    len = len + #str
-    print(str)
-  end, "printTick")
+  print(
+    "State property information copied to clipboard.\n" ..
+    "If someone requested this data, paste the data into a file and send it over to whoever requested it.\n" ..
+    "If you know what you are doing, paste the data into the `./scripts/properties/properties.txt` file."
+  )
+  host:setClipboard(table.concat(out, "\n"))
 end

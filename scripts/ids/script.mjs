@@ -1,49 +1,19 @@
 import { mkdirSync } from "fs";
-import { readFile, writeFile } from "fs/promises";
 import { resolve } from "path";
+import {inFile, inJson, inWiki, outFile} from "../common.mjs";
 
 const cwd = process.cwd();
 
 mkdirSync(resolve(cwd, "./out"), {recursive: true});
 
-const UA = "FiguraRewriteVSDocs_BuildScript/1.0 (@GrandpaScout/FiguraRewriteVSDocs)";
-const reg_removecomments = /(?<=^|\n)(?:|\s*?(?:#|\/\/).*?)(?:\n|$)/g;
-const reg_lineendings = /\r\n/g;
 const reg_firstchar = /(?<=^|[_.])./g;
 const reg_seprchars = /[_.]/g;
 const reg_multispace = / {2,}/g;
-
-async function inFile(path) {
-  console.log(`\x1b[94mReading file data from [./${path}]...\x1b[0m`);
-  return (await readFile(resolve(cwd, path)))
-    .toString("utf8")
-    .replace(reg_lineendings, "\n")
-    .replace(reg_removecomments, "");
-}
-
-/** @returns {Promise<string>} */
-async function inWiki(page) {
-  const link = `https://minecraft.wiki/api.php?action=parse&format=json&page=${page}&prop=wikitext&formatversion=2`;
-  console.log(`\x1b[96mReading wiki data from [https://minecraft.wiki/w/${page.replace(/&section=(\d+)/, " (§$1)")}]...\x1b[0m`);
-  const res = await fetch(link, {headers:{"User-Agent": UA}});
-  return (await res.json()).parse.wikitext;
-}
-
-async function outFile(path, data) {
-  await writeFile(resolve(cwd, "out", path), data, "utf8");
-  console.log(`\x1b[92mOutput written to [./out/${path}]...\x1b[0m`);
-}
 
 function namespace_sort(a, b) {
   return a.ns === b.ns
     ? (a.id > b.id ? 1 : -1)
     : (a.ns > b.ns ? 1 : -1);
-}
-
-/** @returns {Promise<void>} */
-async function wait(time) {
-  const promise = new Promise(resolve => setTimeout(resolve, time));
-  return void await promise;
 }
 
 function toUpperCase(str) {return str.toUpperCase()}
@@ -445,7 +415,7 @@ sounds: {
   const regv = /^\|-\s*?\n\|\s*(?<id>[a-z0-9:._]*).*?\s*\|\|/gm;
   const reg_namesplit = /^([^.]+)\.(.*)$/;
 
-  const [wiki_contents, file_contents] = await Promise.all([inWiki(inwiki), inFile(infile)]);
+  const [wiki_contents, file_contents] = await Promise.all([inWiki(inwiki), inJson(infile)]);
 
   for (const match of wiki_contents.matchAll(regv)) {
     const id = "minecraft:" + match.groups.id;
@@ -457,7 +427,7 @@ sounds: {
     longestSoundID = Math.max(longestSoundID, id.length);
   }
 
-  for (const [ns, mod] of Object.entries(JSON.parse(file_contents.replace(reg_removecomments, "")))) {
+  for (const [ns, mod] of Object.entries(file_contents)) {
     for (const key of Object.keys(mod)) {
       sounds.push({ns, id: ns + ":" + key, name: "[Modded Sound]"})
       longestSoundID = Math.max(longestSoundID, id.length)

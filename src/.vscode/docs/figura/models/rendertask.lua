@@ -110,7 +110,10 @@ function RenderTask:setLight(block, sky) end
 ---This does not overwrite the position, rotation, or scale of the render task. The given matrix is used for rendering
 ---instead until one of the previously listed values are modified, after which the task will stop using the matrix and
 ---return to using the position, rotation, and scale for rendering.
+---@generic self
+---@param self self
 ---@param mat Matrix4
+---@return self
 function RenderTask:setMatrix(mat) end
 
 ---Sets the white flash and hurt overlays on this task.
@@ -136,49 +139,70 @@ function RenderTask:setOverlay(white, hurt) end
 ---Sets this task's position.
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function RenderTask:setPos(pos) end
 
 ---Sets this task's position.
 ---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RenderTask:setPos(x, y, z) end
 
 ---Sets this task's rotation.
 ---
 ---If `rot` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@generic self
+---@param self self
 ---@param rot? Vector3
+---@return self
 function RenderTask:setRot(rot) end
 
 ---Sets this task's rotation.
 ---
 ---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RenderTask:setRot(x, y, z) end
 
 ---Sets this task's scale multiplier.
 ---
 ---If `scale` is `nil`, it will default to `⟨1, 1, 1⟩`.
+---@generic self
+---@param self self
 ---@param scale? Vector3
+---@return self
 function RenderTask:setScale(scale) end
 
 ---Sets this task's scale multiplier.
 ---
 ---If `x`, `y`, or `z` are `nil`, they will default to `1`.
+---@generic self
+---@param self self
 ---@param x? number
 ---@param y? number
 ---@param z? number
+---@return self
 function RenderTask:setScale(x, y, z) end
 
 ---Sets if this task should render at all.
 ---
 ---If `state` is `nil`, it will default to `false`.
+---@generic self
+---@param self self
 ---@param state? boolean
+---@return self
 function RenderTask:setVisible(state) end
 
 

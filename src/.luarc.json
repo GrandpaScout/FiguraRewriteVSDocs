@@ -196,7 +196,10 @@
       "unused-function": "Hint",         // Unused functions cause clutter.
       "unused-label": "Hint",            // Unused labels cause clutter.
       "unused-local": "Hint",            // Unused variables cause clutter.
-      "unused-vararg": "Hint"            // Unused varargs cause clutter.
+      "unused-vararg": "Hint",           // Unused varargs cause clutter.
+
+      // Unknown
+      "inject-field": "Warning"          // Injecting fields into defined objects.
     },
     "neededFileStatus": {
       "codestyle-check": "Any"
@@ -276,12 +279,15 @@
       //;"code-after-break",
       //;"empty-block",
       //;"redundant-return",
-      "trailing-space"    // Personal preference.
+      "trailing-space",   // Personal preference.
       //;"unreachable-code",
       //;"unused-function",
       //;"unused-label",
       //;"unused-local",
-      //;"unused-vararg"
+      //;"unused-vararg",
+
+      // Unknown
+      "inject-field"
     ],
 
     // Group severity is not used by the docs.

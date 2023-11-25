@@ -1766,7 +1766,6 @@ particles = {}
 ---├•  end                                   │   end
 ---└•end                                     └•end
 ---```
----@type {[string]?: function}
 pings = {}
 
 ---The Minecraft player the current avatar is attached to.

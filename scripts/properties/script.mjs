@@ -1,39 +1,48 @@
-const {readFileSync, writeFileSync, appendFileSync, openSync, closeSync, mkdirSync} = require("fs")
-const {resolve} = require("path")
-const desc = require("./descriptions")
-const hashmod = require("./hashmods")
+import {writeFileSync, appendFileSync, openSync, closeSync, mkdirSync} from "fs";
+import {resolve} from "path";
+import {inFile, inWiki} from "../common.mjs";
+import desc from "./descriptions.js";
+import hashmod from "./hashmods.js";
 
-const cwd = process.cwd()
 
-const KEY = Symbol("BlockKey")
+const cwd = process.cwd();
 
-const lines = readFileSync(resolve(cwd, "properties.txt"))
-  .toString()
-  .split(/\r?\n|\|/)
+const KEY = Symbol("BlockKey");
+
+const lines = (await inFile("properties.txt")).split(/\r?\n|\|/);
 
 /** @type {{[prop: string]: {range: {hash: string, value: string[]}, blocks: string[]}[], [KEY]: string[]}} */
 const data = {
   [KEY]: []
+};
+
+const reg_resolvelinks = /\[\[(.*?)\]\]/g;
+const reg_removerefs = /<ref>.*?<\/ref>/g;
+
+const wiki_desc = await inWiki("Java_Edition_data_values&section=9");
+
+for (const match of wiki_desc.matchAll(/^==== (?<id>[a-z0-9_]*) ====\n(?<desc>.*?){\|/gms)) {
+  desc[match.groups.id] ??= "\n" + match.groups.desc
+    .replace(reg_resolvelinks, "$1")
+    .replace(reg_removerefs, "");
 }
 
 
 /** @param {string} hash */
 function getRange(hash) {
   if (hash === "^") {
-    return ["true", "false"]
+    return ["true", "false"];
   } else if (hash.startsWith("#")) {
-    const ret = []
+    const ret = [];
     const range = hash
       .match(/^#(\d+),(\d+)$/)
       .slice(1)
+      .map(v => Number(v));
 
-    range.forEach((v, i, self) => {
-      self[i] = Number(v)
-    })
+    for (let i = range[0]; i <= range[1]; i++)
+      ret.push(String(i));
 
-    for (i = range[0]; i <= range[1]; i++) ret.push(String(i));
-
-    return ret
+    return ret;
   } else if (hash.startsWith("$")) {
     return hash.substring(1).split(",")
   } else {
@@ -65,7 +74,7 @@ for (const line of lines) {
     /** @type {string} */
     const [, range, blockList] = group.match(/^(.+?);(.+)$/);
 
-    const hash = hashmod[range] ?? range
+    const hash = hashmod[range] ?? range;
 
     const blocks = blockList
       .replace(/:/g, "minecraft:")
@@ -76,18 +85,18 @@ for (const line of lines) {
       if (n === n) blocks[i] = data[KEY][n];
     })
 
-    blocks.sort()
+    blocks.sort();
 
     pdata.push({
       blocks,
       range: {hash, value: getRange(hash)}
-    })
+    });
   }
 }
 
 function docstr(prop) {
-  const str = desc[prop] ?? desc.$none
-  const rgx = RegExp(`\\r?\\n(?:${str.match(/^\r?\n(\s*)/)[1]})?(?! )`, "g")
+  const str = desc[prop] ?? desc.$none;
+  const rgx = RegExp(`\\r?\\n(?:${str.match(/^\r?\n(\s*)/)[1]})?(?! )`, "g");
 
   return str
     .replace(rgx, "\n---")
@@ -103,8 +112,8 @@ function docstr(prop) {
 
   const file = openSync(resolve(cwd, "./out/properties.lua"), "w")
   const fileMin = openSync(resolve(cwd, "./out/properties.min.lua"), "w")
-  writeFileSync(file, "---@class Minecraft.properties")
-  writeFileSync(fileMin, "---@class Minecraft.properties.min")
+  writeFileSync(file, "---@meta _\n\n---@class Minecraft.blockProperties")
+  writeFileSync(fileMin, "---@meta _\n\n---@class Minecraft.blockProperties")
 
   for (const prop of props) {
     const propData = data[prop];
@@ -146,6 +155,8 @@ function docstr(prop) {
     appendFileSync(fileMin, `${doc}\n${field}`)
   }
 
+  appendFileSync(file, "\n")
   closeSync(file)
+  appendFileSync(fileMin, "\n")
   closeSync(fileMin)
 }

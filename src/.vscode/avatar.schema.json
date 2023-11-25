@@ -2,63 +2,76 @@
   "$schema": "http://json-schema.org/draft-07/schema",
 
   "description": "An avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
-  "markdownDescription": "```ts\n{\n  name: string,\n  author: string <OR> authors: string[],\n  version: string,\n  color: Color,\n  background: unknown,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {\n    [partPath]: {\n      visible: string,\n      parentType: string,\n      moveTo: string,\n      primaryRenderType: RenderType,\n      secondaryRenderType: RenderType\n    }\n  }\n}\n```\n***\nAn avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
+  "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  author: string <OR> authors: string[],\n  version: string,\n  color: string,\n  background: unknown,\n  id: unknown,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {\n    [partPath]: {\n      remove: boolean,\n      visible: boolean,\n      parentType: string,\n      moveTo: string,\n      primaryRenderType: string,\n      secondaryRenderType: string,\n      smooth: boolean\n    }\n  }\n}\n```\n***\nAn avatar metadata object. Holds extra information about an avatar such as its name, author(s), color, and more.",
 
   "type": "object",
 
   "defaultSnippets": [
-    {"label": "\u200B\u200B\u200B{}", "body": "^{$1}", "markdownDescription": "```ts\n{}\n```\n***\nStart from scratch."},
+    {"label": "​​​{}", "body": "^{$1}", "markdownDescription": "```ts\n{}\n```\n***\nStart from scratch."},
     {"label": "No metadata", "body": "^", "markdownDescription": "This file can be completely blank, it will treat it as if you don't want any data set."},
-    {"label": "\u200BMinimum metadata, One author", "body": {
+    {"label": "​Minimum metadata, One author", "body": {
       "name": "${1:My Avatar}",
-      "author": "${2:Username}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string\n}\n```\n***\nIncludes the absolute minimum for data."},
-    {"label": "\u200BMinimum metadata, Several authors", "body": {
+      "description": "${2:A very descriptive description.}",
+      "author": "${3:Username}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  author: string\n}\n```\n***\nIncludes only the \"necessary\" data."},
+    {"label": "​Minimum metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
-      "authors": ["${2:Username}"]
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[]\n}\n```\n***\nIncludes the absolute minimum for data."},
-    {"label": "\u200B\u200BBasic metadata, One author", "body": {
+      "description": "${2:A very descriptive description.}",
+      "authors": ["${3:Username}"]
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  authors: string[]\n}\n```\n***\nIncludes only the \"necessary\" data."},
+    {"label": "​​Basic metadata, One author", "body": {
       "name": "${1:My Avatar}",
-      "author": "${2:Username}",
-      "version": "${3|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
-      "color": "${4:#RRGGBB}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, author, Figura version, and theme color."},
-    {"label": "\u200B\u200BBasic metadata, Several authors", "body": {
+      "description": "${2:A very descriptive description.}",
+      "author": "${3:Username}",
+      "version": "${4|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5}",
+      "color": "${5:#RRGGBB}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  author: string,\n  version: string,\n  color: string\n}\n```\n***\nIncludes some basic data such as the name, author, Figura version, and theme color."},
+    {"label": "​​Basic metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
-      "authors": ["${2:Username}"],
-      "version": "${3|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
-      "color": "${4:#RRGGBB}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color\n}\n```\n***\nIncludes some basic data such as the name, authors, Figura version, and theme color."},
-    {"label": "\u200B\u200BFull metadata, One author", "body": {
+      "description": "${2:A very descriptive description.}",
+      "authors": ["${3:Username}"],
+      "version": "${4|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5}",
+      "color": "${5:#RRGGBB}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  authors: string[],\n  version: string,\n  color: string\n}\n```\n***\nIncludes some basic data such as the name, authors, Figura version, and theme color."},
+    {"label": "​​Full metadata, One author", "body": {
       "name": "${1:My Avatar}",
-      "author": "${2:Username}",
-      "version": "${3|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
-      "color": "${4:#RRGGBB}",
-      "autoScripts": ["^$5"],
-      "autoAnims": ["^$6"],
-      "ignoredTextures": ["^$7"],
-      "customizations": "^{$8}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  author: string,\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."},
-    {"label": "\u200B\u200BFull metadata, Several authors", "body": {
+      "description": "${2:A very descriptive description.}",
+      "author": "${3:Username}",
+      "version": "${4|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5}",
+      "color": "${5:#RRGGBB}",
+      "autoScripts": ["^$6"],
+      "autoAnims": ["^$7"],
+      "ignoredTextures": ["^$8"],
+      "customizations": "^{$9}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  author: string,\n  version: string,\n  color: string,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {\n    [partPath]: {\n      remove: boolean,\n      visible: boolean,\n      parentType: string,\n      moveTo: string,\n      primaryRenderType: string,\n      secondaryRenderType: string,\n      smooth: boolean\n    }\n  }\n}\n```\n***\nIncludes all possible data an avatar can have."},
+    {"label": "​​Full metadata, Several authors", "body": {
       "name": "${1:My Avatar}",
-      "authors": ["${2:Username}"],
-      "version": "${3|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5|}",
-      "color": "${4:#RRGGBB}",
-      "autoScripts": ["^$5"],
-      "autoAnims": ["^$6"],
-      "ignoredTextures": ["^$7"],
-      "customizations": "^{$8}"
-    }, "markdownDescription": "```ts\n{\n  name: string,\n  authors: string[],\n  version: string,\n  color: Color,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {...}\n}\n```\n***\nIncludes all possible data an avatar can have."}
+      "description": "${2:A very descriptive description.}",
+      "authors": ["${3:Username}"],
+      "version": "${4|0.1.2,0.1.1,0.1.0,0.1.0-rc.14,0.1.0-rc.13,0.1.0-rc.12,0.1.0-rc.11,0.1.0-rc.10,0.1.0-rc.9,0.1.0-rc.8,0.1.0-rc.7,0.1.0-rc.6,0.1.0-rc.5,0.1.0-rc.4,0.1.0-rc.3,0.1.0-rc.2,0.1.0-rc.1,0.1.0-pre.6,0.1.0-pre.5}",
+      "color": "${5:#RRGGBB}",
+      "autoScripts": ["^$6"],
+      "autoAnims": ["^$7"],
+      "ignoredTextures": ["^$8"],
+      "customizations": "^{$9}"
+    }, "markdownDescription": "```ts\n{\n  name: string,\n  description: string,\n  authors: string[],\n  version: string,\n  color: string,\n  autoScripts: string[],\n  autoAnims: string[],\n  ignoredTextures: string[],\n  customizations: {\n    [partPath]: {\n      remove: boolean,\n      visible: boolean,\n      parentType: string,\n      moveTo: string,\n      primaryRenderType: string,\n      secondaryRenderType: string,\n      smooth: boolean\n    }\n  }\n}\n```\n***\nIncludes all possible data an avatar can have."}
   ],
 
   "definitions": {
     "customization": {
       "description": "A customized part.",
-      "markdownDescription": "```ts\n[partPath]: {\n  visible: string,\n  parentType: string,\n  moveTo: string,\n  primaryRenderType: RenderType,\n  secondaryRenderType: RenderType\n}\n```\n***\nA customized part.",
+      "markdownDescription": "```ts\n[partPath]: {\n  remove: boolean,\n  visible: boolean,\n  parentType: string,\n  moveTo: string,\n  primaryRenderType: string,\n  secondaryRenderType: string,\n  smooth: boolean\n}\n```\n***\nA customized part.",
 
       "type": "object",
 
       "properties": {
+        "remove": {
+          "description": "Sets if this model part should be deleted before the avatar is created.",
+          "markdownDescription": "```ts\nremove: boolean\n```\n***\nSets if this model part should be deleted before the avatar is created.",
+
+          "type": "boolean"
+        },
+
         "visible": {
           "description": "Sets if this model part is visible by default.\nThis is usually set by Blockbench, but can also be set here if you wish.",
           "markdownDescription": "```ts\nvisible: boolean\n```\n***\nSets if this model part is visible by default.\n\nThis is usually set by Blockbench, but can also be set here if you wish.",
@@ -76,13 +89,17 @@
             {"enum": [
               "None",
               "Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg",
+              "HelmetPivot", "ChestplatePivot", "LeftShoulderPivot", "RightShoulderPivot",
+              "LeggingsPivot", "LeftLeggingPivot", "RightLeggingPivot", "LeftBootPivot", "RightBootPivot",
               "Cape", "LeftElytra", "RightElytra",
               "LeftItemPivot", "RightItemPivot", "HelmetItemPivot",
               "LeftSpyglassPivot", "RightSpyglassPivot",
               "LeftParrotPivot", "RightParrotPivot",
-              "World", "Hud", "Camera", "Skull"
+              "World", "Camera", "Hud",
+              "Skull", "Portrait",
+              "Arrow", "Item"
             ]},
-            {"pattern": "^(None|NONE|Head|HEAD|Body|BODY|LeftArm|LEFT_ARM|RightArm|RIGHT_ARM|LeftLeg|LEFT_LEG|RightLeg|RIGHT_LEG|Cape|CAPE|LeftElytra|LEFT_ELYTRA|LeftElytron|LEFT_ELYTRON|RightElytra|RIGHT_ELYTRA|RightElytron|RIGHT_ELYTRON|LeftItemPivot|LEFT_ITEM_PIVOT|RightItemPivot|RIGHT_ITEM_PIVOT|HelmetItemPivot|HELMET_ITEM_PIVOT|LeftSpyglassPivot|LEFT_SPYGLASS_PIVOT|RightSpyglassPivot|RIGHT_SPYGLASS_PIVOT|LeftParrotPivot|LEFT_PARROT_PIVOT|RightParrotPivot|RIGHT_PARROT_PIVOT|World|WORLD|Hud|HUD|Gui|GUI|Camera|CAMERA|Skull|SKULL|💀)$"}
+            {"pattern": "^(None|NONE|Model|MODEL|Head|HEAD|Body|BODY|LeftArm|LEFT_ARM|RightArm|RIGHT_ARM|LeftLeg|LEFT_LEG|RightLeg|RIGHT_LEG|HelmetPivot|HELMET_PIVOT|ChestplatePivot|CHESTPLATE_PIVOT|LeftShoulderPivot|LEFT_SHOULDER_PIVOT|RightShoulderPivot|RIGHT_SHOULDER_PIVOT|LeggingsPivot|LEGGINGS_PIVOT|LeftLeggingPivot|LEFT_LEGGING_PIVOT|RightLeggingPivot|RIGHT_LEGGING_PIVOT|LeftBootPivot|LEFT_BOOT_PIVOT|RightBootPivot|RIGHT_BOOT_PIVOT|Cape|CAPE|LeftElytra|LEFT_ELYTRA|LeftElytron|LEFT_ELYTRON|RightElytra|RIGHT_ELYTRA|RightElytron|RIGHT_ELYTRON|LeftItemPivot|LEFT_ITEM_PIVOT|RightItemPivot|RIGHT_ITEM_PIVOT|HelmetItemPivot|HELMET_ITEM_PIVOT|LeftSpyglassPivot|LEFT_SPYGLASS_PIVOT|RightSpyglassPivot|RIGHT_SPYGLASS_PIVOT|LeftParrotPivot|LEFT_PARROT_PIVOT|RightParrotPivot|RIGHT_PARROT_PIVOT|World|WORLD|Camera|CAMERA|Billboard|BILLBOARD|Hud|HUD|HeadsUpDisplay|Gui|GUI|GraphicalUserInterface|JraphicalUserInterface|Skull|SKULL|☠️|Portrait|PORTRAIT|Arrow|ARROW|Item|ITEM)$"}
           ]
         },
 
@@ -94,34 +111,38 @@
         },
 
         "primaryRenderType": {
-          "description": "The render type of the base texture on this part.",
-          "markdownDescription": "```ts\nprimaryRenderType: RenderType\n```\n***\nThe render type of the base texture on this part.",
+          "description": "The render type of the primary layer of this part.",
+          "markdownDescription": "The render type of the primary layer of this part.",
 
           "type": "string",
 
           "enum": [
             "NONE",
-            "CUTOUT", "CUTOUT_CULL", "TRANSPARENT", "TRANSPARENT_CULL",
-            "EMISSIVE", "EMISSIVE_SOLID",
-            "END_PORTAL", "END_GATEWAY",
-            "GLINT", "GLINT2",
-            "LINES", "LINES_STRIP"
+            "CUTOUT", "CUTOUT_CULL", "TRANSLUCENT", "TRANSLUCENT_CULL",
+            "EMISSIVE", "EMISSIVE_SOLID", "EYES",
+            "END_PORTAL", "END_GATEWAY", "TEXTURED_PORTAL",
+            "GLINT", "GLINT2", "TEXTURED_GLINT",
+            "LINES", "LINES_STRIP",
+            "SOLID",
+            "BLURRY"
           ]
         },
 
         "secondaryRenderType": {
-          "description": "The render type of the secondary texture (usually the emissive) on this part.",
-          "markdownDescription": "```ts\nsecondaryRenderType: RenderType\n```\n***\nThe render type of the secondary texture (usually the emissive) on this part.",
+          "description": "The render type of the secondary (emissive) layer of this part.",
+          "markdownDescription": "The render type of the secondary (emissive) layer of this part.",
 
           "type": "string",
 
           "enum": [
             "NONE",
-            "CUTOUT", "CUTOUT_CULL", "TRANSPARENT", "TRANSPARENT_CULL",
-            "EMISSIVE", "EMISSIVE_SOLID",
-            "END_PORTAL", "END_GATEWAY",
-            "GLINT", "GLINT2",
-            "LINES", "LINES_STRIP"
+            "CUTOUT", "CUTOUT_CULL", "TRANSLUCENT", "TRANSLUCENT_CULL",
+            "EMISSIVE", "EMISSIVE_SOLID", "EYES",
+            "END_PORTAL", "END_GATEWAY", "TEXTURED_PORTAL",
+            "GLINT", "GLINT2", "TEXTURED_GLINT",
+            "LINES", "LINES_STRIP",
+            "SOLID",
+            "BLURRY"
           ]
         }
       }
@@ -132,6 +153,18 @@
     "name": {
       "description": "The name of this avatar.\nIf this does not exist, the folder's name is used as the avatar name.",
       "markdownDescription": "```ts\nname: string\n```\n***\nThe name of this avatar.  \nIf this does not exist, the folder's name is used as the avatar name.",
+
+      "type": "string",
+
+      "defaultSnippets": [{"body": "$1"}],
+
+      "minLength": 1,
+      "pattern": "[^ \\f\\n\\r\\t]"
+    },
+
+    "description": {
+      "description": "The description of this avatar. Appears under the avatar's name in the wardrobe.",
+      "markdownDescription": "```ts\ndescription: string\n```\n***\nThe description of this avatar. Appears under the avatar's name in the wardrobe.",
 
       "type": "string",
 
@@ -152,32 +185,49 @@
       "minLength": 1,
       "pattern": "[^ \\f\\n\\r\\t]"
     },
+    "authors": {
+      "description": "A list of this avatar's authors.\nIf this avatar only has one author, you can also use \"author\" instead.",
+      "markdownDescription": "```ts\nauthors: string[]\n```\n***\nA list of this avatar's authors.\n\nIf this avatar only has one author, you can also use `author` instead.",
 
+      "type": "array",
+
+      "minItems": 1,
+      "items": {
+        "type": "string",
+
+        "defaultSnippets": [{"body": "$1"}],
+
+        "minLength": 1,
+        "pattern": "[^ \\f\\n\\r\\t]"
+      }
+    },
     "version": {
-      "description": "The version of Figura this avatar is made for.\nIf this does not exist, no version checking will be done.\n\nThe version must be a valid semantic version.",
+      "description": "The version of Figura this avatar is made for.\nIf this does not exist, no version checking will be done.\nThe version must be a valid semantic version.",
       "markdownDescription": "```ts\nversion: string\n```\n***\nThe version of Figura this avatar is made for.  \nIf this does not exist, no version checking will be done.\n\nThe version must be a valid semantic version.",
 
       "type": "string",
 
       "defaultSnippets": [
-        {"body": "$1"},
-        {"label": "Figura 0.1.2                       (0.1.2)",       "body": "0.1.2"      },
-        {"label": "Figura 0.1.1                       (0.1.1)",       "body": "0.1.1"      },
-        {"label": "Figura 0.1.0                       (0.1.0)",       "body": "0.1.0"      },
+        {
+          "body": "$1"
+        },
+        {"label": "Figura 0.1.2                       (0.1.2)", "body": "0.1.2"},
+        {"label": "Figura 0.1.1                       (0.1.1)", "body": "0.1.1"},
+        {"label": "Figura 0.1.0                       (0.1.0)", "body": "0.1.0"},
         {"label": "Figura 0.1.0, Release Candidate 14 (0.1.0-rc.14)", "body": "0.1.0-rc.14"},
         {"label": "Figura 0.1.0, Release Candidate 13 (0.1.0-rc.13)", "body": "0.1.0-rc.13"},
         {"label": "Figura 0.1.0, Release Candidate 12 (0.1.0-rc.12)", "body": "0.1.0-rc.12"},
         {"label": "Figura 0.1.0, Release Candidate 11 (0.1.0-rc.11)", "body": "0.1.0-rc.11"},
         {"label": "Figura 0.1.0, Release Candidate 10 (0.1.0-rc.10)", "body": "0.1.0-rc.10"},
-        {"label": "Figura 0.1.0, Release Candidate 9  (0.1.0-rc.9)",  "body": "0.1.0-rc.9" },
-        {"label": "Figura 0.1.0, Release Candidate 8  (0.1.0-rc.8)",  "body": "0.1.0-rc.8" },
-        {"label": "Figura 0.1.0, Release Candidate 7  (0.1.0-rc.7)",  "body": "0.1.0-rc.7" },
-        {"label": "Figura 0.1.0, Release Candidate 6  (0.1.0-rc.6)",  "body": "0.1.0-rc.6" },
-        {"label": "Figura 0.1.0, Release Candidate 5  (0.1.0-rc.5)",  "body": "0.1.0-rc.5" },
-        {"label": "Figura 0.1.0, Release Candidate 4  (0.1.0-rc.4)",  "body": "0.1.0-rc.4" },
-        {"label": "Figura 0.1.0, Release Candidate 3  (0.1.0-rc.3)",  "body": "0.1.0-rc.3" },
-        {"label": "Figura 0.1.0, Release Candidate 2  (0.1.0-rc.2)",  "body": "0.1.0-rc.2" },
-        {"label": "Figura 0.1.0, Release Candidate 1  (0.1.0-rc.1)",  "body": "0.1.0-rc.1" },
+        {"label": "Figura 0.1.0, Release Candidate 9  (0.1.0-rc.9)", "body": "0.1.0-rc.9"},
+        {"label": "Figura 0.1.0, Release Candidate 8  (0.1.0-rc.8)", "body": "0.1.0-rc.8"},
+        {"label": "Figura 0.1.0, Release Candidate 7  (0.1.0-rc.7)", "body": "0.1.0-rc.7"},
+        {"label": "Figura 0.1.0, Release Candidate 6  (0.1.0-rc.6)", "body": "0.1.0-rc.6"},
+        {"label": "Figura 0.1.0, Release Candidate 5  (0.1.0-rc.5)", "body": "0.1.0-rc.5"},
+        {"label": "Figura 0.1.0, Release Candidate 4  (0.1.0-rc.4)", "body": "0.1.0-rc.4"},
+        {"label": "Figura 0.1.0, Release Candidate 3  (0.1.0-rc.3)", "body": "0.1.0-rc.3"},
+        {"label": "Figura 0.1.0, Release Candidate 2  (0.1.0-rc.2)", "body": "0.1.0-rc.2"},
+        {"label": "Figura 0.1.0, Release Candidate 1  (0.1.0-rc.1)", "body": "0.1.0-rc.1"},
         {"label": "Figura 0.1.0, Prerelease 6         (0.1.0-pre.6)", "body": "0.1.0-pre.6"},
         {"label": "Figura 0.1.0, Prerelease 5         (0.1.0-pre.5)", "body": "0.1.0-pre.5"},
         {"label": "Figura 0.1.0, Prerelease 4         (0.1.0-pre.4)", "body": "0.1.0-pre.4"},
@@ -186,80 +236,73 @@
         {"label": "Figura 0.1.0, Prerelease 1         (0.1.0-pre.1)", "body": "0.1.0-pre.1"}
       ],
 
-      "pattern": "^(0|[1-9]\\d*)(\\.(0|[1-9]\\d*)){0,2}(-(pre|rc)\\.[1-9]\\d*)?(\\+.+)?$"
+      "pattern": "^(0|[1-9]\\d*)(\\.(0|[1-9]\\\\d*)){0,2}(-(pre|rc)\\.[1-9]\\\\d*)?(\\+.+)?$"
     },
 
     "color": {
-      "description": "The primary color of this avatar.\nControls the color of the nameplate mark and the avatar info text color.\n\nColor can either be a special named color or a hex value. (The \"#\" is optional.)",
-      "markdownDescription": "```ts\ncolor: Color\n```\n***\nThe primary color of this avatar.  \nControls the color of the nameplate mark and the avatar info text color.\n\nColor can either be a special named color or a hex value. (The `#` is optional.)",
+      "description": "The primary color of this avatar.\nControls the color of the nameplate mark and the avatar info text color.\nColor can either be a special named color or a hex value. (The `#` is optional.)",
+      "markdownDescription": "```ts\ncolor: string\n```\n***\nThe primary color of this avatar.  \nControls the color of the nameplate mark and the avatar info text color.\n\nColor can either be a special named color or a hex value. (The `#` is optional.)",
 
       "type": "string",
 
       "defaultSnippets": [
-        {"label": "\"#...\"",                   "body": "#${1:RRGGBB}"},
-        {"label": "\"FRAN_PINK\"    (#FF72AD)", "body": "FRAN_PINK"   },
-        {"label": "\"CHLOE_PURPLE\" (#A672EF)", "body": "CHLOE_PURPLE"},
-        {"label": "\"MAYA_BLUE\"    (#00F0FF)", "body": "MAYA_BLUE"   },
-        {"label": "\"SKYE_BLUE\"    (#99BBEE)", "body": "SKYE_BLUE"   },
-        {"label": "\"LILY_RED\"     (#FF2400)", "body": "LILY_RED"    },
-        {"label": "\"CHEESE\"       (#F8C53A)", "body": "CHEESE"      },
-        {"label": "\"LUA_LOG\"      (#5555FF)", "body": "LUA_LOG"     },
-        {"label": "\"LUA_ERROR\"    (#FF5555)", "body": "LUA_ERROR"   },
-        {"label": "\"LUA_PING\"     (#A155DA)", "body": "LUA_PING"    },
-        {"label": "\"DEFAULT\"      (#5AAAFF)", "body": "DEFAULT"     },
-        {"label": "\"DISCORD\"      (#5865F2)", "body": "DISCORD"     },
-        {"label": "\"black\"        (#000000)", "body": "black"       },
-        {"label": "\"dark_blue\"    (#0000AA)", "body": "dark_blue"   },
-        {"label": "\"dark_green\"   (#00AA00)", "body": "dark_green"  },
-        {"label": "\"dark_aqua\"    (#00AAAA)", "body": "dark_aqua"   },
-        {"label": "\"dark_red\"     (#AA0000)", "body": "dark_red"    },
-        {"label": "\"dark_purple\"  (#AA00AA)", "body": "dark_purple" },
-        {"label": "\"gold\"         (#FFAA00)", "body": "gold"        },
-        {"label": "\"gray\"         (#AAAAAA)", "body": "gray"        },
-        {"label": "\"dark_gray\"    (#555555)", "body": "dark_gray"   },
-        {"label": "\"blue\"         (#5555FF)", "body": "blue"        },
-        {"label": "\"green\"        (#55FF55)", "body": "green"       },
-        {"label": "\"aqua\"         (#55FFFF)", "body": "aqua"        },
-        {"label": "\"red\"          (#FF5555)", "body": "red"         },
+        {"label": "\"#...\"", "body": "#${1:RRGGBB}"},
+        {"label": "\"AWESOME_BLUE\" (#5EA5FF)", "body": "AWESOME_BLUE"},
+        {"label": "\"PURPLE\"       (#A672EF)", "body": "PURPLE"},
+        {"label": "\"BLUE\"         (#00F0FF)", "body": "BLUE"},
+        {"label": "\"SOFT_BLUE\"    (#99BBEE)", "body": "SOFT_BLUE"},
+        {"label": "\"RED\"          (#FF2400)", "body": "RED"},
+        {"label": "\"ORANGE\"       (#FFC400)", "body": "ORANGE"},
+        {"label": "\"CHEESE\"       (#F8C53A)", "body": "CHEESE"},
+        {"label": "\"LUA_LOG\"      (#5555FF)", "body": "LUA_LOG"},
+        {"label": "\"LUA_ERROR\"    (#FF5555)", "body": "LUA_ERROR"},
+        {"label": "\"LUA_PING\"     (#A155DA)", "body": "LUA_PING"},
+        {"label": "\"DEFAULT\"      (#5AAAFF)", "body": "DEFAULT"},
+        {"label": "\"DISCORD\"      (#5865F2)", "body": "DISCORD"},
+        {"label": "\"KOFI\"         (#27AAE0)", "body": "KOFI"},
+        {"label": "\"GITHUB\"       (#FFFFFF)", "body": "GITHUB"},
+        {"label": "\"MODRINTH\"     (#1BD96A)", "body": "MODRINTH"},
+        {"label": "\"CURSEFORGE\"   (#F16436)", "body": "CURSEFORGE"},
+
+        {"label": "\"black\"        (#000000)", "body": "black"},
+        {"label": "\"dark_blue\"    (#0000AA)", "body": "dark_blue"},
+        {"label": "\"dark_green\"   (#00AA00)", "body": "dark_green"},
+        {"label": "\"dark_aqua\"    (#00AAAA)", "body": "dark_aqua"},
+        {"label": "\"dark_red\"     (#AA0000)", "body": "dark_red"},
+        {"label": "\"dark_purple\"  (#AA00AA)", "body": "dark_purple"},
+        {"label": "\"gold\"         (#FFAA00)", "body": "gold"},
+        {"label": "\"gray\"         (#AAAAAA)", "body": "gray"},
+        {"label": "\"dark_gray\"    (#555555)", "body": "dark_gray"},
+        {"label": "\"green\"        (#55FF55)", "body": "green"},
+        {"label": "\"aqua\"         (#55FFFF)", "body": "aqua"},
         {"label": "\"light_purple\" (#FF55FF)", "body": "light_purple"},
-        {"label": "\"yellow\"       (#FFFF55)", "body": "yellow"      },
-        {"label": "\"white\"        (#FFFFFF)", "body": "white"       }
+        {"label": "\"yellow\"       (#FFFF55)", "body": "yellow"},
+        {"label": "\"white\"        (#FFFFFF)", "body": "white"}
       ],
 
-      "anyOf":[
-        {"pattern": "^#?[0-9A-Fa-f]{1,6}$"},
-        {"pattern": "^([Ff][Rr][Aa][Nn]_[Pp][Ii][Nn][Kk]|[Ff][Rr][Aa][Nn]|[Ff][Rr][Aa][Nn][Cc][Ii][Ee][Ll]{2}[Yy]|[Bb][Uu][Nn]{2}[Yy]|[Cc][Hh][Ll][Oo][Ee]_[Pp][Uu][Rr][Pp][Ll][Ee]|[Cc][Hh][Ll][Oo][Ee]|[Ss][Pp][Aa][Cc][Ee]|[Mm][Aa][Yy][Aa]_[Bb][Ll][Uu][Ee]|[Mm][Aa][Yy][Aa]|[Dd][Ee][Vv][Nn][Uu][Ll]{2}|[Ss][Kk][Yy][Ee]_[Bb][Ll][Uu][Ee]|[Ss][Kk][Yy]|[Ss][Kk][Yy][Ee]|[Ss][Kk][Yy][Ll][Aa][Rr]|[Ll][Ii][Ll][Yy]_[Rr][Ee][Dd]|[Ll][Ii][Ll][Yy]|[Ff][Oo][Xx][Ee][Ss]|[Ff][Oo][Xx]|[Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Aa][Rr][Gg][Ee][Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Aa][Rr][Gg][Ee] [Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Uu][Aa]_[Ll][Oo][Gg]|[Ll][Uu][Aa]_[Ee][Rr]{2}[Oo][Rr]|[Ll][Uu][Aa]_[Pp][Ii][Nn][Gg]|[Ll][Uu][Nn][Aa]|[Mm][Oo][Ff]{2}|[Mm][Oo][Tt][Hh]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Dd][Ii][Ss][Cc][Oo][Rr][Dd]|[Bb][Ll][Aa][Cc][Kk]|[Dd][Aa][Rr][Kk]_[Bb][Ll][Uu][Ee]|[Dd][Aa][Rr][Kk]_[Gg][Rr][Ee][Ee][Nn]|[Dd][Aa][Rr][Kk]_[Aa][Qq][Uu][Aa]|[Dd][Aa][Rr][Kk]_[Rr][Ee][Dd]|[Dd][Aa][Rr][Kk]_[Pp][Uu][Rr][Pp][Ll][Ee]|[Gg][Oo][Ll][Dd]|[Gg][Rr][Aa][Yy]|[Dd][Aa][Rr][Kk]_[Gg][Rr][Aa][Yy]|[Bb][Ll][Uu][Ee]|[Gg][Rr][Ee][Ee][Nn]|[Aa][Qq][Uu][Aa]|[Rr][Ee][Dd]|[Ll][Ii][Gg][Hh][Tt]_[Pp][Uu][Rr][Pp][Ll][Ee]|[Yy][Ee][Ll][Ll][Oo][Ww]|[Ww][Hh][Ii][Tt][Ee])$"}
+      "anyOf": [
+        {"pattern": "^#?[0-9A-Fa-f]{1,6}$$"},
+        {"pattern": "^([Aa][Ww][Ee][Ss][Oo][Mm][Ee]_[Bb][Ll][Uu][Ee]|[Pp][Uu][Rr][Pp][Ll][Ee]|[Bb][Ll][Uu][Ee]|[Ss][Oo][Ff][Tt]_[Bb][Ll][Uu][Ee]|[Rr][Ee][Dd]|[Oo][Rr][Aa][Nn][Gg][Ee]|[Cc][Hh][Ee]{2}[Ss][Ee]|[Ll][Uu][Aa]_[Ll][Oo][Gg]|[Ll][Uu][Aa]_[Ee][Rr][Rr][Oo][Rr]|[Ll][Uu][Aa]_[Pp][Ii][Nn][Gg]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Dd][Ii][Ss][Cc][Oo][Rr][Dd]|[Kk][Oo][Ff][Ii]|[Gg][Ii][Tt][Hh][Uu][Bb]|[Mm][Oo][Dd][Rr][Ii][Nn][Tt][Hh]|[Cc][Uu][Rr][Ss][Ee][Ff][Oo][Rr][Gg][Ee]|[Bb][Ll][Aa][Cc][Kk]|[Dd][Aa][Rr][Kk]_[Bb][Ll][Uu][Ee]|[Dd][Aa][Rr][Kk]_[Gg][Rr][Ee][Ee][Nn]|[Dd][Aa][Rr][Kk]_[Aa][Qq][Uu][Aa]|[Dd][Aa][Rr][Kk]_[Rr][Ee][Dd]|[Dd][Aa][Rr][Kk]_[Pp][Uu][Rr][Pp][Ll][Ee]|[Gg][Oo][Ll][Dd]|[Gg][Rr][Aa][Yy]|[Dd][Aa][Rr][Kk]_[Gg][Rr][Aa][Yy]|[Gg][Rr][Ee][Ee][Nn]|[Aa][Qq][Uu][Aa]|[Ll][Ii][Gg][Hh][Tt]_[Pp][Uu][Rr][Pp][Ll][Ee]|[Yy][Ee][Ll][Ll][Oo][Ww]|[Ww][Hh][Ii][Tt][Ee])$"}
       ]
     },
 
     "background": {
-      "description": "Does something... Probably.",
-      "markdownDescription": "```ts\nbackground: unknown\n```\n***\nDoes *something*... Probably.",
+      "description": "Does nothing... Yet.",
+      "markdownDescription": "```ts\nbackground: unknown\n```\n***\nDoes nothing... Yet.",
 
       "type": "string",
 
       "anyOf": [
         {"enum": ["DEFAULT", "CHEESE", "CLOUDS", "COOKIE", "RAINBOW", "INSCRYPTION", "SPACE", "FADE"]},
-        {"pattern": "^([Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Cc][Hh][Ee][Ee][Ss][Ee]|[Cc][Ll][Oo][Uu][Dd][Ss]|[Cc][Oo][Oo][Kk][Ii][Ee]|[Rr][Aa][Ii][Nn][Bb][Oo][Ww]|[Ii][Nn][Ss][Cc][Rr][Yy][Pp][Tt][Ii][Oo][Nn]|[Ss][Pp][Aa][Cc][Ee]|[Ff][Aa][Dd][Ee])$"}
+        {"pattern": "^([Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Cc][Hh][Ee]{2}[Ss][Ee]|[Cc][Ll][Oo][Uu][Dd][Ss]|[Cc][Oo][Oo][Kk][Ii][Ee]|[Rr][Aa][Ii][Nn][Bb][Oo][Ww]|[Ii][Nn][Ss][Cc][Rr][Yy][Pp][Tt][Ii][Oo][Nn]|[Ss][Pp][Aa][Cc][Ee]|[Ff][Aa][Dd][Ee])$"}
       ]
     },
 
-    "authors": {
-      "description": "A list of this avatar's authors.\nIf this avatar only has one author, you can also use \"author\" instead.",
-      "markdownDescription": "```ts\nauthors: string[]\n```\n***\nA list of this avatar's authors.\n\nIf this avatar only has one author, you can also use `author` instead.",
+    "id": {
+      "description": "Does nothing... Yet.",
+      "markdownDescription": "```ts\nid: unknown\n```\n***\nDoes nothing... Yet.",
 
-      "type": "array",
-
-      "items": {
-        "type": "string",
-
-        "defaultSnippets": [{"body": "$1"}],
-
-        "minLength": 1,
-        "pattern": "[^ \\f\\n\\r\\t]"
-      },
-
-      "minItems": 1
+      "type": "string"
     },
 
     "autoScripts": {
@@ -268,14 +311,15 @@
 
       "type": "array",
 
+      "uniqueItems": true,
       "items": {
         "type": "string",
 
         "defaultSnippets": [{"body": "$1"}],
 
-        "minLength": 1
-      },
-      "uniqueItems": true
+        "minLength": 1,
+        "pattern": "[^ \\f\\n\\r\\t]"
+      }
     },
 
     "autoAnims": {
@@ -284,14 +328,15 @@
 
       "type": "array",
 
+      "uniqueItems": true,
       "items": {
         "type": "string",
 
         "defaultSnippets": [{"body": "$1"}],
 
-        "minLength": 1
-      },
-      "uniqueItems": true
+        "minLength": 1,
+        "pattern": "[^ \\f\\n\\r\\t]"
+      }
     },
 
     "ignoredTextures": {
@@ -300,19 +345,20 @@
 
       "type": "array",
 
+      "uniqueItems": true,
       "items": {
         "type": "string",
 
         "defaultSnippets": [{"body": "$1"}],
 
-        "minLength": 1
-      },
-      "uniqueItems": true
+        "minLength": 1,
+        "pattern": "[^ \\f\\n\\r\\t]"
+      }
     },
 
     "customizations": {
       "description": "Contains a list of key-value pairs where the keys are paths to model parts (minus the starting \"models.\") and the values are the starting customizations for that part.",
-      "markdownDescription": "```ts\ncustomizations: {\n  [partPath]: {\n    visible: string,\n    parentType: string,\n    moveTo: string,\n    primaryRenderType: RenderType,\n    secondaryRenderType: RenderType\n  }\n}\n```\n***\nContains a list of key-value pairs where the keys are paths to model parts (minus the starting `models.`) and the values are the starting customizations for that part.",
+      "markdownDescription": "```ts\ncustomizations: {\n  [partPath]: {\n    remove: boolean,\n    visible: boolean,\n    parentType: string,\n    moveTo: string,\n    primaryRenderType: string,\n    secondaryRenderType: string,\n    smooth: boolean\n  }\n}\n```\n***\nContains a list of key-value pairs where the keys are paths to model parts (minus the starting `models.`) and the values are the starting customizations for that part.",
 
       "type": "object",
 

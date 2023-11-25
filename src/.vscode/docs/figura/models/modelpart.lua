@@ -41,9 +41,10 @@ function ModelPart:addChild(part) end
 ---Creates a shallow copy of this part.
 ---
 ---*This does not create a deep copy, all of the child parts are references to the original child parts.*
+---@param name string
 ---@return ModelPart
 ---@nodiscard
-function ModelPart:copy() end
+function ModelPart:copy(name) end
 
 ---Makes this part a child of the given part.
 ---
@@ -128,7 +129,7 @@ function ModelPart:removeTask(name) end
 
 ---===== GETTERS =====---
 
----Gets all vertices of this part sorted by the name of the texture they use.
+---Gets all vertices of this part sorted by the name of the texture the face they make up uses.
 ---@return {[string]: Vertex[]}
 ---@nodiscard
 function ModelPart:getAllVertices() end
@@ -367,7 +368,7 @@ function ModelPart:getUVMatrix() end
 ---@nodiscard
 function ModelPart:getUVPixels() end
 
----Gets the vertices accociated with the given texture in this part.
+---Gets the vertices of this part which make up the faces that use the given texture.
 ---@param texture string
 ---@return Vertex[]
 ---@nodiscard
@@ -647,7 +648,7 @@ function ModelPart:setPrimaryColor(r, g, b) end
 ---This part inherits from its parent if `renderType` is `nil`.
 ---@generic self
 ---@param self self
----@param renderType ModelPart.renderType
+---@param renderType? ModelPart.renderType
 ---@return self
 function ModelPart:setPrimaryRenderType(renderType) end
 
@@ -733,7 +734,7 @@ function ModelPart:setSecondaryColor(r, g, b) end
 ---This part inherits from its parent if `renderType` is `nil`.
 ---@generic self
 ---@param self self
----@param renderType ModelPart.renderType
+---@param renderType? ModelPart.renderType
 ---@return self
 function ModelPart:setSecondaryRenderType(renderType) end
 
@@ -1031,6 +1032,15 @@ function ModelPart:primaryColor(r, g, b) end
 ---This part inherits from its parent if `renderType` is `nil`.
 ---@generic self
 ---@param self self
+---@param renderType? ModelPart.renderType
+---@return self
+function ModelPart:primaryRenderType(renderType) end
+
+---Sets the render type of this part's primary layer.
+---
+---This part inherits from its parent if `renderType` is `nil`.
+---@generic self
+---@param self self
 ---@param renderType ModelPart.renderType
 ---@return self
 function ModelPart:primaryTexture(renderType) end
@@ -1111,6 +1121,15 @@ function ModelPart:secondaryColor(col) end
 ---@param b? number
 ---@return self
 function ModelPart:secondaryColor(r, g, b) end
+
+---Sets the render type of this part's secondary layer.
+---
+---This part inherits from its parent if `renderType` is `nil`.
+---@generic self
+---@param self self
+---@param renderType? ModelPart.renderType
+---@return self
+function ModelPart:secondaryRenderType(renderType) end
 
 ---Sets the render type of this part's secondary layer.
 ---
