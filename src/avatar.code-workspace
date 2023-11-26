@@ -8,9 +8,6 @@
         "fileMatch": ["**/avatar.json"],
         "url": ".vscode/avatar.schema.json"
       }
-    ],
-    "[lua]": {
-      "editor.suggest.showDeprecated": false
-    }
+    ]
   }
 }
