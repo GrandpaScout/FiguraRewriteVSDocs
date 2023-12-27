@@ -201,7 +201,7 @@
       // Ambiguity
       //;"ambiguity-1",
       //;"count-down-loop",
-      //;"different-requires",
+      "different-requires", // Figura will soon support relative requires.
       //;"newfield-call",
       //;"newline-call",
 

@@ -338,8 +338,25 @@ function RendererAPI:setCrosshairOffset(x, y) end
 ---To change the position of the camera, see `:setOffsetCameraPivot()`.
 ---
 ---If `pos` is `nil`, the eye offset is removed.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function RendererAPI:setEyeOffset(pos) end
+
+---Sets the offset of the host's eye position in blocks.
+---
+---The eye position controls where interactions (such as block breaking and attacking) start from.  
+---To change the position of the camera, see `:offsetCameraPivot()`.
+---
+---If `pos` is `nil`, the eye offset is removed.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@param z? number
+---@return self
+function RendererAPI:setEyeOffset(x, y, z) end
 
 ---Sets if the paperdoll render should be visible even if no action is being performed.
 ---
@@ -682,8 +699,25 @@ function RendererAPI:crosshairOffset(x, y) end
 ---To change the position of the camera, see `:offsetCameraPivot()`.
 ---
 ---If `pos` is `nil`, the eye offset is removed.
+---@generic self
+---@param self self
 ---@param pos? Vector3
+---@return self
 function RendererAPI:eyeOffset(pos) end
+
+---Sets the offset of the host's eye position in blocks.
+---
+---The eye position controls where interactions (such as block breaking and attacking) start from.  
+---To change the position of the camera, see `:offsetCameraPivot()`.
+---
+---If `pos` is `nil`, the eye offset is removed.
+---@generic self
+---@param self self
+---@param x? number
+---@param y? number
+---@param z? number
+---@return self
+function RendererAPI:eyeOffset(x, y, z) end
 
 ---Sets the FOV multiplier.
 ---

@@ -305,3 +305,17 @@ V7
 * Deprecations are now ***hidden*** by default. To enable them, open the `.code-workspace` file and change
   `"editor.suggest.showDeprecated": false` to `"editor.suggest.showDeprecated": true`.
 * Removed `"inject-field"` diagnostic. (Hopefully? I can't run the version of LuaLS that has that diagnostic.)
+
+V8
+--------------------------------------------------
+* PUTTING THE DOCS IN THE `avatars` FOLDER TO ACT AS GLOBAL DOCS WILL NO LONGER BE SUPPORTED.  
+  This is going to be replaced with a better method of handling a lot of avatars at the same time.  
+  If you wish to undo this, change lines 7-12 of `.luarc.json` to remove the comments.
+* Fixed missing `RenderAPI:setEyeOffset(x, y, z)` and `RenderAPI:eyeOffset(x, y, z)` overloads.
+* Fixed missing `<self>` return from `RenderAPI:setEyeOffset()` and `RenderAPI:eyeOffset()`.
+* Fixed description of `print` claiming that tables are pink.
+* Minor formatting changes in some files.
+* Fixed missing alias for the globals table.
+* Changed alias `type.type` to `type` and made it a `string` alias instead of an `any` alias.
+* `select` now has an overload. It might not do anything yet, it might horribly break everything! I wouldn't know, LuaLS
+  is being stupid and buggy.

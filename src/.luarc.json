@@ -4,12 +4,12 @@
   \*==============================================================================================*/
   "workspace": {
     "library": [
-      ".vscode/docs",
-      "../../avatars/.vscode/docs",
-      "../../../avatars/.vscode/docs",
-      "../../../../avatars/.vscode/docs",
-      "../../../../../avatars/.vscode/docs",
-      "../../../../../../avatars/.vscode/docs"
+      ".vscode/docs"//,
+      //"../../avatars/.vscode/docs",
+      //"../../../avatars/.vscode/docs",
+      //"../../../../avatars/.vscode/docs",
+      //"../../../../../avatars/.vscode/docs",
+      //"../../../../../../avatars/.vscode/docs"
     ],
 
     // Figura does not use third-party libraries.
@@ -59,7 +59,7 @@
 
     // Figura's require only allows direct paths.
     "path": ["?.lua"],
-    "pathStrict": false,
+    "pathStrict": true,
 
     // Internal crap.
     "fileEncoding": "utf8",
@@ -211,7 +211,7 @@
       // Ambiguity
       //;"ambiguity-1",
       //;"count-down-loop",
-      //;"different-requires",
+      "different-requires", // Figura will soon support relative requires.
       //;"newfield-call",
       //;"newline-call",
 

@@ -1796,6 +1796,8 @@ vectors = {}
 ---@type WorldAPI
 world = {}
 
+_GS = _G
+
 
 ---==============================================================================================---
 ---  FUNCTIONS                                                                                   ---
@@ -1822,7 +1824,7 @@ function listFiles(dir, recursive) end
 ---> * `boolean`: Purple,
 ---> * `number`: Cyan,
 ---> * `function`: Green,
----> * `table`: Pink,
+---> * `table`: Blue,
 ---> * `userdata`: Yellow.
 ---> ***
 ---@param ... any

@@ -13,3 +13,6 @@
 # Used for testing.
 /script.lua
 /avatar.json
+
+# WIP
+/scripts/installer

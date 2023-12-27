@@ -37,7 +37,7 @@ function assert(v, message) end
 ---
 ---[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-error"])
 ---@param message any
----@param level?  integer
+---@param level? integer
 function error(message, level) end
 
 
@@ -177,7 +177,7 @@ function setmetatable(table, metatable) end
 ---@nodiscard
 function rawget(table, index) end
 
----Sets the real value of `table[index]` to `value`, without using the `__newindex` metavalue.
+---Sets the real value of `table[index]` to `value`, without using the `__newindex` metamethod.
 ---`table` must be a table, `index` any value different from `nil` and `NaN`, and `value` any Lua
 ---value.  
 ---This function returns `table`.
@@ -326,7 +326,7 @@ function tostring(v) end
 ---* `boolean`: Purple,
 ---* `number`: Cyan,
 ---* `function`: Green,
----* `table`: Pink,
+---* `table`: Blue,
 ---* `userdata`: Yellow.
 ---
 ---~~[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-print"])~~  
@@ -341,14 +341,24 @@ function print(...) end
 ---
 ---[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-select"])
 ---@param index integer
----| "\x23" # Get the amount of arguments given.
 ---@param ... any
 ---@return any ...
 ---@nodiscard
 function select(index, ...) end
 
+---If `index` is a number, returns all arguments after argument number `index`; a negative number
+---indexes from the end (`-1` is the last argument). Otherwise, `index` must be the string `"#"`,
+---and `select` returns the total number of extra arguments it received.
+---
+---[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-select"])
+---@param index "#"
+---@param ... any
+---@return integer
+---@nodiscard
+function select(index, ...) end
+
 ---A valid type given by the `type` function.
----@alias type.type any
+---@alias type string
 ---| "nil"
 ---| "number"
 ---| "string"
@@ -411,13 +421,12 @@ function select(index, ...) end
 ---| "ViewerAPI"
 ---| "WorldAPI"
 
-
 ---Returns the type of its only argument, coded as a string.  
 ---If the metatable of `v` has a `__type` index, this function will return that instead.
 ---
 ---~~[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-type"])~~  
 ---This function has been modified by Figura and does not work how it does in normal Lua 5.2.
 ---@param v any
----@return type.type type
+---@return type type
 ---@nodiscard
 function type(v) end
