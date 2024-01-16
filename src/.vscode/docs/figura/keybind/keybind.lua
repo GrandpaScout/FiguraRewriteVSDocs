@@ -22,7 +22,7 @@ local Keybind
 ---===== GETTERS =====---
 
 ---Gets the numeric ID of the key this keybind is bound to.
----@return Minecraft.keyid
+---@return Minecraft.keyID
 ---@nodiscard
 function Keybind:getID() end
 

@@ -86,7 +86,7 @@
 ---==================================================================================================================---
 
 ---@alias Event.KeyPress.func
----| fun(key?: Minecraft.keyid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): (cancel: boolean?)
+---| fun(key?: Minecraft.keyID, state?: Event.Press.state, modifiers?: Event.Press.modifiers): (cancel: boolean?)
 
 
 ---==================================================================================================================---
@@ -101,7 +101,7 @@
 ---==================================================================================================================---
 
 ---@alias Event.MousePress.func
----| fun(button?: Minecraft.mouseid, state?: Event.Press.state, modifiers?: Event.Press.modifiers): (cancel: boolean?)
+---| fun(button?: Minecraft.mouseID, state?: Event.Press.state, modifiers?: Event.Press.modifiers): (cancel: boolean?)
 
 
 ---==================================================================================================================---

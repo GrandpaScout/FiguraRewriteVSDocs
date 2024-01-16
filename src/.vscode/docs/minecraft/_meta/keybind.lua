@@ -213,7 +213,7 @@
 
 
 ---A valid key id for use in the `KEY_PRESS` event.
----@alias Minecraft.keyid integer
+---@alias Minecraft.keyID integer
 ---| -1  # 🚫 *Unknown*
 ---| 32  # `␣ Space`
 ---| 39  # `'`
@@ -337,7 +337,7 @@
 
 
 ---A valid mouse button id for use in the `MOUSE_PRESS` event.
----@alias Minecraft.mouseid integer
+---@alias Minecraft.mouseID integer
 ---| -1 # 🚫 *Unknown*
 ---| 0  # `Mouse Left`
 ---| 1  # `Mouse Right`

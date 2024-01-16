@@ -95,18 +95,23 @@
 
 ---@alias ModelPart.renderType
 ---| "NONE"             # Disable rendering.
----| "CUTOUT"           # Default render mode. Used for simple opaque and transparent parts.
+---| "CUTOUT"           # Used for simple opaque and transparent parts.
 ---| "CUTOUT_CULL"      # Similar to `"CUTOUT"`, but inside faces do not render.
----| "TRANSLUCENT"      # Used to allow translucency.
+---| "TRANSLUCENT"      # Default primary render mode. Used to allow translucency.
 ---| "TRANSLUCENT_CULL" # Similar to `"TRANSLUCENT"`, but inside faces do not render.
 ---| "EMISSIVE"         # Default secondary render mode. Used for emissive textures.
 ---| "EMISSIVE_SOLID"   # Similar to `"EMISSIVE"`, but color is not additive.
+---| "EYES"             # Used to apply the default emissive type even if shaders are enabled.
 ---| "END_PORTAL"       # Applies the end portal field effect.
 ---| "END_GATEWAY"      # Similar to `"END_PORTAL"`, but contains another layer of blue "particles".
+---| "TEXTURED_PORTAL"  # Similar to `"END_PORTAL"`, but the part's texture is used instead.
 ---| "GLINT"            # Applies the enchantment glint effect.
 ---| "GLINT2"           # Similar to `"GLINT"`, but with only one denser glint layer.
----| "LINES"            # Adds a white outline.
----| "LINES_STRIP"      # Similar to `"LINES"`, but also adds some more lines in-between.
+---| "TEXTURED_GLINT"   # Similar to `"GLINT"`, but the part's texture is used instead.
+---| "LINES"            # Converts the layer into an outline.
+---| "LINES_STRIP"      # Similar to `"LINES"`, but acts like a wireframe instead.
+---| "SOLID"            # Converts the layer into a solid white color.
+---| "BLURRY"           # Makes the texture blurry.
 
 ---@alias ModelPart.type
 ---| "GROUP" # A Blockbench group, .bbmodel file, or system folder.

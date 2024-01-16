@@ -319,3 +319,15 @@ V8
 * Changed alias `type.type` to `type` and made it a `string` alias instead of an `any` alias.
 * `select` now has an overload. It might not do anything yet, it might horribly break everything! I wouldn't know, LuaLS
   is being stupid and buggy.
+
+V9
+--------------------------------------------------
+* V8 global docs change has been somewhat reverted. It is now possible to use the docs as global docs, however it is
+  still not "supported".  
+  This is being done to hopefully better support `require` changes happening in `0.1.3`.
+* Renamed `Minecraft.keyid` to `Minecraft.keyID`.
+* Renamed `Minecraft.mouseid` to `Minecraft.mouseID`.
+* Fixed missing render types `"EYES"`, `"TEXTURED_PORTAL"`, `"TEXTURED_GLINT"`, `"SOLID"`, `"BLURRY"`.
+* Fixed wrong descriptions of `"CUTOUT"` and `"TRANSLUCENT"`.  
+  `"CUTOUT"` was claiming to be the default render type when it was actually `"TRANSLUCENT"`.
+* Improved descriptions of `"LINES"` and `"LINES_STRIP"`.
