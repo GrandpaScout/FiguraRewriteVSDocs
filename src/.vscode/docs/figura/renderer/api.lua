@@ -349,7 +349,8 @@ function RendererAPI:setEyeOffset(pos) end
 ---The eye position controls where interactions (such as block breaking and attacking) start from.  
 ---To change the position of the camera, see `:offsetCameraPivot()`.
 ---
----If `pos` is `nil`, the eye offset is removed.
+---If `x` is `nil`, the eye offset is removed.  
+---If `y` or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
 ---@param x? number
@@ -710,7 +711,8 @@ function RendererAPI:eyeOffset(pos) end
 ---The eye position controls where interactions (such as block breaking and attacking) start from.  
 ---To change the position of the camera, see `:offsetCameraPivot()`.
 ---
----If `pos` is `nil`, the eye offset is removed.
+---If `x` is `nil`, the eye offset is removed.  
+---If `y` or `z` are `nil`, they will default to `0`.
 ---@generic self
 ---@param self self
 ---@param x? number

@@ -331,3 +331,9 @@ V9
 * Fixed wrong descriptions of `"CUTOUT"` and `"TRANSLUCENT"`.  
   `"CUTOUT"` was claiming to be the default render type when it was actually `"TRANSLUCENT"`.
 * Improved descriptions of `"LINES"` and `"LINES_STRIP"`.
+
+V10
+--------------------------------------------------
+* V8 global docs change is now being completely reverted.
+* Fixed description of `RendererAPI:setEyeOffset()` overload.
+
