@@ -112,7 +112,7 @@ function HostAPI:getClipboard() end
 function HostAPI:getPickBlock() end
 
 ---Gets the entity that would be targeted by the Pick Block keybind.
----@return Entity.any?
+---@return Entity?
 ---@nodiscard
 function HostAPI:getPickEntity() end
 
@@ -169,6 +169,7 @@ function HostAPI:isAvatarUploaded() end
 function HostAPI:isChatOpen() end
 
 ---Gets if the chat is verified.
+---@*error Missing doc string.
 ---@return boolean
 ---@nodiscard
 function HostAPI:isChatVerified() end

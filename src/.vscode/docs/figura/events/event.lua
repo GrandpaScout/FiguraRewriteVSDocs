@@ -298,6 +298,29 @@ function EventRender:register(func, name) end
 
 
 ---==================================================================================================================---
+---  EVENT.TRIDENTRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@class Event.TridentRender: Event
+local EventTridentRender
+
+
+---===== METHODS =====---
+
+---Registers a function to be run when this event triggers.
+---
+---Functions are run in the order they are registered.
+---
+---If a name is given, you can choose to remove the function later with `:remove(name)`
+---@generic self
+---@param self self
+---@param func Event.TridentRender.func
+---@param name? string
+---@return self
+function EventTridentRender:register(func, name) end
+
+
+---==================================================================================================================---
 ---  EVENT.WORLDRENDER extends EVENT                                                                                 ---
 ---==================================================================================================================---
 

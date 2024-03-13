@@ -20,20 +20,27 @@
     "figura/avatar": "content",
     "figura/client": "mobile",
     "figura/config": "database",
+    "figura/data": "pipe",
     "figura/events": "archive",
+    "figura/file": "docs",
     "figura/host": "vm",
+    "figura/json": "json",
     "figura/keybind": "keys",
     "figura/matrices": "components",
     "figura/models": "container",
     "figura/nameplate": "font",
+    "figura/net": "contract",
     "figura/particles": "cluster",
     "figura/pings": "event",
     "figura/player": "admin",
+    "figura/raycast": "routes",
     "figura/renderer": "review",
+    "figura/resources": "resource",
     "figura/sounds": "audio",
     "figura/textures": "images",
     "figura/vanilla_model": "node",
     "figura/vectors": "less",
     "figura/world": "global"
-  }
+  },
+  "Lua.workspace.checkThirdParty": false
 }

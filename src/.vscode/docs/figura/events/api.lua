@@ -19,7 +19,6 @@
 ---> A callback that is given the current tick delta and the arrow that is being rendered.
 --->
 ---> Return `true` to completely hide the current arrow.
----<!--
 ---@field ARROW_RENDER Event.ArrowRender | Event.ArrowRender.func
 ---This event runs every frame for every arrow the avatar's owner has fired.
 ---> ```lua
@@ -30,7 +29,6 @@
 ---> A callback that is given the current tick delta and the arrow that is being rendered.
 --->
 ---> Return `true` to completely hide the current arrow.
----<!--
 ---@field arrow_render Event.ArrowRender | Event.ArrowRender.func
 ---This event runs for every character typed on the keyboard.
 ---> ```lua
@@ -62,7 +60,6 @@
 --->
 ---> Return a string to replace the message, `false` to remove the message, or `nil` to do nothing.  
 ---> If a color vector is given as the second return, the background color of the message is changed.
----<!--
 ---@field CHAT_RECEIVE_MESSAGE Event.ChatReceiveMessage | Event.ChatReceiveMessage.func
 ---This event runs every time a message is received in chat.  
 ---The message can be modified by the callbacks in this event.
@@ -78,7 +75,6 @@
 --->
 ---> Return a string to replace the message, `false` to remove the message, or `nil` to do nothing.  
 ---> If a color vector is given as the second return, the background color of the message is changed.
----<!--
 ---@field chat_receive_message Event.ChatReceiveMessage | Event.ChatReceiveMessage.func
 ---This event runs every time the host sends a message to chat.  
 ---The message can be modified by the callbacks in this event.
@@ -95,7 +91,6 @@
 ---> Return a string to replace the message (only if the `Chat Messages` setting is enabled) or `nil` to block the
 ---> message.  
 ---> If you return `message` without any modifications, nothing happens.
----<!--
 ---@field CHAT_SEND_MESSAGE Event.ChatSendMessage | Event.ChatSendMessage.func
 ---This event runs every time the host sends a message to chat.  
 ---The message can be modified by the callbacks in this event.
@@ -112,7 +107,6 @@
 ---> Return a string to replace the message (only if the `Chat Messages` setting is enabled) or `nil` to block the
 ---> message.  
 ---> If you return `message` without any modifications, nothing happens.
----<!--
 ---@field chat_send_message Event.ChatSendMessage | Event.ChatSendMessage.func
 ---This event runs as soon as the avatar's owner loads in.
 ---
@@ -123,7 +117,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field ENTITY_INIT Event.Generic | Event.Generic.func
 ---This event runs as soon as the avatar's owner loads in.
 ---
@@ -134,7 +127,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field entity_init Event.Generic | Event.Generic.func
 ---This event runs every frame for every item equipped on the avatar's owner.  
 ---The item can be replaced with a model by the callbacks in this event.
@@ -148,7 +140,6 @@
 --->
 ---> Returning a model part will cause the item to be completely replaced with the given part.  
 ---> The model part *must* have the `Item` parent type for this to work.
----<!--
 ---@field ITEM_RENDER Event.ItemRender | Event.ItemRender.func
 ---This event runs every frame for every item equipped on the avatar's owner.  
 ---The item can be replaced with a model by the callbacks in this event.
@@ -162,7 +153,6 @@
 --->
 ---> Returning a model part will cause the item to be completely replaced with the given part.  
 ---> The model part *must* have the `Item` parent type for this to work.
----<!--
 ---@field item_render Event.ItemRender | Event.ItemRender.func
 ---This event runs when a key is pressed, held, or released.
 ---> ```lua
@@ -174,7 +164,6 @@
 ---> a bitmask.
 --->
 ---> Return `true` to cancel the key event.
----<!--
 ---@field KEY_PRESS Event.KeyPress | Event.KeyPress.func
 ---This event runs when a key is pressed, held, or released.
 ---> ```lua
@@ -186,7 +175,6 @@
 ---> a bitmask.
 --->
 ---> Return `true` to cancel the key event.
----<!--
 ---@field key_press Event.KeyPress | Event.KeyPress.func
 ---This event runs when the mouse is moved.
 ---> ```lua
@@ -197,7 +185,6 @@
 ---> A callback that is given the x and y change of the mouse's position in pixels.
 --->
 ---> Return `true` to deny the change.
----<!--
 ---@field MOUSE_MOVE Event.MouseMove | Event.MouseMove.func
 ---This event runs when the mouse is moved.
 ---> ```lua
@@ -208,7 +195,6 @@
 ---> A callback that is given the x and y change of the mouse's position in pixels.
 --->
 ---> Return `true` to deny the change.
----<!--
 ---@field mouse_move Event.MouseMove | Event.MouseMove.func
 ---This event runs when the mouse is pressed or released.
 ---> ```lua
@@ -220,7 +206,6 @@
 ---> modifier keys as a bitmask.
 --->
 ---> Return `true` to deny the change.
----<!--
 ---@field MOUSE_PRESS Event.MousePress | Event.MousePress.func
 ---This event runs when the mouse is pressed or released.
 ---> ```lua
@@ -232,7 +217,6 @@
 ---> modifier keys as a bitmask.
 --->
 ---> Return `true` to deny the change.
----<!--
 ---@field mouse_press Event.MousePress | Event.MousePress.func
 ---This event runs when the mouse wheel is scrolled.
 ---> ```lua
@@ -244,7 +228,6 @@
 ---> less due to certain factors.
 --->
 ---> Return `true` to deny the scroll.
----<!--
 ---@field MOUSE_SCROLL Event.MouseScroll | Event.MouseScroll.func
 ---This event runs when the mouse wheel is scrolled.
 ---> ```lua
@@ -256,29 +239,32 @@
 ---> less due to certain factors.
 --->
 ---> Return `true` to deny the scroll.
----<!--
 ---@field mouse_scroll Event.MouseScroll | Event.MouseScroll.func
 ---This event runs when a sound is played.
 ---> ```lua
 ---> (callback) function(id: string, pos: Vector3, volume: number, pitch: number, loop: boolean, category: string, path: string)
+--->   -> cancel: boolean?
 ---> ```
 ---> ***
 ---> A callback that is given the id of a sound, its position, volume, pitch, whether it loops, its category, and the
 ---> path of the sound file it played.
 --->
 ---> If `path` is `nil`, the sound was played by a Figura avatar.
----<!--
+--->
+---> Return `true` to deny the sound from playing.
 ---@field ON_PLAY_SOUND Event.OnPlaySound | Event.OnPlaySound.func
 ---This event runs when a sound is played.
 ---> ```lua
 ---> (callback) function(id: string, pos: Vector3, volume: number, pitch: number, loop: boolean, category: string, path: string)
+--->   -> cancel: boolean?
 ---> ```
 ---> ***
 ---> A callback that is given the id of a sound, its position, volume, pitch, whether it loops, its category, and the
 ---> path of the sound file it played.
 --->
 ---> If `path` is `nil`, the sound was played by a Figura avatar.
----<!--
+--->
+---> Return `true` to deny the sound from playing.
 ---@field on_play_sound Event.OnPlaySound | Event.OnPlaySound.func
 ---This event runs after the avatar has fully rendered.  
 ---`:partToWorldMatrix()` is fully updated in this event.
@@ -290,7 +276,6 @@
 ---> ***
 ---> A callback that is given the current tick delta, the context that the avatar is rendering in, and the matrix used
 ---> to render the avatar.
----<!--
 ---@field POST_RENDER Event.Render | Event.Render.func
 ---This event runs after the avatar has fully rendered.  
 ---`:partToWorldMatrix()` is fully updated in this event.
@@ -302,7 +287,6 @@
 ---> ***
 ---> A callback that is given the current tick delta, the context that the avatar is rendering in, and the matrix used
 ---> to render the avatar.
----<!--
 ---@field post_render Event.Render | Event.Render.func
 ---This event runs after the world has fully rendered.  
 ---This event always runs, even if the avatar is not visible.
@@ -313,7 +297,6 @@
 ---> ```
 ---> ***
 ---> A callback that is given the current tick delta.
----<!--
 ---@field POST_WORLD_RENDER Event.WorldRender | Event.WorldRender.func
 ---This event runs after the world has fully rendered.  
 ---This event always runs, even if the avatar is not visible.
@@ -324,7 +307,6 @@
 ---> ```
 ---> ***
 ---> A callback that is given the current tick delta.
----<!--
 ---@field post_world_render Event.WorldRender | Event.WorldRender.func
 ---This event runs before the avatar is rendered.
 ---> ```lua
@@ -333,7 +315,6 @@
 ---> ***
 ---> A callback that is given the current tick delta, the context that the avatar is rendering in, and the matrix used
 ---> to render the avatar.
----<!--
 ---@field RENDER Event.Render | Event.Render.func
 ---This event runs before the avatar is rendered.
 ---> ```lua
@@ -342,7 +323,6 @@
 ---> ***
 ---> A callback that is given the current tick delta, the context that the avatar is rendering in, and the matrix used
 ---> to render the avatar.
----<!--
 ---@field render Event.Render | Event.Render.func
 ---This event runs when the client reloads its resources. (Such as with <kbd>F3+T</kbd>.)
 ---> ```lua
@@ -350,7 +330,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field RESOURCE_RELOAD Event.Generic | Event.Generic.func
 ---This event runs when the client reloads its resources. (Such as with <kbd>F3+T</kbd>.)
 ---> ```lua
@@ -358,7 +337,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field resource_reload Event.Generic | Event.Generic.func
 ---This event runs before a skull block is rendered.  
 ---This event runs for each visible skull block.
@@ -368,7 +346,6 @@
 ---> ***
 ---> A callback that is given the current tick delta, a block state if the skull is placed, an item stack if the skull
 ---> is being held, or an entity if the skull is being worn, and the context the skull is being rendered in.
----<!--
 ---@field SKULL_RENDER Event.SkullRender | Event.SkullRender.func
 ---This event runs before a skull block is rendered.  
 ---This event runs for each visible skull block.
@@ -378,7 +355,6 @@
 ---> ***
 ---> A callback that is given the current tick delta, a block state if the skull is placed, an item stack if the skull
 ---> is being held, or an entity if the skull is being worn, and the context the skull is being rendered in.
----<!--
 ---@field skull_render Event.SkullRender | Event.SkullRender.func
 ---This event runs every tick while the player entity is loaded.
 ---> ```lua
@@ -386,7 +362,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field TICK Event.Generic | Event.Generic.func
 ---This event runs every tick while the player entity is loaded.
 ---> ```lua
@@ -394,8 +369,29 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field tick Event.Generic | Event.Generic.func
+---This event runs every frame for every arrow the avatar's owner has fired.
+---> ```lua
+---> (callback) function(delta: number, entity: Entity)
+--->   -> hide: boolean?
+---> ```
+---> ***
+---> A callback that is given the current tick delta and the trident that is being rendered.
+--->
+---> Return `true` to completely hide the current arrow.
+---@*error Missing doc string.
+---@field TRIDENT_RENDER Event.TridentRender | Event.TridentRender.func
+---This event runs every frame for every arrow the avatar's owner has fired.
+---> ```lua
+---> (callback) function(delta: number, entity: Entity)
+--->   -> hide: boolean?
+---> ```
+---> ***
+---> A callback that is given the current tick delta and the trident that is being rendered.
+--->
+---> Return `true` to completely hide the current trident.
+---@*error Missing doc string.
+---@field trident_render Event.TridentRender | Event.TridentRender.func
 ---This event runs twice every 4 ticks while an item is being used.
 ---> ```lua
 ---> (callback) function(item: ItemStack, anim: ItemStack.useAction, ptc_count: integer)
@@ -403,7 +399,6 @@
 ---> ***
 ---> A callback that is given the item being used, the animation the item is doing, and the amount of particles this
 ---> action will create.
----<!--
 ---@field USE_ITEM Event.UseItem | Event.UseItem.func
 ---This event runs twice every 4 ticks while an item is being used.
 ---> ```lua
@@ -412,7 +407,6 @@
 ---> ***
 ---> A callback that is given the item being used, the animation the item is doing, and the amount of particles this
 ---> action will create.
----<!--
 ---@field use_item Event.UseItem | Event.UseItem.func
 ---This event runs before the world is rendered.
 ---> ```lua
@@ -420,7 +414,6 @@
 ---> ```
 ---> ***
 ---> A callback that is given the current tick delta.
----<!--
 ---@field WORLD_RENDER Event.WorldRender | Event.WorldRender.func
 ---This event runs before the world is rendered.
 ---> ```lua
@@ -428,7 +421,6 @@
 ---> ```
 ---> ***
 ---> A callback that is given the current tick delta.
----<!--
 ---@field world_render Event.WorldRender | Event.WorldRender.func
 ---This event runs every tick.
 ---> ```lua
@@ -436,7 +428,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field WORLD_TICK Event.Generic | Event.Generic.func
 ---This event runs every tick.
 ---> ```lua
@@ -444,7 +435,6 @@
 ---> ```
 ---> ***
 ---> A callback that does nothing special, it just runs whenever the event it is attached to runs.
----<!--
 ---@field world_tick Event.Generic | Event.Generic.func
 local EventsAPI
 

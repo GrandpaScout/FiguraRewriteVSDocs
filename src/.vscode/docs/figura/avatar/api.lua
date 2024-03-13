@@ -104,6 +104,11 @@ function AvatarAPI:getAnimationComplexity() end
 ---@nodiscard
 function AvatarAPI:getAuthors() end
 
+---Gets the characters that make up the avatar's badges.
+---@return string
+---@nodiscard
+function AvatarAPI:getBadges() end
+
 ---Gets the color of this avatar.
 ---
 ---This is affected by the `color` metadata.
@@ -233,9 +238,11 @@ function AvatarAPI:getNBT() end
 ---@nodiscard
 function AvatarAPI:getName() end
 
----Gets the name of this avatar.
+---Gets this avatar's permission level on the viewing client.  
+---This is not a perfect indicator for what features the avatar has access to as a client can change the limits of a
+---permission level on their client.
 ---
----Returns the name of the containing folder if no name is found.
+---If you want more precise values, check the other methods in `AvatarAPI`.
 ---@return AvatarAPI.permissionLevel
 ---@nodiscard
 function AvatarAPI:getPermissionLevel() end
@@ -285,6 +292,12 @@ function AvatarAPI:getUUID() end
 ---@nodiscard
 function AvatarAPI:getVersion() end
 
+---Gets the volume of this avatar on the viewing client as an integer from 0 to 100.
+---@*error Missing doc string.
+---@return integer
+---@nodiscard
+function AvatarAPI:getVolume() end
+
 ---Gets the amount of instructions run in the `WORLD_RENDER` and `POST_WORLD_RENDER` events.
 ---
 ---This value only updates after the `WORLD_RENDER` and `POST_WORLD_RENDER` events have run.
@@ -315,53 +328,57 @@ function AvatarAPI:hasTexture() end
 
 ---===== SETTERS =====---
 
----Sets the color theme of your avatar.
+---Sets the color theme of your avatar or the given badge.
 ---
----This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
+---The color theme of the avatar colors the metadata in the wardrobe screen and the Figura mark on the nameplate.
 ---
 ---If `color` is `nil`, it will default to white.
 ---@generic self
 ---@param self self
----@param color Vector3
+---@param color? Vector3
+---@param badge? AvatarAPI.badge
 ---@return self
-function AvatarAPI:setColor(color) end
+function AvatarAPI:setColor(color, badge) end
 
----Sets the color theme of your avatar.
+---Sets the color theme of your avatar or the given badge.
 ---
----This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
+---The color theme of the avatar colors the metadata in the wardrobe screen and the Figura mark on the nameplate.
 ---
 ---If `r`, `g`, or `b` are `nil` they will default to `1`.
 ---@generic self
 ---@param self self
----@param r number
----@param g number
----@param b number
+---@param r? number
+---@param g? number
+---@param b? number
+---@param badge? AvatarAPI.badge
 ---@return self
-function AvatarAPI:setColor(r, g, b) end
+function AvatarAPI:setColor(r, g, b, badge) end
 
 
 ---===== CHAINED =====---
 
----Sets the color theme of your avatar.
+---Sets the color theme of your avatar or the given badge.
 ---
----This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
+---The color theme of the avatar colors the metadata in the wardrobe screen and the Figura mark on the nameplate.
 ---
 ---If `color` is `nil`, it will default to white.
 ---@generic self
 ---@param self self
----@param color Vector3
+---@param color? Vector3
+---@param badge? AvatarAPI.badge
 ---@return self
-function AvatarAPI:color(color) end
+function AvatarAPI:color(color, badge) end
 
----Sets the color theme of your avatar.
+---Sets the color theme of your avatar or the given badge.
 ---
----This will set the color of the avatar's metadata in the wardrobe screen and the Figura mark on the nameplate.
+---The color theme of the avatar colors the metadata in the wardrobe screen and the Figura mark on the nameplate.
 ---
 ---If `r`, `g`, or `b` are `nil` they will default to `1`.
 ---@generic self
 ---@param self self
----@param r number
----@param g number
----@param b number
+---@param r? number
+---@param g? number
+---@param b? number
+---@param badge? AvatarAPI.badge
 ---@return self
-function AvatarAPI:color(r, g, b) end
+function AvatarAPI:color(r, g, b, badge) end

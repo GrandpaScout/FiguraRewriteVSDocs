@@ -82,10 +82,8 @@ local EntityNameplate
 ---===== GETTERS =====---
 
 ---Gets the color of this nameplate's background.
----This function incorrectly gets a vector of `⟨b, a, r, g⟩` instead of the expected `⟨r, g, b, a⟩`.
 ---
 ---Returns `nil` if the background color has never been set.
----@*error returns a barg vector instead of an rgba vector
 ---@return Vector4?
 ---@nodiscard
 function EntityNameplate:getBackgroundColor() end
@@ -119,6 +117,7 @@ function EntityNameplate:getPos() end
 function EntityNameplate:getScale() end
 
 ---Gets if this nameplate's text has an outline.
+---@*error Missing doc string.
 ---@return boolean
 ---@nodiscard
 function EntityNameplate:hasOutline() end

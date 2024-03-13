@@ -7,6 +7,13 @@
 ---==============================================================================================---
 
 ---@alias Figura.version string
+---| "0.1.4"       # Figura 0.1.4
+---| "0.1.3"       # Figura 0.1.3
+---| "0.1.3-pre.5" # Figura 0.1.3, Prerelease 5
+---| "0.1.3-pre.4" # Figura 0.1.3, Prerelease 4
+---| "0.1.3-pre.3" # Figura 0.1.3, Prerelease 3
+---| "0.1.3-pre.2" # Figura 0.1.3, Prerelease 2
+---| "0.1.3-rc.1"  # Figura 0.1.3, Release Candidate 1
 ---| "0.1.2"       # Figura 0.1.2
 ---| "0.1.1"       # Figura 0.1.1
 ---| "0.1.0"       # Figura 0.1.0
@@ -32,6 +39,52 @@
 ---| "0.1.0-pre.1" # Figura 0.1.0, Prerelease 1
 
 ---@alias Figura.versionWithMC string
+---| "0.1.4+1.20.4"       # Figura 0.1.4 (1.20.4)
+---| "0.1.4+1.20.2"       # Figura 0.1.4 (1.20.2)
+---| "0.1.4+1.20.1"       # Figura 0.1.4 (1.20.1)
+---| "0.1.4+1.19.4"       # Figura 0.1.4 (1.19.4)
+---| "0.1.4+1.19.3"       # Figura 0.1.4 (1.19.3)
+---| "0.1.4+1.19.2"       # Figura 0.1.4 (1.19.2)
+---| "0.1.4+1.18.2"       # Figura 0.1.4 (1.18.2)
+---| "0.1.4+1.16.5"       # Figura 0.1.4 (1.16.5)
+---| "0.1.3+1.20.4"       # Figura 0.1.3 (1.20.4)
+---| "0.1.3+1.20.2"       # Figura 0.1.3 (1.20.2)
+---| "0.1.3+1.20.1"       # Figura 0.1.3 (1.20.1)
+---| "0.1.3+1.19.4"       # Figura 0.1.3 (1.19.4)
+---| "0.1.3+1.19.3"       # Figura 0.1.3 (1.19.3)
+---| "0.1.3+1.19.2"       # Figura 0.1.3 (1.19.2)
+---| "0.1.3+1.18.2"       # Figura 0.1.3 (1.18.2)
+---| "0.1.3+1.16.5"       # Figura 0.1.3 (1.16.5)
+---| "0.1.3-pre.5+1.20.4" # Figura 0.1.3, Prerelease 5 (1.20.4)
+---| "0.1.3-pre.5+1.20.2" # Figura 0.1.3, Prerelease 5 (1.20.2)
+---| "0.1.3-pre.5+1.20.1" # Figura 0.1.3, Prerelease 5 (1.20.1)
+---| "0.1.3-pre.5+1.19.4" # Figura 0.1.3, Prerelease 5 (1.19.4)
+---| "0.1.3-pre.5+1.19.3" # Figura 0.1.3, Prerelease 5 (1.19.3)
+---| "0.1.3-pre.5+1.19.2" # Figura 0.1.3, Prerelease 5 (1.19.2)
+---| "0.1.3-pre.5+1.18.2" # Figura 0.1.3, Prerelease 5 (1.18.2)
+---| "0.1.3-pre.5+1.16.5" # Figura 0.1.3, Prerelease 5 (1.16.5)
+---| "0.1.3-pre.4+1.20.4" # Figura 0.1.3, Prerelease 4 (1.20.4)
+---| "0.1.3-pre.4+1.20.2" # Figura 0.1.3, Prerelease 4 (1.20.2)
+---| "0.1.3-pre.4+1.20.1" # Figura 0.1.3, Prerelease 4 (1.20.1)
+---| "0.1.3-pre.4+1.19.4" # Figura 0.1.3, Prerelease 4 (1.19.4)
+---| "0.1.3-pre.4+1.19.3" # Figura 0.1.3, Prerelease 4 (1.19.3)
+---| "0.1.3-pre.4+1.19.2" # Figura 0.1.3, Prerelease 4 (1.19.2)
+---| "0.1.3-pre.4+1.18.2" # Figura 0.1.3, Prerelease 4 (1.18.2)
+---| "0.1.3-pre.3+1.20.4" # Figura 0.1.3, Prerelease 3 (1.20.4)
+---| "0.1.3-pre.3+1.20.2" # Figura 0.1.3, Prerelease 3 (1.20.2)
+---| "0.1.3-pre.3+1.20.1" # Figura 0.1.3, Prerelease 3 (1.20.1)
+---| "0.1.3-pre.3+1.19.4" # Figura 0.1.3, Prerelease 3 (1.19.4)
+---| "0.1.3-pre.3+1.19.3" # Figura 0.1.3, Prerelease 3 (1.19.3)
+---| "0.1.3-pre.3+1.19.2" # Figura 0.1.3, Prerelease 3 (1.19.2)
+---| "0.1.3-pre.3+1.18.2" # Figura 0.1.3, Prerelease 3 (1.18.2)
+---| "0.1.3-pre.2+1.20.2" # Figura 0.1.3, Prerelease 2 (1.19.2)
+---| "0.1.3-pre.2+1.19.2" # Figura 0.1.3, Prerelease 2 (1.19.2)
+---| "0.1.3-rc.1+1.20.2"  # Figura 0.1.3, Release Candidate 1 (1.20.2)
+---| "0.1.3-rc.1+1.20.1"  # Figura 0.1.3, Release Candidate 1 (1.20.1)
+---| "0.1.3-rc.1+1.19.4"  # Figura 0.1.3, Release Candidate 1 (1.19.4)
+---| "0.1.3-rc.1+1.19.3"  # Figura 0.1.3, Release Candidate 1 (1.19.3)
+---| "0.1.3-rc.1+1.19.2"  # Figura 0.1.3, Release Candidate 1 (1.19.2)
+---| "0.1.3-rc.1+1.18.2"  # Figura 0.1.3, Release Candidate 1 (1.18.2)
 ---| "0.1.2+1.20.1"       # Figura 0.1.2 (1.20.1)
 ---| "0.1.2+1.19.4"       # Figura 0.1.2 (1.19.4)
 ---| "0.1.2+1.19.3"       # Figura 0.1.2 (1.19.3)

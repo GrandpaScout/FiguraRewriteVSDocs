@@ -49,7 +49,7 @@ export function placeholder(id = 0, extra) {
     return `\${${id}:${extra.replace(reg_jsonreplace, "\\$1")}}`;
 
   if (extra instanceof Array)
-    return `\${${id}|${extra.join(",").replace(reg_jsonreplace, "\\$1")}}`;
+    return `\${${id}|${extra.join(",").replace(reg_jsonreplace, "\\$1")}|}`;
 
   return "";
 }

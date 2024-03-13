@@ -8,8 +8,8 @@
 
 ---The base class of all render tasks.
 ---
----This should never be used directly unless the type of task does not need to be known.  
----If the type of task will be inferred later in your function, use `RenderTask.any` instead.
+---This should be used if the type of render task is not known or does not need to be known.  
+---To avoid having to type-check a render task, use `RenderTask.any`.
 ---@class RenderTask
 local RenderTask
 
@@ -369,6 +369,63 @@ function BlockTask:block(block) end
 
 
 ---==============================================================================================---
+---  ENTITYTASK extends RENDERTASK                                                                 ---
+---==============================================================================================---
+
+---A render task that renders a Minecraft entity.
+---@class EntityTask: RenderTask
+local EntityTask
+
+
+---===== METHODS =====---
+
+---Creates an Entity from the NBT data stored in this entity task.  
+---Returns `nil` if an entity can't be made for some reason.
+---@return Entity?
+---@nodiscard
+function EntityTask:asEntity() end
+
+---Sets the walking limb distance for this task's entity, if applicable.  
+---This influences the walking animation of the entity stored in this task.
+---
+---This should be run once every tick for it to function properly.
+---@generic self
+---@param self self
+---@param dist number
+---@return self
+function EntityTask:updateWalkingDistance(dist) end
+
+
+---===== SETTERS =====---
+
+---Sets the head rotation of this task's entity, if applicable.
+---@generic self
+---@param self self
+---@param rot Vector2
+---@return self
+function EntityTask:setHeadRotation(rot) end
+
+---Sets the NBT stored in this entity task to the given SNBT string.  
+---The stored NBT is used to create the entity this task renders.
+---
+---The `id` property is *required* and must contain the namespaced id of a valid Minecraft entity.
+---@generic self
+---@param self self
+---@param snbt string
+---@return self
+function EntityTask:setNBT(snbt) end
+
+---Sets the NBT stored in this entity task to the given SNBT string.  
+---The stored NBT is used to create the entity this task renders.
+---@generic self
+---@param self self
+---@param id Minecraft.entityID
+---@param snbt string
+---@return self
+function EntityTask:setNBT(id, snbt) end
+
+
+---==============================================================================================---
 ---  ITEMTASK extends RENDERTASK                                                                 ---
 ---==============================================================================================---
 
@@ -380,7 +437,7 @@ local ItemTask
 ---===== GETTERS =====---
 
 ---Gets the rendering mode for the item this task renders.
----@return ItemTask.renderMode
+---@return ItemTask.displayMode
 ---@nodiscard
 function ItemTask:getDisplayMode() end
 
@@ -390,7 +447,7 @@ function ItemTask:getDisplayMode() end
 ---Sets the rendering mode for the item this task renders.
 ---@generic self
 ---@param self self
----@param mode ItemTask.renderMode
+---@param mode ItemTask.displayMode
 ---@return self
 function ItemTask:setDisplayMode(mode) end
 
@@ -411,7 +468,7 @@ function ItemTask:setItem(item) end
 ---Sets the rendering mode for the item this task renders.
 ---@generic self
 ---@param self self
----@param mode ItemTask.renderMode
+---@param mode ItemTask.displayMode
 ---@return self
 function ItemTask:displayMode(mode) end
 
@@ -585,7 +642,23 @@ function SpriteTask:setSize(size) end
 ---@return self
 function SpriteTask:setSize(width, height) end
 
+---**Do not use this version of this function, it ignores the given dimensions!**
+---
+---Sets the texture this task uses to the given texture.  
+---The dimensions of the given texture are used.
+---@*error This overload is completely broken. Vector2 is ignored entirely by implementation.
+---@*error A path cannot be given to this version of this function due to an error.
+---@generic self
+---@param self self
+---@param texture? Texture
+---@param dimensions? Vector2
+---@return self
+function SpriteTask:setTexture(texture, dimensions) end
+
 ---Sets the texture this task uses to the given texture or path.
+---
+---If given a texture object, the dimensions of the texture are used if no dimensions are given.  
+---If given a texture path, the dimensions of the texture must be given.
 ---
 ---The width and height of the texture must be given.
 ---@generic self
@@ -595,6 +668,21 @@ function SpriteTask:setSize(width, height) end
 ---@param height? integer
 ---@return self
 function SpriteTask:setTexture(texture, width, height) end
+
+---Sets the texture this task uses to the given texture or path.
+---
+---If given a texture object, the dimensions of the texture are used if no dimensions are given.  
+---If given a texture path, the dimensions of the texture must be given.
+---
+---The `_` parameter *must* have a value if `dimensions` is not `nil`.
+---@*hidden This overload exists due to an error with the first overload.
+---@generic self
+---@param self self
+---@param texture? Texture | string
+---@param dimensions? Vector2
+---@param _? number
+---@return self
+function SpriteTask:setTexture(texture, dimensions, _) end
 
 ---Sets the UV offset of this task.
 ---
@@ -794,11 +882,9 @@ local TextTask
 ---@nodiscard
 function TextTask:getAlignment() end
 
----Gets the color of this task's background.  
----This function incorrectly gets a vector of `⟨b, a, r, g⟩` instead of the expected `⟨r, g, b, a⟩`.
+---Gets the color of this task's background.
 ---
 ---Returns `nil` if the background color has never been set.
----@*error returns a barg vector instead of an rgba vector
 ---@return Vector4?
 ---@nodiscard
 function TextTask:getBackgroundColor() end
@@ -809,7 +895,8 @@ function TextTask:getBackgroundColor() end
 function TextTask:getOpacity() end
 
 ---Gets the color of this task's text outline.
----@*vmerror if attempt to return `nil`
+---
+---Returns `⟨0, 0, 0⟩` if the outline color has never been set.
 ---@return Vector3
 ---@nodiscard
 function TextTask:getOutlineColor() end
@@ -842,10 +929,9 @@ function TextTask:hasOutline() end
 function TextTask:hasShadow() end
 
 ---Gets if this task's text should wrap around if it gets too long.
----@*error Incorrectly uses PascalCase.
 ---@return boolean
 ---@nodiscard
-function TextTask:HasWrap() end
+function TextTask:hasWrap() end
 
 ---Gets if this task is able to be seen through everything.
 ---@return boolean

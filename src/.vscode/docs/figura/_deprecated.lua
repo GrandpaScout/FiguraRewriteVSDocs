@@ -352,11 +352,6 @@ ClientAPI.checkVersion = nil
 ClientAPI.clearTitle = nil
 
 ---@type «deprecated»
----`.getActionBar()` is deprecated. It has no replacement.
----@deprecated [[No replacement]]
-ClientAPI.getActionBar = nil
-
----@type «deprecated»
 ---`.getActiveShader()` is deprecated. To get the current shader, use `.getCurrentEffect()`.
 ---@deprecated [[Replace with ".getCurrentEffect()"]]
 ClientAPI.getActiveShader = nil
@@ -407,16 +402,6 @@ ClientAPI.getScaleFactor = nil
 ClientAPI.getSoundCount = nil
 
 ---@type «deprecated»
----`.getSubtitle()` is deprecated. It has no replacement.
----@deprecated [[No replacement]]
-ClientAPI.getSubtitle = nil
-
----@type «deprecated»
----`.getTitle()` is deprecated. It has no replacement.
----@deprecated [[No replacement]]
-ClientAPI.getTitle = nil
-
----@type «deprecated»
 ---`.isHost()` is deprecated. To get the host state, use `host:isHost()`.
 ---@deprecated [[Replace with "host:isHost()"]]
 ClientAPI.isHost = nil
@@ -461,19 +446,53 @@ ClientAPI.setTitleTimes = nil
 ---  DATA                                                                                        ---
 ---==============================================================================================---
 
+---@class DataAPI
+local DataAPI
+
 ---@type «deprecated»
----`data` is deprecated. Replace the following:
----* `data.getName()` with `config:getName()`
----* `data.setName()` with `config:setName()`
----* `data.load()` and `data.loadAll()` with `config:load()`
----* `data.save()` and `data.remove()` with `config:save()`
----
----The following do not have a replacement:
----* `data.allowTracking()`
----* `data.deleteFile()`
----* `data.hasTracking()`
----@deprecated [[Complex, hover for more info]]
-data = nil
+---`.getName()` is deprecated, to get the name of the current config file, use `config:getName()`.
+---@deprecated [[Replace with "config:getName()"]]
+DataAPI.getName = nil
+
+---@type «deprecated»
+---`.setName()` is deprecated, to set the name of the current config file, use `config:setName()`.
+---@deprecated [[Replace with "config:setName()"]]
+DataAPI.setName = nil
+
+---@type «deprecated»
+---`.load()` is deprecated, to get a value from the current config file, use `config:load()`.
+---@deprecated [[Replace with "config:load()"]]
+DataAPI.load = nil
+
+---@type «deprecated»
+---`.loadAll()` is deprecated, to get all values from the current config file, use `config:load()` with no parameters.
+---@deprecated [[Replace with "config:load()"]]
+DataAPI.loadAll = nil
+
+---@type «deprecated»
+---`.save()` is deprecated, to save a value to the current config file, use `config:save()`.
+---@deprecated [[Replace with "config:save()"]]
+DataAPI.save = nil
+
+---@type «deprecated»
+---`.remove()` is deprecated, to remove a value from the current config file, use `config:save()` with a `nil` value.
+---@deprecated [[Replace with "config:save()"]]
+DataAPI.remove = nil
+
+---@type «deprecated»
+---`.allowTracking()` is deprecated. It has no replacement.
+---@deprecated [[No replacement]]
+DataAPI.allowTracking = nil
+
+---@type «deprecated»
+---`.deleteFile()` is deprecated. It has no replacement.
+---@deprecated [[No replacement]]
+DataAPI.deleteFile = nil
+
+---@type «deprecated»
+---`.hasTracking()` is deprecated. It has no replacement.
+---@deprecated [[No replacement]]
+DataAPI.hasTracking = nil
 
 
 ---==============================================================================================---
@@ -1356,7 +1375,7 @@ Vector.distanceTo = nil
 Vector.getLength = nil
 
 
----@class VectorAPI
+---@class VectorsAPI
 local VectorAPI
 
 ---@type «deprecated»

@@ -128,7 +128,7 @@
 ---| "VOICE"   # Voice/Speech
 
 ---@alias Event.OnPlaySound.func
----| fun(id?: string, pos?: Vector3, volume?: number, pitch?: number, loop?: boolean, category?: Event.OnPlaySound.category, path?: string)
+---| fun(id?: string, pos?: Vector3, volume?: number, pitch?: number, loop?: boolean, category?: Event.OnPlaySound.category, path?: string): (cancel: boolean?)
 
 
 ---==================================================================================================================---
@@ -144,6 +144,13 @@
 ---| "OTHER"         # Some other view is rendering the avatar.
 
 ---@alias Event.Render.func fun(delta?: number, ctx?: Event.Render.context, matrix?: Matrix4)
+
+
+---==================================================================================================================---
+---  EVENT.TRIDENTRENDER extends EVENT                                                                                 ---
+---==================================================================================================================---
+
+---@alias Event.TridentRender.func fun(delta?: number, entity?: Entity): (hide: boolean?)
 
 
 ---==================================================================================================================---
@@ -165,7 +172,7 @@
 ---| "OTHER"      # Some other context.
 
 ---@alias Event.SkullRender.func
----| fun(delta?: number, block?: BlockState, item?: ItemStack, entity?: Entity.any, ctx: Event.SkullRender.context): (hide: boolean?)
+---| fun(delta?: number, block?: BlockState, item?: ItemStack, entity?: Entity, ctx: Event.SkullRender.context): (hide: boolean?)
 
 
 ---==================================================================================================================---

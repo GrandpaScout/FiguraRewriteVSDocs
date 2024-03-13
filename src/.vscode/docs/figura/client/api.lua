@@ -22,6 +22,14 @@ local ClientAPI
 ---@nodiscard
 function ClientAPI.compareVersions(compare, to) end
 
+---Generates a random UUID as 4 integers.
+---@return integer
+---@return integer
+---@return integer
+---@return integer
+---@nodiscard
+function ClientAPI.generateUUID() end
+
 ---Converts a 4-int UUID to a string UUID.
 ---@param i1 integer
 ---@param i2 integer
@@ -46,6 +54,11 @@ function ClientAPI.listAtlases() end
 function ClientAPI.uuidToIntArray(uuid) end
 
 ---===== GETTERS =====---
+
+---Gets the text in the action bar or `nil` if the action bar is not visible.
+---@return string?
+---@nodiscard
+function ClientAPI.getActionbar() end
 
 ---Gets the code for the viewing client's selected language.
 ---@return Minecraft.langCode
@@ -144,6 +157,13 @@ function ClientAPI.getEntityCount() end
 ---@nodiscard
 function ClientAPI.getEntityStatistics() end
 
+---Gets the Figura Enum with the given name.
+---@*error Missing doc string.
+---@param enum ClientAPI.enum
+---@return string[]
+---@nodiscard
+function ClientAPI.getEnum(enum) end
+
 ---Gets the viewing client's Figura version.
 ---@return Figura.versionWithMC
 ---@nodiscard
@@ -219,12 +239,23 @@ function ClientAPI.getMousePos() end
 ---@nodiscard
 function ClientAPI.getParticleCount() end
 
+---Gets the contents of the Minecraft registry with the given name.
+---@param registry ClientAPI.registry
+---@return string[]
+---@nodiscard
+function ClientAPI.getRegistry(registry) end
+
 ---Gets the size of the game window in GUI units.
 ---
 ---This is effectively the same as `.getWindowSize() / .getGuiScale()`.
 ---@return Vector2
 ---@nodiscard
 function ClientAPI.getScaledWindowSize() end
+
+---Gets the parts of the scoreboard the client can see.
+---@return ClientAPI.scoreboard
+---@nodiscard
+function ClientAPI.getScoreboard() end
 
 ---Gets the server's brand.
 ---@return Minecraft.serverBrand
@@ -235,6 +266,11 @@ function ClientAPI.getServerBrand() end
 ---@return ClientAPI.serverData
 ---@nodiscard
 function ClientAPI.getServerData() end
+
+---Gets the name of the viewing client's active Shader Pack or a blank string if none is being used.
+---@return string
+---@nodiscard
+function ClientAPI.getShaderPackName() end
 
 ---Gets the sound info line from the debug screen.
 ---
@@ -251,6 +287,11 @@ function ClientAPI.getServerData() end
 ---@return string
 ---@nodiscard
 function ClientAPI.getSoundStatistics() end
+
+---Gets the text in the subtitle or `nil` if it is not currently visible.
+---@return string?
+---@nodiscard
+function ClientAPI.getSubtitle() end
 
 ---Gets the viewing client's system time in milliseconds since the Unix epoch.
 ---@return integer
@@ -288,6 +329,11 @@ function ClientAPI.getTextHeight(text) end
 ---@nodiscard
 function ClientAPI.getTextWidth(text) end
 
+---Gets the text in the title or `nil` if it is not currently visible.
+---@return string?
+---@nodiscard
+function ClientAPI.getTitle() end
+
 ---Converts a language key to a translated string.
 ---
 ---If `args` is a string or list of strings, the translation will use those strings in place of variables.
@@ -321,15 +367,15 @@ function ClientAPI.getViewer() end
 ---@nodiscard
 function ClientAPI.getWindowSize() end
 
----Gets if the viewing client has the Iris Shaders mod installed.
+---Gets if the viewing client has the Iris Shaders mod or Optifine mod installed.
 ---@return boolean
 ---@nodiscard
-function ClientAPI.hasIris() end
+function ClientAPI.hasShaderPackMod() end
 
----Gets if the viewing client has an Iris Shader enabled.
+---Gets if the viewing client has an Iris or Optifine shader enabled.
 ---@return boolean
 ---@nodiscard
-function ClientAPI.hasIrisShader() end
+function ClientAPI.hasShaderPack() end
 
 ---Gets if the viewing client has the given resource loaded.
 ---@param path string

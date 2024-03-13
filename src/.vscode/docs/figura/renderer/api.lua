@@ -118,8 +118,7 @@ function RendererAPI:getOutlineColor() end
 
 ---Gets the texture path of the host's on-fire primary layer.
 ---
----Throws if it has not been set.
----@*vmerror if no primary fire texture has been applied.
+---Returns `""` if it has not been set.
 ---@return string
 ---@nodiscard
 function RendererAPI:getPrimaryFireTexture() end
@@ -138,10 +137,14 @@ function RendererAPI:getRenderLeftArm() end
 ---@nodiscard
 function RendererAPI:getRenderRightArm() end
 
+---Gets if the root of the Player entity is allowed to rotate.
+---@return boolean
+---@nodiscard
+function RendererAPI:getRootRotationAllowed() end
+
 ---Gets the texture path of the host's on-fire secondary layer.
 ---
----Throws if it has not been set.
----@*vmerror if no secondary fire texture has been applied.
+---Returns `""` if it has not been set.
 ---@return string
 ---@nodiscard
 function RendererAPI:getSecondaryFireTexture() end
@@ -163,10 +166,7 @@ function RendererAPI:isCameraBackwards() end
 ---@nodiscard
 function RendererAPI:isFirstPerson() end
 
----Gets if the host is rendered upside-down.
----
----Throws if it has not been set
----@*vmerror if upside-down state has not been set.
+---Gets if the host is being rendered upside-down.
 ---@return boolean
 ---@nodiscard
 function RendererAPI:isUpsideDown() end
@@ -457,7 +457,7 @@ function RendererAPI:setOutlineColor(r, g, b) end
 ---If `shader` is `nil`, no shader will be applied.
 ---@generic self
 ---@param self self
----@param shader? Minecraft.shader
+---@param shader? Minecraft.shaderName
 ---@return self
 function RendererAPI:setPostEffect(shader) end
 
@@ -527,6 +527,16 @@ function RendererAPI:setRenderRightArm(state) end
 ---@param state? boolean
 ---@return self
 function RendererAPI:setRenderVehicle(state) end
+
+---Sets if the root of the Player entity is allowed to rotate.  
+---If disabled, not even Minecraft will be able to rotate it.
+---
+---If `state` is `nil`, it will default to `true`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RendererAPI:setRootRotationAllowed(state) end
 
 ---Sets the texture path of the host's on-fire secondary layer.
 ---
@@ -842,6 +852,16 @@ function RendererAPI:renderLeftArm(state) end
 ---@param state? boolean
 ---@return self
 function RendererAPI:renderRightArm(state) end
+
+---Sets if the root of the Player entity is allowed to rotate.  
+---If disabled, not even Minecraft will be able to rotate it.
+---
+---If `state` is `nil`, it will default to `true`.
+---@generic self
+---@param self self
+---@param state? boolean
+---@return self
+function RendererAPI:rootRotationAllowed(state) end
 
 ---Sets the texture path of the host's on-fire secondary layer.
 ---

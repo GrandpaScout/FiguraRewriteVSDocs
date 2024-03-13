@@ -1,4 +1,6 @@
 ---@meta _
 
----An integer from 0 to 15.
----@alias range*0-15 1|2|3|4|5|6|7|8|9|10|11|12|13|14|15
+---A value that represents an operation that will always fail.
+---
+---If you see this type, something went wrong and you'll need to fix it.
+---@class never: unknown

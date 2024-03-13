@@ -8,8 +8,8 @@
 
 ---The base class of all matrices.
 ---
----This should never be used directly unless the type of matrix does not need to be known.  
----If the type of matrix will be inferred later in your function, use `Matrix.any` instead.
+---This should be used if the type of matrix is not known or does not need to be known.  
+---To avoid having to type-check a matrix, use `Matrix.any`.
 ---@class Matrix
 ---@operator len: integer
 ---@operator add(Matrix): Matrix
@@ -146,11 +146,10 @@ function Matrix2:rightMultiply(other) end
 
 ---Rotates this matrix by the given angle in degrees.
 ---
----If `angle` is `nil`, it will cause a VM Error.
----@*vmerror `angle` == `nil`
+---If `angle` is `nil`, it will default to `0`.
 ---@generic self
 ---@param self self
----@param angle number
+---@param angle? number
 ---@return self
 function Matrix2:rotate(angle) end
 

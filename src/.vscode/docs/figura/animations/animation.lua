@@ -99,7 +99,7 @@ function Animation:getOverrideRot() end
 function Animation:getOverrideScale() end
 
 ---Gets this animation's current play state.
----@return Animation.playStates
+---@return Animation.playState
 ---@nodiscard
 function Animation:getPlayState() end
 
@@ -130,16 +130,19 @@ function Animation:getStartDelay() end
 function Animation:getTime() end
 
 ---Gets if this animation is currently paused.
+---@*error Missing doc string.
 ---@return boolean
 ---@nodiscard
 function Animation:isPaused() end
 
 ---Gets if this animation is currently playing.
+---@*error Missing doc string.
 ---@return boolean
 ---@nodiscard
 function Animation:isPlaying() end
 
 ---Gets if this animation is currently stopped.
+---@*error Missing doc string.
 ---@return boolean
 ---@nodiscard
 function Animation:isStopped() end

@@ -32,14 +32,13 @@
 
 ---The base class of all vectors.
 ---
----This should never be used directly unless the type of vector does not need to be known.  
----If the type of vector will be inferred later in your function, use `Vector.any` instead.
+---This should be used if the type of vector is not known or does not need to be known.  
+---To avoid having to type-check a vector, use `Vector.any`.
 ---@class Vector: Vector.*INTERNAL*
 ---@operator unm: Vector
 ---@operator len: integer
 ---@operator add(number | Vector): Vector
 ---@operator sub(number | Vector): Vector
----@*error Multiplying by a Matrix modifies the vector instead of copying it.
 ---@operator mul(number | Vector | Matrix): Vector
 ---@operator div(number | Vector): Vector
 ---@operator mod(number | Vector): Vector
@@ -184,7 +183,6 @@ function Vector:unpack() end
 ---@operator len: 2
 ---@operator add(number | Vector2): Vector2
 ---@operator sub(number | Vector2): Vector2
----@*error Multiplying by a Matrix modifies the vector instead of copying it.
 ---@operator mul(number | Vector2 | Matrix2): Vector2
 ---@operator div(number | Vector2): Vector2
 ---@operator mod(number | Vector2): Vector2
@@ -379,10 +377,9 @@ function Vector2:toDeg() end
 function Vector2:toRad() end
 
 ---Transforms this vector using the given matrix.
----@*vmerror `mat` == `nil`
 ---@generic self
 ---@param self self
----@param mat Matrix2
+---@param mat? Matrix2
 ---@return self
 function Vector2:transform(mat) end
 
@@ -403,7 +400,6 @@ function Vector2:unpack() end
 ---@operator len: 3
 ---@operator add(number | Vector3): Vector3
 ---@operator sub(number | Vector3): Vector3
----@*error Multiplying by a Matrix modifies the vector instead of copying it.
 ---@operator mul(number | Vector3 | Matrix3): Vector3
 ---@operator div(number | Vector3): Vector3
 ---@operator mod(number | Vector3): Vector3
@@ -619,7 +615,6 @@ function Vector3:toDeg() end
 function Vector3:toRad() end
 
 ---Transforms this vector using the given matrix.
----@*vmerror `mat` == `nil`
 ---@generic self
 ---@param self self
 ---@param mat Matrix3
@@ -644,7 +639,6 @@ function Vector3:unpack() end
 ---@operator len: 4
 ---@operator add(number | Vector4): Vector4
 ---@operator sub(number | Vector4): Vector4
----@*error Multiplying by a Matrix modifies the vector instead of copying it.
 ---@operator mul(number | Vector4 | Matrix4): Vector4
 ---@operator div(number | Vector4): Vector4
 ---@operator mod(number | Vector4): Vector4
@@ -851,7 +845,6 @@ function Vector4:toDeg() end
 function Vector4:toRad() end
 
 ---Transforms this vector using the given matrix.
----@*vmerror `mat` == `nil`
 ---@generic self
 ---@param self self
 ---@param mat Matrix4

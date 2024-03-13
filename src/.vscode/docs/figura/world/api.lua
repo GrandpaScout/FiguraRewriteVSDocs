@@ -188,7 +188,7 @@ function WorldAPI.getBiome(x, y, z) end
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getBlockLightLevel(pos) end
 
@@ -200,7 +200,7 @@ function WorldAPI.getBlockLightLevel(pos) end
 ---@param x? number
 ---@param y? number
 ---@param z? number
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getBlockLightLevel(x, y, z) end
 
@@ -280,11 +280,38 @@ function WorldAPI.getBlockState(pos) end
 ---@nodiscard
 function WorldAPI.getBlockState(x, y, z) end
 
----Gets the lower and upper building bounds of the world.
+---Gets the lower and upper building bounds of this world.
 ---@return integer lower
 ---@return integer upper
 ---@nodiscard
 function WorldAPI.getBuildHeight() end
+
+---Gets the current day of this world. If a delta is given, it is taken into account.
+---
+---If `delta` is `nil`, it will default to `0`.
+---@param delta? number
+---@return integer
+---@nodiscard
+function WorldAPI.getDay(delta) end
+
+---Gets the time in ticks of the current day. If a delta is given, it is simply added.  
+---This value matches the amount of day time that has passed in the world. If time is frozen, this
+---value is too.
+---
+---The returned value, unlike `.getTimeOfDay()`, is limited to the range `[0, 24000)`.
+---@return integer
+---@nodiscard
+function WorldAPI.getDayTime() end
+
+---Gets the time in ticks of the current day. If a delta is given, it is simply added.  
+---This value matches the amount of day time that has passed in the world. If time is frozen, this
+---value is too.
+---
+---The returned value, unlike `.getTimeOfDay()`, is limited to the range `[0, 24000)`.
+---@param delta number
+---@return number
+---@nodiscard
+function WorldAPI.getDayTime(delta) end
 
 ---Gets the dimension of this world.
 ---@return Minecraft.dimensionID
@@ -295,9 +322,43 @@ function WorldAPI.getDimension() end
 ---
 ---Returns `nil` if no loaded entity has the given UUID
 ---@param uuid string
----@return Entity.any
+---@return Entity
 ---@nodiscard
 function WorldAPI.getEntity(uuid) end
+
+---Gets the highest position at the given horizontal coordinates using the given hightmap.
+---
+---If `heightmap` is `nil`, it will default to `"MOTION_BLOCKING"`.
+---@*error It's impossible to use this version of this function.
+---@param pos Vector2
+---@param heightmap? WorldAPI.heightmap
+---@return never
+---@nodiscard
+function WorldAPI.getHeight(pos, heightmap) end
+
+---Gets the highest position at the given horizontal coordinates using the given hightmap.
+---
+---If `x` or `z` are `nil`, they will default to `0`.  
+---If `heightmap` is `nil`, it will default to `"MOTION_BLOCKING"`.
+---@*error Position is truncated instead of floored, causing the wrong column to be selected in negative coordinates.
+---@param x? number
+---@param z? number
+---@param heightmap? WorldAPI.heightmap
+---@return integer
+---@nodiscard
+function WorldAPI.getHeight(x, z, heightmap) end
+
+---Gets the highest position at the given horizontal coordinates using the given hightmap.
+---
+---If `heightmap` is `nil`, it will default to `"MOTION_BLOCKING"`.
+---@*error Position is truncated instead of floored, causing the wrong column to be selected in negative coordinates.
+---@*hidden This overload exists due to an error with the first overload.
+---@param pos Vector2
+---@param _? number
+---@param heightmap? WorldAPI.heightmap
+---@return integer
+---@nodiscard
+function WorldAPI.getHeight(pos, _, heightmap) end
 
 ---Gets the overall light level at the given world position.
 ---
@@ -305,7 +366,7 @@ function WorldAPI.getEntity(uuid) end
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getLightLevel(pos) end
 
@@ -313,7 +374,7 @@ function WorldAPI.getLightLevel(pos) end
 ---@param x? number
 ---@param y? number
 ---@param z? number
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getLightLevel(x, y, z) end
 
@@ -349,7 +410,7 @@ function WorldAPI.getRainGradient(delta) end
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getRedstonePower(pos) end
 
@@ -364,7 +425,7 @@ function WorldAPI.getRedstonePower(pos) end
 ---@param x? number
 ---@param y? number
 ---@param z? number
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getRedstonePower(x, y, z) end
 
@@ -374,7 +435,7 @@ function WorldAPI.getRedstonePower(x, y, z) end
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getSkyLightLevel(pos) end
 
@@ -386,7 +447,7 @@ function WorldAPI.getSkyLightLevel(pos) end
 ---@param x? number
 ---@param y? number
 ---@param z? number
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getSkyLightLevel(x, y, z) end
 
@@ -402,7 +463,7 @@ function WorldAPI.getSpawnPoint() end
 ---
 ---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
 ---@param pos? Vector3
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getStrongRedstonePower(pos) end
 
@@ -415,7 +476,7 @@ function WorldAPI.getStrongRedstonePower(pos) end
 ---@param x? number
 ---@param y? number
 ---@param z? number
----@return range*0-15
+---@return integer
 ---@nodiscard
 function WorldAPI.getStrongRedstonePower(x, y, z) end
 
@@ -428,19 +489,46 @@ function WorldAPI.getStrongRedstonePower(x, y, z) end
 ---@nodiscard
 function WorldAPI.getTime(delta) end
 
----Gets the world's day time in ticks. If a delta is given, it is simply added.  
----This value matches the amount of day time that has passed in the world. If time is frozen, this
----value is too.
+---Gets the world's total day time in ticks. If a delta is given, it is simply added.  
+---This value matches the total amount of day time that has passed in the world. If time is frozen, this value is too.
 ---
 ---Despite the name of this function, it does not get the time of the current day. If you want that value, use
----`.getTimeOfDay() % 24000`.  
----You can also use this number to get the amount of days passed with `math.floor(.getTimeOfDay() / 24000)`.
+---`world.getTimeOfDay() % 24000`.  
+---You can also use this number to get the amount of days passed with `math.floor(world.getTimeOfDay() / 24000)`.
+---@return integer
+---@nodiscard
+function WorldAPI.getTimeOfDay() end
+
+---Gets the world's total day time in ticks. If a delta is given, it is simply added.  
+---This value matches the total amount of day time that has passed in the world. If time is frozen, this value is too.
 ---
----If `delta` is `nil`, it will default to `0`.
----@param delta? number
+---Despite the name of this function, it does not get the time of the current day. If you want that value, use
+---`world.getTimeOfDay() % 24000`.  
+---You can also use this number to get the amount of days passed with `math.floor(world.getTimeOfDay() / 24000)`.
+---@param delta number
 ---@return number
 ---@nodiscard
 function WorldAPI.getTimeOfDay(delta) end
+
+---Gets if the given position is in a loaded chunk.
+---
+---If `pos` is `nil`, it will default to `⟨0, 0, 0⟩`.
+---@*error Missing doc string.
+---@param pos? Vector3
+---@return boolean
+---@nodiscard
+function WorldAPI.isChunkLoaded(pos) end
+
+---Gets if the given position is in a loaded chunk.
+---
+---If `x`, `y`, or `z` are `nil`, they will default to `0`.
+---@*error Missing doc string.
+---@param x? number
+---@param y? number
+---@param z? number
+---@return boolean
+---@nodiscard
+function WorldAPI.isChunkLoaded(x, y, z) end
 
 ---Gets if the given world position can see the sky directly above it.
 ---

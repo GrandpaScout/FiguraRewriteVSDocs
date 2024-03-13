@@ -22,14 +22,14 @@ function Entity:getBoundingBox() end
 ---Gets the entity that this entity is controlling the movement of.
 ---
 ---If this entity is not controlling another entity, this returns `nil`.
----@return Entity.any?
+---@return Entity?
 ---@nodiscard
 function Entity:getControlledVehicle() end
 
 ---Gets the entity that is controlling this entity's movement.
 ---
 ---If this entity is not being controlled by another entity, this returns `nil`.
----@return Entity.any?
+---@return Entity?
 ---@nodiscard
 function Entity:getControllingPassenger() end
 
@@ -94,7 +94,7 @@ function Entity:getName() end
 function Entity:getNbt() end
 
 ---Gets the passengers on this entity.
----@return Entity.any[]
+---@return Entity[]
 ---@nodiscard
 function Entity:getPassengers() end
 
@@ -151,7 +151,7 @@ function Entity:getTargetedBlock(ignoreLiquids, distance) end
 ---
 ---If `distance` is `nil`, it will default to `20`.
 ---@param distance? number
----@return Entity.any? entity
+---@return Entity? entity
 ---@return Vector3? hit_pos
 ---@nodiscard
 function Entity:getTargetedEntity(distance) end
@@ -184,7 +184,7 @@ function Entity:getVariable(key) end
 ---Gets the entity that this entity is riding.
 ---
 ---Returns `nil` if there is no vehicle.
----@return Entity.any?
+---@return Entity?
 ---@nodiscard
 function Entity:getVehicle() end
 
@@ -472,14 +472,14 @@ local Player
 ---@nodiscard
 function Player:getChargedAttackDelay() end
 
----Gets the cooldown of an item for this player.
+---Gets the cooldown of the given item for this player.
 ---
----This method is impossible to use due to a bug in Figura.
----@*error This method is impossible to use due to it expecting a Minecraft ItemStack and not a Figura ItemStack.
----@param stack unknown
+---If `delta` is `nil`, it will default to `0`.
+---@param stack ItemStack
 ---@param delta? number
+---@return number
 ---@nodiscard
-function Player:getCoolDownPercent(stack, delta) end
+function Player:getCooldownPercent(stack, delta) end
 
 ---Gets the hunger exhaustion of this player.
 ---@return number

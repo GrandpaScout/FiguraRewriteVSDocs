@@ -1,339 +1,94 @@
-# 0.1.2 #
+# 0.1.4 #
 
 V1
 --------------------------------------------------
-* Updated from 0.1.0 RC13 V3
-* Added references to 0.1.0, 0.1.1, and 0.1.2 in <kbd>**Figura.version**</kbd> and *`avatar.schema.json`*.
-* There are way too many changes here for me to list right now. Come back later.
-
-V2
---------------------------------------------------
-* Fixed a few deprecation descriptions.
-  * `block_state` incorrectly called itself "block-state"
-  * `ModelPart.getShader` was incorrectly listed as having no replacement
-  * `Vector.asTable` had a "code replacemen" 💀
-  * `WorldAPI.isLightning` wasn't actually marked as deprecated.
-* Added vmerror tag to `parseJson` "on JSON parsing error"
-
-V3
---------------------------------------------------
-* Added parameters `chunkname` and `env` to `loadstring()`.
-* Updated type list.
-* Added `0.1.1+1.19.4` to the version list.
-* Added `---@nodiscard` to all functions that only return a value.  
-  This is done to avoid useless calls of functions.
-  ### Affected functions:
-  * **`_G`**  
-    `listFiles()`, `parseJson()`, `toJson()`, `vec()`  
-    &nbsp;
-  * **`mathlib`**  
-    `.clamp()`, `.lerp()`, `.lerpAngle()`, `.map()`, `.round()`, `.shortAngle()`, `.sign()`  
-    &nbsp;
-  * **`Action`**  
-    `:getColor()`, `:getHoverColor()`, `:getTitle()`, `:getToggleColor()`, `:getToggleTitle()`, `:isToggled()`  
-    &nbsp;
-  * **`ActionWheelAPI`**  
-    `:newAction()`, `:getCurrentPage()`, `:getPage()`, `:getPage()`, `:getSelected()`, `:getSelectedAction()`,
-    `:isEnabled()`  
-    &nbsp;
-  * **`Page`**  
-    `:getAction()`, `:getActions()`, `:getSlotsShift()`, `:getTitle()`, `:shouldKeepSlots()`  
-    &nbsp;
-  * **`Animation`**  
-    `:getBlend()`, `:getLength()`, `:getLoop()`, `:getLoopDelay()`, `:getName()`, `:getOffset()`, `:getOverridePos()`,
-    `:getOverrideRot()`, `:getOverrideScale()`, `:getPlayState()`, `:getPriority()`, `:getSpeed()`, `:getStartDelay()`,
-    `:getTime()`, `:isPaused()`, `:isPlaying()`, `:isStopped()`  
-    &nbsp;
-  * **`AnimationAPI`**  
-    `:getAnimations()`, `:getPlaying()`  
-    &nbsp;
-  * **`AvatarAPI`**  
-    `:canEditNameplate()`, `:canEditVanillaModel()`, `:canHaveCustomSkull()`, `:canRenderOffscreen()`,
-    `:canUseCustomSounds()`, `:getAnimationComplexity()`, `:getAuthors()`, `:getColor()`, `:getComplexity()`,
-    `:getCurrentInstructions()`, `:getEntityInitCount()`, `:getEntityName()`, `:getInitCount()`,
-    `:getMaxAnimationComplexity()`, `:getMaxAnimationCount()`, `:getMaxComplexity()`, `:getMaxInitCount()`,
-    `:getMaxParticles()`, `:getMaxRenderCount()`, `:getMaxSounds()`, `:getMaxTextureSize()`, `:getMaxTickCount()`,
-    `:getMaxWorldRenderCount()`, `:getMaxWorldTickCount()`, `:getNBT()`, `:getName()`, `:getPermissionLevel()`,
-    `:getRemainingParticles()`, `:getRemainingSounds()`, `:getRenderCount()`, `:getSize()`, `:getTickCount()`,
-    `:getUUID()`, `:getVersion()`, `:getWorldRenderCount()`, `:getWorldTickCount()`, `:hasScriptError()`,
-    `:hasTexture()`  
-    &nbsp;
-  * **`ClientAPI`**  
-    `.compareVersions()`, `.intUUIDToString()`, `.listAtlases()`, `.uuidToIntArray()`, `.getActiveLang()`,
-    `.getActiveResourcePacks()`, `.getAllocatedMemory()`, `.getAtlas()`, `.getCameraDir()`, `.getCameraEntity()`,
-    `.getCameraPos()`, `.getCameraRot()`, `.getChunkStatistics()`, `.getClientBrand()`, `.getCurrentEffect()`,
-    `.getDate()`, `.getEntityCount()`, `.getEntityStatistics()`, `.getFiguraVersion()`, `.getFOV()`, `.getFPS()`,
-    `.getFPSString()`, `.getFrameTime()`, `.getGuiScale()`, `.getJavaVersion()`, `.getMaxMemory()`, `.getMousePos()`,
-    `.getParticleCount()`, `.getScaledWindowSize()`, `.getServerBrand()`, `.getServerData()`, `.getSoundStatistics()`,
-    `.getSystemTime()`, `.getTabList()`, `.getTextDimensions()`, `.getTextHeight()`, `.getTextWidth()`,
-    `.getTranslatedString()`, `.getUsedMemory()`, `.getVersion()`, `.getVersionName()`, `.getViewer()`,
-    `.getWindowSize()`, `.hasIris()`, `.hasIrisShader()`, `.hasResource()`, `.isDebugOverlayEnabled()`,
-    `.isHudEnabled()`, `.isModLoaded()`, `.isPaused()`, `.isSnapshot()`, `.isWindowFocused()`  
-    &nbsp;
-  * **`ConfigAPI`**  
-    `:load()`, `:getName()`  
-    &nbsp;
-  * **`EventsAPI`**  
-    `:getEvents()`  
-    &nbsp;
-  * **`Event`**  
-    `:getRegisteredCount()`  
-    &nbsp;
-  * **`HostAPI`**  
-    `:screenshot()`, `:getAir()`, `:getAttackCharge()`, `:getChatColor()`, `:getChatMessage()`, `:getChatText()`,
-    `:getClipboard()`, `:getPickBlock()`, `:getPickEntity()`, `:getReachDistance()`, `:getScreen()`, `:getScreenSlot()`,
-    `:getScreenSlotCount()`, `:getSlot()`, `:getStatusEffects()`, `:isAvatarUploaded()`, `:isChatOpen()`,
-    `:isChatVerified()`, `:isContainerOpen()`, `:isCursorUnlocked()`, `:isFlying()`, `:isHost()`, `:isJumping()`  
-    &nbsp;
-  * **`KeybindAPI`**  
-    `:getKeybinds()`, `:getVanillaKey()`  
-    &nbsp;
-  * **`Keybind`**  
-    `:getID()`, `:getKey()`, `:getKeyName()`, `:getName()`, `:isDefault()`, `:isEnabled()`, `:isGuiEnabled()`,
-    `:isPressed()`  
-    &nbsp;
-  * **`MatricesAPI`**  
-    `.mat2()`, `.mat3()`, `.mat4()`, `.rotation2()`, `.rotation3()`, `.rotation4()`, `.scale2()`, `.scale3()`,
-    `.scale4()`, `.translate3()`, `.translate4()`, `.xRotation3()`, `.xRotation4()`, `.yRotation3()`, `.yRotation4()`,
-    `.zRotation3()`, `.zRotation4()`  
-    &nbsp;
-  * **`Matrix`**  
-    `:det()`,  
-    &nbsp;
-  * **`Matrix2`**  
-    `:apply()`, `:applyDir()`, `:augmented()`, `:copy()`, `:inverted()`, `:transposed()`, `:getColumn()`, `:getRow()`,  
-  * **`Matrix3`**  
-    `:apply()`, `:applyDir()`, `:augmented()`, `:copy()`, `:deaugmented()`, `:inverted()`, `:transposed()`,
-    `:getColumn()`, `:getRow()`,  
-  * **`Matrix4`**  
-    `:apply()`, `:applyDir()`, `:copy()`, `:deaugmented()`, `:inverted()`, `:transposed()`, `:getColumn()`,
-    `:getRow()`  
-    &nbsp;
-  * **`ModelPart`**  
-    `:copy()`, `:newBlock()`, `:newItem()`, `:newPart()`, `:newSprite()`, `:newText()`, `:partToWorldMatrix()`,
-    `:getAllVertices()`, `:getAnimPos()`, `:getAnimRot()`, `:getAnimScale()`, `:getChildren()`, `:getColor()`,
-    `:getLight()`, `:getName()`, `:getNormalMatrix()`, `:getNormalMatrixRaw()`, `:getOffsetPivot()`, `:getOffsetRot()`,
-    `:getOffsetScale()`, `:getOpacity()`, `:getOverlay()`, `:getParent()`, `:getParentType()`, `:getPivot()`,
-    `:getPos()`, `:getPositionMatrix()`, `:getPositionMatrixRaw()`, `:getPrimaryColor()`, `:getPrimaryRenderType()`,
-    `:getRot()`, `:getScale()`, `:getSecondaryColor()`, `:getSecondaryRenderType()`, `:getTask()`, `:getTextures()`,
-    `:getTextureSize()`, `:getTruePivot()`, `:getTruePos()`, `:getTrueRot()`, `:getTrueScale()`, `:getType()`,
-    `:getUV()`, `:getUVMatrix()`, `:getUVPixels()`, `:getVertices()`, `:getVisible()`, `:isChildOf()`,
-    `:overrideVanillaPos()`, `:overrideVanillaRot()`, `:overrideVanillaScale()`  
-    &nbsp;
-  * **`RenderTask`**  
-    `:getLight()`, `:getName()`, `:getNormalMatrix()`, `:getNormalMatrixRaw()`, `:getOverlay()`, `:getPos()`,
-    `:getPositionMatrix()`, `:getPositionMatrixRaw()`, `:getRot()`, `:getScale()`, `:isVisible()`,  
-    &nbsp;
-  * **`ItemTask`**  
-    `:getDisplayMode()`,  
-    &nbsp;
-  * **`SpriteTask`**  
-    `:getColor()`, `:getDimensions()`, `:getRegion()`, `:getRenderType()`, `:getSize()`, `:getTexture()`, `:getUV()`,
-    `:getUVPixels()`, `:getVertices()`,  
-    &nbsp;
-  * **`TextTask`**  
-    `:getAlignment()`, `:getBackgroundColor()`, `:getOpacity()`, `:getOutlineColor()`, `:getText()`, `:getWidth()`,
-    `:hasBackground()`, `:hasOutline()`, `:hasShadow()`, `:HasWrap()`, `:isSeeThrough()`  
-    &nbsp;
-  * **`Vertex`**  
-    `:getNormal()`, `:getPos()`, `:getUV()`  
-    &nbsp;
-  * **`Nameplate`**  
-    `:getText()`,  
-    &nbsp;
-  * **`EntityNameplate`**  
-    `:getBackgroundColor()`, `:getLight()`, `:getPivot()`, `:getPos()`, `:getScale()`, `:hasOutline()`, `:hasShadow()`,
-    `:isVisible()`  
-    &nbsp;
-  * **`ParticleAPI`**  
-    `:isPresent()`  
-    &nbsp;
-  * **`Particle`**  
-    `:getColor()`, `:getGravity()`, `:getLifetime()`, `:getPos()`, `:getPower()`, `:getScale()`, `:getSize()`,
-    `:getVelocity()`, `:hasPhysics()`, `:isAlive()`  
-    &nbsp;
-  * **`Entity`**  
-    `:getBoundingBox()`, `:getControlledVehicle()`, `:getControllingPassenger()`, `:getDimensionName()`,
-    `:getEyeHeight()`, `:getEyeY()`, `:getFrozenTicks()`, `:getItem()`, `:getLookDir()`, `:getMaxAir()`, `:getName()`,
-    `:getNbt()`, `:getPassengers()`, `:getPermissionLevel()`, `:getPos()`, `:getPose()`, `:getRot()`,
-    `:getTargetedBlock()`, `:getTargetedEntity()`, `:getType()`, `:getUUID()`, `:getVariable()`, `:getVehicle()`,
-    `:getVelocity()`, `:hasAvatar()`, `:hasContainer()`, `:hasInventory()`, `:isAlive()`, `:isCrouching()`,
-    `:isGlowing()`, `:isInLava()`, `:isInRain()`, `:isInvisible()`, `:isInWater()`, `:isLiving()`, `:isLoaded()`,
-    `:isOnFire()`, `:isOnGround()`, `:isPlayer()`, `:isSilent()`, `:isSneaking()`, `:isSprinting()`, `:isUnderwater()`,
-    `:isWet()`  
-    &nbsp;
-  * **`LivingEntity`**  
-    `:getAbsorptionAmount()`, `:getActiveHand()`, `:getActiveItem()`, `:getActiveItemTime()`, `:getArmor()`,
-    `:getArrowCount()`, `:getBodyYaw()`, `:getDeathTime()`, `:getEntityCategory()`, `:getHealth()`, `:getHeldItem()`,
-    `:getMaxHealth()`, `:getStingerCount()`, `:getSwingArm()`, `:getSwingDuration()`, `:getSwingTime()`,
-    `:isBlocking()`, `:isClimbing()`, `:isGliding()`, `:isLeftHanded()`, `:isSensitiveToWater()`, `:isSwingingArm()`,
-    `:isUsingItem()`, `:isVisuallySwimming()`, `:riptideSpinning()`  
-    &nbsp;
-  * **`Player`**  
-    `:getChargedAttackDelay()`, `:getCoolDownPercent()`, `:getExperienceLevel()`, `:getExperienceProgress()`,
-    `:getFood()`, `:getGamemode()`, `:getModelType()`, `:getSaturation()`, `:getShoulderEntity()`, `:getTeamInfo()`,
-    `:hasCape()`, `:hasSkin()`, `:isFishing()`, `:isSkinLayerVisible()`  
-    &nbsp;
-  * **`Viewer`**  
-    `:getAir()`, `:getAttackCharge()`, `:getReachDistance()`, `:getStatusEffects()`, `:isFlying()`, `:isJumping()`  
-    &nbsp;
-  * **`RendererAPI`**  
-    `:getBlockOutlineColor()`, `:getCameraMatrix()`, `:getCameraNormal()`, `:getCameraOffsetPivot()`,
-    `:getCameraOffsetRot()`, `:getCameraPivot()`, `:getCameraPos()`, `:getCameraRot()`, `:getCrosshairOffset()`,
-    `:getEyeOffset()`, `:getFOV()`, `:getOutlineColor()`, `:getPrimaryFireTexture()`, `:getRenderLeftArm()`,
-    `:getRenderRightArm()`, `:getSecondaryFireTexture()`, `:getShadowRadius()`, `:isCameraBackwards()`,
-    `:isFirstPerson()`, `:isUpsideDown()`, `:shouldForcePaperdoll()`, `:shouldRenderCrosshair()`, `:shouldRenderFire()`,
-    `:shouldRenderHUD()`, `:shouldRenderVehicle()`  
-    &nbsp;
-  * **`SoundAPI`**  
-    `:isPresent()`, `:getCustomSounds()`  
-    &nbsp;
-  * **`Sound`**  
-    `:getAttenuation()`, `:getPitch()`, `:getPos()`, `:getSubtitle()`, `:getVolume()`, `:isLooping()`, `:isPlaying()`  
-    &nbsp;
-  * **`TextureAPI`**  
-    `:get()`, `:getTextures()`  
-    &nbsp;
-  * **`Texture`**  
-    `:save()`, `:getDimensions()`, `:getName()`, `:getPixel()`  
-    &nbsp;
-  * **`TextureAtlas`**  
-    `:listSprites()`, `:getHeight()`, `:getSpriteUV()`, `:getWidth()`  
-    &nbsp;
-  * **`VanillaPart`**  
-    `:getOffsetRot()`, `:getOffsetScale()`, `:getPos()`, `:getRot()`, `:getScale()`, `:getVisible()`  
-    &nbsp;
-  * **`VanillaModelPart`**  
-    `:getOriginPos()`, `:getOriginRot()`, `:getOriginRot()`, `:getOriginVisible()`  
-    &nbsp;
-  * **`VectorAPI`**  
-    `.angleToDir()`, `.hexToRGB()`, `.hsvToRGB()`, `.intToRGB()`, `.rgbToHex()`, `.rgbToHSV()`, `.rgbToInt()`,
-    `.rotateAroundAxis()`, `.toCameraSpace()`, `.vec()`, `.vec2()`, `.vec3()`, `.vec4()`, `.worldToScreenSpace()`  
-    &nbsp;
-  * **`Vector`**  
-    `:ceil()`, `:clamped()`, `:copy()`, `:dot()`, `:floor()`, `:length()`, `:lengthSquared()`, `:normalized()`,
-    `:toDeg()`, `:toRad()`, `:toString()`, `:unpack()`  
-    &nbsp;
-  * **`Vector2`**  
-    `:augmented()`, `:ceil()`, `:clamped()`, `:copy()`, `:dot()`, `:floor()`, `:normalized()`, `:toDeg()`, `:toRad()`,
-    `:unpack()`  
-    &nbsp;
-  * **`Vector3`**  
-    `:augmented()`, `:ceil()`, `:clamped()`, `:copy()`, `:crossed()`, `:dot()`, `:floor()`, `:normalized()`, `:toDeg()`,
-    `:toRad()`, `:unpack()`  
-    &nbsp;
-  * **`Vector4`**  
-    `:ceil()`, `:clamped()`, `:copy()`, `:dot()`, `:floor()`, `:normalized()`, `:toDeg()`, `:toRad()`, `:unpack()`  
-    &nbsp;
-  * **`WorldAPI`**  
-    `.newBlock()`, `.newItem()`, `.avatarVars()`, `.exists()`, `.getBiome()`, `.getBlockLightLevel()`, `.getBlocks()`,
-    `.getBlockState()`, `.getBuildHeight()`, `.getDimension()`, `.getEntity()`, `.getLightLevel()`, `.getMoonPhase()`,
-    `.getPlayers()`, `.getRainGradient()`, `.getRedstonePower()`, `.getSkyLightLevel()`, `.getSpawnPoint()`,
-    `.getStrongRedstonePower()`, `.getTime()`, `.getTimeOfDay()`, `.isOpenSky()`, `.isThundering()`  
-    &nbsp;
-  * **`Biome`**  
-    `:getDownfall()`, `:getFogColor()`, `:getFoliageColor()`, `:getGrassColor()`, `:getPos()`, `:getPrecipitation()`,
-    `:getSkyColor()`, `:getTags()`, `:getTemperature()`, `:getWaterColor()`, `:getWaterFogColor()`, `:isCold()`,
-    `:isHot()`  
-    &nbsp;
-  * **`BlockState`**  
-    `:asItem()`, `:toStateString()`, `:emitsRedstonePower()`, `:getBlastResistance()`, `:getCollisionShape()`,
-    `:getComparatorOutput()`, `:getEntityData()`, `:getFluidTags()`, `:getFriction()`, `:getHardness()`, `:getID()`,
-    `:getJumpVelocityMultiplier()`, `:getLuminance()`, `:getMapColor()`, `:getOpacity()`, `:getOutlineShape()`,
-    `:getPos()`, `:getProperties()`, `:getSounds()`, `:getTags()`, `:getTextures()`, `:getVelocityMultiplier()`,
-    `:hasBlockEntity()`, `:hasCollision()`, `:hasEmissiveLighting()`, `:isAir()`, `:isFullCube()`, `:isOpaque()`,
-    `:isSolidBlock()`, `:isTranslucent()`  
-    &nbsp;
-  * **`ItemStack`**  
-    `:copy()`, `:toStackString()`, `:getBlockstate()`, `:getCount()`, `:getDamage()`, `:getEquipmentSlot()`, `:getID()`,
-    `:getMaxCount()`, `:getMaxDamage()`, `:getName()`, `:getPopTime()`, `:getRarity()`, `:getRepairCost()`, `:getTag()`,
-    `:getTags()`, `:getUseAction()`, `:getUseDuration()`, `:hasGlint()`, `:isArmor()`, `:isBlockItem()`,
-    `:isDamageable()`, `:isEnchantable()`, `:isFood()`, `:isStackable()`, `:isTool()`
-
-V4
---------------------------------------------------
-* Fixed return type of two functions
-  * `Entity:getControllingPassenger()` `Entity.any` -> `Entity.any?`
-  * `AvatarAPI:getEntityName()` `integer` -> `string`
-
-V5
---------------------------------------------------
-* Filled out `figuraMetatables`'s contents.
-
-V6
---------------------------------------------------
-* Updated alias building scripts.
-  * The scripts now directly access the Minecraft Wiki for vanilla values.
-  * Modded values can still be entered via file. The modded values now use the `x.txt` files instead of the
-    `x.modded.txt` files.
-  * The build script uses the <kbd>FiguraRewriteVSDocs_BuildScript/1.0 (@GrandpaScout/FiguraRewriteVSDocs)</kbd>
-    User-Agent.
-* Applied updates to ID aliases using the new scripts.  
-  ### Affected aliases:
-  * `Minecraft.blockID`, `Minecraft.itemID`, `Minecraft.particleID`, `Minecraft.soundID`
-* Changed diagnostics in `_global.lua` and `_deprecated.lua` to avoid errors that really shouldn't be happening.
-
-V7
---------------------------------------------------
-### Scripts
-* Updated block property building scripts.
-  * The Figura script now uses the barrier floor to detect out of bounds world positions. This should hopefully be more
-    stable than checking for void air.
-  * The Figura script now copies directly to clipboard instead of printing to chat.
-  * The Node script now accesses the Minecraft Wiki for the descriptions of properties that don't have one set in the
-    `descriptions.js` file.  
-    If the Minecraft Wiki does not have a description for a property, it will use a default error description instead.
-* Added Schema building scripts.
-  * These scripts can be ran to create a new `avatar.schema.json` file.
-* All build scripts now use a common file for functions they share.
-* `Minecraft.blockProperties` alias updated using new script.
-* `avatar.schema.json` updated using new script.
-
-### Documentation
-* Fixed pings always existing even if they have not been defined.
-* Fixed wrong type of `events.WORLD_RENDER`.
-* Added missing functions `Player:getExhaustion()`, `ModelPart:primaryRenderType()`, and
-  `ModelPart:secondaryRenderType()`.
-* Fixed missing parameter `name` in `ModelPart:copy()`.
-* Fixed wrong type of parameter `renderType` in `ModelPart:setPrimaryRenderType()` and
-  `ModelPart:setSecondaryRenderType()`.
-* Fixed `RenderTask:setMatrix()`, `RenderTask:setPos()`, `RenderTask:setRot()`, `RenderTask:setScale()`, and
-  `RenderTask:setVisible()` not returning `<self>`.
-* Changed description of `ModelPart:getAllVertices()` and `ModelPart:getVertices()`.  
-  Eventually I'm going to rewrite all of the descriptions. A lot of them are just restating the name of the function or
-  don't actually add anything useful.
-* Deprecations are now ***hidden*** by default. To enable them, open the `.code-workspace` file and change
-  `"editor.suggest.showDeprecated": false` to `"editor.suggest.showDeprecated": true`.
-* Removed `"inject-field"` diagnostic. (Hopefully? I can't run the version of LuaLS that has that diagnostic.)
-
-V8
---------------------------------------------------
-* PUTTING THE DOCS IN THE `avatars` FOLDER TO ACT AS GLOBAL DOCS WILL NO LONGER BE SUPPORTED.  
-  This is going to be replaced with a better method of handling a lot of avatars at the same time.  
-  If you wish to undo this, change lines 7-12 of `.luarc.json` to remove the comments.
-* Fixed missing `RenderAPI:setEyeOffset(x, y, z)` and `RenderAPI:eyeOffset(x, y, z)` overloads.
-* Fixed missing `<self>` return from `RenderAPI:setEyeOffset()` and `RenderAPI:eyeOffset()`.
-* Fixed description of `print` claiming that tables are pink.
-* Minor formatting changes in some files.
-* Fixed missing alias for the globals table.
-* Changed alias `type.type` to `type` and made it a `string` alias instead of an `any` alias.
-* `select` now has an overload. It might not do anything yet, it might horribly break everything! I wouldn't know, LuaLS
-  is being stupid and buggy.
-
-V9
---------------------------------------------------
-* V8 global docs change has been somewhat reverted. It is now possible to use the docs as global docs, however it is
-  still not "supported".  
-  This is being done to hopefully better support `require` changes happening in `0.1.3`.
-* Renamed `Minecraft.keyid` to `Minecraft.keyID`.
-* Renamed `Minecraft.mouseid` to `Minecraft.mouseID`.
-* Fixed missing render types `"EYES"`, `"TEXTURED_PORTAL"`, `"TEXTURED_GLINT"`, `"SOLID"`, `"BLURRY"`.
-* Fixed wrong descriptions of `"CUTOUT"` and `"TRANSLUCENT"`.  
-  `"CUTOUT"` was claiming to be the default render type when it was actually `"TRANSLUCENT"`.
-* Improved descriptions of `"LINES"` and `"LINES_STRIP"`.
-
-V10
---------------------------------------------------
-* V8 global docs change is now being completely reverted.
-* Fixed description of `RendererAPI:setEyeOffset()` overload.
-
+* Updated from 0.1.2 V10
+* Version <samp>0.1.3</samp> was skipped due to <samp>0.1.4</samp> being an exact copy of that version.
+* Added versions <samp>(0.1.2, 0.1.4]</samp> to the `avatar.json` schema.
+* Simplified version list in schema presets.
+* [Changes made directly from 0.1.3 changelog](https://github.com/FiguraMC/Figura/compare/0.1.2...0.1.3)
+  * Added `ClientAPI.getShaderPackName()`.
+  * Renamed `ClientAPI.hasIris()` to `ClientAPI.hasShaderPackMod()`.
+  * Renamed `ClientAPI.hasIrisShader()` to `ClientAPI.hasShaderPack()`.
+  * Updated descriptions of `ClientAPI.hasShaderPackMod()` and `ClientAPI.hasShaderPack()` to recognize Optifine.
+  * Removed `@*vmerror` from `parseJson()`, `RendererAPI:isUpsideDown()`, `RendererAPI:getPrimaryFireTexture()`,
+    `RendererAPI:getSecondaryFireTexture()`.
+  * Renamed `Player:getCoolDownPercent()` to `Player:getCooldownPercent()`.
+  * Fixed first parameter of `Player:getCoolDownPercent()` to <kbd>ItemStack</kbd>, making the method usable.
+  * Removed `@*error` from `Player:getCoolDownPercent()`.
+  * Removed `@*vmerror` from `vec()`, `VectorsAPI.vec()`, and `VectorsAPI.rotateAroundAxis()`.
+  * Updated params `vec` and `x` of `VectorsAPI.rotateAroundAxis()` to no longer be optional as they throw an error if
+    `nil`.
+  * Removed `@*vmerror` from `Matrix2:rotate()`.
+  * Updated param `angle` of `Matrix2:rotate()` to be optional.
+  * Removed `@*vmerror` from `Vector2!__mul`, `Vector2:transform()`, `Vector3!__mul`, `Vector3:transform()`, and
+    `Vector4!__mul`, `Vector4:transform()`.
+  * Updated param `mat` of `Vector2:transform()` to be optional.
+  * Removed `@*vmerror` from `ModelPart:moveTo()`.
+  * Renamed `ModelPart:newTask()` to `ModelPart:addTask()`.
+  * Removed `@*hidden` and `@*error` from `ModelPart:addTask()`.
+  * Removed `@*error` from `ModelPart:removeChild()`.
+  * Removed `@*error` from `TextTask:getBackgroundColor()`.
+  * Removed `@*vmerror` from `TextTask:getOutlineColor()`.
+  * Updated description of `TextTask:getBackgroundColor()` and `TextTask:getOutlineColor()` to reflect fixes.
+  * Renamed `TextTask:HasWrap()` to `TextTask:hasWrap()`.
+  * Removed `@*error` from `TextTask:hasWrap()`.
+  * Updated `@*error` of `Sound:pause()`.
+  * Removed `@*error` from `EntityNamepate:getBackgroundColor()`.
+  * Updated description of `EntityNamepate:getBackgroundColor()` to reflect fixes.
+  * Added `EventsAPI.TRIDENT_RENDER`, <kbd>Event.TridentRender</kbd>, and <kbd>Event.TridentRender.func</kbd>.
+  * Added the `"Trident"` parent type to <kbd>ModelPart.parentType</kbd> and the `avatar.json` schema
+  * Added `ModelPart:getPrimaryDefinedTextures()`, `ModelPart:getPrimaryTexture()`,
+    `ModelPart:getSecondaryDefinedTextures()`, and `ModelPart:getSecondaryTexture()`.
+  * Updated description of `ModelPart:getTextures()` to reflect its actual behavior.
+  * Removed `@*error` from `parseJson()` and `toJson()`.
+  * Added `badge_color_*` properties to `avatar.json` schema.
+  * Added `AvatarAPI:getBadges()`.
+  * Added <kbd>AvatarAPI.badge</kbd>.
+  * Updated `AvatarAPI:setColor()` to include the `badge` param.
+  * Added `ClientAPI.generateUUID()`.
+  * Added `data`, <kbd>DataAPI</kbd>, <kbd>Buffer</kbd>, <kbd>Buffer.encoding</kbd>, <kbd>Future</kbd>,
+    <kbd>Stream</kbd>, <kbd>InputStream</kbd>, and <kbd>OutputStream</kbd>.
+  * Removed deprecation of `data`, all deprecated functions of `data` remain deprecated.
+  * Added `net`, <kbd>NetworkingAPI</kbd>, <kbd>HttpRequestBuilder</kbd>, <kbd>HttpRequestBuilder.method</kbd>,
+    <kbd>HttpRequestBuilder.header</kbd>, <kbd>HttpResponse</kbd>, and <kbd>HttpResponse.header</kbd>.
+  * Added `file`, and <kbd>FileAPI</kbd>.
+  * Added `json`, <kbd>JsonAPI</kbd>, <kbd>JsonBuilder</kbd>, <kbd>JsonSerializer</kbd>, <kbd>JsonType</kbd>,
+    <kbd>JsonArray</kbd>, and <kbd>JsonObject</kbd>.
+  * Added `resources` property to `avatar.json` schema.
+  * Added `resources` and <kbd>ResourcesAPI</kbd>.
+  * Added `raycast`, <kbd>RaycastAPI</kbd>, <kbd>RaycastAPI.aabb</kbd>, <kbd>RaycastAPI.blockMode</kbd>,
+    <kbd>RaycastAPI.fluidMode</kbd>, <kbd>RaycastAPI.entityPredicate</kbd>.
+  * Added `RendererAPI:getRootRotationAllowed()` and `RendererAPI:setRootRotationAllowed()`.
+  * Added `WorldAPI.getHeight()` and <kbd>WorldAPI.heightmap</kbd>.
+  * Added `ClientAPI.getRegistry()`, <kbd>ClientAPI.registry</kbd>, `ClientAPI.getEnum()`, <kbd>ClientAPI.enum</kbd>,
+    `ClientAPI.getActionBar()`, `ClientAPI.getSubtitle()`, `ClientAPI.getTitle()`, `ClientAPI.getScoreboard()`,
+    <kbd>ClientAPI.scoreboard</kbd>, <kbd>ClientAPI.objective</kbd>, and <kbd>ClientAPI.criteria</kbd>.
+  * Removed deprecation of `ClientAPI.getActionBar()`, `ClientAPI.getSubtitle()`, and `ClientAPI.getTitle()`.
+  * Updated `ON_PLAY_SOUND` event to include cancelling.
+  * Added the `CUTOUT_EMISSIVE_SOLID` render type.
+  * Added the `"LeftElytraPivot"` and `"RightElytraPivot"` parent types to <kbd>ModelPart.parentType</kbd> and the
+    `avatar.json` schema.
+  * Added new aliases for `"ChestplatePivot"` and `"LeggingsPivot"`.
+  * Added `WorldAPI.getDay()` and `WorldAPI.getDayTime()`.
+  * Added `ModelPart.newEntity()` and <kbd>EntityTask</kbd>.
+  * Added new overloads for `SpriteTask.setTexture()`.
+* Updated description of <kbd>Sound</kbd>.
+* Improved description of `RendererAPI:isUpsideDown()`, `RendererAPI:getPrimaryFireTexture()`, and
+  `RendererAPI:getSecondaryFireTexture()`.
+* Renamed <kbd>VectorAPI</kbd> to <kbd>VectorsAPI</kbd> to match Figura.
+* Fixed missing descriptions in overloads of `VectorsAPI.vec()` and `VectorsAPI.toCameraSpace()`.
+* Fixed issue with `avatar.json` schema that caused choice placeholders to not work.
+* Fixed the `color`, `r`, `g`, and `b` params of `AvatarAPI:setColor()` not being optional.
+* Removed type <kbd>range*0-15</kbd> and replaced it with <kbd>integer</kbd>.
+* Added the <kbd>never</kbd> type for marking functions or parameters as impossible.
+* Fixed wrong description of `AvatarAPI:getPermissionLevel()`.
+* Added missing function `AvatarAPI:getVolume()`.
+* Renamed <kbd>ItemTask.renderMode</kbd> to <kbd>ItemTask.displayMode</kbd>
+* Renamed <kbd>Animation.playStates</kbd> to <kbd>Animation.playState</kbd>
+* Added <kbd>Minecraft.shaderName</kbd> to better fit the requirement of `RendererAPI:setPostEffect()`.
+* Updated description of `math.lerp()`, `math.lerpAngle()`, and `math.map()` to mention that matrices will also affect
+  the output.
+* Removed *all* direct usage of the <kbd>*.any</kbd> types from the docs.  
+  They now represent an unwillingness to type-check a more specific kind of a type and are for convenience.  
+  **THIS IS A BREAKING CHANGE AND WILL REQUIRE YOU TO CHECK YOUR CODE!**

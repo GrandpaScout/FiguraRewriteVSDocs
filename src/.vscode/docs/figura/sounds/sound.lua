@@ -8,7 +8,7 @@
 
 ---A Minecraft or Figura sound.
 ---
----Allows for an OOP way to handle sounds.
+---Allows for an object-oriented way of handling sounds.
 ---@class Sound
 local Sound
 
@@ -16,7 +16,7 @@ local Sound
 ---===== METHODS =====---
 
 ---Pauses the playback of this sound.
----@*error Doesn't actually do anything.
+---@*error Paused sounds unpause whenever the game unpauses.
 ---@generic self
 ---@param self self
 ---@return self

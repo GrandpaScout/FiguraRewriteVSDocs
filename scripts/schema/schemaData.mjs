@@ -24,11 +24,20 @@ const type = {
   author_or: ["author", "string <OR> authors: string[]"], // Cheeky hack, m8.
   version: ["version", "string"],
   color: ["color", "string"],
+  badgecolor: ["`badge_color_${string}`", "string"],
+  bc_donator: ["badge_color_donator", "string"],
+  bc_translator: ["badge_color_translator", "string"],
+  bc_tex_artist: ["badge_color_texture_artist", "string"],
+  bc_contest: ["badge_color_contest", "string"],
+  bc_dis_staff: ["badge_color_discord_staff", "string"],
+  bc_dev: ["badge_color_dev", "string"],
+  bc_immortal: ["badge_color_immortalized", "string"],
   bg: ["background", "unknown"], // Technically it is "string" but it does not do anything.
   id: ["id", "unknown"], // Technically it is "string" but it does not do anything.
   ascripts: ["autoScripts", "string[]"],
   aanims: ["autoAnims", "string[]"],
   igtex: ["ignoredTextures", "string[]"],
+  resources: ["resources", "string[]"],
   c_remove: ["remove", "boolean"],
   c_visible: ["visible", "boolean"],
   c_ptype: ["parentType", "string"],
@@ -59,50 +68,51 @@ const snippet = {
   desc: ["description", $P(2, "A very descriptive description.")],
   author: ["author", $P(3, "Username")],
   authors: ["authors", Arr([$P(3, "Username")], true)],
-  version: ["version", $P(4, [
-    "0.1.2", "0.1.1", "0.1.0",
-    "0.1.0-rc.14", "0.1.0-rc.13", "0.1.0-rc.12", "0.1.0-rc.11", "0.1.0-rc.10", "0.1.0-rc.9",
-    "0.1.0-rc.8", "0.1.0-rc.7", "0.1.0-rc.6", "0.1.0-rc.5", "0.1.0-rc.4", "0.1.0-rc.3", "0.1.0-rc.2", "0.1.0-rc.1",
-    "0.1.0-pre.6", "0.1.0-pre.5"
-  ])],
+  version: ["version", $P(4, ["0.1.4", "0.1.3", "0.1.2", "0.1.1", "0.1.0"])],
   color: ["color", $P(5, "#RRGGBB")],
-  ascripts: ["autoScripts", Arr(["^$6"], true)],
-  aanims: ["autoAnims", Arr(["^$7"], true)],
-  igtex: ["ignoredTextures", Arr(["^$8"], true)],
-  custom: ["customizations", "^{$9}"]
+  badgecolor: [
+    `badge_color_${$P(6, [
+      "donator", "translator", "texture_artist", "contest", "discord_staff", "dev", "immortalized"
+    ])}`,
+    $P(7, "#RRGGBB")
+  ],
+  ascripts: ["autoScripts", Arr(["^$8"], true)],
+  aanims: ["autoAnims", Arr(["^$9"], true)],
+  igtex: ["ignoredTextures", Arr(["^$10"], true)],
+  resources: ["resources", Arr(["^$11"], true)],
+  custom: ["customizations", "^{$12}"]
 };
 
 const TYPE_ALL = Typ([
   type.name, type.desc, type.author_or,
-  type.version, type.color, type.bg, type.id,
-  type.ascripts, type.aanims, type.igtex, type.custom
+  type.version, type.color, type.badgecolor, type.bg, type.id,
+  type.ascripts, type.aanims, type.igtex, type.resources,
+  type.custom
 ]);
 
 const TYPE_ALL_AUTHOR = Typ([
   type.name, type.desc, type.author,
-  type.version, type.color,
-  type.ascripts, type.aanims, type.igtex, type.custom
+  type.version, type.color, type.badgecolor,
+  type.ascripts, type.aanims, type.igtex, type.resources,
+  type.custom
 ])
 const TYPE_ALL_AUTHORS = Typ([
   type.name, type.desc, type.authors,
-  type.version, type.color,
-  type.ascripts, type.aanims, type.igtex, type.custom
+  type.version, type.color, type.badgecolor,
+  type.ascripts, type.aanims, type.igtex, type.resources,
+  type.custom
 ])
 
 const SNIPPET_ALL_AUTHOR = Obj([
   snippet.name, snippet.desc, snippet.author,
-  snippet.version, snippet.color,
-  snippet.ascripts, snippet.aanims, snippet.igtex, snippet.custom
+  snippet.version, snippet.color, snippet.badgecolor,
+  snippet.ascripts, snippet.aanims, snippet.igtex, snippet.resources,
+  snippet.custom
 ]);
 const SNIPPET_ALL_AUTHORS = Obj([
-  snippet.name,
-  snippet.desc,
-  snippet.authors,
-  snippet.version,
-  snippet.color,
-  snippet.ascripts,
-  snippet.aanims,
-  snippet.igtex,
+  snippet.name, snippet.desc, snippet.authors,
+  snippet.version, snippet.color, snippet.badgecolor,
+  snippet.ascripts, snippet.aanims, snippet.igtex, snippet.resources,
   snippet.custom
 ]);
 
@@ -135,7 +145,55 @@ const struct = {
     Mrg(["LINES", "LINES_STRIP"]),
     "SOLID",
     "BLURRY"
-  ])
+  ]),
+  colorEnum: [
+    ["defaultSnippets", Arr([
+      Obj([["label", "\"#...\""                    ], ["body", `#${$P(1, "RRGGBB")}`]], true),
+      Obj([["label", "\"AWESOME_BLUE\" (#5EA5FF)"], ["body", "AWESOME_BLUE"                ]], true),
+      Obj([["label", "\"PURPLE\"       (#A672EF)"], ["body", "PURPLE"                      ]], true),
+      Obj([["label", "\"BLUE\"         (#00F0FF)"], ["body", "BLUE"                        ]], true),
+      Obj([["label", "\"SOFT_BLUE\"    (#99BBEE)"], ["body", "SOFT_BLUE"                   ]], true),
+      Obj([["label", "\"RED\"          (#FF2400)"], ["body", "RED"                         ]], true),
+      Obj([["label", "\"ORANGE\"       (#FFC400)"], ["body", "ORANGE"                      ]], true),
+      Obj([["label", "\"CHEESE\"       (#F8C53A)"], ["body", "CHEESE"                      ]], true),
+      Obj([["label", "\"LUA_LOG\"      (#5555FF)"], ["body", "LUA_LOG"                     ]], true),
+      Obj([["label", "\"LUA_ERROR\"    (#FF5555)"], ["body", "LUA_ERROR"                   ]], true),
+      Obj([["label", "\"LUA_PING\"     (#A155DA)"], ["body", "LUA_PING"                    ]], true),
+      Obj([["label", "\"DEFAULT\"      (#5AAAFF)"], ["body", "DEFAULT"                     ]], true),
+      Obj([["label", "\"DISCORD\"      (#5865F2)"], ["body", "DISCORD"                     ]], true),
+      Obj([["label", "\"KOFI\"         (#27AAE0)"], ["body", "KOFI"                        ]], true),
+      Obj([["label", "\"GITHUB\"       (#FFFFFF)"], ["body", "GITHUB"                      ]], true),
+      Obj([["label", "\"MODRINTH\"     (#1BD96A)"], ["body", "MODRINTH"                    ]], true),
+      Obj([["label", "\"CURSEFORGE\"   (#F16436)"], ["body", "CURSEFORGE"                  ]], true),
+      null,
+      Obj([["label", "\"black\"        (#000000)"], ["body", "black"                       ]], true),
+      Obj([["label", "\"dark_blue\"    (#0000AA)"], ["body", "dark_blue"                   ]], true),
+      Obj([["label", "\"dark_green\"   (#00AA00)"], ["body", "dark_green"                  ]], true),
+      Obj([["label", "\"dark_aqua\"    (#00AAAA)"], ["body", "dark_aqua"                   ]], true),
+      Obj([["label", "\"dark_red\"     (#AA0000)"], ["body", "dark_red"                    ]], true),
+      Obj([["label", "\"dark_purple\"  (#AA00AA)"], ["body", "dark_purple"                 ]], true),
+      Obj([["label", "\"gold\"         (#FFAA00)"], ["body", "gold"                        ]], true),
+      Obj([["label", "\"gray\"         (#AAAAAA)"], ["body", "gray"                        ]], true),
+      Obj([["label", "\"dark_gray\"    (#555555)"], ["body", "dark_gray"                   ]], true),
+      // Obj([["label", "\"blue\"         (#5555FF)"], ["body", "blue"                        ]], true),
+      Obj([["label", "\"green\"        (#55FF55)"], ["body", "green"                       ]], true),
+      Obj([["label", "\"aqua\"         (#55FFFF)"], ["body", "aqua"                        ]], true),
+      // Obj([["label", "\"red\"          (#FF5555)"], ["body", "red"                         ]], true),
+      Obj([["label", "\"light_purple\" (#FF55FF)"], ["body", "light_purple"                ]], true),
+      Obj([["label", "\"yellow\"       (#FFFF55)"], ["body", "yellow"                      ]], true),
+      Obj([["label", "\"white\"        (#FFFFFF)"], ["body", "white"                       ]], true)
+    ])],
+    null,
+    ["anyOf", Arr([
+      Obj([["pattern", /^#?[0-9A-Fa-f]{1,6}$$/]], true),
+      Obj([["pattern", enumIRegex([
+        "AWESOME_BLUE", "PURPLE", "BLUE", "SOFT_BLUE", "RED", "ORANGE", "CHEESE", "LUA_LOG", "LUA_ERROR", "LUA_PING",
+        "DEFAULT", "DISCORD", "KOFI", "GITHUB", "MODRINTH", "CURSEFORGE",
+        "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple", "gold", "gray", "dark_gray",
+        "green", "aqua", "light_purple", "yellow", "white"
+      ])]], true)
+    ])]
+  ]
 };
 
 
@@ -272,33 +330,36 @@ export default Obj([
               Mrg(["HelmetPivot", "ChestplatePivot", "LeftShoulderPivot", "RightShoulderPivot"]),
               Mrg(["LeggingsPivot", "LeftLeggingPivot", "RightLeggingPivot", "LeftBootPivot", "RightBootPivot"]),
               Mrg(["Cape", "LeftElytra", "RightElytra"]),
-              Mrg(["LeftItemPivot", "RightItemPivot", "HelmetItemPivot"]),
+              Mrg(["LeftItemPivot", "RightItemPivot", "HelmetItemPivot", "LeftElytraPivot", "RightElytraPivot"]),
               Mrg(["LeftSpyglassPivot", "RightSpyglassPivot"]),
               Mrg(["LeftParrotPivot", "RightParrotPivot"]),
               Mrg(["World", "Camera", "Hud"]),
               Mrg(["Skull", "Portrait"]),
-              Mrg(["Arrow", "Item"])
+              Mrg(["Arrow", "Trident", "Item"])
 
             ])]], true),
             Obj([["pattern", enumRegex([
               "None", "NONE", "Model", "MODEL",
               "Head", "HEAD", "Body", "BODY", "LeftArm", "LEFT_ARM", "RightArm", "RIGHT_ARM", "LeftLeg", "LEFT_LEG",
               "RightLeg", "RIGHT_LEG",
-              "HelmetPivot", "HELMET_PIVOT", "ChestplatePivot", "CHESTPLATE_PIVOT",
+              "HelmetPivot", "HELMET_PIVOT",
+              "ChestplatePivot", "CHESTPLATE_PIVOT", "ChestplateBodyPivot", "CHESTPLATE_BODY_PIVOT",
               "LeftShoulderPivot", "LEFT_SHOULDER_PIVOT", "RightShoulderPivot", "RIGHT_SHOULDER_PIVOT",
-              "LeggingsPivot", "LEGGINGS_PIVOT", "LeftLeggingPivot", "LEFT_LEGGING_PIVOT",
+              "LeggingsPivot", "LEGGINGS_PIVOT", "BeltPivot", "BELT_PIVOT", "LeftLeggingPivot", "LEFT_LEGGING_PIVOT",
               "RightLeggingPivot", "RIGHT_LEGGING_PIVOT", "LeftBootPivot", "LEFT_BOOT_PIVOT",
               "RightBootPivot", "RIGHT_BOOT_PIVOT",
               "Cape", "CAPE", "LeftElytra", "LEFT_ELYTRA", "LeftElytron", "LEFT_ELYTRON", "RightElytra", "RIGHT_ELYTRA",
               "RightElytron", "RIGHT_ELYTRON",
               "LeftItemPivot", "LEFT_ITEM_PIVOT", "RightItemPivot", "RIGHT_ITEM_PIVOT",
               "HelmetItemPivot", "HELMET_ITEM_PIVOT",
+              "LeftElytraPivot", "LEFT_ELYTRA_PIVOT", "LeftWingPivot", "LEFT_WING_PIVOT",
+              "RightElytraPivot", "RIGHT_ELYTRA_PIVOT", "RightWingPivot", "RIGHT_WING_PIVOT",
               "LeftSpyglassPivot", "LEFT_SPYGLASS_PIVOT", "RightSpyglassPivot", "RIGHT_SPYGLASS_PIVOT",
               "LeftParrotPivot", "LEFT_PARROT_PIVOT", "RightParrotPivot", "RIGHT_PARROT_PIVOT",
               "World", "WORLD", "Camera", "CAMERA", "Billboard", "BILLBOARD",
               "Hud", "HUD", "HeadsUpDisplay", "Gui", "GUI", "GraphicalUserInterface", "JraphicalUserInterface",
               "Skull", "SKULL", "☠️", "Portrait", "PORTRAIT",
-              "Arrow", "ARROW", "Item", "ITEM"
+              "Arrow", "ARROW", "Trident", "TRIDENT", "Item", "ITEM"
             ])]], true)
           ])]
         ])],
@@ -378,6 +439,13 @@ export default Obj([
       null,
       ["defaultSnippets", Arr([
         common.ds_emptystring,
+        Obj([["label", "Figura 0.1.4                       (0.1.4)"      ], ["body", "0.1.4"      ]], true),
+        Obj([["label", "Figura 0.1.3                       (0.1.3)"      ], ["body", "0.1.3"      ]], true),
+        Obj([["label", "Figura 0.1.3, Prerelease 5         (0.1.3-pre.5)"], ["body", "0.1.3-pre.5"]], true),
+        Obj([["label", "Figura 0.1.3, Prerelease 4         (0.1.3-pre.4)"], ["body", "0.1.3-pre.4"]], true),
+        Obj([["label", "Figura 0.1.3, Prerelease 3         (0.1.3-pre.3)"], ["body", "0.1.3-pre.3"]], true),
+        Obj([["label", "Figura 0.1.3, Prerelease 2         (0.1.3-pre.2)"], ["body", "0.1.3-pre.2"]], true), // lol
+        Obj([["label", "Figura 0.1.3, Release Candidate 1  (0.1.3-rc.1)" ], ["body", "0.1.3-rc.1" ]], true),
         Obj([["label", "Figura 0.1.2                       (0.1.2)"      ], ["body", "0.1.2"      ]], true),
         Obj([["label", "Figura 0.1.1                       (0.1.1)"      ], ["body", "0.1.1"      ]], true),
         Obj([["label", "Figura 0.1.0                       (0.1.0)"      ], ["body", "0.1.0"      ]], true),
@@ -416,52 +484,91 @@ export default Obj([
       null,
       common.t_string,
       null,
-      ["defaultSnippets", Arr([
-        Obj([["label", "\"#...\""                    ], ["body", `#${$P(1, "RRGGBB")}`]], true),
-        Obj([["label", "\"AWESOME_BLUE\" (#5EA5FF)"], ["body", "AWESOME_BLUE"                ]], true),
-        Obj([["label", "\"PURPLE\"       (#A672EF)"], ["body", "PURPLE"                      ]], true),
-        Obj([["label", "\"BLUE\"         (#00F0FF)"], ["body", "BLUE"                        ]], true),
-        Obj([["label", "\"SOFT_BLUE\"    (#99BBEE)"], ["body", "SOFT_BLUE"                   ]], true),
-        Obj([["label", "\"RED\"          (#FF2400)"], ["body", "RED"                         ]], true),
-        Obj([["label", "\"ORANGE\"       (#FFC400)"], ["body", "ORANGE"                      ]], true),
-        Obj([["label", "\"CHEESE\"       (#F8C53A)"], ["body", "CHEESE"                      ]], true),
-        Obj([["label", "\"LUA_LOG\"      (#5555FF)"], ["body", "LUA_LOG"                     ]], true),
-        Obj([["label", "\"LUA_ERROR\"    (#FF5555)"], ["body", "LUA_ERROR"                   ]], true),
-        Obj([["label", "\"LUA_PING\"     (#A155DA)"], ["body", "LUA_PING"                    ]], true),
-        Obj([["label", "\"DEFAULT\"      (#5AAAFF)"], ["body", "DEFAULT"                     ]], true),
-        Obj([["label", "\"DISCORD\"      (#5865F2)"], ["body", "DISCORD"                     ]], true),
-        Obj([["label", "\"KOFI\"         (#27AAE0)"], ["body", "KOFI"                        ]], true),
-        Obj([["label", "\"GITHUB\"       (#FFFFFF)"], ["body", "GITHUB"                      ]], true),
-        Obj([["label", "\"MODRINTH\"     (#1BD96A)"], ["body", "MODRINTH"                    ]], true),
-        Obj([["label", "\"CURSEFORGE\"   (#F16436)"], ["body", "CURSEFORGE"                  ]], true),
-        null,
-        Obj([["label", "\"black\"        (#000000)"], ["body", "black"                       ]], true),
-        Obj([["label", "\"dark_blue\"    (#0000AA)"], ["body", "dark_blue"                   ]], true),
-        Obj([["label", "\"dark_green\"   (#00AA00)"], ["body", "dark_green"                  ]], true),
-        Obj([["label", "\"dark_aqua\"    (#00AAAA)"], ["body", "dark_aqua"                   ]], true),
-        Obj([["label", "\"dark_red\"     (#AA0000)"], ["body", "dark_red"                    ]], true),
-        Obj([["label", "\"dark_purple\"  (#AA00AA)"], ["body", "dark_purple"                 ]], true),
-        Obj([["label", "\"gold\"         (#FFAA00)"], ["body", "gold"                        ]], true),
-        Obj([["label", "\"gray\"         (#AAAAAA)"], ["body", "gray"                        ]], true),
-        Obj([["label", "\"dark_gray\"    (#555555)"], ["body", "dark_gray"                   ]], true),
-        // Obj([["label", "\"blue\"         (#5555FF)"], ["body", "blue"                        ]], true),
-        Obj([["label", "\"green\"        (#55FF55)"], ["body", "green"                       ]], true),
-        Obj([["label", "\"aqua\"         (#55FFFF)"], ["body", "aqua"                        ]], true),
-        // Obj([["label", "\"red\"          (#FF5555)"], ["body", "red"                         ]], true),
-        Obj([["label", "\"light_purple\" (#FF55FF)"], ["body", "light_purple"                ]], true),
-        Obj([["label", "\"yellow\"       (#FFFF55)"], ["body", "yellow"                      ]], true),
-        Obj([["label", "\"white\"        (#FFFFFF)"], ["body", "white"                       ]], true)
-      ])],
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_donator", Obj([
+      ...mdD(
+        "The color of the [b]Donator[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_donator
+      ),
       null,
-      ["anyOf", Arr([
-        Obj([["pattern", /^#?[0-9A-Fa-f]{1,6}$$/]], true),
-        Obj([["pattern", enumIRegex([
-          "AWESOME_BLUE", "PURPLE", "BLUE", "SOFT_BLUE", "RED", "ORANGE", "CHEESE", "LUA_LOG", "LUA_ERROR", "LUA_PING",
-          "DEFAULT", "DISCORD", "KOFI", "GITHUB", "MODRINTH", "CURSEFORGE",
-          "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple", "gold", "gray", "dark_gray",
-          "green", "aqua", "light_purple", "yellow", "white"
-        ])]], true)
-      ])]
+      common.t_string,
+      null,
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_translator", Obj([
+      ...mdD(
+        "The color of the [b]Translator[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_translator
+      ),
+      null,
+      common.t_string,
+      null,
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_texture_artist", Obj([
+      ...mdD(
+        "The color of the [b]Texture Artist[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_tex_artist
+      ),
+      null,
+      common.t_string,
+      null,
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_contest", Obj([
+      ...mdD(
+        "The color of the [b]Contest[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_contest
+      ),
+      null,
+      common.t_string,
+      null,
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_discord_staff", Obj([
+      ...mdD(
+        "The color of the [b]Discord Staff[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_dis_staff
+      ),
+      null,
+      common.t_string,
+      null,
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_dev", Obj([
+      ...mdD(
+        "The color of the [b]Developer[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_dev
+      ),
+      null,
+      common.t_string,
+      null,
+      ...struct.colorEnum
+    ])],
+    null,
+    ["badge_color_immortalized", Obj([
+      ...mdD(
+        "The color of the [b]Immortalized[/b] badge.[p]\n" +
+        "Color can either be a special named color or a hex value. (The `#` is optional.)",
+        false, type.bc_immortal
+      ),
+      null,
+      common.t_string,
+      null,
+      ...struct.colorEnum
     ])],
     null,
     ["background", Obj([
@@ -522,6 +629,25 @@ export default Obj([
       null,
       ["uniqueItems", true],
       ["items", Obj(common.pr_genericstring)]
+    ])],
+    null,
+    ["resources", Obj([
+      ...mdD(
+        "A list of globs that determine what files of this avatar's own folder may be accessed by the scripts in it",
+        false, type.resources
+      ),
+      null,
+      common.t_array,
+      null,
+      ["uniqueItems", true],
+      ["items", Obj([
+        ["type", "string"],
+        null,
+        ["defaultSnippets", Arr([Obj([["body", "$1"]], true)], true)],
+        null,
+        ["minLength", 1],
+        ["pattern", /^(?!\/|[A-Z]:\\\\)(?:[^[{]*(?:(?<!\\)(?:\\\\)*(?:(?:\[[^\]/\\]+])|{(?:[^[{}]*(?:(?<!\\)(?:\\\\)*(?:(?:\[[^\]/\\]+])|\\[[{}]))?)*(?<!\\)(?:\\\\)*}|\\[[{]))?)*$/]
+      ])]
     ])],
     null,
     ["customizations", Obj([

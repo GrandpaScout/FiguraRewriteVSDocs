@@ -45,6 +45,536 @@
 ---Determines if daylight saving time is currently in effect.
 ---@field daylight_saving boolean
 
+---@alias ClientAPI.enum string
+---## `RaycastAPI.blockMode`
+---Contains all of the valid raycasting modes for blocks.
+---| "block_raycast_types"
+---## &nbsp;No Docs Alias
+---Contains special colors that can be used anywhere a hex color is expected.
+---| "colors"
+---## `Entity.pose`
+---Contains poses that Minecraft entities can perform.
+---
+---Some entities can only perform certain poses and certain poses can only be performed by certain entities.
+---| "entity_poses"
+---## `RaycastAPI.fluidMode`
+---Contains all of the valid raycasting modes for fluids.
+---| "fluid_raycast_types"
+---## `WorldAPI.heightmap`
+---Contains all of the valid heightmaps.
+---| "heightmap_types"
+---## `ItemTask.displayMode`
+---Contains all of the valid item display modes.
+---| "item_display_modes"
+---## `Minecraft.keybind`
+---Despite its name, this contains all of the valid Minecraft keybind ids.
+---| "key_ids"
+---## `Minecraft.keyCode`
+---Despite its name, this contains all of the valid key codes.
+---| "keybinds"
+---## `Animation.loopMode`
+---Contains all of the valid looping modes for animations.
+---| "loop_modes"
+---## `ModelPart.parentType`
+---Contains all of the valid parent types for model parts.
+---
+---Also called "keywords" in the context of Blockbench.
+---| "parent_types"
+---## `Animation.playState`
+---Contains all of the valid states an animation can be in.
+---| "play_states"
+---## `Player.skinLayer`
+---Contains all of the valid togglable skin layers of the player.
+---| "player_model_parts"
+---## `Minecraft.shaderName`
+---Contains all of the valid shader names.
+---| "post_effects"
+---## `ClientAPI.registry`
+---Contains all of the valid registry ids.
+---@*error The registries enum does not contain the namespaces of registries.
+---| "registries"
+---## `Event.Render.context`
+---Contains all of the valid render contexts for the RENDER event.
+---| "render_modes"
+---## `ModelPart.renderType`
+---Contains all of the valid render types for model parts.
+---| "render_types"
+---## `Buffer.encoding`
+---Contains all of the valid string encodings for buffers.
+---| "string_encodings"
+---## `ModelPart.textureType`
+---Contains all of the valid texture types for model parts.
+---| "texture_types"
+---## `ItemStack.useAction`
+---Contains all of the valid use actions for item stacks.
+---| "use_actions"
+
+---@alias ClientAPI.registry string
+---Contains a list of all registered activities that Minecraft entities can perform.
+---| "minecraft:activity"
+---Contains a list of all registered attributes a Minecraft entity can have.
+---| "minecraft:attribute"
+---Contains a list of all registered patterns that can be placed on banners.
+---| "minecraft:banner_pattern"
+---Contains a list of all registered blocks.
+---| "minecraft:block"
+---Contains a list of all registered block entities.
+---| "minecraft:block_entity_type"
+---Contains a list of all registered block predicates.
+---| "minecraft:block_predicate_type"
+---Contains a list of all registered fur patterns that cats can have.
+---| "minecraft:cat_variant"
+---Contains a list of all registered chunk statuses.
+---| "minecraft:chunk_status"
+---Contains a list of all registered argument types that Minecraft commands can expect.
+---| "minecraft:command_argument_type"
+---Contains a list of all registered tabs in the creative mode inventory.
+---| "minecraft:creative_mode_tab"
+---Contains a list of all registered statistics in the "general" tab.
+---| "minecraft:custom_stat"
+---Contains a list of all registered patterns that decorated pots can have.
+---| "minecraft:decorated_pot_patterns"
+---Contains a list of all registered enchantments.
+---| "minecraft:enchantment"
+---Contains a list of all registered entities.
+---| "minecraft:entity_type"
+---Contains a list of all registered providers that generate floats for Minecraft to use.
+---| "minecraft:float_provider_type"
+---Contains a list of all registered fluids.
+---| "minecraft:fluid"
+---Contains a list of all registered colors that frogs can be.
+---| "minecraft:frog_variant"
+---Contains a list of all registered events that sculk sensors can hear.
+---| "minecraft:game_event"
+---Contains a list of all registered providers that generate heights for Minecraft to use.
+---| "minecraft:height_provider_type"
+---Contains a list of all registered items that are considered instruments.
+---| "minecraft:instrument"
+---Contains a list of all registered providers that generate integers for Minecraft to use.
+---| "minecraft:int_provider_type"
+---Contains a list of all registered items.
+---| "minecraft:item"
+---Contains a list of all registered conditions for loot spawns.
+---| "minecraft:loot_condition_type"
+---Contains a list of all registered functions for loot spawns.
+---| "minecraft:loot_function_type"
+---Contains a list of all registered providers for loot nbt.
+---| "minecraft:loot_nbt_provider_type"
+---Contains a list of all registered number providers for loot spawns.
+---| "minecraft:loot_number_provider_type"
+---Contains a list of all registered pool entries for loot.
+---| "minecraft:loot_pool_entry_type"
+---Contains a list of all registered loot score providers.
+---| "minecraft:loot_score_provider_type"
+---Contains a list of all registered types of memories entities can keep track of.
+---| "minecraft:memory_module_type"
+---Contains a list of all registered in-game inventory GUIs.
+---| "minecraft:menu"
+---Contains a list of all registered potion effects.
+---| "minecraft:mob_effect"
+---Contains a list of all registered variants a painting can have.
+---| "minecraft:painting_variant"
+---Contains a list of all registered particles.
+---| "minecraft:particle_type"
+---Contains a list of all registered PoIs that entities can look for.
+---| "minecraft:point_of_interest_type"
+---Contains a list of all registered pos rule tests.
+---| "minecraft:pos_rule_test"
+---Contains a list of all registered position sources.
+---| "minecraft:position_source_type"
+---Contains a list of all registered potions.
+---| "minecraft:potion"
+---Contains a list of all registered recipe types.
+---| "minecraft:recipe_serializer"
+---Contains a list of all registered data-driven recipe types.
+---| "minecraft:recipe_type"
+---Contains a list of all registered block/entity rule modifiers.
+---| "minecraft:rule_block_entity_modifier"
+---Contains a list of all registered rule tests.
+---| "minecraft:rule_test"
+---Contains a list of all registered villager schedules.
+---| "minecraft:schedule"
+---Contains a list of all registered sensors entities use to find other entities.
+---| "minecraft:sensor_type"
+---Contains a list of all registered playable sound events.
+---| "minecraft:sound_event"
+---Contains a list of all registered statistic templates.
+---| "minecraft:stat_type"
+---Contains a list of all registered villager professions.
+---| "minecraft:villager_profession"
+---Contains a list of all registered biome variants a villager can be.
+---| "minecraft:villager_type"
+---Contains a list of all registered sources for biome generation.
+---| "minecraft:worldgen/biome_source"
+---Contains a list of all registered block state providers.
+---| "minecraft:worldgen/block_state_provider_type"
+---Contains a list of all registered ground carvers.
+---| "minecraft:worldgen/carver"
+---Contains a list of all registered major world types.
+---| "minecraft:worldgen/chunk_generator"
+---Contains a list of all registered density functions.
+---| "minecraft:worldgen/density_function_type"
+---Contains a list of all registered placeable world features.
+---| "minecraft:worldgen/feature"
+---Contains a list of all registered feature sizes.
+---| "minecraft:worldgen/feature_size_type"
+---Contains a list of all registered foliage placers.
+---| "minecraft:worldgen/foliage_placer_type"
+---Contains a list of all registered material conditions.
+---| "minecraft:worldgen/material_condition"
+---Contains a list of all registered material rules.
+---| "minecraft:worldgen/material_rule"
+---Contains a list of all registered placement modifiers.
+---| "minecraft:worldgen/placement_modifier_type"
+---Contains a list of all registered tree root placers.
+---| "minecraft:worldgen/root_placer_type"
+---Contains a list of all registered structure pieces.
+---| "minecraft:worldgen/structure_piece"
+---Contains a list of all registered structure placement rules.
+---| "minecraft:worldgen/structure_placement"
+---Contains a list of all registered structure pool elements.
+---| "minecraft:worldgen/structure_pool_element"
+---Contains a list of all registered structure processors.
+---| "minecraft:worldgen/structure_processor"
+---Contains a list of all registered structures.
+---| "minecraft:worldgen/structure_type"
+---Contains a list of all registered tree decorators.
+---| "minecraft:worldgen/tree_decorator_type"
+---Contains a list of all registered tree trunk placers.
+---| "minecraft:worldgen/trunk_placer_type"
+
+---@class ClientAPI.scoreboard
+---The objective being displayed in the tab list, if any.
+---@field list? ClientAPI.objective
+---The objective being displayed in the sidebar, if any.
+---@field sidebar? ClientAPI.objective
+---The objective being displayed below players' names, if any.
+---@field below_name? ClientAPI.objective
+---The objective being displayed in black team's sidebar, if any.
+---@field sidebar_team_black? ClientAPI.objective
+---The objective being displayed in dark blue team's sidebar, if any.
+---@field sidebar_team_dark_blue? ClientAPI.objective
+---The objective being displayed in dark green team's sidebar, if any.
+---@field sidebar_team_dark_green? ClientAPI.objective
+---The objective being displayed in dark aqua team's sidebar, if any.
+---@field sidebar_team_dark_aqua? ClientAPI.objective
+---The objective being displayed in dark red team's sidebar, if any.
+---@field sidebar_team_dark_red? ClientAPI.objective
+---The objective being displayed in dark purple team's sidebar, if any.
+---@field sidebar_team_dark_purple? ClientAPI.objective
+---The objective being displayed in gold team's sidebar, if any.
+---@field sidebar_team_gold? ClientAPI.objective
+---The objective being displayed in gray team's sidebar, if any.
+---@field sidebar_team_gray? ClientAPI.objective
+---The objective being displayed in dark gray team's sidebar, if any.
+---@field sidebar_team_dark_gray? ClientAPI.objective
+---The objective being displayed in blue team's sidebar, if any.
+---@field sidebar_team_blue? ClientAPI.objective
+---The objective being displayed in green team's sidebar, if any.
+---@field sidebar_team_green? ClientAPI.objective
+---The objective being displayed in aqua team's sidebar, if any.
+---@field sidebar_team_aqua? ClientAPI.objective
+---The objective being displayed in red team's sidebar, if any.
+---@field sidebar_team_red? ClientAPI.objective
+---The objective being displayed in light purple team's sidebar, if any.
+---@field sidebar_team_light_purple? ClientAPI.objective
+---The objective being displayed in yellow team's sidebar, if any.
+---@field sidebar_team_yellow? ClientAPI.objective
+---The objective being displayed in white team's sidebar, if any.
+---@field sidebar_team_white? ClientAPI.objective
+
+---@class ClientAPI.objective
+---The name of this objective.
+---@field name string
+---The display name of this objective as Raw JSON Text.
+---@field display_name string
+---The criteria of this objective.
+---@field criteria ClientAPI.criteria
+---How this objective is rendered in the list view.
+---@field render_type "integer" | "hearts"
+---The scores for this objective.
+---@field scores {[string]: integer}
+
+---@alias ClientAPI.criteria string
+---Can only be changed by commands.
+---| "dummy"
+---Can only be changed by commands.  
+---Unopped players can change their own score with the `/trigger` command if it is enabled.
+---| "trigger"
+---Increases when the score holder dies.
+---| "deathCount"
+---Increases when the score holder kills a player.
+---| "playerKillCount"
+---Increases when the score holder kills something.
+---| "totalKillCount"
+---Set to the health of the score holder.
+---| "health"
+---Set to the xp amount of the score holder.
+---| "xp"
+---Set to the xp level of the score holder.
+---| "level"
+---Set to the food level of the score holder.
+---| "food"
+---Set to the air level of the score holder.
+---| "air"
+---Set to the armor level of the score holder.
+---| "armor"
+---Increases when the score holder kills a member of the black team.
+---| "teamKill.black"
+---Increases when the score holder kills a member of the dark blue team.
+---| "teamKill.dark_blue"
+---Increases when the score holder kills a member of the dark green team.
+---| "teamKill.dark_green"
+---Increases when the score holder kills a member of the dark aqua team.
+---| "teamKill.dark_aqua"
+---Increases when the score holder kills a member of the dark red team.
+---| "teamKill.dark_red"
+---Increases when the score holder kills a member of the dark purple team.
+---| "teamKill.dark_purple"
+---Increases when the score holder kills a member of the gold team.
+---| "teamKill.gold"
+---Increases when the score holder kills a member of the gray team.
+---| "teamKill.gray"
+---Increases when the score holder kills a member of the dark gray team.
+---| "teamKill.dark_gray"
+---Increases when the score holder kills a member of the blue team.
+---| "teamKill.blue"
+---Increases when the score holder kills a member of the green team.
+---| "teamKill.green"
+---Increases when the score holder kills a member of the aqua team.
+---| "teamKill.aqua"
+---Increases when the score holder kills a member of the red team.
+---| "teamKill.red"
+---Increases when the score holder kills a member of the light purple team.
+---| "teamKill.light_purple"
+---Increases when the score holder kills a member of the yellow team.
+---| "teamKill.yellow"
+---Increases when the score holder kills a member of the white team.
+---| "teamKill.white"
+---Increases when the score holder is killed by a member of the black team.
+---| "killedByTeam.black"
+---Increases when the score holder is killed by a member of the dark blue team.
+---| "killedByTeam.dark_blue"
+---Increases when the score holder is killed by a member of the dark green team.
+---| "killedByTeam.dark_green"
+---Increases when the score holder is killed by a member of the dark aqua team.
+---| "killedByTeam.dark_aqua"
+---Increases when the score holder is killed by a member of the dark red team.
+---| "killedByTeam.dark_red"
+---Increases when the score holder is killed by a member of the dark purple team.
+---| "killedByTeam.dark_purple"
+---Increases when the score holder is killed by a member of the gold team.
+---| "killedByTeam.gold"
+---Increases when the score holder is killed by a member of the gray team.
+---| "killedByTeam.gray"
+---Increases when the score holder is killed by a member of the dark gray team.
+---| "killedByTeam.dark_gray"
+---Increases when the score holder is killed by a member of the blue team.
+---| "killedByTeam.blue"
+---Increases when the score holder is killed by a member of the green team.
+---| "killedByTeam.green"
+---Increases when the score holder is killed by a member of the aqua team.
+---| "killedByTeam.aqua"
+---Increases when the score holder is killed by a member of the red team.
+---| "killedByTeam.red"
+---Increases when the score holder is killed by a member of the light purple team.
+---| "killedByTeam.light_purple"
+---Increases when the score holder is killed by a member of the yellow team.
+---| "killedByTeam.yellow"
+---Increases when the score holder is killed by a member of the white team.
+---| "killedByTeam.white"
+---Increases when the score holder breaks the specified item.
+---
+---This criteria requires an item id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.broken:namespace.item_id`.
+---| "minecraft.broken:*"
+---Increases when the score holder crafts the specified item.
+---
+---This criteria requires an item id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.crafted:namespace.item_id`.
+---| "minecraft.crafted:*"
+---Increases when the score holder drops the specified item.
+---
+---This criteria requires an item id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.dropped:namespace.item_id`.
+---| "minecraft.dropped:*"
+---Increases when the score holder kills the specified entity.
+---
+---This criteria requires an entity id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.killed:namespace.entity_id`.
+---| "minecraft.killed:*"
+---Increases when the score holder is killed by the specified entity.
+---
+---This criteria requires an entity id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.killed_by:namespace.entity_id`.
+---| "minecraft.killed_by:*"
+---Increases when the score holder mines the specified block.
+---
+---This criteria requires a block id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.mined:namespace.block_id`.
+---| "minecraft.mined:*"
+---Increases when the score holder picks up the specified item.
+---
+---This criteria requires an item id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.picked_up:namespace.item_id`.
+---| "minecraft.picked_up:*"
+---Increases when the score holder uses the specified item.
+---
+---This criteria requires an item id to replace the `*`.  
+---This should result in a criteria that looks like `minecraft.used:namespace.item_id`.
+---| "minecraft.used:*"
+---Increases when a pair of animals are bred by the score holder.
+---| "minecraft.custom:minecraft.animals_bred"
+---Increases when the score holder travels by elytra.
+---| "minecraft.custom:minecraft.aviate_one_cm"
+---Increases when the score holder rings a bell.
+---| "minecraft.custom:minecraft.bell_ring"
+---Increases when the score holder travels by boat.
+---| "minecraft.custom:minecraft.boat_one_cm"
+---Increases when the score holder cleans dyed leather armor in a cauldron.
+---| "minecraft.custom:minecraft.clean_armor"
+---Increases when the score holder cleans a pattern off a banner.
+---| "minecraft.custom:minecraft.clean_banner"
+---Increases when the score holder cleans a dyed shulker box.
+---| "minecraft.custom:minecraft.clean_shulker_box"
+---Increases when the score holder climbs up a ladder or vine.
+---| "minecraft.custom:minecraft.climb_one_cm"
+---Increases when the score holder moves while sneaking.
+---| "minecraft.custom:minecraft.crouch_one_cm"
+---Increases when the score holder absorbs damage with absorption hearts.
+---| "minecraft.custom:minecraft.damage_absorbed"
+---Increases when the score holder blocks damage with a shield.
+---| "minecraft.custom:minecraft.damage_blocked_by_shield"
+---Increases when the score holder deals damage to something.
+---| "minecraft.custom:minecraft.damage_dealt"
+---Increases when the score holder deals damage that was absorbed by something.
+---| "minecraft.custom:minecraft.damage_dealt_absorbed"
+---Increases when the score holder deals damage that was resisted by something.
+---| "minecraft.custom:minecraft.damage_dealt_resisted"
+---Increases when the score holder resists damage with resistance.
+---| "minecraft.custom:minecraft.damage_resisted"
+---Increases when the score holder takes damage.
+---| "minecraft.custom:minecraft.damage_taken"
+---Increases when the score holder dies.
+---| "minecraft.custom:minecraft.deaths"
+---Increases when the score holder drops something for any reason other than death.
+---| "minecraft.custom:minecraft.drop"
+---Increases when the score holder eats a slice of cake.
+---| "minecraft.custom:minecraft.eat_cake_slice"
+---Increases when the score holder enchants an item.
+---| "minecraft.custom:minecraft.enchant_item"
+---Increases when the score holder falls.  
+---Falling from a jump does not count unless falling more than one block.
+---| "minecraft.custom:minecraft.fall_one_cm"
+---Increases when the score holder fills a cauldron with water.
+---| "minecraft.custom:minecraft.fill_cauldron"
+---Increases when the score holder catches a fish with a fishing rod.
+---| "minecraft.custom:minecraft.fish_caught"
+---Increases when the score holder moves upwards and forwards while more than one block above the ground.
+---| "minecraft.custom:minecraft.fly_one_cm"
+---Increases when the score holder travels by horse.
+---| "minecraft.custom:minecraft.horse_one_cm"
+---Increases when the score holder opens a dispenser.
+---| "minecraft.custom:minecraft.inspect_dispenser"
+---Increases when the score holder opens a dropper.
+---| "minecraft.custom:minecraft.inspect_dropper"
+---Increases when the score holder opens a hopper.
+---| "minecraft.custom:minecraft.inspect_hopper"
+---Increases when the score holder opens an anvil.
+---| "minecraft.custom:minecraft.interact_with_anvil"
+---Increases when the score holder opens a beacon.
+---| "minecraft.custom:minecraft.interact_with_beacon"
+---Increases when the score holder opens a blast furnace.
+---| "minecraft.custom:minecraft.interact_with_blast_furnace"
+---Increases when the score holder opens a brewing stand.
+---| "minecraft.custom:minecraft.interact_with_brewingstand"
+---Increases when the score holder places an item on a campfire.
+---| "minecraft.custom:minecraft.interact_with_campfire"
+---Increases when the score holder opens a cartography table.
+---| "minecraft.custom:minecraft.interact_with_cartography_table"
+---Increases when the score holder opens a crafting table.
+---| "minecraft.custom:minecraft.interact_with_crafting_table"
+---Increases when the score holder opens a furnace.
+---| "minecraft.custom:minecraft.interact_with_furnace"
+---Increases when the score holder opens a grindstone.
+---| "minecraft.custom:minecraft.interact_with_grindstone"
+---Increases when the score holder interacts with a lectern.
+---| "minecraft.custom:minecraft.interact_with_lectern"
+---Increases when the score holder opens a loom.
+---| "minecraft.custom:minecraft.interact_with_loom"
+---Increases when the score holder opens a smithing table.
+---| "minecraft.custom:minecraft.interact_with_smithing_table"
+---Increases when the score holder opens a smoker.
+---| "minecraft.custom:minecraft.interact_with_smoker"
+---Increases when the score holder opens a stonecutter.
+---| "minecraft.custom:minecraft.interact_with_stonecutter"
+---Increases when the score holder jumps.
+---| "minecraft.custom:minecraft.jump"
+---Increases when the score holder intentionally leaves a server or world.
+---| "minecraft.custom:minecraft.leave_game"
+---Increases when the score holder travels by minecart.
+---| "minecraft.custom:minecraft.minecart_one_cm"
+---Increases when the score holder kills a mob.
+---| "minecraft.custom:minecraft.mob_kills"
+---Increases when the score holder opens a barrel.
+---| "minecraft.custom:minecraft.open_barrel"
+---Increases when the score holder opens a chest.
+---| "minecraft.custom:minecraft.open_chest"
+---Increases when the score holder opens an ender chest.
+---| "minecraft.custom:minecraft.open_enderchest"
+---Increases when the score holder opens a shulker box.
+---| "minecraft.custom:minecraft.open_shulker_box"
+---Increases when the score holder travels by pig.
+---| "minecraft.custom:minecraft.pig_one_cm"
+---Increases when the score holder plays a noteblock by hitting it without tuning it.
+---| "minecraft.custom:minecraft.play_noteblock"
+---Increases when the score holder inserts a music disc into a jukebox.
+---| "minecraft.custom:minecraft.play_record"
+---Increases while the score holder plays the game.
+---| "minecraft.custom:minecraft.play_time"
+---Increases when the score holder kills a player.
+---| "minecraft.custom:minecraft.player_kills"
+---Increases when the score holder places a plant in a pot.
+---| "minecraft.custom:minecraft.pot_flower"
+---Increases when the score holder triggers a village raid.
+---| "minecraft.custom:minecraft.raid_trigger"
+---Increases when the score holder defeats a village raid.
+---| "minecraft.custom:minecraft.raid_win"
+---Increases when the score holder sleeps in a bed.
+---| "minecraft.custom:minecraft.sleep_in_bed"
+---Increases while the score holder is sneaking.
+---| "minecraft.custom:minecraft.sneak_time"
+---Increases when the score holder sprints.
+---| "minecraft.custom:minecraft.sprint_one_cm"
+---Increases when the score holder travels by strider.
+---| "minecraft.custom:minecraft.strider_one_cm"
+---Increases when the score holder swims.
+---| "minecraft.custom:minecraft.swim_one_cm"
+---Increases when the score holder talks to a villager.
+---| "minecraft.custom:minecraft.talked_to_villager"
+---Increases when the score holder shoots a target block.
+---| "minecraft.custom:minecraft.target_hit"
+---Increases while the score holder is alive.
+---| "minecraft.custom:minecraft.time_since_death"
+---Increases while the score holder isn't sleeping.
+---| "minecraft.custom:minecraft.time_since_rest"
+---Increases while the score holder plays the game.
+---| "minecraft.custom:minecraft.total_world_time"
+---Increases when the score holder trades with a villager.
+---| "minecraft.custom:minecraft.traded_with_villager"
+---Increases when the score holder triggers a trapped chest.
+---| "minecraft.custom:minecraft.trigger_trapped_chest"
+---Increases when the score holder tunes a note block.
+---| "minecraft.custom:minecraft.tune_noteblock"
+---Increases when the score holder takes water from a cauldron with a glass bottle.
+---| "minecraft.custom:minecraft.use_cauldron"
+---Increases when the score holder walks on water.
+---| "minecraft.custom:minecraft.walk_on_water_one_cm"
+---Increases when the score holder walks.
+---| "minecraft.custom:minecraft.walk_one_cm"
+---Increases when the score holder walks underwater.
+---| "minecraft.custom:minecraft.walk_under_water_one_cm"
+
 ---@class ClientAPI.serverData
 ---The IP of the server. This might not exist, such as when in singleplayer.
 ---@field ip? string

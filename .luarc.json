@@ -3,7 +3,10 @@
   |*  WORKSPACE: Controls workspace behavior.                                                     *|
   \*==============================================================================================*/
   "workspace": {
-    "library": ["./src/.vscode/docs"],
+    "library": [
+      "./src/.vscode/docs",
+      "./src/.vscode/plugin/docs"
+    ],
 
     // Figura does not use third-party libraries.
     "checkThirdParty": false,
@@ -60,8 +63,10 @@
 
     // Figura does not use non-standard features.
     "nonstandardSymbol": [],
-    "plugin": "",
-    "pluginArgs": [],
+    "plugin": "./src/.vscode/plugin/main.lua",
+    "pluginArgs": [
+      "allowAddons=false" // Allow user-created plugin addons to run?
+    ],
     "special": {},
     "unicodeName": false
   },

@@ -6,4 +6,4 @@
 ---  CONFIGAPI                                                                                                       ---
 ---==================================================================================================================---
 
----@alias ConfigAPI.validType boolean | number | string | table | Vector.any | Matrix.any
+---@alias ConfigAPI.validType boolean | number | string | table | Vector | Matrix

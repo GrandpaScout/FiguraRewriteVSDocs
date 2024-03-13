@@ -49,7 +49,6 @@ function ModelPart:copy(name) end
 ---Makes this part a child of the given part.
 ---
 ---If this part already has a parent, it is removed from that parent first.
----@*error Throws if this part has no parent.
 ---@generic self
 ---@param self self
 ---@param parent ModelPart
@@ -61,6 +60,12 @@ function ModelPart:moveTo(parent) end
 ---@return BlockTask
 ---@nodiscard
 function ModelPart:newBlock(name) end
+
+---Adds an entity task to this part.
+---@param name string
+---@return EntityTask
+---@nodiscard
+function ModelPart:newEntity(name) end
 
 ---Adds an item task to this part.
 ---@param name string
@@ -84,12 +89,10 @@ function ModelPart:newPart(name, parent) end
 function ModelPart:newSprite(name) end
 
 ---Adds the given render task to this part.
----@*hidden This function's name doesn't make much sense. Feels like it should be called "addTask" to match "addChild".
----@*error Missing in-game doc string.
 ---@generic task: RenderTask
 ---@param task task
 ---@return task
-function ModelPart:newTask(task) end
+function ModelPart:addTask(task) end
 
 ---Adds a text task to this part.
 ---@param name string
@@ -110,8 +113,13 @@ function ModelPart:newText(name) end
 ---@nodiscard
 function ModelPart:partToWorldMatrix() end
 
+---Removes this part from its parent.
+---@generic self
+---@param self self
+---@return self
+function ModelPart:remove() end
+
 ---Removes the given part as a child of this part.
----@*error Makes no attempt to check if the given part is actually a child of this part.
 ---@generic self
 ---@param self self
 ---@param part ModelPart
@@ -251,12 +259,31 @@ function ModelPart:getPositionMatrixRaw() end
 ---@nodiscard
 function ModelPart:getPrimaryColor() end
 
+---Gets the defined textures in the given internal texture index.
+---
+---This function does *not* do what it says it does in-game.
+---@*error In-game description is wrong and is missing the param and return type.
+---@*error Missing an alias.
+---@*vmerror if `index` does not point to a valid texture index.
+---@param index integer
+---@return ModelPart.textureIndex
+---@nodiscard
+function ModelPart:getPrimaryDefinedTextures(index) end
+
 ---Gets the render type of this part's primary layer.
 ---
 ---Returns `nil` if it is inheriting from its parent.
 ---@return ModelPart.renderType?
 ---@nodiscard
 function ModelPart:getPrimaryRenderType() end
+
+---Gets the texture data of this part's primary layer.
+---
+---If the texture of this layer is `"RESOURCE"` or `"CUSTOM"`, then a second value will be returned.
+---@return ModelPart.textureType
+---@return (string | Texture)?
+---@nodiscard
+function ModelPart:getPrimaryTexture() end
 
 ---Gets the rotation of this part in degrees.
 ---@return Vector3
@@ -275,6 +302,16 @@ function ModelPart:getScale() end
 ---@nodiscard
 function ModelPart:getSecondaryColor() end
 
+---Gets the defined textures in the given internal texture index.
+---
+---This function does *not* do what it says it does in-game.
+---@*error In-game description is wrong and is missing the param and return type.
+---@*vmerror if `index` does not point to a valid texture index.
+---@param index integer
+---@return ModelPart.textureIndex
+---@nodiscard
+function ModelPart:getSecondaryDefinedTextures(index) end
+
 ---Gets the render type of this part's secondary layer.
 ---
 ---Returns `nil` if it is inheriting from its parent.
@@ -282,8 +319,18 @@ function ModelPart:getSecondaryColor() end
 ---@nodiscard
 function ModelPart:getSecondaryRenderType() end
 
+---Gets the texture data of this part's secondary layer.
+---
+---If the texture of this layer is `"RESOURCE"` or `"CUSTOM"`, then a second value will be returned.
+---
+---Returns `"PRIMARY"` instead of `"SECONDARY"` if no texture data has been applied to this part.
+---@return ModelPart.textureType
+---@return (string | Texture)?
+---@nodiscard
+function ModelPart:getSecondaryTexture() end
+
 ---Gets a table of all render tasks on this part.
----@return {[string]?: RenderTask.any}
+---@return {[string]?: RenderTask}
 ---@nodiscard
 function ModelPart:getTask() end
 
@@ -293,7 +340,7 @@ function ModelPart:getTask() end
 ---If the task is confirmed to be of a certain type, add `--[[@as ???Task]]` after the function call to allow the Lua
 ---Server to know which task type it should expect.
 ---```lua
----local task = <ModelPart>:getTask("TotallyABlockTask") --[[@as BlockTask]]
+---local task = <ModelPart>:getTask("Block") --[[@as BlockTask]]
 ---      ┌┴──────────────────────┐
 ---      │local task: BlockTask {│
 ---      │    ...                │
@@ -301,12 +348,14 @@ function ModelPart:getTask() end
 ---      └───────────────────────┘
 ---```
 ---@param name string
----@return RenderTask.any?
+---@return RenderTask?
 ---@nodiscard
 function ModelPart:getTask(name) end
 
----Gets a list of all the textures this part uses.
----@*error Gets a list of all textures instead.
+---Gets a list of all textures the avatar's models use.
+---
+---This function does *not* do what it says it does in-game.
+---@*error In-game description is wrong.
 ---@return Texture[]
 ---@nodiscard
 function ModelPart:getTextures() end

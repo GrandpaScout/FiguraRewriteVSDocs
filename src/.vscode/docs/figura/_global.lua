@@ -21,6 +21,9 @@ client = {}
 ---@type ConfigAPI
 config = {}
 
+---@type DataAPI
+data = {}
+
 ---@type EventsAPI
 events = {}
 
@@ -1591,8 +1594,14 @@ figuraMetatables = {
   }
 }
 
+---@type FileAPI
+file = {}
+
 ---@type HostAPI
 host = {}
+
+---@type JsonAPI
+json = {}
 
 ---@type KeybindAPI
 keybinds = {}
@@ -1641,6 +1650,9 @@ models = {}
 
 ---@type NameplateAPI
 nameplate = {}
+
+---@type NetworkingAPI
+net = {}
 
 ---@type ParticleAPI
 particles = {}
@@ -1773,6 +1785,9 @@ pings = {}
 ---@type Player
 player = {}
 
+---@type RaycastAPI
+raycast = {}
+
 ---@type RendererAPI
 renderer = {}
 
@@ -1863,8 +1878,6 @@ function logJson(...) end
 function logTable(t, depth, silent) end
 
 ---Converts a JSON string into the appropriate Lua value.
----@*error arrays with nulls in them do not parse correctly.
----@*vmerror on JSON parsing error
 ---@param json string
 ---@return (boolean | number | string | table)?
 ---@nodiscard
@@ -1895,7 +1908,6 @@ function printTable(t, depth, silent) end
 ---Converts a Lua value into a JSON string.
 ---
 ---Any value that is not a boolean, number, string, or table will become a `null`.
----@*error array-like tables with nils in the middle of them do not convert correctly.
 ---@param value any
 ---@return string
 ---@nodiscard
@@ -1905,7 +1917,6 @@ function toJson(value) end
 ---> ***
 ---> Creates a vector out of the given numbers.
 ---> ***
----@*vmerror `x` == `nil` && `y` == `<number>`
 ---@param x number
 ---@param y number
 ---@return Vector2
@@ -1916,7 +1927,6 @@ function vec(x, y) end
 ---> ***
 ---> Creates a vector out of the given numbers.
 ---> ***
----@*vmerror (`x`|`y`) == `nil` && `z` == `<number>`
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1928,7 +1938,6 @@ function vec(x, y, z) end
 ---> ***
 ---> Creates a vector out of the given numbers.
 ---> ***
----@*vmerror (`x`|`y`|`z`) == `nil` && `w` == `<number>`
 ---@param x number
 ---@param y number
 ---@param z number

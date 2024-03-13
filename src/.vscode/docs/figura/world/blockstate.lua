@@ -54,7 +54,7 @@ function BlockState:getBlastResistance() end
 function BlockState:getCollisionShape() end
 
 ---Gets the amount of power a comparator reading this block would output.
----@return range*0-15
+---@return integer
 ---@nodiscard
 function BlockState:getComparatorOutput() end
 
@@ -93,7 +93,7 @@ function BlockState:getID() end
 function BlockState:getJumpVelocityMultiplier() end
 
 ---Gets the block light level this block emits.
----@return range*0-15
+---@return integer
 ---@nodiscard
 function BlockState:getLuminance() end
 
@@ -103,7 +103,7 @@ function BlockState:getLuminance() end
 function BlockState:getMapColor() end
 
 ---Gets how much this block reduces light level.
----@return range*0-15
+---@return integer
 ---@nodiscard
 function BlockState:getOpacity() end
 
