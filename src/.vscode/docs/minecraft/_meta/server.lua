@@ -11,3 +11,5 @@
 ---| "Vanilla"    # Normal vanilla server
 ---| "Spigot"     # Spigot server
 ---| "Fabric"     # Fabric server
+---| "Forge"      # Forge server
+---| "NeoForge"   # NeoForge server

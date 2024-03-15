@@ -1376,60 +1376,60 @@ Vector.getLength = nil
 
 
 ---@class VectorsAPI
-local VectorAPI
+local VectorsAPI
 
 ---@type «deprecated»
 ---`.axisAngleToEuler()` is deprecated. It has no replacement.
 ---@deprecated [[No replacement]]
-VectorAPI.axisAngleToEuler = nil
+VectorsAPI.axisAngleToEuler = nil
 
 ---@type «deprecated»
 ---`.fromQuaternion()` is deprecated. It has no replacement.
 ---@deprecated [[No replacement]]
-VectorAPI.fromQuaternion = nil
+VectorsAPI.fromQuaternion = nil
 
 ---@type «deprecated»
 ---`.getVector` is deprecated. It has no replacement.
 ---@deprecated [[No replacement]]
-VectorAPI.getVector = nil
+VectorsAPI.getVector = nil
 
 ---@type «deprecated»
 ---`.lerp()` is deprecated. To lerp vectors, use `math.lerp()`.
 ---@deprecated [[Replace with "math.lerp()"]]
-VectorAPI.lerp = nil
+VectorsAPI.lerp = nil
 
 ---@type «deprecated»
 ---`.of()` is deprecated. To create vectors, use `.vec()`.
 ---@deprecated [[Replace with ".vec()"]]
-VectorAPI.of = nil
+VectorsAPI.of = nil
 
 ---@type «deprecated»
 ---`.rgbToINT()` is deprecated. To convert color vectors to integers, use `.rgbToInt()`.
 ---@deprecated [[Replace with ".rgbToInt()"]]
-VectorAPI.rgbToINT = nil
+VectorsAPI.rgbToINT = nil
 
 ---@type «deprecated»
 ---`.rotateWithQuaternion()` is deprecated. It has no replacement.
 ---@deprecated [[No replacement]]
-VectorAPI.rotateWithQuaternion = nil
+VectorsAPI.rotateWithQuaternion = nil
 
 ---@type «deprecated»
 ---`.toQuaternion()` is deprecated. It has no replacement.
 ---@deprecated [[No replacement]]
-VectorAPI.toQuaternion = nil
+VectorsAPI.toQuaternion = nil
 
 ---@type «deprecated»
 ---`.worldToPart` is deprecated. It has no direct replacement.
 ---
 ---To convert a world coordinate to a World part coordinate, multiply the vector by `16`.
 ---@deprecated [[Has code replacement]]
-VectorAPI.worldToPart = nil
+VectorsAPI.worldToPart = nil
 
 ---@type «deprecated»
 ---`.worldToCameraPos()` is deprecated. To convert a world position to a position relative to the viewing client's
 ---camera, use `.toCameraSpace()`.
 ---@deprecated [[Replace with ".toCameraSpace"]]
-VectorAPI.worldToCameraPos = nil
+VectorsAPI.worldToCameraPos = nil
 
 
 ---==============================================================================================---

@@ -7,6 +7,7 @@
 ---==============================================================================================---
 
 ---@alias Minecraft.clientBrand string
----| "fabric" # Fabric client
----| "quilt"  # Quilt client
----| "forge"  # Forge client
+---| "fabric"   # Fabric client
+---| "quilt"    # Quilt client
+---| "forge"    # Forge client
+---| "neoforge" # Neoforge

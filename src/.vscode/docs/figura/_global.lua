@@ -1548,12 +1548,12 @@ figuraMetatables = {
     __le = function(left, right) end
   },
 
-  ---The metatable for `VectorAPI`.
+  ---The metatable for `VectorsAPI`.
   VectorsAPI = {
-    ---@type VectorAPI
+    ---@type VectorsAPI
     __index = {},
 
-    ---@param self VectorAPI
+    ---@param self VectorsAPI
     ---@return string string
     __tostring = function(self) end
   },
@@ -1805,7 +1805,7 @@ user = {}
 ---@type VanillaModelAPI
 vanilla_model = {}
 
----@type VectorAPI
+---@type VectorsAPI
 vectors = {}
 
 ---@type WorldAPI
