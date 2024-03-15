@@ -92,3 +92,9 @@ V1
 * Removed *all* direct usage of the <kbd>*.any</kbd> types from the docs.  
   They now represent an unwillingness to type-check a more specific kind of a type and are for convenience.  
   **THIS IS A BREAKING CHANGE AND WILL REQUIRE YOU TO CHECK YOUR CODE!**
+
+V2
+--------------------------------------------------
+* Fixed instances in the docs where the old name of <kbd>VectorAPI</kbd> was used instead of <kbd>VectorsAPI</kbd>.
+* Added `"neoforge"` to <kbd>Minecraft.clientBrand</kbd>.
+* Added `"Forge"` and `"NeoForge"` to <kbd>Minecraft.serverBrand</kbd>.
