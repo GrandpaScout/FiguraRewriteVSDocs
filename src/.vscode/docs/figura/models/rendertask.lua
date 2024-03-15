@@ -413,7 +413,7 @@ function EntityTask:setHeadRotation(rot) end
 ---@param self self
 ---@param snbt string
 ---@return self
-function EntityTask:setNBT(snbt) end
+function EntityTask:setNbt(snbt) end
 
 ---Sets the NBT stored in this entity task to the given SNBT string.  
 ---The stored NBT is used to create the entity this task renders.
@@ -422,7 +422,7 @@ function EntityTask:setNBT(snbt) end
 ---@param id Minecraft.entityID
 ---@param snbt string
 ---@return self
-function EntityTask:setNBT(id, snbt) end
+function EntityTask:setNbt(id, snbt) end
 
 
 ---==============================================================================================---

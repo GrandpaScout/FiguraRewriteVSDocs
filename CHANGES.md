@@ -96,5 +96,6 @@ V1
 V2
 --------------------------------------------------
 * Fixed instances in the docs where the old name of <kbd>VectorAPI</kbd> was used instead of <kbd>VectorsAPI</kbd>.
+* Fixed wrong name of `EntityTask:setNbt()`.
 * Added `"neoforge"` to <kbd>Minecraft.clientBrand</kbd>.
 * Added `"Forge"` and `"NeoForge"` to <kbd>Minecraft.serverBrand</kbd>.
