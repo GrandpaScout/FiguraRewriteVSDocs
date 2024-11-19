@@ -234,6 +234,15 @@ function WorldAPI.getDimension() end
 ---@nodiscard
 function WorldAPI.getEntity(uuid) end
 
+---Gets a list of all entities in the given bounds.
+---
+---If `min` or `max` are `nil`, they will default to `⟨0, 0, 0⟩`.
+---@param min Vector3
+---@param max Vector3
+---@return Entity[]
+---@nodiscard
+function WorldAPI.getEntities(min,max) end
+
 ---Gets the highest position at the given horizontal coordinates using the given hightmap.
 ---
 ---If `heightmap` is `nil`, it will default to `"MOTION_BLOCKING"`.
