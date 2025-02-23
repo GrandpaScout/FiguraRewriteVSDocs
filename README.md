@@ -6,3 +6,8 @@ Documentation for Figura in Visual Studio Code.
 Requires [Sumneko's Lua Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to work.
 
 ### Instructions for installing can be found [here](../../wiki)
+
+> [!NOTE]
+> This Repository is not accepting PRs at the moment due to a complete rewrite being done Soon™.
+>
+> 0.1.5 is being worked on.
