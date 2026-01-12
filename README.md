@@ -8,6 +8,6 @@ Requires [Sumneko's Lua Server](https://marketplace.visualstudio.com/items?itemN
 ### Instructions for installing can be found [here](../../wiki)
 
 > [!NOTE]
-> This Repository is accepting PRs, however PRs will not actively be checked unless notified in the thread for this project in the Figura Discord server as all of my attention is going toward complete rewrite of these docs coming Soon™.
+> This Repository is accepting PRs, however PRs will not actively be checked unless notified in the thread for this project in the Figura Discord server as all of my attention is going toward a complete rewrite of these docs (hopefully) coming Soon™.
 >
 > 0.1.5 is being worked on.
