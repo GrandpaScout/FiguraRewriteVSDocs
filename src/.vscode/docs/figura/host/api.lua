@@ -140,10 +140,9 @@ function HostAPI:getScreenSlot(slot) end
 ---Gets the amount of slots in the currently open screen.
 ---
 ---Returns `nil` if there is no screen or the current screen has no slots.
----@param slot Minecraft.slotID
 ---@return integer?
 ---@nodiscard
-function HostAPI:getScreenSlotCount(slot) end
+function HostAPI:getScreenSlotCount() end
 
 ---Gets the `ItemStack` in the given slot.
 ---
