@@ -130,7 +130,6 @@
       "not-yieldable": "Error", // `coroutine.yield` can only be used in coroutines.
 
       // Code Style
-      "codestyle-check": "Information", // Checks code style for consistency.
       "spell-check": "Hint",            // Check spelling.
 
       // Duplicate
@@ -215,7 +214,7 @@
       "not-yieldable", // `coroutine.yield` does not exist in Figura.
 
       // Code Style
-      //;"codestyle-check",
+      "codestyle-check", // Not necessary
       "spell-check",     // Who needs spell check? Lmao.
 
       // Duplicate
